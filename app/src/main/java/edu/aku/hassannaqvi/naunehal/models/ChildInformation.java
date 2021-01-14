@@ -54,10 +54,12 @@ public class ChildInformation extends BaseObservable {
     public String cb08;
     public String cb09;
     public String cb10;
+    public String cb1096x;
     public String cb11;
     public String cb12;
     public String cb13;
     public String cb14;
+    public String cb1496x;
     public String cb15;
     public String cb16;
 
@@ -414,6 +416,18 @@ public class ChildInformation extends BaseObservable {
         notifyPropertyChanged(BR.cb10);
     }
 
+
+    @Bindable
+    public String getCb1096x() {
+        return cb1096x;
+    }
+
+    public void setCb1096x(String cb1096x) {
+        this.cb1096x = cb1096x;
+        notifyPropertyChanged(BR.cb1096x);
+    }
+
+
     @Bindable
     public String getCb11() {
         return cb11;
@@ -451,6 +465,17 @@ public class ChildInformation extends BaseObservable {
 
     public void setCb14(String cb14) {
         this.cb14 = cb14;
+        notifyPropertyChanged(BR.cb14);
+    }
+
+
+    @Bindable
+    public String getCb1496x() {
+        return cb1496x;
+    }
+
+    public void setCb1496x(String cb1496x) {
+        this.cb1496x = cb1496x;
         notifyPropertyChanged(BR.cb14);
     }
 
@@ -559,10 +584,12 @@ public class ChildInformation extends BaseObservable {
                     .put("cb08", cb08)
                     .put("cb09", cb09)
                     .put("cb10", cb10)
+                    .put("cb1096x", cb1096x)
                     .put("cb11", cb11)
                     .put("cb12", cb12)
                     .put("cb13", cb13)
                     .put("cb14", cb14)
+                    .put("cb1496x", cb1496x)
                     .put("cb15", cb15)
                     .put("cb16", cb16);
 
@@ -630,10 +657,12 @@ public class ChildInformation extends BaseObservable {
                 this.cb08 = json.getString("cb08");
                 this.cb09 = json.getString("cb09");
                 this.cb10 = json.getString("cb10");
+                this.cb1096x = json.getString("cb1096x");
                 this.cb11 = json.getString("cb11");
                 this.cb12 = json.getString("cb12");
                 this.cb13 = json.getString("cb13");
                 this.cb14 = json.getString("cb14");
+                this.cb1496x = json.getString("cb1496x");
                 this.cb15 = json.getString("cb15");
                 this.cb16 = json.getString("cb16");
 
