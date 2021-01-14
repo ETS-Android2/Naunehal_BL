@@ -274,4 +274,15 @@ fun String.convertStringToUpperCase(): String {
     return calStr.joinToString(separator = " ")
 }
 
+fun String.shortStringLength(): String {
+    /*
+     * Program that first convert all uper case into lower case then
+     * convert fist letter into uppercase
+     */
+    var calStr = this
+    if (this.length > 15)
+        calStr = this.substring(15).plus("...")
+    return calStr
+}
+
 

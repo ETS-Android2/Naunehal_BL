@@ -1,5 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <data>
@@ -19,7 +20,7 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/include"
+            android:id="@+id/mainCard"
             layout="@layout/child_linenname"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_100sdp"
@@ -49,9 +50,9 @@
 
                 <!-- cs01  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
-
                     android:id="@+id/fldGrpCVcs01"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -101,7 +102,8 @@
                 <!-- cs02  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcs02"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"

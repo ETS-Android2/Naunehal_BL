@@ -91,9 +91,22 @@ public class ChildInformation extends BaseObservable {
         cb01 = serial;
     }
 
-    public ChildInformation(String serial, boolean flag) {
+    public ChildInformation(String serial, boolean flag, ChildInformation child) {
         cb01 = serial;
         this.flag = flag;
+
+        this.cb06 = child.getCb06();
+        this.cb07 = child.getCb07();
+        this.cb08 = child.getCb08();
+        this.cb09 = child.getCb09();
+        this.cb10 = child.getCb10();
+        this.cb11 = child.getCb11();
+        this.cb12 = child.getCb12();
+        this.cb13 = child.getCb13();
+        this.cb14 = child.getCb14();
+        this.cb15 = child.getCb15();
+        this.cb16 = child.getCb16();
+
     }
 
     @Bindable

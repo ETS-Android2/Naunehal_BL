@@ -9,6 +9,7 @@ import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.databinding.ChildViewBinding
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
 import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
+import edu.aku.hassannaqvi.naunehal.utils.shortStringLength
 
 /*
 * @author Ali Azaz Alam dt. 01.08.21
@@ -18,8 +19,8 @@ class ChildViewHolder(private val bi: ChildViewBinding) :
 
     fun bind(item: ChildInformation) {
         bi.serial.text = item.cb01
-        bi.resName.text = String.format("Respondent: %s", (if (item.cb07 == "") item.cb12 else item.cb07).convertStringToUpperCase())
-        bi.name.text = item.cb02.convertStringToUpperCase()
+        bi.resName.text = String.format("Respondent: %s", (if (item.cb07 == "") item.cb12 else item.cb07).convertStringToUpperCase().shortStringLength())
+        bi.name.text = item.cb02.convertStringToUpperCase().shortStringLength()
         bi.age.text = item.cb0501.toInt().times(12).plus(item.cb0502.toInt()).toString()
         val imageRes: Int = if (item.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl
         /*when (item.formFlag) {

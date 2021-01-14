@@ -64,7 +64,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
                                 .show()
                         return@setOnActionSelectedListener false
                     }
-                    gotoActivity(Section03CSActivity::class.java)
+                    gotoActivity(SelectedChildrenListActivity::class.java)
                 }
                 R.id.fab_exit -> {
                     openSectionEndingActivity()
@@ -119,7 +119,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
             }
 
             override fun onButtonItemClick(item: ChildInformation, flag: Boolean) {
-                MainApp.childInformation = ChildInformation((adapter.childItems.size + 1).toString(), flag)
+                MainApp.childInformation = ChildInformation((adapter.childItems.size + 1).toString(), flag, item)
                 gotoActivity(Section02CBActivity::class.java)
             }
         })
