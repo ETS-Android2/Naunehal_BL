@@ -19,7 +19,7 @@ class ChildViewHolder(private val bi: ChildViewBinding) :
 
     fun bind(item: ChildInformation) {
         bi.serial.text = item.cb01
-        bi.resName.text = String.format("Respondent: %s", (if (item.cb07 == "") item.cb12 else item.cb07).convertStringToUpperCase().shortStringLength())
+        bi.resName.text = String.format("Mother: %s", item.cb07.convertStringToUpperCase().shortStringLength())
         bi.name.text = item.cb02.convertStringToUpperCase().shortStringLength()
         bi.age.text = item.cb0501.toInt().times(12).plus(item.cb0502.toInt()).toString()
         val imageRes: Int = if (item.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl

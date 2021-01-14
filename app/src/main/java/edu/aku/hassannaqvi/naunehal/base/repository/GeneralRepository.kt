@@ -35,4 +35,8 @@ open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource
     override suspend fun getFormStatus(date: String): FormIndicatorsModel = withContext(Dispatchers.IO) {
         db.getFormStatusCount(date)
     }
+
+    override suspend fun getSelectedChildList(cluster: String, hhno: String, uuid: String): ArrayList<ChildInformation> = withContext(Dispatchers.IO) {
+        db.getSelectedChildrenFromDB(cluster, hhno, uuid)
+    }
 }

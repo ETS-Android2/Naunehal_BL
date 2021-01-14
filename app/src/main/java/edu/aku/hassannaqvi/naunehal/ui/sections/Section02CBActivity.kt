@@ -63,29 +63,45 @@ class Section02CBActivity : AppCompatActivity() {
 
     private fun setupSkips() {
         bi.cb06.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
-            Clear.clearAllFields(bi.fldGrpCVcb07)
-            Clear.clearAllFields(bi.fldGrpCVcb08)
-            Clear.clearAllFields(bi.fldGrpCVcb09)
-            Clear.clearAllFields(bi.fldGrpCVcb10)
-            Clear.clearAllFields(bi.fldGrpCVcb12)
-            Clear.clearAllFields(bi.fldGrpCVcb13)
-            Clear.clearAllFields(bi.fldGrpCVcb14)
-            bi.fldGrpCVcb07.visibility = View.VISIBLE
-            bi.fldGrpCVcb08.visibility = View.VISIBLE
-            bi.fldGrpCVcb09.visibility = View.VISIBLE
-            bi.fldGrpCVcb10.visibility = View.VISIBLE
-            bi.fldGrpCVcb12.visibility = View.VISIBLE
-            bi.fldGrpCVcb13.visibility = View.VISIBLE
-            bi.fldGrpCVcb14.visibility = View.VISIBLE
-            if (i == bi.cb0601.id) {
-                bi.fldGrpCVcb07.visibility = View.GONE
-                bi.fldGrpCVcb08.visibility = View.GONE
-                bi.fldGrpCVcb09.visibility = View.GONE
-                bi.fldGrpCVcb10.visibility = View.GONE
-            } else if (i == bi.cb0602.id) {
-                bi.fldGrpCVcb12.visibility = View.GONE
-                bi.fldGrpCVcb13.visibility = View.GONE
-                bi.fldGrpCVcb14.visibility = View.GONE
+            when (i) {
+                bi.cb0601.id -> {
+                    Clear.clearAllFields(bi.fldGrpCVcb07, false)
+                    Clear.clearAllFields(bi.fldGrpCVcb08, false)
+                    Clear.clearAllFields(bi.fldGrpCVcb09, false)
+                    Clear.clearAllFields(bi.fldGrpCVcb10, false)
+                    MainApp.childInformation.setCb07(MainApp.form.getHh12())
+                    MainApp.childInformation.setCb08(MainApp.form.getHh13())
+                    MainApp.childInformation.setCb09(MainApp.form.getHh16())
+                    MainApp.childInformation.setCb10(MainApp.form.getHh17())
+
+
+                    Clear.clearAllFields(bi.fldGrpCVcb12, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb13, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb14, true)
+                }
+                bi.cb0602.id -> {
+                    Clear.clearAllFields(bi.fldGrpCVcb12, false)
+                    Clear.clearAllFields(bi.fldGrpCVcb13, false)
+                    Clear.clearAllFields(bi.fldGrpCVcb14, false)
+
+                    MainApp.childInformation.setCb12(MainApp.form.getHh12())
+                    MainApp.childInformation.setCb13(MainApp.form.getHh16())
+                    MainApp.childInformation.setCb14(MainApp.form.getHh17())
+
+                    Clear.clearAllFields(bi.fldGrpCVcb07, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb08, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb09, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb10, true)
+                }
+                else -> {
+                    Clear.clearAllFields(bi.fldGrpCVcb12, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb13, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb14, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb07, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb08, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb09, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb10, true)
+                }
             }
         }
     }

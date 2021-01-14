@@ -59,6 +59,7 @@ public class Child extends BaseObservable {
     private String projectName = MainApp.PROJECT_NAME;
     private String id;
     private String uid;
+    private String fmuid;
     private String uuid;
     private String userName;
     private String sysDate;
@@ -83,6 +84,14 @@ public class Child extends BaseObservable {
 
     public Child() {
 
+    }
+
+    public String getFmuid() {
+        return fmuid;
+    }
+
+    public void setFmuid(String fmuid) {
+        this.fmuid = fmuid;
     }
 
     @Bindable
@@ -704,6 +713,7 @@ public class Child extends BaseObservable {
         this.id = jsonObject.getString(ChildContract.ChildTable.COLUMN_ID);
         this.uid = jsonObject.getString(ChildContract.ChildTable.COLUMN_UID);
         this.uuid = jsonObject.getString(ChildContract.ChildTable.COLUMN_UUID);
+        this.fmuid = jsonObject.getString(ChildContract.ChildTable.COLUMN_FMUID);
         this.userName = jsonObject.getString(ChildContract.ChildTable.COLUMN_USERNAME);
         this.sysDate = jsonObject.getString(ChildContract.ChildTable.COLUMN_SYSDATE);
         this.dcode = jsonObject.getString(ChildContract.ChildTable.COLUMN_DCODE);
@@ -731,6 +741,7 @@ public class Child extends BaseObservable {
         this.id = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_UUID));
+        this.fmuid = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_FMUID));
         this.userName = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SYSDATE));
         this.dcode = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_DCODE));
@@ -823,6 +834,7 @@ public class Child extends BaseObservable {
             json.put(ChildContract.ChildTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
             json.put(ChildContract.ChildTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
             json.put(ChildContract.ChildTable.COLUMN_UUID, this.uuid == null ? JSONObject.NULL : this.uuid);
+            json.put(ChildContract.ChildTable.COLUMN_FMUID, this.fmuid == null ? JSONObject.NULL : this.fmuid);
             json.put(ChildContract.ChildTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
             json.put(ChildContract.ChildTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
             json.put(ChildContract.ChildTable.COLUMN_DCODE, this.dcode == null ? JSONObject.NULL : this.dcode);

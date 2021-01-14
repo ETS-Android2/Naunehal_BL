@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.naunehal.viewholder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -19,18 +20,19 @@ class SelectedChildViewHolder(private val bi: SelectedChildViewBinding) :
         RecyclerView.ViewHolder(bi.root) {
 
     fun bind(item: ChildInformation) {
-        bi.resName.text = String.format("Respondent: %s", (if (item.cb07 == "") item.cb12 else item.cb07).convertStringToUpperCase().shortStringLength())
+        bi.resName.text = String.format("Mother: %s", item.cb07.convertStringToUpperCase().shortStringLength())
         bi.name.text = item.cb02.convertStringToUpperCase().shortStringLength()
         val imageRes: Int = if (item.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl
-        var flagImage = R.drawable.ic_incomplete_star
-        when (item.isFlag) {
-            true -> {
-                flagImage = R.drawable.ic_incomplete_star
-            }
-            false -> {
-                bi.parentLayout.isEnabled = false
-                flagImage = R.drawable.ic_complete_star
-            }
+        val flagImage: Int
+        if (item.childTableDataExist == null) {
+            flagImage = R.drawable.ic_incomplete_star
+        } else {
+            bi.parentLayout.isEnabled = false
+            flagImage = R.drawable.ic_complete_star
+        }
+        if (!item.isMotherAvailable) {
+            bi.parentLayout.isEnabled = false
+            bi.containeridcard.setBackgroundColor(ContextCompat.getColor(this.itemView.context, R.color.grayLight))
         }
         Glide.with(this.itemView.context)
                 .asBitmap()

@@ -43,4 +43,12 @@ interface GeneralDataSource {
     * For SectionH1 End
     * */
 
+    /*
+    * For Section Selected ChildList
+    * */
+    suspend fun getSelectedChildList(cluster: String, hhno: String, uuid: String): ArrayList<ChildInformation>
+    /*
+    * For SectionH1 End
+    * */
+
 }

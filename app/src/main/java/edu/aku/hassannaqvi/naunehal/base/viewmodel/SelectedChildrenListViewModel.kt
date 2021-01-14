@@ -22,10 +22,10 @@ class SelectedChildrenListViewModel(internal val repository: GeneralRepository) 
         viewModelScope.launch {
             try {
                 delay(1000)
-                val children = repository.getChildList(cluster, hhno, uuid)
+                val children = repository.getSelectedChildList(cluster, hhno, uuid)
                 _childResponse.value = if (children.size > 0) {
-//                    val childList = ArrayList<ChildInfo>(children.sortedBy { it.formFlag })
-                    ResponseStatusCallbacks.success(data = children, message = "Child list found")
+                    val childList = ArrayList<ChildInformation>(children.sortedBy { it.cb07 })
+                    ResponseStatusCallbacks.success(data = childList, message = "Child list found")
                 } else
                     ResponseStatusCallbacks.error(data = null, message = "No child found!")
             } catch (e: Exception) {

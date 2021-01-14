@@ -112,6 +112,7 @@ public class Immunization extends BaseObservable {
     private String id;
     private String uid;
     private String uuid;
+    private String fmuid;
     private String userName;
     private String sysDate;
     private String dcode;
@@ -135,6 +136,14 @@ public class Immunization extends BaseObservable {
 
     public Immunization() {
 
+    }
+
+    public String getFmuid() {
+        return fmuid;
+    }
+
+    public void setFmuid(String fmuid) {
+        this.fmuid = fmuid;
     }
 
     @Bindable
@@ -1258,6 +1267,7 @@ public class Immunization extends BaseObservable {
         this.id = jsonObject.getString(IMContract.IMTable.COLUMN_ID);
         this.uid = jsonObject.getString(IMContract.IMTable.COLUMN_UID);
         this.uuid = jsonObject.getString(IMContract.IMTable.COLUMN_UUID);
+        this.fmuid = jsonObject.getString(IMContract.IMTable.COLUMN_FMUID);
         this.userName = jsonObject.getString(IMContract.IMTable.COLUMN_USERNAME);
         this.sysDate = jsonObject.getString(IMContract.IMTable.COLUMN_SYSDATE);
         this.dcode = jsonObject.getString(IMContract.IMTable.COLUMN_DCODE);
@@ -1285,6 +1295,7 @@ public class Immunization extends BaseObservable {
         this.id = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_UUID));
+        this.fmuid = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_FMUID));
         this.userName = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_SYSDATE));
         this.dcode = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_DCODE));
@@ -1427,6 +1438,7 @@ public class Immunization extends BaseObservable {
             json.put(IMContract.IMTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
             json.put(IMContract.IMTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
             json.put(IMContract.IMTable.COLUMN_UUID, this.uuid == null ? JSONObject.NULL : this.uuid);
+            json.put(IMContract.IMTable.COLUMN_FMUID, this.fmuid == null ? JSONObject.NULL : this.fmuid);
             json.put(IMContract.IMTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
             json.put(IMContract.IMTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
             json.put(IMContract.IMTable.COLUMN_DCODE, this.dcode == null ? JSONObject.NULL : this.dcode);

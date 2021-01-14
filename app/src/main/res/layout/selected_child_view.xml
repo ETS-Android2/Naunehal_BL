@@ -23,7 +23,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/_3sdp"
                 android:layout_marginTop="@dimen/_3sdp"
-                android:src="@drawable/ic_complete_star"
+                android:src="@drawable/ic_incomplete_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

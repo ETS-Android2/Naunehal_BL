@@ -123,6 +123,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(ChildContract.ChildTable.COLUMN_UID, form.getUid());
         values.put(ChildContract.ChildTable.COLUMN_UUID, form.getUuid());
+        values.put(ChildContract.ChildTable.COLUMN_FMUID, form.getFmuid());
         values.put(ChildContract.ChildTable.COLUMN_USERNAME, form.getUserName());
         values.put(ChildContract.ChildTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(ChildContract.ChildTable.COLUMN_DCODE, form.getDcode());
@@ -189,6 +190,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(IMContract.IMTable.COLUMN_UID, form.getUid());
         values.put(IMContract.IMTable.COLUMN_UUID, form.getUuid());
+        values.put(IMContract.IMTable.COLUMN_FMUID, form.getFmuid());
         values.put(IMContract.IMTable.COLUMN_USERNAME, form.getUserName());
         values.put(IMContract.IMTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(IMContract.IMTable.COLUMN_DCODE, form.getDcode());
@@ -375,40 +377,86 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
-    public ArrayList<Cursor> getDatabaseManagerData(String Query) {
-        //get writable database
-        SQLiteDatabase sqlDB = this.getWritableDatabase();
-        String[] columns = new String[]{"message"};
-        //an array list of cursor to save two cursors one has results from the query
-        //other cursor stores error message if any errors are triggered
-        ArrayList<Cursor> alc = new ArrayList<Cursor>(2);
-        MatrixCursor Cursor2 = new MatrixCursor(columns);
-        alc.add(null);
-        alc.add(null);
-
+    public ArrayList<ChildInformation> getSelectedChildrenFromDB(String cluster, String hhno, String uuid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String whereClause = ChildInfoTable.COLUMN_CLUSTER + " =? AND "
+                + ChildInfoTable.COLUMN_HHNO + " =? AND "
+                + ChildInfoTable.COLUMN_UUID + " =?";
+        String[] whereArgs = {cluster, hhno, uuid};
+        String groupBy = null;
+        String having = null;
+        String orderBy = ChildInfoTable.COLUMN_ID + " ASC";
+        ArrayList<ChildInformation> allForms = new ArrayList<>();
         try {
-            //execute the query results will be save in Cursor c
-            Cursor c = sqlDB.rawQuery(Query, null);
-
-            //add value to cursor2
-            Cursor2.addRow(new Object[]{"Success"});
-
-            alc.set(1, Cursor2);
-            if (null != c && c.getCount() > 0) {
-
-                alc.set(0, c);
-                c.moveToFirst();
-
-                return alc;
+            c = db.query(
+                    ChildInfoTable.TABLE_NAME,  // The table to query
+                    null,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                ChildInformation info = new ChildInformation().Hydrate(c);
+                info.setMotherAvailable(info.cb11.equals("1"));
+                int calculateMonth = (Integer.parseInt(info.getCb0501()) * 12) + Integer.parseInt(info.getCb0502());
+                if (calculateMonth <= 35) info.setUnder35(true);
+                info.setChildTableDataExist(
+                        (Child) getFormExist(
+                                ChildContract.ChildTable.class,
+                                info.getCluster(),
+                                info.getHhno(),
+                                info.getUuid(),
+                                info.getUid()));
+                allForms.add(info);
             }
-            return alc;
-        } catch (Exception sqlEx) {
-            Log.d("printing exception", sqlEx.getMessage());
-            //if any exceptions are triggered save the error message to cursor an return the arraylist
-            Cursor2.addRow(new Object[]{"" + sqlEx.getMessage()});
-            alc.set(1, Cursor2);
-            return alc;
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
         }
+        return allForms;
+    }
+
+    public Object getFormExist(Class<?> tableName, String cluster, String hhno, String uuid, String fmuid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Object count = null;
+        String query = "";
+        String[] where = null;
+        if (tableName.getName().equals(ChildContract.ChildTable.class.getName())) {
+            query = String.format("select *from %s where %s=? AND %s=? AND %s=? AND %s=?",
+                    tableName,
+                    ChildContract.ChildTable.COLUMN_CLUSTER,
+                    ChildContract.ChildTable.COLUMN_HHNO,
+                    ChildContract.ChildTable.COLUMN_UUID,
+                    ChildContract.ChildTable.COLUMN_FMUID
+            );
+            where = new String[]{cluster, hhno, uuid, fmuid};
+        } else if (tableName.getName().equals(IMContract.IMTable.class.getName())) {
+            query = String.format("select *from %s where %s=? AND %s=? AND %s=? AND %s=?",
+                    tableName,
+                    IMContract.IMTable.COLUMN_CLUSTER,
+                    IMContract.IMTable.COLUMN_HHNO,
+                    IMContract.IMTable.COLUMN_UUID,
+                    IMContract.IMTable.COLUMN_FMUID
+            );
+            where = new String[]{cluster, hhno, uuid, fmuid};
+        }
+        Cursor mCursor = db.rawQuery(query, where, null);
+        if (mCursor != null && mCursor.moveToFirst()) {
+            if (tableName.getName().equals(ChildContract.ChildTable.class.getName())) {
+                count = new Child().Hydrate(mCursor);
+            } else if (tableName.getName().equals(IMContract.IMTable.class.getName())) {
+                count = new Immunization().Hydrate(mCursor);
+            }
+            mCursor.close();
+        }
+        return count;
     }
 
     public ArrayList<Districts> getAllDistricts() {
@@ -484,6 +532,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return allDC;
+    }
+
+    public ArrayList<Cursor> getDatabaseManagerData(String Query) {
+        //get writable database
+        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        String[] columns = new String[]{"message"};
+        //an array list of cursor to save two cursors one has results from the query
+        //other cursor stores error message if any errors are triggered
+        ArrayList<Cursor> alc = new ArrayList<Cursor>(2);
+        MatrixCursor Cursor2 = new MatrixCursor(columns);
+        alc.add(null);
+        alc.add(null);
+
+        try {
+            //execute the query results will be save in Cursor c
+            Cursor c = sqlDB.rawQuery(Query, null);
+
+            //add value to cursor2
+            Cursor2.addRow(new Object[]{"Success"});
+
+            alc.set(1, Cursor2);
+            if (null != c && c.getCount() > 0) {
+
+                alc.set(0, c);
+                c.moveToFirst();
+
+                return alc;
+            }
+            return alc;
+        } catch (Exception sqlEx) {
+            Log.d("printing exception", sqlEx.getMessage());
+            //if any exceptions are triggered save the error message to cursor an return the arraylist
+            Cursor2.addRow(new Object[]{"" + sqlEx.getMessage()});
+            alc.set(1, Cursor2);
+            return alc;
+        }
     }
 
     /*public BLRandom getHHFromBLRandom(String subAreaCode, String hh) {

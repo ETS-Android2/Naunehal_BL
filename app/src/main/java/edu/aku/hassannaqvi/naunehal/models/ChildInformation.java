@@ -64,7 +64,8 @@ public class ChildInformation extends BaseObservable {
     public String cb16;
 
     //Not saving in db
-    private boolean flag = true;
+    private boolean flag = true, motherAvailable = true, under35 = false;
+    private Child childTableDataExist = null;
     private LocalDate calculatedDOB = null;
 
     public LocalDate getCalculatedDOB() {
@@ -83,8 +84,31 @@ public class ChildInformation extends BaseObservable {
         this.flag = flag;
     }
 
-    public ChildInformation() {
+    public boolean isMotherAvailable() {
+        return motherAvailable;
+    }
 
+    public void setMotherAvailable(boolean motherAvailable) {
+        this.motherAvailable = motherAvailable;
+    }
+
+    public boolean isUnder35() {
+        return under35;
+    }
+
+    public void setUnder35(boolean under35) {
+        this.under35 = under35;
+    }
+
+    public Child getChildTableDataExist() {
+        return childTableDataExist;
+    }
+
+    public void setChildTableDataExist(Child childTableDataExist) {
+        this.childTableDataExist = childTableDataExist;
+    }
+
+    public ChildInformation() {
     }
 
     public ChildInformation(String serial) {
