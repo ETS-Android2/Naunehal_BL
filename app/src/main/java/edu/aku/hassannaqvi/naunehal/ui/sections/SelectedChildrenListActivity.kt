@@ -49,7 +49,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         /*
         * Nested Toolbar
         * */
-        bi.toolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.black))
+        bi.toolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.colorPrimaryLight))
         bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.black_overlay))
 
 
