@@ -175,7 +175,7 @@ class Section01HHActivity : AppCompatActivity() {
         return if (updcount > 0) {
             MainApp.form.uid = MainApp.form.deviceId + MainApp.form.id
             var count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, MainApp.form.uid)
-            if (count > 0) count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, MainApp.form.s01HH)
+            if (count > 0) count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, MainApp.form.s01HHtoString())
             if (count > 0) true else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
                 false

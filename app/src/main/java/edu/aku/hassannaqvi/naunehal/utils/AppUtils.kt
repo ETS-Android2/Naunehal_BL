@@ -24,6 +24,7 @@ import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.databinding.ChildEndDialogBinding
+import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_COPY
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_NAME
@@ -145,7 +146,7 @@ fun AppCompatActivity.openSectionEndingActivity() {
     dialog.window!!.attributes = params
     dialog.findViewById<View>(R.id.btnOk).setOnClickListener { view: View? ->
         this.finish()
-        val intent = Intent(this, EndSectionActivity::class.java)
+        val intent = Intent(this, EndingActivity::class.java)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         this.startActivity(intent)
     }
