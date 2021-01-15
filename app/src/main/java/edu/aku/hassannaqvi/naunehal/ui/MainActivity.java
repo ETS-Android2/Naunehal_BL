@@ -59,15 +59,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            MainApp.hideSystemUI(getWindow().getDecorView());
-        }
-    }
-
     public void openForm(View view) {
         Intent oF = null;
         switch (view.getId()) {

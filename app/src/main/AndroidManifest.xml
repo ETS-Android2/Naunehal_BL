@@ -128,7 +128,8 @@
 
         <activity
             android:name=".ui.sections.IdentificationSectionActivity"
-            android:parentActivityName=".ui.MainActivity" />
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
 
         <activity
             android:name=".core.AndroidDatabaseManager"
