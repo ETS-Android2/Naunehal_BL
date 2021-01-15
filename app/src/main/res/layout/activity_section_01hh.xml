@@ -714,6 +714,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.hh16}"
+                                app:defaultValue="55"
                                 app:maxValue="17"
                                 app:minValue="1"
                                 app:type="range" />
