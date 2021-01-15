@@ -185,10 +185,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:hint="###"
+                        android:hint="#-####-###"
                         android:inputType="number"
                         android:text="@={form.hh09}"
-                        app:mask="###" />
+                        app:mask="#-####-###" />
 
                 </LinearLayout>
 

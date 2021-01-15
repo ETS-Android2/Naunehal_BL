@@ -3,7 +3,9 @@ package edu.aku.hassannaqvi.naunehal.ui.sections
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.text.format.DateFormat
 import android.util.Log
 import android.view.View
@@ -144,6 +146,37 @@ class Section01HHActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+
+        bi.hh09.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+                //      Toast.makeText(SectionHHActivity.this, charSequence+" i="+i+" i1="+i1+" i2="+i2, Toast.LENGTH_LONG).show();
+                if (i == 1 && i1 == 0 && i2 == 1) {
+                    bi.hh09.setText(bi.hh09.text.toString().plus("-"))
+                }
+                if (i == 6 && i1 == 0 && i2 == 1) {
+                    bi.hh09.setText(bi.hh09.text.toString().plus("-"))
+                }
+            }
+
+            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+                if (i == 0 && i1 == 0 && i2 == 1) {
+                    bi.hh09.setText(bi.hh09.text.toString().plus("-"))
+                }
+                if (i == 2 && i1 == 1 && i2 == 0) {
+                    bi.hh09.setText(bi.hh09.text.toString().substring(0, 1))
+                }
+                if (i == 1 && i1 == 4 && i2 == 5) {
+                    bi.hh09.setText(bi.hh09.text.toString().plus("-"))
+                }
+                if (i == 7 && i1 == 1 && i2 == 0) {
+                    bi.hh09.setText(bi.hh09.text.toString().substring(0, 6))
+                }
+            }
+
+            override fun afterTextChanged(editable: Editable) {
+                bi.hh09.setSelection(bi.hh09.text.toString().length)
+            }
+        })
     }
 
     private fun rgListener(rg: RadioGroup, rb: RadioButton, vg: ViewGroup) {
