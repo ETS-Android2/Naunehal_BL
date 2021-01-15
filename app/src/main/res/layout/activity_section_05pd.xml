@@ -589,8 +589,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="@drawable/bottom">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/quesNum"
@@ -608,38 +608,41 @@
                     <RadioGroup
                         android:id="@+id/pd07"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/pd0701"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.pd07.equals(`0`)}"
-                            android:onClick="@{()->form.setPd07(`0`)}"
+                            android:layout_weight="1"
+                            android:checked="@{form.pd07.equals(`1`)}"
+                            android:onClick="@{()->form.setPd07(`1`)}"
                             android:text="@string/pd0701" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/pd0701x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/pd0701"
-                            android:inputType="number"
-                            android:tag="pd0701"
-                            app:maxValue="0"
-                            app:minValue="0"
-                            android:text="@={form.pd0701x}"
-                            android:visibility='@{form.pd07.equals(`0`) ? View.VISIBLE : View.GONE}'
-                            app:type="range" />
 
                         <RadioButton
                             android:id="@+id/pd0798"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:checked="@{form.pd07.equals(`98`)}"
                             android:onClick="@{()->form.setPd07(`98`)}"
                             android:text="@string/pd0798" />
 
                     </RadioGroup>
+
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/pd0701x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/pd0701"
+                        android:inputType="number"
+                        android:tag="pd0701"
+                        android:text="@={form.pd0701x}"
+                        android:visibility='@{form.pd07.equals(`1`) ? View.VISIBLE : View.GONE}'
+                        app:maxValue="20"
+                        app:minValue="1"
+                        app:type="range" />
 
                 </LinearLayout>
 
@@ -880,44 +883,74 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/pd11" />
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/pd1101" />
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_pd11" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/pd1101"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/pd1101"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:text="@={form.pd1101}"
-                        app:maxValue="3"
-                        app:minValue="1"
-                        app:type="range" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/pd11" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/pd1102" />
+                    </LinearLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/pd1102"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/pd1102"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:text="@={form.pd1102}"
-                        app:maxValue="29"
-                        app:minValue="1"
-                        app:type="range" />
+                        android:layout_marginTop="1dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/pd1101" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd1101"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.pd1101}"
+                            app:maxValue="10"
+                            app:minValue="0"
+                            app:type="range" />
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/pd1102" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd1102"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.pd1102}"
+                            app:maxValue="30"
+                            app:minValue="0"
+                            app:type="range" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -1519,10 +1552,10 @@
                             android:hint="@string/pd1701"
                             android:inputType="number"
                             android:tag="pd1701"
-                            app:maxValue="0"
-                            app:minValue="0"
                             android:text="@={form.pd1701x}"
                             android:visibility='@{form.pd17.equals(`1`) ? View.VISIBLE : View.GONE}'
+                            app:maxValue="0"
+                            app:minValue="0"
                             app:type="range" />
 
                         <RadioButton
@@ -1540,10 +1573,10 @@
                             android:hint="@string/pd1702"
                             android:inputType="number"
                             android:tag="pd1702"
-                            app:maxValue="0"
-                            app:minValue="0"
                             android:text="@={form.pd1702x}"
                             android:visibility='@{form.pd17.equals(`2`) ? View.VISIBLE : View.GONE}'
+                            app:maxValue="0"
+                            app:minValue="0"
                             app:type="range" />
 
                         <RadioButton
@@ -1561,10 +1594,10 @@
                             android:hint="@string/pd1703"
                             android:inputType="number"
                             android:tag="pd1703"
-                            app:maxValue="0"
-                            app:minValue="0"
                             android:text="@={form.pd1703x}"
                             android:visibility='@{form.pd17.equals(`3`) ? View.VISIBLE : View.GONE}'
+                            app:maxValue="0"
+                            app:minValue="0"
                             app:type="range" />
 
                         <RadioButton
@@ -1862,10 +1895,10 @@
                             android:hint="@string/pd2101"
                             android:inputType="number"
                             android:tag="pd2101"
-                            app:maxValue="0"
-                            app:minValue="0"
                             android:text="@={form.pd2101x}"
                             android:visibility='@{form.pd21.equals(`1`) ? View.VISIBLE : View.GONE}'
+                            app:maxValue="0"
+                            app:minValue="0"
                             app:type="range" />
 
                         <RadioButton
@@ -1883,10 +1916,10 @@
                             android:hint="@string/pd2102"
                             android:inputType="number"
                             android:tag="pd2102"
-                            app:maxValue="0"
-                            app:minValue="0"
                             android:text="@={form.pd2102x}"
                             android:visibility='@{form.pd21.equals(`2`) ? View.VISIBLE : View.GONE}'
+                            app:maxValue="0"
+                            app:minValue="0"
                             app:type="range" />
 
                         <RadioButton
@@ -1904,10 +1937,10 @@
                             android:hint="@string/pd2103"
                             android:inputType="number"
                             android:tag="pd2103"
-                            app:maxValue="0"
-                            app:minValue="0"
                             android:text="@={form.pd2103x}"
                             android:visibility='@{form.pd21.equals(`3`) ? View.VISIBLE : View.GONE}'
+                            app:maxValue="0"
+                            app:minValue="0"
                             app:type="range" />
 
                         <RadioButton

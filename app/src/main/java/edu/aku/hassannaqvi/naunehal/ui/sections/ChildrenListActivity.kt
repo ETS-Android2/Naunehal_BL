@@ -65,6 +65,11 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
                                 .show()
                         return@setOnActionSelectedListener false
                     }
+                    if (adapter.childItems.find { it.isMotherAvailable } == null) {
+                        Snackbar.make(findViewById(android.R.id.content), "Please add Mother available children for proceeding to the next section", Snackbar.LENGTH_LONG)
+                                .show()
+                        return@setOnActionSelectedListener false
+                    }
                     childSelection()
                 }
                 R.id.fab_exit -> {
