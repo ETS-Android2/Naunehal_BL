@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.naunehal.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -62,7 +63,7 @@ public class EndingActivity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd() {
+    public void BtnEnd(View view) {
         if (!formValidation()) return;
         //SaveDraft();
 
