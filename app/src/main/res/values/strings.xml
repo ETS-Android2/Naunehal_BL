@@ -1131,6 +1131,7 @@
     <string name='Q_cs13'>cs13</string>
     <string name='Q_cs14'>cs14</string>
     <string name='Q_cs15'>cs15</string>
+    <string name="Q_cs16">CS16</string>
     <string name='Q_cs17'>cs17</string>
     <string name='Q_cs18'>cs18</string>
     <string name='Q_cs19'>cs19</string>
@@ -1270,8 +1271,7 @@
     <string name='Q_se38'>se38</string>
     <string name='Q_se39'>se39</string>
     <string name='Q_se40'>se40</string>
-    <string name="dialog_text">"    Please add Info for second child."</string>
-    <string name="Q_cs16">CS16</string>
+    <string name="dialog_text">"    برائے کرم دوسرے بچے کے لئے معلومات شامل کریں."</string>
 
 
 </resources>
