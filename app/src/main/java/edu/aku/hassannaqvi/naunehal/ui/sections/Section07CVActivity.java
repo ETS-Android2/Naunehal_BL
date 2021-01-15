@@ -71,7 +71,6 @@ public class Section07CVActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, Section081SEActivity.class));
         }
     }
 
@@ -83,6 +82,5 @@ public class Section07CVActivity extends AppCompatActivity {
 
     public void BtnEnd(View view) {
         finish();
-        startActivity(new Intent(this, MainActivity.class));
     }
 }

@@ -188,8 +188,8 @@
                         android:hint="#-####-###"
                         android:inputType="textCapCharacters"
                         android:maxLength="10"
-                        android:text="@={form.hh09}"
-                        android:textDirection="ltr" />
+                        android:textDirection="ltr"
+                        android:text="@={form.hh09}" />
 
                 </LinearLayout>
 

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract.ChildInfoTable;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
@@ -170,6 +171,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildInfoTable.COLUMN_SYNCED_DATE, form.getSyncDate());
         values.put(ChildInfoTable.COLUMN_APPVERSION, form.getAppver());
         values.put(ChildInfoTable.COLUMN_STATUS, form.getStatus());
+        values.put(ChildInfoTable.COLUMN_ISSELECTED, form.getIsSelected());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -364,7 +366,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                allForms.add(new ChildInformation().Hydrate(c));
+                ChildInformation childItem = new ChildInformation().Hydrate(c);
+                childItem.setTotalMonths((Integer.parseInt(childItem.getCb0501()) * 12) + Integer.parseInt(childItem.getCb0502()));
+                allForms.add(childItem);
             }
         } finally {
             if (c != null) {
@@ -430,7 +434,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] where = null;
         if (tableName.getName().equals(ChildContract.ChildTable.class.getName())) {
             query = String.format("select *from %s where %s=? AND %s=? AND %s=? AND %s=?",
-                    tableName,
+                    ChildContract.ChildTable.TABLE_NAME,
                     ChildContract.ChildTable.COLUMN_CLUSTER,
                     ChildContract.ChildTable.COLUMN_HHNO,
                     ChildContract.ChildTable.COLUMN_UUID,
@@ -439,7 +443,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             where = new String[]{cluster, hhno, uuid, fmuid};
         } else if (tableName.getName().equals(IMContract.IMTable.class.getName())) {
             query = String.format("select *from %s where %s=? AND %s=? AND %s=? AND %s=?",
-                    tableName,
+                    IMContract.IMTable.TABLE_NAME,
                     IMContract.IMTable.COLUMN_CLUSTER,
                     IMContract.IMTable.COLUMN_HHNO,
                     IMContract.IMTable.COLUMN_UUID,
@@ -626,6 +630,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /*
      * Update data in tables
      * */
+    public int updateSpecificChildInformationColumn(ChildInformation childInformation, String isSelected) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(ChildInfoTable.COLUMN_ISSELECTED, isSelected);
+
+        String selection = ChildInfoTable.COLUMN_CLUSTER + " =? AND "
+                + ChildInfoTable.COLUMN_HHNO + " =? AND "
+                + ChildInfoTable.COLUMN_UUID + " =? AND "
+                + ChildInfoTable.COLUMN_UID + " =? AND "
+                + ChildInfoTable.COLUMN_ID + " =? ";
+        String[] selectionArgs = {childInformation.getCluster(), childInformation.getHhno(), childInformation.getUuid(), childInformation.getUid(), childInformation.getId()};
+
+        return db.update(ChildInfoTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
     public int updatesChildInformationColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -641,7 +664,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesChild(String column, String value) {
+    public int updatesChildColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();
@@ -656,7 +679,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updatesIM(String column, String value) {
+    public int updatesIMColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();

@@ -49,6 +49,7 @@ object CreateTable {
             + ChildInformationContract.ChildInfoTable.COLUMN_USERNAME + " TEXT,"
             + ChildInformationContract.ChildInfoTable.COLUMN_SYSDATE + " TEXT,"
             + ChildInformationContract.ChildInfoTable.COLUMN_STATUS + " TEXT,"
+            + ChildInformationContract.ChildInfoTable.COLUMN_ISSELECTED + " TEXT,"
             + ChildInformationContract.ChildInfoTable.COLUMN_DEVICEID + " TEXT,"
             + ChildInformationContract.ChildInfoTable.COLUMN_DEVICETAGID + " TEXT,"
             + ChildInformationContract.ChildInfoTable.COLUMN_SYNCED + " TEXT,"

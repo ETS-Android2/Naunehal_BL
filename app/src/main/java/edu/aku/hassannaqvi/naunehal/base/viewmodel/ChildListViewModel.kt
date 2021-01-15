@@ -16,6 +16,11 @@ class ChildListViewModel(internal val repository: GeneralRepository) : ViewModel
     val childResponse: MutableLiveData<ResponseStatusCallbacks<List<ChildInformation>>>
         get() = _childResponse
 
+    private val _childUpdateResponse: MutableLiveData<ResponseStatusCallbacks<Int>> = MutableLiveData()
+
+    val childUpdateResponse: MutableLiveData<ResponseStatusCallbacks<Int>>
+        get() = _childUpdateResponse
+
 
     fun getChildDataFromDB(cluster: String, hhno: String, uuid: String) {
         _childResponse.value = ResponseStatusCallbacks.loading(null)
@@ -35,5 +40,24 @@ class ChildListViewModel(internal val repository: GeneralRepository) : ViewModel
 
         }
 
+    }
+
+    fun updateChildrenDataForSelectionDB(selectedItem: ChildInformation) {
+        _childUpdateResponse.value = ResponseStatusCallbacks.loading(null)
+        viewModelScope.launch {
+            try {
+                delay(1000)
+                val item = selectedItem.totalMonths < 24
+                val children = repository.updateSpecificChildList(selectedItem, if (item) "2" else "1")
+                _childUpdateResponse.value = if (children > 0) {
+                    ResponseStatusCallbacks.success(data = children, message = "Child updated")
+                } else
+                    ResponseStatusCallbacks.error(data = null, message = "Child not updated!")
+            } catch (e: Exception) {
+                _childUpdateResponse.value =
+                        ResponseStatusCallbacks.error(data = null, message = e.message.toString())
+            }
+
+        }
     }
 }

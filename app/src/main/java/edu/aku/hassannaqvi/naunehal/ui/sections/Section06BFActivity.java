@@ -104,7 +104,8 @@ public class Section06BFActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, Section07CVActivity.class));
+            if (Section03CSActivity.selectedChildInfo.getIsSelected().equals("1"))
+                startActivity(new Intent(this, Section07CVActivity.class));
         }
     }
 
@@ -116,7 +117,6 @@ public class Section06BFActivity extends AppCompatActivity {
 
     public void BtnEnd(View view) {
         finish();
-        startActivity(new Intent(this, MainActivity.class));
     }
 
 }
