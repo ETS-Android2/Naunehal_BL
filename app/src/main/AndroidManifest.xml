@@ -70,65 +70,66 @@
             android:name=".ui.sections.Section082SEActivity"
             android:label="Section SE"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.EndingActivity"
             android:label="Section SE"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.Section081SEActivity"
             android:label="Section SE"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.Section07CVActivity"
             android:label="Section CV"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.Section06BFActivity"
             android:label="Section BF"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.Section05PDActivity"
             android:label="Section PD"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.Section04IMActivity"
             android:label="Section IM"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.Section03CSActivity"
             android:label="Section CS"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.Section02CBActivity"
             android:label="Section CB"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.Section01HHActivity"
             android:label="Section HH"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.IdentificationSectionActivity"
-            android:parentActivityName=".ui.MainActivity" />
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".core.AndroidDatabaseManager"

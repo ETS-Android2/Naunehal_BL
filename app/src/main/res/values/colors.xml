@@ -9,8 +9,6 @@
 
     <color name="colorPrimaryOverlay">#7f8E24AA</color>
     <color name="colorPrimaryLightOverlay">#7fCE93D8</color>
-    <color name="colorPrimaryDarkOverlay">#7f6A1B9A</color>
-    <color name="colorAccentOverlay">#7f0091EA</color>
     <color name="colorAccentLightOverlay">#7f00B0FF</color>
 
 
@@ -24,12 +22,6 @@
     <color name="white">#ffffff</color>
     <color name="gray">#7f7f7f</color>
     <color name="green">#009900</color>
-    <color name="green_overlay">#7f009900</color>
-    <color name="red">#990000</color>
     <color name="red_overlay">#7f990000</color>
     <color name="black_overlay">#7f000000</color>
-    <color name="white_overlay">#7fffffff</color>
-    <color name="gray_overlay">#7f7f7f7f</color>
-    <color name="ltgray">#f7f7f7f7</color>
-    <color name="ltgray_overlay">#f7f7f7</color>
 </resources>
