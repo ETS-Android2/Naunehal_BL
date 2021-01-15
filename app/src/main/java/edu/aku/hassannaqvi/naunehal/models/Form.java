@@ -3174,8 +3174,7 @@ public class Form extends BaseObservable {
                     .put("hh22", hh22)
                     .put("hh23", hh23)
                     .put("hh24", hh24)
-                    .put("hh25", hh25)
-                    .put("hh26", hh26);
+                    .put("hh25", hh25);
         } catch (JSONException e) {
             e.printStackTrace();
             return "\"error\":, \"" + e.getMessage() + "\"";
@@ -3561,7 +3560,6 @@ public class Form extends BaseObservable {
                 this.hh23 = json.getString("hh23");
                 this.hh24 = json.getString("hh24");
                 this.hh25 = json.getString("hh25");
-                this.hh26 = json.getString("hh26");
             } catch (JSONException e) {
                 e.printStackTrace();
             }

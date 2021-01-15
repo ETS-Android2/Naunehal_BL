@@ -17,6 +17,8 @@ import edu.aku.hassannaqvi.naunehal.databinding.ActivityEndingBinding;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 
 import static edu.aku.hassannaqvi.naunehal.CONSTANTS.SECTION_MAIN_CHECK_FOR_END;
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivityWithNoHistory;
 
 
 public class EndingActivity extends AppCompatActivity {
@@ -65,61 +67,24 @@ public class EndingActivity extends AppCompatActivity {
         //SaveDraft();
 
         //TODO: needs to work on updateDB
-        if (/*UpdateDB()*/ true) {
+        if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, MainActivity.class));
+            gotoActivityWithNoHistory(this, MainActivity.class);
         } else {
             Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
         }
     }
 
-/*    private Class<?> routingSelectionForChildEnding() {
-        if (MainActivity.countG == 4)
-            return MainActivity.class;
-        else
-            return SectionI1Activity.class;
-    }*/
-
-
-    private void SaveDraft() {
-
-    /*    if (sectionMainCheck) {
-            MainApp.psc.setStatus(bi.istatusa.isChecked() ? "1"
-                    : bi.istatusb.isChecked() ? "2"
-                    : bi.istatus96.isChecked() ? "96"
-                    : "0");
-            MainApp.form.setsI(String.valueOf(MainActivity.countG));
-        } else {
-            MainApp.form.setIstatus(bi.istatusa.isChecked() ? "1"
-                    : bi.istatusb.isChecked() ? "2"
-                    : bi.istatus96.isChecked() ? "96"
-                    : "0");
-
-            MainApp.form.setIstatus96x(bi.istatus96x.getText().toString());
-            MainApp.form.setEndingdatetime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
-        }*/
-    }
-
-
-
-    /*public boolean UpdateDB() {
+    private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount;
-        if (sectionMainCheck) {
-            updcount = db.updatesPSCColumn(PatientsContract.PatientsTable.COLUMN_STATUS, MainApp.psc.getStatus());
-            if (updcount == 1)
-                updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_SI, String.valueOf(MainActivity.countG));
-        } else
-            updcount = db.updateEnding();
-
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_ISTATUS, form.getHh26());
         if (updcount == 1) {
             return true;
         } else {
             Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
             return false;
         }
-
-    }*/
+    }
 
 
     private boolean formValidation() {

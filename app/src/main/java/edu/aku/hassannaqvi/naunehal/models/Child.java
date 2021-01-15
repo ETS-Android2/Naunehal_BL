@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -76,11 +77,17 @@ public class Child extends BaseObservable {
     private String syncDate;
     private String status;
     // SECTION VARIABLES
-    private String respondentname;
+    private String mothername;
     private String childname;
     private String serial;
     private String scs;
 
+    public Child(String cs01, String cs02, String mothername, String fmuid) {
+        this.cs01 = cs01;
+        this.cs02 = cs02;
+        this.mothername = mothername;
+        this.fmuid = fmuid;
+    }
 
     public Child() {
 
@@ -287,12 +294,12 @@ public class Child extends BaseObservable {
     }
 
 
-    public String getRespondentname() {
-        return respondentname;
+    public String getMothername() {
+        return mothername;
     }
 
-    public Child setRespondentname(String respondentname) {
-        this.respondentname = respondentname;
+    public Child setMothername(String mothername) {
+        this.mothername = mothername;
         return this;
     }
 
@@ -726,7 +733,7 @@ public class Child extends BaseObservable {
         this.synced = jsonObject.getString(ChildContract.ChildTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(ChildContract.ChildTable.COLUMN_SYNCED_DATE);
         this.status = jsonObject.getString(ChildContract.ChildTable.COLUMN_STATUS);
-        this.respondentname = jsonObject.getString(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME);
+        this.mothername = jsonObject.getString(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME);
         this.childname = jsonObject.getString(ChildContract.ChildTable.COLUMN_CHILD_NAME);
         this.serial = jsonObject.getString(ChildContract.ChildTable.COLUMN_SERIAL);
 
@@ -754,7 +761,7 @@ public class Child extends BaseObservable {
         this.synced = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SYNCED_DATE));
         this.status = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_STATUS));
-        this.respondentname = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME));
+        this.mothername = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME));
         this.childname = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_CHILD_NAME));
         this.serial = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SERIAL));
 
@@ -847,7 +854,7 @@ public class Child extends BaseObservable {
             json.put(ChildContract.ChildTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(ChildContract.ChildTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
             json.put(ChildContract.ChildTable.COLUMN_STATUS, this.status == null ? JSONObject.NULL : this.status);
-            json.put(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME, this.respondentname == null ? JSONObject.NULL : this.respondentname);
+            json.put(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME, this.mothername == null ? JSONObject.NULL : this.mothername);
             json.put(ChildContract.ChildTable.COLUMN_CHILD_NAME, this.childname == null ? JSONObject.NULL : this.childname);
             json.put(ChildContract.ChildTable.COLUMN_SERIAL, this.serial == null ? JSONObject.NULL : this.serial);
 

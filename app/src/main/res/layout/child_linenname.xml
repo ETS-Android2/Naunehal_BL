@@ -2,6 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="childCard"
+            type="edu.aku.hassannaqvi.naunehal.models.ChildCard" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +37,7 @@
                     android:layout_marginTop="@dimen/_4sdp"
                     android:background="@color/white"
                     android:maxLength="22"
-                    android:text="Muhammad Hussain"
+                    android:text="@{childCard.name}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#FF6200EE"
                     android:textSize="@dimen/_12sdp"
@@ -43,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:background="@color/white"
-                    android:text="Mother: Adefg"
+                    android:text="@{childCard.motherName}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#FFBB86FC"
                     android:textSize="@dimen/_8sdp"
@@ -70,7 +79,7 @@
                         android:layout_height="@dimen/_40sdp"
                         android:layout_margin="@dimen/_5sdp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/ctr_childboy" />
+                        android:src="@{childCard.gender}" />
 
                 </LinearLayout>
 

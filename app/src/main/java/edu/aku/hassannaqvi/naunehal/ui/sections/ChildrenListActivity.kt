@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
@@ -64,7 +65,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
                                 .show()
                         return@setOnActionSelectedListener false
                     }
-                    gotoActivity(SelectedChildrenListActivity::class.java)
+                    childSelection()
                 }
                 R.id.fab_exit -> {
                     openSectionEndingActivity()
@@ -92,6 +93,22 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
                     ResponseStatus.LOADING -> {
                         bi.multiStateView.viewState = MultiStateView.ViewState.LOADING
                     }
+                }
+            }
+        })
+
+        /*
+        * Fetch childResponse
+        * */
+        viewModel.childUpdateResponse.observe(this, {
+            when (it.status) {
+                ResponseStatus.SUCCESS -> {
+                    gotoActivity(SelectedChildrenListActivity::class.java)
+                }
+                ResponseStatus.ERROR -> {
+                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                }
+                ResponseStatus.LOADING -> {
                 }
             }
         })
@@ -133,5 +150,18 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         super.onResume()
 
         viewModel.getChildDataFromDB(MainApp.form.cluster, MainApp.form.hhno, MainApp.form.uid)
+    }
+
+    override fun onBackPressed() {
+        Toast.makeText(applicationContext, "You Can't go back", Toast.LENGTH_LONG).show()
+    }
+
+    /*
+    * Setting child selection
+    * */
+    private fun childSelection() {
+        val childList = adapter.childItems
+        val selectedItem = childList.sortedBy { it.totalMonths }[0]
+        viewModel.updateChildrenDataForSelectionDB(selectedItem)
     }
 }

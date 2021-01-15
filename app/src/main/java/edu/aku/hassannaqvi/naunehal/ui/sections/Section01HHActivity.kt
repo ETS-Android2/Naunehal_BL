@@ -123,6 +123,7 @@ class Section01HHActivity : AppCompatActivity() {
         {
             initForm() //<== If form does not exist in database (New Form)
         }
+        MainApp.form = Form()
         bi.form = MainApp.form
         setupSkips()
     }
@@ -237,7 +238,6 @@ class Section01HHActivity : AppCompatActivity() {
 
     // Only in First Section of every Table.
     private fun initForm() {
-        MainApp.form = Form()
         MainApp.form.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
         MainApp.form.userName = MainApp.user.userName
         MainApp.form.dcode = districtCode.get(bi.hh05.selectedItemPosition - 1)
