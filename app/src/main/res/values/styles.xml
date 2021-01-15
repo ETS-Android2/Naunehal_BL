@@ -59,7 +59,7 @@
         <item name="android:fillAfter">true</item>
         <item name="android:enterFadeDuration">600</item>
         <item name="android:exitFadeDuration">200</item>
-        <item name="android:layoutDirection">ltr</item>
+        <item name="android:layoutDirection">rtl</item>
         <item name="android:animateLayoutChanges">false</item>
 
     </style>
@@ -191,20 +191,6 @@
     </style>
 
 
-    <style name="SpinnerItemText">
-        <item name="android:textSize">20sp</item>
-    </style>
-
-
-    <style name="FullscreenTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:windowBackground">@null</item>
-        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
-        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
-    </style>
-
-
     <!--Card View Start-->
     <style name="cardView">
         <!--
@@ -220,35 +206,6 @@
         <!--<item name="android:layout_marginLeft">10dp</item>-->
         <item name="cardCornerRadius">7dp</item>
         <item name="cardElevation">1dp</item>
-    </style>
-
-    <style name="vlinearlayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">vertical</item>
-    </style>
-
-    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/grayDark</item>
-    </style>
-
-    <style name="EditTextAlpha" parent="@style/textInput">
-        <item name="android:digits">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/white</item>
-        <item name="android:textColor">@android:color/black</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:padding">16dp</item>
-        <item name="android:imeOptions">actionDone</item>
-        <item name="android:singleLine">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:clickable">true</item>
-        <item name="android:radius">8dp</item>
-
-        <!--        <item name="android:textDirection">ltr</item>-->
-
-        <item name="android:focusableInTouchMode">true</item>
     </style>
 
     <style name="quesNum">
@@ -277,17 +234,6 @@
 
     </style>
 
-    <style name="heading">
-        <item name="android:background">@drawable/subheadings_separator</item>
-        <item name="android:padding">8dp</item>
-        <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:minHeight">52dp</item>
-        <item name="android:textSize">30sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:letterSpacing">0.15</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-
     <style name="sub_labels">
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:background">@drawable/sub_labels_separator</item>
@@ -313,19 +259,7 @@
     </style>
 
 
-    <style name="Default_Layout"  parent="Theme.AppCompat.Light.DarkActionBar"/>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="textView3Head">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:padding">20dp</item>
-        <item name="android:textStyle">italic</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:background">@color/colorPrimaryDark</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
 
     <style name="CustomShowcaseTheme" parent="ShowcaseView.Light">
         <item name="sv_backgroundColor">#33b78ff7</item>
