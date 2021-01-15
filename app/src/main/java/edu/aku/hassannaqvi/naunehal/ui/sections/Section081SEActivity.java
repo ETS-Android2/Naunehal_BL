@@ -29,7 +29,6 @@ public class Section081SEActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // only in First Section
         //MainApp.form = new Form();
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_081se);
         bi.setForm(MainApp.form);
 
