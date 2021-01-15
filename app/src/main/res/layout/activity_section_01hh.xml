@@ -48,9 +48,8 @@
                             android:text="@string/Q_hh05" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/hh05" />
 
                     </LinearLayout>
@@ -88,9 +87,8 @@
                             android:text="@string/Q_hh06" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/hh06" />
 
                     </LinearLayout>
@@ -128,9 +126,8 @@
                             android:text="@string/Q_hh08" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/hh08" />
 
                     </LinearLayout>
@@ -173,9 +170,8 @@
                             android:text="@string/Q_hh09" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/hh09" />
 
                     </LinearLayout>
@@ -239,9 +235,8 @@
                                 android:text="@string/Q_hh01" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/hh01" />
 
                         </LinearLayout>
@@ -285,9 +280,8 @@
                                 android:text="@string/Q_hh02" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/hh02" />
 
                         </LinearLayout>
@@ -302,6 +296,7 @@
                                 android:id="@+id/hh0201"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:gravity="center"
                                 android:focusable="false"
                                 android:hint="hh02" />
 
@@ -334,9 +329,8 @@
                                 android:text="@string/Q_hh07" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/hh07" />
 
                         </LinearLayout>
@@ -375,9 +369,8 @@
                                 android:text="@string/Q_hh10" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/hh10" />
 
                         </LinearLayout>
@@ -416,9 +409,8 @@
                                 android:text="@string/Q_hh11" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/hh11" />
 
                         </LinearLayout>
@@ -480,9 +472,8 @@
                                     android:text="@string/Q_hh12" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh12" />
 
                             </LinearLayout>
@@ -522,9 +513,8 @@
                                     android:text="@string/Q_hh13" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh13" />
 
                             </LinearLayout>
@@ -570,9 +560,8 @@
                                     android:text="@string/Q_hh14" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh14" />
 
                             </LinearLayout>
@@ -628,9 +617,8 @@
                                     android:text="@string/Q_hh15" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh15" />
 
                             </LinearLayout>
@@ -710,9 +698,8 @@
                                     android:text="@string/Q_hh16" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh16" />
 
                             </LinearLayout>
@@ -758,9 +745,8 @@
                                     android:text="@string/Q_hh17" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh17" />
 
                             </LinearLayout>
@@ -922,9 +908,8 @@
                                     android:text="@string/Q_hh18" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh18" />
 
                             </LinearLayout>
@@ -987,9 +972,8 @@
                                         android:text="@string/Q_hh19" />
 
                                     <TextView
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:layout_weight="1"
                                         android:text="@string/hh19" />
 
                                 </LinearLayout>
@@ -1029,9 +1013,8 @@
                                         android:text="@string/Q_hh20" />
 
                                     <TextView
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:layout_weight="1"
                                         android:text="@string/hh20" />
 
                                 </LinearLayout>
@@ -1195,9 +1178,8 @@
                                     android:text="@string/Q_hh21" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh21" />
 
                             </LinearLayout>
@@ -1243,9 +1225,8 @@
                                     android:text="@string/Q_hh22" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh22" />
 
                             </LinearLayout>
@@ -1291,9 +1272,8 @@
                                     android:text="@string/Q_hh23" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh23" />
 
                             </LinearLayout>
@@ -1339,9 +1319,8 @@
                                     android:text="@string/Q_hh24" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh24" />
 
                             </LinearLayout>
@@ -1387,9 +1366,8 @@
                                     android:text="@string/Q_hh25" />
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/hh25" />
 
                             </LinearLayout>
