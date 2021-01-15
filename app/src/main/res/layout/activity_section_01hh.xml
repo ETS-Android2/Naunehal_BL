@@ -186,9 +186,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:hint="#-####-###"
-                        android:inputType="number"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="10"
                         android:text="@={form.hh09}"
-                        app:mask="#-####-###" />
+                        android:textDirection="ltr" />
 
                 </LinearLayout>
 

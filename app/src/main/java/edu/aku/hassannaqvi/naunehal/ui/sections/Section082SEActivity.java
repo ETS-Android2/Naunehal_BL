@@ -8,12 +8,11 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -39,6 +38,7 @@ public class Section082SEActivity extends AppCompatActivity {
         bi.setCallback(this);
         setupSkips();
     }
+
 
     private void setupSkips() {
 
@@ -114,7 +114,6 @@ public class Section082SEActivity extends AppCompatActivity {
         finish();
         startActivity(new Intent(this, MainActivity.class));
     }
-
 
 
     public void se25OnTextChanged(CharSequence s, int start, int before, int count) {
