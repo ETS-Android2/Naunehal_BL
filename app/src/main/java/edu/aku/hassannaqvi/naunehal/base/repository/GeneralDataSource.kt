@@ -29,6 +29,8 @@ interface GeneralDataSource {
     * For Child List
     * */
     suspend fun getChildList(cluster: String, hhno: String, uuid: String): ArrayList<ChildInformation>
+
+    suspend fun updateSpecificChildList(info: ChildInformation, isSelected: String): Int
     /*
     * For Child List End
     * */

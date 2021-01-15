@@ -34,7 +34,7 @@ public class FormsContract {
         public static final String COLUMN_S07CV = "s07CV";
         public static final String COLUMN_S08SE = "s08SE";
 
-        public static final String COLUMN_ISTATUS = "istatus";
+        public static final String COLUMN_ISTATUS = "hh26";
         public static final String COLUMN_ISTATUS96x = "istatus96x";
         public static final String COLUMN_ENDINGDATETIME = "endingdatetime";
         public static final String COLUMN_GPS = "gps";

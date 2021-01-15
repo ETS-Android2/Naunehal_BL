@@ -21,6 +21,7 @@ public class ChildInformationContract {
         public static final String COLUMN_UCODE = "ucCode";
         public static final String COLUMN_CLUSTER = "clusterno";
         public static final String COLUMN_HHNO = "hhno";
+        public static final String COLUMN_ISSELECTED = "isselected";
         public static final String COLUMN_SCB = "scb";
 
         public static final String COLUMN_DEVICEID = "deviceid";

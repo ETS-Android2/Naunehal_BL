@@ -1,26 +1,27 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.snackbar.Snackbar
 import com.kennyc.view.MultiStateView
 import com.leinardi.android.speeddial.SpeedDialActionItem
+import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.adapters.SelectedChildListAdapter
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
-import edu.aku.hassannaqvi.naunehal.base.viewmodel.ChildListViewModel
 import edu.aku.hassannaqvi.naunehal.base.viewmodel.SelectedChildrenListViewModel
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
-import edu.aku.hassannaqvi.naunehal.databinding.ActivityChildrenListBinding
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySelectedChildrenListBinding
 import edu.aku.hassannaqvi.naunehal.models.Child
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
 import edu.aku.hassannaqvi.naunehal.utils.WarningActivityInterface
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
+import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
 import edu.aku.hassannaqvi.naunehal.utils.openSectionEndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.openWarningActivity
@@ -63,16 +64,12 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         bi.speedDial.setOnActionSelectedListener { actionItem ->
             when (actionItem.id) {
                 R.id.fab_finish -> {
-                    if (false) {
-                        Snackbar.make(findViewById(android.R.id.content), "Please add children's for proceeding to the next section", Snackbar.LENGTH_LONG)
+                    if (adapter.childItems.filter { it.childTableDataExist != null }.size != adapter.childItems.size) {
+                        Snackbar.make(findViewById(android.R.id.content), "Please update all children's for proceeding to the next section", Snackbar.LENGTH_LONG)
                                 .show()
                         return@setOnActionSelectedListener false
                     }
-                    gotoActivity(Section03CSActivity::class.java)
-//                    val flag = adapter.mList.find { item -> item.memFlag == 3 }
-//                    finish()
-//                    startActivity(Intent(this, EndingActivity::class.java).putExtra("complete", flag == null).putExtra(CONSTANTS.NOT_IN_HOME_END, flag != null))
-//                    return@OnActionSelectedListener true // false will close it without animation
+                    gotoActivity(Section081SEActivity::class.java)
                 }
                 R.id.fab_exit -> {
                     openSectionEndingActivity()
@@ -111,10 +108,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
     * */
     override fun callWarningActivity(item: Any?) {
         val information = item as ChildInformation
-
-        MainApp.child = Child()
-
-        gotoActivity(Section03CSActivity::class.java)
+        gotoActivityWithSerializable(Section03CSActivity::class.java, CONSTANTS.CHILD_DATA_UNDER5, information)
     }
 
     /*
@@ -125,7 +119,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
             override fun onItemClick(item: ChildInformation, position: Int) {
                 openWarningActivity(
                         title = "CONFIRMATION!",
-                        message = "Are you sure, you want to edit ${item.cb02.toUpperCase(Locale.ENGLISH)} interview?",
+                        message = "Are you sure, you want to continue ${item.cb02.toUpperCase(Locale.ENGLISH)} interview?",
                         data = item)
             }
         })
@@ -139,5 +133,9 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         super.onResume()
 
         viewModel.getChildDataFromDB(MainApp.form.cluster, MainApp.form.hhno, MainApp.form.uid)
+    }
+
+    override fun onBackPressed() {
+        Toast.makeText(applicationContext, "You Can't go back", Toast.LENGTH_LONG).show()
     }
 }

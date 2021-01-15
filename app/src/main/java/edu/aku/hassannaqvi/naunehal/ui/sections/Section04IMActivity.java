@@ -21,13 +21,20 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Objects;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
+import edu.aku.hassannaqvi.naunehal.CONSTANTS;
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection04imBinding;
+import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal.ui.TakePhoto;
 import edu.aku.hassannaqvi.naunehal.utils.DateUtilsKt;
@@ -42,12 +49,14 @@ public class Section04IMActivity extends AppCompatActivity {
     ActivitySection04imBinding bi;
     boolean im01Flag = false, imFlag = true, daysFlag = true;
     private LocalDate calculatedDOB = null;
+    private ChildInformation info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_04im);
+        info = Section03CSActivity.selectedChildInfo;
+
         bi.setForm(MainApp.immunization);
         setupSkips();
         setupTextWatchers();
@@ -62,6 +71,23 @@ public class Section04IMActivity extends AppCompatActivity {
             bi.im04yy.setMaxvalue(maxYears);
         }
 
+    }
+
+    // Only in First Section of every Table.
+    private void initForm() {
+        MainApp.immunization.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        MainApp.immunization.setUuid(MainApp.form.getUid());
+        MainApp.immunization.setUserName(MainApp.user.getUserName());
+        MainApp.immunization.setDcode(MainApp.form.getDcode());
+        MainApp.immunization.setUcode(MainApp.form.getUcode());
+        MainApp.immunization.setCluster(MainApp.form.getCluster());
+        MainApp.immunization.setHhno(MainApp.form.getHhno());
+        MainApp.immunization.setDeviceId(MainApp.appInfo.getDeviceID());
+        MainApp.immunization.setDeviceTag(MainApp.appInfo.getTagName());
+        MainApp.immunization.setAppver(MainApp.appInfo.getAppVersion());
+        MainApp.immunization.setSerial(info.getCb01());
+        MainApp.immunization.setFmuid(info.getUid());
+        MainApp.immunization.setChildname(info.cb02);
     }
 
     private void setupSkips() {
@@ -194,12 +220,32 @@ public class Section04IMActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.fldGrpDOBCheck02);
             Clear.clearAllFields(bi.fldGrpDOBCheck03);
         }
-
-
-        // SaveDraft(); //<== This function is no longer needed after DataBinding
-        if (/*UpdateDB()*/ true) {
+        MainApp.immunization.setStatus("1");
+        initForm();
+        if (updateDB()) {
             finish();
-            startActivity(new Intent(this, Section05PDActivity.class));
+            if (info.getIsSelected().equals("1"))
+                startActivity(new Intent(this, Section05PDActivity.class));
+        }
+    }
+
+    private Boolean updateDB() {
+        DatabaseHelper db = MainApp.appInfo.dbHelper;
+        long updcount = db.addIM(MainApp.immunization);
+        MainApp.immunization.setId(String.valueOf(updcount));
+        if (updcount > 0) {
+            MainApp.immunization.setUid(MainApp.immunization.getDeviceId() + MainApp.immunization.getId());
+            long count = db.updatesIMColumn(IMContract.IMTable.COLUMN_UID, MainApp.immunization.getUid());
+            if (count > 0)
+                count = db.updatesIMColumn(IMContract.IMTable.COLUMN_SIM, MainApp.immunization.getSim());
+            if (count > 0) return true;
+            else {
+                Toast.makeText(this, "SORRY! Failed to update DB)", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } else {
+            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
+            return false;
         }
     }
 
@@ -222,8 +268,13 @@ public class Section04IMActivity extends AppCompatActivity {
 
 
     public void BtnEnd(View view) {
-        finish();
-        startActivity(new Intent(this, MainActivity.class));
+        MainApp.immunization.setStatus("2");
+        initForm();
+        if (updateDB()) {
+            finish();
+            if (info.getIsSelected().equals("1"))
+                startActivity(new Intent(this, Section05PDActivity.class));
+        }
     }
 
 

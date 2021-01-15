@@ -12,6 +12,10 @@ open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource
         db.getFamilyFromDB(cluster, hhno, uuid)
     }
 
+    override suspend fun updateSpecificChildList(info: ChildInformation, isSelected: String): Int = withContext(Dispatchers.IO) {
+        db.updateSpecificChildInformationColumn(info, isSelected)
+    }
+
     override suspend fun getDistrictsFromDB(): ArrayList<Districts> = withContext(Dispatchers.IO) {
         db.allDistricts
     }

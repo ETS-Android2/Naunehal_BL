@@ -132,7 +132,6 @@ class LoginActivity : AppCompatActivity(), LoginUISource {
                 job.join()
                 if (approval) {
                     showProgress(false)
-                    finish()
                     gotoActivity(MainActivity::class.java)
                 }
             }

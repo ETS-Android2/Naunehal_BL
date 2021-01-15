@@ -11,11 +11,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.LocalDate;
 
+import java.io.Serializable;
+
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
-public class ChildInformation extends BaseObservable {
+public class ChildInformation extends BaseObservable implements Serializable {
 
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
@@ -36,6 +38,7 @@ public class ChildInformation extends BaseObservable {
     private String status;
     private String synced;
     private String syncDate;
+    private String isSelected = "0";
 
     // SECTION VARIABLES
     private String scb;
@@ -64,9 +67,20 @@ public class ChildInformation extends BaseObservable {
     public String cb16;
 
     //Not saving in db
-    private boolean flag = true, motherAvailable = true, under35 = false;
+    private boolean flag = true,
+            motherAvailable = true,
+            under35 = false;
+    private int totalMonths = 0;
     private Child childTableDataExist = null;
     private LocalDate calculatedDOB = null;
+
+    public int getTotalMonths() {
+        return totalMonths;
+    }
+
+    public void setTotalMonths(int totalMonths) {
+        this.totalMonths = totalMonths;
+    }
 
     public LocalDate getCalculatedDOB() {
         return calculatedDOB;
@@ -131,6 +145,14 @@ public class ChildInformation extends BaseObservable {
         this.cb15 = child.getCb15();
         this.cb16 = child.getCb16();
 
+    }
+
+    public String getIsSelected() {
+        return isSelected;
+    }
+
+    public void setIsSelected(String isSelected) {
+        this.isSelected = isSelected;
     }
 
     @Bindable
@@ -563,6 +585,7 @@ public class ChildInformation extends BaseObservable {
         this.synced = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE);
         this.status = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_STATUS);
+        this.isSelected = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_ISSELECTED);
 
         this.scb = jsonObject.getString(ChildInformationContract.ChildInfoTable.COLUMN_SCB);
 
@@ -587,6 +610,7 @@ public class ChildInformation extends BaseObservable {
         this.synced = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE));
         this.status = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_STATUS));
+        this.isSelected = cursor.getString(cursor.getColumnIndex(ChildInformationContract.ChildInfoTable.COLUMN_ISSELECTED));
 
         //For childCount
         //this.s01HH = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_S01HH));
@@ -658,6 +682,7 @@ public class ChildInformation extends BaseObservable {
             json.put(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
             json.put(ChildInformationContract.ChildInfoTable.COLUMN_STATUS, this.status == null ? JSONObject.NULL : this.status);
+            json.put(ChildInformationContract.ChildInfoTable.COLUMN_ISSELECTED, this.isSelected == null ? JSONObject.NULL : this.isSelected);
 
             json.put(ChildInformationContract.ChildInfoTable.COLUMN_SCB, new JSONObject(sCBtoString()));
 
