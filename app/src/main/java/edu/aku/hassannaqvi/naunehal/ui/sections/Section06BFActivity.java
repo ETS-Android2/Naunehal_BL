@@ -109,8 +109,7 @@ public class Section06BFActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
-            if (info.getIsSelected().equals("1"))
-                startActivity(new Intent(this, Section07CVActivity.class));
+            startActivity(new Intent(this, Section07CVActivity.class));
         }
     }
 

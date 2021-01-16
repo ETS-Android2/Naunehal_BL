@@ -46,7 +46,7 @@ import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoAct
 public class Section04IMActivity extends AppCompatActivity {
 
     ActivitySection04imBinding bi;
-    boolean im01Flag = false, imFlag = true, daysFlag = true;
+    boolean im01Flag = true, imFlag = true, daysFlag = true;
     private LocalDate calculatedDOB = null;
     private ChildInformation info;
 
@@ -225,10 +225,8 @@ public class Section04IMActivity extends AppCompatActivity {
         MainApp.immunization.setStatus("1");
         if (updateDB()) {
             finish();
-            if (info.getIsSelected().equals("1"))
+            if (info.getIsSelected().equals("1") || info.getIsSelected().equals("2"))
                 gotoActivity(this, Section05PDActivity.class);
-            else if (info.getIsSelected().equals("2"))
-                gotoActivity(this, Section06BFActivity.class);
         }
     }
 
@@ -275,10 +273,8 @@ public class Section04IMActivity extends AppCompatActivity {
         MainApp.immunization.setStatus("2");
         if (updateDB()) {
             finish();
-            if (info.getIsSelected().equals("1"))
+            if (info.getIsSelected().equals("1") || info.getIsSelected().equals("2"))
                 gotoActivity(this, Section05PDActivity.class);
-            else if (info.getIsSelected().equals("2"))
-                gotoActivity(this, Section06BFActivity.class);
         }
     }
 

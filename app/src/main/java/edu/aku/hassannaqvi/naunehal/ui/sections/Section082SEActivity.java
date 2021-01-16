@@ -20,6 +20,7 @@ import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection082seBinding;
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
+import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 
@@ -111,8 +112,7 @@ public class Section082SEActivity extends AppCompatActivity {
 
 
     public void BtnEnd(View view) {
-        finish();
-        startActivity(new Intent(this, MainActivity.class));
+        AppUtilsKt.contextEndActivity(this);
     }
 
 
