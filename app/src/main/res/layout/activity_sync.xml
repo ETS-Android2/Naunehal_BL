@@ -52,8 +52,8 @@
                     android:layout_margin="5dp"
                     android:background="@color/colorPrimary"
                     android:elevation="2dp"
-                    android:padding="16dp"
                     android:onClick="ProcessStart"
+                    android:padding="16dp"
                     android:text="@string/btnDownload"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
@@ -68,26 +68,27 @@
                     android:layout_marginTop="15dp"
                     android:background="@color/colorPrimary"
                     android:elevation="2dp"
+                    android:onClick="ProcessStart"
                     android:padding="16dp"
                     android:text="@string/btnUpload"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
-<!--                <Button
-                    android:id="@+id/btnUploadPhotos"
-                    style="@style/TextAppearance.AppCompat.Small"
-                    android:layout_width="wrap_content"
+                <!--                <Button
+                                    android:id="@+id/btnUploadPhotos"
+                                    style="@style/TextAppearance.AppCompat.Small"
+                                    android:layout_width="wrap_content"
 
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@color/colorPrimary"
-                    android:elevation="2dp"
-                    android:onClick="uploadPhotos"
-                    android:padding="16dp"
-                    android:text="Upload Photos"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:visibility="gone" />-->
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:background="@color/colorPrimary"
+                                    android:elevation="2dp"
+                                    android:onClick="uploadPhotos"
+                                    android:padding="16dp"
+                                    android:text="Upload Photos"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:visibility="gone" />-->
             </LinearLayout>
 
             <androidx.cardview.widget.CardView

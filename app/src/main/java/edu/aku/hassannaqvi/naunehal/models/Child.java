@@ -733,7 +733,7 @@ public class Child extends BaseObservable {
         this.synced = jsonObject.getString(ChildContract.ChildTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(ChildContract.ChildTable.COLUMN_SYNCED_DATE);
         this.status = jsonObject.getString(ChildContract.ChildTable.COLUMN_STATUS);
-        this.mothername = jsonObject.getString(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME);
+        this.mothername = jsonObject.getString(ChildContract.ChildTable.COLUMN_MOTHER_NAME);
         this.childname = jsonObject.getString(ChildContract.ChildTable.COLUMN_CHILD_NAME);
         this.serial = jsonObject.getString(ChildContract.ChildTable.COLUMN_SERIAL);
 
@@ -761,7 +761,7 @@ public class Child extends BaseObservable {
         this.synced = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SYNCED_DATE));
         this.status = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_STATUS));
-        this.mothername = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME));
+        this.mothername = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_MOTHER_NAME));
         this.childname = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_CHILD_NAME));
         this.serial = cursor.getString(cursor.getColumnIndex(ChildContract.ChildTable.COLUMN_SERIAL));
 
@@ -854,7 +854,7 @@ public class Child extends BaseObservable {
             json.put(ChildContract.ChildTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(ChildContract.ChildTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
             json.put(ChildContract.ChildTable.COLUMN_STATUS, this.status == null ? JSONObject.NULL : this.status);
-            json.put(ChildContract.ChildTable.COLUMN_RESPONDENT_NAME, this.mothername == null ? JSONObject.NULL : this.mothername);
+            json.put(ChildContract.ChildTable.COLUMN_MOTHER_NAME, this.mothername == null ? JSONObject.NULL : this.mothername);
             json.put(ChildContract.ChildTable.COLUMN_CHILD_NAME, this.childname == null ? JSONObject.NULL : this.childname);
             json.put(ChildContract.ChildTable.COLUMN_SERIAL, this.serial == null ? JSONObject.NULL : this.serial);
 

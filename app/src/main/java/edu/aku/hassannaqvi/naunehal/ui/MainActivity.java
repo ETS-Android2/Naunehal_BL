@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.naunehal.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,7 +14,6 @@ import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.AndroidDatabaseManager;
-import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity;
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section02CBActivity;
@@ -46,19 +46,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                    startActivity(new Intent(this, AndroidDatabaseManager.class));
+            case R.id.action_database:
+                startActivity(new Intent(this, AndroidDatabaseManager.class));
                 break;
             case R.id.action_data_sync:
-                //startActivity(new Intent(this, SyncActivity.class));
+                startActivity(new Intent(this, SyncActivity.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void openForm(View view) {
         Intent oF = null;
         switch (view.getId()) {

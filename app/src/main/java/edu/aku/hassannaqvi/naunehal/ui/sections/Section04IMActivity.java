@@ -27,6 +27,7 @@ import java.util.Objects;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -36,14 +37,16 @@ import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
 import edu.aku.hassannaqvi.naunehal.ui.TakePhoto;
 import edu.aku.hassannaqvi.naunehal.utils.DateUtilsKt;
+import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel;
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository;
 import kotlin.Pair;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.contextEndActivity;
 import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivity;
 
-public class Section04IMActivity extends AppCompatActivity {
+public class Section04IMActivity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySection04imBinding bi;
     boolean im01Flag = true, imFlag = true, daysFlag = true;
@@ -88,7 +91,8 @@ public class Section04IMActivity extends AppCompatActivity {
         MainApp.immunization.setAppver(MainApp.appInfo.getAppVersion());
         MainApp.immunization.setSerial(info.getCb01());
         MainApp.immunization.setFmuid(info.getUid());
-        MainApp.immunization.setChildname(info.cb02);
+        MainApp.immunization.setChildname(info.getCb02());
+        MainApp.immunization.setMothername(info.getCb07());
     }
 
     private void setupSkips() {
@@ -141,6 +145,7 @@ public class Section04IMActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                bi.childAgeWarning.setVisibility(View.GONE);
                 calculatedDOB = null;
                 if (!bi.im0201.isChecked()) return;
                 String txt01, txt02, txt03;
@@ -191,6 +196,8 @@ public class Section04IMActivity extends AppCompatActivity {
                                 bi.fldGrpDOBCheck01.setVisibility(View.GONE);
                                 bi.fldGrpDOBCheck02.setVisibility(View.GONE);
                                 bi.fldGrpDOBCheck03.setVisibility(View.GONE);
+
+                                bi.childAgeWarning.setVisibility(View.VISIBLE);
                             } else {
                                 bi.fldGrpDOBCheck01.setVisibility(View.VISIBLE);
                                 bi.fldGrpDOBCheck02.setVisibility(View.VISIBLE);
@@ -270,13 +277,7 @@ public class Section04IMActivity extends AppCompatActivity {
 
 
     public void BtnEnd(View view) {
-        initForm();
-        MainApp.immunization.setStatus("2");
-        if (updateDB()) {
-            finish();
-            if (info.getIsSelected().equals("1") || info.getIsSelected().equals("2"))
-                gotoActivity(this, Section05PDActivity.class);
-        }
+        contextEndActivity(this);
     }
 
 
@@ -610,5 +611,14 @@ public class Section04IMActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void endSecActivity(boolean flag) {
+        initForm();
+        MainApp.immunization.setStatus("2");
+        if (updateDB()) {
+            finish();
+        }
     }
 }

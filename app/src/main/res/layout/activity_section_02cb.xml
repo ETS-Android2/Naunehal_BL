@@ -292,8 +292,8 @@
                                 android:onTextChanged="@{callback::cb04yyOnTextChanged}"
                                 android:text="@={childInformation.cb04yy}"
                                 app:defaultValue="9998"
-                                app:maxValue="2020"
-                                app:minValue="2015"
+                                app:maxValue="2021"
+                                app:minValue="2016"
                                 app:type="range" />
 
                         </LinearLayout>

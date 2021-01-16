@@ -201,7 +201,7 @@
                                 android:maxLength="4"
                                 android:text="@={form.bf3y}"
                                 app:maxValue="2021"
-                                app:minValue="2015"
+                                app:minValue="2016"
                                 app:type="range" />
 
                             <TextView
