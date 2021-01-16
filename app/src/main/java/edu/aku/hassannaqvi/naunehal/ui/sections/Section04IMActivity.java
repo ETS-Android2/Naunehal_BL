@@ -49,7 +49,7 @@ import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoAct
 public class Section04IMActivity extends AppCompatActivity {
 
     ActivitySection04imBinding bi;
-    boolean im01Flag = false, imFlag = true, daysFlag = true;
+    boolean im01Flag = true, imFlag = true, daysFlag = true;
     private LocalDate calculatedDOB = null;
     private ChildInformation info;
 

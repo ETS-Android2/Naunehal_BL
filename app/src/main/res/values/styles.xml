@@ -64,7 +64,6 @@
 
     </style>
 
-
     <style name="BackgroundStyle" parent="android:Widget.ScrollView">
         <item name="android:background">@drawable/app_bg_gray</item>
         <item name="android:padding">24dp</item>
@@ -190,7 +189,6 @@
         <item name="android:text">SpinnerItemText</item>
     </style>
 
-
     <!--Card View Start-->
     <style name="cardView">
         <!--
@@ -248,7 +246,6 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
-
     <style name="DatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:layout_gravity">center_horizontal|center_vertical</item>
         <item name="colorAccent">@color/colorPrimary</item>
@@ -257,7 +254,6 @@
         <item name="android:selectableItemBackgroundBorderless">@color/white</item>
         <item name="colorControlHighlight">@color/colorPrimaryBeta</item>
     </style>
-
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -274,6 +270,11 @@
         <item name="android:textSize">30sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>
