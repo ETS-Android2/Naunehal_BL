@@ -26,6 +26,7 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding
 import edu.aku.hassannaqvi.naunehal.models.Form
+import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -193,7 +194,12 @@ class Section01HHActivity : AppCompatActivity() {
         initForm() //<== This function is no longer needed after DataBinding
         if (updateDB()) {
             finish()
-            startActivity(Intent(this, ChildrenListActivity::class.java))
+            startActivity(Intent(this,
+                    if (bi.hh1102.isChecked) {
+                        EndingActivity::class.java
+                    } else {
+                        ChildrenListActivity::class.java
+                    }))
         }
     }
 
