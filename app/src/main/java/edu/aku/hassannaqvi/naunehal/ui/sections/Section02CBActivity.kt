@@ -37,10 +37,10 @@ class Section02CBActivity : AppCompatActivity() {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_02cb)
         bi.callback = this
 
-        // TODO: Move this line to onCreate of childlist activity (recycler) and implement fetchChildrenByUUID() from TABLE_FAMILY in Database.
-//        MainApp.childInfo = new ChildInfo();
-
         // TODO: After itemClick on childlist fetchChildByUID() from TABLE_FAMILY and update contents MainApp.Family before entering this activity.
+        if (MainApp.form.hh14 == "1") {
+            bi.cb0601.isEnabled = false
+        }
         bi.setVariable(BR.childInformation, MainApp.childInformation)
         setupSkips()
 
@@ -103,7 +103,6 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb08, true)
                     Clear.clearAllFields(bi.fldGrpCVcb09, true)
                     Clear.clearAllFields(bi.fldGrpCVcb10, true)
-                    bi.cb14.clearCheck()
                     bi.cb1411.isEnabled = false
                 }
             }

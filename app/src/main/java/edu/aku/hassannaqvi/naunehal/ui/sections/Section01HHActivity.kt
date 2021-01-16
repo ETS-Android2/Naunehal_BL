@@ -180,6 +180,10 @@ class Section01HHActivity : AppCompatActivity() {
                 bi.hh09.setSelection(bi.hh09.text.toString().length)
             }
         })
+
+        bi.hh14.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
+            bi.hh1713.isEnabled = i == bi.hh1402.id
+        }
     }
 
     private fun rgListener(rg: RadioGroup, rb: RadioButton, vg: ViewGroup) {
