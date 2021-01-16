@@ -645,8 +645,8 @@
                                 android:tag="pd0701"
                                 android:text="@={form.pd0701x}"
                                 android:visibility='@{form.pd07.equals(`0`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="20"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -916,8 +916,8 @@
                             android:inputType="number"
                             android:maxLength="1"
                             android:text="@={form.pd1101}"
-                            app:maxValue="3"
-                            app:minValue="1"
+                            app:maxValue="10"
+                            app:minValue="0"
                             app:type="range" />
 
                         <TextView
@@ -933,8 +933,8 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.pd1102}"
-                            app:maxValue="29"
-                            app:minValue="1"
+                            app:maxValue="30"
+                            app:minValue="0"
                             app:type="range" />
 
                     </LinearLayout>
@@ -1539,8 +1539,8 @@
                                 android:tag="pd1701"
                                 android:text="@={form.pd1701x}"
                                 android:visibility='@{form.pd17.equals(`1`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="23"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -1560,8 +1560,8 @@
                                 android:tag="pd1702"
                                 android:text="@={form.pd1702x}"
                                 android:visibility='@{form.pd17.equals(`2`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="30"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -1581,8 +1581,8 @@
                                 android:tag="pd1703"
                                 android:text="@={form.pd1703x}"
                                 android:visibility='@{form.pd17.equals(`3`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="8"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -1882,8 +1882,8 @@
                                 android:tag="pd2101"
                                 android:text="@={form.pd2101x}"
                                 android:visibility='@{form.pd21.equals(`1`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="23"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -1903,8 +1903,8 @@
                                 android:tag="pd2102"
                                 android:text="@={form.pd2102x}"
                                 android:visibility='@{form.pd21.equals(`2`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="30"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -1924,8 +1924,8 @@
                                 android:tag="pd2103"
                                 android:text="@={form.pd2103x}"
                                 android:visibility='@{form.pd21.equals(`3`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="8"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton

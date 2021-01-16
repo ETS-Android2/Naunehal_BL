@@ -232,7 +232,7 @@ class Section01HHActivity : AppCompatActivity() {
             return Validator.emptyCustomTextBox(this, bi.hh24, "Total male Children cannot be greater or equal than HH22")
         } else if (bi.hh25.text.toString().toInt() >= bi.hh23.text.toString().toInt()) {
             return Validator.emptyCustomTextBox(this, bi.hh25, "Total female Children cannot be greater or equal than HH22")
-        } else if (bi.hh24.text.toString().toInt() == 0 && bi.hh25.text.toString().toInt() == 0) return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero")
+        } else if (bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt()) == 0) return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero")
         return true
     }
 
