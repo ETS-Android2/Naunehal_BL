@@ -49,18 +49,17 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="horizontal"
                             android:background="@drawable/bottom">
 
                             <TextView
-                                android:id="@+id/qtxt_hh05"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/q_hh05"
-                                android:labelFor="@id/hh05"
-                                android:text=" @string/hh05" />
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_hh05" />
 
                             <!-- COMPLEX DATABINDING
 
@@ -68,15 +67,11 @@
                             -->
 
                             <TextView
-                                android:id="@+id/q_hh05"
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@id/qtxt_hh05"
-                                android:layout_alignBottom="@id/qtxt_hh05"
-                                android:text="@string/Q_hh05" />
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text=" @string/hh05" />
 
-                        </RelativeLayout>
+                        </LinearLayout>
 
 
                         <EditText
