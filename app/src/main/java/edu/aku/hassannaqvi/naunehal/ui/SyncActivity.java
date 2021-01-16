@@ -48,6 +48,7 @@ import edu.aku.hassannaqvi.naunehal.models.VersionApp;
 import edu.aku.hassannaqvi.naunehal.workers.DataDownWorkerALL;
 import edu.aku.hassannaqvi.naunehal.workers.DataUpWorkerALL;
 
+import static edu.aku.hassannaqvi.naunehal.utils.AndroidUtilityKt.isNetworkConnected;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.dbBackup;
 
 
@@ -121,6 +122,9 @@ public class SyncActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     public void ProcessStart(View view) {
+
+        if (!isNetworkConnected(this))
+            return;
 
         switch (view.getId()) {
 
