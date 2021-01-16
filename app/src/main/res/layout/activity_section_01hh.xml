@@ -1146,7 +1146,7 @@
                                         android:id="@+id/hh2096x"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                         android:hint="@string/hh2096"
                                         android:tag="hh2096"
                                         android:text="@={form.hh2096x}"
