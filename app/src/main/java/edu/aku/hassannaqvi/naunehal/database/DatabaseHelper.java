@@ -30,7 +30,6 @@ import edu.aku.hassannaqvi.naunehal.models.Districts;
 import edu.aku.hassannaqvi.naunehal.models.Districts.TableDistricts;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel;
-/*import edu.aku.hassannaqvi.naunehal.models.Immunization;*/
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
 import edu.aku.hassannaqvi.naunehal.models.UCs;
 import edu.aku.hassannaqvi.naunehal.models.UCs.TableUCs;
@@ -39,6 +38,8 @@ import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp.VersionAppTable;
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable;
+
+/*import edu.aku.hassannaqvi.naunehal.models.Immunization;*/
 
 /**
  * @author hassan.naqvi on 11/30/2016.
@@ -897,7 +898,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     /*
-     * get UnSyncedForms
+     * get UnSyncedTables
      * */
     public Collection<Form> getUnsyncedForms(int formType) {
         SQLiteDatabase db = this.getReadableDatabase();
