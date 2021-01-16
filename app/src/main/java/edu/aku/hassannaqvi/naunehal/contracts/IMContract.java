@@ -9,7 +9,7 @@ import android.provider.BaseColumns;
 public class IMContract {
 
     public static abstract class IMTable implements BaseColumns {
-        public static final String TABLE_NAME = "Immunization";
+        public static final String TABLE_NAME = "IMChild";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";

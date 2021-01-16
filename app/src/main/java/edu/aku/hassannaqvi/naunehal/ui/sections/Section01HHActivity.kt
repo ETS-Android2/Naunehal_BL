@@ -42,9 +42,9 @@ class Section01HHActivity : AppCompatActivity() {
     lateinit var bi: ActivitySection01hhBinding
     lateinit var viewModel: H1ViewModel
     var district = mutableListOf("....")
-    var districtCode = mutableListOf("....")
+    var districtCode = mutableListOf<String>()
     var uc = mutableListOf("....")
-    var ucCode = mutableListOf("....")
+    var ucCode = mutableListOf<String>()
     lateinit var districtAdapter: ArrayAdapter<String>
     lateinit var ucAdapter: ArrayAdapter<String>
 
@@ -142,6 +142,7 @@ class Section01HHActivity : AppCompatActivity() {
                 }
                 bi.hh06.isEnabled = true
                 uc.clear()
+                ucCode.clear()
                 uc.add("....")
                 viewModel.getUCsDistrictFromDB(districtCode[position - 1])
             }
@@ -194,7 +195,7 @@ class Section01HHActivity : AppCompatActivity() {
         initForm() //<== This function is no longer needed after DataBinding
         if (updateDB()) {
             finish()
-            if (bi.hh1102.isChecked) startActivity(Intent(this, EndingActivity::class.java).putExtra("complete", true))
+            if (bi.hh1102.isChecked) startActivity(Intent(this, EndingActivity::class.java))
             else startActivity(Intent(this, ChildrenListActivity::class.java))
         }
     }
@@ -226,24 +227,30 @@ class Section01HHActivity : AppCompatActivity() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false
         val totalMembers = ((if (TextUtils.isEmpty(bi.hh22.text)) 0 else bi.hh22.text.toString().trim().toInt())
                 + if (TextUtils.isEmpty(bi.hh23.text)) 0 else bi.hh23.text.toString().trim().toInt())
-        if (totalMembers == 0) {
-            return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count")
-        } else if (totalMembers != bi.hh21.text.toString().toInt()) {
-            return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count")
-        } else if (bi.hh24.text.toString().toInt() >= bi.hh22.text.toString().toInt()) {
-            return Validator.emptyCustomTextBox(this, bi.hh24, "Total male Children cannot be greater or equal than HH22")
-        } else if (bi.hh25.text.toString().toInt() >= bi.hh23.text.toString().toInt()) {
-            return Validator.emptyCustomTextBox(this, bi.hh25, "Total female Children cannot be greater or equal than HH22")
-        } else if (bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt()) == 0) return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero")
-        return true
+        when {
+            totalMembers == 0 -> {
+                return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count")
+            }
+            totalMembers != bi.hh21.text.toString().toInt() -> {
+                return Validator.emptyCustomTextBox(this, bi.hh21, "Invalid Count")
+            }
+            bi.hh24.text.toString().toInt() >= bi.hh22.text.toString().toInt() -> {
+                return Validator.emptyCustomTextBox(this, bi.hh24, "Total male Children cannot be greater or equal than HH22")
+            }
+            bi.hh25.text.toString().toInt() >= bi.hh23.text.toString().toInt() -> {
+                return Validator.emptyCustomTextBox(this, bi.hh25, "Total female Children cannot be greater or equal than HH22")
+            }
+            bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt()) == 0 -> return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero")
+            else -> return true
+        }
     }
 
     // Only in First Section of every Table.
     private fun initForm() {
         MainApp.form.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
         MainApp.form.userName = MainApp.user.userName
-        MainApp.form.dcode = districtCode.get(bi.hh05.selectedItemPosition - 1)
-        MainApp.form.ucode = ucCode.get(bi.hh06.selectedItemPosition - 1)
+        MainApp.form.dcode = districtCode[bi.hh05.selectedItemPosition - 1]
+        MainApp.form.ucode = ucCode[bi.hh06.selectedItemPosition - 1]
         MainApp.form.cluster = bi.hh08.text.toString()
         MainApp.form.hhno = bi.hh09.text.toString()
         MainApp.form.deviceId = MainApp.appInfo.deviceID

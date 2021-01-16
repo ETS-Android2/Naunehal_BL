@@ -109,13 +109,13 @@ class Section02CBActivity : AppCompatActivity() {
             }
         }
 
-        txtwatch(bi.cb09)
-        txtwatch(bi.cb13)
+        txtWatch(bi.cb09)
+        txtWatch(bi.cb13)
 
     }
 
 
-    private fun txtwatch(edx: EditTextPicker) {
+    private fun txtWatch(edx: EditTextPicker) {
         edx.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {

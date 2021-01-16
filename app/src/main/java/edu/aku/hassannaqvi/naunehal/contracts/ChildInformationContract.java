@@ -9,7 +9,7 @@ import android.provider.BaseColumns;
 public class ChildInformationContract {
 
     public static abstract class ChildInfoTable implements BaseColumns {
-        public static final String TABLE_NAME = "Children";
+        public static final String TABLE_NAME = "HHChildrens";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";

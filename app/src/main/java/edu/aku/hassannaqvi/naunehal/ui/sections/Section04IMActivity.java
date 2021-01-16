@@ -228,10 +228,8 @@ public class Section04IMActivity extends AppCompatActivity {
         MainApp.immunization.setStatus("1");
         if (updateDB()) {
             finish();
-            if (info.getIsSelected().equals("1"))
+            if (info.getIsSelected().equals("1") || info.getIsSelected().equals("2"))
                 gotoActivity(this, Section05PDActivity.class);
-            else if (info.getIsSelected().equals("2"))
-                gotoActivity(this, Section06BFActivity.class);
         }
     }
 
@@ -278,10 +276,8 @@ public class Section04IMActivity extends AppCompatActivity {
         MainApp.immunization.setStatus("2");
         if (updateDB()) {
             finish();
-            if (info.getIsSelected().equals("1"))
+            if (info.getIsSelected().equals("1") || info.getIsSelected().equals("2"))
                 gotoActivity(this, Section05PDActivity.class);
-            else if (info.getIsSelected().equals("2"))
-                gotoActivity(this, Section06BFActivity.class);
         }
     }
 
