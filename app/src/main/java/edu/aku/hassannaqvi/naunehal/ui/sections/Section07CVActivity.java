@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,14 +7,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -23,7 +21,6 @@ import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection07cvBinding;
 import edu.aku.hassannaqvi.naunehal.models.ChildCard;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
-import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
@@ -88,5 +85,10 @@ public class Section07CVActivity extends AppCompatActivity {
 
     public void BtnEnd(View view) {
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
 }

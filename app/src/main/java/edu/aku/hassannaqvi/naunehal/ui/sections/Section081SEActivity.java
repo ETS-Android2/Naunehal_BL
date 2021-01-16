@@ -12,12 +12,15 @@ import com.bumptech.glide.util.Util;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection081seBinding;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
+import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 
@@ -73,11 +76,7 @@ public class Section081SEActivity extends AppCompatActivity {
 
         // se1705
         bi.se1705.setOnCheckedChangeListener((compoundButton, id) -> {
-            if (id) {
-                Clear.clearAllFields(bi.se17check, false);
-            } else {
-                Clear.clearAllFields(bi.se17check, true);
-            }
+            Clear.clearAllFields(bi.se17check, !id);
         });
     }
 
@@ -113,5 +112,8 @@ public class Section081SEActivity extends AppCompatActivity {
         AppUtilsKt.contextEndActivity(this);
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
 }

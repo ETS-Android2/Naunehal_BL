@@ -141,4 +141,9 @@ public class Section082SEActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.fldGrpse26);
         } else bi.fldGrpse26.setVisibility(View.VISIBLE);
     }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
 }
