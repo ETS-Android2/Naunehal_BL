@@ -2291,7 +2291,7 @@
                                 android:hint="@string/im08b"
                                 android:inputType="number"
                                 android:text="@={form.im08b}"
-                                app:maxValue="0"
+                                app:maxValue="9"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -2650,7 +2650,7 @@
                             android:tag="im12a1"
                             android:text="@={form.im12a1x}"
                             android:visibility='@{form.im12a.equals(`1`) ? View.VISIBLE : View.GONE}'
-                            app:maxValue="0"
+                            app:maxValue="9"
                             app:minValue="0"
                             app:type="range" />
 
@@ -2859,7 +2859,7 @@
                             android:tag="im15a"
                             android:text="@={form.im1501}"
                             android:visibility='@{form.im15.equals(`1`) ? View.VISIBLE : View.GONE}'
-                            app:maxValue="0"
+                            app:maxValue="9"
                             app:minValue="0"
                             app:type="range" />
 
@@ -2999,7 +2999,7 @@
                             android:tag="im17a"
                             android:text="@={form.im1701}"
                             android:visibility='@{form.im17.equals(`1`) ? View.VISIBLE : View.GONE}'
-                            app:maxValue="0"
+                            app:maxValue="9"
                             app:minValue="0"
                             app:type="range" />
 
@@ -3140,7 +3140,7 @@
                             android:tag="im1901"
                             android:text="@={form.im1901x}"
                             android:visibility='@{form.im19.equals(`1`) ? View.VISIBLE : View.GONE}'
-                            app:maxValue="0"
+                            app:maxValue="9"
                             app:minValue="0"
                             app:type="range" />
 
@@ -3349,7 +3349,7 @@
                             android:tag="im22a"
                             android:text="@={form.im2201}"
                             android:visibility='@{form.im22.equals(`1`) ? View.VISIBLE : View.GONE}'
-                            app:maxValue="0"
+                            app:maxValue="9"
                             app:minValue="0"
                             app:type="range" />
 

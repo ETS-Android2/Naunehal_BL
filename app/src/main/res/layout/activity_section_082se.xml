@@ -819,7 +819,7 @@
                             android:hint="@string/se24"
                             android:inputType="number"
                             android:text="@={form.se24}"
-                            app:maxValue="0"
+                            app:maxValue="9"
                             app:minValue="0"
                             app:type="range" />
 
@@ -1433,7 +1433,7 @@
                             android:hint="@string/se3302"
                             android:inputType="number"
                             android:text="@={form.se3302}"
-                            app:maxValue="0"
+                            app:maxValue="12"
                             app:minValue="0"
                             app:type="range" />
 
@@ -1501,7 +1501,7 @@
                             android:hint="@string/se3402"
                             android:inputType="number"
                             android:text="@={form.se3402}"
-                            app:maxValue="0"
+                            app:maxValue="99"
                             app:minValue="0"
                             app:type="range" />
 
