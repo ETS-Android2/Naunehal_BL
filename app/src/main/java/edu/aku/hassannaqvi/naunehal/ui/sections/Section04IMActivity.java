@@ -172,7 +172,7 @@ public class Section04IMActivity extends AppCompatActivity {
                     bi.im04dd.setEnabled(false);
                     bi.im04mm.setEnabled(false);
                     try {
-                        Instant dtInstant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(
+                        Instant dtInstant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(
                                 day + "-" + month + "-" + year
                         )) + "T06:24:01Z");
 
@@ -230,6 +230,7 @@ public class Section04IMActivity extends AppCompatActivity {
         }
     }
 
+
     private Boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.dbHelper;
         long updcount = db.addIM(MainApp.immunization);
@@ -283,8 +284,8 @@ public class Section04IMActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, TakePhoto.class);
 
-        intent.putExtra("picID", MainApp.child.getCluster() + "_" + MainApp.child.getHhno() + "_" + MainApp.child.getSerial() + "_");
-        intent.putExtra("childName", MainApp.child.getChildname());
+        intent.putExtra("picID", info.getCluster() + "_" + info.getHhno() + "_" + info.getCb01() + "_");
+        intent.putExtra("childName", info.getCb02());
 
         if (id == 1) {
             intent.putExtra("picView", "front".toUpperCase());
@@ -375,7 +376,7 @@ public class Section04IMActivity extends AppCompatActivity {
         try {
             String txt02 = editTextPicker02.getText().toString();
             String txt03 = editTextPicker03.getText().toString();
-            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy").parse(
+            Instant instant = Instant.parse(new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(
                     txt01 + "-" + txt02 + "-" + txt03
             )) + "T06:24:01Z");
             return LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate();

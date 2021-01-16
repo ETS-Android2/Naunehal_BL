@@ -13,6 +13,7 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -23,6 +24,7 @@ import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivityWithSerializable;
 
 public class Section082SEActivity extends AppCompatActivity {
 
@@ -100,7 +102,7 @@ public class Section082SEActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class));
+            gotoActivityWithSerializable(this, EndingActivity.class, "complete", true);
         }
     }
 
