@@ -10,6 +10,7 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.edittextpicker.aliazaz.EditTextPicker
 import com.validatorcrawler.aliazaz.Clear
 import com.validatorcrawler.aliazaz.Validator
 import edu.aku.hassannaqvi.naunehal.BR
@@ -109,36 +110,26 @@ class Section02CBActivity : AppCompatActivity() {
             }
         }
 
+        txtwatch(bi.cb09)
+        txtwatch(bi.cb13)
 
-        bi.cb09.addTextChangedListener(object : TextWatcher {
+    }
+
+
+    private fun txtwatch(edx: EditTextPicker) {
+        edx.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (!bi.cb09.text.toString().isEmpty()) {
-                    if (Integer.parseInt(bi.cb09.text.toString()) == 22)
-                        bi.cb09.defaultvalue = "22"
-                    if (Integer.parseInt(bi.cb09.text.toString()) == 59)
-                        bi.cb09.defaultvalue = "59"
+                if (!edx.text.toString().isEmpty()) {
+                    if (Integer.parseInt(edx.text.toString()) == 22)
+                        edx.defaultvalue = "22"
+                    if (Integer.parseInt(edx.text.toString()) == 59)
+                        edx.defaultvalue = "59"
                 }
             }
 
             override fun afterTextChanged(s: Editable) {}
         })
-
-
-        bi.cb13.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (!bi.cb13.text.toString().isEmpty()) {
-                    if (Integer.parseInt(bi.cb13.text.toString()) == 22)
-                        bi.cb13.defaultvalue = "22"
-                    if (Integer.parseInt(bi.cb13.text.toString()) == 59)
-                        bi.cb13.defaultvalue = "59"
-                }
-            }
-
-            override fun afterTextChanged(s: Editable) {}
-        })
-
     }
 
 
