@@ -85,62 +85,69 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
-        values.put(FormsContract.FormsTable.COLUMN_UID, form.getUid());
-        values.put(FormsContract.FormsTable.COLUMN_USERNAME, form.getUserName());
-        values.put(FormsContract.FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormsContract.FormsTable.COLUMN_S01HH, form.getS01HH());
-        values.put(FormsContract.FormsTable.COLUMN_S02CB, form.getS02CB());
-        values.put(FormsContract.FormsTable.COLUMN_S03CS, form.getS03CS());
-        values.put(FormsContract.FormsTable.COLUMN_S04IM, form.getS04IM());
-        values.put(FormsContract.FormsTable.COLUMN_S05PD, form.getS05PD());
-        values.put(FormsContract.FormsTable.COLUMN_S06BF, form.getS06BF());
-        values.put(FormsContract.FormsTable.COLUMN_S07CV, form.getS07CV());
-        values.put(FormsContract.FormsTable.COLUMN_S08SE, form.getS08SE());
+        values.put(FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(FormsTable.COLUMN_UID, form.getUid());
+        values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
+        values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(FormsTable.COLUMN_CLUSTER, form.getCluster());
+        values.put(FormsTable.COLUMN_HHNO, form.getHhno());
+        values.put(FormsTable.COLUMN_DCODE, form.getDcode());
+        values.put(FormsTable.COLUMN_UCODE, form.getUcode());
+        values.put(FormsTable.COLUMN_S01HH, form.getS01HH());
+        values.put(FormsTable.COLUMN_S02CB, form.getS02CB());
+        values.put(FormsTable.COLUMN_S03CS, form.getS03CS());
+        values.put(FormsTable.COLUMN_S04IM, form.getS04IM());
+        values.put(FormsTable.COLUMN_S05PD, form.getS05PD());
+        values.put(FormsTable.COLUMN_S06BF, form.getS06BF());
+        values.put(FormsTable.COLUMN_S07CV, form.getS07CV());
+        values.put(FormsTable.COLUMN_S08SE, form.getS08SE());
 
-        values.put(FormsContract.FormsTable.COLUMN_ISTATUS, form.getIStatus());
-        values.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, form.getIStatus96x());
-        values.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, form.getEndTime());
-        values.put(FormsContract.FormsTable.COLUMN_GPS, form.getGps());
+        values.put(FormsTable.COLUMN_ISTATUS, form.getIStatus());
+        values.put(FormsTable.COLUMN_ISTATUS96x, form.getIStatus96x());
+        values.put(FormsTable.COLUMN_ENDINGDATETIME, form.getEndTime());
+        values.put(FormsTable.COLUMN_GPS, form.getGps());
 
-        values.put(FormsContract.FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
-        values.put(FormsContract.FormsTable.COLUMN_DEVICEID, form.getDeviceId());
-        values.put(FormsContract.FormsTable.COLUMN_APPVERSION, form.getAppver());
-        values.put(FormsContract.FormsTable.COLUMN_CHILD_RESPONDENT, form.getChildrespondent());
+        values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
+        values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
+        values.put(FormsTable.COLUMN_CHILD_RESPONDENT, form.getChildrespondent());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                FormsContract.FormsTable.TABLE_NAME,
-                FormsContract.FormsTable.COLUMN_NAME_NULLABLE,
+                FormsTable.TABLE_NAME,
+                FormsTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
 
-    public Long addChild(Child form) {
+    public Long addChild(Child child) {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(ChildContract.ChildTable.COLUMN_PROJECT_NAME, form.getProjectName());
-        values.put(ChildContract.ChildTable.COLUMN_UID, form.getUid());
-        values.put(ChildContract.ChildTable.COLUMN_UUID, form.getUuid());
-        values.put(ChildContract.ChildTable.COLUMN_FMUID, form.getFmuid());
-        values.put(ChildContract.ChildTable.COLUMN_USERNAME, form.getUserName());
-        values.put(ChildContract.ChildTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(ChildContract.ChildTable.COLUMN_DCODE, form.getDcode());
-        values.put(ChildContract.ChildTable.COLUMN_UCODE, form.getUcode());
-        values.put(ChildContract.ChildTable.COLUMN_CLUSTER, form.getCluster());
-        values.put(ChildContract.ChildTable.COLUMN_HHNO, form.getHhno());
-        values.put(ChildContract.ChildTable.COLUMN_SCS, form.s03CStoString());
-        values.put(ChildContract.ChildTable.COLUMN_DEVICEID, form.getDeviceId());
-        values.put(ChildContract.ChildTable.COLUMN_DEVICETAGID, form.getDeviceTag());
-        values.put(ChildContract.ChildTable.COLUMN_SYNCED, form.getSynced());
-        values.put(ChildContract.ChildTable.COLUMN_SYNCED_DATE, form.getSyncDate());
-        values.put(ChildContract.ChildTable.COLUMN_APPVERSION, form.getAppver());
-        values.put(ChildContract.ChildTable.COLUMN_STATUS, form.getStatus());
+        values.put(ChildContract.ChildTable.COLUMN_PROJECT_NAME, child.getProjectName());
+        values.put(ChildContract.ChildTable.COLUMN_UID, child.getUid());
+        values.put(ChildContract.ChildTable.COLUMN_UUID, child.getUuid());
+        values.put(ChildContract.ChildTable.COLUMN_FMUID, child.getFmuid());
+        values.put(ChildContract.ChildTable.COLUMN_USERNAME, child.getUserName());
+        values.put(ChildContract.ChildTable.COLUMN_SYSDATE, child.getSysDate());
+        values.put(ChildContract.ChildTable.COLUMN_DCODE, child.getDcode());
+        values.put(ChildContract.ChildTable.COLUMN_UCODE, child.getUcode());
+        values.put(ChildContract.ChildTable.COLUMN_CLUSTER, child.getCluster());
+        values.put(ChildContract.ChildTable.COLUMN_HHNO, child.getHhno());
+        values.put(ChildContract.ChildTable.COLUMN_SCS, child.s03CStoString());
+        values.put(ChildContract.ChildTable.COLUMN_DEVICEID, child.getDeviceId());
+        values.put(ChildContract.ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
+        values.put(ChildContract.ChildTable.COLUMN_SYNCED, child.getSynced());
+        values.put(ChildContract.ChildTable.COLUMN_SYNCED_DATE, child.getSyncDate());
+        values.put(ChildContract.ChildTable.COLUMN_APPVERSION, child.getAppver());
+        values.put(ChildContract.ChildTable.COLUMN_STATUS, child.getStatus());
+        values.put(ChildContract.ChildTable.COLUMN_CHILD_NAME, child.getChildname());
+        values.put(ChildContract.ChildTable.COLUMN_MOTHER_NAME, child.getMothername());
+        values.put(ChildContract.ChildTable.COLUMN_SERIAL, child.getSerial());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -209,6 +216,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(IMContract.IMTable.COLUMN_SYNCED_DATE, form.getSyncDate());
         values.put(IMContract.IMTable.COLUMN_APPVERSION, form.getAppver());
         values.put(IMContract.IMTable.COLUMN_STATUS, form.getStatus());
+        values.put(IMContract.IMTable.COLUMN_CHILD_NAME, form.getChildname());
+        values.put(IMContract.IMTable.COLUMN_SERIAL, form.getSerial());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -713,31 +722,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public void updateSyncedForms(String id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-// New value for one column
-        ContentValues values = new ContentValues();
-        values.put(FormsContract.FormsTable.COLUMN_SYNCED, true);
-        values.put(FormsContract.FormsTable.COLUMN_SYNCED_DATE, new Date().toString());
-
-// Which row to update, based on the title
-        String where = FormsContract.FormsTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-
-        int count = db.update(
-                FormsContract.FormsTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
     public int updateEnding() {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // New value for one column
         ContentValues values = new ContentValues();
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS, MainApp.form.getIStatus());
+        values.put(FormsContract.FormsTable.COLUMN_ISTATUS, MainApp.form.getHh26());
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, MainApp.form.getIStatus96x());
         values.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, MainApp.form.getEndTime());
 
@@ -900,7 +891,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /*
      * get UnSyncedTables
      * */
-    public Collection<Form> getUnsyncedForms(int formType) {
+    public Collection<Form> getUnsyncedForms() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -941,7 +932,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<Child> getUnsyncedChild(int formType) {
+    public Collection<Child> getUnsyncedChild() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -982,7 +973,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<ChildInformation> getUnsyncedChildInfo(int formType) {
+    public Collection<ChildInformation> getUnsyncedChildInfo() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1023,7 +1014,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<Immunization> getUnsyncedIM(int formType) {
+    public Collection<Immunization> getUnsyncedIM() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1062,6 +1053,82 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return allFC;
+    }
+
+    public void updateSyncedForms(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsContract.FormsTable.COLUMN_SYNCED, true);
+        values.put(FormsContract.FormsTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = FormsContract.FormsTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                FormsContract.FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedChild(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(ChildContract.ChildTable.COLUMN_SYNCED, true);
+        values.put(ChildContract.ChildTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = ChildContract.ChildTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                ChildContract.ChildTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedChildrenInfo(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(ChildInfoTable.COLUMN_SYNCED, true);
+        values.put(ChildInfoTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = ChildInfoTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                ChildInfoTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedIM(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(IMContract.IMTable.COLUMN_SYNCED, true);
+        values.put(IMContract.IMTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = IMContract.IMTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                IMContract.IMTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
     }
 
 

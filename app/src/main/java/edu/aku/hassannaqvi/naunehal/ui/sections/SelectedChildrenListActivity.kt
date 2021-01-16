@@ -64,7 +64,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         bi.speedDial.setOnActionSelectedListener { actionItem ->
             when (actionItem.id) {
                 R.id.fab_finish -> {
-                    if (adapter.childItems.filter { it.childTableDataExist != null }.size != adapter.childItems.size) {
+                    if (adapter.childItems.filter { it.childTableDataExist != null }.size != adapter.childItems.filter { it.isMotherAvailable }.size) {
                         Snackbar.make(findViewById(android.R.id.content), "Please update all children's for proceeding to the next section", Snackbar.LENGTH_LONG)
                                 .show()
                         return@setOnActionSelectedListener false

@@ -10,6 +10,10 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -66,8 +70,8 @@ public class EndingActivity extends AppCompatActivity {
     public void BtnEnd(View view) {
         if (!formValidation()) return;
         //SaveDraft();
-
-        //TODO: needs to work on updateDB
+        form.setIStatus(form.hh26);
+        form.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
         if (UpdateDB()) {
             finish();
             gotoActivityWithNoHistory(this, MainActivity.class);
@@ -78,7 +82,7 @@ public class EndingActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_ISTATUS, form.getHh26());
+        int updcount = db.updateEnding();
         if (updcount == 1) {
             return true;
         } else {

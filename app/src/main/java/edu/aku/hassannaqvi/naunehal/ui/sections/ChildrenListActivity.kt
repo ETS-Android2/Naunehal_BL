@@ -166,7 +166,9 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
     * */
     private fun childSelection() {
         val childList = adapter.childItems
-        val selectedItem = childList.sortedBy { it.totalMonths }[0]
+        val selectedItem = childList.filter {
+            it.cb11 == "1"
+        }.sortedBy { it.totalMonths }[0]
         viewModel.updateChildrenDataForSelectionDB(selectedItem)
     }
 }

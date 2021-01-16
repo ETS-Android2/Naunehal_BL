@@ -184,6 +184,21 @@ class Section01HHActivity : AppCompatActivity() {
         bi.hh14.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
             bi.hh1713.isEnabled = i == bi.hh1402.id
         }
+
+
+        bi.hh16.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                if (bi.hh16.text.toString().isNotEmpty()) {
+                    if (Integer.parseInt(bi.hh16.text.toString()) == 22)
+                        bi.hh16.rangedefaultvalue = 22f
+                    if (Integer.parseInt(bi.hh16.text.toString()) == 55)
+                        bi.hh16.rangedefaultvalue = 55f
+                }
+            }
+
+            override fun afterTextChanged(s: Editable) {}
+        })
     }
 
     private fun rgListener(rg: RadioGroup, rb: RadioButton, vg: ViewGroup) {
@@ -229,6 +244,7 @@ class Section01HHActivity : AppCompatActivity() {
 
     private fun formValidation(): Boolean {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false
+        if (bi.hh1102.isChecked) return true
         val totalMembers = ((if (TextUtils.isEmpty(bi.hh22.text)) 0 else bi.hh22.text.toString().trim().toInt())
                 + if (TextUtils.isEmpty(bi.hh23.text)) 0 else bi.hh23.text.toString().trim().toInt())
         when {

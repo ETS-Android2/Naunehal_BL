@@ -18,6 +18,8 @@ import edu.aku.hassannaqvi.naunehal.models.Child
 import edu.aku.hassannaqvi.naunehal.models.ChildCard
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity
+import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity
+import edu.aku.hassannaqvi.naunehal.utils.contextEndActivity
 import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
@@ -25,7 +27,7 @@ import edu.aku.hassannaqvi.naunehal.utils.shortStringLength
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Section03CSActivity : AppCompatActivity() {
+class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
     lateinit var bi: ActivitySection03csBinding
     private val info: ChildInformation by lazy {
         intent.getSerializableExtra(CONSTANTS.CHILD_DATA_UNDER5) as ChildInformation
@@ -147,6 +149,9 @@ class Section03CSActivity : AppCompatActivity() {
         MainApp.child.deviceId = MainApp.appInfo.deviceID
         MainApp.child.deviceTag = MainApp.appInfo.tagName
         MainApp.child.appver = MainApp.appInfo.appVersion
+        MainApp.child.serial = info.cb01
+        MainApp.child.childname = info.cb02
+        MainApp.child.mothername = info.cb07
     }
 
 
@@ -155,12 +160,14 @@ class Section03CSActivity : AppCompatActivity() {
     }
 
     fun BtnEnd(view: View) {
+        contextEndActivity(this)
+    }
+
+    override fun endSecActivity(flag: Boolean) {
         initForm()
         MainApp.child.status = "2"
         if (updateDB()) {
             finish()
-            if (info.isUnder35)
-                gotoActivity(Section04IMActivity::class.java)
         }
     }
 }

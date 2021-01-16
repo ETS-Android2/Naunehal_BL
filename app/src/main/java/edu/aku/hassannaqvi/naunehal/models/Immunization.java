@@ -128,7 +128,7 @@ public class Immunization extends BaseObservable {
     private String synced;
     private String syncDate;
     // SECTION VARIABLES
-    private String respondentname;
+    private String mothername;
     private String childname;
     private String serial;
     private String sim;
@@ -329,12 +329,12 @@ public class Immunization extends BaseObservable {
     }
 
 
-    public String getRespondentname() {
-        return respondentname;
+    public String getMothername() {
+        return mothername;
     }
 
-    public Immunization setRespondentname(String respondentname) {
-        this.respondentname = respondentname;
+    public Immunization setMothername(String mothername) {
+        this.mothername = mothername;
         return this;
     }
 
@@ -1280,7 +1280,7 @@ public class Immunization extends BaseObservable {
         this.synced = jsonObject.getString(IMContract.IMTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(IMContract.IMTable.COLUMN_SYNCED_DATE);
         this.status = jsonObject.getString(IMContract.IMTable.COLUMN_STATUS);
-        this.respondentname = jsonObject.getString(IMContract.IMTable.COLUMN_RESPONDENT_NAME);
+        this.mothername = jsonObject.getString(IMContract.IMTable.COLUMN_MOTHER_NAME);
         this.childname = jsonObject.getString(IMContract.IMTable.COLUMN_CHILD_NAME);
         this.serial = jsonObject.getString(IMContract.IMTable.COLUMN_SERIAL);
 
@@ -1308,7 +1308,7 @@ public class Immunization extends BaseObservable {
         this.synced = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_SYNCED_DATE));
         this.status = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_STATUS));
-        this.respondentname = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_RESPONDENT_NAME));
+        this.mothername = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_MOTHER_NAME));
         this.childname = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_CHILD_NAME));
         this.serial = cursor.getString(cursor.getColumnIndex(IMContract.IMTable.COLUMN_SERIAL));
 
@@ -1451,7 +1451,7 @@ public class Immunization extends BaseObservable {
             json.put(IMContract.IMTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(IMContract.IMTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
             json.put(IMContract.IMTable.COLUMN_STATUS, this.status == null ? JSONObject.NULL : this.status);
-            json.put(IMContract.IMTable.COLUMN_RESPONDENT_NAME, this.respondentname == null ? JSONObject.NULL : this.respondentname);
+            json.put(IMContract.IMTable.COLUMN_MOTHER_NAME, this.mothername == null ? JSONObject.NULL : this.mothername);
             json.put(IMContract.IMTable.COLUMN_CHILD_NAME, this.childname == null ? JSONObject.NULL : this.childname);
             json.put(IMContract.IMTable.COLUMN_SERIAL, this.serial == null ? JSONObject.NULL : this.serial);
 

@@ -118,11 +118,11 @@ class Section02CBActivity : AppCompatActivity() {
         edx.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (!edx.text.toString().isEmpty()) {
+                if (edx.text.toString().isNotEmpty()) {
                     if (Integer.parseInt(edx.text.toString()) == 22)
-                        edx.defaultvalue = "22"
-                    if (Integer.parseInt(edx.text.toString()) == 59)
-                        edx.defaultvalue = "59"
+                        edx.rangedefaultvalue = 22f
+                    if (Integer.parseInt(edx.text.toString()) == 55)
+                        edx.rangedefaultvalue = 55f
                 }
             }
 
