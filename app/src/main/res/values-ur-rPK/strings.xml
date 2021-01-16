@@ -812,7 +812,7 @@
     <string name="se0407">گتے سے بنی ہوئی چھت </string>
     <string name="se04title03">تیار چھت </string>
     <string name="se0408">Asbestos</string>
-    <string name="se0409">Reinforced Brick Cement/R</string>
+    <string name="se0409">سیمنٹ اور اینٹوں کی مدد سے تیار کردہ چھت</string>
     <string name="se0410">دھات </string>
     <string name="se0411">لکٹری سے بنی ہوئی چھت </string>
     <string name="se0412">کیلا مائن/سیمنٹ فائبر </string>
@@ -828,16 +828,16 @@
     <string name="se06">(اگر یہ مکان کرائےکا ہے تو ، اس گھر کا ماہانہ کرایہ کتنا ہے؟(روپے</string>
     <string name="se07">(آپ کے گھر میں کتنے کمرے سونے کے لیے استعمال ہوتے ہیں ؟ ( کمرے</string>
     <string name="se08">آپ کے گھر میں پینے کے پانی کا سب سے اہم ذریعہ کیا ہے ؟</string>
-    <string name="se08title1">PIPED WATER</string>
+    <string name="se08title1">لائن کا پانی</string>
     <string name="se0801">  گھر میں نلکا </string>
     <string name="se0802">صحن میں نلکا</string>
     <string name="se0803">پڑوسی کے گھر کا نلکا </string>
     <string name="se0804">گلی / علاقہ کا نلکا </string>
     <string name="se0805">ٹیوب ویل/ بورنگ کا پانی </string>
-    <string name="se08title2">DUG WELL</string>
+    <string name="se08title2">گہرا کنواں</string>
     <string name="se0806">محفوظ کنواں</string>
     <string name="se0807">غیرمحفوظ کنواں </string>
-    <string name="se08title3">WATER FROM SPRING</string>
+    <string name="se08title3">چشمے کا پانی</string>
     <string name="se0808">محفوظ چشمہ  </string>
     <string name="se0809">غیرمحفوظ چشمہ   </string>
     <string name="se0810">بارش کا پانی</string>
@@ -1038,7 +1038,7 @@
     <string name="se3202">نرس</string>
     <string name="se3203">مڈوائف</string>
     <string name="se3204">ایل ایچ وی</string>
-    <string name="se32title2">OTHER PERSON</string>
+    <string name="se32title2">دیگر افراد</string>
     <string name="se3205">دائی -ٹی بی اے</string>
     <string name="se3206">لیڈی ہیلتھ ورکر</string>
     <string name="se3207">ہومیوپیتھک</string>

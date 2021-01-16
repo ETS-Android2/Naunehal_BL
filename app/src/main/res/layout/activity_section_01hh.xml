@@ -341,7 +341,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/hh07"
-                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                             android:text="@={form.hh07}" />
 
                     </LinearLayout>
@@ -381,6 +381,7 @@
                             android:id="@+id/hh10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                             android:hint="@string/hh10"
                             android:text="@={form.hh10}" />
 
@@ -485,7 +486,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/hh12"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                                 android:text="@={form.hh12}" />
 
                         </LinearLayout>
@@ -876,7 +877,7 @@
                                     android:id="@+id/hh1796x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/hh1796"
                                     android:tag="hh1796"
                                     android:text="@={form.hh1796x}"
@@ -987,7 +988,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="@string/hh19"
-                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                                     android:text="@={form.hh19}" />
 
                             </LinearLayout>
