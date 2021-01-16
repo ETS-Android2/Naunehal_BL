@@ -1129,6 +1129,7 @@
                             android:hint="#.#"
                             android:inputType="number"
                             android:text="@={childInformation.cb15}"
+                            app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
                             app:mask="#.#"
                             app:maxValue="9"
                             app:minValue="0.5"
