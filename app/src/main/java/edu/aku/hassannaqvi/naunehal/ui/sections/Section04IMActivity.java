@@ -27,8 +27,6 @@ import java.util.Objects;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-
-import edu.aku.hassannaqvi.naunehal.CONSTANTS;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -36,7 +34,6 @@ import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection04imBinding;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
-import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal.ui.TakePhoto;
 import edu.aku.hassannaqvi.naunehal.utils.DateUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel;
@@ -613,4 +610,8 @@ public class Section04IMActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
 }

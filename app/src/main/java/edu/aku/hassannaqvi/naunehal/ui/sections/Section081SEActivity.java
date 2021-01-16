@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -70,11 +69,7 @@ public class Section081SEActivity extends AppCompatActivity {
 
         // se1705
         bi.se1705.setOnCheckedChangeListener((compoundButton, id) -> {
-            if (id) {
-                Clear.clearAllFields(bi.se17check, false);
-            } else {
-                Clear.clearAllFields(bi.se17check, true);
-            }
+            Clear.clearAllFields(bi.se17check, !id);
         });
     }
 
@@ -111,5 +106,8 @@ public class Section081SEActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
 }
