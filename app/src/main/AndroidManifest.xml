@@ -138,7 +138,7 @@
         <activity
             android:name=".core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
 
         <activity
             android:name=".ui.TakePhoto"
