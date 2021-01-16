@@ -121,7 +121,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(ChildContract.ChildTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(ChildContract.ChildTable.COLUMN_UID, form.getUid());
         values.put(ChildContract.ChildTable.COLUMN_UUID, form.getUuid());
         values.put(ChildContract.ChildTable.COLUMN_FMUID, form.getFmuid());
@@ -142,8 +142,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                ChildInfoTable.TABLE_NAME,
-                ChildInfoTable.COLUMN_NAME_NULLABLE,
+                ChildContract.ChildTable.TABLE_NAME,
+                ChildContract.ChildTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -189,7 +189,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(IMContract.IMTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(IMContract.IMTable.COLUMN_UID, form.getUid());
         values.put(IMContract.IMTable.COLUMN_UUID, form.getUuid());
         values.put(IMContract.IMTable.COLUMN_FMUID, form.getFmuid());
@@ -210,8 +210,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                ChildInfoTable.TABLE_NAME,
-                ChildInfoTable.COLUMN_NAME_NULLABLE,
+                IMContract.IMTable.TABLE_NAME,
+                IMContract.IMTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -367,6 +367,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 ChildInformation childItem = new ChildInformation().Hydrate(c);
+                childItem.setMotherAvailable(childItem.cb11.equals("1"));
                 childItem.setTotalMonths((Integer.parseInt(childItem.getCb0501()) * 12) + Integer.parseInt(childItem.getCb0502()));
                 allForms.add(childItem);
             }

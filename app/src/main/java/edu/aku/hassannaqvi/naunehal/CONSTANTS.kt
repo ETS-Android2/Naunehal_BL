@@ -15,6 +15,5 @@ class CONSTANTS {
         const val SECTION_MAIN_CHECK_FOR_END = "section_main_check"
 
         const val CHILD_DATA_UNDER5 = "childDataU5"
-        const val CHILD_DATA_UNDER3 = "childDataU3"
     }
 }

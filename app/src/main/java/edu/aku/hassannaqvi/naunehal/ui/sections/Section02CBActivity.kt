@@ -78,7 +78,6 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb12, true)
                     Clear.clearAllFields(bi.fldGrpCVcb13, true)
                     Clear.clearAllFields(bi.fldGrpCVcb14, true)
-                    bi.cb14.clearCheck()
                     bi.cb1411.isEnabled = false
                 }
                 bi.cb0602.id -> {

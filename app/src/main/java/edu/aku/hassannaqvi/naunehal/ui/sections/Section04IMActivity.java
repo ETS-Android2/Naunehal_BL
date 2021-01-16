@@ -35,6 +35,7 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection04imBinding;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
+import edu.aku.hassannaqvi.naunehal.models.Immunization;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal.ui.TakePhoto;
 import edu.aku.hassannaqvi.naunehal.utils.DateUtilsKt;
@@ -43,6 +44,7 @@ import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository;
 import kotlin.Pair;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivity;
 
 public class Section04IMActivity extends AppCompatActivity {
 
@@ -55,8 +57,10 @@ public class Section04IMActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_04im);
+        bi.setCallback(this);
         info = Section03CSActivity.selectedChildInfo;
 
+        MainApp.immunization = new Immunization();
         bi.setForm(MainApp.immunization);
         setupSkips();
         setupTextWatchers();
@@ -220,12 +224,14 @@ public class Section04IMActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.fldGrpDOBCheck02);
             Clear.clearAllFields(bi.fldGrpDOBCheck03);
         }
-        MainApp.immunization.setStatus("1");
         initForm();
+        MainApp.immunization.setStatus("1");
         if (updateDB()) {
             finish();
             if (info.getIsSelected().equals("1"))
-                startActivity(new Intent(this, Section05PDActivity.class));
+                gotoActivity(this, Section05PDActivity.class);
+            else if (info.getIsSelected().equals("2"))
+                gotoActivity(this, Section06BFActivity.class);
         }
     }
 
@@ -268,12 +274,14 @@ public class Section04IMActivity extends AppCompatActivity {
 
 
     public void BtnEnd(View view) {
-        MainApp.immunization.setStatus("2");
         initForm();
+        MainApp.immunization.setStatus("2");
         if (updateDB()) {
             finish();
             if (info.getIsSelected().equals("1"))
-                startActivity(new Intent(this, Section05PDActivity.class));
+                gotoActivity(this, Section05PDActivity.class);
+            else if (info.getIsSelected().equals("2"))
+                gotoActivity(this, Section06BFActivity.class);
         }
     }
 

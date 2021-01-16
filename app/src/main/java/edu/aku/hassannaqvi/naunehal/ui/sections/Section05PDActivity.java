@@ -16,21 +16,29 @@ import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection05pdBinding;
+import edu.aku.hassannaqvi.naunehal.models.ChildCard;
+import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
+import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivity;
 
 public class Section05PDActivity extends AppCompatActivity {
 
     ActivitySection05pdBinding bi;
+    ChildInformation info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // only in First Section
-        //MainApp.form = new Form();
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_05pd);
+        info = Section03CSActivity.selectedChildInfo;
+        bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
+        form.setPd01(info.cb01);
+        form.setPd02(info.cb07);
         bi.setForm(form);
         setupSkips();
 
@@ -119,8 +127,10 @@ public class Section05PDActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
-            if (Section03CSActivity.selectedChildInfo.getIsSelected().equals("2"))
-                startActivity(new Intent(this, Section06BFActivity.class));
+            if (info.getIsSelected().equals("2"))
+                gotoActivity(this, Section06BFActivity.class);
+            else
+                gotoActivity(this, Section07CVActivity.class);
         }
     }
 

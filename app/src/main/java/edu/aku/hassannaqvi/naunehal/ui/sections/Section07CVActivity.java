@@ -21,9 +21,13 @@ import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection07cvBinding;
+import edu.aku.hassannaqvi.naunehal.models.ChildCard;
+import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
 
 public class Section07CVActivity extends AppCompatActivity {
 
@@ -33,6 +37,8 @@ public class Section07CVActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_07cv);
+        ChildInformation info = Section03CSActivity.selectedChildInfo;
+        bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
         bi.setForm(MainApp.form);
         setupSkips();
 
