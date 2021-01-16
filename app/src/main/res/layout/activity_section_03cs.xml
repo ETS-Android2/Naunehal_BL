@@ -12,7 +12,7 @@
     </data>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/app_bg_gray"
@@ -22,7 +22,7 @@
             android:id="@+id/mainCard"
             layout="@layout/child_linenname"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,10 +31,8 @@
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_55sdp"
+            android:layout_height="match_parent"
             android:background="@android:color/transparent"
-            android:elevation="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -1728,7 +1726,7 @@
 
         </ScrollView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
 </layout>

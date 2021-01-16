@@ -18,8 +18,10 @@ import edu.aku.hassannaqvi.naunehal.models.Child
 import edu.aku.hassannaqvi.naunehal.models.ChildCard
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity
+import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
+import edu.aku.hassannaqvi.naunehal.utils.shortStringLength
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -36,8 +38,12 @@ class Section03CSActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_03cs)
-        bi.mainCard.childCard = ChildCard(info.cb02, info.cb07, if (info.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl)
-        MainApp.child = Child(info.cb01, info.cb02, info.cb07, info.uid)
+        bi.mainCard.childCard = ChildCard(info.cb02.convertStringToUpperCase().shortStringLength(), String.format("Mother: %s", info.cb07.convertStringToUpperCase().shortStringLength()), info.cb03.toInt())
+        MainApp.child = Child(
+                info.cb01,
+                info.cb02,
+                info.cb07,
+                info.uid)
         bi.form = MainApp.child
         selectedChildInfo = info
         setupSkips()
@@ -154,7 +160,7 @@ class Section03CSActivity : AppCompatActivity() {
         if (updateDB()) {
             finish()
             if (info.isUnder35)
-                gotoActivityWithSerializable(Section04IMActivity::class.java, CONSTANTS.CHILD_DATA_UNDER3, info)
+                gotoActivity(Section04IMActivity::class.java)
         }
     }
 }

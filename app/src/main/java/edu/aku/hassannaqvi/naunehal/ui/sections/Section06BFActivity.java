@@ -16,21 +16,28 @@ import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection06bfBinding;
+import edu.aku.hassannaqvi.naunehal.models.ChildCard;
+import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
 
 public class Section06BFActivity extends AppCompatActivity {
 
     ActivitySection06bfBinding bi;
+    ChildInformation info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // only in First Section
-        //MainApp.form = new Form();
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_06bf);
+        info = Section03CSActivity.selectedChildInfo;
+        bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
+        form.setBf01(info.cb01);
+        form.setBf02(info.cb07);
         bi.setForm(MainApp.form);
         setupSkips();
     }
@@ -104,7 +111,7 @@ public class Section06BFActivity extends AppCompatActivity {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
-            if (Section03CSActivity.selectedChildInfo.getIsSelected().equals("1"))
+            if (info.getIsSelected().equals("1"))
                 startActivity(new Intent(this, Section07CVActivity.class));
         }
     }
