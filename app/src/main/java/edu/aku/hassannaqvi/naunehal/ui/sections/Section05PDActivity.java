@@ -136,8 +136,12 @@ public class Section05PDActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
 
+        if (Integer.parseInt(bi.pd1101.getText().toString()) + Integer.parseInt(bi.pd1102.getText().toString()) == 0) {
+            return Validator.emptyCustomTextBox(this, bi.pd1101, "Both values can't be ZERO");
+        }
+        return true;
     }
 
 
