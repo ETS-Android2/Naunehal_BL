@@ -194,12 +194,8 @@ class Section01HHActivity : AppCompatActivity() {
         initForm() //<== This function is no longer needed after DataBinding
         if (updateDB()) {
             finish()
-            startActivity(Intent(this,
-                    if (bi.hh1102.isChecked) {
-                        EndingActivity::class.java
-                    } else {
-                        ChildrenListActivity::class.java
-                    }))
+            if (bi.hh1102.isChecked) startActivity(Intent(this, EndingActivity::class.java).putExtra("complete", true))
+            else startActivity(Intent(this, ChildrenListActivity::class.java))
         }
     }
 
