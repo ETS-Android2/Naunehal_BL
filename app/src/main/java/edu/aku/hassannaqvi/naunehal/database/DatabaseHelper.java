@@ -12,6 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
@@ -29,6 +30,7 @@ import edu.aku.hassannaqvi.naunehal.models.Districts;
 import edu.aku.hassannaqvi.naunehal.models.Districts.TableDistricts;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel;
+/*import edu.aku.hassannaqvi.naunehal.models.Immunization;*/
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
 import edu.aku.hassannaqvi.naunehal.models.UCs;
 import edu.aku.hassannaqvi.naunehal.models.UCs.TableUCs;
@@ -891,6 +893,174 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
         return insertCount;
+    }
+
+
+    /*
+     * get UnSyncedForms
+     * */
+    public Collection<Form> getUnsyncedForms(int formType) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = FormsTable.COLUMN_SYNCED + " is null AND " + FormsTable.COLUMN_ISTATUS + "=?";
+
+        String[] whereArgs = new String[]{"1"};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
+
+        Collection<Form> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Form fc = new Form();
+                allFC.add(fc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Collection<Child> getUnsyncedChild(int formType) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildContract.ChildTable.COLUMN_SYNCED + " is null AND " + ChildContract.ChildTable.COLUMN_STATUS + "=?";
+
+        String[] whereArgs = new String[]{"1"};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildContract.ChildTable.COLUMN_ID + " ASC";
+
+        Collection<Child> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    ChildContract.ChildTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Child fc = new Child();
+                allFC.add(fc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Collection<ChildInformation> getUnsyncedChildInfo(int formType) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildInformationContract.ChildInfoTable.COLUMN_SYNCED + " is null AND " + ChildInformationContract.ChildInfoTable.COLUMN_STATUS + "=?";
+
+        String[] whereArgs = new String[]{"1"};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildInformationContract.ChildInfoTable.COLUMN_ID + " ASC";
+
+        Collection<ChildInformation> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    ChildInformationContract.ChildInfoTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                ChildInformation fc = new ChildInformation();
+                allFC.add(fc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Collection<Immunization> getUnsyncedIM(int formType) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = IMContract.IMTable.COLUMN_SYNCED + " is null AND " + IMContract.IMTable.COLUMN_STATUS + "=?";
+
+        String[] whereArgs = new String[]{"1"};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = IMContract.IMTable.COLUMN_ID + " ASC";
+
+        Collection<Immunization> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    IMContract.IMTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Immunization fc = new Immunization();
+                allFC.add(fc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
     }
 
 
