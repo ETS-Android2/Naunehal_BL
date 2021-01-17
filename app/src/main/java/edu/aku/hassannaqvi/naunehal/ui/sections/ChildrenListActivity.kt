@@ -49,7 +49,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         * */
         val actionItems = mutableListOf<SpeedDialActionItem>(
                 SpeedDialActionItem.Builder(R.id.fab_exit, R.drawable.ic_exit).setLabel("Force exit").create(),
-                SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Finish").create(),
+                SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Next Section").create(),
                 SpeedDialActionItem.Builder(R.id.fab_add, R.drawable.ic_add).setLabel("Add Children").create()
         )
         bi.speedDial.addAllActionItems(actionItems)

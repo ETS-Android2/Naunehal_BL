@@ -121,13 +121,19 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
         bi.im02.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i == bi.im0201.getId()) {
-                bi.fldGrpDOBCheck03.setVisibility(View.GONE);
+                bi.fldGrpDOBCheck02.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpDOBCheck02);
+                bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
                 Clear.clearAllFields(bi.fldGrpDOBCheck03);
+                Clear.clearAllFields(bi.fldGrpim0802);
+                bi.fldGrpim0802.setVisibility(View.GONE);
                 bi.fldGrpCVim03.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpCVim03);
                 bi.llim01.setVisibility(View.VISIBLE);
             } else if (i == bi.im0202.getId()) {
+                bi.fldGrpDOBCheck02.setVisibility(View.VISIBLE);
                 bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
+                bi.fldGrpim0802.setVisibility(View.VISIBLE);
                 bi.llim01.setVisibility(View.GONE);
                 bi.fldGrpCVim03.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpCVim03);
@@ -218,12 +224,12 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         });
 
         bi.im08.setOnCheckedChangeListener((radioGroup, i) -> {
-            if (i == bi.im0802.getId()) {
+            if (i == bi.im0802.getId() || i == bi.im0803.getId()) {
                 bi.fldGrpim0801.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpim0801);
                 bi.fldGrpim0802.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpim0802);
-            } else {
+            } else if (i == bi.im0801.getId()) {
                 bi.fldGrpim0801.setVisibility(View.VISIBLE);
                 bi.fldGrpim0802.setVisibility(View.VISIBLE);
             }
@@ -290,11 +296,16 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
             Toast.makeText(this, "Invalid vaccination date!", Toast.LENGTH_SHORT).show();
             return false;
         }
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
         if (bi.im0201.isChecked() && (TextUtils.isEmpty(bi.frontFileName.getText()) || TextUtils.isEmpty(bi.backFileName.getText()))) {
             Toast.makeText(this, "No Photos attached", Toast.LENGTH_SHORT).show();
             return false;
         }
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (Integer.parseInt(bi.im23b1.getText().toString()) + Integer.parseInt(bi.im23b2.getText().toString()) == 0) {
+            return Validator.emptyCustomTextBox(this, bi.im23b1, "Both values can't be ZERO");
+        }
+        return true;
     }
 
 

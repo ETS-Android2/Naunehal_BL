@@ -14,6 +14,7 @@ import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.AndroidDatabaseManager;
+import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity;
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section02CBActivity;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
+        if (MainApp.admin)
+            bi.admin.setVisibility(View.VISIBLE);
 
 
     }
