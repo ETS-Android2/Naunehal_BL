@@ -229,6 +229,16 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
             }
         });
 
+        bi.im10.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim10));
+
+        bi.im14.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim15));
+
+        bi.im16.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim17));
+
+        bi.im18.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim19));
+
+        bi.im21.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim22));
+
     }
 
 
