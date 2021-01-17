@@ -4,11 +4,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -135,7 +136,7 @@ public class Section05PDActivity extends AppCompatActivity {
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
 
-        if (bi.pd0902.isChecked()) {
+        if (bi.pd0901.isChecked()) {
             if (Integer.parseInt(bi.pd1101.getText().toString()) + Integer.parseInt(bi.pd1102.getText().toString()) == 0) {
                 return Validator.emptyCustomTextBox(this, bi.pd1101, "Both values can't be ZERO");
             }

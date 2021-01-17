@@ -103,8 +103,6 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
                 Clear.clearAllFields(bi.fldGrpCVim03);
                 bi.fldGrpCVim03.setVisibility(View.GONE);
-                Clear.clearAllFields(bi.llim01);
-                bi.llim01.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpDOBCheck03);
                 bi.fldGrpDOBCheck03.setVisibility(View.GONE);
 
@@ -112,10 +110,10 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                 bi.fldGrpCVim03.setVisibility(View.VISIBLE);
                 bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
 
-                bi.llim01.setVisibility(View.GONE);
-                Clear.clearAllFields(bi.llim01);
                 Clear.clearAllFields(bi.fldGrpCVim02);
                 bi.fldGrpCVim02.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.llim01);
+                bi.llim01.setVisibility(View.GONE);
             }
         });
 
@@ -127,16 +125,12 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                 Clear.clearAllFields(bi.fldGrpDOBCheck03);
                 Clear.clearAllFields(bi.fldGrpim0802);
                 bi.fldGrpim0802.setVisibility(View.GONE);
-                bi.fldGrpCVim03.setVisibility(View.GONE);
-                Clear.clearAllFields(bi.fldGrpCVim03);
                 bi.llim01.setVisibility(View.VISIBLE);
             } else if (i == bi.im0202.getId()) {
                 bi.fldGrpDOBCheck02.setVisibility(View.VISIBLE);
                 bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
                 bi.fldGrpim0802.setVisibility(View.VISIBLE);
                 bi.llim01.setVisibility(View.GONE);
-                bi.fldGrpCVim03.setVisibility(View.GONE);
-                Clear.clearAllFields(bi.fldGrpCVim03);
                 Clear.clearAllFields(bi.llim01);
                 bi.frontFileName.setText(null);
                 bi.backFileName.setText(null);
@@ -224,14 +218,14 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         });
 
         bi.im08.setOnCheckedChangeListener((radioGroup, i) -> {
-            if (i == bi.im0802.getId() || i == bi.im0803.getId()) {
+            if (i == bi.im0801.getId()) {
+                bi.fldGrpim0801.setVisibility(View.VISIBLE);
+                bi.fldGrpim0802.setVisibility(View.VISIBLE);
+            } else if (i == bi.im0802.getId() || i == bi.im0803.getId()) {
                 bi.fldGrpim0801.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpim0801);
                 bi.fldGrpim0802.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpim0802);
-            } else if (i == bi.im0801.getId()) {
-                bi.fldGrpim0801.setVisibility(View.VISIBLE);
-                bi.fldGrpim0802.setVisibility(View.VISIBLE);
             }
         });
 
@@ -302,9 +296,10 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
             Toast.makeText(this, "No Photos attached", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (Integer.parseInt(bi.im23b1.getText().toString()) + Integer.parseInt(bi.im23b2.getText().toString()) == 0) {
-            return Validator.emptyCustomTextBox(this, bi.im23b1, "Both values can't be ZERO");
-        }
+        if (bi.im0801.isChecked())
+            if (Integer.parseInt(bi.im23b1.getText().toString()) + Integer.parseInt(bi.im23b2.getText().toString()) == 0) {
+                return Validator.emptyCustomTextBox(this, bi.im23b1, "Both values can't be ZERO");
+            }
         return true;
     }
 
