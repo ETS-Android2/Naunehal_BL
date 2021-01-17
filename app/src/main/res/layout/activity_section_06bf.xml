@@ -188,20 +188,20 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/bf3y" />
+                                android:text="@string/bf3d" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/bf3y"
+                                android:id="@+id/bf3d"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="2"
                                 android:gravity="center"
-                                android:hint="####"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="4"
-                                android:text="@={form.bf3y}"
-                                app:maxValue="2021"
-                                app:minValue="2016"
+                                android:maxLength="2"
+                                android:text="@={form.bf3d}"
+                                app:maxValue="29"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <TextView
@@ -230,20 +230,20 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/bf3d" />
+                                android:text="@string/bf3y" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/bf3d"
+                                android:id="@+id/bf3y"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="2"
                                 android:gravity="center"
-                                android:hint="##"
+                                android:hint="####"
                                 android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={form.bf3d}"
-                                app:maxValue="29"
-                                app:minValue="1"
+                                android:maxLength="4"
+                                android:text="@={form.bf3y}"
+                                app:maxValue="2021"
+                                app:minValue="2016"
                                 app:type="range" />
 
                         </LinearLayout>

@@ -8,20 +8,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.bumptech.glide.util.Util;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection081seBinding;
-import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
-import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
-import edu.aku.hassannaqvi.naunehal.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
@@ -109,7 +103,7 @@ public class Section081SEActivity extends AppCompatActivity {
 
 
     public void BtnEnd(View view) {
-        AppUtilsKt.contextEndActivity(this);
+        AppUtilsKt.openSectionEndingActivity(this);
     }
 
     @Override

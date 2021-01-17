@@ -1,18 +1,14 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
-import com.validatorcrawler.aliazaz.Clear;
-import com.validatorcrawler.aliazaz.Validator;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
+import com.validatorcrawler.aliazaz.Clear;
+import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
@@ -20,7 +16,6 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection082seBinding;
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity;
-import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
@@ -50,26 +45,6 @@ public class Section082SEActivity extends AppCompatActivity {
             if (i == bi.se2302.getId()) {
                 Clear.clearAllFields(bi.llse23);
                 bi.llse23.setVisibility(View.GONE);
-            }
-        });
-
-
-        bi.se25.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (TextUtils.isEmpty(bi.se25.getText()))
-                    return;
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
             }
         });
 
@@ -114,7 +89,7 @@ public class Section082SEActivity extends AppCompatActivity {
 
 
     public void BtnEnd(View view) {
-        AppUtilsKt.contextEndActivity(this);
+        AppUtilsKt.openSectionEndingActivity(this);
     }
 
 

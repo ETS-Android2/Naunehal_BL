@@ -17,7 +17,6 @@ import edu.aku.hassannaqvi.naunehal.base.viewmodel.SelectedChildrenListViewModel
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySelectedChildrenListBinding
-import edu.aku.hassannaqvi.naunehal.models.Child
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
 import edu.aku.hassannaqvi.naunehal.utils.WarningActivityInterface
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
@@ -58,7 +57,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         * */
         val actionItems = mutableListOf<SpeedDialActionItem>(
                 SpeedDialActionItem.Builder(R.id.fab_exit, R.drawable.ic_exit).setLabel("Force exit").create(),
-                SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Finish").create()
+                SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Next Section").create()
         )
         bi.speedDial.addAllActionItems(actionItems)
         bi.speedDial.setOnActionSelectedListener { actionItem ->
@@ -69,6 +68,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
                                 .show()
                         return@setOnActionSelectedListener false
                     }
+                    finish()
                     gotoActivity(Section081SEActivity::class.java)
                 }
                 R.id.fab_exit -> {

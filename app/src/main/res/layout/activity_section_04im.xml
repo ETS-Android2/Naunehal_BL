@@ -2266,7 +2266,9 @@
 
 
                     <!-- im08b  Input-Numeric   -->
-                    <androidx.cardview.widget.CardView style="@style/cardView">
+                    <androidx.cardview.widget.CardView
+                        style="@style/cardView"
+                        android:visibility="@{form.im08a.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2299,9 +2301,9 @@
                                 android:layout_height="wrap_content"
                                 android:hint="@string/im08b"
                                 android:inputType="number"
-                                android:text="@={form.im08b}"
                                 app:maxValue="9"
-                                app:minValue="0"
+                                app:minValue="1"
+                                android:text="@={form.im08b}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -3609,7 +3611,7 @@
                                     android:maxLength="2"
                                     android:text="@={form.im23b1}"
                                     app:maxValue="10"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -3623,7 +3625,7 @@
                                     android:maxLength="2"
                                     android:text="@={form.im23b2}"
                                     app:maxValue="59"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
