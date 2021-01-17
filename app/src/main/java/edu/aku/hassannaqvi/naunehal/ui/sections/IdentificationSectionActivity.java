@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivityIdentificationSectionBinding;
+import edu.aku.hassannaqvi.naunehal.databinding.ActivityIdentificationSectionBindingImpl;
 
 /*** IDENTIFICATION SECTION  --No DataBinding in this section.
  *
@@ -23,7 +23,7 @@ import edu.aku.hassannaqvi.naunehal.databinding.ActivityIdentificationSectionBin
 
 public class IdentificationSectionActivity extends AppCompatActivity {
 
-    ActivityIdentificationSectionBinding bi;
+    ActivityIdentificationSectionBindingImpl bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
