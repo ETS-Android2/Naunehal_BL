@@ -8,6 +8,9 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
@@ -24,9 +27,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Objects;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
@@ -216,6 +216,28 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
             }
         });
+
+        bi.im08.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.im0802.getId()) {
+                bi.fldGrpim0801.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpim0801);
+                bi.fldGrpim0802.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpim0802);
+            } else {
+                bi.fldGrpim0801.setVisibility(View.VISIBLE);
+                bi.fldGrpim0802.setVisibility(View.VISIBLE);
+            }
+        });
+
+        bi.im10.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim10));
+
+        bi.im14.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim15));
+
+        bi.im16.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim17));
+
+        bi.im18.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim19));
+
+        bi.im21.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim22));
 
     }
 
