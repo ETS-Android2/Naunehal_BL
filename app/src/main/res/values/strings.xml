@@ -551,7 +551,8 @@
     <string name="pd1702">دن</string>
     <string name="pd1703">ہفتے </string>
     <string name="pd1798">معلوم نہیں /یاد نہیں</string>
-    <string name="pd18">اس طرح کا معائنہ کتنی مرتبہ ہوا ؟تعداد</string>
+    <string name="pd18"> اس طرح کا معائنہ کتنی مرتبہ ہوا ؟ </string>
+    <string name="pd18a"> تعداد </string>
     <string name="pd19">کیا کسی نے آپ کے )بچہ کا نام( کی صحت کا معائنہ کیاِتھا؟</string>
     <string name="pd1901">ہاں</string>
     <string name="pd1902">نہیں</string>
@@ -570,7 +571,8 @@
     <string name="pd2102">دن</string>
     <string name="pd2103">ہفتے </string>
     <string name="pd2198">معلوم نہیں /یاد نہیں</string>
-    <string name="pd22">اس طرح کا معائنہ کتنی مرتبہ ہوا ؟ تعداد</string>
+    <string name="pd22"> اس طرح کا معائنہ کتنی مرتبہ ہوا ؟ </string>
+    <string name="pd22a"> تعداد </string>
     <string name="bf_title1">سیکشن بی ایف: دودھ پلانا ، صحت اور نگہداشت سے متعلق رویے ہدایات:    گھر میں رہنے والے 0-23 ماہ کے سب سے کم عمر بچے کی ماں سے بھروایا جائے۔</string>
     <string name="bf01">بچے کا لائن نمبر(2سال سے کم عمر)</string>
     <string name="bf02">بچے کی ماں کا نام</string>
@@ -812,7 +814,7 @@
     <string name="se0406">لکڑی کے تختے</string>
     <string name="se0407">گتے سے بنی ہوئی چھت </string>
     <string name="se04title03">تیار چھت </string>
-    <string name="se0408">Asbestos</string>
+    <string name="se0408">ایسبیسٹوس</string>
     <string name="se0409">سیمنٹ اور اینٹوں کی مدد سے تیار کردہ چھت</string>
     <string name="se0410">دھات </string>
     <string name="se0411">لکٹری سے بنی ہوئی چھت </string>
@@ -864,7 +866,7 @@
     <string name="se11title1">فلش یا انڈیل کر پانی ڈالنے والا</string>
     <string name="se1101">فلش   سیوریج کے نظام سے منسلک  </string>
     <string name="se1102">فلش سپٹک ٹینک سے منسلک  </string>
-    <string name="se1103">فلش   گڑھےواے لیٹرین سے منسلک  </string>
+    <string name="se1103"> فلش گڑھے واے لیٹرین سے منسلک  </string>
     <string name="se1104">فلش کہیں اور   </string>
     <string name="se1105">فلش ,معلوم نہیں کہاں   </string>
     <string name="se11title2">گڑھے والا  لیٹرین </string>
@@ -873,7 +875,7 @@
     <string name="se1108">گڑھے والا کھلاہوا  لیٹرین  </string>
     <string name="se1109">کھادکے گڑہے والا ٹوائلٹ</string>
     <string name="se1110">بالٹی والا ٹوائلٹ </string>
-    <string name="se1111">Hanging Toilet/Hanging Latrine</string>
+    <string name="se1111">  لٹکتا ٹوالیٹ / لیٹرین </string>
     <string name="se1112">کوئی سہولت نہیں /جھاڑیوں/زمین پر </string>
     <string name="se1196">دیگر برائے مہربانی وضاحت کریں</string>
     <string name="se12">(اس گھرانے میں پانی کی نکاسی کا نظام کونسا ہے؟ (مشاہدہ کریں</string>
