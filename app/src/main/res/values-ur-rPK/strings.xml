@@ -128,7 +128,7 @@
     <string name="cb1413">خاتون خانہ</string>
     <string name="cb1496">دیگر وضاحت کریں</string>
     <string name="cb1008">زراعت</string>
-    <string name="cb15">(پیدائشی  وزن (کلوگرام میں</string>
+    <string name="cb15">پیدائشی  وزن (کلوگرام میں۔)</string>
     <string name="cb1009">طالب علم </string>
     <string name="cb1010">بےروزگار</string>
     <string name="cb16">کیا یہ پیدائش رجسٹرڈ تھی؟ اگر ہاں  تو  کہاں رجسٹرد تھی ؟</string>
@@ -1274,6 +1274,7 @@
     <string name='Q_se39'>se39</string>
     <string name='Q_se40'>se40</string>
     <string name="dialog_text">"    برائے کرم دوسرے بچے کے لئے معلومات شامل کریں."</string>
+    <string name="cb1598">معلوم نہیں</string>
 
 
 </resources>

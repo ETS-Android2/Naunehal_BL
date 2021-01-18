@@ -123,9 +123,17 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                 Clear.clearAllFields(bi.fldGrpDOBCheck02);
                 bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
                 Clear.clearAllFields(bi.fldGrpDOBCheck03);
+                bi.fldGrpIm24.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpIm24);
                 Clear.clearAllFields(bi.fldGrpim0802);
                 bi.fldGrpim0802.setVisibility(View.GONE);
                 bi.llim01.setVisibility(View.VISIBLE);
+                bi.fldGrpIm23.setVisibility(View.VISIBLE);
+
+
+                bi.im04dd.setEnabled(true);
+                bi.im04mm.setEnabled(true);
+
             } else if (i == bi.im0202.getId()) {
                 bi.fldGrpDOBCheck02.setVisibility(View.VISIBLE);
                 bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
@@ -194,13 +202,11 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                             monthFlag = totalMonths > 35;
                             if (monthFlag) {
                                 bi.fldGrpDOBCheck01.setVisibility(View.GONE);
-                                bi.fldGrpDOBCheck02.setVisibility(View.GONE);
                                 bi.fldGrpDOBCheck03.setVisibility(View.GONE);
 
                                 bi.childAgeWarning.setVisibility(View.VISIBLE);
                             } else {
                                 bi.fldGrpDOBCheck01.setVisibility(View.VISIBLE);
-                                bi.fldGrpDOBCheck02.setVisibility(View.VISIBLE);
                                 bi.fldGrpDOBCheck03.setVisibility(View.VISIBLE);
                             }
                         }
@@ -221,11 +227,17 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
             if (i == bi.im0801.getId()) {
                 bi.fldGrpim0801.setVisibility(View.VISIBLE);
                 bi.fldGrpim0802.setVisibility(View.VISIBLE);
+                bi.fldGrpIm24.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpIm24);
+                bi.fldGrpIm23.setVisibility(View.VISIBLE);
             } else if (i == bi.im0802.getId() || i == bi.im0803.getId()) {
                 bi.fldGrpim0801.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpim0801);
                 bi.fldGrpim0802.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpim0802);
+                bi.fldGrpIm24.setVisibility(View.VISIBLE);
+                bi.fldGrpIm23.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpIm23);
             }
         });
 

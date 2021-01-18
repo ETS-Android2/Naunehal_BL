@@ -709,7 +709,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.cs08.equals(`8`)}"
-                                    android:onClick="@{()->form.setCs08(`8`)}"
+                                    android:onClick="@{()->form.setCs08(form.cs08.equals(`8`)?``:`8`)}"
                                     android:text="@string/cs0808" />
 
                                 <CheckBox

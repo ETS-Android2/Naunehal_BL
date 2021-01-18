@@ -79,7 +79,7 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb12, true)
                     Clear.clearAllFields(bi.fldGrpCVcb13, true)
                     Clear.clearAllFields(bi.fldGrpCVcb14, true)
-                    bi.cb1411.isEnabled = false
+                    bi.cb1413.isEnabled = false
                 }
                 bi.cb0602.id -> {
                     Clear.clearAllFields(bi.fldGrpCVcb12, false)
@@ -103,7 +103,7 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb08, true)
                     Clear.clearAllFields(bi.fldGrpCVcb09, true)
                     Clear.clearAllFields(bi.fldGrpCVcb10, true)
-                    bi.cb1411.isEnabled = false
+                    bi.cb1413.isEnabled = false
                 }
             }
         }
