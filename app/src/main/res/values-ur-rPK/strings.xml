@@ -128,7 +128,7 @@
     <string name="cb1413">خاتون خانہ</string>
     <string name="cb1496">دیگر وضاحت کریں</string>
     <string name="cb1008">زراعت</string>
-    <string name="cb15">(پیدائشی  وزن (کلوگرام میں</string>
+    <string name="cb15">پیدائشی  وزن (کلوگرام میں۔)</string>
     <string name="cb1009">طالب علم </string>
     <string name="cb1010">بےروزگار</string>
     <string name="cb16">کیا یہ پیدائش رجسٹرڈ تھی؟ اگر ہاں  تو  کہاں رجسٹرد تھی ؟</string>
@@ -1266,6 +1266,7 @@
     <string name='Q_se31'>se31</string>
     <string name='Q_se32'>se32</string>
     <string name='Q_se33'>se33</string>
+    <string name='Q_se34'>se34</string>
     <string name='Q_se35'>se35</string>
     <string name='Q_se36'>se36</string>
     <string name='Q_se37'>se37</string>
