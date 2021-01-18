@@ -549,7 +549,8 @@
     <string name="pd1702">Days</string>
     <string name="pd1703">Weeks</string>
     <string name="pd1798">Don’t know/ don’t remember </string>
-    <string name="pd18">How many times such check happen? Times</string>
+    <string name="pd18"> How many times such check happen ? </string>
+    <string name="pd18a"> Number of Times </string>
     <string name="pd19">Did anyone check on (name of child) health?</string>
     <string name="pd1901">Yes</string>
     <string name="pd1902">No</string>
@@ -568,7 +569,8 @@
     <string name="pd2102">Days </string>
     <string name="pd2103">Weeks </string>
     <string name="pd2198">Don’t know/ don’t remember</string>
-    <string name="pd22">How many times such check happen? Times</string>
+    <string name="pd22"> How many times such check happen ? </string>
+    <string name="pd22a"> Number of Times </string>
     <string name="bf_title1">Section BF: Breastfeeding, Health &amp; Care-seeking Behaviors Instruction: To be administered to the mother of the youngest child in the household, between 0-23 months of age</string>
     <string name="bf01">Child’s Line Number (youngest under 2)</string>
     <string name="bf02">WRA’s Name</string>

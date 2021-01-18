@@ -551,7 +551,8 @@
     <string name="pd1702">دن</string>
     <string name="pd1703">ہفتے </string>
     <string name="pd1798">معلوم نہیں /یاد نہیں</string>
-    <string name="pd18">اس طرح کا معائنہ کتنی مرتبہ ہوا ؟تعداد</string>
+    <string name="pd18"> اس طرح کا معائنہ کتنی مرتبہ ہوا ؟ </string>
+    <string name="pd18a"> تعداد </string>
     <string name="pd19">کیا کسی نے آپ کے )بچہ کا نام( کی صحت کا معائنہ کیاِتھا؟</string>
     <string name="pd1901">ہاں</string>
     <string name="pd1902">نہیں</string>
@@ -570,7 +571,8 @@
     <string name="pd2102">دن</string>
     <string name="pd2103">ہفتے </string>
     <string name="pd2198">معلوم نہیں /یاد نہیں</string>
-    <string name="pd22">اس طرح کا معائنہ کتنی مرتبہ ہوا ؟ تعداد</string>
+    <string name="pd22"> اس طرح کا معائنہ کتنی مرتبہ ہوا ؟ </string>
+    <string name="pd22a"> تعداد </string>
     <string name="bf_title1">سیکشن بی ایف: دودھ پلانا ، صحت اور نگہداشت سے متعلق رویے ہدایات:    گھر میں رہنے والے 0-23 ماہ کے سب سے کم عمر بچے کی ماں سے بھروایا جائے۔</string>
     <string name="bf01">بچے کا لائن نمبر(2سال سے کم عمر)</string>
     <string name="bf02">بچے کی ماں کا نام</string>
