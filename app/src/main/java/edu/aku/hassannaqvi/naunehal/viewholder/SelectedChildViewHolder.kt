@@ -21,7 +21,7 @@ class SelectedChildViewHolder(private val bi: SelectedChildViewBinding) :
 
     fun bind(item: ChildInformation) {
         bi.resName.text = String.format("Mother: %s", item.cb07.convertStringToUpperCase().shortStringLength())
-        bi.name.text = item.cb02.convertStringToUpperCase().shortStringLength()
+        bi.name.text = item.cb02.convertStringToUpperCase().shortStringLength().plus("[${item.cb0501.toInt().times(12).plus(item.cb0502.toInt())}M]")
         val imageRes: Int = if (item.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl
         val flagImage: Int
         if (item.childTableDataExist == null) {
