@@ -45,7 +45,7 @@ public class Section05PDActivity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        bi.pd04.setOnCheckedChangeListener((radioGroup, i) -> {
+/*        bi.pd04.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVpd05);
             Clear.clearAllFields(bi.fldGrpCVpd06);
             Clear.clearAllFields(bi.fldGrpCVpd07);
@@ -57,7 +57,7 @@ public class Section05PDActivity extends AppCompatActivity {
                 bi.fldGrpCVpd06.setVisibility(View.GONE);
                 bi.fldGrpCVpd07.setVisibility(View.GONE);
             }
-        });
+        });*/
 
         bi.pd09.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVpd10);
@@ -74,8 +74,8 @@ public class Section05PDActivity extends AppCompatActivity {
             Clear.clearAllFields(bi.fldGrpCVpd14);
             bi.fldGrpCVpd14.setVisibility(View.VISIBLE);
             if (i == bi.pd1301.getId() || i == bi.pd1302.getId()) {
-                bi.fldGrpCVpd14.setVisibility(View.GONE);
-            }
+                bi.fldGrpCVpd14.setVisibility(View.VISIBLE);
+            } else bi.fldGrpCVpd14.setVisibility(View.GONE);
         });
 
         bi.pd15.setOnCheckedChangeListener((radioGroup, i) -> {
@@ -105,6 +105,8 @@ public class Section05PDActivity extends AppCompatActivity {
                 bi.fldGrpCVpd22.setVisibility(View.VISIBLE);
             }
         });
+
+        bi.pd04.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrppd04));
 
     }
 

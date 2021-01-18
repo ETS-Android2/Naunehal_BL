@@ -84,7 +84,7 @@
     <string name="cb03">جنس</string>
     <string name="cb0301">مرد</string>
     <string name="cb0302">عورت</string>
-    <string name="cb04">تاریخ پیدائش</string>
+    <string name="cb04">.تاریخ پیدائش (اگر تاریخ پیدائش معلوم نہیں ہے تو ۔9998 ۔98 ۔98 درج کریں)</string>
     <string name="cb04dd">دن</string>
     <string name="cb04mm">مہینے</string>
     <string name="cb04yy">سال</string>
@@ -837,7 +837,7 @@
     <string name="se0803">پڑوسی کے گھر کا نلکا </string>
     <string name="se0804">گلی / علاقہ کا نلکا </string>
     <string name="se0805">ٹیوب ویل/ بورنگ کا پانی </string>
-    <string name="se08title2">گہرا کنواں</string>
+    <string name="se08title2">گہرا کنواں/ بورنگ کا پانی </string>
     <string name="se0806">محفوظ کنواں</string>
     <string name="se0807">غیرمحفوظ کنواں </string>
     <string name="se08title3">چشمے کا پانی</string>

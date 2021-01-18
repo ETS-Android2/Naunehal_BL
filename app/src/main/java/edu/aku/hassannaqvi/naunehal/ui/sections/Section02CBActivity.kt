@@ -28,6 +28,7 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 class Section02CBActivity : AppCompatActivity() {
     lateinit var bi: ActivitySection02cbBinding
     var dtFlag = false
@@ -110,6 +111,8 @@ class Section02CBActivity : AppCompatActivity() {
 
         txtWatch(bi.cb09)
         txtWatch(bi.cb13)
+
+        bi.cb0601.setOnCheckedChangeListener { radioGroup, i -> Clear.clearAllFields(bi.fldGrpCVcb11) }
 
     }
 

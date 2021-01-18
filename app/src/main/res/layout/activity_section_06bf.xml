@@ -378,8 +378,8 @@
                                 android:tag="bf0502"
                                 android:text="@={form.bf0502x}"
                                 android:visibility='@{form.bf05.equals(`1`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="23"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -400,8 +400,8 @@
                                 android:tag="bf0503"
                                 android:text="@={form.bf0503x}"
                                 android:visibility='@{form.bf05.equals(`2`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:maxValue="1"
+                                app:minValue="6"
                                 app:type="range" />
 
                             <RadioButton

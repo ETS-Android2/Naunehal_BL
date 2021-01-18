@@ -1010,6 +1010,13 @@
                             android:onClick="@{()->form.setSe08(`4`)}"
                             android:text="@string/se0804" />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
+                            android:text="@string/se08title2" />
+
                         <RadioButton
                             android:id="@+id/se0805"
                             android:layout_width="match_parent"
@@ -1017,13 +1024,6 @@
                             android:checked="@{form.se08.equals(`5`)}"
                             android:onClick="@{()->form.setSe08(`5`)}"
                             android:text="@string/se0805" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:background="@color/white"
-                            android:text="@string/se08title2" />
 
                         <RadioButton
                             android:id="@+id/se0806"
