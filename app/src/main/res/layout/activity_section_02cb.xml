@@ -109,8 +109,8 @@
                         android:id="@+id/cb02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cb02"
                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                        android:hint="@string/cb02"
                         android:text="@={childInformation.cb02}" />
 
                 </LinearLayout>
@@ -207,6 +207,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layoutDirection="ltr"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -343,8 +344,8 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_margin="1dp"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <TextView
@@ -373,8 +374,8 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_margin="1dp"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <TextView
@@ -520,8 +521,8 @@
                             android:id="@+id/cb07"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cb07"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                            android:hint="@string/cb07"
                             android:text="@={childInformation.cb07}" />
 
                     </LinearLayout>
@@ -876,8 +877,8 @@
                             android:id="@+id/cb12"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cb12"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                            android:hint="@string/cb12"
                             android:text="@={childInformation.cb12}" />
 
                     </LinearLayout>
@@ -1094,120 +1095,120 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-                <!-- cb15  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcb15"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cb15" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/cb15" />
-
-                        </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cb15"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="#.#"
-                            android:inputType="number"
-                            android:text="@={childInformation.cb15}"
-                            app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
-                            app:mask="#.#"
-                            app:maxValue="9"
-                            app:minValue="0.5"
-                            app:type="range" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- cb16  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcb16"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cb16" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/cb16" />
-
-                        </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/cb16"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <RadioButton
-                                android:id="@+id/cb1601"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{childInformation.cb16.equals(`1`)}"
-                                android:onClick="@{()->childInformation.setCb16(`1`)}"
-                                android:text="@string/cb1601" />
-
-                            <RadioButton
-                                android:id="@+id/cb1602"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{childInformation.cb16.equals(`2`)}"
-                                android:onClick="@{()->childInformation.setCb16(`2`)}"
-                                android:text="@string/cb1602" />
-
-                            <RadioButton
-                                android:id="@+id/cb1603"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{childInformation.cb16.equals(`3`)}"
-                                android:onClick="@{()->childInformation.setCb16(`3`)}"
-                                android:text="@string/cb1603" />
-
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
             </LinearLayout>
+
+
+            <!-- cb15  Input-Numeric   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVcb15"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_cb15" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/cb15" />
+
+                    </LinearLayout>
+
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/cb15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="#.#"
+                        android:inputType="number"
+                        android:text="@={childInformation.cb15}"
+                        app:mask="#.#"
+                        app:maxValue="9.9"
+                        app:minValue="0.5"
+                        app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
+                        app:type="range" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- cb16  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVcb16"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_cb16" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/cb16" />
+
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:id="@+id/cb16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/cb1601"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{childInformation.cb16.equals(`1`)}"
+                            android:onClick="@{()->childInformation.setCb16(`1`)}"
+                            android:text="@string/cb1601" />
+
+                        <RadioButton
+                            android:id="@+id/cb1602"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{childInformation.cb16.equals(`2`)}"
+                            android:onClick="@{()->childInformation.setCb16(`2`)}"
+                            android:text="@string/cb1602" />
+
+                        <RadioButton
+                            android:id="@+id/cb1603"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{childInformation.cb16.equals(`3`)}"
+                            android:onClick="@{()->childInformation.setCb16(`3`)}"
+                            android:text="@string/cb1603" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
             <!--EndButton LinearLayout-->
