@@ -63,9 +63,8 @@
                             android:text="@string/Q_se01" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se01" />
 
                     </LinearLayout>
@@ -177,9 +176,8 @@
                             android:text="@string/Q_se02" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se02" />
 
                     </LinearLayout>
@@ -190,9 +188,10 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/title01" />
 
                         <RadioButton
@@ -212,9 +211,10 @@
                             android:text="@string/se0212" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/title02" />
 
                         <RadioButton
@@ -234,9 +234,10 @@
                             android:text="@string/se0222" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/title03" />
 
                         <RadioButton
@@ -341,9 +342,8 @@
                             android:text="@string/Q_se03" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se03" />
 
                     </LinearLayout>
@@ -354,9 +354,10 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se03title1" />
 
                         <RadioButton
@@ -400,9 +401,10 @@
                             android:text="@string/se0305" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se03title2" />
 
                         <RadioButton
@@ -454,8 +456,10 @@
                             android:text="@string/se0311" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:layout_marginTop="12dp"
                             android:text="@string/se03title3" />
 
@@ -553,9 +557,8 @@
                             android:text="@string/Q_se04" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se04" />
 
                     </LinearLayout>
@@ -566,9 +569,10 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se04title1" />
 
                         <RadioButton
@@ -596,9 +600,10 @@
                             android:text="@string/se0403" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se04title02" />
 
                         <RadioButton
@@ -634,9 +639,10 @@
                             android:text="@string/se0407" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se04title03" />
 
                         <RadioButton
@@ -720,6 +726,7 @@
                             android:tag="se0496"
                             android:text="@={form.se0496x}"
                             android:visibility='@{form.se04.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -748,9 +755,8 @@
                             android:text="@string/Q_se05" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se05" />
 
                     </LinearLayout>
@@ -832,9 +838,8 @@
                             android:text="@string/Q_se06" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se06" />
 
                     </LinearLayout>
@@ -845,10 +850,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:gravity="center"
                             android:text="@string/se06a" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -895,9 +900,8 @@
                             android:text="@string/Q_se07" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se07" />
 
                     </LinearLayout>
@@ -908,10 +912,10 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            style="@style/sub_labels"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:gravity="center"
                             android:text="@string/se07a" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
@@ -956,9 +960,8 @@
                             android:text="@string/Q_se08" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se08" />
 
                     </LinearLayout>
@@ -969,9 +972,10 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se08title1" />
 
                         <RadioButton
@@ -1015,9 +1019,10 @@
                             android:text="@string/se0805" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se08title2" />
 
                         <RadioButton
@@ -1037,9 +1042,10 @@
                             android:text="@string/se0807" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se08title3" />
 
                         <RadioButton
@@ -1115,6 +1121,7 @@
                             android:tag="se0896"
                             android:text="@={form.se0896x}"
                             android:visibility='@{form.se08.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -1143,9 +1150,8 @@
                             android:text="@string/Q_se09" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se09" />
 
                     </LinearLayout>
@@ -1209,9 +1215,8 @@
                             android:text="@string/Q_se10" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se10" />
 
                     </LinearLayout>
@@ -1323,9 +1328,8 @@
                             android:text="@string/Q_se11" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se11" />
 
                     </LinearLayout>
@@ -1336,9 +1340,10 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se11title1" />
 
                         <RadioButton
@@ -1382,9 +1387,10 @@
                             android:text="@string/se1105" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se11title2" />
 
                         <RadioButton
@@ -1460,6 +1466,7 @@
                             android:tag="se1196"
                             android:text="@={form.se1196x}"
                             android:visibility='@{form.se11.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -1488,9 +1495,8 @@
                             android:text="@string/Q_se12" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se12" />
 
                     </LinearLayout>
@@ -1541,6 +1547,7 @@
                             android:tag="se1296"
                             android:text="@={form.se1296x}"
                             android:visibility='@{form.se12.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -1569,9 +1576,8 @@
                             android:text="@string/Q_se13" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se13" />
 
                     </LinearLayout>
@@ -1598,9 +1604,10 @@
                             android:text="@string/se1302" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
                             android:text="@string/se13title1" />
 
                         <RadioButton
@@ -1626,6 +1633,7 @@
                             android:checked="@{form.se13.equals(`5`)}"
                             android:onClick="@{()->form.setSe13(`5`)}"
                             android:text="@string/se1305" />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -1654,9 +1662,8 @@
                             android:text="@string/Q_se14" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se14" />
 
                     </LinearLayout>
@@ -1681,6 +1688,7 @@
                             android:checked="@{form.se14.equals(`2`)}"
                             android:onClick="@{()->form.setSe14(`2`)}"
                             android:text="@string/se1402" />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -1709,9 +1717,8 @@
                             android:text="@string/Q_se15" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se15" />
 
                     </LinearLayout>
@@ -1744,6 +1751,7 @@
                             android:checked="@{form.se15.equals(`3`)}"
                             android:onClick="@{()->form.setSe15(`3`)}"
                             android:text="@string/se1503" />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -1772,9 +1780,8 @@
                             android:text="@string/Q_se16" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se16" />
 
                     </LinearLayout>
@@ -1830,9 +1837,8 @@
                             android:text="@string/Q_se17" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se17" />
 
                     </LinearLayout>
@@ -1931,9 +1937,8 @@
                             android:text="@string/Q_se1801" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se1801" />
 
                     </LinearLayout>
@@ -1988,9 +1993,8 @@
                             android:text="@string/Q_se1802" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se1802" />
 
                     </LinearLayout>
@@ -2044,9 +2048,8 @@
                             android:text="@string/Q_se1803" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se1803" />
 
                     </LinearLayout>
@@ -2100,9 +2103,8 @@
                             android:text="@string/Q_se1804" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se1804" />
 
                     </LinearLayout>
@@ -2153,9 +2155,8 @@
                             android:text="@string/Q_se1805" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se1805" />
 
                     </LinearLayout>
@@ -2180,8 +2181,11 @@
                             android:checked="@{form.se1805.equals(`2`)}"
                             android:onClick="@{()->form.setSe1805(`2`)}"
                             android:text="@string/se180502" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -2206,9 +2210,8 @@
                             android:text="@string/Q_se1896" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se1896" />
 
                     </LinearLayout>
@@ -2272,9 +2275,8 @@
                             android:text="@string/Q_se19" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se19" />
 
                     </LinearLayout>
@@ -2397,6 +2399,7 @@
                             android:tag="se1996"
                             android:text="@={form.se1996x}"
                             android:visibility='@{form.se19.equals(`96`) ? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
 
                 </LinearLayout>
@@ -2425,9 +2428,8 @@
                             android:text="@string/Q_se20" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se20" />
 
                     </LinearLayout>
@@ -2525,9 +2527,8 @@
                             android:text="@string/Q_se21" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/se21" />
 
                     </LinearLayout>
