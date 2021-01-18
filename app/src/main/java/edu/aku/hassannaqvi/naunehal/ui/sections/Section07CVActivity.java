@@ -7,13 +7,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -44,6 +45,7 @@ public class Section07CVActivity extends AppCompatActivity {
 
     private void setupSkips() {
         rgListener(bi.cv01, bi.cv0102, bi.llcv01);
+        rgListener(bi.cv01, bi.cv0198, bi.llcv01);
         rgListener(bi.cv11, bi.cv1102, bi.fldGrpCVcv12);
         rgListener(bi.cv17, bi.cv1702, bi.fldGrpCVcv18);
     }
