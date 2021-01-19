@@ -10,6 +10,7 @@ class CONSTANTS {
         const val MINIMUM_TIME_BETWEEN_UPDATES: Long = 1000 // in Milliseconds
 
         const val SYNC_LOGIN = "sync_login"
+        const val SYNC_DISTRICTID_LOGIN = "district_id_login"
 
         //For I
         const val SECTION_MAIN_CHECK_FOR_END = "section_main_check"

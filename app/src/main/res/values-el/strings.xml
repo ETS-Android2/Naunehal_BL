@@ -1277,6 +1277,7 @@
     <string name="dialog_text">"    Please add Info for second child."</string>
     <string name="Q_cs16">CS16</string>
     <string name="cb1598">معلوم نہیں</string>
+    <string name="only_for_testing">ONLY FOR TESTING</string>
 
 
 </resources>

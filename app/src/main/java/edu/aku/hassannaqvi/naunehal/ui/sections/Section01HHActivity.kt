@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +13,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.validatorcrawler.aliazaz.Clear
@@ -25,9 +28,12 @@ import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding
+import edu.aku.hassannaqvi.naunehal.models.BLRandom
 import edu.aku.hassannaqvi.naunehal.models.Form
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
+import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
+import edu.aku.hassannaqvi.naunehal.utils.shortStringLength
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.json.JSONObject
@@ -47,7 +53,9 @@ class Section01HHActivity : AppCompatActivity() {
     var ucCode = mutableListOf<String>()
     lateinit var districtAdapter: ArrayAdapter<String>
     lateinit var ucAdapter: ArrayAdapter<String>
+    lateinit var blRandom: BLRandom
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_01hh)
@@ -119,13 +127,46 @@ class Section01HHActivity : AppCompatActivity() {
             }
         })
 
+        /*
+        * Calling viewmodel blrandom data function
+        * Fetch blrandom result response
+        * */
+        viewModel.blResponse.observe(this, {
+            it?.let {
+                when (it.status) {
+                    ResponseStatus.SUCCESS -> {
+                        lifecycleScope.launch {
+                            bi.fldGrpcheck.visibility = View.VISIBLE
+                            bi.hh09.isEnabled = false
+                            bi.checkHH.visibility = View.GONE
+                            bi.progressBL.visibility = View.GONE
+                            blRandom = it.data as BLRandom
+                            bi.hhHEad.text = "Head: ${blRandom.hhhead.convertStringToUpperCase().shortStringLength()}"
+                        }
+                    }
+                    ResponseStatus.ERROR -> {
+                        Toast.makeText(this@Section01HHActivity, "BL Random not found!", Toast.LENGTH_LONG).show()
+                        bi.hh09.isEnabled = true
+                        bi.checkHH.visibility = View.VISIBLE
+                        bi.progressBL.visibility = View.GONE
+                    }
+                    ResponseStatus.LOADING -> {
+                        lifecycleScope.launch {
+                            bi.progressBL.visibility = View.VISIBLE
+                            delay(2000)
+                        }
+                    }
+                }
+            }
+        })
+
         // TODO: Check if form already exist in database.
         if ( /*!formExists()*/false) //<== If form exist in database formExists() will also populateForm() and return true;
         {
             initForm() //<== If form does not exist in database (New Form)
         }
         MainApp.form = Form()
-        bi.form = MainApp.form
+        bi.setVariable(BR.form, MainApp.form)
         setupSkips()
     }
 
@@ -149,6 +190,23 @@ class Section01HHActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+
+        bi.hh08.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                bi.hh09.isEnabled = true
+                bi.fldGrpcheck.visibility = View.GONE
+                bi.checkHH.visibility = View.VISIBLE
+                bi.progressBL.visibility = View.GONE
+                bi.hhHEad.text = null
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+        })
 
         bi.hh09.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
@@ -185,7 +243,6 @@ class Section01HHActivity : AppCompatActivity() {
             bi.hh1713.isEnabled = i == bi.hh1402.id
         }
 
-
         bi.hh16.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
@@ -221,7 +278,13 @@ class Section01HHActivity : AppCompatActivity() {
 
     fun checkHHExist(view: View) {
         Clear.clearAllFields(bi.fldGrpcheck)
-        bi.fldGrpcheck.visibility = View.VISIBLE
+        if (!Validator.emptyCheckingContainer(this, bi.fldGrpHH01)) return
+        bi.checkHH.visibility = View.GONE
+        viewModel.getBLRandomDataFromDB(
+                districtCode[bi.hh05.selectedItemPosition - 1],
+                bi.hh08.text.toString(),
+                bi.hh09.text.toString()
+        )
     }
 
     private fun updateDB(): Boolean {

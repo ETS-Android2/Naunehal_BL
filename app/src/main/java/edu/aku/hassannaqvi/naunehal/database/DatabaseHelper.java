@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -36,6 +37,8 @@ import edu.aku.hassannaqvi.naunehal.models.UCs.TableUCs;
 import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
+import edu.aku.hassannaqvi.naunehal.models.BLRandom;
+import edu.aku.hassannaqvi.naunehal.models.BLRandom.TableRandom;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp.VersionAppTable;
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable;
 
@@ -64,6 +67,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
         db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
+        db.execSQL(CreateTable.SQL_CREATE_BL_RANDOM);
     }
 
     @Override
@@ -551,6 +555,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allDC;
     }
 
+    public BLRandom getBLRandomByClusterHH(String distCode, String subAreaCode, String hh) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause = TableRandom.COLUMN_DIST_CODE + "=? AND " + TableRandom.COLUMN_CLUSTER_CODE + "=? AND " + TableRandom.COLUMN_HH + "=?";
+        String[] whereArgs = {distCode, subAreaCode, hh};
+        String groupBy = null;
+        String having = null;
+        String orderBy = TableRandom.COLUMN_ID + " ASC";
+        BLRandom allBL = null;
+        try {
+            c = db.query(
+                    TableRandom.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allBL = new BLRandom().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allBL;
+    }
+
     public ArrayList<Cursor> getDatabaseManagerData(String Query) {
         //get writable database
         SQLiteDatabase sqlDB = this.getWritableDatabase();
@@ -786,7 +824,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 values.put(TableClusters.COLUMN_CLUSTER_CODE, cluster.getClusterCode());
                 values.put(TableClusters.COLUMN_CLUSTER_NAME, cluster.getClustername());
-                values.put(TableClusters.COLUMN_UC_CODE, cluster.getUcCode());
+                values.put(TableClusters.COLUMN_DIST_CODE, cluster.getDistCode());
 
                 long rowID = db.insert(TableClusters.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
@@ -798,6 +836,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         } finally {
             db.close();
+        }
+        return insertCount;
+    }
+
+    public int syncBLRandom(JSONArray blList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TableRandom.TABLE_NAME, null, null);
+
+        int insertCount = 0;
+        for (int i = 0; i < blList.length(); i++) {
+            JSONObject jsonObjectCC = null;
+            try {
+                jsonObjectCC = blList.getJSONObject(i);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            BLRandom Vc = new BLRandom();
+            try {
+                Vc.sync(jsonObjectCC);
+                Log.d(TAG, "syncBLRandom: " + Vc.getId());
+                ContentValues values = new ContentValues();
+
+                values.put(TableRandom.COLUMN_LUID, Vc.getLUID());
+                values.put(TableRandom.COLUMN_STRUCTURE_NO, Vc.getStructure());
+                values.put(TableRandom.COLUMN_FAMILY_EXT_CODE, Vc.getExtension());
+                values.put(TableRandom.COLUMN_HH, Vc.getHh());
+                values.put(TableRandom.COLUMN_DIST_CODE, Vc.getDistCode());
+                values.put(TableRandom.COLUMN_CLUSTER_CODE, Vc.getClusterCode());
+                values.put(TableRandom.COLUMN_RANDOMDT, Vc.getRandomDT());
+                values.put(TableRandom.COLUMN_HH_HEAD, Vc.getHhhead());
+                values.put(TableRandom.COLUMN_CONTACT, Vc.getContact());
+                values.put(TableRandom.COLUMN_UPDATEDT, Vc.getUpdateDT());
+                values.put(TableRandom.COLUMN_SNO_HH, Vc.getSno());
+
+                long row = db.insert(TableRandom.TABLE_NAME, null, values);
+                if (row != -1) insertCount++;
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
         return insertCount;
     }

@@ -66,12 +66,6 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
-            android:name=".ui.MainActivity"
-            android:label="Dashboard Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar.Bridge" />
-
-        <activity
             android:name=".ui.sections.Section082SEActivity"
             android:label="Section SE"
             android:screenOrientation="portrait"
@@ -128,18 +122,22 @@
         <activity
             android:name=".ui.sections.Section01HHActivity"
             android:label="Section HH"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.IdentificationSectionActivity"
-            android:parentActivityName=".ui.MainActivity"
             android:theme="@style/AppThemeUrdu" />
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
 
         <activity
             android:name=".core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat" />
 
         <activity
             android:name=".ui.TakePhoto"

@@ -1278,6 +1278,7 @@
     <string name='Q_se40'>se40</string>
     <string name="dialog_text">"    برائے کرم دوسرے بچے کے لئے معلومات شامل کریں."</string>
     <string name="Q_se34">se34</string>
+    <string name="only_for_testing">ONLY FOR TESTING</string>
 
 
 </resources>

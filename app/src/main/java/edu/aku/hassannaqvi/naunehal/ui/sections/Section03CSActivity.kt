@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioGroup
@@ -17,12 +16,10 @@ import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection03csBinding
 import edu.aku.hassannaqvi.naunehal.models.Child
 import edu.aku.hassannaqvi.naunehal.models.ChildCard
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
-import edu.aku.hassannaqvi.naunehal.ui.MainActivity
 import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity
 import edu.aku.hassannaqvi.naunehal.utils.contextEndActivity
 import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
-import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import edu.aku.hassannaqvi.naunehal.utils.shortStringLength
 import java.text.SimpleDateFormat
 import java.util.*

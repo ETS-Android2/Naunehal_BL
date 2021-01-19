@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatusCallbacks
+import edu.aku.hassannaqvi.naunehal.models.BLRandom
 import edu.aku.hassannaqvi.naunehal.models.Districts
 import edu.aku.hassannaqvi.naunehal.models.UCs
 import kotlinx.coroutines.delay
@@ -19,6 +20,10 @@ class H1ViewModel(internal val repository: GeneralRepository) : ViewModel() {
     private val _ucResponse: MutableLiveData<ResponseStatusCallbacks<List<UCs>>> = MutableLiveData()
     val ucResponse: MutableLiveData<ResponseStatusCallbacks<List<UCs>>>
         get() = _ucResponse
+
+    private val _blResponse: MutableLiveData<ResponseStatusCallbacks<BLRandom>> = MutableLiveData()
+    val blResponse: MutableLiveData<ResponseStatusCallbacks<BLRandom>>
+        get() = _blResponse
 
     init {
         getDistrictFromDB()
@@ -60,5 +65,18 @@ class H1ViewModel(internal val repository: GeneralRepository) : ViewModel() {
 
         }
 
+    }
+
+    fun getBLRandomDataFromDB(distCode: String, cluster: String, hhno: String) {
+        _blResponse.value = ResponseStatusCallbacks.loading(null)
+        viewModelScope.launch {
+            try {
+                delay(1000)
+                val bl = repository.getBLByDistrictsFromDB(distCode, cluster, hhno)
+                _blResponse.value = ResponseStatusCallbacks.success(data = bl, message = "BLRandom data found")
+            } catch (e: Exception) {
+                _blResponse.value = ResponseStatusCallbacks.error(null, "BlRandom data not found!")
+            }
+        }
     }
 }

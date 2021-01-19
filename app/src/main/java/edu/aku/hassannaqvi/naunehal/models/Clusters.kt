@@ -12,20 +12,20 @@ import org.json.JSONObject
 class Clusters {
     var clusterCode: String = ""
     var clustername: String = ""
-    var ucCode: String = ""
+    var distCode: String = ""
 
     @Throws(JSONException::class)
     fun sync(jsonObject: JSONObject): Clusters {
         clusterCode = jsonObject.getString(TableClusters.COLUMN_CLUSTER_CODE)
         clustername = jsonObject.getString(TableClusters.COLUMN_CLUSTER_NAME)
-        ucCode = jsonObject.getString(TableClusters.COLUMN_UC_CODE)
+        distCode = jsonObject.getString(TableClusters.COLUMN_DIST_CODE)
         return this
     }
 
     fun hydrate(cursor: Cursor): Clusters {
         clusterCode = cursor.getString(cursor.getColumnIndex(TableClusters.COLUMN_CLUSTER_CODE))
         clustername = cursor.getString(cursor.getColumnIndex(TableClusters.COLUMN_CLUSTER_NAME))
-        ucCode = cursor.getString(cursor.getColumnIndex(TableClusters.COLUMN_UC_CODE))
+        distCode = cursor.getString(cursor.getColumnIndex(TableClusters.COLUMN_DIST_CODE))
         return this
     }
 
@@ -33,8 +33,8 @@ class Clusters {
         const val TABLE_NAME = "clusters"
         const val COLUMN_NAME_NULLABLE = "nullColumnHack"
         const val COLUMN_ID = "_id"
-        const val COLUMN_CLUSTER_CODE = "clusterCode"
-        const val COLUMN_CLUSTER_NAME = "clusterName"
-        const val COLUMN_UC_CODE = "ucCode"
+        const val COLUMN_CLUSTER_CODE = "cluster_no"
+        const val COLUMN_CLUSTER_NAME = "geoarea"
+        const val COLUMN_DIST_CODE = "dist_id"
     }
 }

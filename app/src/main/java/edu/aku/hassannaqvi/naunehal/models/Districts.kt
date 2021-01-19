@@ -30,7 +30,7 @@ class Districts {
         const val TABLE_NAME = "districts"
         const val COLUMN_NAME_NULLABLE = "nullColumnHack"
         const val COLUMN_ID = "_ID"
-        const val COLUMN_DISTRICT_CODE = "districtCode"
-        const val COLUMN_DISTRICT_NAME = "districtName"
+        const val COLUMN_DISTRICT_CODE = "dist_id"
+        const val COLUMN_DISTRICT_NAME = "district"
     }
 }

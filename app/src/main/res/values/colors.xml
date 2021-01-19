@@ -24,4 +24,6 @@
     <color name="green">#009900</color>
     <color name="red_overlay">#7f990000</color>
     <color name="black_overlay">#7f000000</color>
+    <color name="white_overlay">#7fffffff</color>
+    <color name="red">#990000</color>
 </resources>

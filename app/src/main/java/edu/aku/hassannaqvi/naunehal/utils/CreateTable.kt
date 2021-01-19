@@ -118,6 +118,7 @@ object CreateTable {
             + Users.UsersTable.COLUMN_PASSWORD + " TEXT,"
             + Users.UsersTable.COLUMN_FULLNAME + " TEXT"
             + " );")
+
     const val SQL_CREATE_DISTRICTS = ("CREATE TABLE " + Districts.TableDistricts.TABLE_NAME + "("
             + Districts.TableDistricts.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + Districts.TableDistricts.COLUMN_DISTRICT_NAME + " TEXT,"
@@ -130,13 +131,27 @@ object CreateTable {
             + UCs.TableUCs.COLUMN_UC_CODE + " TEXT,"
             + UCs.TableUCs.COLUMN_DISTRICT_CODE + " TEXT"
             + " );")
+
     const val SQL_CREATE_CLUSTERS = ("CREATE TABLE " + Clusters.TableClusters.TABLE_NAME + "("
             + Clusters.TableClusters.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + Clusters.TableClusters.COLUMN_UC_CODE + " TEXT,"
+            + Clusters.TableClusters.COLUMN_DIST_CODE + " TEXT,"
             + Clusters.TableClusters.COLUMN_CLUSTER_NAME + " TEXT,"
             + Clusters.TableClusters.COLUMN_CLUSTER_CODE + " TEXT"
             + " );")
 
+    const val SQL_CREATE_BL_RANDOM = ("CREATE TABLE " + BLRandom.TableRandom.TABLE_NAME + "("
+            + BLRandom.TableRandom.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + BLRandom.TableRandom.COLUMN_CLUSTER_CODE + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_DIST_CODE + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_LUID + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_HH + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_STRUCTURE_NO + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_FAMILY_EXT_CODE + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_HH_HEAD + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_CONTACT + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_UPDATEDT + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_RANDOMDT + " TEXT,"
+            + BLRandom.TableRandom.COLUMN_SNO_HH + " TEXT );")
 
     const val SQL_CREATE_VERSIONAPP = "CREATE TABLE " + VersionApp.VersionAppTable.TABLE_NAME + " (" +
             VersionApp.VersionAppTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +

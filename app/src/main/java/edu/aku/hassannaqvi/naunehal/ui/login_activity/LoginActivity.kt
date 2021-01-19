@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.naunehal.ui.login_activity
 import android.Manifest
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.os.Build

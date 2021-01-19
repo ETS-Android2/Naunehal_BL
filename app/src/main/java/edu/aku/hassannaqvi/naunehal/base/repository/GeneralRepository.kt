@@ -24,6 +24,10 @@ open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource
         db.getUCsByDistricts(dCode)
     }
 
+    override suspend fun getBLByDistrictsFromDB(distCode: String, cluster: String, hhno: String): BLRandom = withContext(Dispatchers.IO) {
+        db.getBLRandomByClusterHH(distCode, cluster, hhno)
+    }
+
     override suspend fun getLoginInformation(username: String, password: String): Users? = withContext(Dispatchers.IO) {
         db.getLoginUser(username, password)
     }

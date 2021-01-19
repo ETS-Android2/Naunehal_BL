@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.naunehal.ui;
 
 import android.annotation.SuppressLint;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +38,7 @@ import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
+import edu.aku.hassannaqvi.naunehal.models.BLRandom;
 import edu.aku.hassannaqvi.naunehal.models.Clusters;
 import edu.aku.hassannaqvi.naunehal.models.Districts;
 import edu.aku.hassannaqvi.naunehal.models.SyncModel;
@@ -54,8 +54,6 @@ import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.dbBackup;
 
 public class SyncActivity extends AppCompatActivity {
     private static final String TAG = "SyncActivity";
-    SharedPreferences.Editor editor;
-    SharedPreferences sharedPref;
     DatabaseHelper db;
     SyncListAdapter syncListAdapter;
     ActivitySyncBinding bi;
@@ -63,6 +61,7 @@ public class SyncActivity extends AppCompatActivity {
     List<SyncModel> downloadTables;
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
+    String distCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,13 +70,6 @@ public class SyncActivity extends AppCompatActivity {
         bi.setCallback(this);
         uploadTables = new ArrayList<>();
         downloadTables = new ArrayList<>();
-
-        // Set tables to DOWNLOAD
-        downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
-        downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
-        downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
-        downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
-        downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
 
         // Set tables to UPLOAD
         uploadTables.add(new SyncModel(FormsContract.FormsTable.TABLE_NAME));
@@ -89,12 +81,22 @@ public class SyncActivity extends AppCompatActivity {
         bi.noDataItem.setVisibility(View.VISIBLE);
         listActivityCreated = true;
         uploadlistActivityCreated = true;
-        sharedPref = getSharedPreferences("src", MODE_PRIVATE);
-        editor = sharedPref.edit();
+
         db = new DatabaseHelper(this);
         dbBackup(this);
 
         boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
+        if (sync_flag) {
+            distCode = getIntent().getStringExtra(CONSTANTS.SYNC_DISTRICTID_LOGIN);
+            downloadTables.add(new SyncModel(BLRandom.TableRandom.TABLE_NAME));
+        } else {
+            // Set tables to DOWNLOAD
+            downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
+            downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+            downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
+            downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
+            downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
+        }
     }
 
 
@@ -111,6 +113,7 @@ public class SyncActivity extends AppCompatActivity {
             bi.noDataItem.setVisibility(View.VISIBLE);
         }
     }
+
 
     @Override
     public void onBackPressed() {
@@ -149,15 +152,18 @@ public class SyncActivity extends AppCompatActivity {
         List<OneTimeWorkRequest> workRequests = new ArrayList<>();
 
         for (int i = 0; i < downloadTables.size(); i++) {
-            Data data = new Data.Builder()
+            Data.Builder data = new Data.Builder()
                     .putString("table", downloadTables.get(i).gettableName())
                     .putInt("position", i)
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)
-                    .build();
+                    ;
+            if (downloadTables.get(i).gettableName().equals(BLRandom.TableRandom.TABLE_NAME)) {
+                data.putString("where", BLRandom.TableRandom.COLUMN_DIST_CODE + "='" + distCode + "'");
+            }
             OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(DataDownWorkerALL.class)
                     .addTag(String.valueOf(i))
-                    .setInputData(data).build();
+                    .setInputData(data.build()).build();
             workRequests.add(workRequest);
 
         }
@@ -219,6 +225,11 @@ public class SyncActivity extends AppCompatActivity {
                                         case Clusters.TableClusters.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncCluster(jsonArray);
+                                            Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
+                                            break;
+                                        case BLRandom.TableRandom.TABLE_NAME:
+                                            jsonArray = new JSONArray(result);
+                                            insertCount = db.syncBLRandom(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
                                             break;
 

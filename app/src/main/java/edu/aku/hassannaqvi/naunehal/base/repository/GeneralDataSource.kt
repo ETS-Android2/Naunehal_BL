@@ -41,6 +41,8 @@ interface GeneralDataSource {
     suspend fun getDistrictsFromDB(): ArrayList<Districts>
 
     suspend fun getUcsByDistrictsFromDB(dCode: String): ArrayList<UCs>
+
+    suspend fun getBLByDistrictsFromDB(distCode: String, cluster: String, hhno: String): BLRandom
     /*
     * For SectionH1 End
     * */

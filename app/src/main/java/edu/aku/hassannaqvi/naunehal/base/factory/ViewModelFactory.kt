@@ -3,10 +3,7 @@ package edu.aku.hassannaqvi.naunehal.base.factory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
-import edu.aku.hassannaqvi.naunehal.base.viewmodel.ChildListViewModel
-import edu.aku.hassannaqvi.naunehal.base.viewmodel.H1ViewModel
-import edu.aku.hassannaqvi.naunehal.base.viewmodel.LoginViewModel
-import edu.aku.hassannaqvi.naunehal.base.viewmodel.SelectedChildrenListViewModel
+import edu.aku.hassannaqvi.naunehal.base.viewmodel.*
 
 /*
 * @author Ali Azaz Alam dt. 01.07.21
@@ -20,6 +17,7 @@ class ViewModelFactory(private val repository: GeneralRepository) : ViewModelPro
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> LoginViewModel(repository) as T
             modelClass.isAssignableFrom(H1ViewModel::class.java) -> H1ViewModel(repository) as T
             modelClass.isAssignableFrom(SelectedChildrenListViewModel::class.java) -> SelectedChildrenListViewModel(repository) as T
+            modelClass.isAssignableFrom(MainViewModel::class.java) -> MainViewModel(repository) as T
             else -> throw IllegalArgumentException("Unknown viewModel class $modelClass")
         }
     }
