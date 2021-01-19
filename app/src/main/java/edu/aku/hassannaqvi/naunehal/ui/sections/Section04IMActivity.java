@@ -114,6 +114,8 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                 bi.fldGrpCVim02.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.llim01);
                 bi.llim01.setVisibility(View.GONE);
+
+                bi.fldGrpDOBCheck02.setVisibility(View.VISIBLE);
             }
         });
 
