@@ -39,9 +39,8 @@ class Section02CBActivity : AppCompatActivity() {
         bi.callback = this
 
         // TODO: After itemClick on childlist fetchChildByUID() from TABLE_FAMILY and update contents MainApp.Family before entering this activity.
-        if (MainApp.form.hh14 == "1") {
-            bi.cb0601.isEnabled = false
-        }
+        if (MainApp.form.hh14 == "1") bi.cb0601.isEnabled = false
+        else bi.cb0602.isEnabled = false
         bi.setVariable(BR.childInformation, MainApp.childInformation)
         setupSkips()
 
@@ -187,6 +186,7 @@ class Section02CBActivity : AppCompatActivity() {
         MainApp.childInformation.deviceId = MainApp.appInfo.deviceID
         MainApp.childInformation.deviceTag = MainApp.appInfo.tagName
         MainApp.childInformation.appver = MainApp.appInfo.appVersion
+        MainApp.childInformation.cb15 = if (bi.cb1598.isChecked) "98" else MainApp.childInformation.cb15
     }
 
     fun cb04yyOnTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
