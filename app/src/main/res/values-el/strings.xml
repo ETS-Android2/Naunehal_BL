@@ -1246,6 +1246,7 @@
     <string name='Q_se15'>se15</string>
     <string name='Q_se16'>se16</string>
     <string name='Q_se17'>se17</string>
+    <string name='Q_se18'>se18</string>
     <string name='Q_se1801'>se1801</string>
     <string name='Q_se1802'>se1802</string>
     <string name='Q_se1803'>se1803</string>
@@ -1276,8 +1277,8 @@
     <string name='Q_se40'>se40</string>
     <string name="dialog_text">"    Please add Info for second child."</string>
     <string name="Q_cs16">CS16</string>
-    <string name="cb1598">معلوم نہیں</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
+    <string name="cb1598">Dont Know</string>
 
 
 </resources>

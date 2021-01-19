@@ -2,9 +2,6 @@ package edu.aku.hassannaqvi.naunehal.models;
 
 import android.database.Cursor;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
-
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
@@ -13,6 +10,8 @@ import org.threeten.bp.LocalDate;
 
 import java.io.Serializable;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -64,6 +63,7 @@ public class ChildInformation extends BaseObservable implements Serializable {
     public String cb14;
     public String cb1496x;
     public String cb15;
+    public String cb1598;
     public String cb16;
 
     //Not saving in db
@@ -143,6 +143,7 @@ public class ChildInformation extends BaseObservable implements Serializable {
         this.cb13 = child.getCb13();
         this.cb14 = child.getCb14();
         this.cb15 = child.getCb15();
+        this.cb1598 = child.getCb1598();
         this.cb16 = child.getCb16();
 
     }
@@ -549,6 +550,16 @@ public class ChildInformation extends BaseObservable implements Serializable {
     }
 
     @Bindable
+    public String getCb1598() {
+        return cb1598;
+    }
+
+    public void setCb1598(String cb1598) {
+        this.cb1598 = cb1598;
+        notifyPropertyChanged(BR.cb1598);
+    }
+
+    @Bindable
     public String getCb16() {
         return cb16;
     }
@@ -652,6 +663,7 @@ public class ChildInformation extends BaseObservable implements Serializable {
                     .put("cb14", cb14)
                     .put("cb1496x", cb1496x)
                     .put("cb15", cb15)
+                    .put("cb1598", cb1598)
                     .put("cb16", cb16);
 
         } catch (JSONException e) {
@@ -726,6 +738,7 @@ public class ChildInformation extends BaseObservable implements Serializable {
                 this.cb14 = json.getString("cb14");
                 this.cb1496x = json.getString("cb1496x");
                 this.cb15 = json.getString("cb15");
+                this.cb1598 = json.getString("cb1598");
                 this.cb16 = json.getString("cb16");
 
             } catch (JSONException e) {
@@ -733,5 +746,4 @@ public class ChildInformation extends BaseObservable implements Serializable {
             }
         }
     }
-
 }
