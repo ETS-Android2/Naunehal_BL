@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -105,8 +106,85 @@ public class Section06BFActivity extends AppCompatActivity {
     }
 
 
+    private void saveDraft() {
+
+        form.setBf01(bi.bf01.getText().toString());
+
+        form.setBf02(bi.bf02.getText().toString());
+
+        form.setBf3y(bi.bf3y.getText().toString());
+        form.setBf03m(bi.bf03m.getText().toString());
+        form.setBf3d(bi.bf3d.getText().toString());
+        form.setBf04(bi.bf0401.isChecked() ? "1"
+                : bi.bf0402.isChecked() ? "2"
+                : bi.bf0498.isChecked() ? "98"
+                : "-1");
+
+        form.setBf05(bi.bf0501.isChecked() ? "000"
+                : bi.bf0502.isChecked() ? "1"
+                : bi.bf0503.isChecked() ? "2"
+                : bi.bf0504.isChecked() ? "66"
+                : "-1");
+
+        form.setBf0502x(bi.bf0502x.getText().toString());
+        form.setBf0503x(bi.bf0503x.getText().toString());
+        form.setBf06(bi.bf0601.isChecked() ? "1"
+                : bi.bf0602.isChecked() ? "2"
+                : bi.bf0698.isChecked() ? "98"
+                : "-1");
+
+        form.setBf07(bi.bf0701.isChecked() ? "1"
+                : bi.bf0702.isChecked() ? "2"
+                : bi.bf0703.isChecked() ? "3"
+                : bi.bf0796.isChecked() ? "96"
+                : "-1");
+
+        form.setBf0796x(bi.bf0796x.getText().toString());
+        form.setBf08(bi.bf0801.isChecked() ? "1"
+                : bi.bf0802.isChecked() ? "2"
+                : bi.bf0898.isChecked() ? "98"
+                : "-1");
+
+        form.setBf09(bi.bf0901.isChecked() ? "1"
+                : bi.bf0902.isChecked() ? "2"
+                : bi.bf0903.isChecked() ? "3"
+                : bi.bf0904.isChecked() ? "4"
+                : bi.bf0905.isChecked() ? "5"
+                : bi.bf0906.isChecked() ? "6"
+                : bi.bf0907.isChecked() ? "7"
+                : bi.bf0908.isChecked() ? "8"
+                : bi.bf0909.isChecked() ? "9"
+                : bi.bf0910.isChecked() ? "10"
+                : bi.bf0999.isChecked() ? "99"
+                : bi.bf0996.isChecked() ? "96"
+                : "-1");
+
+        form.setBf0996x(bi.bf0996x.getText().toString());
+        form.setBf10(bi.bf1001.isChecked() ? "1"
+                : bi.bf1002.isChecked() ? "2"
+                : bi.bf1096.isChecked() ? "96"
+                : "-1");
+
+        form.setBf11(bi.bf1101.isChecked() ? "1"
+                : bi.bf1102.isChecked() ? "2"
+                : bi.bf1198.isChecked() ? "98"
+                : "-1");
+
+        form.setBf12(bi.bf1201.isChecked() ? "1"
+                : bi.bf1202.isChecked() ? "2"
+                : bi.bf1298.isChecked() ? "98"
+                : "-1");
+
+        form.setBf13(bi.bf1301.isChecked() ? "1"
+                : bi.bf1302.isChecked() ? "2"
+                : bi.bf1398.isChecked() ? "98"
+                : "-1");
+    }
+
+
     public void BtnContinue(View view) {
         if (!formValidation()) return;
+        saveDraft();
         if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, Section07CVActivity.class));
