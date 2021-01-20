@@ -125,6 +125,7 @@ public class Section05PDActivity extends AppCompatActivity {
 
     public void BtnContinue(View view) {
         if (!formValidation()) return;
+        saveDraft();
         if (UpdateDB()) {
             finish();
             if (info.getIsSelected().equals("2"))
@@ -132,6 +133,178 @@ public class Section05PDActivity extends AppCompatActivity {
             else
                 gotoActivity(this, Section07CVActivity.class);
         }
+    }
+
+
+    private void saveDraft() {
+
+        form.setPd01(bi.pd01.getText().toString());
+
+        form.setPd02(bi.pd02.getText().toString());
+
+        form.setPd03(bi.pd0301.isChecked() ? "1"
+                : bi.pd0302.isChecked() ? "2"
+                : bi.pd0303.isChecked() ? "3"
+                : bi.pd0304.isChecked() ? "4"
+                : "-1");
+
+        form.setPd04(bi.pd0401.isChecked() ? "1"
+                : bi.pd0402.isChecked() ? "2"
+                : bi.pd0498.isChecked() ? "98"
+                : "-1");
+
+        form.setPd05(bi.pd0501.isChecked() ? "1"
+                : bi.pd0502.isChecked() ? "2"
+                : bi.pd0503.isChecked() ? "3"
+                : bi.pd0504.isChecked() ? "4"
+                : bi.pd0505.isChecked() ? "5"
+                : bi.pd0506.isChecked() ? "6"
+                : bi.pd0507.isChecked() ? "7"
+                : bi.pd0508.isChecked() ? "8"
+                : bi.pd0509.isChecked() ? "9"
+                : bi.pd0596.isChecked() ? "96"
+                : "-1");
+
+        form.setPd0596x(bi.pd0596x.getText().toString());
+        form.setPd06(bi.pd0601.isChecked() ? "1"
+                : bi.pd0602.isChecked() ? "2"
+                : bi.pd0603.isChecked() ? "3"
+                : bi.pd0604.isChecked() ? "4"
+                : bi.pd0605.isChecked() ? "5"
+                : bi.pd06961.isChecked() ? "961"
+                : bi.pd0607.isChecked() ? "7"
+                : bi.pd0608.isChecked() ? "8"
+                : bi.pd0609.isChecked() ? "9"
+                : bi.pd06962.isChecked() ? "962"
+                : "-1");
+
+        form.setPd06961x(bi.pd06961x.getText().toString());
+        form.setPd06962x(bi.pd06962x.getText().toString());
+        form.setPd07(bi.pd0701.isChecked() ? "0"
+                : bi.pd0798.isChecked() ? "98"
+                : "-1");
+
+        form.setPd0701x(bi.pd0701x.getText().toString());
+        form.setPd08(bi.pd0801.isChecked() ? "1"
+                : bi.pd0802.isChecked() ? "2"
+                : bi.pd0803.isChecked() ? "3"
+                : bi.pd0804.isChecked() ? "4"
+                : bi.pd0805.isChecked() ? "5"
+                : bi.pd0806.isChecked() ? "6"
+                : "-1");
+
+        form.setPd09(bi.pd0901.isChecked() ? "1"
+                : bi.pd0902.isChecked() ? "2"
+                : "-1");
+
+        form.setPd10(bi.pd1001.isChecked() ? "1"
+                : bi.pd1002.isChecked() ? "2"
+                : bi.pd1003.isChecked() ? "3"
+                : bi.pd1004.isChecked() ? "4"
+                : bi.pd1005.isChecked() ? "5"
+                : "-1");
+
+        form.setPd1101(bi.pd1101.getText().toString());
+        form.setPd1102(bi.pd1102.getText().toString());
+        form.setPd12(bi.pd1201.isChecked() ? "1"
+                : bi.pd1202.isChecked() ? "2"
+                : bi.pd1203.isChecked() ? "3"
+                : bi.pd1204.isChecked() ? "4"
+                : bi.pd1205.isChecked() ? "5"
+                : bi.pd1206.isChecked() ? "6"
+                : bi.pd1207.isChecked() ? "7"
+                : bi.pd1296.isChecked() ? "96"
+                : "-1");
+
+        form.setPd1296x(bi.pd1296x.getText().toString());
+        form.setPd13(bi.pd1301.isChecked() ? "1"
+                : bi.pd1302.isChecked() ? "2"
+                : bi.pd1303.isChecked() ? "3"
+                : bi.pd1304.isChecked() ? "4"
+                : bi.pd1305.isChecked() ? "5"
+                : bi.pd1306.isChecked() ? "6"
+                : bi.pd13961.isChecked() ? "961"
+                : bi.pd1307.isChecked() ? "7"
+                : bi.pd13962.isChecked() ? "962"
+                : "-1");
+
+        form.setPd13961x(bi.pd13961x.getText().toString());
+        form.setPd13962x(bi.pd13962x.getText().toString());
+        form.setPd14(bi.pd1401.isChecked() ? "1"
+                : bi.pd1402.isChecked() ? "2"
+                : bi.pd1403.isChecked() ? "3"
+                : bi.pd1404.isChecked() ? "4"
+                : bi.pd1405.isChecked() ? "5"
+                : bi.pd1496.isChecked() ? "96"
+                : "-1");
+
+        form.setPd1496x(bi.pd1496x.getText().toString());
+        form.setPd15(bi.pd1501.isChecked() ? "1"
+                : bi.pd1502.isChecked() ? "2"
+                : "-1");
+
+        form.setPd1601(bi.pd1601.isChecked() ? "1" : "-1");
+
+        form.setPd1602(bi.pd1602.isChecked() ? "2" : "-1");
+
+        form.setPd1603(bi.pd1603.isChecked() ? "3" : "-1");
+
+        form.setPd1604(bi.pd1604.isChecked() ? "4" : "-1");
+
+        form.setPd1605(bi.pd1605.isChecked() ? "5" : "-1");
+
+        form.setPd1606(bi.pd1606.isChecked() ? "6" : "-1");
+
+        form.setPd1607(bi.pd1607.isChecked() ? "7" : "-1");
+
+        form.setPd1696(bi.pd1696.isChecked() ? "96" : "-1");
+
+        form.setPd1696x(bi.pd1696x.getText().toString());
+        form.setPd17(bi.pd1701.isChecked() ? "1"
+                : bi.pd1702.isChecked() ? "2"
+                : bi.pd1703.isChecked() ? "3"
+                : bi.pd1798.isChecked() ? "98"
+                : "-1");
+
+        form.setPd1701x(bi.pd1701x.getText().toString());
+        form.setPd1702x(bi.pd1702x.getText().toString());
+        form.setPd1703x(bi.pd1703x.getText().toString());
+        form.setPd18(bi.pd18.getText().toString());
+
+        form.setPd19(bi.pd1901.isChecked() ? "1"
+                : bi.pd1902.isChecked() ? "2"
+                : bi.pd1998.isChecked() ? "98"
+                : "-1");
+
+        form.setPd2001(bi.pd2001.isChecked() ? "1" : "-1");
+
+        form.setPd2002(bi.pd2002.isChecked() ? "2" : "-1");
+
+        form.setPd2003(bi.pd2003.isChecked() ? "3" : "-1");
+
+        form.setPd2004(bi.pd2004.isChecked() ? "4" : "-1");
+
+        form.setPd2005(bi.pd2005.isChecked() ? "5" : "-1");
+
+        form.setPd2006(bi.pd2006.isChecked() ? "6" : "-1");
+
+        form.setPd2007(bi.pd2007.isChecked() ? "7" : "-1");
+
+        form.setPd2096(bi.pd2096.isChecked() ? "96" : "-1");
+
+        form.setPd2096x(bi.pd2096x.getText().toString());
+        form.setPd21(bi.pd2101.isChecked() ? "1"
+                : bi.pd2102.isChecked() ? "2"
+                : bi.pd2103.isChecked() ? "3"
+                : bi.pd2198.isChecked() ? "98"
+                : "-1");
+
+        form.setPd2101x(bi.pd2101x.getText().toString());
+        form.setPd2102x(bi.pd2102x.getText().toString());
+        form.setPd2103x(bi.pd2103x.getText().toString());
+        form.setPd22(bi.pd22.getText().toString());
+
+
     }
 
 

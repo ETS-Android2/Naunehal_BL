@@ -96,7 +96,7 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={form.pd01}"
+                            android:text="@{form.pd01}"
                             app:maxValue="99"
                             app:minValue="1"
                             app:type="range" />
@@ -141,7 +141,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/pd02"
-                            android:text="@={form.pd02}" />
+                            android:text="@{form.pd02}" />
 
                     </LinearLayout>
 
@@ -187,7 +187,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd03.equals(`1`)}"
-                                android:onClick="@{()->form.setPd03(`1`)}"
                                 android:text="@string/pd0301" />
 
                             <RadioButton
@@ -195,7 +194,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd03.equals(`2`)}"
-                                android:onClick="@{()->form.setPd03(`2`)}"
                                 android:text="@string/pd0302" />
 
                             <RadioButton
@@ -203,7 +201,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd03.equals(`3`)}"
-                                android:onClick="@{()->form.setPd03(`3`)}"
                                 android:text="@string/pd0303" />
 
                             <RadioButton
@@ -211,7 +208,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd03.equals(`4`)}"
-                                android:onClick="@{()->form.setPd03(`4`)}"
                                 android:text="@string/pd0304" />
 
                         </RadioGroup>
@@ -260,7 +256,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd04.equals(`1`)}"
-                                android:onClick="@{()->form.setPd04(`1`)}"
                                 android:text="@string/pd0401" />
 
                             <RadioButton
@@ -268,7 +263,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd04.equals(`2`)}"
-                                android:onClick="@{()->form.setPd04(`2`)}"
                                 android:text="@string/pd0402" />
 
                             <RadioButton
@@ -276,7 +270,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd04.equals(`98`)}"
-                                android:onClick="@{()->form.setPd04(`98`)}"
                                 android:text="@string/pd0498" />
 
                         </RadioGroup>
@@ -284,6 +277,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <LinearLayout
                     android:id="@+id/fldGrppd04"
@@ -339,7 +333,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`1`)}"
-                                    android:onClick="@{()->form.setPd05(`1`)}"
                                     android:text="@string/pd0501" />
 
                                 <RadioButton
@@ -347,7 +340,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`2`)}"
-                                    android:onClick="@{()->form.setPd05(`2`)}"
                                     android:text="@string/pd0502" />
 
                                 <RadioButton
@@ -355,7 +347,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`3`)}"
-                                    android:onClick="@{()->form.setPd05(`3`)}"
                                     android:text="@string/pd0503" />
 
                                 <RadioButton
@@ -363,7 +354,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`4`)}"
-                                    android:onClick="@{()->form.setPd05(`4`)}"
                                     android:text="@string/pd0504" />
 
                                 <TextView
@@ -378,7 +368,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`5`)}"
-                                    android:onClick="@{()->form.setPd05(`5`)}"
                                     android:text="@string/pd0505" />
 
                                 <RadioButton
@@ -386,7 +375,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`6`)}"
-                                    android:onClick="@{()->form.setPd05(`6`)}"
                                     android:text="@string/pd0506" />
 
                                 <RadioButton
@@ -394,7 +382,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`7`)}"
-                                    android:onClick="@{()->form.setPd05(`7`)}"
                                     android:text="@string/pd0507" />
 
                                 <RadioButton
@@ -402,7 +389,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`8`)}"
-                                    android:onClick="@{()->form.setPd05(`8`)}"
                                     android:text="@string/pd0508" />
 
                                 <RadioButton
@@ -410,7 +396,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`9`)}"
-                                    android:onClick="@{()->form.setPd05(`9`)}"
                                     android:text="@string/pd0509" />
 
                                 <RadioButton
@@ -418,7 +403,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd05.equals(`96`)}"
-                                    android:onClick="@{()->form.setPd05(`96`)}"
                                     android:text="@string/pd0596" />
 
                                 <EditText
@@ -428,7 +412,7 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/pd0596"
                                     android:tag="pd0596"
-                                    android:text="@={form.pd0596x}"
+                                    android:text="@{form.pd0596x}"
                                     android:visibility='@{form.pd05.equals(`96`)? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
@@ -484,7 +468,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`1`)}"
-                                    android:onClick="@{()->form.setPd06(`1`)}"
                                     android:text="@string/pd0601" />
 
                                 <RadioButton
@@ -492,7 +475,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`2`)}"
-                                    android:onClick="@{()->form.setPd06(`2`)}"
                                     android:text="@string/pd0602" />
 
                                 <TextView
@@ -507,7 +489,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`3`)}"
-                                    android:onClick="@{()->form.setPd06(`3`)}"
                                     android:text="@string/pd0603" />
 
                                 <RadioButton
@@ -515,7 +496,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`4`)}"
-                                    android:onClick="@{()->form.setPd06(`4`)}"
                                     android:text="@string/pd0604" />
 
                                 <RadioButton
@@ -523,7 +503,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`5`)}"
-                                    android:onClick="@{()->form.setPd06(`5`)}"
                                     android:text="@string/pd0605" />
 
                                 <RadioButton
@@ -531,7 +510,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`961`)}"
-                                    android:onClick="@{()->form.setPd06(`961`)}"
                                     android:text="@string/pd06961" />
 
                                 <EditText
@@ -541,7 +519,7 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/pd06961"
                                     android:tag="pd06961"
-                                    android:text="@={form.pd06961x}"
+                                    android:text="@{form.pd06961x}"
                                     android:visibility='@{form.pd06.equals(`961`)? View.VISIBLE : View.GONE}' />
 
                                 <TextView
@@ -556,7 +534,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`7`)}"
-                                    android:onClick="@{()->form.setPd06(`7`)}"
                                     android:text="@string/pd0607" />
 
                                 <RadioButton
@@ -564,7 +541,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`8`)}"
-                                    android:onClick="@{()->form.setPd06(`8`)}"
                                     android:text="@string/pd0608" />
 
                                 <RadioButton
@@ -572,7 +548,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`9`)}"
-                                    android:onClick="@{()->form.setPd06(`9`)}"
                                     android:text="@string/pd0609" />
 
                                 <RadioButton
@@ -580,7 +555,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd06.equals(`962`)}"
-                                    android:onClick="@{()->form.setPd06(`962`)}"
                                     android:text="@string/pd06962" />
 
                                 <EditText
@@ -590,7 +564,7 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/pd06962"
                                     android:tag="pd06962"
-                                    android:text="@={form.pd06962x}"
+                                    android:text="@{form.pd06962x}"
                                     android:visibility='@{form.pd06.equals(`962`) ? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
@@ -639,7 +613,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd07.equals(`0`)}"
-                                    android:onClick="@{()->form.setPd07(`0`)}"
                                     android:text="@string/pd0701" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -649,7 +622,7 @@
                                     android:hint="@string/pd0701"
                                     android:inputType="number"
                                     android:tag="pd0701"
-                                    android:text="@={form.pd0701x}"
+                                    android:text="@{form.pd0701x}"
                                     android:visibility='@{form.pd07.equals(`0`) ? View.VISIBLE : View.GONE}'
                                     app:maxValue="20"
                                     app:minValue="1"
@@ -660,7 +633,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd07.equals(`98`)}"
-                                    android:onClick="@{()->form.setPd07(`98`)}"
                                     android:text="@string/pd0798" />
 
                             </RadioGroup>
@@ -670,6 +642,8 @@
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
+
+
                 <!-- pd08  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVpd08"
@@ -709,7 +683,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`1`)}"
-                                android:onClick="@{()->form.setPd08(`1`)}"
                                 android:text="@string/pd0801" />
 
                             <RadioButton
@@ -717,7 +690,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`2`)}"
-                                android:onClick="@{()->form.setPd08(`2`)}"
                                 android:text="@string/pd0802" />
 
                             <RadioButton
@@ -725,7 +697,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`3`)}"
-                                android:onClick="@{()->form.setPd08(`3`)}"
                                 android:text="@string/pd0803" />
 
                             <RadioButton
@@ -733,7 +704,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`4`)}"
-                                android:onClick="@{()->form.setPd08(`4`)}"
                                 android:text="@string/pd0804" />
 
                             <RadioButton
@@ -741,7 +711,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`5`)}"
-                                android:onClick="@{()->form.setPd08(`5`)}"
                                 android:text="@string/pd0805" />
 
                             <RadioButton
@@ -749,7 +718,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`6`)}"
-                                android:onClick="@{()->form.setPd08(`6`)}"
                                 android:text="@string/pd0806" />
 
                         </RadioGroup>
@@ -798,7 +766,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd09.equals(`1`)}"
-                                android:onClick="@{()->form.setPd09(`1`)}"
                                 android:text="@string/pd0901" />
 
                             <RadioButton
@@ -806,7 +773,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd09.equals(`2`)}"
-                                android:onClick="@{()->form.setPd09(`2`)}"
                                 android:text="@string/pd0902" />
 
                         </RadioGroup>
@@ -855,7 +821,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd10.equals(`1`)}"
-                                android:onClick="@{()->form.setPd10(`1`)}"
                                 android:text="@string/pd1001" />
 
                             <RadioButton
@@ -863,7 +828,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd10.equals(`2`)}"
-                                android:onClick="@{()->form.setPd10(`2`)}"
                                 android:text="@string/pd1002" />
 
                             <RadioButton
@@ -871,7 +835,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd10.equals(`3`)}"
-                                android:onClick="@{()->form.setPd10(`3`)}"
                                 android:text="@string/pd1003" />
 
                             <RadioButton
@@ -879,7 +842,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd10.equals(`4`)}"
-                                android:onClick="@{()->form.setPd10(`4`)}"
                                 android:text="@string/pd1004" />
 
                             <RadioButton
@@ -887,7 +849,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd10.equals(`5`)}"
-                                android:onClick="@{()->form.setPd10(`5`)}"
                                 android:text="@string/pd1005" />
 
                         </RadioGroup>
@@ -947,7 +908,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.pd1101}"
+                                android:text="@{form.pd1101}"
                                 app:maxValue="10"
                                 app:minValue="0"
                                 app:type="range" />
@@ -968,7 +929,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.pd1102}"
+                                android:text="@{form.pd1102}"
                                 app:maxValue="30"
                                 app:minValue="0"
                                 app:type="range" />
@@ -1026,7 +987,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd12.equals(`1`)}"
-                                android:onClick="@{()->form.setPd12(`1`)}"
                                 android:text="@string/pd1201" />
 
                             <RadioButton
@@ -1034,7 +994,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd12.equals(`2`)}"
-                                android:onClick="@{()->form.setPd12(`2`)}"
                                 android:text="@string/pd1202" />
 
                             <RadioButton
@@ -1042,7 +1001,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd12.equals(`3`)}"
-                                android:onClick="@{()->form.setPd12(`3`)}"
                                 android:text="@string/pd1203" />
 
                             <RadioButton
@@ -1050,7 +1008,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd12.equals(`4`)}"
-                                android:onClick="@{()->form.setPd12(`4`)}"
                                 android:text="@string/pd1204" />
 
                             <RadioButton
@@ -1058,7 +1015,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd12.equals(`5`)}"
-                                android:onClick="@{()->form.setPd12(`5`)}"
                                 android:text="@string/pd1205" />
 
                             <TextView
@@ -1073,7 +1029,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd12.equals(`6`)}"
-                                android:onClick="@{()->form.setPd12(`6`)}"
                                 android:text="@string/pd1206" />
 
                             <RadioButton
@@ -1081,7 +1036,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd12.equals(`7`)}"
-                                android:onClick="@{()->form.setPd12(`7`)}"
                                 android:text="@string/pd1207" />
 
                             <RadioButton
@@ -1089,7 +1043,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd12.equals(`96`)}"
-                                android:onClick="@{()->form.setPd12(`96`)}"
                                 android:text="@string/pd1296" />
 
                             <EditText
@@ -1099,7 +1052,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/pd1296"
                                 android:tag="pd1296"
-                                android:text="@={form.pd1296x}"
+                                android:text="@{form.pd1296x}"
                                 android:visibility='@{form.pd12.equals(`96`) ? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
@@ -1148,7 +1101,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd13.equals(`1`)}"
-                                android:onClick="@{()->form.setPd13(`1`)}"
                                 android:text="@string/pd1301" />
 
                             <RadioButton
@@ -1156,7 +1108,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd13.equals(`2`)}"
-                                android:onClick="@{()->form.setPd13(`2`)}"
                                 android:text="@string/pd1302" />
 
                             <RadioButton
@@ -1164,7 +1115,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd13.equals(`3`)}"
-                                android:onClick="@{()->form.setPd13(`3`)}"
                                 android:text="@string/pd1303" />
 
                             <RadioButton
@@ -1172,7 +1122,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd13.equals(`4`)}"
-                                android:onClick="@{()->form.setPd13(`4`)}"
                                 android:text="@string/pd1304" />
 
                             <RadioButton
@@ -1180,7 +1129,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd13.equals(`5`)}"
-                                android:onClick="@{()->form.setPd13(`5`)}"
                                 android:text="@string/pd1305" />
 
                             <RadioButton
@@ -1188,7 +1136,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd13.equals(`6`)}"
-                                android:onClick="@{()->form.setPd13(`6`)}"
                                 android:text="@string/pd1306" />
 
                             <RadioButton
@@ -1196,7 +1143,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd13.equals(`961`)}"
-                                android:onClick="@{()->form.setPd13(`961`)}"
                                 android:text="@string/pd13961" />
 
                             <EditText
@@ -1206,7 +1152,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/pd13961"
                                 android:tag="pd13961"
-                                android:text="@={form.pd13961x}"
+                                android:text="@{form.pd13961x}"
                                 android:visibility='@{form.pd13.equals(`961`) ? View.VISIBLE : View.GONE}' />
 
                             <RadioButton
@@ -1214,7 +1160,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd13.equals(`7`)}"
-                                android:onClick="@{()->form.setPd13(`7`)}"
                                 android:text="@string/pd1307" />
 
                             <RadioButton
@@ -1222,7 +1167,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd13.equals(`962`)}"
-                                android:onClick="@{()->form.setPd13(`962`)}"
                                 android:text="@string/pd13962" />
 
                             <EditText
@@ -1232,7 +1176,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/pd13962"
                                 android:tag="pd13962"
-                                android:text="@={form.pd13962x}"
+                                android:text="@{form.pd13962x}"
                                 android:visibility='@{form.pd13.equals(`962`) ? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
@@ -1281,7 +1225,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd14.equals(`1`)}"
-                                android:onClick="@{()->form.setPd14(`1`)}"
                                 android:text="@string/pd1401" />
 
                             <RadioButton
@@ -1289,7 +1232,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd14.equals(`2`)}"
-                                android:onClick="@{()->form.setPd14(`2`)}"
                                 android:text="@string/pd1402" />
 
                             <RadioButton
@@ -1297,7 +1239,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd14.equals(`3`)}"
-                                android:onClick="@{()->form.setPd14(`3`)}"
                                 android:text="@string/pd1403" />
 
                             <RadioButton
@@ -1305,7 +1246,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd14.equals(`4`)}"
-                                android:onClick="@{()->form.setPd14(`4`)}"
                                 android:text="@string/pd1404" />
 
                             <RadioButton
@@ -1313,7 +1253,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd14.equals(`5`)}"
-                                android:onClick="@{()->form.setPd14(`5`)}"
                                 android:text="@string/pd1405" />
 
                             <RadioButton
@@ -1321,7 +1260,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd14.equals(`96`)}"
-                                android:onClick="@{()->form.setPd14(`96`)}"
                                 android:text="@string/pd1496" />
 
                             <EditText
@@ -1331,7 +1269,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/pd1496"
                                 android:tag="pd1496"
-                                android:text="@={form.pd1496x}"
+                                android:text="@{form.pd1496x}"
                                 android:visibility='@{form.pd14.equals(`96`) ? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
@@ -1380,7 +1318,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd15.equals(`1`)}"
-                                android:onClick="@{()->form.setPd15(`1`)}"
                                 android:text="@string/pd1501" />
 
                             <RadioButton
@@ -1388,7 +1325,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd15.equals(`2`)}"
-                                android:onClick="@{()->form.setPd15(`2`)}"
                                 android:text="@string/pd1502" />
 
                         </RadioGroup>
@@ -1439,7 +1375,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1601.equals(`1`)}"
-                                android:onClick="@{()->form.setPd1601(form.pd1601.equals(`1`)?``:`1`)}"
                                 android:text="@string/pd1601" />
 
                             <CheckBox
@@ -1447,7 +1382,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1602.equals(`2`)}"
-                                android:onClick="@{()->form.setPd1602(form.pd1602.equals(`2`)?``:`2`)}"
                                 android:text="@string/pd1602" />
 
                             <CheckBox
@@ -1455,7 +1389,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1603.equals(`3`)}"
-                                android:onClick="@{()->form.setPd1603(form.pd1603.equals(`3`)?``:`3`)}"
                                 android:text="@string/pd1603" />
 
                             <CheckBox
@@ -1463,7 +1396,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1604.equals(`4`)}"
-                                android:onClick="@{()->form.setPd1604(form.pd1604.equals(`4`)?``:`4`)}"
                                 android:text="@string/pd1604" />
 
                             <CheckBox
@@ -1471,7 +1403,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1605.equals(`5`)}"
-                                android:onClick="@{()->form.setPd1605(form.pd1605.equals(`5`)?``:`5`)}"
                                 android:text="@string/pd1605" />
 
                             <CheckBox
@@ -1479,7 +1410,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1606.equals(`6`)}"
-                                android:onClick="@{()->form.setPd1606(form.pd1606.equals(`6`)?``:`6`)}"
                                 android:text="@string/pd1606" />
 
                             <CheckBox
@@ -1487,7 +1417,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1607.equals(`7`)}"
-                                android:onClick="@{()->form.setPd1607(form.pd1607.equals(`7`)?``:`7`)}"
                                 android:text="@string/pd1607" />
 
                             <CheckBox
@@ -1495,7 +1424,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1696.equals(`96`)}"
-                                android:onClick="@{()->form.setPd1696(form.pd1696.equals(`96`)?``:`96`)}"
                                 android:text="@string/pd1696" />
 
                             <EditText
@@ -1505,7 +1433,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/pd1696"
                                 android:tag="pd1696"
-                                android:text="@={form.pd1696x}"
+                                android:text="@{form.pd1696x}"
                                 android:visibility='@{form.pd1696.equals(`96`) ? View.VISIBLE : View.GONE}' />
 
                         </LinearLayout>
@@ -1554,7 +1482,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd17.equals(`1`)}"
-                                android:onClick="@{()->form.setPd17(`1`)}"
                                 android:text="@string/pd1701" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -1564,7 +1491,7 @@
                                 android:hint="@string/pd1701"
                                 android:inputType="number"
                                 android:tag="pd1701"
-                                android:text="@={form.pd1701x}"
+                                android:text="@{form.pd1701x}"
                                 android:visibility='@{form.pd17.equals(`1`) ? View.VISIBLE : View.GONE}'
                                 app:maxValue="23"
                                 app:minValue="1"
@@ -1575,7 +1502,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd17.equals(`2`)}"
-                                android:onClick="@{()->form.setPd17(`2`)}"
                                 android:text="@string/pd1702" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -1585,7 +1511,7 @@
                                 android:hint="@string/pd1702"
                                 android:inputType="number"
                                 android:tag="pd1702"
-                                android:text="@={form.pd1702x}"
+                                android:text="@{form.pd1702x}"
                                 android:visibility='@{form.pd17.equals(`2`) ? View.VISIBLE : View.GONE}'
                                 app:maxValue="30"
                                 app:minValue="1"
@@ -1596,7 +1522,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd17.equals(`3`)}"
-                                android:onClick="@{()->form.setPd17(`3`)}"
                                 android:text="@string/pd1703" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -1606,7 +1531,7 @@
                                 android:hint="@string/pd1703"
                                 android:inputType="number"
                                 android:tag="pd1703"
-                                android:text="@={form.pd1703x}"
+                                android:text="@{form.pd1703x}"
                                 android:visibility='@{form.pd17.equals(`3`) ? View.VISIBLE : View.GONE}'
                                 app:maxValue="8"
                                 app:minValue="1"
@@ -1617,7 +1542,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd17.equals(`98`)}"
-                                android:onClick="@{()->form.setPd17(`98`)}"
                                 android:text="@string/pd1798" />
 
                         </RadioGroup>
@@ -1677,7 +1601,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.pd18}"
+                                android:text="@{form.pd18}"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -1728,7 +1652,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd19.equals(`1`)}"
-                                android:onClick="@{()->form.setPd19(`1`)}"
                                 android:text="@string/pd1901" />
 
                             <RadioButton
@@ -1736,7 +1659,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd19.equals(`2`)}"
-                                android:onClick="@{()->form.setPd19(`2`)}"
                                 android:text="@string/pd1902" />
 
                             <RadioButton
@@ -1744,7 +1666,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd19.equals(`98`)}"
-                                android:onClick="@{()->form.setPd19(`98`)}"
                                 android:text="@string/pd1998" />
 
                         </RadioGroup>
@@ -1795,7 +1716,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd2001.equals(`1`)}"
-                                android:onClick="@{()->form.setPd2001(form.pd2001.equals(`1`)?``:`1`)}"
                                 android:text="@string/pd2001" />
 
                             <CheckBox
@@ -1803,7 +1723,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd2002.equals(`2`)}"
-                                android:onClick="@{()->form.setPd2002(form.pd2002.equals(`2`)?``:`2`)}"
                                 android:text="@string/pd2002" />
 
                             <CheckBox
@@ -1811,7 +1730,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd2003.equals(`3`)}"
-                                android:onClick="@{()->form.setPd2003(form.pd2003.equals(`3`)?``:`3`)}"
                                 android:text="@string/pd2003" />
 
                             <CheckBox
@@ -1819,7 +1737,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd2004.equals(`4`)}"
-                                android:onClick="@{()->form.setPd2004(form.pd2004.equals(`4`)?``:`4`)}"
                                 android:text="@string/pd2004" />
 
                             <CheckBox
@@ -1827,7 +1744,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd2005.equals(`5`)}"
-                                android:onClick="@{()->form.setPd2005(form.pd2005.equals(`5`)?``:`5`)}"
                                 android:text="@string/pd2005" />
 
                             <CheckBox
@@ -1835,7 +1751,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd2006.equals(`6`)}"
-                                android:onClick="@{()->form.setPd2006(form.pd2006.equals(`6`)?``:`6`)}"
                                 android:text="@string/pd2006" />
 
                             <CheckBox
@@ -1843,7 +1758,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd2007.equals(`7`)}"
-                                android:onClick="@{()->form.setPd2007(form.pd2007.equals(`7`)?``:`7`)}"
                                 android:text="@string/pd2007" />
 
                             <CheckBox
@@ -1851,7 +1765,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd2096.equals(`96`)}"
-                                android:onClick="@{()->form.setPd2096(form.pd2096.equals(`96`)?``:`96`)}"
                                 android:text="@string/pd2096" />
 
                             <EditText
@@ -1861,7 +1774,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/pd2096"
                                 android:tag="pd2096"
-                                android:text="@={form.pd2096x}"
+                                android:text="@{form.pd2096x}"
                                 android:visibility='@{form.pd2096.equals(`96`) ? View.VISIBLE : View.GONE}' />
 
                         </LinearLayout>
@@ -1910,7 +1823,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd21.equals(`1`)}"
-                                android:onClick="@{()->form.setPd21(`1`)}"
                                 android:text="@string/pd2101" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -1920,7 +1832,7 @@
                                 android:hint="@string/pd2101"
                                 android:inputType="number"
                                 android:tag="pd2101"
-                                android:text="@={form.pd2101x}"
+                                android:text="@{form.pd2101x}"
                                 android:visibility='@{form.pd21.equals(`1`) ? View.VISIBLE : View.GONE}'
                                 app:maxValue="23"
                                 app:minValue="1"
@@ -1931,7 +1843,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd21.equals(`2`)}"
-                                android:onClick="@{()->form.setPd21(`2`)}"
                                 android:text="@string/pd2102" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -1941,7 +1852,7 @@
                                 android:hint="@string/pd2102"
                                 android:inputType="number"
                                 android:tag="pd2102"
-                                android:text="@={form.pd2102x}"
+                                android:text="@{form.pd2102x}"
                                 android:visibility='@{form.pd21.equals(`2`) ? View.VISIBLE : View.GONE}'
                                 app:maxValue="30"
                                 app:minValue="1"
@@ -1952,7 +1863,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd21.equals(`3`)}"
-                                android:onClick="@{()->form.setPd21(`3`)}"
                                 android:text="@string/pd2103" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -1962,7 +1872,7 @@
                                 android:hint="@string/pd2103"
                                 android:inputType="number"
                                 android:tag="pd2103"
-                                android:text="@={form.pd2103x}"
+                                android:text="@{form.pd2103x}"
                                 android:visibility='@{form.pd21.equals(`3`) ? View.VISIBLE : View.GONE}'
                                 app:maxValue="8"
                                 app:minValue="1"
@@ -1973,7 +1883,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd21.equals(`98`)}"
-                                android:onClick="@{()->form.setPd21(`98`)}"
                                 android:text="@string/pd2198" />
 
                         </RadioGroup>
@@ -2033,7 +1942,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.pd22}"
+                                android:text="@{form.pd22}"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -2072,10 +1981,15 @@
                         android:onClick="BtnContinue"
                         android:text="Save"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
 
         </ScrollView>
+
     </LinearLayout>
 
 </layout>
