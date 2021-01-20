@@ -187,6 +187,45 @@ class Section02CBActivity : AppCompatActivity() {
         MainApp.childInformation.deviceTag = MainApp.appInfo.tagName
         MainApp.childInformation.appver = MainApp.appInfo.appVersion
         MainApp.childInformation.cb15 = if (bi.cb1598.isChecked) "98" else MainApp.childInformation.cb15
+
+
+
+        MainApp.childInformation.setCb01(bi.cb01.text.toString())
+
+        MainApp.childInformation.setCb02(bi.cb02.text.toString())
+
+        MainApp.childInformation.setCb03(if (bi.cb0301.isChecked) "1" else if (bi.cb0302.isChecked) "2" else "-1")
+
+        MainApp.childInformation.setCb04dd(bi.cb04dd.text.toString())
+        MainApp.childInformation.setCb04mm(bi.cb04mm.text.toString())
+        MainApp.childInformation.setCb04yy(bi.cb04yy.text.toString())
+        MainApp.childInformation.setCb0501(bi.cb0501.text.toString())
+        MainApp.childInformation.setCb0502(bi.cb0502.text.toString())
+        MainApp.childInformation.setCb06(if (bi.cb0601.isChecked) "1" else if (bi.cb0602.isChecked) "2" else if (bi.cb0603.isChecked) "3" else if (bi.cb0696.isChecked) "4" else "-1")
+
+        MainApp.childInformation.setCb07(bi.cb07.text.toString())
+
+        MainApp.childInformation.setCb08(bi.cb08.text.toString())
+
+        MainApp.childInformation.setCb09(bi.cb09.text.toString())
+
+        MainApp.childInformation.setCb10(if (bi.cb1001.isChecked) "1" else if (bi.cb1002.isChecked) "2" else if (bi.cb1003.isChecked) "3" else if (bi.cb1004.isChecked) "4" else if (bi.cb1005.isChecked) "5" else if (bi.cb1006.isChecked) "6" else if (bi.cb1007.isChecked) "7" else if (bi.cb1008.isChecked) "8" else if (bi.cb1009.isChecked) "9" else if (bi.cb1010.isChecked) "10" else if (bi.cb1011.isChecked) "11" else if (bi.cb1012.isChecked) "12" else if (bi.cb1013.isChecked) "13" else if (bi.cb1096.isChecked) "96" else "-1")
+
+        MainApp.childInformation.setCb1096x(bi.cb1096x.text.toString())
+        MainApp.childInformation.setCb11(if (bi.cb1101.isChecked) "1" else if (bi.cb1102.isChecked) "2" else "-1")
+
+        MainApp.childInformation.setCb12(bi.cb12.text.toString())
+
+        MainApp.childInformation.setCb13(bi.cb13.text.toString())
+
+        MainApp.childInformation.setCb14(if (bi.cb1401.isChecked) "1" else if (bi.cb1402.isChecked) "2" else if (bi.cb1403.isChecked) "3" else if (bi.cb1404.isChecked) "4" else if (bi.cb1405.isChecked) "5" else if (bi.cb1406.isChecked) "6" else if (bi.cb1407.isChecked) "7" else if (bi.cb1408.isChecked) "8" else if (bi.cb1409.isChecked) "9" else if (bi.cb1410.isChecked) "10" else if (bi.cb1411.isChecked) "11" else if (bi.cb1412.isChecked) "12" else if (bi.cb1413.isChecked) "13" else if (bi.cb1496.isChecked) "96" else "-1")
+
+        MainApp.childInformation.setCb1496x(bi.cb1496x.text.toString())
+        MainApp.childInformation.setCb15(bi.cb15.text.toString())
+
+        MainApp.childInformation.setCb16(if (bi.cb1601.isChecked) "1" else if (bi.cb1602.isChecked) "2" else if (bi.cb1603.isChecked) "3" else "-1")
+
+
     }
 
     fun cb04yyOnTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
