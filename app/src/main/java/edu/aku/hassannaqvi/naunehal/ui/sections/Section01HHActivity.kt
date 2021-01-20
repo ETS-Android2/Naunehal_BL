@@ -13,7 +13,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
@@ -26,6 +25,7 @@ import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
 import edu.aku.hassannaqvi.naunehal.base.viewmodel.H1ViewModel
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
 import edu.aku.hassannaqvi.naunehal.core.MainApp
+import edu.aku.hassannaqvi.naunehal.core.MainApp.form
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding
 import edu.aku.hassannaqvi.naunehal.models.BLRandom
@@ -43,6 +43,7 @@ import org.threeten.bp.ZoneId
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class Section01HHActivity : AppCompatActivity() {
     lateinit var bi: ActivitySection01hhBinding
@@ -353,7 +354,64 @@ class Section01HHActivity : AppCompatActivity() {
         } catch (e: ParseException) {
             e.printStackTrace()
         }
+
+
+
+        form.setHh01(bi.aa01.text.toString())
+
+        form.setHh0201(bi.hh0201.text.toString())
+        /* form.setHh0202(bi.hh0202.getText().toString())
+         form.setHh03(bi.hh03.getText().toString())
+
+         form.setHh04(bi.hh04.getText().toString())*/
+
+        form.setHh05(bi.hh05.selectedItem.toString())
+
+        form.setHh06(bi.hh06.selectedItem.toString())
+
+        form.setHh07(bi.hh07.text.toString())
+
+        form.setHh08(bi.hh08.text.toString())
+
+        form.setHh09(bi.hh09.text.toString())
+
+        form.setHh10(bi.hh10.text.toString())
+
+        form.setHh11(if (bi.hh1101.isChecked) "1" else if (bi.hh1102.isChecked) "2" else "-1")
+
+        form.setHh12(bi.hh12.text.toString())
+
+        form.setHh13(bi.hh13.text.toString())
+
+        form.setHh14(if (bi.hh1401.isChecked) "1" else if (bi.hh1402.isChecked) "2" else "-1")
+
+        form.setHh15(if (bi.hh1501.isChecked) "1" else if (bi.hh1502.isChecked) "2" else if (bi.hh1503.isChecked) "3" else if (bi.hh1504.isChecked) "4" else if (bi.hh1505.isChecked) "5" else "-1")
+
+        form.setHh16(bi.hh16.text.toString())
+
+        form.setHh17(if (bi.hh1701.isChecked) "1" else if (bi.hh1702.isChecked) "2" else if (bi.hh1703.isChecked) "3" else if (bi.hh1704.isChecked) "4" else if (bi.hh1705.isChecked) "5" else if (bi.hh1706.isChecked) "6" else if (bi.hh1707.isChecked) "7" else if (bi.hh1708.isChecked) "8" else if (bi.hh1709.isChecked) "9" else if (bi.hh1710.isChecked) "10" else if (bi.hh1711.isChecked) "11" else if (bi.hh1712.isChecked) "12" else if (bi.hh1713.isChecked) "13" else if (bi.hh1796.isChecked) "96" else "-1")
+
+        form.setHh1796x(bi.hh1796x.text.toString())
+        form.setHh18(if (bi.hh1801.isChecked) "1" else if (bi.hh1802.isChecked) "2" else "-1")
+
+        form.setHh19(bi.hh19.text.toString())
+
+        form.setHh20(if (bi.hh2001.isChecked) "1" else if (bi.hh2002.isChecked) "2" else if (bi.hh2003.isChecked) "3" else if (bi.hh2004.isChecked) "4" else if (bi.hh2005.isChecked) "5" else if (bi.hh2006.isChecked) "6" else if (bi.hh2007.isChecked) "7" else if (bi.hh2008.isChecked) "8" else if (bi.hh2009.isChecked) "9" else if (bi.hh2010.isChecked) "10" else if (bi.hh2011.isChecked) "11" else if (bi.hh2012.isChecked) "12" else if (bi.hh2013.isChecked) "13" else if (bi.hh2096.isChecked) "96" else "-1")
+
+        form.setHh2096x(bi.hh2096x.text.toString())
+        form.setHh21(bi.hh21.text.toString())
+
+        form.setHh22(bi.hh22.text.toString())
+
+        form.setHh23(bi.hh23.text.toString())
+
+        form.setHh24(bi.hh24.text.toString())
+
+        form.setHh25(bi.hh25.text.toString())
+
+
     }
+
 
     private fun getGPS(activity: Activity): JSONObject? {
         val json = JSONObject()
