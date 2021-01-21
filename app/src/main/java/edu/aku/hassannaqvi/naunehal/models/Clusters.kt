@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.naunehal.models
 
 import android.database.Cursor
 import android.provider.BaseColumns
+import org.apache.commons.lang3.StringUtils
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -10,9 +11,9 @@ import org.json.JSONObject
  * @update ali.azaz
  */
 class Clusters {
-    var clusterCode: String = ""
-    var clustername: String = ""
-    var distCode: String = ""
+    var clusterCode: String = StringUtils.EMPTY
+    var clustername: String = StringUtils.EMPTY
+    var distCode: String = StringUtils.EMPTY
 
     @Throws(JSONException::class)
     fun sync(jsonObject: JSONObject): Clusters {

@@ -2,13 +2,14 @@ package edu.aku.hassannaqvi.naunehal.models
 
 import android.database.Cursor
 import android.provider.BaseColumns
+import org.apache.commons.lang3.StringUtils
 import org.json.JSONException
 import org.json.JSONObject
 
 class VersionApp {
-    var versioncode: String = ""
-    var versionname: String = ""
-    var pathname: String = ""
+    var versioncode: String = StringUtils.EMPTY
+    var versionname: String = StringUtils.EMPTY
+    var pathname: String = StringUtils.EMPTY
 
     @Throws(JSONException::class)
     fun sync(jsonObject: JSONObject): VersionApp {

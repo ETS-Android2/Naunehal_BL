@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.naunehal.models;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class SyncModel {
     String tableName;
     String status;
@@ -9,9 +11,9 @@ public class SyncModel {
     public SyncModel(String tableName) {
 
         this.tableName = tableName;
-        this.status = "";
+        this.status = StringUtils.EMPTY;
         this.statusID = 0;
-        this.message = "";
+        this.message = StringUtils.EMPTY;
 
 
     }

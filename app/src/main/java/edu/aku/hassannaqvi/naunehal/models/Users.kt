@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.naunehal.models
 
 import android.database.Cursor
+import org.apache.commons.lang3.StringUtils
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -9,9 +10,9 @@ import org.json.JSONObject
  */
 class Users {
     var userID: Long = 0
-    var userName: String = ""
-    var password: String = ""
-    var fullname: String = ""
+    var userName: String = StringUtils.EMPTY
+    var password: String = StringUtils.EMPTY
+    var fullname: String = StringUtils.EMPTY
 
     constructor() {
         // Default Constructor
