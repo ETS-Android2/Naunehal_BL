@@ -983,7 +983,14 @@ public class Child extends BaseObservable {
                     .put("cs17b", cs17b)
                     .put("cs17961x", cs17961x)
                     .put("cs17962x", cs17962x)
-                    .put("cs18", cs1802)
+                    .put("cs1802", cs1802)
+                    .put("cs1803", cs1803)
+                    .put("cs1804", cs1804)
+                    .put("cs1805", cs1805)
+                    .put("cs1806", cs1806)
+                    .put("cs1807", cs1807)
+                    .put("cs1808", cs1808)
+                    .put("cs1896", cs1896)
                     .put("cs1896x", cs1896x)
                     .put("cs19", cs19)
                     .put("cs1996x", cs1996x)
@@ -1088,7 +1095,14 @@ public class Child extends BaseObservable {
                 this.cs17b = json.getString("cs17b");
                 this.cs17961x = json.getString("cs17961x");
                 this.cs17962x = json.getString("cs17962x");
-                this.cs1802 = json.getString("cs18");
+                this.cs1802 = json.getString("cs1802");
+                this.cs1803 = json.getString("cs1803");
+                this.cs1804 = json.getString("cs1804");
+                this.cs1805 = json.getString("cs1805");
+                this.cs1806 = json.getString("cs1806");
+                this.cs1807 = json.getString("cs1807");
+                this.cs1808 = json.getString("cs1808");
+                this.cs1896 = json.getString("cs1896");
                 this.cs1896x = json.getString("cs1896x");
                 this.cs19 = json.getString("cs19");
                 this.cs1996x = json.getString("cs1996x");
