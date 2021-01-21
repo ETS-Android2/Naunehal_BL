@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.naunehal.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -15,11 +14,9 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.naunehal.R;
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityEndingBinding;
-import edu.aku.hassannaqvi.naunehal.models.Form;
 
 import static edu.aku.hassannaqvi.naunehal.CONSTANTS.SECTION_MAIN_CHECK_FOR_END;
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
@@ -66,12 +63,26 @@ public class EndingActivity extends AppCompatActivity {
 //
     }
 
+    private void saveDraft() {
+
+        form.setHh26(bi.istatusa.isChecked() ? "1"
+                : bi.istatusb.isChecked() ? "2"
+                : bi.istatusc.isChecked() ? "3"
+                : bi.istatusd.isChecked() ? "4"
+                : bi.istatuse.isChecked() ? "5"
+                : bi.istatusf.isChecked() ? "6"
+                : bi.istatus96.isChecked() ? "96"
+                : "-1");
+        form.setHh2696x(bi.istatus96x.getText().toString().trim().isEmpty() ? "-1" : bi.istatus96x.getText().toString());
+        form.setIStatus(form.getHh26());
+        form.setIStatus96x(form.getHh2696x());
+        form.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
+    }
+
 
     public void BtnEnd(View view) {
         if (!formValidation()) return;
-        //SaveDraft();
-        form.setIStatus(form.hh26);
-        form.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
+        saveDraft();
         if (UpdateDB()) {
             finish();
             gotoActivityWithNoHistory(this, MainActivity.class);
