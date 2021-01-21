@@ -8,6 +8,7 @@ import androidx.databinding.Bindable;
 
 import com.google.gson.GsonBuilder;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.LocalDate;
@@ -23,286 +24,283 @@ public class Form extends BaseObservable {
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
     // FIELD VARIABLES
-    public String hh01 = "";
-    public String hh0201 = "";
-    public String hh0202 = "";
-    public String hh03 = "";
-    public String hh04 = "";
-    public String hh05 = "";
-    public String hh06 = "";
-    public String hh07 = "";
-    public String hh08 = "";
-    public String hh09 = "";
-    public String hh10 = "";
-    public String hh11 = "";
-    public String hh12 = "";
-    public String hh13 = "";
-    public String hh14 = "";
-    public String hh15 = "";
-    public String hh16 = "";
-    public String hh17 = "";
-    public String hh1796x = "";
-    public String hh18 = "";
-    public String hh19 = "";
-    public String hh20 = "";
-    public String hh2096x = "";
-    public String hh21 = "";
-    public String hh22 = "";
-    public String hh23 = "";
-    public String hh24 = "";
-    public String hh25 = "";
-    public String hh26 = "";
-    public String hh2696x = "";
+    public String hh01 = StringUtils.EMPTY;
+    public String hh0201 = StringUtils.EMPTY;
+    public String hh0202 = StringUtils.EMPTY;
+    public String hh03 = StringUtils.EMPTY;
+    public String hh04 = StringUtils.EMPTY;
+    public String hh05 = StringUtils.EMPTY;
+    public String hh06 = StringUtils.EMPTY;
+    public String hh07 = StringUtils.EMPTY;
+    public String hh08 = StringUtils.EMPTY;
+    public String hh09 = StringUtils.EMPTY;
+    public String hh10 = StringUtils.EMPTY;
+    public String hh11 = StringUtils.EMPTY;
+    public String hh12 = StringUtils.EMPTY;
+    public String hh13 = StringUtils.EMPTY;
+    public String hh14 = StringUtils.EMPTY;
+    public String hh15 = StringUtils.EMPTY;
+    public String hh16 = StringUtils.EMPTY;
+    public String hh17 = StringUtils.EMPTY;
+    public String hh1796x = StringUtils.EMPTY;
+    public String hh18 = StringUtils.EMPTY;
+    public String hh19 = StringUtils.EMPTY;
+    public String hh20 = StringUtils.EMPTY;
+    public String hh2096x = StringUtils.EMPTY;
+    public String hh21 = StringUtils.EMPTY;
+    public String hh22 = StringUtils.EMPTY;
+    public String hh23 = StringUtils.EMPTY;
+    public String hh24 = StringUtils.EMPTY;
+    public String hh25 = StringUtils.EMPTY;
+    public String hh26 = StringUtils.EMPTY;
+    public String hh2696x = StringUtils.EMPTY;
     //Section PD
-    public String pd01 = "";
-    public String pd02 = "";
-    public String pd03 = "";
-    public String pd04 = "";
-    public String pd05 = "";
-    public String pd0596x = "";
-    public String pd06 = "";
-    public String pd06961x = "";
-    public String pd06962x = "";
-    public String pd07 = "";
-    public String pd0701x = "";
-    public String pd08 = "";
-    public String pd09 = "";
-    public String pd10 = "";
-    public String pd1101 = "";
-    public String pd1102 = "";
-    public String pd12 = "";
-    public String pd1296x = "";
-    public String pd13 = "";
-    public String pd13961x = "";
-    public String pd13962x = "";
-    public String pd14 = "";
-    public String pd1496x = "";
-    public String pd15 = "";
-    public String pd16 = "";
-    public String pd1601 = "";
-    public String pd1602 = "";
-    public String pd1603 = "";
-    public String pd1604 = "";
-    public String pd1605 = "";
-    public String pd1606 = "";
-    public String pd1607 = "";
-    public String pd1696 = "";
-    public String pd1696x = "";
-    public String pd17 = "";
-    public String pd1701x = "";
-    public String pd1702x = "";
-    public String pd1703x = "";
-    public String pd18 = "";
-    public String pd19 = "";
-    public String pd20 = "";
-    public String pd2001 = "";
-    public String pd2002 = "";
-    public String pd2003 = "";
-    public String pd2004 = "";
-    public String pd2005 = "";
-    public String pd2006 = "";
-    public String pd2007 = "";
-    public String pd2096 = "";
-    public String pd2096x = "";
-    public String pd21 = "";
-    public String pd2101x = "";
-    public String pd2102x = "";
-    public String pd2103x = "";
-    public String pd22 = "";
+    public String pd01 = StringUtils.EMPTY;
+    public String pd02 = StringUtils.EMPTY;
+    public String pd03 = StringUtils.EMPTY;
+    public String pd04 = StringUtils.EMPTY;
+    public String pd05 = StringUtils.EMPTY;
+    public String pd0596x = StringUtils.EMPTY;
+    public String pd06 = StringUtils.EMPTY;
+    public String pd06961x = StringUtils.EMPTY;
+    public String pd06962x = StringUtils.EMPTY;
+    public String pd07 = StringUtils.EMPTY;
+    public String pd0701x = StringUtils.EMPTY;
+    public String pd08 = StringUtils.EMPTY;
+    public String pd09 = StringUtils.EMPTY;
+    public String pd10 = StringUtils.EMPTY;
+    public String pd1101 = StringUtils.EMPTY;
+    public String pd1102 = StringUtils.EMPTY;
+    public String pd12 = StringUtils.EMPTY;
+    public String pd1296x = StringUtils.EMPTY;
+    public String pd13 = StringUtils.EMPTY;
+    public String pd13961x = StringUtils.EMPTY;
+    public String pd13962x = StringUtils.EMPTY;
+    public String pd14 = StringUtils.EMPTY;
+    public String pd1496x = StringUtils.EMPTY;
+    public String pd15 = StringUtils.EMPTY;
+    public String pd16 = StringUtils.EMPTY;
+    public String pd1601 = StringUtils.EMPTY;
+    public String pd1602 = StringUtils.EMPTY;
+    public String pd1603 = StringUtils.EMPTY;
+    public String pd1604 = StringUtils.EMPTY;
+    public String pd1605 = StringUtils.EMPTY;
+    public String pd1606 = StringUtils.EMPTY;
+    public String pd1607 = StringUtils.EMPTY;
+    public String pd1696 = StringUtils.EMPTY;
+    public String pd1696x = StringUtils.EMPTY;
+    public String pd17 = StringUtils.EMPTY;
+    public String pd1701x = StringUtils.EMPTY;
+    public String pd1702x = StringUtils.EMPTY;
+    public String pd1703x = StringUtils.EMPTY;
+    public String pd18 = StringUtils.EMPTY;
+    public String pd19 = StringUtils.EMPTY;
+    public String pd20 = StringUtils.EMPTY;
+    public String pd2001 = StringUtils.EMPTY;
+    public String pd2002 = StringUtils.EMPTY;
+    public String pd2003 = StringUtils.EMPTY;
+    public String pd2004 = StringUtils.EMPTY;
+    public String pd2005 = StringUtils.EMPTY;
+    public String pd2006 = StringUtils.EMPTY;
+    public String pd2007 = StringUtils.EMPTY;
+    public String pd2096 = StringUtils.EMPTY;
+    public String pd2096x = StringUtils.EMPTY;
+    public String pd21 = StringUtils.EMPTY;
+    public String pd2101x = StringUtils.EMPTY;
+    public String pd2102x = StringUtils.EMPTY;
+    public String pd2103x = StringUtils.EMPTY;
+    public String pd22 = StringUtils.EMPTY;
     //Section PF
-    public String bf01 = "";
-    public String bf02 = "";
-    public String bf03 = "";
-    public String bf3y = "";
-    public String bf03m = "";
-    public String bf3d = "";
-    public String bf04 = "";
-    public String bf05 = "";
-    public String bf0502x = "";
-    public String bf0503x = "";
-    public String bf06 = "";
-    public String bf07 = "";
-    public String bf0796x = "";
-    public String bf08 = "";
-    public String bf09 = "";
-    public String bf0996x = "";
-    public String bf10 = "";
-    public String bf11 = "";
-    public String bf12 = "";
-    public String bf13 = "";
+    public String bf01 = StringUtils.EMPTY;
+    public String bf02 = StringUtils.EMPTY;
+    public String bf03 = StringUtils.EMPTY;
+    public String bf3y = StringUtils.EMPTY;
+    public String bf03m = StringUtils.EMPTY;
+    public String bf3d = StringUtils.EMPTY;
+    public String bf04 = StringUtils.EMPTY;
+    public String bf05 = StringUtils.EMPTY;
+    public String bf0502x = StringUtils.EMPTY;
+    public String bf0503x = StringUtils.EMPTY;
+    public String bf06 = StringUtils.EMPTY;
+    public String bf07 = StringUtils.EMPTY;
+    public String bf0796x = StringUtils.EMPTY;
+    public String bf08 = StringUtils.EMPTY;
+    public String bf09 = StringUtils.EMPTY;
+    public String bf0996x = StringUtils.EMPTY;
+    public String bf10 = StringUtils.EMPTY;
+    public String bf11 = StringUtils.EMPTY;
+    public String bf12 = StringUtils.EMPTY;
+    public String bf13 = StringUtils.EMPTY;
     //Section CV
-    public String cv01 = "";
-    public String cv02 = "";
-    public String cv03 = "";
-    public String cv04 = "";
-    public String cv05 = "";
-    public String cv0596x = "";
-    public String cv06 = "";
-    public String cv07 = "";
-    public String cv08 = "";
-    public String cv09 = "";
-    public String cv10 = "";
-    public String cv11 = "";
-    public String cv12 = "";
-    public String cv1296x = "";
-    public String cv13 = "";
-    public String cv14 = "";
-    public String cv15 = "";
-    public String cv16 = "";
-    public String cv1696x = "";
-    public String cv17 = "";
-    public String cv18 = "";
-    public String cv1896x = "";
-    public String cv19 = "";
-    public String cv1996x = "";
+    public String cv01 = StringUtils.EMPTY;
+    public String cv02 = StringUtils.EMPTY;
+    public String cv03 = StringUtils.EMPTY;
+    public String cv04 = StringUtils.EMPTY;
+    public String cv05 = StringUtils.EMPTY;
+    public String cv0596x = StringUtils.EMPTY;
+    public String cv06 = StringUtils.EMPTY;
+    public String cv07 = StringUtils.EMPTY;
+    public String cv08 = StringUtils.EMPTY;
+    public String cv09 = StringUtils.EMPTY;
+    public String cv10 = StringUtils.EMPTY;
+    public String cv11 = StringUtils.EMPTY;
+    public String cv12 = StringUtils.EMPTY;
+    public String cv1296x = StringUtils.EMPTY;
+    public String cv13 = StringUtils.EMPTY;
+    public String cv14 = StringUtils.EMPTY;
+    public String cv15 = StringUtils.EMPTY;
+    public String cv16 = StringUtils.EMPTY;
+    public String cv1696x = StringUtils.EMPTY;
+    public String cv17 = StringUtils.EMPTY;
+    public String cv18 = StringUtils.EMPTY;
+    public String cv1896x = StringUtils.EMPTY;
+    public String cv19 = StringUtils.EMPTY;
+    public String cv1996x = StringUtils.EMPTY;
     //Section SE
-    public String se01 = "";
-    public String se0196x = "";
-    public String se02 = "";
-    public String se0296x = "";
-    public String se03 = "";
-    public String se0396x = "";
-    public String se04 = "";
-    public String se0496x = "";
-    public String se05 = "";
-    public String se0596x = "";
-    public String se06a = "";
-    public String se07a = "";
-    public String se08 = "";
-    public String se0896x = "";
-    public String se09 = "";
-    public String se10 = "";
-    public String se1099x = "";
-    public String se11 = "";
-    public String se1196x = "";
-    public String se12 = "";
-    public String se1296x = "";
-    public String se13 = "";
-    public String se14 = "";
-    public String se15 = "";
-    public String se16 = "";
-    public String se17 = "";
-    public String se1701 = "";
-    public String se1702 = "";
-    public String se1703 = "";
-    public String se1704 = "";
-    public String se1705 = "";
-    public String se1801 = "";
-    public String se1802 = "";
-    public String se1803 = "";
-    public String se1804 = "";
-    public String se1805 = "";
-    public String se1896 = "";
-    public String se189601x = "";
-    public String se19 = "";
-    public String se1996x = "";
-    public String se20 = "";
-    public String se2001 = "";
-    public String se2002 = "";
-    public String se2003 = "";
-    public String se2004 = "";
-    public String se2005 = "";
-    public String se2096 = "";
-    public String se2096x = "";
-    public String se21 = "";
-    public String se2101 = "";
-    public String se2102 = "";
-    public String se2103 = "";
-    public String se2104 = "";
-    public String se2105 = "";
-    public String se2196 = "";
-    public String se2196x = "";
-    public String se2201 = "";
-    public String se2202 = "";
-    public String se2203 = "";
-    public String se2204 = "";
-    public String se2205 = "";
-    public String se2206 = "";
-    public String se2207 = "";
-    public String se2208 = "";
-    public String se2209 = "";
-    public String se2210 = "";
-    public String se2211 = "";
-    public String se2212 = "";
-    public String se2213 = "";
-    public String se2214 = "";
-    public String se2215 = "";
-    public String se2216 = "";
-    public String se2217 = "";
-    public String se2218 = "";
-    public String se23 = "";
-    public String se24 = "";
-    public String se25 = "";
-    public String se26 = "";
-    public String se27 = "";
-    public String se2701 = "";
-    public String se2702 = "";
-    public String se2703 = "";
-    public String se2704 = "";
-    public String se28 = "";
-    public String se2801 = "";
-    public String se2802 = "";
-    public String se2803 = "";
-    public String se29 = "";
-    public String se30 = "";
-    public String se3001 = "";
-    public String se3002 = "";
-    public String se3003 = "";
-    public String se3096 = "";
-    public String se3096x = "";
-    public String se31 = "";
-    public String se3196x = "";
-    public String se32 = "";
-    public String se3302 = "";
-    public String se3301 = "";
-    public String se3401 = "";
-    public String se3402 = "";
-    public String se35 = "";
-    public String se36 = "";
-    public String se37 = "";
-    public String se3701 = "";
-    public String se3702 = "";
-    public String se3703 = "";
-    public String se3704 = "";
-    public String se3705 = "";
-    public String se3706 = "";
-    public String se3707 = "";
-    public String se3708 = "";
-    public String se3709 = "";
-    public String se3796 = "";
-    public String se3796x = "";
-    public String se38 = "";
-    public String se39 = "";
-    public String se40 = "";
+    public String se01 = StringUtils.EMPTY;
+    public String se0196x = StringUtils.EMPTY;
+    public String se02 = StringUtils.EMPTY;
+    public String se0296x = StringUtils.EMPTY;
+    public String se03 = StringUtils.EMPTY;
+    public String se0396x = StringUtils.EMPTY;
+    public String se04 = StringUtils.EMPTY;
+    public String se0496x = StringUtils.EMPTY;
+    public String se05 = StringUtils.EMPTY;
+    public String se0596x = StringUtils.EMPTY;
+    public String se06a = StringUtils.EMPTY;
+    public String se07a = StringUtils.EMPTY;
+    public String se08 = StringUtils.EMPTY;
+    public String se0896x = StringUtils.EMPTY;
+    public String se09 = StringUtils.EMPTY;
+    public String se10 = StringUtils.EMPTY;
+    public String se1099x = StringUtils.EMPTY;
+    public String se11 = StringUtils.EMPTY;
+    public String se1196x = StringUtils.EMPTY;
+    public String se12 = StringUtils.EMPTY;
+    public String se1296x = StringUtils.EMPTY;
+    public String se13 = StringUtils.EMPTY;
+    public String se14 = StringUtils.EMPTY;
+    public String se15 = StringUtils.EMPTY;
+    public String se16 = StringUtils.EMPTY;
+    public String se17 = StringUtils.EMPTY;
+    public String se1701 = StringUtils.EMPTY;
+    public String se1702 = StringUtils.EMPTY;
+    public String se1703 = StringUtils.EMPTY;
+    public String se1704 = StringUtils.EMPTY;
+    public String se1705 = StringUtils.EMPTY;
+    public String se1801 = StringUtils.EMPTY;
+    public String se1802 = StringUtils.EMPTY;
+    public String se1803 = StringUtils.EMPTY;
+    public String se1804 = StringUtils.EMPTY;
+    public String se1805 = StringUtils.EMPTY;
+    public String se1896 = StringUtils.EMPTY;
+    public String se189601x = StringUtils.EMPTY;
+    public String se19 = StringUtils.EMPTY;
+    public String se1996x = StringUtils.EMPTY;
+    public String se20 = StringUtils.EMPTY;
+    public String se2001 = StringUtils.EMPTY;
+    public String se2002 = StringUtils.EMPTY;
+    public String se2003 = StringUtils.EMPTY;
+    public String se2004 = StringUtils.EMPTY;
+    public String se2005 = StringUtils.EMPTY;
+    public String se2096 = StringUtils.EMPTY;
+    public String se2096x = StringUtils.EMPTY;
+    public String se21 = StringUtils.EMPTY;
+    public String se2101 = StringUtils.EMPTY;
+    public String se2102 = StringUtils.EMPTY;
+    public String se2103 = StringUtils.EMPTY;
+    public String se2104 = StringUtils.EMPTY;
+    public String se2105 = StringUtils.EMPTY;
+    public String se2196 = StringUtils.EMPTY;
+    public String se2196x = StringUtils.EMPTY;
+    public String se2201 = StringUtils.EMPTY;
+    public String se2202 = StringUtils.EMPTY;
+    public String se2203 = StringUtils.EMPTY;
+    public String se2204 = StringUtils.EMPTY;
+    public String se2205 = StringUtils.EMPTY;
+    public String se2206 = StringUtils.EMPTY;
+    public String se2207 = StringUtils.EMPTY;
+    public String se2208 = StringUtils.EMPTY;
+    public String se2209 = StringUtils.EMPTY;
+    public String se2210 = StringUtils.EMPTY;
+    public String se2211 = StringUtils.EMPTY;
+    public String se2212 = StringUtils.EMPTY;
+    public String se2213 = StringUtils.EMPTY;
+    public String se2214 = StringUtils.EMPTY;
+    public String se2215 = StringUtils.EMPTY;
+    public String se2216 = StringUtils.EMPTY;
+    public String se2217 = StringUtils.EMPTY;
+    public String se2218 = StringUtils.EMPTY;
+    public String se23 = StringUtils.EMPTY;
+    public String se24 = StringUtils.EMPTY;
+    public String se25 = StringUtils.EMPTY;
+    public String se26 = StringUtils.EMPTY;
+    public String se27 = StringUtils.EMPTY;
+    public String se2701 = StringUtils.EMPTY;
+    public String se2702 = StringUtils.EMPTY;
+    public String se2703 = StringUtils.EMPTY;
+    public String se2704 = StringUtils.EMPTY;
+    public String se28 = StringUtils.EMPTY;
+    public String se2801 = StringUtils.EMPTY;
+    public String se2802 = StringUtils.EMPTY;
+    public String se2803 = StringUtils.EMPTY;
+    public String se29 = StringUtils.EMPTY;
+    public String se30 = StringUtils.EMPTY;
+    public String se3001 = StringUtils.EMPTY;
+    public String se3002 = StringUtils.EMPTY;
+    public String se3003 = StringUtils.EMPTY;
+    public String se3096 = StringUtils.EMPTY;
+    public String se3096x = StringUtils.EMPTY;
+    public String se31 = StringUtils.EMPTY;
+    public String se3196x = StringUtils.EMPTY;
+    public String se32 = StringUtils.EMPTY;
+    public String se3302 = StringUtils.EMPTY;
+    public String se3301 = StringUtils.EMPTY;
+    public String se3401 = StringUtils.EMPTY;
+    public String se3402 = StringUtils.EMPTY;
+    public String se35 = StringUtils.EMPTY;
+    public String se36 = StringUtils.EMPTY;
+    public String se37 = StringUtils.EMPTY;
+    public String se3701 = StringUtils.EMPTY;
+    public String se3702 = StringUtils.EMPTY;
+    public String se3703 = StringUtils.EMPTY;
+    public String se3704 = StringUtils.EMPTY;
+    public String se3705 = StringUtils.EMPTY;
+    public String se3706 = StringUtils.EMPTY;
+    public String se3707 = StringUtils.EMPTY;
+    public String se3708 = StringUtils.EMPTY;
+    public String se3709 = StringUtils.EMPTY;
+    public String se3796 = StringUtils.EMPTY;
+    public String se3796x = StringUtils.EMPTY;
+    public String se38 = StringUtils.EMPTY;
+    public String se39 = StringUtils.EMPTY;
+    public String se40 = StringUtils.EMPTY;
 
     // APP VARIABLES
-    private String id = "";
-    private String uid = "";
-    private String userName = "";
-    private String sysDate = "";
-    private String dcode = "";
-    private String ucode = "";
-    private String cluster = "";
-    private String hhno = "";
-    private String deviceId = "";
-    private String deviceTag = "";
-    private String appver = "";
-    private String gps = "";
-    private String endTime = "";
-    private String iStatus = "";
-    private String iStatus96x = "";
-    private String synced = "";
-    private String syncDate = "";
-    private String childrespondent = "";
+    private String id = StringUtils.EMPTY;
+    private String uid = StringUtils.EMPTY;
+    private String userName = StringUtils.EMPTY;
+    private String sysDate = StringUtils.EMPTY;
+    private String dcode = StringUtils.EMPTY;
+    private String ucode = StringUtils.EMPTY;
+    private String cluster = StringUtils.EMPTY;
+    private String hhno = StringUtils.EMPTY;
+    private String deviceId = StringUtils.EMPTY;
+    private String deviceTag = StringUtils.EMPTY;
+    private String appver = StringUtils.EMPTY;
+    private String gps = StringUtils.EMPTY;
+    private String endTime = StringUtils.EMPTY;
+    private String iStatus = StringUtils.EMPTY;
+    private String iStatus96x = StringUtils.EMPTY;
+    private String synced = StringUtils.EMPTY;
+    private String syncDate = StringUtils.EMPTY;
+    private String g5Flag = StringUtils.EMPTY;
     // SECTION VARIABLES
-    private String s01HH = "";
-    private String s02CB = "";
-    private String s03CS = "";
-    private String s04IM = "";
-    private String s05PD = "";
-    private String s06BF = "";
-    private String s07CV = "";
-    private String s08SE = "";
+    private String s01HH = StringUtils.EMPTY;
+    private String s05PD = StringUtils.EMPTY;
+    private String s06BF = StringUtils.EMPTY;
+    private String s07CV = StringUtils.EMPTY;
+    private String s08SE = StringUtils.EMPTY;
 
     //Not saving in DB
     private LocalDate localDate = null;
@@ -511,12 +509,12 @@ public class Form extends BaseObservable {
     }
 
 
-    public String getChildrespondent() {
-        return childrespondent;
+    public String getG5Flag() {
+        return g5Flag;
     }
 
-    public Form setChildrespondent(String childrespondent) {
-        this.childrespondent = childrespondent;
+    public Form setG5Flag(String g5Flag) {
+        this.g5Flag = g5Flag;
         return this;
     }
 
@@ -527,33 +525,6 @@ public class Form extends BaseObservable {
 
     public Form setS01HH(String s01HH) {
         this.s01HH = s01HH;
-        return this;
-    }
-
-    public String getS02CB() {
-        return s02CB;
-    }
-
-    public Form setS02CB(String s02CB) {
-        this.s02CB = s02CB;
-        return this;
-    }
-
-    public String getS03CS() {
-        return s03CS;
-    }
-
-    public Form setS03CS(String s03CS) {
-        this.s03CS = s03CS;
-        return this;
-    }
-
-    public String getS04IM() {
-        return s04IM;
-    }
-
-    public Form setS04IM(String s04IM) {
-        this.s04IM = s04IM;
         return this;
     }
 
@@ -3108,12 +3079,9 @@ public class Form extends BaseObservable {
         this.iStatus96x = jsonObject.getString(FormsContract.FormsTable.COLUMN_ISTATUS96x);
         this.synced = jsonObject.getString(FormsContract.FormsTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(FormsContract.FormsTable.COLUMN_SYNCED_DATE);
-        this.childrespondent = jsonObject.getString(FormsContract.FormsTable.COLUMN_CHILD_RESPONDENT);
+        this.g5Flag = jsonObject.getString(FormsContract.FormsTable.COLUMN_G5FLAG);
 
         this.s01HH = jsonObject.getString(FormsContract.FormsTable.COLUMN_S01HH);
-        this.s02CB = jsonObject.getString(FormsContract.FormsTable.COLUMN_S02CB);
-        this.s03CS = jsonObject.getString(FormsContract.FormsTable.COLUMN_S03CS);
-        this.s04IM = jsonObject.getString(FormsContract.FormsTable.COLUMN_S04IM);
         this.s05PD = jsonObject.getString(FormsContract.FormsTable.COLUMN_S05PD);
         this.s06BF = jsonObject.getString(FormsContract.FormsTable.COLUMN_S06BF);
         this.s07CV = jsonObject.getString(FormsContract.FormsTable.COLUMN_S07CV);
@@ -3142,7 +3110,7 @@ public class Form extends BaseObservable {
         this.iStatus96x = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_ISTATUS96x));
         this.synced = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SYNCED_DATE));
-        this.childrespondent = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_CHILD_RESPONDENT));
+        this.g5Flag = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_G5FLAG));
 
         //For childCount
         //this.s01HH = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S01HH));
@@ -3500,7 +3468,7 @@ public class Form extends BaseObservable {
             json.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
             json.put(FormsContract.FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(FormsContract.FormsTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
-            json.put(FormsContract.FormsTable.COLUMN_CHILD_RESPONDENT, this.childrespondent == null ? JSONObject.NULL : this.childrespondent);
+            json.put(FormsContract.FormsTable.COLUMN_G5FLAG, this.g5Flag == null ? JSONObject.NULL : this.g5Flag);
 
             json.put(FormsContract.FormsTable.COLUMN_S01HH, new JSONObject(s01HHtoString()));
             json.put(FormsContract.FormsTable.COLUMN_S05PD, new JSONObject(s05PDtoString()));
@@ -3511,18 +3479,6 @@ public class Form extends BaseObservable {
 
             if (this.s01HH != null && !this.s01HH.equals("")) {
                 json.put(FormsContract.FormsTable.COLUMN_S01HH, new JSONObject(this.s01HH));
-            }
-
-            if (this.s02CB != null && !this.s02CB.equals("")) {
-                json.put(FormsContract.FormsTable.COLUMN_S02CB, new JSONObject(this.s02CB));
-            }
-
-            if (this.s03CS != null && !this.s03CS.equals("")) {
-                json.put(FormsContract.FormsTable.COLUMN_S03CS, new JSONObject(this.s03CS));
-            }
-
-            if (this.s04IM != null && !this.s04IM.equals("")) {
-                json.put(FormsContract.FormsTable.COLUMN_S04IM, new JSONObject(this.s04IM));
             }
 
             if (this.s05PD != null && !this.s05PD.equals("")) {

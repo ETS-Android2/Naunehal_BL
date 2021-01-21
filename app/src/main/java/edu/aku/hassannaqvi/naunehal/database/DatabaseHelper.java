@@ -98,9 +98,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_DCODE, form.getDcode());
         values.put(FormsTable.COLUMN_UCODE, form.getUcode());
         values.put(FormsTable.COLUMN_S01HH, form.getS01HH());
-        values.put(FormsTable.COLUMN_S02CB, form.getS02CB());
-        values.put(FormsTable.COLUMN_S03CS, form.getS03CS());
-        values.put(FormsTable.COLUMN_S04IM, form.getS04IM());
         values.put(FormsTable.COLUMN_S05PD, form.getS05PD());
         values.put(FormsTable.COLUMN_S06BF, form.getS06BF());
         values.put(FormsTable.COLUMN_S07CV, form.getS07CV());
@@ -114,7 +111,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
-        values.put(FormsTable.COLUMN_CHILD_RESPONDENT, form.getChildrespondent());
+        values.put(FormsTable.COLUMN_G5FLAG, form.getG5Flag());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
