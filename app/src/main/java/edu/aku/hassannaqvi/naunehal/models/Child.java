@@ -57,6 +57,7 @@ public class Child extends BaseObservable {
     public String cs1896x;
     public String cs19;
     public String cs1996x;
+    public String csdate;
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
     private String id;
@@ -726,6 +727,16 @@ public class Child extends BaseObservable {
         notifyPropertyChanged(BR.cs1996x);
     }
 
+    @Bindable
+    public String getCsdate() {
+        return csdate;
+    }
+
+    public void setCsdate(String csdate) {
+        this.csdate = csdate;
+        notifyPropertyChanged(BR.csdate);
+    }
+
 
     public Child Sync(JSONObject jsonObject) throws JSONException {
         this.id = jsonObject.getString(ChildContract.ChildTable.COLUMN_ID);
@@ -834,7 +845,8 @@ public class Child extends BaseObservable {
                     .put("cs18", cs18)
                     .put("cs1896x", cs1896x)
                     .put("cs19", cs19)
-                    .put("cs1996x", cs1996x);
+                    .put("cs1996x", cs1996x)
+                    .put("csdate", csdate);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -935,6 +947,7 @@ public class Child extends BaseObservable {
                 this.cs1896x = json.getString("cs1896x");
                 this.cs19 = json.getString("cs19");
                 this.cs1996x = json.getString("cs1996x");
+                this.csdate = json.getString("csdate");
 
             } catch (JSONException e) {
                 e.printStackTrace();
