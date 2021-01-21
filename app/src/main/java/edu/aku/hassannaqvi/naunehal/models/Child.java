@@ -2,13 +2,13 @@ package edu.aku.hassannaqvi.naunehal.models;
 
 import android.database.Cursor;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
 
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
@@ -35,6 +35,7 @@ public class Child extends BaseObservable {
     public String cs0805;
     public String cs0806;
     public String cs0807;
+    public String cs0808;
     public String cs0809;
     public String cs0810;
     public String cs0896;
@@ -505,6 +506,16 @@ public class Child extends BaseObservable {
     }
 
     @Bindable
+    public String getCs0808() {
+        return cs0808;
+    }
+
+    public void setCs0808(String cs0808) {
+        this.cs0808 = cs0808;
+        notifyPropertyChanged(BR.cs0808);
+    }
+
+    @Bindable
     public String getCs0809() {
         return cs0809;
     }
@@ -802,6 +813,7 @@ public class Child extends BaseObservable {
                     .put("cs0805", cs0805)
                     .put("cs0806", cs0806)
                     .put("cs0807", cs0807)
+                    .put("cs0808", cs0808)
                     .put("cs0809", cs0809)
                     .put("cs0810", cs0810)
                     .put("cs0896", cs0896)
@@ -901,6 +913,7 @@ public class Child extends BaseObservable {
                 this.cs0805 = json.getString("cs0805");
                 this.cs0806 = json.getString("cs0806");
                 this.cs0807 = json.getString("cs0807");
+                this.cs0808 = json.getString("cs0808");
                 this.cs0809 = json.getString("cs0809");
                 this.cs0810 = json.getString("cs0810");
                 this.cs0896 = json.getString("cs0896");

@@ -2,13 +2,14 @@ package edu.aku.hassannaqvi.naunehal.models;
 
 import android.database.Cursor;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -102,6 +103,7 @@ public class Immunization extends BaseObservable {
     public String im23;
     public String im2306x;
     public String im23a;
+    public String im23a96x;
     public String im23b1;
     public String im23b2;
     public String im24;
@@ -1201,6 +1203,18 @@ public class Immunization extends BaseObservable {
         notifyPropertyChanged(BR.im23a);
     }
 
+
+    @Bindable
+    public String getIm23a96x() {
+        return im23a96x;
+    }
+
+    public void setIm23a96x(String im23a96x) {
+        this.im23a96x = im23a96x;
+        notifyPropertyChanged(BR.im23a96x);
+    }
+
+
     @Bindable
     public String getIm23b1() {
         return im23b1;
@@ -1415,6 +1429,7 @@ public class Immunization extends BaseObservable {
                     .put("im23", im23)
                     .put("im2306x", im2306x)
                     .put("im23a", im23a)
+                    .put("im23a96x", im23a96x)
                     .put("im23b1", im23b1)
                     .put("im23b2", im23b2)
                     .put("im24", im24)
@@ -1564,6 +1579,7 @@ public class Immunization extends BaseObservable {
                 this.im23 = json.getString("im23");
                 this.im2306x = json.getString("im2306x");
                 this.im23a = json.getString("im23a");
+                this.im23a96x = json.getString("im23a96x");
                 this.im23b1 = json.getString("im23b1");
                 this.im23b2 = json.getString("im23b2");
                 this.im24 = json.getString("im24");
