@@ -71,13 +71,15 @@
     <string name="hh23">خواتین ،بشمول ہر عمر کی خواتین</string>
     <string name="hh24">پانچ سال سے کم عمر بچوں کی تعداد - مرد</string>
     <string name="hh25">پانچ سال سے کم عمر بچوں کی تعداد – خواتین</string>
-    <string name="hh26">گھرانے کے انٹرویوکا نتیجہ نوٹ:  انٹرویو مکمل نہ ہونے  کی صورت میں سپروائزر سے رابطہ کریں۔</string>
+    <string name="hh26"> گھرانے کے انٹرویوکا نتیجہ: </string>
+    <string name="hh26hint"> نوٹ:  انٹرویو مکمل نہ ہونے  کی صورت میں سپروائزر سے رابطہ کریں۔ </string>
     <string name="hh2601">مکمل</string>
     <string name="hh2602">جزوی مکمل</string>
     <string name="hh2603">انکار  کردیا </string>
     <string name="hh2604">گھرانے کا کوئی فرد یا سمجھدار جواب دہندہ گھر پر موجود نہیں </string>
     <string name="hh2605">خالی گھر/غیر رہائشی</string>
-    <string name="hh2606">گھر نہیں ملا </string>
+    <string name="hh2606"> گھر نہیں ملا </string>
+    <string name="hh2607"> اس گھر میں 5 سال سے کم عمر کا بچہ موجود نہیں ہے </string>
     <string name="hh2696">دیگر وضاحت کریں </string>
     <string name="cb01">لائن نمبر</string>
     <string name="cb02">نام</string>

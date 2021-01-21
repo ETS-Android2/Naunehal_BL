@@ -71,12 +71,14 @@
     <string name="hh24">Number of under-five children - Male</string>
     <string name="hh25">Number of under-five children - Female</string>
     <string name="hh26">Result of Interview</string>
+    <string name="hh26hint">Result of Interview</string>
     <string name="hh2601">Completed</string>
     <string name="hh2602">Partially completed</string>
     <string name="hh2603">Refused</string>
     <string name="hh2604">No eligible respondent available</string>
     <string name="hh2605">Locked</string>
-    <string name="hh2606">Household not found</string>
+    <string name="hh2606"> Household not found </string>
+    <string name="hh2607"> No under 5 child in this household </string>
     <string name="hh2696">Other specify</string>
     <string name="cb01">Line no</string>
     <string name="cb02">Name</string>

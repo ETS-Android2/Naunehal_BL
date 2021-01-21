@@ -49,6 +49,7 @@ public class EndingActivity extends AppCompatActivity {
             bi.istatusd.setEnabled(false);
             bi.istatuse.setEnabled(false);
             bi.istatusf.setEnabled(false);
+            bi.istatusg.setEnabled(false);
             bi.istatus96.setEnabled(false);
         } else {
             bi.istatusa.setEnabled(false);
@@ -57,6 +58,7 @@ public class EndingActivity extends AppCompatActivity {
             bi.istatusd.setEnabled(true);
             bi.istatuse.setEnabled(true);
             bi.istatusf.setEnabled(true);
+            bi.istatusg.setEnabled(true);
             bi.istatus96.setEnabled(true);
         }
 
@@ -71,6 +73,7 @@ public class EndingActivity extends AppCompatActivity {
                 : bi.istatusd.isChecked() ? "4"
                 : bi.istatuse.isChecked() ? "5"
                 : bi.istatusf.isChecked() ? "6"
+                : bi.istatusg.isChecked() ? "7"
                 : bi.istatus96.isChecked() ? "96"
                 : "-1");
         form.setHh2696x(bi.istatus96x.getText().toString().trim().isEmpty() ? "-1" : bi.istatus96x.getText().toString());
