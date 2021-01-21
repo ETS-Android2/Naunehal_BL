@@ -80,6 +80,8 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb13, true)
                     Clear.clearAllFields(bi.fldGrpCVcb14, true)
                     bi.cb1413.isEnabled = false
+
+                    MainApp.childInformation.setCb11("1")
                 }
                 bi.cb0602.id -> {
                     Clear.clearAllFields(bi.fldGrpCVcb12, false)
@@ -110,8 +112,6 @@ class Section02CBActivity : AppCompatActivity() {
 
         txtWatch(bi.cb09)
         txtWatch(bi.cb13)
-
-        bi.cb0601.setOnCheckedChangeListener { radioGroup, i -> Clear.clearAllFields(bi.fldGrpCVcb11) }
 
     }
 

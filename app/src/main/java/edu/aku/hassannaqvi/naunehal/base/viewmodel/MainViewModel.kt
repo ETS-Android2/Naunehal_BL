@@ -10,8 +10,12 @@ import edu.aku.hassannaqvi.naunehal.models.Districts
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainViewModel(val repository: GeneralRepository) : ViewModel() {
+
+    var sysdateToday = SimpleDateFormat("dd-MM-yy", Locale.ENGLISH).format(Date())
 
     /*
     * Today's form
@@ -47,7 +51,7 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         _tf.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
-                delay(1000L)
+                delay(1000)
                 val todayData = repository.getFormsByDate(date)
                 _tf.value = ResponseStatusCallbacks.success(data = todayData.size, message = "Forms exist")
             } catch (e: Exception) {
@@ -61,7 +65,7 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         _uf.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
-                delay(1000L)
+                delay(1000)
                 val todayData = repository.getUploadStatus()
                 _uf.value = ResponseStatusCallbacks.success(data = todayData, message = "Upload status exist")
             } catch (e: Exception) {
@@ -75,7 +79,7 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         _fs.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
-                delay(1000L)
+                delay(1000)
                 val todayData = repository.getFormStatus(date)
                 _fs.value = ResponseStatusCallbacks.success(data = todayData, message = "Form status exist")
             } catch (e: Exception) {
@@ -101,6 +105,13 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
 
         }
 
+    }
+
+    init {
+        /*getDistrictFromDB()
+        getTodayForms(sysdateToday)
+        getUploadFormsStatus()
+        getFormsStatus(sysdateToday)*/
     }
 
 }

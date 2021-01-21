@@ -589,6 +589,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allBL;
     }
 
+    public Form getFormByClusterHH(String distCode, String subAreaCode, String hh) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = FormsTable.COLUMN_DCODE + "=? AND " +
+                FormsTable.COLUMN_CLUSTER + "=? AND " +
+                FormsTable.COLUMN_HHNO + "=? AND " +
+                FormsTable.COLUMN_SYNCED + " is null AND " +
+                FormsTable.COLUMN_ISTATUS + "=?";
+
+        String[] whereArgs = {distCode, subAreaCode, hh, "2"};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
+
+        Form allFC = null;
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allFC = new Form().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
     public ArrayList<Cursor> getDatabaseManagerData(String Query) {
         //get writable database
         SQLiteDatabase sqlDB = this.getWritableDatabase();

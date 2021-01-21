@@ -26,6 +26,7 @@ import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
 import edu.aku.hassannaqvi.naunehal.ui.login_activity.LoginActivity
 import edu.aku.hassannaqvi.naunehal.base.viewmodel.MainViewModel
+import edu.aku.hassannaqvi.naunehal.ui.sections.IdentificationSectionActivity
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithNoHistory
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var bi: ActivityMainBinding
     lateinit var viewModel: MainViewModel
     private var exit = false
-    private var sysdateToday = SimpleDateFormat("dd-MM-yy", Locale.ENGLISH).format(Date())
+    private var sysdateToday = SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).format(Date())
     private var district = mutableListOf("....")
     private var districtCode = mutableListOf<String>()
     private lateinit var districtAdapter: ArrayAdapter<String>
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         * Calling viewmodel district data function
         * Fetch district result response
         * */
-        viewModel.districtResponse.observe(this, {
+        viewModel.districtResponse.observe(this) {
             it?.let {
                 when (it.status) {
                     ResponseStatus.SUCCESS -> {
@@ -85,7 +86,6 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     ResponseStatus.ERROR -> {
-                        Toast.makeText(this@MainActivity, "Please download district data first", Toast.LENGTH_LONG).show()
                         bi.btnDownloadDistrict.visibility = View.VISIBLE
                     }
                     ResponseStatus.LOADING -> {
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-        })
+        }
 
 
         /*
@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
         * If it's null then return 0 otherwise return count
         * Show loading while data is fetching
         * */
-        viewModel.todayForms.observe(this, {
+        viewModel.todayForms.observe(this) {
             when (it.status) {
                 ResponseStatus.SUCCESS -> {
                     Log.d("Today's form count:", it.data.toString())
@@ -116,14 +116,14 @@ class MainActivity : AppCompatActivity() {
                     lifecycleScope.launch { delay(1000) }
                 }
             }
-        })
+        }
 
         /*
         * Get Today's form DB
         * If it's null then return 0 otherwise return count
         * Show loading while data is fetching
         * */
-        viewModel.formsStatus.observe(this, {
+        viewModel.formsStatus.observe(this) {
             when (it.status) {
                 ResponseStatus.SUCCESS -> {
                     it.data?.let { item ->
@@ -136,19 +136,20 @@ class MainActivity : AppCompatActivity() {
                 }
                 ResponseStatus.ERROR -> {
                     animateFadeOut()
+                    Log.d("Status", "error")
                 }
                 ResponseStatus.LOADING -> {
                     lifecycleScope.launch { delay(1000) }
                 }
             }
-        })
+        }
 
         /*
         * Get Today's form DB
         * If it's null then return 0 otherwise return count
         * Show loading while data is fetching
         * */
-        viewModel.uploadForms.observe(this, {
+        viewModel.uploadForms.observe(this) {
             when (it.status) {
                 ResponseStatus.SUCCESS -> {
                     it.data?.let { item ->
@@ -161,12 +162,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 ResponseStatus.ERROR -> {
                     animateFadeOut()
+                    Log.d("Sync", "error")
                 }
                 ResponseStatus.LOADING -> {
                     lifecycleScope.launch { delay(2000) }
                 }
             }
-        })
+        }
 
         setupSkips()
     }
@@ -235,7 +237,10 @@ class MainActivity : AppCompatActivity() {
                 if (isGPSEnabled(this)) gotoActivity(Section01HHActivity::class.java)
                 else showGPSAlert(this)
             }
-            R.id.databaseBtn -> gotoActivity(AndroidDatabaseManager::class.java)
+            R.id.editForm -> {
+                gotoActivity(IdentificationSectionActivity::class.java)
+            }
+            R.id.databaseBtn -> startActivity(Intent(this, AndroidDatabaseManager::class.java))
             R.id.btn_download_district -> {
                 if (isNetworkConnected(this)) {
                     startActivity(Intent(this@MainActivity, SyncActivity::class.java)
@@ -251,10 +256,10 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         animateFadeIn()
+        viewModel.getDistrictFromDB()
         viewModel.getTodayForms(sysdateToday)
         viewModel.getUploadFormsStatus()
         viewModel.getFormsStatus(sysdateToday)
-        viewModel.getDistrictFromDB()
     }
 
     /*

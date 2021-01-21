@@ -36,15 +36,17 @@ interface GeneralDataSource {
     * */
 
     /*
-    * For SectionH1
+    * For SectionH1 & Identification
     * */
     suspend fun getDistrictsFromDB(): ArrayList<Districts>
 
     suspend fun getUcsByDistrictsFromDB(dCode: String): ArrayList<UCs>
 
     suspend fun getBLByDistrictsFromDB(distCode: String, cluster: String, hhno: String): BLRandom
+
+    suspend fun getFormByDistrictsFromDB(distCode: String, cluster: String, hhno: String): Form
     /*
-    * For SectionH1 End
+    * For SectionH1 & Identification End
     * */
 
     /*

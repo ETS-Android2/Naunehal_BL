@@ -4,6 +4,7 @@ package edu.aku.hassannaqvi.naunehal.core;
  * Created by hassan.naqvi on 11/30/2016.
  */
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
@@ -37,7 +38,7 @@ import java.util.LinkedList;
 
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 
-public class AndroidDatabaseManager extends AppCompatActivity implements OnItemClickListener {
+public class AndroidDatabaseManager extends Activity implements OnItemClickListener {
 
     //in the below line Change the text 'yourCustomSqlHelper' with your custom sqlitehelper class name.
     //Do not change the variable name dbm

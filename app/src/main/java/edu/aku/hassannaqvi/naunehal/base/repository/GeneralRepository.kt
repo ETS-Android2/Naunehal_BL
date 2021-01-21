@@ -28,6 +28,10 @@ open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource
         db.getBLRandomByClusterHH(distCode, cluster, hhno)
     }
 
+    override suspend fun getFormByDistrictsFromDB(distCode: String, cluster: String, hhno: String): Form = withContext(Dispatchers.IO) {
+        db.getFormByClusterHH(distCode, cluster, hhno)
+    }
+
     override suspend fun getLoginInformation(username: String, password: String): Users? = withContext(Dispatchers.IO) {
         db.getLoginUser(username, password)
     }

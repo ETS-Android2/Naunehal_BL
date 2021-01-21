@@ -142,9 +142,6 @@ public class ChildInformation extends BaseObservable implements Serializable {
         this.cb12 = child.getCb12();
         this.cb13 = child.getCb13();
         this.cb14 = child.getCb14();
-        this.cb15 = child.getCb15();
-        this.cb1598 = child.getCb1598();
-        this.cb16 = child.getCb16();
 
     }
 

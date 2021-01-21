@@ -304,9 +304,18 @@ public class Form extends BaseObservable {
 
     //Not saving in DB
     private LocalDate localDate = null;
+    private boolean exist = false;
 
     public Form() {
 
+    }
+
+    public boolean isExist() {
+        return exist;
+    }
+
+    public void setExist(boolean exist) {
+        this.exist = exist;
     }
 
     public LocalDate getLocalDate() {
