@@ -110,6 +110,7 @@ public class Form extends BaseObservable {
     public String pd2102x = StringUtils.EMPTY;
     public String pd2103x = StringUtils.EMPTY;
     public String pd22 = StringUtils.EMPTY;
+    public String pddate = StringUtils.EMPTY;
     //Section PF
     public String bf01 = StringUtils.EMPTY;
     public String bf02 = StringUtils.EMPTY;
@@ -131,6 +132,7 @@ public class Form extends BaseObservable {
     public String bf11 = StringUtils.EMPTY;
     public String bf12 = StringUtils.EMPTY;
     public String bf13 = StringUtils.EMPTY;
+    public String bfdate = StringUtils.EMPTY;
     //Section CV
     public String cv01 = StringUtils.EMPTY;
     public String cv02 = StringUtils.EMPTY;
@@ -156,6 +158,8 @@ public class Form extends BaseObservable {
     public String cv1896x = StringUtils.EMPTY;
     public String cv19 = StringUtils.EMPTY;
     public String cv1996x = StringUtils.EMPTY;
+    public String cvdate = StringUtils.EMPTY;
+    public String flagg5 = StringUtils.EMPTY;
     //Section SE
     public String se01 = StringUtils.EMPTY;
     public String se0196x = StringUtils.EMPTY;
@@ -275,6 +279,7 @@ public class Form extends BaseObservable {
     public String se38 = StringUtils.EMPTY;
     public String se39 = StringUtils.EMPTY;
     public String se40 = StringUtils.EMPTY;
+    public String sedate = StringUtils.EMPTY;
 
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
@@ -3039,6 +3044,62 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.se40);
     }
 
+
+    @Bindable
+    public String getPddate() {
+        return pddate;
+    }
+
+    public void setPddate(String pddate) {
+        this.pddate = pddate;
+        notifyPropertyChanged(BR.pddate);
+    }
+
+
+    @Bindable
+    public String getBfdate() {
+        return bfdate;
+    }
+
+    public void setBfdate(String bfdate) {
+        this.bfdate = bfdate;
+        notifyPropertyChanged(BR.bfdate);
+    }
+
+
+    @Bindable
+    public String getCvdate() {
+        return cvdate;
+    }
+
+    public void setCvdate(String cvdate) {
+        this.cvdate = cvdate;
+        notifyPropertyChanged(BR.cvdate);
+    }
+
+
+    @Bindable
+    public String getFlagg5() {
+        return flagg5;
+    }
+
+    public void setFlagg5(String flagg5) {
+        this.flagg5 = flagg5;
+        notifyPropertyChanged(BR.flagg5);
+    }
+
+
+    @Bindable
+    public String getSedate() {
+        return sedate;
+    }
+
+    public void setSedate(String sedate) {
+        this.sedate = sedate;
+        notifyPropertyChanged(BR.sedate);
+    }
+
+
     @Bindable
     public String getIStatus() {
         return iStatus;
@@ -3233,7 +3294,8 @@ public class Form extends BaseObservable {
                     .put("pd2101x", pd2101x)
                     .put("pd2102x", pd2102x)
                     .put("pd2103x", pd2103x)
-                    .put("pd22", pd22);
+                    .put("pd22", pd22)
+                    .put("pddate", pddate);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -3267,7 +3329,8 @@ public class Form extends BaseObservable {
                     .put("bf10", bf10)
                     .put("bf11", bf11)
                     .put("bf12", bf12)
-                    .put("bf13", bf13);
+                    .put("bf13", bf13)
+                    .put("bfdate", bfdate);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -3305,7 +3368,9 @@ public class Form extends BaseObservable {
                     .put("cv18", cv18)
                     .put("cv1896x", cv1896x)
                     .put("cv19", cv19)
-                    .put("cv1996x", cv1996x);
+                    .put("cv1996x", cv1996x)
+                    .put("cvdate", cvdate)
+                    .put("flagg5", flagg5);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -3435,7 +3500,8 @@ public class Form extends BaseObservable {
                     .put("se3796x", se3796x)
                     .put("se38", se38)
                     .put("se39", se39)
-                    .put("se40", se40);
+                    .put("se40", se40)
+                    .put("sedate", sedate);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -3612,6 +3678,7 @@ public class Form extends BaseObservable {
                 this.pd2102x = json.getString("pd2102x");
                 this.pd2103x = json.getString("pd2103x");
                 this.pd22 = json.getString("pd22");
+                this.pddate = json.getString("pddate");
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -3648,6 +3715,7 @@ public class Form extends BaseObservable {
                 this.bf11 = json.getString("bf11");
                 this.bf12 = json.getString("bf12");
                 this.bf13 = json.getString("bf13");
+                this.bfdate = json.getString("bfdate");
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -3688,6 +3756,8 @@ public class Form extends BaseObservable {
                 this.cv1896x = json.getString("cv1896x");
                 this.cv19 = json.getString("cv19");
                 this.cv1996x = json.getString("cv1996x");
+                this.cvdate = json.getString("cvdate");
+                this.flagg5 = json.getString("flagg5");
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -3822,6 +3892,7 @@ public class Form extends BaseObservable {
                 this.se38 = json.getString("se38");
                 this.se39 = json.getString("se39");
                 this.se40 = json.getString("se40");
+                this.sedate = json.getString("sedate");
 
             } catch (JSONException e) {
                 e.printStackTrace();
