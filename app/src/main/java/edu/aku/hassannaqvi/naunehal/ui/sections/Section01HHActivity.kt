@@ -146,7 +146,7 @@ class Section01HHActivity : AppCompatActivity() {
                         }
                     }
                     ResponseStatus.ERROR -> {
-                        Toast.makeText(this@Section01HHActivity, "BL Random not found!", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@Section01HHActivity, it.message, Toast.LENGTH_LONG).show()
                         bi.hh09.isEnabled = true
                         bi.checkHH.visibility = View.VISIBLE
                         bi.progressBL.visibility = View.GONE
@@ -166,8 +166,8 @@ class Section01HHActivity : AppCompatActivity() {
         {
             initForm() //<== If form does not exist in database (New Form)
         }
-        MainApp.form = Form()
-        bi.setVariable(BR.form, MainApp.form)
+        form = Form()
+        bi.setVariable(BR.form, form)
         setupSkips()
     }
 
@@ -292,11 +292,11 @@ class Section01HHActivity : AppCompatActivity() {
 
     private fun updateDB(): Boolean {
         val db = MainApp.appInfo.dbHelper
-        val updcount = db.addForm(MainApp.form)
-        MainApp.form.id = updcount.toString()
+        val updcount = db.addForm(form)
+        form.id = updcount.toString()
         return if (updcount > 0) {
-            MainApp.form.uid = MainApp.form.deviceId + MainApp.form.id
-            var count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, MainApp.form.uid)
+            form.uid = form.deviceId + form.id
+            var count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, form.uid)
             if (count > 0) count = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, MainApp.form.s01HHtoString())
             if (count > 0) true else {
                 Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
@@ -333,16 +333,16 @@ class Section01HHActivity : AppCompatActivity() {
 
     // Only in First Section of every Table.
     private fun initForm() {
-        MainApp.form.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
-        MainApp.form.userName = MainApp.user.userName
-        MainApp.form.dcode = districtCode[bi.hh05.selectedItemPosition - 1]
-        MainApp.form.ucode = ucCode[bi.hh06.selectedItemPosition - 1]
-        MainApp.form.cluster = bi.hh08.text.toString()
-        MainApp.form.hhno = bi.hh09.text.toString()
-        MainApp.form.deviceId = MainApp.appInfo.deviceID
-        MainApp.form.deviceTag = MainApp.appInfo.tagName
-        MainApp.form.appver = MainApp.appInfo.appVersion
-        MainApp.form.gps = getGPS(this).toString()
+        form.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
+        form.userName = MainApp.user.userName
+        form.dcode = districtCode[bi.hh05.selectedItemPosition - 1]
+        form.ucode = ucCode[bi.hh06.selectedItemPosition - 1]
+        form.cluster = bi.hh08.text.toString()
+        form.hhno = bi.hh09.text.toString()
+        form.deviceId = MainApp.appInfo.deviceID
+        form.deviceTag = MainApp.appInfo.tagName
+        form.appver = MainApp.appInfo.appVersion
+        form.gps = getGPS(this).toString()
 
         //Setting Date
         try {
@@ -351,7 +351,7 @@ class Section01HHActivity : AppCompatActivity() {
                         .format(
                                 SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).parse(it.toString())
                         ) + "T06:24:01Z")
-                MainApp.form.localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate()
+                form.localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate()
             }
         } catch (e: ParseException) {
             e.printStackTrace()

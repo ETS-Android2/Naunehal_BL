@@ -179,6 +179,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/fldGrpBF03"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -200,7 +201,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@{form.bf3d}"
-                                app:maxValue="29"
+                                app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
 
@@ -221,7 +222,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@{form.bf03m}"
-                                app:maxValue="11"
+                                app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
 

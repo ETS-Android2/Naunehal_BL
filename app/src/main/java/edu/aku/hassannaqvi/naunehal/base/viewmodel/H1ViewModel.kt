@@ -74,6 +74,12 @@ class H1ViewModel(internal val repository: GeneralRepository) : ViewModel() {
         _blResponse.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
+                delay(1000)
+                /*val hh = repository.getFormByDistrictsFromDB(distCode, cluster, hhno)
+                if (hh != null){
+                    _blResponse.value = ResponseStatusCallbacks.error(null, "BlRandom data not found!")
+                    return@launch
+                }*/
                 val bl = repository.getBLByDistrictsFromDB(distCode, cluster, hhno)
                 _blResponse.value = ResponseStatusCallbacks.success(data = bl, message = "BLRandom data found")
             } catch (e: Exception) {
@@ -86,8 +92,8 @@ class H1ViewModel(internal val repository: GeneralRepository) : ViewModel() {
         _formResponse.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
-                val bl = repository.getFormByDistrictsFromDB(distCode, cluster, hhno)
-                _formResponse.value = ResponseStatusCallbacks.success(data = bl, message = "Form data found")
+                val hl = repository.getFormByDistrictsFromDB(distCode, cluster, hhno)
+                _formResponse.value = ResponseStatusCallbacks.success(data = hl, message = "Form data found")
             } catch (e: Exception) {
                 _formResponse.value = ResponseStatusCallbacks.error(null, "Form data not found!")
             }
