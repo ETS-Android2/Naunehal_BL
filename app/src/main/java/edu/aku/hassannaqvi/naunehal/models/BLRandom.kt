@@ -2,24 +2,25 @@ package edu.aku.hassannaqvi.naunehal.models
 
 import android.database.Cursor
 import android.provider.BaseColumns
+import org.apache.commons.lang3.StringUtils
 import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
 
 class BLRandom {
-    var id: String = ""
-    var lUID: String = ""
-    var distCode: String = ""
-    var clusterCode: String = ""
-    var structure: String = ""
-    var extension: String = ""
-    var hh: String = ""
-    var hhhead: String = ""
-    var randomDT: String = ""
-    var contact: String = ""
-    var updateDT: String = ""
-    var sno: String = ""
-    var tabno: String = ""
+    var id: String = StringUtils.EMPTY
+    var lUID: String = StringUtils.EMPTY
+    var distCode: String = StringUtils.EMPTY
+    var clusterCode: String = StringUtils.EMPTY
+    var structure: String = StringUtils.EMPTY
+    var extension: String = StringUtils.EMPTY
+    var hh: String = StringUtils.EMPTY
+    var hhhead: String = StringUtils.EMPTY
+    var randomDT: String = StringUtils.EMPTY
+    var contact: String = StringUtils.EMPTY
+    var updateDT: String = StringUtils.EMPTY
+    var sno: String = StringUtils.EMPTY
+    var tabno: String = StringUtils.EMPTY
 
     @Throws(JSONException::class)
     fun sync(jsonObject: JSONObject): BLRandom {

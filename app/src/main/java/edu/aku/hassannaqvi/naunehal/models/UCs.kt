@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.naunehal.models
 
 import android.database.Cursor
 import android.provider.BaseColumns
+import org.apache.commons.lang3.StringUtils
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -10,9 +11,9 @@ import org.json.JSONObject
  * @update ali.azaz
  */
 class UCs {
-    var ucCode: String = ""
-    var ucName: String = ""
-    var districtCode: String = ""
+    var ucCode: String = StringUtils.EMPTY
+    var ucName: String = StringUtils.EMPTY
+    var districtCode: String = StringUtils.EMPTY
 
     @Throws(JSONException::class)
     fun sync(jsonObject: JSONObject): UCs {
