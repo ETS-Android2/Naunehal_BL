@@ -109,6 +109,7 @@ public class Form extends BaseObservable {
     public String pd2102x = "";
     public String pd2103x = "";
     public String pd22 = "";
+    public String modPDDT = "";
     //Section PF
     public String bf01 = "";
     public String bf02 = "";
@@ -130,6 +131,7 @@ public class Form extends BaseObservable {
     public String bf11 = "";
     public String bf12 = "";
     public String bf13 = "";
+    public String modBFDT = "";
     //Section CV
     public String cv01 = "";
     public String cv02 = "";
@@ -155,6 +157,8 @@ public class Form extends BaseObservable {
     public String cv1896x = "";
     public String cv19 = "";
     public String cv1996x = "";
+    public String modCVDT = "";
+    public String flagG5 = "";
     //Section SE
     public String se01 = "";
     public String se0196x = "";
@@ -274,6 +278,7 @@ public class Form extends BaseObservable {
     public String se38 = "";
     public String se39 = "";
     public String se40 = "";
+    public String modSEDT = "";
 
     // APP VARIABLES
     private String id = "";
@@ -3069,6 +3074,61 @@ public class Form extends BaseObservable {
     }
 
     @Bindable
+    public String getModPDDT() {
+        return modPDDT;
+    }
+
+    public void setModPDDT(String modPDDT) {
+        this.modPDDT = modPDDT;
+        notifyPropertyChanged(BR.modPDDT);
+    }
+
+
+    @Bindable
+    public String getModBFDT() {
+        return modBFDT;
+    }
+
+    public void setModBFDT(String modBFDT) {
+        this.modBFDT = modBFDT;
+        notifyPropertyChanged(BR.modBFDT);
+    }
+
+
+    @Bindable
+    public String getModCVDT() {
+        return modCVDT;
+    }
+
+    public void setModCVDT(String modCVDT) {
+        this.modCVDT = modCVDT;
+        notifyPropertyChanged(BR.modCVDT);
+    }
+
+
+    @Bindable
+    public String getFlagG5() {
+        return flagG5;
+    }
+
+    public void setFlagG5(String flagG5) {
+        this.flagG5 = flagG5;
+        notifyPropertyChanged(BR.flagG5);
+    }
+
+
+    @Bindable
+    public String getModSEDT() {
+        return modSEDT;
+    }
+
+    public void setModSEDT(String modSEDT) {
+        this.modSEDT = modSEDT;
+        notifyPropertyChanged(BR.modSEDT);
+    }
+
+
+    @Bindable
     public String getIStatus() {
         return iStatus;
     }
@@ -3265,7 +3325,8 @@ public class Form extends BaseObservable {
                     .put("pd2101x", pd2101x)
                     .put("pd2102x", pd2102x)
                     .put("pd2103x", pd2103x)
-                    .put("pd22", pd22);
+                    .put("pd22", pd22)
+                    .put("modPDDT", modPDDT);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -3299,7 +3360,8 @@ public class Form extends BaseObservable {
                     .put("bf10", bf10)
                     .put("bf11", bf11)
                     .put("bf12", bf12)
-                    .put("bf13", bf13);
+                    .put("bf13", bf13)
+                    .put("modBFDT", modBFDT);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -3337,7 +3399,9 @@ public class Form extends BaseObservable {
                     .put("cv18", cv18)
                     .put("cv1896x", cv1896x)
                     .put("cv19", cv19)
-                    .put("cv1996x", cv1996x);
+                    .put("cv1996x", cv1996x)
+                    .put("modCVDT", modCVDT)
+                    .put("flagG5", flagG5);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -3467,7 +3531,8 @@ public class Form extends BaseObservable {
                     .put("se3796x", se3796x)
                     .put("se38", se38)
                     .put("se39", se39)
-                    .put("se40", se40);
+                    .put("se40", se40)
+                    .put("modSEDT", modSEDT);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -3656,6 +3721,7 @@ public class Form extends BaseObservable {
                 this.pd2102x = json.getString("pd2102x");
                 this.pd2103x = json.getString("pd2103x");
                 this.pd22 = json.getString("pd22");
+                this.modPDDT = json.getString("modPDDT");
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -3692,6 +3758,7 @@ public class Form extends BaseObservable {
                 this.bf11 = json.getString("bf11");
                 this.bf12 = json.getString("bf12");
                 this.bf13 = json.getString("bf13");
+                this.modBFDT = json.getString("modBFDT");
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -3732,6 +3799,8 @@ public class Form extends BaseObservable {
                 this.cv1896x = json.getString("cv1896x");
                 this.cv19 = json.getString("cv19");
                 this.cv1996x = json.getString("cv1996x");
+                this.modCVDT = json.getString("modCVDT");
+                this.flagG5 = json.getString("flagG5");
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -3866,6 +3935,7 @@ public class Form extends BaseObservable {
                 this.se38 = json.getString("se38");
                 this.se39 = json.getString("se39");
                 this.se40 = json.getString("se40");
+                this.modSEDT = json.getString("modSEDT");
 
             } catch (JSONException e) {
                 e.printStackTrace();
