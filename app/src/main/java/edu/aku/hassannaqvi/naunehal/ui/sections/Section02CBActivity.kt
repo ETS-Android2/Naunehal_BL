@@ -70,6 +70,7 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb08, false)
                     Clear.clearAllFields(bi.fldGrpCVcb09, false)
                     Clear.clearAllFields(bi.fldGrpCVcb10, false)
+                    Clear.clearAllFields(bi.fldGrpCVcb11, false)
                     MainApp.childInformation.setCb07(MainApp.form.getHh12())
                     MainApp.childInformation.setCb08(MainApp.form.getHh13())
                     MainApp.childInformation.setCb09(MainApp.form.getHh16())

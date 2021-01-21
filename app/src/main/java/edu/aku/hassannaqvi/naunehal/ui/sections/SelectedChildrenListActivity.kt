@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.naunehal.databinding.ActivitySelectedChildrenListBind
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.WarningActivityInterface
+import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
@@ -60,7 +61,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         * */
         val actionItems = mutableListOf<SpeedDialActionItem>(
                 SpeedDialActionItem.Builder(R.id.fab_exit, R.drawable.ic_exit).setLabel("Force exit").create(),
-                SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Next Section").create()
+                SpeedDialActionItem.Builder(R.id.fab_finish, R.drawable.ic_finish).setLabel("Finish Interview").create()
         )
         bi.speedDial.addAllActionItems(actionItems)
         bi.speedDial.setOnActionSelectedListener { actionItem ->
@@ -71,19 +72,31 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
                                 .show()
                         return@setOnActionSelectedListener false
                     }
+                    var id = 3
+                    var title = "CONFIRMATION!"
+                    var message = "Are you sure, you want to exit this interview?"
+                    var btnYesTxt = "YES"
+                    var btnNoTxt = "No"
                     if (MainApp.form.se2201 == StringUtils.EMPTY) {
-                        openWarningActivity(
-                                id = 1,
-                                title = "WARNING!",
-                                message = "Household Information Section not filled.\n Are you sure, you want to exit this interview?",
-                                btnYesTxt = "YES", btnNoTxt = "RE-THINK")
-                        return@setOnActionSelectedListener false
+                        id = 1
+                        title = "WARNING!"
+                        message = "Household Information Section not filled.\n Are you sure, you want to exit this interview?"
+                        btnYesTxt = "YES"
+                        btnNoTxt = "RE-THINK"
+                    } else if (MainApp.form.g5Flag == "-1") {
+                        id = 1
+                        title = "WARNING!"
+                        message = "${adapter.childItems.find { it.isSelected == "1" || it.isSelected == "2" }?.cb02?.convertStringToUpperCase()}" +
+                                " - Covid19 section not filled\n Are you sure, you want to exit this interview?"
                     }
                     openWarningActivity(
-                            id = 3,
-                            title = "CONFIRMATION!",
-                            message = "Are you sure, you want to exit this interview?",
-                            btnYesTxt = "YES", btnNoTxt = "NO")
+                            id = id,
+                            item = true,
+                            title = title,
+                            message = message,
+                            btnYesTxt = btnYesTxt, btnNoTxt = btnNoTxt)
+
+                    return@setOnActionSelectedListener false
 
                 }
                 R.id.fab_exit -> {
@@ -133,7 +146,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
             }
             3 -> {
                 finish()
-                gotoActivityWithSerializable(EndingActivity::class.java, "complete", true)
+                gotoActivityWithSerializable(EndingActivity::class.java, "complete", item as Boolean)
             }
 
         }

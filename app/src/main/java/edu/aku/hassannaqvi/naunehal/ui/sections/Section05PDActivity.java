@@ -17,13 +17,15 @@ import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection05pdBinding;
 import edu.aku.hassannaqvi.naunehal.models.ChildCard;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
+import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
 import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivity;
 
-public class Section05PDActivity extends AppCompatActivity {
+public class Section05PDActivity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySection05pdBinding bi;
     ChildInformation info;
@@ -321,6 +323,11 @@ public class Section05PDActivity extends AppCompatActivity {
 
 
     public void BtnEnd(View view) {
+        AppUtilsKt.contextEndActivity(this);
+    }
+
+    @Override
+    public void endSecActivity(boolean flag) {
         finish();
     }
 
