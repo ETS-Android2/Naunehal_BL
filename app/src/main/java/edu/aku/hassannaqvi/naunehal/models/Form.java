@@ -159,7 +159,6 @@ public class Form extends BaseObservable {
     public String cv19 = StringUtils.EMPTY;
     public String cv1996x = StringUtils.EMPTY;
     public String cvdate = StringUtils.EMPTY;
-    public String flagg5 = StringUtils.EMPTY;
     //Section SE
     public String se01 = StringUtils.EMPTY;
     public String se0196x = StringUtils.EMPTY;
@@ -299,7 +298,7 @@ public class Form extends BaseObservable {
     private String iStatus96x = StringUtils.EMPTY;
     private String synced = StringUtils.EMPTY;
     private String syncDate = StringUtils.EMPTY;
-    private String g5Flag = StringUtils.EMPTY;
+    private String g5Flag = "-1";
     // SECTION VARIABLES
     private String s01HH = StringUtils.EMPTY;
     private String s05PD = StringUtils.EMPTY;
@@ -3079,17 +3078,6 @@ public class Form extends BaseObservable {
 
 
     @Bindable
-    public String getFlagg5() {
-        return flagg5;
-    }
-
-    public void setFlagg5(String flagg5) {
-        this.flagg5 = flagg5;
-        notifyPropertyChanged(BR.flagg5);
-    }
-
-
-    @Bindable
     public String getSedate() {
         return sedate;
     }
@@ -3369,8 +3357,7 @@ public class Form extends BaseObservable {
                     .put("cv1896x", cv1896x)
                     .put("cv19", cv19)
                     .put("cv1996x", cv1996x)
-                    .put("cvdate", cvdate)
-                    .put("flagg5", flagg5);
+                    .put("cvdate", cvdate);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -3757,7 +3744,6 @@ public class Form extends BaseObservable {
                 this.cv19 = json.getString("cv19");
                 this.cv1996x = json.getString("cv1996x");
                 this.cvdate = json.getString("cvdate");
-                this.flagg5 = json.getString("flagg5");
 
             } catch (JSONException e) {
                 e.printStackTrace();

@@ -17,10 +17,11 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection081seBinding;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 
-public class Section081SEActivity extends AppCompatActivity {
+public class Section081SEActivity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySection081seBinding bi;
 
@@ -337,7 +338,11 @@ public class Section081SEActivity extends AppCompatActivity {
     }
 
     public void BtnEnd(View view) {
-        AppUtilsKt.openSectionEndingActivity(this);
+        AppUtilsKt.contextEndActivity(this);
     }
 
+    @Override
+    public void endSecActivity(boolean flag) {
+        finish();
+    }
 }

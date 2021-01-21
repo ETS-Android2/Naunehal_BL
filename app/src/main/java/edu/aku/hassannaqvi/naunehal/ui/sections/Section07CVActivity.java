@@ -22,12 +22,14 @@ import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection07cvBinding;
 import edu.aku.hassannaqvi.naunehal.models.ChildCard;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
+import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
 
-public class Section07CVActivity extends AppCompatActivity {
+public class Section07CVActivity extends AppCompatActivity implements EndSectionActivity {
 
     ActivitySection07cvBinding bi;
 
@@ -64,7 +66,13 @@ public class Section07CVActivity extends AppCompatActivity {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S07CV, form.s07CVtoString());
         if (updcount == 1) {
-            return true;
+            updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_G5FLAG, "1");
+            if (updcount == 1) {
+                return true;
+            } else {
+                Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
+                return false;
+            }
         } else {
             Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
             return false;
@@ -246,6 +254,11 @@ public class Section07CVActivity extends AppCompatActivity {
 
 
     public void BtnEnd(View view) {
+        AppUtilsKt.contextEndActivity(this);
+    }
+
+    @Override
+    public void endSecActivity(boolean flag) {
         finish();
     }
 
