@@ -26,15 +26,12 @@ public class FormsContract {
         public static final String COLUMN_CLUSTER = "clusterno";
         public static final String COLUMN_HHNO = "hhno";
         public static final String COLUMN_S01HH = "s01HH";
-        public static final String COLUMN_S02CB = "s02CB";
-        public static final String COLUMN_S03CS = "s03CS";
-        public static final String COLUMN_S04IM = "s04IM";
         public static final String COLUMN_S05PD = "s05PD";
         public static final String COLUMN_S06BF = "s06BF";
         public static final String COLUMN_S07CV = "s07CV";
         public static final String COLUMN_S08SE = "s08SE";
-
-        public static final String COLUMN_ISTATUS = "hh26";
+        public static final String COLUMN_G5FLAG = "hhFLAG";
+        public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96x = "istatus96x";
         public static final String COLUMN_ENDINGDATETIME = "endingdatetime";
         public static final String COLUMN_GPS = "gps";
@@ -43,7 +40,6 @@ public class FormsContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_CHILD_RESPONDENT = "childrespondent";
         public static String PATH = "forms";
         public static final String CONTENT_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH;
