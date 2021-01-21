@@ -128,4 +128,7 @@ dependencies {
     //Image Compressor
     implementation 'id.zelory:compressor:2.1.0'
 
+    //Apache
+    api 'org.apache.commons:commons-lang3:3.8'
+
 }

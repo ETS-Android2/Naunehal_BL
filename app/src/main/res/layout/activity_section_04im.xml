@@ -404,7 +404,7 @@
                                 android:background="@drawable/outline_btn"
                                 android:onClick="@{(v) -> callback.takePhoto(1)}"
                                 android:text="Take Front Photo"
-                                android:textColor="@color/red_overlay" />
+                                android:textColor="@color/redOverlay" />
 
                             <Button
                                 android:id="@+id/backPhoto"
@@ -418,7 +418,7 @@
                                 android:background="@drawable/outline_btn"
                                 android:onClick="@{(v) -> callback.takePhoto(2)}"
                                 android:text="Take Back Photo"
-                                android:textColor="@color/red_overlay" />
+                                android:textColor="@color/redOverlay" />
 
                         </LinearLayout>
 
@@ -3912,7 +3912,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:background="@color/redOverlay"
+                    android:background="@color/redLight"
                     android:onClick="BtnEnd"
                     android:text="Cancel"
                     android:textColor="@color/white" />
@@ -3922,7 +3922,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:background="@color/greenOverlay"
+                    android:background="@color/greenLight"
                     android:onClick="BtnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />

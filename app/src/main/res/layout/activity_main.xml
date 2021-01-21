@@ -25,7 +25,7 @@
             android:gravity="center"
             android:keepScreenOn="true"
             android:text="@string/only_for_testing"
-            android:textColor="@color/white_overlay"
+            android:textColor="@color/whiteOverlay"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -35,9 +35,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/white_overlay"
+            android:background="@color/whiteOverlay"
             android:textAlignment="center"
-            android:textColor="@color/red"
+            android:textColor="@color/redDark"
             android:textStyle="bold"
             android:visibility="gone" />
 
@@ -45,7 +45,7 @@
             android:id="@+id/activity_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white_overlay"
+            android:background="@color/whiteOverlay"
             android:padding="0dp">
 
             <LinearLayout
@@ -264,13 +264,13 @@
                         android:layout_width="220dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:background="@color/white_overlay"
+                        android:background="@color/whiteOverlay"
                         android:drawableStart="@drawable/database"
                         android:onClick="@{callback::openSpecificActivity}"
                         android:padding="8dp"
                         android:text="@string/database"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/black_overlay" />
+                        android:textColor="@color/blackOverlay" />
 
                 </LinearLayout>
 

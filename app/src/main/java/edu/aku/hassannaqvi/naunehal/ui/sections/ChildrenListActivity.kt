@@ -41,7 +41,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         * */
         bi.toolbarLayout.title = "Children List [${MainApp.form.hhno})"
         bi.toolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.black))
-        bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.black_overlay))
+        bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.blackOverlay))
 
 
         /*
@@ -123,7 +123,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
     /*
     * Callback call after pressing Child item in recyclerview
     * */
-    override fun callWarningActivity(item: Any?) {
+    override fun callWarningActivity(id: Int, item: Any?) {
         MainApp.childInformation = item as ChildInformation
         gotoActivity(Section02CBActivity::class.java)
     }
@@ -137,7 +137,8 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
                 openWarningActivity(
                         title = "CONFIRMATION!",
                         message = "Are you sure, you want to edit ${item.cb02.toUpperCase(Locale.ENGLISH)} interview?",
-                        data = item)
+                        item = item,
+                        id = 1)
             }
 
             override fun onButtonItemClick(item: ChildInformation, flag: Boolean) {

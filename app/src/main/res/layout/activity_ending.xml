@@ -147,7 +147,7 @@
                     android:id="@+id/btn_End"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/greenOverlay"
+                    android:background="@color/greenLight"
                     android:onClick="BtnEnd"
                     android:text="Save"
                     android:textColor="@color/white" />

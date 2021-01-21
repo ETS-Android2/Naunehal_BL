@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
-                    app:title="Selected Childrens" />
+                    app:title="Selected Children's" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
@@ -47,26 +47,49 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <com.kennyc.view.MultiStateView
-                android:id="@+id/multiStateView"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:msv_animateViewChanges="true"
-                app:msv_emptyView="@layout/empty_view"
-                app:msv_loadingView="@layout/loading_view"
-                app:msv_viewState="content">
+                android:layout_height="match_parent">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/childList"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimaryBeta"
+                    android:drawableStart="@drawable/se_section"
+                    android:onClick="seSectionClick"
+                    android:padding="8dp"
+                    android:text="Household Information"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimaryDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.kennyc.view.MultiStateView
+                    android:id="@+id/multiStateView"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:spanCount="2"
-                    tools:listitem="@layout/selected_child_view" />
+                    app:layout_constraintTop_toBottomOf="@+id/button"
+                    app:msv_animateViewChanges="true"
+                    app:msv_emptyView="@layout/empty_view"
+                    app:msv_loadingView="@layout/loading_view"
+                    app:msv_viewState="content">
 
-            </com.kennyc.view.MultiStateView>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/childList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="2"
+                        tools:listitem="@layout/selected_child_view" />
+
+                </com.kennyc.view.MultiStateView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
 

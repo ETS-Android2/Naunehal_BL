@@ -250,13 +250,13 @@
                     android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@color/white_overlay"
+                    android:background="@color/whiteOverlay"
                     android:drawableStart="@drawable/database"
                     android:onClick="childList"
                     android:padding="8dp"
                     android:text="Child List"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textColor="@color/black_overlay" />
+                    android:textColor="@color/blackOverlay" />
 
             </LinearLayout>
 

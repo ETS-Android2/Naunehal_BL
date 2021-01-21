@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -18,12 +19,14 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySelectedChildrenListBinding
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
+import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.WarningActivityInterface
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
 import edu.aku.hassannaqvi.naunehal.utils.openSectionEndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.openWarningActivity
+import org.apache.commons.lang3.StringUtils
 import java.util.*
 
 class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
@@ -49,7 +52,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         * Nested Toolbar
         * */
         bi.toolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.black))
-        bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.colorPrimaryLight))
+        bi.toolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.black))
 
 
         /*
@@ -68,8 +71,20 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
                                 .show()
                         return@setOnActionSelectedListener false
                     }
-                    finish()
-                    gotoActivity(Section081SEActivity::class.java)
+                    if (MainApp.form.se2201 == StringUtils.EMPTY) {
+                        openWarningActivity(
+                                id = 1,
+                                title = "WARNING!",
+                                message = "Household Information Section not filled.\n Are you sure, you want to exit this interview?",
+                                btnYesTxt = "YES", btnNoTxt = "RE-THINK")
+                        return@setOnActionSelectedListener false
+                    }
+                    openWarningActivity(
+                            id = 3,
+                            title = "CONFIRMATION!",
+                            message = "Are you sure, you want to exit this interview?",
+                            btnYesTxt = "YES", btnNoTxt = "NO")
+
                 }
                 R.id.fab_exit -> {
                     openSectionEndingActivity()
@@ -106,10 +121,24 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
     /*
     * Callback call after pressing Child item in recyclerview
     * */
-    override fun callWarningActivity(item: Any?) {
-        val information = item as ChildInformation
-        gotoActivityWithSerializable(Section03CSActivity::class.java, CONSTANTS.CHILD_DATA_UNDER5, information)
+    override fun callWarningActivity(id: Int, item: Any?) {
+        when (id) {
+            1 -> {
+                finish()
+                gotoActivity(EndingActivity::class.java)
+            }
+            2 -> {
+                val information = item as ChildInformation
+                gotoActivityWithSerializable(Section03CSActivity::class.java, CONSTANTS.CHILD_DATA_UNDER5, information)
+            }
+            3 -> {
+                finish()
+                gotoActivityWithSerializable(EndingActivity::class.java, "complete", true)
+            }
+
+        }
     }
+
 
     /*
     * Initialize recyclerView with onClickListener
@@ -118,9 +147,10 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         adapter = SelectedChildListAdapter(object : SelectedChildListAdapter.OnItemClickListener {
             override fun onItemClick(item: ChildInformation, position: Int) {
                 openWarningActivity(
+                        id = 2,
                         title = "CONFIRMATION!",
                         message = "Are you sure, you want to continue ${item.cb02.toUpperCase(Locale.ENGLISH)} interview?",
-                        data = item)
+                        item = item)
             }
         })
         bi.childList.adapter = adapter
@@ -133,6 +163,13 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         super.onResume()
 
         viewModel.getChildDataFromDB(MainApp.form.cluster, MainApp.form.hhno, MainApp.form.uid)
+    }
+
+    /*
+    * SE section clicked
+    * */
+    fun seSectionClick(view: View) {
+        gotoActivity(Section081SEActivity::class.java)
     }
 
     override fun onBackPressed() {

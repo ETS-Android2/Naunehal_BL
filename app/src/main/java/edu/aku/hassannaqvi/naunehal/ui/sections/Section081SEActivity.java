@@ -101,13 +101,8 @@ public class Section081SEActivity extends AppCompatActivity {
 
     }
 
-
     public void BtnEnd(View view) {
         AppUtilsKt.openSectionEndingActivity(this);
     }
 
-    @Override
-    public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-    }
 }
