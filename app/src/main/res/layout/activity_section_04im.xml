@@ -3461,7 +3461,9 @@
 
 
                     <!-- im23a  Radio   -->
-                    <androidx.cardview.widget.CardView style="@style/cardView">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvim23a"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -3514,6 +3516,20 @@
                                     android:text="@string/im23a3" />
 
                                 <RadioButton
+                                    android:id="@+id/im23a4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im23a.equals(`4`)}"
+                                    android:text="@string/im23a4" />
+
+                                <RadioButton
+                                    android:id="@+id/im23a5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im23a.equals(`5`)}"
+                                    android:text="@string/im23a5" />
+
+                                <RadioButton
                                     android:id="@+id/im23a96"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -3538,7 +3554,9 @@
 
 
                     <!-- im23b  Title   -->
-                    <androidx.cardview.widget.CardView style="@style/cardView">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvim23b"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"

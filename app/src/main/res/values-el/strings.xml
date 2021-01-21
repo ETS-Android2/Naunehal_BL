@@ -191,6 +191,11 @@
     <string name="cs0809">Intravenous (iv) </string>
     <string name="cs0810">Home remedy /herbal medicine</string>
     <string name="cs0896">Others Please Specify</string>
+    <string name="cs08a"> Was the child hospitalized for diarrhea ? </string>
+    <string name="cs08aa"> Yes </string>
+    <string name="cs08ab"> No </string>
+    <string name="cs08b"> If yes, what was the duration of hospitalization ? </string>
+    <string name="cs08ba"> Number of Days </string>
     <string name="cs09">Why did you not seek treatment?</string>
     <string name="cs0901">Fear of COVID-19</string>
     <string name="cs0902">Confidence that child will get better himself</string>
@@ -238,6 +243,11 @@
     <string name="cs1712">Dai, TBA</string>
     <string name="cs1713">CMW</string>
     <string name="cs17962">Other Private</string>
+    <string name="cs17a"> Was the child hospitalized for Fever / Cough / difficulty breathing ? </string>
+    <string name="cs17aa"> Yes </string>
+    <string name="cs17ab"> No </string>
+    <string name="cs17b"> If yes, what was the duration of hospitalization ? </string>
+    <string name="cs17ba"> Number of Days </string>
     <string name="cs18">What Was Given to Treat cough, fever or difficulty breathing?</string>
     <string name="cs1802">antibiotic</string>
     <string name="cs1803">unknown pill or syrup</string>
@@ -405,18 +415,20 @@
     <string name="im22">How many times was a Measles Injection vaccine received? Number of times</string>
     <string name="im2201">Number of times</string>
     <string name="im2298">Don\'t know</string>
-    <string name="im23">Where from (name) is usually vaccinated?   If the child is vaccinated from multiple sources, mention the usual source with higher frequency of vaccine doses.</string>
-    <string name="im23a">Can you please specify where is this facility located? </string>
-    <string name="im23a1">Within Catchment area 10km</string>
-    <string name="im23a2">Within District/ city </string>
-    <string name="im23a3">Out of District/city </string>
-    <string name="im23a96">Other Specify</string>
-    <string name="im2301">Govt. Health facility </string>
-    <string name="im23b">What is the time taken to reach this facility where vaccination was received? </string>
-    <string name="im23b1">Hours</string>
-    <string name="im23b2">Minutes</string>
-    <string name="im2302">Private health facility </string>
-    <string name="im2303">Government outreach service </string>
+    <string name="im23"> Where from (name) is usually vaccinated?   If the child is vaccinated from multiple sources, mention the usual source with higher frequency of vaccine doses.</string>
+    <string name="im23a"> Can you please specify where is this facility located ? </string>
+    <string name="im23a1"> By foot </string>
+    <string name="im23a2"> Cycle </string>
+    <string name="im23a3"> Motor Cycle / Riskshaw </string>
+    <string name="im23a4"> Car / Taxi </string>
+    <string name="im23a5"> Public Transport </string>
+    <string name="im23a96"> Other Specify </string>
+    <string name="im2301"> Govt. Health facility </string>
+    <string name="im23b"> What is the time taken to reach this facility where vaccination was received ? </string>
+    <string name="im23b1"> Hours </string>
+    <string name="im23b2"> Minutes </string>
+    <string name="im2302"> Private health facility </string>
+    <string name="im2303"> Government outreach service </string>
 
     <!--ERROR in variable im2396/im2306-->
     <string name="im2306">Other (specify) </string>
@@ -1128,6 +1140,8 @@
     <string name='Q_cs06'>cs06</string>
     <string name='Q_cs07'>cs07</string>
     <string name='Q_cs08'>cs08</string>
+    <string name='Q_cs08a'>cs08a</string>
+    <string name='Q_cs08b'>cs08b</string>
     <string name='Q_cs09'>cs09</string>
     <string name='Q_cs10'>cs10</string>
     <string name='Q_cs11'>cs11</string>
@@ -1136,6 +1150,8 @@
     <string name='Q_cs14'>cs14</string>
     <string name='Q_cs15'>cs15</string>
     <string name='Q_cs17'>cs17</string>
+    <string name='Q_cs17a'>cs17a</string>
+    <string name='Q_cs17b'>cs17b</string>
     <string name='Q_cs18'>cs18</string>
     <string name='Q_cs19'>cs19</string>
     <string name='Q_cv01'>cv01</string>

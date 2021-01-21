@@ -268,6 +268,8 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         MainApp.immunization.setIm23a(bi.im23a1.isChecked() ? "1"
                 : bi.im23a2.isChecked() ? "2"
                 : bi.im23a3.isChecked() ? "3"
+                : bi.im23a4.isChecked() ? "4"
+                : bi.im23a5.isChecked() ? "5"
                 : bi.im23a96.isChecked() ? "96"
                 : "-1");
         MainApp.immunization.setIm23a96x(bi.im23a96x.getText().toString());
@@ -463,6 +465,20 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         bi.im18.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim19));
 
         bi.im21.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim22));
+
+        bi.im23.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.cvim23a.setVisibility(View.VISIBLE);
+            bi.cvim23b.setVisibility(View.VISIBLE);
+            bi.fldGrpIm24.setVisibility(View.VISIBLE);
+            if (i == bi.im2303.getId()) {
+                Clear.clearAllFields(bi.cvim23a);
+                Clear.clearAllFields(bi.cvim23b);
+                Clear.clearAllFields(bi.fldGrpIm24);
+                bi.cvim23a.setVisibility(View.GONE);
+                bi.cvim23b.setVisibility(View.GONE);
+                bi.fldGrpIm24.setVisibility(View.GONE);
+            }
+        });
 
     }
 
