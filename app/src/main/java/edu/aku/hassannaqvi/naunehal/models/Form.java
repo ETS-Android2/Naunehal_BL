@@ -3,21 +3,22 @@ package edu.aku.hassannaqvi.naunehal.models;
 import android.database.Cursor;
 import android.util.Log;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.LocalDate;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
 public class Form extends BaseObservable {
 
-    private String TAG = "Form";
+    private final String TAG = "Form";
 
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
@@ -51,6 +52,7 @@ public class Form extends BaseObservable {
     public String hh24 = "";
     public String hh25 = "";
     public String hh26 = "";
+    public String hh2696x = "";
     //Section PD
     public String pd01 = "";
     public String pd02 = "";
@@ -880,6 +882,17 @@ public class Form extends BaseObservable {
     public void setHh26(String hh26) {
         this.hh26 = hh26;
         notifyPropertyChanged(BR.hh26);
+    }
+
+
+    @Bindable
+    public String getHh2696x() {
+        return hh2696x;
+    }
+
+    public void setHh2696x(String hh2696x) {
+        this.hh2696x = hh2696x;
+        notifyPropertyChanged(BR.hh2696x);
     }
 
 
@@ -3183,7 +3196,9 @@ public class Form extends BaseObservable {
                     .put("hh22", hh22)
                     .put("hh23", hh23)
                     .put("hh24", hh24)
-                    .put("hh25", hh25);
+                    .put("hh25", hh25)
+                    .put("hh26", hh26)
+                    .put("hh2696x", hh2696x);
         } catch (JSONException e) {
             e.printStackTrace();
             return "\"error\":, \"" + e.getMessage() + "\"";
@@ -3569,6 +3584,8 @@ public class Form extends BaseObservable {
                 this.hh23 = json.getString("hh23");
                 this.hh24 = json.getString("hh24");
                 this.hh25 = json.getString("hh25");
+                this.hh26 = json.getString("hh26");
+                this.hh2696x = json.getString("hh2696x");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
