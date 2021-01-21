@@ -109,6 +109,7 @@ public class Immunization extends BaseObservable {
     public String im24;
     public String im2496x;
     public String im25;
+    public String imdate;
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
     private String id;
@@ -1265,6 +1266,16 @@ public class Immunization extends BaseObservable {
         notifyPropertyChanged(BR.im25);
     }
 
+    @Bindable
+    public String getImdate() {
+        return imdate;
+    }
+
+    public void setImdate(String imdate) {
+        this.imdate = imdate;
+        notifyPropertyChanged(BR.imdate);
+    }
+
 
     @Bindable
     public String getStatus() {
@@ -1434,7 +1445,8 @@ public class Immunization extends BaseObservable {
                     .put("im23b2", im23b2)
                     .put("im24", im24)
                     .put("im2496x", im2496x)
-                    .put("im25", im25);
+                    .put("im25", im25)
+                    .put("imdate", imdate);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1585,6 +1597,7 @@ public class Immunization extends BaseObservable {
                 this.im24 = json.getString("im24");
                 this.im2496x = json.getString("im2496x");
                 this.im25 = json.getString("im25");
+                this.imdate = json.getString("imdate");
 
             } catch (JSONException e) {
                 e.printStackTrace();
