@@ -1723,6 +1723,13 @@
                                 android:text="@string/se3709" />
 
                             <CheckBox
+                                android:id="@+id/se3710"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.se3710.equals(`10`)}"
+                                android:text="@string/se3710" />
+
+                            <CheckBox
                                 android:id="@+id/se3796"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
