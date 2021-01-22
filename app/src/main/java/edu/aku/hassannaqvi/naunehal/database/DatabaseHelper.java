@@ -735,10 +735,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + ChildInfoTable.COLUMN_ID + " =? ";
         String[] selectionArgs = {childInformation.getCluster(), childInformation.getHhno(), childInformation.getUuid(), childInformation.getUid(), childInformation.getId()};
 
-        return db.update(ChildInfoTable.TABLE_NAME,
+        int count = db.update(ChildInfoTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
+
+        updatesFormColumn(FormsTable.COLUMN_ISTATUS, "99");
+
+        return count;
     }
 
     public int updatesChildInformationColumn(String column, String value) {

@@ -71,6 +71,10 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
                         Snackbar.make(findViewById(android.R.id.content), "Please update all children's for proceeding to the next section", Snackbar.LENGTH_LONG)
                                 .show()
                         return@setOnActionSelectedListener false
+                    } else if (MainApp.form.se01 == StringUtils.EMPTY) {
+                        Snackbar.make(findViewById(android.R.id.content), "Household section not filled", Snackbar.LENGTH_LONG)
+                                .show()
+                        return@setOnActionSelectedListener false
                     }
                     var id = 3
                     var title = "CONFIRMATION!"
@@ -176,6 +180,14 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         super.onResume()
 
         viewModel.getChildDataFromDB(MainApp.form.cluster, MainApp.form.hhno, MainApp.form.uid)
+
+        if (MainApp.form.se2201 != StringUtils.EMPTY) {
+            if (MainApp.form.se2201 == StringUtils.EMPTY) {
+                bi.btnHHSection.text = "Incomplete HH Section Filled"
+            } else
+                bi.btnHHSection.text = "Complete HH Section Filled"
+            bi.btnHHSection.isEnabled = false
+        }
     }
 
     /*
