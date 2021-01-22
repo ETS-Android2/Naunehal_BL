@@ -202,7 +202,14 @@ class Section02CBActivity : AppCompatActivity() {
         MainApp.childInformation.setCb04yy(bi.cb04yy.text.toString())
         MainApp.childInformation.setCb0501(bi.cb0501.text.toString())
         MainApp.childInformation.setCb0502(bi.cb0502.text.toString())
-        MainApp.childInformation.setCb06(if (bi.cb0601.isChecked) "1" else if (bi.cb0602.isChecked) "2" else if (bi.cb0603.isChecked) "3" else if (bi.cb0696.isChecked) "4" else "-1")
+
+        MainApp.childInformation.setCb06(when {
+            bi.cb0601.isChecked -> "1"
+            bi.cb0602.isChecked -> "2"
+            bi.cb0603.isChecked -> "3"
+            bi.cb0696.isChecked -> "4"
+            else -> "-1"
+        })
 
         MainApp.childInformation.setCb07(bi.cb07.text.toString())
 
@@ -210,7 +217,23 @@ class Section02CBActivity : AppCompatActivity() {
 
         MainApp.childInformation.setCb09(bi.cb09.text.toString())
 
-        MainApp.childInformation.setCb10(if (bi.cb1001.isChecked) "1" else if (bi.cb1002.isChecked) "2" else if (bi.cb1003.isChecked) "3" else if (bi.cb1004.isChecked) "4" else if (bi.cb1005.isChecked) "5" else if (bi.cb1006.isChecked) "6" else if (bi.cb1007.isChecked) "7" else if (bi.cb1008.isChecked) "8" else if (bi.cb1009.isChecked) "9" else if (bi.cb1010.isChecked) "10" else if (bi.cb1011.isChecked) "11" else if (bi.cb1012.isChecked) "12" else if (bi.cb1013.isChecked) "13" else if (bi.cb1096.isChecked) "96" else "-1")
+        MainApp.childInformation.setCb10(when {
+            bi.cb1001.isChecked -> "1"
+            bi.cb1002.isChecked -> "2"
+            bi.cb1003.isChecked -> "3"
+            bi.cb1004.isChecked -> "4"
+            bi.cb1005.isChecked -> "5"
+            bi.cb1006.isChecked -> "6"
+            bi.cb1007.isChecked -> "7"
+            bi.cb1008.isChecked -> "8"
+            bi.cb1009.isChecked -> "9"
+            bi.cb1010.isChecked -> "10"
+            bi.cb1011.isChecked -> "11"
+            bi.cb1012.isChecked -> "12"
+            bi.cb1013.isChecked -> "13"
+            bi.cb1096.isChecked -> "96"
+            else -> "-1"
+        })
 
         MainApp.childInformation.setCb1096x(bi.cb1096x.text.toString())
         MainApp.childInformation.setCb11(if (bi.cb1101.isChecked) "1" else if (bi.cb1102.isChecked) "2" else "-1")
