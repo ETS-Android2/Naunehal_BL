@@ -124,6 +124,20 @@
                             android:text="@string/se0107" />
 
                         <RadioButton
+                            android:id="@+id/se0108"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.se01.equals(`8`)}"
+                            android:text="@string/se0108" />
+
+                        <RadioButton
+                            android:id="@+id/se0109"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.se01.equals(`9`)}"
+                            android:text="@string/se0109" />
+
+                        <RadioButton
                             android:id="@+id/se0196"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -2230,6 +2244,13 @@
                             android:layout_height="wrap_content"
                             android:checked="@{form.se2005.equals(`5`)}"
                             android:text="@string/se2005" />
+
+                        <CheckBox
+                            android:id="@+id/se2006"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.se2006.equals(`6`)}"
+                            android:text="@string/se2006" />
 
                         <CheckBox
                             android:id="@+id/se2096"
