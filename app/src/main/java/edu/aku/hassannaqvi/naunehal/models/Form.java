@@ -323,6 +323,7 @@ public class Form extends BaseObservable {
     public String se3707 = StringUtils.EMPTY;
     public String se3708 = StringUtils.EMPTY;
     public String se3709 = StringUtils.EMPTY;
+    public String se3710 = StringUtils.EMPTY;
     public String se3796 = StringUtils.EMPTY;
     public String se3796x = StringUtils.EMPTY;
     public String se38 = StringUtils.EMPTY;
@@ -3594,6 +3595,7 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.se3708);
     }
 
+
     @Bindable
     public String getSe3709() {
         return se3709;
@@ -3603,6 +3605,18 @@ public class Form extends BaseObservable {
         this.se3709 = se3709;
         notifyPropertyChanged(BR.se3709);
     }
+
+
+    @Bindable
+    public String getSe3710() {
+        return se3710;
+    }
+
+    public void setSe3710(String se3710) {
+        this.se3710 = se3710;
+        notifyPropertyChanged(BR.se3710);
+    }
+
 
     @Bindable
     public String getSe3796() {
@@ -4144,6 +4158,7 @@ public class Form extends BaseObservable {
                     .put("se3707", se3707)
                     .put("se3708", se3708)
                     .put("se3709", se3709)
+                    .put("se3710", se3710)
                     .put("se3796", se3796)
                     .put("se3796x", se3796x)
                     .put("se38", se38)
@@ -4584,6 +4599,7 @@ public class Form extends BaseObservable {
                 this.se3707 = json.getString("se3707");
                 this.se3708 = json.getString("se3708");
                 this.se3709 = json.getString("se3709");
+                this.se3710 = json.getString("se3710");
                 this.se3796 = json.getString("se3796");
                 this.se3796x = json.getString("se3796x");
                 this.se38 = json.getString("se38");

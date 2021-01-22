@@ -205,26 +205,18 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
                 : "-1");
 
         form.setSe3701(bi.se3701.isChecked() ? "1" : "-1");
-
         form.setSe3702(bi.se3702.isChecked() ? "2" : "-1");
-
         form.setSe3703(bi.se3703.isChecked() ? "3" : "-1");
-
         form.setSe3704(bi.se3704.isChecked() ? "4" : "-1");
-
         form.setSe3705(bi.se3705.isChecked() ? "5" : "-1");
-
         form.setSe3706(bi.se3706.isChecked() ? "6" : "-1");
-
         form.setSe3707(bi.se3707.isChecked() ? "7" : "-1");
-
         form.setSe3708(bi.se3708.isChecked() ? "8" : "-1");
-
         form.setSe3709(bi.se3709.isChecked() ? "9" : "-1");
-
+        form.setSe3710(bi.se3710.isChecked() ? "10" : "-1");
         form.setSe3796(bi.se3796.isChecked() ? "96" : "-1");
-
         form.setSe3796x(bi.se3796x.getText().toString());
+
         form.setSe38(bi.se3801.isChecked() ? "1"
                 : bi.se3802.isChecked() ? "2"
                 : bi.se3803.isChecked() ? "3"
