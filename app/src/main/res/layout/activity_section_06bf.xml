@@ -445,14 +445,14 @@
                                 android:id="@+id/bf0501"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.bf05.equals(`000`)}"
+                                android:checked="@{form.bf05.equals(`1`)}"
                                 android:text="@string/bf0501" />
 
                             <RadioButton
                                 android:id="@+id/bf0502"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.bf05.equals(`1`)}"
+                                android:checked="@{form.bf05.equals(`2`)}"
                                 android:text="@string/bf0502" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -464,7 +464,7 @@
                                 android:inputType="number"
                                 android:tag="bf0502"
                                 android:text="@{form.bf0502x}"
-                                android:visibility='@{form.bf05.equals(`1`) ? View.VISIBLE : View.GONE}'
+                                android:visibility='@{form.bf05.equals(`2`) ? View.VISIBLE : View.GONE}'
                                 app:maxValue="23"
                                 app:minValue="1"
                                 app:type="range" />
@@ -473,7 +473,7 @@
                                 android:id="@+id/bf0503"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.bf05.equals(`2`)}"
+                                android:checked="@{form.bf05.equals(`3`)}"
                                 android:text="@string/bf0503" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -485,7 +485,7 @@
                                 android:inputType="number"
                                 android:tag="bf0503"
                                 android:text="@{form.bf0503x}"
-                                android:visibility='@{form.bf05.equals(`2`) ? View.VISIBLE : View.GONE}'
+                                android:visibility='@{form.bf05.equals(`3`) ? View.VISIBLE : View.GONE}'
                                 app:maxValue="30"
                                 app:minValue="1"
                                 app:type="range" />

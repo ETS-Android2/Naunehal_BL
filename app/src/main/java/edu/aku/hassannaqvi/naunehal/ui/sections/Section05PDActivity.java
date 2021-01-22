@@ -108,7 +108,17 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
             }
         });
 
-        bi.pd04.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrppd04));
+        bi.pd04.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (bi.pd0402.getId() == i) {
+                Clear.clearAllFields(bi.fldGrppd04);
+                bi.fldGrppd04.setVisibility(View.GONE);
+                bi.fldGrpCVpd08.setVisibility(View.VISIBLE);
+            } else {
+                bi.fldGrppd04.setVisibility(View.VISIBLE);
+                bi.fldGrpCVpd08.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVpd08);
+            }
+        });
 
     }
 
@@ -255,7 +265,7 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
         form.setPd1696(bi.pd1696.isChecked() ? "96" : "-1");
 
         form.setPd1696x(bi.pd1696x.getText().toString());
-        
+
         form.setPd17(bi.pd1701.isChecked() ? "1"
                 : bi.pd1702.isChecked() ? "2"
                 : bi.pd1703.isChecked() ? "3"
