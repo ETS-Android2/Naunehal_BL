@@ -182,6 +182,7 @@
                             android:id="@+id/fldGrpBF03"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layoutDirection="ltr"
                             android:orientation="horizontal">
 
                             <TextView
@@ -245,6 +246,89 @@
                                 android:text="@{form.bf3y}"
                                 app:maxValue="2021"
                                 app:minValue="2016"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- bf03a  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVbf03a"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_bf03a" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/bf03a" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/fldGrpBF03a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layoutDirection="ltr"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/bf03a01" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/bf03a01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                app:maxValue="11"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/bf03a02" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/bf03a02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:hint="#"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                app:maxValue="5"
+                                app:minValue="1"
                                 app:type="range" />
 
                         </LinearLayout>

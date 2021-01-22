@@ -118,6 +118,8 @@ public class Form extends BaseObservable {
     public String bf3y = StringUtils.EMPTY;
     public String bf03m = StringUtils.EMPTY;
     public String bf3d = StringUtils.EMPTY;
+    public String bf03a01 = StringUtils.EMPTY;
+    public String bf03a02 = StringUtils.EMPTY;
     public String bf04 = StringUtils.EMPTY;
     public String bf05 = StringUtils.EMPTY;
     public String bf0502x = StringUtils.EMPTY;
@@ -1481,6 +1483,29 @@ public class Form extends BaseObservable {
         this.bf3d = bf3d;
         notifyPropertyChanged(BR.bf3d);
     }
+
+
+    @Bindable
+    public String getBf03a01() {
+        return bf03a01;
+    }
+
+    public void setBf03a01(String bf03a01) {
+        this.bf03a01 = bf03a01;
+        notifyPropertyChanged(BR.bf03a01);
+    }
+
+
+    @Bindable
+    public String getBf03a02() {
+        return bf03a02;
+    }
+
+    public void setBf03a02(String bf03a02) {
+        this.bf03a02 = bf03a02;
+        notifyPropertyChanged(BR.bf03a02);
+    }
+
 
     @Bindable
     public String getBf04() {
@@ -3304,6 +3329,8 @@ public class Form extends BaseObservable {
                     .put("bf3y", bf3y)
                     .put("bf03m", bf03m)
                     .put("bf3d", bf3d)
+                    .put("bf03a01", bf03a01)
+                    .put("bf03a02", bf03a02)
                     .put("bf04", bf04)
                     .put("bf05", bf05)
                     .put("bf0502x", bf0502x)
@@ -3688,6 +3715,8 @@ public class Form extends BaseObservable {
                 this.bf3y = json.getString("bf3y");
                 this.bf03m = json.getString("bf03m");
                 this.bf3d = json.getString("bf3d");
+                this.bf03a01 = json.getString("bf03a01");
+                this.bf03a02 = json.getString("bf03a02");
                 this.bf04 = json.getString("bf04");
                 this.bf05 = json.getString("bf05");
                 this.bf0502x = json.getString("bf0502x");

@@ -586,6 +586,8 @@
     <string name="pd2198">Don’t know/ don’t remember</string>
     <string name="pd22"> How many times such check happen ? </string>
     <string name="pd22a"> Number of Times </string>
+
+
     <string name="bf_title1">Section BF: Breastfeeding, Health &amp; Care-seeking Behaviors Instruction: To be administered to the mother of the youngest child in the household, between 0-23 months of age</string>
     <string name="bf01">Child’s Line Number (youngest under 2)</string>
     <string name="bf02">WRA’s Name</string>
@@ -593,6 +595,11 @@
     <string name="bf3y">Year </string>
     <string name="bf03m">Month</string>
     <string name="bf3d">Date</string>
+
+    <string name="bf03a"> Child’s age </string>
+    <string name="bf03a01"> Months </string>
+    <string name="bf03a02"> Years </string>
+
     <string name="bf04">Has (NAME) ever been breastfed?</string>
     <string name="bf0401">Yes</string>
     <string name="bf0402">No</string>
@@ -1107,6 +1114,7 @@
     <string name='Q_bf01'>bf01</string>
     <string name='Q_bf02'>bf02</string>
     <string name='Q_bf03'>bf03</string>
+    <string name='Q_bf03a'>bf03a</string>
     <string name='Q_bf04'>bf04</string>
     <string name='Q_bf05'>bf05</string>
     <string name='Q_bf06'>bf06</string>

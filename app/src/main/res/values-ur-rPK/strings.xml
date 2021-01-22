@@ -595,6 +595,11 @@
     <string name="bf3y">سال</string>
     <string name="bf03m">مہینے</string>
     <string name="bf3d">دن</string>
+
+    <string name="bf03a"> بچے کی عمر </string>
+    <string name="bf03a01"> مہینے </string>
+    <string name="bf03a02"> سال </string>
+
     <string name="bf04">کیا(نام) کو کبھی ماں کا دودھ پلایا گیا ہے؟</string>
     <string name="bf0401">ہاں </string>
     <string name="bf0402">نہیں </string>
@@ -1109,6 +1114,7 @@
     <string name='Q_bf01'>bf01</string>
     <string name='Q_bf02'>bf02</string>
     <string name='Q_bf03'>bf03</string>
+    <string name='Q_bf03a'>bf03a</string>
     <string name='Q_bf04'>bf04</string>
     <string name='Q_bf05'>bf05</string>
     <string name='Q_bf06'>bf06</string>
