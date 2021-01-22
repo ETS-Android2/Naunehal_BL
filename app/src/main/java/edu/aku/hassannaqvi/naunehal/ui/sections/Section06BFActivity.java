@@ -36,13 +36,13 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_06bf);
         info = Section03CSActivity.selectedChildInfo;
         bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
-        form.setBf01(info.cb01);
-        form.setBf02(info.cb07);
-        form.setBf03m(info.getCb04mm());
-        form.setBf3y(info.getCb04yy());
-        form.setBf3d(info.getCb04dd());
-        form.setBf03a02(info.getCb0501());
-        form.setBf03a01(info.getCb0502());
+        bi.bf01.setText(info.cb01);
+        bi.bf02.setText(info.cb07);
+        bi.bf03m.setText(info.getCb04mm());
+        bi.bf3y.setText(info.getCb04yy());
+        bi.bf3d.setText(info.getCb04dd());
+        bi.bf03a02.setText(info.getCb0501());
+        bi.bf03a01.setText(info.getCb0502());
 
         bi.setCallback(this);
         setupSkips();

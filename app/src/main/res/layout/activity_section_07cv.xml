@@ -1,15 +1,20 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
     <data>
 
         <import type="android.view.View" />
-        <!--<variable
+
+        <variable
             name="form"
-            type="edu.aku.hassannaqvi.naunehalintegratedimmunizationandphcforentericpathogencontrol.models.Form" />-->
+            type="edu.aku.hassannaqvi.naunehalintegratedimmunizationandphcforentericpathogencontrol.models.Form" />
+
         <variable
             name="callback"
             type="edu.aku.hassannaqvi.naunehal.ui.sections.Section07CVActivity" />
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,15 +28,14 @@
             layout="@layout/child_linenname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_constraintEnd_toEndOf="parent"
-            android:layout_constraintStart_toStartOf="parent"
-            android:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <LinearLayout
                 android:id="@+id/GrpName"
