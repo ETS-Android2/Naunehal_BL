@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -45,7 +44,7 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
         form.setBf03a02(info.getCb0501());
         form.setBf03a01(info.getCb0502());
 
-        bi.setForm(MainApp.form);
+        bi.setCallback(this);
         setupSkips();
     }
 

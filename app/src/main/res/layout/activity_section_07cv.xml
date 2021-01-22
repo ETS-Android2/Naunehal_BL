@@ -1,16 +1,15 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
         <import type="android.view.View" />
-
-        <variable
+        <!--<variable
             name="form"
-            type="edu.aku.hassannaqvi.naunehal.models.Form" />
+            type="edu.aku.hassannaqvi.naunehalintegratedimmunizationandphcforentericpathogencontrol.models.Form" />-->
+        <variable
+            name="callback"
+            type="edu.aku.hassannaqvi.naunehal.ui.sections.Section07CVActivity" />
     </data>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,12 +20,12 @@
 
         <include
             android:id="@+id/mainCard"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             layout="@layout/child_linenname"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_constraintEnd_toEndOf="parent"
+            android:layout_constraintStart_toStartOf="parent"
+            android:layout_constraintTop_toTopOf="parent" />
 
 
         <ScrollView
@@ -39,7 +38,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
 
                 <!-- cv_title1  Title   -->
                 <androidx.cardview.widget.CardView
@@ -55,9 +53,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cv_title1" />
-
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
 
 
@@ -71,24 +67,27 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:background="@drawable/bottom">
 
                             <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cv01" />
-
-                            <TextView
+                                android:id="@+id/qtxt_cv01"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_cv01"
                                 android:text="@string/cv01" />
 
-                        </LinearLayout>
+                            <TextView
+                                android:id="@+id/q_cv01"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_cv01"
+                                android:layout_alignBottom="@id/qtxt_cv01"
+                                android:text="@string/Q_cv01" />
+                        </RelativeLayout>
 
                         <RadioGroup
                             android:id="@+id/cv01"
@@ -99,29 +98,22 @@
                                 android:id="@+id/cv0101"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cv01.equals(`1`)}"
                                 android:text="@string/cv0101" />
 
                             <RadioButton
                                 android:id="@+id/cv0102"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.cv01.equals(`2`)}"
                                 android:text="@string/cv0102" />
-
                         </RadioGroup>
-
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
-
 
                 <LinearLayout
                     android:id="@+id/llcv01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
 
                     <!-- cv02  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -133,24 +125,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv02" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv02"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv02"
                                     android:text="@string/cv02" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv02"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv02"
+                                    android:layout_alignBottom="@id/qtxt_cv02"
+                                    android:text="@string/Q_cv02" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv02"
@@ -161,43 +156,34 @@
                                     android:id="@+id/cv0201"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv02.equals(`1`)}"
                                     android:text="@string/cv0201" />
 
                                 <RadioButton
                                     android:id="@+id/cv0202"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv02.equals(`2`)}"
                                     android:text="@string/cv0202" />
 
                                 <RadioButton
                                     android:id="@+id/cv0203"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv02.equals(`3`)}"
                                     android:text="@string/cv0203" />
 
                                 <RadioButton
                                     android:id="@+id/cv0204"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv02.equals(`4`)}"
                                     android:text="@string/cv0204" />
 
                                 <RadioButton
                                     android:id="@+id/cv0205"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv02.equals(`5`)}"
                                     android:text="@string/cv0205" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv03  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -209,24 +195,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv03" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv03"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv03"
                                     android:text="@string/cv03" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv03"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv03"
+                                    android:layout_alignBottom="@id/qtxt_cv03"
+                                    android:text="@string/Q_cv03" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv03"
@@ -237,29 +226,22 @@
                                     android:id="@+id/cv0301"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv03.equals(`1`)}"
                                     android:text="@string/cv0301" />
 
                                 <RadioButton
                                     android:id="@+id/cv0302"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv03.equals(`2`)}"
                                     android:text="@string/cv0302" />
 
                                 <RadioButton
                                     android:id="@+id/cv0398"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv03.equals(`98`)}"
                                     android:text="@string/cv0398" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv04  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -271,24 +253,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv04" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv04"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv04"
                                     android:text="@string/cv04" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv04"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv04"
+                                    android:layout_alignBottom="@id/qtxt_cv04"
+                                    android:text="@string/Q_cv04" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv04"
@@ -299,50 +284,40 @@
                                     android:id="@+id/cv0401"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv04.equals(`1`)}"
                                     android:text="@string/cv0401" />
 
                                 <RadioButton
                                     android:id="@+id/cv0402"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv04.equals(`2`)}"
                                     android:text="@string/cv0402" />
 
                                 <RadioButton
                                     android:id="@+id/cv0403"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv04.equals(`3`)}"
                                     android:text="@string/cv0403" />
 
                                 <RadioButton
                                     android:id="@+id/cv0404"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv04.equals(`4`)}"
                                     android:text="@string/cv0404" />
 
                                 <RadioButton
                                     android:id="@+id/cv0405"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv04.equals(`5`)}"
                                     android:text="@string/cv0405" />
 
                                 <RadioButton
                                     android:id="@+id/cv0498"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv04.equals(`98`)}"
                                     android:text="@string/cv0498" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv05  CheckBox   -->
                     <androidx.cardview.widget.CardView
@@ -354,24 +329,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv05" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv05"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv05"
                                     android:text="@string/cv05" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv05"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv05"
+                                    android:layout_alignBottom="@id/qtxt_cv05"
+                                    android:text="@string/Q_cv05" />
+                            </RelativeLayout>
 
                             <LinearLayout
                                 android:id="@+id/cv05check"
@@ -384,74 +362,62 @@
                                     android:id="@+id/cv0501"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0501.equals(`1`)}"
                                     android:text="@string/cv0501" />
 
                                 <CheckBox
                                     android:id="@+id/cv0502"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0502.equals(`2`)}"
                                     android:text="@string/cv0502" />
 
                                 <CheckBox
                                     android:id="@+id/cv0503"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0503.equals(`3`)}"
                                     android:text="@string/cv0503" />
 
                                 <CheckBox
                                     android:id="@+id/cv0504"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0504.equals(`4`)}"
                                     android:text="@string/cv0504" />
 
                                 <CheckBox
                                     android:id="@+id/cv0505"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0505.equals(`5`)}"
                                     android:text="@string/cv0505" />
 
                                 <CheckBox
                                     android:id="@+id/cv0506"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0506.equals(`6`)}"
                                     android:text="@string/cv0506" />
 
                                 <CheckBox
                                     android:id="@+id/cv0507"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0507.equals(`7`)}"
                                     android:text="@string/cv0507" />
 
                                 <CheckBox
                                     android:id="@+id/cv0596"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0596.equals(`96`)}"
                                     android:text="@string/cv0596" />
 
                                 <EditText
                                     android:id="@+id/cv0596x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cv0596"
                                     android:tag="cv0596"
-                                    android:text="@{form.cv0596x}"
-                                    android:visibility="@{form.cv0501.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
+                                    android:text='@{cv0596.checked ? cv0596x.getText().toString() : ""}'
+                                    android:visibility='@{cv0596.checked? View.VISIBLE : View.GONE}' />
                             </LinearLayout>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv06  CheckBox   -->
                     <androidx.cardview.widget.CardView
@@ -463,24 +429,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv06" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv06"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv06"
                                     android:text="@string/cv06" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv06"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv06"
+                                    android:layout_alignBottom="@id/qtxt_cv06"
+                                    android:text="@string/Q_cv06" />
+                            </RelativeLayout>
 
                             <LinearLayout
                                 android:id="@+id/cv06check"
@@ -493,102 +462,86 @@
                                     android:id="@+id/cv0601"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0601.equals(`1`)}"
                                     android:text="@string/cv0601" />
 
                                 <CheckBox
                                     android:id="@+id/cv0602"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0602.equals(`2`)}"
                                     android:text="@string/cv0602" />
 
                                 <CheckBox
                                     android:id="@+id/cv0603"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0603.equals(`3`)}"
                                     android:text="@string/cv0603" />
 
                                 <CheckBox
                                     android:id="@+id/cv0604"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0604.equals(`4`)}"
                                     android:text="@string/cv0604" />
 
                                 <CheckBox
                                     android:id="@+id/cv0605"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0605.equals(`5`)}"
                                     android:text="@string/cv0605" />
 
                                 <CheckBox
                                     android:id="@+id/cv0606"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0606.equals(`6`)}"
                                     android:text="@string/cv0606" />
 
                                 <CheckBox
                                     android:id="@+id/cv0607"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0607.equals(`7`)}"
                                     android:text="@string/cv0607" />
 
                                 <CheckBox
                                     android:id="@+id/cv0608"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0608.equals(`8`)}"
                                     android:text="@string/cv0608" />
 
                                 <CheckBox
                                     android:id="@+id/cv0609"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0609.equals(`9`)}"
                                     android:text="@string/cv0609" />
 
                                 <CheckBox
                                     android:id="@+id/cv0610"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0610.equals(`10`)}"
                                     android:text="@string/cv0610" />
 
                                 <CheckBox
                                     android:id="@+id/cv0611"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0611.equals(`11`)}"
                                     android:text="@string/cv0611" />
 
                                 <CheckBox
                                     android:id="@+id/cv0696"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0696.equals(`96`)}"
                                     android:text="@string/cv0696" />
 
                                 <EditText
                                     android:id="@+id/cv0696x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cv0696"
                                     android:tag="cv0696"
-                                    android:text="@{form.cv0696x}"
-                                    android:visibility="@{form.cv0696.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
+                                    android:text='@{cv0696.checked ? cv0696x.getText().toString() : ""}'
+                                    android:visibility='@{cv0696.checked? View.VISIBLE : View.GONE}' />
                             </LinearLayout>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv07  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -600,24 +553,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv07" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv07"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv07"
                                     android:text="@string/cv07" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv07"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv07"
+                                    android:layout_alignBottom="@id/qtxt_cv07"
+                                    android:text="@string/Q_cv07" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv07"
@@ -628,29 +584,22 @@
                                     android:id="@+id/cv0701"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv07.equals(`1`)}"
                                     android:text="@string/cv0701" />
 
                                 <RadioButton
                                     android:id="@+id/cv0702"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv07.equals(`2`)}"
                                     android:text="@string/cv0702" />
 
                                 <RadioButton
                                     android:id="@+id/cv0798"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv07.equals(`98`)}"
                                     android:text="@string/cv0798" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv08  CheckBox   -->
                     <androidx.cardview.widget.CardView
@@ -662,24 +611,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv08" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv08"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv08"
                                     android:text="@string/cv08" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv08"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv08"
+                                    android:layout_alignBottom="@id/qtxt_cv08"
+                                    android:text="@string/Q_cv08" />
+                            </RelativeLayout>
 
                             <LinearLayout
                                 android:id="@+id/cv08check"
@@ -692,82 +644,68 @@
                                     android:id="@+id/cv0801"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0801.equals(`1`)}"
                                     android:text="@string/cv0801" />
 
                                 <CheckBox
                                     android:id="@+id/cv0802"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0802.equals(`2`)}"
                                     android:text="@string/cv0802" />
 
                                 <CheckBox
                                     android:id="@+id/cv0803"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0803.equals(`3`)}"
                                     android:text="@string/cv0803" />
 
                                 <CheckBox
                                     android:id="@+id/cv0804"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0804.equals(`4`)}"
                                     android:text="@string/cv0804" />
 
                                 <CheckBox
                                     android:id="@+id/cv0805"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0805.equals(`5`)}"
                                     android:text="@string/cv0805" />
 
                                 <CheckBox
                                     android:id="@+id/cv0806"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0806.equals(`6`)}"
                                     android:text="@string/cv0806" />
 
                                 <CheckBox
                                     android:id="@+id/cv0807"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0807.equals(`7`)}"
                                     android:text="@string/cv0807" />
+
+                                <CheckBox
+                                    android:id="@+id/cv0898"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cv0898" />
 
                                 <CheckBox
                                     android:id="@+id/cv0896"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0896.equals(`96`)}"
                                     android:text="@string/cv0896" />
 
                                 <EditText
                                     android:id="@+id/cv0896x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cv0896"
                                     android:tag="cv0896"
-                                    android:text="@{form.cv0896x}"
-                                    android:visibility="@{form.cv0896.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
+                                    android:text='@{cv0896.checked ? cv0896x.getText().toString() : ""}'
+                                    android:visibility='@{cv0896.checked? View.VISIBLE : View.GONE}' />
                             </LinearLayout>
-
-                            <CheckBox
-                                android:id="@+id/cv0898"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.cv0898.equals(`98`)}"
-                                android:tag="-1"
-                                android:text="@string/cv0898" />
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv09  CheckBox   -->
                     <androidx.cardview.widget.CardView
@@ -779,24 +717,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv09" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv09"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv09"
                                     android:text="@string/cv09" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv09"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv09"
+                                    android:layout_alignBottom="@id/qtxt_cv09"
+                                    android:text="@string/Q_cv09" />
+                            </RelativeLayout>
 
                             <LinearLayout
                                 android:id="@+id/cv09check"
@@ -809,82 +750,68 @@
                                     android:id="@+id/cv0901"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0901.equals(`1`)}"
                                     android:text="@string/cv0901" />
 
                                 <CheckBox
                                     android:id="@+id/cv0902"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0902.equals(`2`)}"
                                     android:text="@string/cv0902" />
 
                                 <CheckBox
                                     android:id="@+id/cv0903"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0903.equals(`3`)}"
                                     android:text="@string/cv0903" />
 
                                 <CheckBox
                                     android:id="@+id/cv0904"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0904.equals(`4`)}"
                                     android:text="@string/cv0904" />
 
                                 <CheckBox
                                     android:id="@+id/cv0905"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0905.equals(`5`)}"
                                     android:text="@string/cv0905" />
 
                                 <CheckBox
                                     android:id="@+id/cv0906"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0906.equals(`6`)}"
                                     android:text="@string/cv0906" />
 
                                 <CheckBox
                                     android:id="@+id/cv0907"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0907.equals(`7`)}"
                                     android:text="@string/cv0907" />
+
+                                <CheckBox
+                                    android:id="@+id/cv0998"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cv0998" />
 
                                 <CheckBox
                                     android:id="@+id/cv0996"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv0996.equals(`96`)}"
                                     android:text="@string/cv0996" />
 
                                 <EditText
                                     android:id="@+id/cv0996x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cv0996"
                                     android:tag="cv0996"
-                                    android:text="@{form.cv0996x}"
-                                    android:visibility="@{form.cv0996.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
+                                    android:text='@{cv0996.checked ? cv0996x.getText().toString() : ""}'
+                                    android:visibility='@{cv0996.checked? View.VISIBLE : View.GONE}' />
                             </LinearLayout>
-
-                            <CheckBox
-                                android:id="@+id/cv0998"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.cv0998.equals(`98`)}"
-                                android:tag="-1"
-                                android:text="@string/cv0998" />
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv10  CheckBox   -->
                     <androidx.cardview.widget.CardView
@@ -896,24 +823,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/bottom"
-                                android:orientation="horizontal">
+                                android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv10" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv10"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv10"
                                     android:text="@string/cv10" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv10"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv10"
+                                    android:layout_alignBottom="@id/qtxt_cv10"
+                                    android:text="@string/Q_cv10" />
+                            </RelativeLayout>
 
                             <LinearLayout
                                 android:id="@+id/cv10check"
@@ -926,89 +856,74 @@
                                     android:id="@+id/cv1001"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv1001.equals(`1`)}"
                                     android:text="@string/cv1001" />
 
                                 <CheckBox
                                     android:id="@+id/cv1002"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv1002.equals(`2`)}"
                                     android:text="@string/cv1002" />
 
                                 <CheckBox
                                     android:id="@+id/cv1003"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv1003.equals(`3`)}"
                                     android:text="@string/cv1003" />
 
                                 <CheckBox
                                     android:id="@+id/cv1004"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv1004.equals(`4`)}"
                                     android:text="@string/cv1004" />
 
                                 <CheckBox
                                     android:id="@+id/cv1005"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv1005.equals(`5`)}"
                                     android:text="@string/cv1005" />
 
                                 <CheckBox
                                     android:id="@+id/cv1006"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv1006.equals(`6`)}"
                                     android:text="@string/cv1006" />
 
                                 <CheckBox
                                     android:id="@+id/cv1007"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv1007.equals(`7`)}"
                                     android:text="@string/cv1007" />
 
                                 <CheckBox
                                     android:id="@+id/cv1008"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv1008.equals(`8`)}"
                                     android:text="@string/cv1008" />
+
+                                <CheckBox
+                                    android:id="@+id/cv1098"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cv1098" />
 
                                 <CheckBox
                                     android:id="@+id/cv1096"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv1096.equals(`96`)}"
                                     android:text="@string/cv1096" />
 
                                 <EditText
                                     android:id="@+id/cv1096x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cv1096"
                                     android:tag="cv1096"
-                                    android:text="@{form.cv1096x}"
-                                    android:visibility="@{form.cv1096.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
+                                    android:text='@{cv1096.checked ? cv1096x.getText().toString() : ""}'
+                                    android:visibility='@{cv1096.checked? View.VISIBLE : View.GONE}' />
                             </LinearLayout>
-
-                            <CheckBox
-                                android:id="@+id/cv1098"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.cv1098.equals(`98`)}"
-                                android:tag="-1"
-                                android:text="@string/cv1098" />
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv11  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1020,24 +935,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv11" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv11"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv11"
                                     android:text="@string/cv11" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv11"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv11"
+                                    android:layout_alignBottom="@id/qtxt_cv11"
+                                    android:text="@string/Q_cv11" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv11"
@@ -1048,22 +966,16 @@
                                     android:id="@+id/cv1101"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv11.equals(`1`)}"
                                     android:text="@string/cv1101" />
 
                                 <RadioButton
                                     android:id="@+id/cv1102"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv11.equals(`2`)}"
                                     android:text="@string/cv1102" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv12  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1075,24 +987,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv12" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv12"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv12"
                                     android:text="@string/cv12" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv12"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv12"
+                                    android:layout_alignBottom="@id/qtxt_cv12"
+                                    android:text="@string/Q_cv12" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv12"
@@ -1103,60 +1018,50 @@
                                     android:id="@+id/cv1201"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv12.equals(`1`)}"
                                     android:text="@string/cv1201" />
 
                                 <RadioButton
                                     android:id="@+id/cv1202"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv12.equals(`2`)}"
                                     android:text="@string/cv1202" />
 
                                 <RadioButton
                                     android:id="@+id/cv1203"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv12.equals(`3`)}"
                                     android:text="@string/cv1203" />
 
                                 <RadioButton
                                     android:id="@+id/cv1204"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv12.equals(`4`)}"
                                     android:text="@string/cv1204" />
 
                                 <RadioButton
                                     android:id="@+id/cv1205"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv12.equals(`5`)}"
                                     android:text="@string/cv1205" />
 
                                 <RadioButton
                                     android:id="@+id/cv1296"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv12.equals(`96`)}"
                                     android:text="@string/cv1296" />
 
                                 <EditText
                                     android:id="@+id/cv1296x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cv1296"
                                     android:tag="cv1296"
-                                    android:text="@{form.cv1296x}"
-                                    android:visibility='@{form.cv12.equals(`96`) ? View.VISIBLE : View.GONE}' />
-
+                                    android:text='@{cv1296.checked ? cv1296x.getText().toString() : ""}'
+                                    android:visibility='@{cv1296.checked? View.VISIBLE : View.GONE}' />
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv13  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1168,24 +1073,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv13" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv13"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv13"
                                     android:text="@string/cv13" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv13"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv13"
+                                    android:layout_alignBottom="@id/qtxt_cv13"
+                                    android:text="@string/Q_cv13" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv13"
@@ -1196,22 +1104,16 @@
                                     android:id="@+id/cv1301"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv13.equals(`1`)}"
                                     android:text="@string/cv1301" />
 
                                 <RadioButton
                                     android:id="@+id/cv1302"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv13.equals(`2`)}"
                                     android:text="@string/cv1302" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv14  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1223,24 +1125,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv14" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv14"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv14"
                                     android:text="@string/cv14" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv14"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv14"
+                                    android:layout_alignBottom="@id/qtxt_cv14"
+                                    android:text="@string/Q_cv14" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv14"
@@ -1251,22 +1156,16 @@
                                     android:id="@+id/cv1401"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv14.equals(`1`)}"
                                     android:text="@string/cv1401" />
 
                                 <RadioButton
                                     android:id="@+id/cv1402"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv14.equals(`2`)}"
                                     android:text="@string/cv1402" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv15  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1278,24 +1177,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv15" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv15"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv15"
                                     android:text="@string/cv15" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv15"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv15"
+                                    android:layout_alignBottom="@id/qtxt_cv15"
+                                    android:text="@string/Q_cv15" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv15"
@@ -1306,22 +1208,16 @@
                                     android:id="@+id/cv1501"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv15.equals(`1`)}"
                                     android:text="@string/cv1501" />
 
                                 <RadioButton
                                     android:id="@+id/cv1502"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv15.equals(`2`)}"
                                     android:text="@string/cv1502" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv16  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1333,24 +1229,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv16" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv16"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv16"
                                     android:text="@string/cv16" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv16"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv16"
+                                    android:layout_alignBottom="@id/qtxt_cv16"
+                                    android:text="@string/Q_cv16" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv16"
@@ -1361,67 +1260,56 @@
                                     android:id="@+id/cv1601"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv16.equals(`1`)}"
                                     android:text="@string/cv1601" />
 
                                 <RadioButton
                                     android:id="@+id/cv1602"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv16.equals(`2`)}"
                                     android:text="@string/cv1602" />
 
                                 <RadioButton
                                     android:id="@+id/cv1603"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv16.equals(`3`)}"
                                     android:text="@string/cv1603" />
 
                                 <RadioButton
                                     android:id="@+id/cv1604"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv16.equals(`4`)}"
                                     android:text="@string/cv1604" />
 
                                 <RadioButton
                                     android:id="@+id/cv1605"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv16.equals(`5`)}"
                                     android:text="@string/cv1605" />
 
                                 <RadioButton
                                     android:id="@+id/cv1606"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv16.equals(`6`)}"
                                     android:text="@string/cv1606" />
 
                                 <RadioButton
                                     android:id="@+id/cv1696"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv16.equals(`96`)}"
                                     android:text="@string/cv1696" />
 
                                 <EditText
                                     android:id="@+id/cv1696x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cv1696"
                                     android:tag="cv1696"
-                                    android:text="@{form.cv1696x}"
-                                    android:visibility='@{form.cv16.equals(`96`) ? View.VISIBLE : View.GONE}' />
-
+                                    android:text='@{cv1696.checked ? cv1696x.getText().toString() : ""}'
+                                    android:visibility='@{cv1696.checked? View.VISIBLE : View.GONE}' />
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv17  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1433,24 +1321,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv17" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv17"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv17"
                                     android:text="@string/cv17" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv17"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv17"
+                                    android:layout_alignBottom="@id/qtxt_cv17"
+                                    android:text="@string/Q_cv17" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv17"
@@ -1461,22 +1352,16 @@
                                     android:id="@+id/cv1701"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv17.equals(`1`)}"
                                     android:text="@string/cv1701" />
 
                                 <RadioButton
                                     android:id="@+id/cv1702"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv17.equals(`2`)}"
                                     android:text="@string/cv1702" />
-
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv18  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1488,24 +1373,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv18" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv18"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv18"
                                     android:text="@string/cv18" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv18"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv18"
+                                    android:layout_alignBottom="@id/qtxt_cv18"
+                                    android:text="@string/Q_cv18" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv18"
@@ -1516,67 +1404,56 @@
                                     android:id="@+id/cv1801"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv18.equals(`1`)}"
                                     android:text="@string/cv1801" />
 
                                 <RadioButton
                                     android:id="@+id/cv1802"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv18.equals(`2`)}"
                                     android:text="@string/cv1802" />
 
                                 <RadioButton
                                     android:id="@+id/cv1803"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv18.equals(`3`)}"
                                     android:text="@string/cv1803" />
 
                                 <RadioButton
                                     android:id="@+id/cv1804"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv18.equals(`4`)}"
                                     android:text="@string/cv1804" />
 
                                 <RadioButton
                                     android:id="@+id/cv1805"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv18.equals(`5`)}"
                                     android:text="@string/cv1805" />
 
                                 <RadioButton
                                     android:id="@+id/cv1806"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv18.equals(`6`)}"
                                     android:text="@string/cv1806" />
 
                                 <RadioButton
                                     android:id="@+id/cv1896"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv18.equals(`96`)}"
                                     android:text="@string/cv1896" />
 
                                 <EditText
                                     android:id="@+id/cv1896x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cv1896"
                                     android:tag="cv1896"
-                                    android:text="@{form.cv1896x}"
-                                    android:visibility='@{form.cv18.equals(`96`) ? View.VISIBLE : View.GONE}' />
-
+                                    android:text='@{cv1896.checked ? cv1896x.getText().toString() : ""}'
+                                    android:visibility='@{cv1896.checked? View.VISIBLE : View.GONE}' />
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
 
                     <!-- cv19  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1588,24 +1465,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    style="@style/quesNum"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="@string/Q_cv19" />
-
-                                <TextView
+                                    android:id="@+id/qtxt_cv19"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toEndOf="@id/q_cv19"
                                     android:text="@string/cv19" />
 
-                            </LinearLayout>
+                                <TextView
+                                    android:id="@+id/q_cv19"
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@id/qtxt_cv19"
+                                    android:layout_alignBottom="@id/qtxt_cv19"
+                                    android:text="@string/Q_cv19" />
+                            </RelativeLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv19"
@@ -1616,70 +1496,57 @@
                                     android:id="@+id/cv1901"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv19.equals(`1`)}"
                                     android:text="@string/cv1901" />
 
                                 <RadioButton
                                     android:id="@+id/cv1902"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv19.equals(`2`)}"
                                     android:text="@string/cv1902" />
 
                                 <RadioButton
                                     android:id="@+id/cv1903"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv19.equals(`3`)}"
                                     android:text="@string/cv1903" />
 
                                 <RadioButton
                                     android:id="@+id/cv1904"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv19.equals(`4`)}"
                                     android:text="@string/cv1904" />
 
                                 <RadioButton
                                     android:id="@+id/cv1905"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv19.equals(`5`)}"
                                     android:text="@string/cv1905" />
 
                                 <RadioButton
                                     android:id="@+id/cv1906"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv19.equals(`6`)}"
                                     android:text="@string/cv1906" />
 
                                 <RadioButton
                                     android:id="@+id/cv1996"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.cv19.equals(`96`)}"
                                     android:text="@string/cv1996" />
 
                                 <EditText
                                     android:id="@+id/cv1996x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cv1996"
                                     android:tag="cv1996"
-                                    android:text="@{form.cv1996x}"
-                                    android:visibility='@{form.cv19.equals(`96`) ? View.VISIBLE : View.GONE}' />
-
+                                    android:text='@{cv1996.checked ? cv1996x.getText().toString() : ""}'
+                                    android:visibility='@{cv1996.checked? View.VISIBLE : View.GONE}' />
                             </RadioGroup>
-
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
-
-
                 </LinearLayout>
-
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
@@ -1695,7 +1562,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:background="@color/redLight"
-                        android:onClick="BtnEnd"
+                        android:onClick="@{() -> callback.BtnEnd()}"
                         android:text="Cancel"
                         android:textColor="@color/white" />
 
@@ -1705,19 +1572,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:background="@color/greenLight"
-                        android:onClick="BtnContinue"
+                        android:onClick="@{() -> callback.BtnContinue()}"
                         android:text="Save"
                         android:textColor="@color/white" />
-
                 </LinearLayout>
-                <!--EndButton LinearLayout-->
-
-
             </LinearLayout>
-
         </ScrollView>
-
-
     </LinearLayout>
-
 </layout>
