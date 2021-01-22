@@ -666,13 +666,14 @@
     <string name="cv03">کیا آپ کو لگتا ہے کہCOVID-19 موجود ہے؟  </string>
     <string name="cv0301">ہاں ، یہ موجود ہے </string>
     <string name="cv0302">نہیں، یہ موجود نہیں</string>
-    <string name="cv0303">معلوم نہیں</string>
+    <string name="cv0398"> معلوم نہیں </string>
     <string name="cv04">آپ کے خیال میں COVID-19 کس حد تک جان لیوا ہے؟  </string>
     <string name="cv0401">بلکل بھی مہلک نہیں</string>
     <string name="cv0402">زیادہ مہلک نہیں</string>
     <string name="cv0403">مہلک نہیں</string>
     <string name="cv0404">تھوڑا بہت مہلک</string>
     <string name="cv0405">انتہائی مہلک</string>
+    <string name="cv0498"> معلوم نہیں </string>
     <string name="cv05">کیا آپ جانتے ہیں کہ کس قسم کے لوگوں کو کوویڈ سے سب سے زیادہ خطرہ ہے؟</string>
     <string name="cv0501">سب کو</string>
     <string name="cv0502">بوڑھے افراد</string>
@@ -708,7 +709,8 @@
     <string name="cv0806">بو اور ذائقہ محسوس نہ ہونا</string>
     <string name="cv0807">ڈائریا/اسہال</string>
     <string name="cv0898">معلوم نہیں</string>
-    <string name="cv0899">دیگر برائے مہربانی وضاحت کریں</string>
+    <string name="cv0896">دیگر برائے مہربانی وضاحت کریں</string>
+
     <string name="cv09">آپ کےخیال میں COVID-19 وائرس ایک سے دوسرے فرد میں منتقل ہونے کے مختلف طریقے کیا ہیں؟ (جو بھی لاگوہوتاہےاسکاانتخاب کریں۔جوابات پڑھ کر نہ سنائیں،جواب دہندہ کوجواب دینے دیں) </string>
     <string name="cv0901">وائرس سےمتاثرآلودہ سطحوں کوچھونے سے</string>
     <string name="cv0902">ہاتھ ملانے سے</string>
@@ -718,7 +720,7 @@
     <string name="cv0906">موبائل نیٹورک سے نکلنے والی لہروں سے</string>
     <string name="cv0907">مچھر کے کاٹنے سے</string>
     <string name="cv0998">معلوم نہیں</string>
-    <string name="cv0999">دیگر برائے مہربانی وضاحت کریں</string>
+    <string name="cv0996">دیگر برائے مہربانی وضاحت کریں</string>
     <string name="cv10">آپ کےخیال میں COVID-19 کےانفیکشن کی روک تھام کےموثرطریقےکیاہیں؟ (جو بھی لاگوہوتاہےاسکاانتخاب کریں۔ جوابات پڑھ کر نہ سنائیں،جواب دہندہ کوخودجواب دینے دیں)  </string>
     <string name="cv1001">صابن اور پانی سے بیس سیکنڈ تک بار بار ہاتھ دھونے سے</string>
     <string name="cv1002">ہینڈ سینیٹائزر سے ہاتھوں کو صاف کرنے سے</string>
@@ -729,7 +731,7 @@
     <string name="cv1007">اپنے آپ کودوسروں سے الگ تھلگ رکھنے سے</string>
     <string name="cv1008">خدا سے دعا مانگنے سے</string>
     <string name="cv1098">معلوم نہیں</string>
-    <string name="cv1099">دیگر برائے مہربانی وضاحت کریں</string>
+    <string name="cv1096">دیگر برائے مہربانی وضاحت کریں</string>
     <string name="cv11">کیاCOVID-19، اس کے نتیجےمیں لاک ڈاؤن اورپابندیوں اورخوف نےآپکےبچےکی غذائیت اورخوراک کومتاثرکیاہے؟ </string>
     <string name="cv1101">ہاں </string>
     <string name="cv1102">نہیں</string>

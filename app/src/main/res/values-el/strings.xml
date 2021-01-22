@@ -665,13 +665,14 @@
     <string name="cv03">Do you think COVID-19 exists?</string>
     <string name="cv0301">Yes, it exists </string>
     <string name="cv0302">No, it doesn’t </string>
-    <string name="cv0303">Don’t know</string>
+    <string name="cv0398">Don’t know</string>
     <string name="cv04">How deadly do you think COVID-19 is? </string>
     <string name="cv0401">Not At All Deadly</string>
     <string name="cv0402">Not Very Deadly</string>
     <string name="cv0403">Not Deadly</string>
     <string name="cv0404">Somewhat Deadly</string>
     <string name="cv0405">Extremely Deadly</string>
+    <string name="cv0498">Don’t know</string>
     <string name="cv05">Do you know which group of people are most at risk of COVID?</string>
     <string name="cv0501">Everyone</string>
     <string name="cv0502">Elderly</string>
@@ -707,7 +708,7 @@
     <string name="cv0806">Losing sense of smell &amp; taste</string>
     <string name="cv0807">Diarrhea</string>
     <string name="cv0898">Don’t know</string>
-    <string name="cv0899">Others Please Specify</string>
+    <string name="cv0896">Others Please Specify</string>
     <string name="cv09">What do you think are the different modes of transmission of COVID-19?  (Choose all that apply. Do not read the answers, let the respondent answer spontaneously)</string>
     <string name="cv0901">Touching surfaces contaminated with the virus</string>
     <string name="cv0902">Shaking hands</string>
@@ -717,7 +718,7 @@
     <string name="cv0906">Radio waves such as mobile networks</string>
     <string name="cv0907">Mosquito bite</string>
     <string name="cv0998">Don’t know</string>
-    <string name="cv0999">Others Please Specify</string>
+    <string name="cv0996">Others Please Specify</string>
     <string name="cv10">What according to you are effective methods of preventing infection from COVID-19?  (Choose all that apply. Do not read the answers, let the respondent answer spontaneously)</string>
     <string name="cv1001">Frequently washing hands using soap and water for 20 seconds</string>
     <string name="cv1002">Cleaning hands with hand sanitizer</string>
@@ -728,7 +729,7 @@
     <string name="cv1007">Keep oneself isolated</string>
     <string name="cv1008">Praying to God</string>
     <string name="cv1098">Don’t know</string>
-    <string name="cv1099">Others Please Specify</string>
+    <string name="cv1096">Others Please Specify</string>
     <string name="cv11">Has COVID-19, the subsequent lockdown &amp; restrictions and fear affected the nutrition and feeding of your child? </string>
     <string name="cv1101">Yes</string>
     <string name="cv1102">No</string>

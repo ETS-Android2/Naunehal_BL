@@ -140,13 +140,60 @@ public class Form extends BaseObservable {
     public String cv02 = StringUtils.EMPTY;
     public String cv03 = StringUtils.EMPTY;
     public String cv04 = StringUtils.EMPTY;
-    public String cv05 = StringUtils.EMPTY;
+    public String cv0501 = StringUtils.EMPTY;
+    public String cv0502 = StringUtils.EMPTY;
+    public String cv0503 = StringUtils.EMPTY;
+    public String cv0504 = StringUtils.EMPTY;
+    public String cv0505 = StringUtils.EMPTY;
+    public String cv0506 = StringUtils.EMPTY;
+    public String cv0507 = StringUtils.EMPTY;
+    public String cv0596 = StringUtils.EMPTY;
     public String cv0596x = StringUtils.EMPTY;
-    public String cv06 = StringUtils.EMPTY;
+    public String cv0601 = StringUtils.EMPTY;
+    public String cv0602 = StringUtils.EMPTY;
+    public String cv0603 = StringUtils.EMPTY;
+    public String cv0604 = StringUtils.EMPTY;
+    public String cv0605 = StringUtils.EMPTY;
+    public String cv0606 = StringUtils.EMPTY;
+    public String cv0607 = StringUtils.EMPTY;
+    public String cv0608 = StringUtils.EMPTY;
+    public String cv0609 = StringUtils.EMPTY;
+    public String cv0610 = StringUtils.EMPTY;
+    public String cv0611 = StringUtils.EMPTY;
+    public String cv0696 = StringUtils.EMPTY;
+    public String cv0696x = StringUtils.EMPTY;
     public String cv07 = StringUtils.EMPTY;
-    public String cv08 = StringUtils.EMPTY;
-    public String cv09 = StringUtils.EMPTY;
-    public String cv10 = StringUtils.EMPTY;
+    public String cv0801 = StringUtils.EMPTY;
+    public String cv0802 = StringUtils.EMPTY;
+    public String cv0803 = StringUtils.EMPTY;
+    public String cv0804 = StringUtils.EMPTY;
+    public String cv0805 = StringUtils.EMPTY;
+    public String cv0806 = StringUtils.EMPTY;
+    public String cv0807 = StringUtils.EMPTY;
+    public String cv0896 = StringUtils.EMPTY;
+    public String cv0898 = StringUtils.EMPTY;
+    public String cv0896x = StringUtils.EMPTY;
+    public String cv0901 = StringUtils.EMPTY;
+    public String cv0902 = StringUtils.EMPTY;
+    public String cv0903 = StringUtils.EMPTY;
+    public String cv0904 = StringUtils.EMPTY;
+    public String cv0905 = StringUtils.EMPTY;
+    public String cv0906 = StringUtils.EMPTY;
+    public String cv0907 = StringUtils.EMPTY;
+    public String cv0996 = StringUtils.EMPTY;
+    public String cv0998 = StringUtils.EMPTY;
+    public String cv0996x = StringUtils.EMPTY;
+    public String cv1001 = StringUtils.EMPTY;
+    public String cv1002 = StringUtils.EMPTY;
+    public String cv1003 = StringUtils.EMPTY;
+    public String cv1004 = StringUtils.EMPTY;
+    public String cv1005 = StringUtils.EMPTY;
+    public String cv1006 = StringUtils.EMPTY;
+    public String cv1007 = StringUtils.EMPTY;
+    public String cv1008 = StringUtils.EMPTY;
+    public String cv1096 = StringUtils.EMPTY;
+    public String cv1098 = StringUtils.EMPTY;
+    public String cv1096x = StringUtils.EMPTY;
     public String cv11 = StringUtils.EMPTY;
     public String cv12 = StringUtils.EMPTY;
     public String cv1296x = StringUtils.EMPTY;
@@ -1687,15 +1734,94 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.cv04);
     }
 
+
     @Bindable
-    public String getCv05() {
-        return cv05;
+    public String getCv0501() {
+        return cv0501;
     }
 
-    public void setCv05(String cv05) {
-        this.cv05 = cv05;
-        notifyPropertyChanged(BR.cv05);
+    public void setCv0501(String cv0501) {
+        this.cv0501 = cv0501;
+        notifyPropertyChanged(BR.cv0501);
     }
+
+
+    @Bindable
+    public String getCv0502() {
+        return cv0502;
+    }
+
+    public void setCv0502(String cv0502) {
+        this.cv0502 = cv0502;
+        notifyPropertyChanged(BR.cv0502);
+    }
+
+
+    @Bindable
+    public String getCv0503() {
+        return cv0503;
+    }
+
+    public void setCv0503(String cv0503) {
+        this.cv0503 = cv0503;
+        notifyPropertyChanged(BR.cv0503);
+    }
+
+
+    @Bindable
+    public String getCv0504() {
+        return cv0504;
+    }
+
+    public void setCv0504(String cv0504) {
+        this.cv0504 = cv0504;
+        notifyPropertyChanged(BR.cv0504);
+    }
+
+
+    @Bindable
+    public String getCv0505() {
+        return cv0505;
+    }
+
+    public void setCv0505(String cv0505) {
+        this.cv0505 = cv0505;
+        notifyPropertyChanged(BR.cv0505);
+    }
+
+
+    @Bindable
+    public String getCv0506() {
+        return cv0506;
+    }
+
+    public void setCv0506(String cv0506) {
+        this.cv0506 = cv0506;
+        notifyPropertyChanged(BR.cv0506);
+    }
+
+
+    @Bindable
+    public String getCv0507() {
+        return cv0507;
+    }
+
+    public void setCv0507(String cv0507) {
+        this.cv0507 = cv0507;
+        notifyPropertyChanged(BR.cv0507);
+    }
+
+
+    @Bindable
+    public String getCv0596() {
+        return cv0596;
+    }
+
+    public void setCv0596(String cv0596) {
+        this.cv0596 = cv0596;
+        notifyPropertyChanged(BR.cv0596);
+    }
+
 
     @Bindable
     public String getCv0596x() {
@@ -1707,15 +1833,149 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.cv0596x);
     }
 
+
     @Bindable
-    public String getCv06() {
-        return cv06;
+    public String getCv0601() {
+        return cv0601;
     }
 
-    public void setCv06(String cv06) {
-        this.cv06 = cv06;
-        notifyPropertyChanged(BR.cv06);
+    public void setCv0601(String cv0601) {
+        this.cv0601 = cv0601;
+        notifyPropertyChanged(BR.cv0601);
     }
+
+
+    @Bindable
+    public String getCv0602() {
+        return cv0602;
+    }
+
+    public void setCv0602(String cv0602) {
+        this.cv0602 = cv0602;
+        notifyPropertyChanged(BR.cv0602);
+    }
+
+
+    @Bindable
+    public String getCv0603() {
+        return cv0603;
+    }
+
+    public void setCv0603(String cv0603) {
+        this.cv0603 = cv0603;
+        notifyPropertyChanged(BR.cv0603);
+    }
+
+
+    @Bindable
+    public String getCv0604() {
+        return cv0604;
+    }
+
+    public void setCv0604(String cv0604) {
+        this.cv0604 = cv0604;
+        notifyPropertyChanged(BR.cv0604);
+    }
+
+
+    @Bindable
+    public String getCv0605() {
+        return cv0605;
+    }
+
+    public void setCv0605(String cv0605) {
+        this.cv0605 = cv0605;
+        notifyPropertyChanged(BR.cv0605);
+    }
+
+
+    @Bindable
+    public String getCv0606() {
+        return cv0606;
+    }
+
+    public void setCv0606(String cv0606) {
+        this.cv0606 = cv0606;
+        notifyPropertyChanged(BR.cv0606);
+    }
+
+
+    @Bindable
+    public String getCv0607() {
+        return cv0607;
+    }
+
+    public void setCv0607(String cv0607) {
+        this.cv0607 = cv0607;
+        notifyPropertyChanged(BR.cv0607);
+    }
+
+
+    @Bindable
+    public String getCv0608() {
+        return cv0608;
+    }
+
+    public void setCv0608(String cv0608) {
+        this.cv0608 = cv0608;
+        notifyPropertyChanged(BR.cv0608);
+    }
+
+
+    @Bindable
+    public String getCv0609() {
+        return cv0609;
+    }
+
+    public void setCv0609(String cv0609) {
+        this.cv0609 = cv0609;
+        notifyPropertyChanged(BR.cv0609);
+    }
+
+
+    @Bindable
+    public String getCv0610() {
+        return cv0610;
+    }
+
+    public void setCv0610(String cv0610) {
+        this.cv0610 = cv0610;
+        notifyPropertyChanged(BR.cv0610);
+    }
+
+
+    @Bindable
+    public String getCv0611() {
+        return cv0611;
+    }
+
+    public void setCv0611(String cv0611) {
+        this.cv0611 = cv0611;
+        notifyPropertyChanged(BR.cv0611);
+    }
+
+
+    @Bindable
+    public String getCv0696() {
+        return cv0696;
+    }
+
+    public void setCv0696(String cv0696) {
+        this.cv0696 = cv0696;
+        notifyPropertyChanged(BR.cv0696);
+    }
+
+
+    @Bindable
+    public String getCv0696x() {
+        return cv0696x;
+    }
+
+    public void setCv0696x(String cv0696x) {
+        this.cv0696x = cv0696x;
+        notifyPropertyChanged(BR.cv0696x);
+    }
+
 
     @Bindable
     public String getCv07() {
@@ -1727,35 +1987,347 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.cv07);
     }
 
-    @Bindable
-    public String getCv08() {
-        return cv08;
-    }
-
-    public void setCv08(String cv08) {
-        this.cv08 = cv08;
-        notifyPropertyChanged(BR.cv08);
-    }
 
     @Bindable
-    public String getCv09() {
-        return cv09;
+    public String getCv0801() {
+        return cv0801;
     }
 
-    public void setCv09(String cv09) {
-        this.cv09 = cv09;
-        notifyPropertyChanged(BR.cv09);
+    public void setCv0801(String cv0801) {
+        this.cv0801 = cv0801;
+        notifyPropertyChanged(BR.cv0801);
     }
+
 
     @Bindable
-    public String getCv10() {
-        return cv10;
+    public String getCv0802() {
+        return cv0802;
     }
 
-    public void setCv10(String cv10) {
-        this.cv10 = cv10;
-        notifyPropertyChanged(BR.cv10);
+    public void setCv0802(String cv0802) {
+        this.cv0802 = cv0802;
+        notifyPropertyChanged(BR.cv0802);
     }
+
+
+    @Bindable
+    public String getCv0803() {
+        return cv0803;
+    }
+
+    public void setCv0803(String cv0803) {
+        this.cv0803 = cv0803;
+        notifyPropertyChanged(BR.cv0803);
+    }
+
+
+    @Bindable
+    public String getCv0804() {
+        return cv0804;
+    }
+
+    public void setCv0804(String cv0804) {
+        this.cv0804 = cv0804;
+        notifyPropertyChanged(BR.cv0804);
+    }
+
+
+    @Bindable
+    public String getCv0805() {
+        return cv0805;
+    }
+
+    public void setCv0805(String cv0805) {
+        this.cv0805 = cv0805;
+        notifyPropertyChanged(BR.cv0805);
+    }
+
+
+    @Bindable
+    public String getCv0806() {
+        return cv0806;
+    }
+
+    public void setCv0806(String cv0806) {
+        this.cv0806 = cv0806;
+        notifyPropertyChanged(BR.cv0806);
+    }
+
+
+    @Bindable
+    public String getCv0807() {
+        return cv0807;
+    }
+
+    public void setCv0807(String cv0807) {
+        this.cv0807 = cv0807;
+        notifyPropertyChanged(BR.cv0807);
+    }
+
+
+    @Bindable
+    public String getCv0896() {
+        return cv0896;
+    }
+
+    public void setCv0896(String cv0896) {
+        this.cv0896 = cv0896;
+        notifyPropertyChanged(BR.cv0896);
+    }
+
+
+    @Bindable
+    public String getCv0898() {
+        return cv0898;
+    }
+
+    public void setCv0898(String cv0898) {
+        this.cv0898 = cv0898;
+        notifyPropertyChanged(BR.cv0898);
+    }
+
+
+    @Bindable
+    public String getCv0896x() {
+        return cv0896x;
+    }
+
+    public void setCv0896x(String cv0896x) {
+        this.cv0896x = cv0896x;
+        notifyPropertyChanged(BR.cv0896x);
+    }
+
+
+    @Bindable
+    public String getCv0901() {
+        return cv0901;
+    }
+
+    public void setCv0901(String cv0901) {
+        this.cv0901 = cv0901;
+        notifyPropertyChanged(BR.cv0901);
+    }
+
+
+    @Bindable
+    public String getCv0902() {
+        return cv0902;
+    }
+
+    public void setCv0902(String cv0902) {
+        this.cv0902 = cv0902;
+        notifyPropertyChanged(BR.cv0902);
+    }
+
+
+    @Bindable
+    public String getCv0903() {
+        return cv0903;
+    }
+
+    public void setCv0903(String cv0903) {
+        this.cv0903 = cv0903;
+        notifyPropertyChanged(BR.cv0903);
+    }
+
+
+    @Bindable
+    public String getCv0904() {
+        return cv0904;
+    }
+
+    public void setCv0904(String cv0904) {
+        this.cv0904 = cv0904;
+        notifyPropertyChanged(BR.cv0904);
+    }
+
+
+    @Bindable
+    public String getCv0905() {
+        return cv0905;
+    }
+
+    public void setCv0905(String cv0905) {
+        this.cv0905 = cv0905;
+        notifyPropertyChanged(BR.cv0905);
+    }
+
+
+    @Bindable
+    public String getCv0906() {
+        return cv0906;
+    }
+
+    public void setCv0906(String cv0906) {
+        this.cv0906 = cv0906;
+        notifyPropertyChanged(BR.cv0906);
+    }
+
+
+    @Bindable
+    public String getCv0907() {
+        return cv0907;
+    }
+
+    public void setCv0907(String cv0907) {
+        this.cv0907 = cv0907;
+        notifyPropertyChanged(BR.cv0907);
+    }
+
+
+    @Bindable
+    public String getCv0996() {
+        return cv0996;
+    }
+
+    public void setCv0996(String cv0996) {
+        this.cv0996 = cv0996;
+        notifyPropertyChanged(BR.cv0996);
+    }
+
+
+    @Bindable
+    public String getCv0998() {
+        return cv0998;
+    }
+
+    public void setCv0998(String cv0998) {
+        this.cv0998 = cv0998;
+        notifyPropertyChanged(BR.cv0998);
+    }
+
+
+    @Bindable
+    public String getCv0996x() {
+        return cv0996x;
+    }
+
+    public void setCv0996x(String cv0996x) {
+        this.cv0996x = cv0996x;
+        notifyPropertyChanged(BR.cv0996x);
+    }
+
+
+    @Bindable
+    public String getCv1001() {
+        return cv1001;
+    }
+
+    public void setCv1001(String cv1001) {
+        this.cv1001 = cv1001;
+        notifyPropertyChanged(BR.cv1001);
+    }
+
+
+    @Bindable
+    public String getCv1002() {
+        return cv1002;
+    }
+
+    public void setCv1002(String cv1002) {
+        this.cv1002 = cv1002;
+        notifyPropertyChanged(BR.cv1002);
+    }
+
+
+    @Bindable
+    public String getCv1003() {
+        return cv1003;
+    }
+
+    public void setCv1003(String cv1003) {
+        this.cv1003 = cv1003;
+        notifyPropertyChanged(BR.cv1003);
+    }
+
+
+    @Bindable
+    public String getCv1004() {
+        return cv1004;
+    }
+
+    public void setCv1004(String cv1004) {
+        this.cv1004 = cv1004;
+        notifyPropertyChanged(BR.cv1004);
+    }
+
+
+    @Bindable
+    public String getCv1005() {
+        return cv1005;
+    }
+
+    public void setCv1005(String cv1005) {
+        this.cv1005 = cv1005;
+        notifyPropertyChanged(BR.cv1005);
+    }
+
+
+    @Bindable
+    public String getCv1006() {
+        return cv1006;
+    }
+
+    public void setCv1006(String cv1006) {
+        this.cv1006 = cv1006;
+        notifyPropertyChanged(BR.cv1006);
+    }
+
+
+    @Bindable
+    public String getCv1007() {
+        return cv1007;
+    }
+
+    public void setCv1007(String cv1007) {
+        this.cv1007 = cv1007;
+        notifyPropertyChanged(BR.cv1007);
+    }
+
+
+    @Bindable
+    public String getCv1008() {
+        return cv1008;
+    }
+
+    public void setCv1008(String cv1008) {
+        this.cv1008 = cv1008;
+        notifyPropertyChanged(BR.cv1008);
+    }
+
+
+    @Bindable
+    public String getCv1096() {
+        return cv1096;
+    }
+
+    public void setCv1096(String cv1096) {
+        this.cv1096 = cv1096;
+        notifyPropertyChanged(BR.cv1096);
+    }
+
+
+    @Bindable
+    public String getCv1098() {
+        return cv1098;
+    }
+
+    public void setCv1098(String cv1098) {
+        this.cv1098 = cv1098;
+        notifyPropertyChanged(BR.cv1098);
+    }
+
+
+    @Bindable
+    public String getCv1096x() {
+        return cv1096x;
+    }
+
+    public void setCv1096x(String cv1096x) {
+        this.cv1096x = cv1096x;
+        notifyPropertyChanged(BR.cv1096x);
+    }
+
 
     @Bindable
     public String getCv11() {
@@ -3364,13 +3936,60 @@ public class Form extends BaseObservable {
                     .put("cv02", cv02)
                     .put("cv03", cv03)
                     .put("cv04", cv04)
-                    .put("cv05", cv05)
+                    .put("cv0501", cv0501)
+                    .put("cv0502", cv0502)
+                    .put("cv0503", cv0503)
+                    .put("cv0504", cv0504)
+                    .put("cv0505", cv0505)
+                    .put("cv0506", cv0506)
+                    .put("cv0507", cv0507)
+                    .put("cv0596", cv0596)
                     .put("cv0596x", cv0596x)
-                    .put("cv06", cv06)
+                    .put("cv0601", cv0601)
+                    .put("cv0602", cv0602)
+                    .put("cv0603", cv0603)
+                    .put("cv0604", cv0604)
+                    .put("cv0605", cv0605)
+                    .put("cv0606", cv0606)
+                    .put("cv0607", cv0607)
+                    .put("cv0608", cv0608)
+                    .put("cv0609", cv0609)
+                    .put("cv0610", cv0610)
+                    .put("cv0611", cv0611)
+                    .put("cv0696", cv0696)
+                    .put("cv0696x", cv0696x)
                     .put("cv07", cv07)
-                    .put("cv08", cv08)
-                    .put("cv09", cv09)
-                    .put("cv10", cv10)
+                    .put("cv0801", cv0801)
+                    .put("cv0802", cv0802)
+                    .put("cv0803", cv0803)
+                    .put("cv0804", cv0804)
+                    .put("cv0805", cv0805)
+                    .put("cv0806", cv0806)
+                    .put("cv0807", cv0807)
+                    .put("cv0898", cv0898)
+                    .put("cv0896", cv0896)
+                    .put("cv0896x", cv0896x)
+                    .put("cv0901", cv0901)
+                    .put("cv0902", cv0902)
+                    .put("cv0903", cv0903)
+                    .put("cv0904", cv0904)
+                    .put("cv0905", cv0905)
+                    .put("cv0906", cv0906)
+                    .put("cv0907", cv0907)
+                    .put("cv0998", cv0998)
+                    .put("cv0996", cv0996)
+                    .put("cv0996x", cv0996x)
+                    .put("cv1001", cv1001)
+                    .put("cv1002", cv1002)
+                    .put("cv1003", cv1003)
+                    .put("cv1004", cv1004)
+                    .put("cv1005", cv1005)
+                    .put("cv1006", cv1006)
+                    .put("cv1007", cv1007)
+                    .put("cv1008", cv1008)
+                    .put("cv1098", cv1098)
+                    .put("cv1096", cv1096)
+                    .put("cv1096x", cv1096x)
                     .put("cv11", cv11)
                     .put("cv12", cv12)
                     .put("cv1296x", cv1296x)
@@ -3752,13 +4371,60 @@ public class Form extends BaseObservable {
                 this.cv02 = json.getString("cv02");
                 this.cv03 = json.getString("cv03");
                 this.cv04 = json.getString("cv04");
-                this.cv05 = json.getString("cv05");
+                this.cv0501 = json.getString("cv0501");
+                this.cv0502 = json.getString("cv0502");
+                this.cv0503 = json.getString("cv0503");
+                this.cv0504 = json.getString("cv0504");
+                this.cv0505 = json.getString("cv0505");
+                this.cv0506 = json.getString("cv0506");
+                this.cv0507 = json.getString("cv0507");
+                this.cv0596 = json.getString("cv0596");
                 this.cv0596x = json.getString("cv0596x");
-                this.cv06 = json.getString("cv06");
+                this.cv0601 = json.getString("cv0601");
+                this.cv0602 = json.getString("cv0602");
+                this.cv0603 = json.getString("cv0603");
+                this.cv0604 = json.getString("cv0604");
+                this.cv0605 = json.getString("cv0605");
+                this.cv0606 = json.getString("cv0606");
+                this.cv0607 = json.getString("cv0607");
+                this.cv0608 = json.getString("cv0608");
+                this.cv0609 = json.getString("cv0609");
+                this.cv0610 = json.getString("cv0610");
+                this.cv0611 = json.getString("cv0611");
+                this.cv0696 = json.getString("cv0696");
+                this.cv0696x = json.getString("cv0696x");
                 this.cv07 = json.getString("cv07");
-                this.cv08 = json.getString("cv08");
-                this.cv09 = json.getString("cv09");
-                this.cv10 = json.getString("cv10");
+                this.cv0801 = json.getString("cv0801");
+                this.cv0802 = json.getString("cv0802");
+                this.cv0803 = json.getString("cv0803");
+                this.cv0804 = json.getString("cv0804");
+                this.cv0805 = json.getString("cv0805");
+                this.cv0806 = json.getString("cv0806");
+                this.cv0807 = json.getString("cv0807");
+                this.cv0898 = json.getString("cv0898");
+                this.cv0896 = json.getString("cv0896");
+                this.cv0896x = json.getString("cv0896x");
+                this.cv0901 = json.getString("cv0901");
+                this.cv0902 = json.getString("cv0902");
+                this.cv0903 = json.getString("cv0903");
+                this.cv0904 = json.getString("cv0904");
+                this.cv0905 = json.getString("cv0905");
+                this.cv0906 = json.getString("cv0906");
+                this.cv0907 = json.getString("cv0907");
+                this.cv0998 = json.getString("cv0998");
+                this.cv0996 = json.getString("cv0996");
+                this.cv0996x = json.getString("cv0996x");
+                this.cv1001 = json.getString("cv1001");
+                this.cv1002 = json.getString("cv1002");
+                this.cv1003 = json.getString("cv1003");
+                this.cv1004 = json.getString("cv1004");
+                this.cv1005 = json.getString("cv1005");
+                this.cv1006 = json.getString("cv1006");
+                this.cv1007 = json.getString("cv1007");
+                this.cv1008 = json.getString("cv1008");
+                this.cv1098 = json.getString("cv1098");
+                this.cv1096 = json.getString("cv1096");
+                this.cv1096x = json.getString("cv1096x");
                 this.cv11 = json.getString("cv11");
                 this.cv12 = json.getString("cv12");
                 this.cv1296x = json.getString("cv1296x");
