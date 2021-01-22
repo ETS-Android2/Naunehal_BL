@@ -39,12 +39,12 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
         bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
         form.setBf01(info.cb01);
         form.setBf02(info.cb07);
-        if (info.getCb04yy().equals("9998")) {
-            Clear.clearAllFields(bi.fldGrpBF03, false);
-            form.setBf03m(info.getCb04mm());
-            form.setBf3y(info.getCb04yy());
-            form.setBf3d(info.getCb04dd());
-        }
+        form.setBf03m(info.getCb04mm());
+        form.setBf3y(info.getCb04yy());
+        form.setBf3d(info.getCb04dd());
+        form.setBf03a02(info.getCb0501());
+        form.setBf03a01(info.getCb0502());
+
         bi.setForm(MainApp.form);
         setupSkips();
     }
