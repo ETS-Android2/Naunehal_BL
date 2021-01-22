@@ -31,7 +31,7 @@ public class Section081SEActivity extends AppCompatActivity implements EndSectio
         // only in First Section
         //MainApp.form = new Form();
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_081se);
-        bi.setForm(MainApp.form);
+        bi.setCallback(this);
 
         setupSkips();
     }
