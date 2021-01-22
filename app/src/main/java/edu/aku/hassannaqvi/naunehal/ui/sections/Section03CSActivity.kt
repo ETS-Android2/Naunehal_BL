@@ -127,11 +127,15 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             Clear.clearAllFields(bi.fldGrpCVcs15)
             Clear.clearAllFields(bi.fldGrpCVcs16)
             Clear.clearAllFields(bi.fldGrpCVcs17)
+            Clear.clearAllFields(bi.fldGrpCVcs17a)
+            Clear.clearAllFields(bi.fldGrpCVcs17b)
             Clear.clearAllFields(bi.fldGrpCVcs18)
             Clear.clearAllFields(bi.fldGrpCVcs19)
             bi.fldGrpCVcs15.visibility = View.VISIBLE
             bi.fldGrpCVcs16.visibility = View.VISIBLE
             bi.fldGrpCVcs17.visibility = View.VISIBLE
+            bi.fldGrpCVcs17a.visibility = View.VISIBLE
+            bi.fldGrpCVcs17b.visibility = View.VISIBLE
             bi.fldGrpCVcs18.visibility = View.VISIBLE
             bi.fldGrpCVcs19.visibility = View.VISIBLE
             if (bi.cs1202.isChecked
@@ -140,6 +144,8 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
                 bi.fldGrpCVcs15.visibility = View.GONE
                 bi.fldGrpCVcs16.visibility = View.GONE
                 bi.fldGrpCVcs17.visibility = View.GONE
+                bi.fldGrpCVcs17a.visibility = View.GONE
+                bi.fldGrpCVcs17b.visibility = View.GONE
                 bi.fldGrpCVcs18.visibility = View.GONE
                 bi.fldGrpCVcs19.visibility = View.GONE
             }
