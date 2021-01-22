@@ -133,14 +133,13 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
                 : bi.bf0498.isChecked() ? "98"
                 : "-1");
 
-        form.setBf05(bi.bf0501.isChecked() ? "000"
-                : bi.bf0502.isChecked() ? "1"
-                : bi.bf0503.isChecked() ? "2"
-                : bi.bf0504.isChecked() ? "66"
+        form.setBf05(bi.bf0501.isChecked() ? "1"
+                : bi.bf0502.isChecked() ? "2"
+                : bi.bf0503.isChecked() ? "3"
                 : "-1");
-
         form.setBf0502x(bi.bf0502x.getText().toString());
         form.setBf0503x(bi.bf0503x.getText().toString());
+
         form.setBf06(bi.bf0601.isChecked() ? "1"
                 : bi.bf0602.isChecked() ? "2"
                 : bi.bf0698.isChecked() ? "98"

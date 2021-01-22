@@ -307,6 +307,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@{form.bf03a01}"
                                 app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
@@ -327,6 +328,7 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
+                                android:text="@{form.bf03a02}"
                                 app:maxValue="5"
                                 app:minValue="1"
                                 app:type="range" />
@@ -479,16 +481,9 @@
                                 android:tag="bf0503"
                                 android:text="@{form.bf0503x}"
                                 android:visibility='@{form.bf05.equals(`2`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="1"
-                                app:minValue="6"
+                                app:maxValue="30"
+                                app:minValue="1"
                                 app:type="range" />
-
-                            <RadioButton
-                                android:id="@+id/bf0504"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.bf05.equals(`66`)}"
-                                android:text="@string/bf0504" />
 
                         </RadioGroup>
 
