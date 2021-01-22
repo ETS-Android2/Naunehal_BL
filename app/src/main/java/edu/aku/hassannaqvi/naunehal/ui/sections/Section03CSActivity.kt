@@ -43,7 +43,7 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
                 info.cb02,
                 info.cb07,
                 info.uid)
-        bi.form = MainApp.child
+        bi.callback
         selectedChildInfo = info
         setupSkips()
     }
@@ -460,4 +460,11 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             finish()
         }
     }
+
+
+    override fun onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show()
+    }
+
+
 }
