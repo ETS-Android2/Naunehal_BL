@@ -9,7 +9,7 @@
 
         <variable
             name="form"
-            type="edu.aku.hassannaqvi.naunehal.models.Form" />
+            type="edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity" />
     </data>
 
 
