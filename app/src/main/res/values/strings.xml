@@ -467,7 +467,8 @@
     <string name="pd0302">6-11.9 مہینے پہلے</string>
     <string name="pd0303">12-23.9 مہینے پہلے</string>
     <string name="pd0304">24 مہینے یا اس سے زیادہ</string>
-    <string name="pd04">آپ نے اپنے آخری حمل کے دوران معائنہ کروایا تھا؟ (موجودہ حمل شامل نہیں)</string>
+    <string name="pd04"> آپ نے اپنے آخری حمل کے دوران معائنہ کروایا تھا ؟ </string>
+    <string name="pd04hint"> موجودہ حمل شامل نہیں </string>
     <string name="pd0401">ہاں</string>
     <string name="pd0402">نہیں</string>
     <string name="pd0498">معلوم نہیں </string>
