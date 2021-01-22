@@ -14,7 +14,6 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.validatorcrawler.aliazaz.Clear
@@ -60,6 +59,7 @@ class Section01HHActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_01hh)
+        bi.callback
 
         /*
         * Obtaining ViewModel
@@ -164,10 +164,9 @@ class Section01HHActivity : AppCompatActivity() {
         // TODO: Check if form already exist in database.
         if ( /*!formExists()*/false) //<== If form exist in database formExists() will also populateForm() and return true;
         {
-            initForm() //<== If form does not exist in database (New Form)
+            saveDraft() //<== If form does not exist in database (New Form)
         }
         form = Form()
-        bi.setVariable(BR.form, form)
         setupSkips()
     }
 
@@ -269,7 +268,7 @@ class Section01HHActivity : AppCompatActivity() {
 
     fun BtnContinue(view: View) {
         if (!formValidation()) return
-        initForm() //<== This function is no longer needed after DataBinding
+        saveDraft() //<== This function is no longer needed after DataBinding
         if (updateDB()) {
             finish()
             if (bi.hh1102.isChecked
@@ -332,7 +331,7 @@ class Section01HHActivity : AppCompatActivity() {
     }
 
     // Only in First Section of every Table.
-    private fun initForm() {
+    private fun saveDraft() {
         form.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
         form.userName = MainApp.user.userName
         form.dcode = districtCode[bi.hh05.selectedItemPosition - 1]
