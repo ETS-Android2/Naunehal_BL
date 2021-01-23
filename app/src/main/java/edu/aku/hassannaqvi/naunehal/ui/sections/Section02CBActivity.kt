@@ -135,7 +135,7 @@ class Section02CBActivity : AppCompatActivity() {
                 }
                 else -> {
                     bi.cb1096x.visibility = View.GONE
-                    bi.cb1096.text = null
+                    bi.cb1096x.text = null
                 }
             }
         }

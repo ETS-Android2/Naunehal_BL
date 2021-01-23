@@ -126,6 +126,14 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
             }
         });
 
+        bi.pd21.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.fldGrpCVpd22.setVisibility(View.VISIBLE);
+            if (bi.pd2198.getId() == i) {
+                Clear.clearAllFields(bi.fldGrpCVpd22);
+                bi.fldGrpCVpd22.setVisibility(View.GONE);
+            }
+        });
+
     }
 
 
