@@ -2231,6 +2231,7 @@
                                 android:layout_height="wrap_content"
                                 android:hint="@string/im08b"
                                 android:inputType="number"
+                                android:text='@{im08a1.checked ? im08b.getText().toString() : ""}'
                                 app:maxValue="9"
                                 app:minValue="1"
                                 app:type="range" />
