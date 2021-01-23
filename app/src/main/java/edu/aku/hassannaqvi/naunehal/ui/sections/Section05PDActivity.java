@@ -122,7 +122,7 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
             bi.fldGrpCVpd18.setVisibility(View.VISIBLE);
             if (bi.pd1798.getId() == i) {
                 Clear.clearAllFields(bi.fldGrpCVpd18);
-                bi.fldGrpCVpd08.setVisibility(View.GONE);
+                bi.fldGrpCVpd18.setVisibility(View.GONE);
             }
         });
 
