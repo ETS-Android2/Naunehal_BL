@@ -59,17 +59,23 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
         bi.cs06.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
             Clear.clearAllFields(bi.fldGrpCVcs07)
             Clear.clearAllFields(bi.fldGrpCVcs08)
+            Clear.clearAllFields(bi.fldGrpCVcs08a)
+            Clear.clearAllFields(bi.fldGrpCVcs08b)
             Clear.clearAllFields(bi.fldGrpCVcs09)
             Clear.clearAllFields(bi.fldGrpCVcs10)
             Clear.clearAllFields(bi.fldGrpCVcs11)
             bi.fldGrpCVcs07.visibility = View.VISIBLE
             bi.fldGrpCVcs08.visibility = View.VISIBLE
+            bi.fldGrpCVcs08a.visibility = View.VISIBLE
+            bi.fldGrpCVcs08b.visibility = View.VISIBLE
             bi.fldGrpCVcs09.visibility = View.VISIBLE
             bi.fldGrpCVcs10.visibility = View.VISIBLE
             bi.fldGrpCVcs11.visibility = View.VISIBLE
             if (i == bi.cs0602.id) {
                 bi.fldGrpCVcs07.visibility = View.GONE
                 bi.fldGrpCVcs08.visibility = View.GONE
+                bi.fldGrpCVcs08a.visibility = View.GONE
+                bi.fldGrpCVcs08b.visibility = View.GONE
             } else if (i == bi.cs0601.id) {
                 bi.fldGrpCVcs10.visibility = View.GONE
                 bi.fldGrpCVcs11.visibility = View.GONE
