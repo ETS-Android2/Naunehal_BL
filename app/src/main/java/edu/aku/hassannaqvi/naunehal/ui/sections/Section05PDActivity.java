@@ -33,13 +33,12 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_05pd);
+        bi.setCallback(this);
         info = Section03CSActivity.selectedChildInfo;
         bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
         form.setPd01(info.cb01);
         form.setPd02(info.cb07);
-        bi.setForm(form);
         setupSkips();
 
     }
@@ -311,11 +310,8 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
 
-        if (bi.pd0901.isChecked()) {
-            if (Integer.parseInt(bi.pd1101.getText().toString()) + Integer.parseInt(bi.pd1102.getText().toString()) == 0) {
-                return Validator.emptyCustomTextBox(this, bi.pd1101, "Both values can't be ZERO");
-            }
-        }
+        if (bi.pd0901.isChecked() && (Integer.parseInt(bi.pd1101.getText().toString()) + Integer.parseInt(bi.pd1102.getText().toString())) == 0)
+            return Validator.emptyCustomTextBox(this, bi.pd1101, "Both values can't be ZERO");
         return true;
     }
 
