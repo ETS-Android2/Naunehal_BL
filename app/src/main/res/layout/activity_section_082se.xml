@@ -73,15 +73,13 @@
                         android:id="@+id/se2201"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1.5"
-                            android:gravity="center"
                             android:text="@string/se2201" />
 
                         <RadioButton
@@ -104,8 +102,7 @@
                         android:id="@+id/se2202"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -136,7 +133,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:layout_weight="2">
 
                         <TextView
                             style="@style/sub_labels"
@@ -166,8 +163,7 @@
                         android:id="@+id/se2204"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -198,8 +194,7 @@
                         android:id="@+id/se2205"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -230,8 +225,7 @@
                         android:id="@+id/se2206"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -263,8 +257,7 @@
                         android:id="@+id/se2207"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -295,8 +288,7 @@
                         android:id="@+id/se2208"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -326,8 +318,7 @@
                         android:id="@+id/se2209"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -358,8 +349,7 @@
                         android:id="@+id/se2210"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -390,8 +380,7 @@
                         android:id="@+id/se2211"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -422,8 +411,7 @@
                         android:id="@+id/se2212"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -454,8 +442,7 @@
                         android:id="@+id/se2213"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -485,8 +472,7 @@
                         android:id="@+id/se2214"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -517,8 +503,7 @@
                         android:id="@+id/se2215"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -549,8 +534,7 @@
                         android:id="@+id/se2216"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -580,8 +564,7 @@
                         android:id="@+id/se2217"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
@@ -611,8 +594,7 @@
                         android:id="@+id/se2218"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="2dp">
+                        android:orientation="horizontal">
 
                         <TextView
                             style="@style/sub_labels"
