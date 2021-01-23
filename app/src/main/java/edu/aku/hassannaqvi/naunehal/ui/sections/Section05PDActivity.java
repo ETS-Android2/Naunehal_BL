@@ -118,7 +118,7 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
             }
         });
 
-        bi.pd17.setOnCheckedChangeListener((radioGroup, i) -> {
+        /*bi.pd17.setOnCheckedChangeListener((radioGroup, i) -> {
             bi.fldGrpCVpd18.setVisibility(View.VISIBLE);
             if (bi.pd1798.getId() == i) {
                 Clear.clearAllFields(bi.fldGrpCVpd18);
@@ -132,7 +132,7 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
                 Clear.clearAllFields(bi.fldGrpCVpd22);
                 bi.fldGrpCVpd22.setVisibility(View.GONE);
             }
-        });
+        });*/
 
     }
 
