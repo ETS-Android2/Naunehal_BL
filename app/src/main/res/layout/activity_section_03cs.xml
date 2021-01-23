@@ -480,6 +480,7 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cs07961"
                                     android:tag="cs07961"
+                                    android:text='@{cs07961.checked ? cs07961x.getText().toString() : "" }'
                                     android:visibility='@{cs07961.checked ? View.VISIBLE : View.GONE}' />
 
                                 <TextView
@@ -542,7 +543,8 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cs07962"
                                     android:tag="cs07962"
-                                    android:visibility='@{cs07962.checked? View.VISIBLE : View.GONE}' />
+                                    android:text='@{cs07962.checked ? cs07962x.getText().toString() : "" }'
+                                    android:visibility='@{cs07962.checked ? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
 
@@ -660,7 +662,8 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cs0896"
                                     android:tag="cs0896"
-                                    android:visibility="@{cs0896.checked ? View.VISIBLE : View.GONE}" />
+                                    android:text='@{cs0896.checked ? cs0896x.getText().toString() : "" }'
+                                    android:visibility='@{cs0896.checked ? View.VISIBLE : View.GONE}' />
 
                             </LinearLayout>
 
@@ -870,7 +873,8 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/cs0996"
                                     android:tag="cs0996"
-                                    android:visibility='@{cs0996.checked? View.VISIBLE : View.GONE}' />
+                                    android:text='@{cs0996.checked ? cs0996x.getText().toString() : "" }'
+                                    android:visibility='@{cs0996.checked ? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
 
@@ -1212,6 +1216,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs1596"
                                 android:tag="cs1596"
+                                android:text='@{cs1596.checked ? cs1596x.getText().toString() : "" }'
                                 android:visibility='@{cs1596.checked ? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
@@ -1345,6 +1350,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs17961"
                                 android:tag="cs17961"
+                                android:text='@{cs17961.checked ? cs17961x.getText().toString() : "" }'
                                 android:visibility='@{cs17961.checked ? View.VISIBLE : View.GONE}' />
 
                             <TextView
@@ -1413,6 +1419,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs17962"
                                 android:tag="cs17962"
+                                android:text='@{cs17962.checked ? cs17962x.getText().toString() : "" }'
                                 android:visibility='@{cs17962.checked ? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
@@ -1627,7 +1634,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs1896"
                                 android:tag="cs1896"
-                                android:visibility="@{cs1896.checked ? View.VISIBLE : View.GONE}" />
+                                android:text='@{cs1896.checked ? cs1896x.getText().toString() : "" }'
+                                android:visibility='@{cs1896.checked ? View.VISIBLE : View.GONE}' />
 
                         </LinearLayout>
 
@@ -1720,6 +1728,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs1996"
                                 android:tag="cs1996"
+                                android:text='@{cs1996.checked ? cs1996x.getText().toString() : "" }'
                                 android:visibility='@{cs1996.checked ? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
