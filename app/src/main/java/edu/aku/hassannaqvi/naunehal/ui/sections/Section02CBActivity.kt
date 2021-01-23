@@ -71,6 +71,7 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb09, false)
                     Clear.clearAllFields(bi.fldGrpCVcb10, false)
                     Clear.clearAllFields(bi.fldGrpCVcb11, false)
+                    bi.fldGrpCVcb11.visibility = View.GONE
                     MainApp.childInformation.setCb07(MainApp.form.getHh12())
                     MainApp.childInformation.setCb08(MainApp.form.getHh13())
                     MainApp.childInformation.setCb09(MainApp.form.getHh16())
@@ -97,6 +98,8 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb08, true)
                     Clear.clearAllFields(bi.fldGrpCVcb09, true)
                     Clear.clearAllFields(bi.fldGrpCVcb10, true)
+
+                    bi.fldGrpCVcb11.visibility = View.VISIBLE
                 }
                 else -> {
                     Clear.clearAllFields(bi.fldGrpCVcb12, true)
@@ -107,6 +110,32 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb09, true)
                     Clear.clearAllFields(bi.fldGrpCVcb10, true)
                     bi.cb1413.isEnabled = false
+
+                    bi.fldGrpCVcb11.visibility = View.VISIBLE
+                }
+            }
+        }
+
+        bi.cb14.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
+            when (i) {
+                bi.cb1496.id -> {
+                    bi.cb1496x.visibility = View.VISIBLE
+                }
+                else -> {
+                    bi.cb1496x.visibility = View.GONE
+                    bi.cb1496.text = null
+                }
+            }
+        }
+
+        bi.cb10.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
+            when (i) {
+                bi.cb1096.id -> {
+                    bi.cb1096x.visibility = View.VISIBLE
+                }
+                else -> {
+                    bi.cb1096x.visibility = View.GONE
+                    bi.cb1096.text = null
                 }
             }
         }
