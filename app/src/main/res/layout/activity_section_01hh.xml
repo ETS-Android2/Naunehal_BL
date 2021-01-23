@@ -863,6 +863,7 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/hh1796"
                                     android:tag="hh1796"
+                                    android:text='@{hh1796.checked ? hh1796x.getText().toString() : "" }'
                                     android:visibility='@{hh1796.checked ? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
@@ -1098,6 +1099,7 @@
                                         android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                         android:hint="@string/hh2096"
                                         android:tag="hh2096"
+                                        android:text='@{hh2096.checked ? hh2096x.getText().toString() : "" }'
                                         android:visibility='@{hh2096.checked ? View.VISIBLE : View.GONE}' />
 
                                 </RadioGroup>
