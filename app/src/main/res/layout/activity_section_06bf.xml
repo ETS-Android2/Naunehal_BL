@@ -90,16 +90,16 @@
                                 android:text="@string/Q_bf01" />
                         </RelativeLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <EditText
                             android:id="@+id/bf01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/bf01"
-                            android:inputType="number"
-
-
-                            app:type="range" />
+                            android:gravity="center"
+                            android:inputType="number" />
                     </LinearLayout>
+
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- bf02  Input   -->
