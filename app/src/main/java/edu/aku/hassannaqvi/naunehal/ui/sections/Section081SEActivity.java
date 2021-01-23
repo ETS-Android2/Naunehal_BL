@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -56,6 +55,26 @@ public class Section081SEActivity extends AppCompatActivity implements EndSectio
                 bi.fldGrpCVse10.setVisibility(View.GONE);
             } else {
                 bi.fldGrpCVse10.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+        // se13
+        bi.se13.setOnCheckedChangeListener((group, id) -> {
+            Clear.clearAllFields(bi.fldGrpCVse14);
+            Clear.clearAllFields(bi.fldGrpCVse15);
+            Clear.clearAllFields(bi.fldGrpCVse16);
+            Clear.clearAllFields(bi.fldGrpCVse17);
+            bi.fldGrpCVse14.setVisibility(View.GONE);
+            bi.fldGrpCVse15.setVisibility(View.GONE);
+            bi.fldGrpCVse16.setVisibility(View.GONE);
+            bi.fldGrpCVse17.setVisibility(View.GONE);
+            if (id == bi.se1301.getId() || id == bi.se1302.getId()) {
+                bi.fldGrpCVse14.setVisibility(View.VISIBLE);
+                bi.fldGrpCVse15.setVisibility(View.VISIBLE);
+            } else if (id == bi.se1303.getId() || id == bi.se1304.getId() || id == bi.se1305.getId()) {
+                bi.fldGrpCVse16.setVisibility(View.VISIBLE);
+                bi.fldGrpCVse17.setVisibility(View.VISIBLE);
             }
         });
 

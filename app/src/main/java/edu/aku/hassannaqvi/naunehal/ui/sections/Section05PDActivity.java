@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -116,6 +115,14 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
                 bi.fldGrppd04.setVisibility(View.VISIBLE);
                 bi.fldGrpCVpd08.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpCVpd08);
+            }
+        });
+
+        bi.pd17.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.fldGrpCVpd18.setVisibility(View.VISIBLE);
+            if (bi.pd1798.getId() == i) {
+                Clear.clearAllFields(bi.fldGrpCVpd18);
+                bi.fldGrpCVpd08.setVisibility(View.GONE);
             }
         });
 
