@@ -187,7 +187,7 @@
                             android:hint="#-####-###"
                             android:inputType="textCapCharacters"
                             android:maxLength="10"
-                            android:textDirection="ltr" />
+                            />
 
                     </LinearLayout>
 
