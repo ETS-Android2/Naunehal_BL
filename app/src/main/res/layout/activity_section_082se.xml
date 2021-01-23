@@ -248,6 +248,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:text="@string/se220602" />
+
                     </RadioGroup>
 
 
@@ -1764,7 +1765,10 @@
                             android:text="@string/se4098" />
                     </RadioGroup>
                 </LinearLayout>
-            </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+            </androidx.cardview.widget.CardView>
+
+
+            <!--EndButton LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1792,6 +1796,10 @@
                     android:text="Save"
                     android:textColor="@color/white" />
             </LinearLayout>
+
+
         </LinearLayout>
+
     </ScrollView>
+
 </layout>
