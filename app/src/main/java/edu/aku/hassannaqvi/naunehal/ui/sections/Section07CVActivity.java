@@ -7,13 +7,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -237,7 +238,7 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
     }
 
 
-    public void BtnContinue(View view) {
+    public void BtnContinue() {
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {
@@ -251,7 +252,7 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
     }
 
 
-    public void BtnEnd(View view) {
+    public void BtnEnd() {
         AppUtilsKt.contextEndActivity(this);
     }
 

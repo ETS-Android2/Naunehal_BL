@@ -11,16 +11,13 @@ import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
-
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection082seBinding;
-
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
-
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivityWithSerializable;
@@ -251,7 +248,7 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
     }
 
 
-    public void BtnContinue(View view) {
+    public void BtnContinue() {
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
@@ -266,7 +263,7 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
     }
 
 
-    public void BtnEnd(View view) {
+    public void BtnEnd() {
         AppUtilsKt.contextEndActivity(this);
     }
 

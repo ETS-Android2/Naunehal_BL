@@ -3,12 +3,7 @@
 
 
     <data>
-
         <import type="android.view.View" />
-
-        <variable
-            name="form"
-            type="edu.aku.hassannaqvi.naunehal.models.Immunization" />
 
         <variable
             name="callback"
@@ -83,14 +78,12 @@
                             android:id="@+id/im0101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im01.equals(`1`)}"
                             android:text="@string/im0101" />
 
                         <RadioButton
                             android:id="@+id/im0102"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im01.equals(`2`)}"
                             android:text="@string/im0102" />
 
                     </RadioGroup>
@@ -138,14 +131,14 @@
                             android:id="@+id/im0201"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im02.equals(`1`)}"
+
                             android:text="@string/im0201" />
 
                         <RadioButton
                             android:id="@+id/im0202"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im02.equals(`2`)}"
+
                             android:text="@string/im0202" />
 
                     </RadioGroup>
@@ -193,49 +186,48 @@
                             android:id="@+id/im0301"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`1`)}"
+
                             android:text="@string/im0301" />
 
                         <RadioButton
                             android:id="@+id/im0302"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`2`)}"
+
                             android:text="@string/im0302" />
 
                         <RadioButton
                             android:id="@+id/im0303"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`3`)}"
+
                             android:text="@string/im0303" />
 
                         <RadioButton
                             android:id="@+id/im0304"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`4`)}"
+
                             android:text="@string/im0304" />
 
                         <RadioButton
                             android:id="@+id/im0305"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`5`)}"
+
                             android:text="@string/im0305" />
 
                         <RadioButton
                             android:id="@+id/im0306"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`6`)}"
+
                             android:text="@string/im0306" />
 
                         <RadioButton
                             android:id="@+id/im0396"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im03.equals(`96`)}"
                             android:text="@string/im0396" />
 
                         <EditText
@@ -245,8 +237,7 @@
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/im0396"
                             android:tag="im03096"
-                            android:text="@{form.im0396x}"
-                            android:visibility='@{form.im03.equals(`96`)? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{im0396.checked ? View.VISIBLE : View.GONE}' />
 
                     </RadioGroup>
 
@@ -335,7 +326,6 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{form.im04dd}"
                                 app:maxValue="30"
                                 app:minValue="1"
                                 app:type="range" />
@@ -350,7 +340,6 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{form.im04mm}"
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
@@ -364,7 +353,6 @@
                                 android:gravity="center"
                                 android:hint="####"
                                 android:inputType="number"
-                                android:text="@{form.im04yy}"
                                 app:maxValue="0"
                                 app:minValue="0"
                                 app:type="range" />
@@ -526,7 +514,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0501dd}"
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -541,7 +528,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0501mm}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -555,7 +541,6 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0501yy}"
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -627,7 +612,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0502dd}"
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -642,7 +626,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0502mm}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -656,7 +639,6 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0502yy}"
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -728,7 +710,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0503dd}"
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -743,7 +724,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0503mm}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -757,7 +737,6 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0503yy}"
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -829,7 +808,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0504dd}"
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -844,7 +822,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0504mm}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -858,7 +835,6 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0504yy}"
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -930,7 +906,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0505dd}"
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -945,7 +920,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0505mm}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -959,7 +933,6 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0505yy}"
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1031,7 +1004,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0506dd}"
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1046,7 +1018,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0506mm}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1060,7 +1031,6 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0506yy}"
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1132,7 +1102,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0507dd}"
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1147,7 +1116,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0507mm}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1161,7 +1129,6 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0507yy}"
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1233,7 +1200,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0508dd}"
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1248,7 +1214,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0508mm}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1262,7 +1227,6 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0508yy}"
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1334,7 +1298,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0509dd}"
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1349,7 +1312,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0509mm}"
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1363,7 +1325,6 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0509yy}"
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1435,7 +1396,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0510dd}"
+
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1450,7 +1411,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0510mm}"
+
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1464,7 +1425,7 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0510yy}"
+
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1536,7 +1497,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0511dd}"
+
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1551,7 +1512,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0511mm}"
+
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1565,7 +1526,7 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0511yy}"
+
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1637,7 +1598,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0512dd}"
+
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1652,7 +1613,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0512mm}"
+
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1666,7 +1627,7 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0512yy}"
+
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1738,7 +1699,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0513dd}"
+
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1753,7 +1714,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0513mm}"
+
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1767,7 +1728,7 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0513yy}"
+
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1839,7 +1800,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0514dd}"
+
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1854,7 +1815,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0514mm}"
+
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1868,7 +1829,7 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0514yy}"
+
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -1940,7 +1901,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0515dd}"
+
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -1955,7 +1916,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0515mm}"
+
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -1969,7 +1930,7 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0515yy}"
+
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -2041,7 +2002,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0516dd}"
+
                                     app:defaultValue="97"
                                     app:maxValue="31"
                                     app:minValue="1"
@@ -2056,7 +2017,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im0516mm}"
+
                                     app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
@@ -2070,7 +2031,7 @@
                                     android:hint="20##"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    android:text="@{form.im0516yy}"
+
                                     app:mask="20##"
                                     app:maxValue="2021"
                                     app:minValue="2016"
@@ -2086,6 +2047,7 @@
                 </LinearLayout>
 
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/fldGrpDOBCheck02"
@@ -2136,7 +2098,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.im07.equals(`1`)}"
                                 android:text="@string/im0701" />
 
                             <RadioButton
@@ -2144,7 +2105,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.im07.equals(`2`)}"
                                 android:text="@string/im0702" />
 
                         </RadioGroup>
@@ -2193,7 +2153,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.im08.equals(`1`)}"
                                 android:text="@string/im0801" />
 
                             <RadioButton
@@ -2201,7 +2160,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.im08.equals(`2`)}"
                                 android:text="@string/im0802" />
 
                             <RadioButton
@@ -2209,7 +2167,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.im08.equals(`98`)}"
                                 android:text="@string/im0803" />
 
                         </RadioGroup>
@@ -2265,7 +2222,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im08a.equals(`1`)}"
                                     android:text="@string/im08a1" />
 
                                 <RadioButton
@@ -2273,7 +2229,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im08a.equals(`2`)}"
                                     android:text="@string/im08a2" />
 
                                 <RadioButton
@@ -2281,7 +2236,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im08a.equals(`98`)}"
                                     android:text="@string/im08a3" />
 
                             </RadioGroup>
@@ -2294,7 +2248,7 @@
                     <!-- im08b  Input-Numeric   -->
                     <androidx.cardview.widget.CardView
                         style="@style/cardView"
-                        android:visibility="@{form.im08a.equals(`1`) ? View.VISIBLE : View.GONE}">
+                        android:visibility="@{im08a1.checked ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2327,7 +2281,6 @@
                                 android:layout_height="wrap_content"
                                 android:hint="@string/im08b"
                                 android:inputType="number"
-                                android:text="@{form.im08b}"
                                 app:maxValue="9"
                                 app:minValue="1"
                                 app:type="range" />
@@ -2394,7 +2347,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im09.equals(`1`)}"
                                     android:text="@string/im0901" />
 
                                 <RadioButton
@@ -2402,7 +2354,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im09.equals(`2`)}"
                                     android:text="@string/im0902" />
 
                                 <RadioButton
@@ -2410,7 +2361,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im09.equals(`98`)}"
                                     android:text="@string/im0903" />
 
                             </RadioGroup>
@@ -2458,7 +2408,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im10.equals(`1`)}"
                                     android:text="@string/im1001" />
 
                                 <RadioButton
@@ -2466,7 +2415,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im10.equals(`2`)}"
                                     android:text="@string/im1002" />
 
                                 <RadioButton
@@ -2474,7 +2422,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im10.equals(`98`)}"
                                     android:text="@string/im1003" />
 
                             </RadioGroup>
@@ -2529,7 +2476,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im11.equals(`1`)}"
                                         android:text="@string/im1101" />
 
                                     <RadioButton
@@ -2537,7 +2483,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im11.equals(`2`)}"
                                         android:text="@string/im1102" />
 
                                     <RadioButton
@@ -2545,7 +2490,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im11.equals(`98`)}"
                                         android:text="@string/im1103" />
 
                                 </RadioGroup>
@@ -2593,7 +2537,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im12.equals(`1`)}"
                                         android:text="@string/im1201" />
 
                                     <RadioButton
@@ -2601,7 +2544,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im12.equals(`98`)}"
                                         android:text="@string/im1298" />
 
                                 </RadioGroup>
@@ -2614,8 +2556,8 @@
                                     android:hint="@string/im1201"
                                     android:inputType="number"
                                     android:tag="im1201"
-                                    android:text="@{form.im1201x}"
-                                    android:visibility='@{form.im12.equals(`1`) ? View.VISIBLE : View.GONE}'
+                                    android:text='@{im1201.checked ? im1201x.getText().toString() : ""}'
+                                    android:visibility='@{im1201.checked ? View.VISIBLE : View.GONE}'
                                     app:maxValue="35"
                                     app:minValue="1"
                                     app:type="range" />
@@ -2663,7 +2605,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im12a.equals(`1`)}"
                                         android:text="@string/im12a1" />
 
                                     <RadioButton
@@ -2671,7 +2612,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im12a.equals(`98`)}"
                                         android:text="@string/im12a98" />
 
                                 </RadioGroup>
@@ -2684,8 +2624,8 @@
                                     android:hint="#"
                                     android:inputType="number"
                                     android:tag="im12a1"
-                                    android:text="@{form.im12a1x}"
-                                    android:visibility='@{form.im12a.equals(`1`) ? View.VISIBLE : View.GONE}'
+                                    android:text='@{im12a1.checked ? im1201x.getText().toString() : ""}'
+                                    android:visibility='@{im12a1.checked ? View.VISIBLE : View.GONE}'
                                     app:maxValue="9"
                                     app:minValue="1"
                                     app:type="range" />
@@ -2733,7 +2673,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im13.equals(`1`)}"
                                         android:text="@string/im1301" />
 
                                     <RadioButton
@@ -2741,7 +2680,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im13.equals(`2`)}"
                                         android:text="@string/im1302" />
 
                                     <RadioButton
@@ -2749,7 +2687,6 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:checked="@{form.im13.equals(`98`)}"
                                         android:text="@string/im1303" />
 
                                 </RadioGroup>
@@ -2800,7 +2737,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im14.equals(`1`)}"
                                     android:text="@string/im1401" />
 
                                 <RadioButton
@@ -2808,7 +2744,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im14.equals(`2`)}"
                                     android:text="@string/im1402" />
 
                                 <RadioButton
@@ -2816,7 +2751,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im14.equals(`98`)}"
                                     android:text="@string/im1403" />
 
                             </RadioGroup>
@@ -2830,7 +2764,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpim15"
                         style="@style/cardView"
-                        android:visibility='@{im1401.checked? View.VISIBLE : View.GONE}'>
+                        android:visibility='@{im1401.checked ? View.VISIBLE : View.GONE}'>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2867,7 +2801,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im15.equals(`1`)}"
                                     android:text="@string/im1501" />
 
                                 <RadioButton
@@ -2875,7 +2808,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im15.equals(`98`)}"
                                     android:text="@string/im1598" />
 
                             </RadioGroup>
@@ -2888,8 +2820,8 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:tag="im15a"
-                                android:text="@{form.im1501}"
-                                android:visibility='@{form.im15.equals(`1`) ? View.VISIBLE : View.GONE}'
+                                android:text='@{im15a.checked ? im1501.getText().toString() : ""}'
+                                android:visibility='@{im15a.checked ? View.VISIBLE : View.GONE}'
                                 app:maxValue="9"
                                 app:minValue="1"
                                 app:type="range" />
@@ -2937,7 +2869,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im16.equals(`1`)}"
                                     android:text="@string/im1601" />
 
                                 <RadioButton
@@ -2945,7 +2876,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im16.equals(`2`)}"
                                     android:text="@string/im1602" />
 
                                 <RadioButton
@@ -2953,7 +2883,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im16.equals(`98`)}"
                                     android:text="@string/im1603" />
 
                             </RadioGroup>
@@ -3003,7 +2932,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im17.equals(`1`)}"
                                     android:text="@string/im1701" />
 
                                 <RadioButton
@@ -3011,7 +2939,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im17.equals(`98`)}"
                                     android:text="@string/im1798" />
 
                             </RadioGroup>
@@ -3024,8 +2951,8 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:tag="im17a"
-                                android:text="@{form.im1701}"
-                                android:visibility='@{form.im17.equals(`1`) ? View.VISIBLE : View.GONE}'
+                                android:text='@{im17a.checked ? im1701.getText().toString() : ""}'
+                                android:visibility='@{im17a.checked ? View.VISIBLE : View.GONE}'
                                 app:maxValue="9"
                                 app:minValue="1"
                                 app:type="range" />
@@ -3073,7 +3000,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im18.equals(`1`)}"
                                     android:text="@string/im1801" />
 
                                 <RadioButton
@@ -3081,7 +3007,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im18.equals(`2`)}"
                                     android:text="@string/im1802" />
 
                                 <RadioButton
@@ -3089,7 +3014,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im18.equals(`98`)}"
                                     android:text="@string/im1803" />
 
                             </RadioGroup>
@@ -3103,7 +3027,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpim19"
                         style="@style/cardView"
-                        android:visibility='@{im1801.checked? View.VISIBLE : View.GONE}'>
+                        android:visibility='@{im1801.checked ? View.VISIBLE : View.GONE}'>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -3140,7 +3064,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im19.equals(`1`)}"
                                     android:text="@string/im1901" />
 
                                 <RadioButton
@@ -3148,7 +3071,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im19.equals(`98`)}"
                                     android:text="@string/im1998" />
 
                             </RadioGroup>
@@ -3161,8 +3083,8 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:tag="im1901"
-                                android:text="@{form.im1901x}"
-                                android:visibility='@{form.im19.equals(`1`) ? View.VISIBLE : View.GONE}'
+                                android:text='@{im1901.checked ? im1901x.getText().toString() : ""}'
+                                android:visibility='@{im1901.checked ? View.VISIBLE : View.GONE}'
                                 app:maxValue="9"
                                 app:minValue="1"
                                 app:type="range" />
@@ -3210,7 +3132,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im20.equals(`1`)}"
                                     android:text="@string/im2001" />
 
                                 <RadioButton
@@ -3218,7 +3139,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im20.equals(`2`)}"
                                     android:text="@string/im2002" />
 
                                 <RadioButton
@@ -3226,7 +3146,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im20.equals(`98`)}"
                                     android:text="@string/im2003" />
 
                             </RadioGroup>
@@ -3274,7 +3193,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im21.equals(`1`)}"
                                     android:text="@string/im2101" />
 
                                 <RadioButton
@@ -3282,7 +3200,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im21.equals(`2`)}"
                                     android:text="@string/im2102" />
 
                                 <RadioButton
@@ -3290,7 +3207,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im21.equals(`98`)}"
                                     android:text="@string/im2103" />
 
                             </RadioGroup>
@@ -3304,7 +3220,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpim22"
                         style="@style/cardView"
-                        android:visibility='@{im2101.checked? View.VISIBLE : View.GONE}'>
+                        android:visibility='@{im2101.checked ? View.VISIBLE : View.GONE}'>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -3341,7 +3257,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im22.equals(`1`)}"
                                     android:text="@string/im2201" />
 
                                 <RadioButton
@@ -3349,7 +3264,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.im22.equals(`98`)}"
                                     android:text="@string/im2298" />
 
                             </RadioGroup>
@@ -3362,8 +3276,8 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:tag="im22a"
-                                android:text="@{form.im2201}"
-                                android:visibility='@{form.im22.equals(`1`) ? View.VISIBLE : View.GONE}'
+                                android:text='@{im22a.checked ? im2201.getText().toString() : ""}'
+                                android:visibility='@{im22a.checked ? View.VISIBLE : View.GONE}'
                                 app:maxValue="9"
                                 app:minValue="1"
                                 app:type="range" />
@@ -3419,28 +3333,24 @@
                                     android:id="@+id/im2301"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23.equals(`1`)}"
                                     android:text="@string/im2301" />
 
                                 <RadioButton
                                     android:id="@+id/im2302"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23.equals(`2`)}"
                                     android:text="@string/im2302" />
 
                                 <RadioButton
                                     android:id="@+id/im2303"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23.equals(`3`)}"
                                     android:text="@string/im2303" />
 
                                 <RadioButton
                                     android:id="@+id/im2306"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23.equals(`96`)}"
                                     android:text="@string/im2306" />
 
                                 <EditText
@@ -3450,8 +3360,8 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/im2306"
                                     android:tag="im2306"
-                                    android:text="@{form.im2306x}"
-                                    android:visibility='@{form.im23.equals(`96`) ? View.VISIBLE : View.GONE}' />
+                                    android:text='@{im2306.checked ? im2306x.getText().toString() : ""}'
+                                    android:visibility='@{im2306.checked ? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
 
@@ -3498,42 +3408,36 @@
                                     android:id="@+id/im23a1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23a.equals(`1`)}"
                                     android:text="@string/im23a1" />
 
                                 <RadioButton
                                     android:id="@+id/im23a2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23a.equals(`2`)}"
                                     android:text="@string/im23a2" />
 
                                 <RadioButton
                                     android:id="@+id/im23a3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23a.equals(`3`)}"
                                     android:text="@string/im23a3" />
 
                                 <RadioButton
                                     android:id="@+id/im23a4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23a.equals(`4`)}"
                                     android:text="@string/im23a4" />
 
                                 <RadioButton
                                     android:id="@+id/im23a5"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23a.equals(`5`)}"
                                     android:text="@string/im23a5" />
 
                                 <RadioButton
                                     android:id="@+id/im23a96"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.im23a.equals(`96`)}"
                                     android:text="@string/im23a96" />
 
                                 <EditText
@@ -3543,8 +3447,8 @@
                                     android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/im23a96"
                                     android:tag="im23a96"
-                                    android:text="@{form.im23a96x}"
-                                    android:visibility='@{form.im23a.equals(`96`)? View.VISIBLE : View.GONE}' />
+                                    android:text='@{im23a96.checked ? im23a96x.getText().toString() : ""}'
+                                    android:visibility='@{im23a96.checked ? View.VISIBLE : View.GONE}' />
 
                             </RadioGroup>
 
@@ -3617,7 +3521,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im23b1}"
+
                                     app:maxValue="10"
                                     app:minValue="0"
                                     app:type="range" />
@@ -3631,7 +3535,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im23b2}"
+
                                     app:maxValue="59"
                                     app:minValue="0"
                                     app:type="range" />
@@ -3682,133 +3586,114 @@
                                 android:id="@+id/im2401"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`1`)}"
                                 android:text="@string/im2401" />
 
                             <RadioButton
                                 android:id="@+id/im2402"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`2`)}"
                                 android:text="@string/im2402" />
 
                             <RadioButton
                                 android:id="@+id/im2403"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`3`)}"
                                 android:text="@string/im2403" />
 
                             <RadioButton
                                 android:id="@+id/im2404"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`4`)}"
                                 android:text="@string/im2404" />
 
                             <RadioButton
                                 android:id="@+id/im2405"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`5`)}"
                                 android:text="@string/im2405" />
 
                             <RadioButton
                                 android:id="@+id/im2406"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`6`)}"
                                 android:text="@string/im2406" />
 
                             <RadioButton
                                 android:id="@+id/im2407"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`7`)}"
                                 android:text="@string/im2407" />
 
                             <RadioButton
                                 android:id="@+id/im2408"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`8`)}"
                                 android:text="@string/im2408" />
 
                             <RadioButton
                                 android:id="@+id/im2409"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`9`)}"
                                 android:text="@string/im2409" />
 
                             <RadioButton
                                 android:id="@+id/im2410"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`10`)}"
                                 android:text="@string/im2410" />
 
                             <RadioButton
                                 android:id="@+id/im2411"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`11`)}"
                                 android:text="@string/im2411" />
 
                             <RadioButton
                                 android:id="@+id/im2412"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`12`)}"
                                 android:text="@string/im2412" />
 
                             <RadioButton
                                 android:id="@+id/im2413"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`13`)}"
                                 android:text="@string/im2413" />
 
                             <RadioButton
                                 android:id="@+id/im2414"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`14`)}"
                                 android:text="@string/im2414" />
 
                             <RadioButton
                                 android:id="@+id/im2415"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`15`)}"
                                 android:text="@string/im2415" />
 
                             <RadioButton
                                 android:id="@+id/im2416"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`16`)}"
                                 android:text="@string/im2416" />
 
                             <RadioButton
                                 android:id="@+id/im2417"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`17`)}"
                                 android:text="@string/im2417" />
 
                             <RadioButton
                                 android:id="@+id/im2498"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`98`)}"
                                 android:text="@string/im2498" />
 
                             <RadioButton
                                 android:id="@+id/im2496"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`96`)}"
                                 android:text="@string/im2496" />
 
                             <EditText
@@ -3818,8 +3703,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/im2496"
                                 android:tag="im2496"
-                                android:text="@{form.im2496x}"
-                                android:visibility='@{form.im24.equals(`96`)? View.VISIBLE : View.GONE}' />
+                                android:text='@{im2496.checked ? im2496x.getText().toString() : ""}'
+                                android:visibility='@{im2496.checked ? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
 
@@ -3864,28 +3749,24 @@
                                 android:id="@+id/im2501"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im25.equals(`1`)}"
                                 android:text="@string/im2501" />
 
                             <RadioButton
                                 android:id="@+id/im2502"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im25.equals(`2`)}"
                                 android:text="@string/im2502" />
 
                             <RadioButton
                                 android:id="@+id/im2503"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im25.equals(`3`)}"
                                 android:text="@string/im2503" />
 
                             <RadioButton
                                 android:id="@+id/im2504"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im25.equals(`4`)}"
                                 android:text="@string/im2504" />
 
                         </RadioGroup>

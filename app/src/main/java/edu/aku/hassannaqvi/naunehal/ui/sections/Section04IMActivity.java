@@ -61,7 +61,8 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         info = Section03CSActivity.selectedChildInfo;
 
         MainApp.immunization = new Immunization();
-        bi.setForm(MainApp.immunization);
+        bi.setCallback(this);
+        //bi.setForm(MainApp.immunization);
         setupSkips();
         setupTextWatchers();
 

@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -32,8 +33,8 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_06bf);
+        bi.setCallback(this);
         info = Section03CSActivity.selectedChildInfo;
         bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
         bi.bf01.setText(info.cb01);
@@ -43,8 +44,6 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
         bi.bf3d.setText(info.getCb04dd());
         bi.bf03a02.setText(info.getCb0501());
         bi.bf03a01.setText(info.getCb0502());
-
-        bi.setCallback(this);
         setupSkips();
     }
 
@@ -194,7 +193,7 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
     }
 
 
-    public void BtnContinue(View view) {
+    public void BtnContinue() {
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {
@@ -209,7 +208,7 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
     }
 
 
-    public void BtnEnd(View view) {
+    public void BtnEnd() {
         AppUtilsKt.contextEndActivity(this);
     }
 

@@ -413,6 +413,7 @@
                                 android:layout_alignTop="@id/qtxt_bf05"
                                 android:layout_alignBottom="@id/qtxt_bf05"
                                 android:text="@string/Q_bf05" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -465,9 +466,13 @@
                                 app:maxValue="30"
                                 app:minValue="1"
                                 app:type="range" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- bf06  Radio   -->
                 <androidx.cardview.widget.CardView
