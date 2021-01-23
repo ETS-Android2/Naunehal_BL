@@ -2267,8 +2267,9 @@
                                 android:hint="@string/im08b"
                                 android:inputType="number"
                                 android:text='@{im08a1.checked ? im08b.getText().toString() : ""}'
-                                app:maxValue="9"
+                                android:maxLength="2"
                                 app:minValue="1"
+                                app:maxValue="35"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -2546,6 +2547,7 @@
                                     android:visibility='@{im1201.checked ? View.VISIBLE : View.GONE}'
                                     app:maxValue="35"
                                     app:minValue="1"
+                                    android:maxLength="2"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -2612,8 +2614,9 @@
                                     android:tag="im12a1"
                                     android:text='@{im12a1.checked ? im1201x.getText().toString() : ""}'
                                     android:visibility='@{im12a1.checked ? View.VISIBLE : View.GONE}'
-                                    app:maxValue="9"
+                                    android:maxLength="2"
                                     app:minValue="1"
+                                    app:maxValue="35"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -2810,6 +2813,7 @@
                                 android:visibility='@{im15a.checked ? View.VISIBLE : View.GONE}'
                                 app:maxValue="9"
                                 app:minValue="1"
+                                android:maxLength="1"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -2941,6 +2945,7 @@
                                 android:visibility='@{im17a.checked ? View.VISIBLE : View.GONE}'
                                 app:maxValue="9"
                                 app:minValue="1"
+                                android:maxLength="1"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -3073,6 +3078,7 @@
                                 android:visibility='@{im1901.checked ? View.VISIBLE : View.GONE}'
                                 app:maxValue="9"
                                 app:minValue="1"
+                                android:maxLength="1"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -3266,6 +3272,7 @@
                                 android:visibility='@{im22a.checked ? View.VISIBLE : View.GONE}'
                                 app:maxValue="9"
                                 app:minValue="1"
+                                android:maxLength="1"
                                 app:type="range" />
 
                         </LinearLayout>
