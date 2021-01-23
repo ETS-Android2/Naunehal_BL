@@ -3522,7 +3522,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-
                                     app:maxValue="10"
                                     app:minValue="0"
                                     app:type="range" />
@@ -3536,7 +3535,6 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-
                                     app:maxValue="59"
                                     app:minValue="0"
                                     app:type="range" />
