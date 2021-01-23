@@ -175,7 +175,6 @@
                             android:id="@+id/fldGrpBF03"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layoutDirection="ltr"
                             android:orientation="horizontal">
 
                             <TextView
@@ -278,7 +277,6 @@
                             android:id="@+id/fldGrpBF03a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layoutDirection="ltr"
                             android:orientation="horizontal">
 
                             <TextView

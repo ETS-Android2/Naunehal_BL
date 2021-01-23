@@ -282,7 +282,6 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layoutDirection="ltr"
                             android:orientation="horizontal">
 
                             <TextView
@@ -314,7 +313,6 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layoutDirection="ltr"
                             android:orientation="horizontal">
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -472,8 +470,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -502,7 +498,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -570,8 +565,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -600,7 +593,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -668,8 +660,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -698,7 +688,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -766,8 +755,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -796,7 +783,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -864,8 +850,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -894,7 +878,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -962,8 +945,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -992,7 +973,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1060,8 +1040,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1090,7 +1068,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1158,8 +1135,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1188,7 +1163,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1256,8 +1230,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1286,7 +1258,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1354,8 +1325,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1384,7 +1353,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1455,8 +1423,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1485,7 +1451,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1556,8 +1521,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1586,7 +1549,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1657,8 +1619,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1687,7 +1647,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1758,8 +1717,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1788,7 +1745,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1859,8 +1815,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1889,7 +1843,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -1960,8 +1913,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -1990,7 +1941,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
