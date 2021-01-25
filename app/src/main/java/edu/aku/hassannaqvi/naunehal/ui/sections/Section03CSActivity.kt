@@ -448,6 +448,25 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
                 if (bi.cs1996x.text.toString().trim().isEmpty()) "-1"
                 else bi.cs1996x.text.toString())
 
+        MainApp.child.setCs20(
+                when {
+                    bi.cs2001.isChecked -> "1"
+                    bi.cs2002.isChecked -> "2"
+                    bi.cs2098.isChecked -> "98"
+                    else -> "-1"
+                })
+
+        MainApp.child.setCs21(
+                when {
+                    bi.cs2101.isChecked -> "1"
+                    bi.cs2102.isChecked -> "2"
+                    bi.cs2103.isChecked -> "3"
+                    bi.cs2104.isChecked -> "4"
+                    bi.cs2105.isChecked -> "5"
+
+                    else -> "-1"
+                })
+
     }
 
 
