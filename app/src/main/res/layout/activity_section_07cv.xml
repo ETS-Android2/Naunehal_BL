@@ -687,12 +687,6 @@
                                     android:text="@string/cv0807" />
 
                                 <CheckBox
-                                    android:id="@+id/cv0898"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/cv0898" />
-
-                                <CheckBox
                                     android:id="@+id/cv0896"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -707,9 +701,20 @@
                                     android:tag="cv0896"
                                     android:text='@{cv0896.checked ? cv0896x.getText().toString() : ""}'
                                     android:visibility='@{cv0896.checked? View.VISIBLE : View.GONE}' />
+
                             </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cv0898"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:tag="-1"
+                                android:text="@string/cv0898" />
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- cv09  CheckBox   -->
                     <androidx.cardview.widget.CardView
@@ -741,6 +746,7 @@
                                     android:layout_alignTop="@id/qtxt_cv09"
                                     android:layout_alignBottom="@id/qtxt_cv09"
                                     android:text="@string/Q_cv09" />
+
                             </RelativeLayout>
 
                             <LinearLayout
@@ -793,12 +799,6 @@
                                     android:text="@string/cv0907" />
 
                                 <CheckBox
-                                    android:id="@+id/cv0998"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/cv0998" />
-
-                                <CheckBox
                                     android:id="@+id/cv0996"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -813,9 +813,20 @@
                                     android:tag="cv0996"
                                     android:text='@{cv0996.checked ? cv0996x.getText().toString() : ""}'
                                     android:visibility='@{cv0996.checked? View.VISIBLE : View.GONE}' />
+
                             </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cv0998"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:tag="-1"
+                                android:text="@string/cv0998" />
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- cv10  CheckBox   -->
                     <androidx.cardview.widget.CardView
@@ -905,12 +916,6 @@
                                     android:text="@string/cv1008" />
 
                                 <CheckBox
-                                    android:id="@+id/cv1098"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/cv1098" />
-
-                                <CheckBox
                                     android:id="@+id/cv1096"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -925,9 +930,20 @@
                                     android:tag="cv1096"
                                     android:text='@{cv1096.checked ? cv1096x.getText().toString() : ""}'
                                     android:visibility='@{cv1096.checked? View.VISIBLE : View.GONE}' />
+
                             </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cv1098"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:tag="-1"
+                                android:text="@string/cv1098" />
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- cv11  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -959,6 +975,7 @@
                                     android:layout_alignTop="@id/qtxt_cv11"
                                     android:layout_alignBottom="@id/qtxt_cv11"
                                     android:text="@string/Q_cv11" />
+
                             </RelativeLayout>
 
                             <RadioGroup
@@ -977,9 +994,13 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/cv1102" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- cv12  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1550,7 +1571,9 @@
                             </RadioGroup>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
+
                 </LinearLayout>
+
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout

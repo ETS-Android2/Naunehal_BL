@@ -960,6 +960,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- bf13  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVbf13"
@@ -990,6 +991,7 @@
                                 android:layout_alignTop="@id/qtxt_bf13"
                                 android:layout_alignBottom="@id/qtxt_bf13"
                                 android:text="@string/Q_bf13" />
+
                         </RelativeLayout>
 
                         <RadioGroup
@@ -1014,9 +1016,15 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/bf1398" />
+
                         </RadioGroup>
+
                     </LinearLayout>
-                </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1043,8 +1051,15 @@
                         android:onClick="@{() -> callback.BtnContinue()}"
                         android:text="Save"
                         android:textColor="@color/white" />
+
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
+
 </layout>

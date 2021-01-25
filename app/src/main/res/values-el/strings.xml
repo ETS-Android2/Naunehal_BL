@@ -97,11 +97,12 @@
     <string name="cb0602">Father</string>
     <string name="cb0603">Primary Caretaker  (not parents)</string>
     <string name="cb0696">Other childInformation member</string>
-    <string name="cb07">Name of Mother</string>
-    <string name="cb08">Age</string>
-    <string name="cb09">Education</string>
-    <string name="cb10">Profession</string>
-    <string name="cb1001">Professional/technical/managerial</string>
+    <string name="motherinfo"> Mother Information </string>
+    <string name="cb07"> Name </string>
+    <string name="cb08"> Age </string>
+    <string name="cb09"> Education </string>
+    <string name="cb10"> Profession </string>
+    <string name="cb1001"> Professional/technical/managerial</string>
     <string name="cb1002">Clerical </string>
     <string name="cb1003">Business</string>
     <string name="cb1004">Sales and services </string>
@@ -118,6 +119,7 @@
     <string name="cb11">Mother is Available?</string>
     <string name="cb1101">Yes</string>
     <string name="cb1102">No</string>
+    <string name="fatherinfo"> Father Information </string>
     <string name="cb12">Name of father</string>
     <string name="cb13">Education</string>
     <string name="cb14">Profession</string>

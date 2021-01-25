@@ -12,15 +12,18 @@
             type="edu.aku.hassannaqvi.naunehal.ui.sections.Section081SEActivity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <!-- se_title1  Title   -->
             <androidx.cardview.widget.CardView
@@ -37,6 +40,7 @@
                         android:text="@string/se_title1" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- se01  Radio   -->
             <androidx.cardview.widget.CardView
@@ -144,6 +148,7 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- se02  Radio   -->
             <androidx.cardview.widget.CardView
@@ -278,6 +283,7 @@
                     </RadioGroup>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- se03  Radio   -->
             <androidx.cardview.widget.CardView
@@ -449,6 +455,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se04  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVse04"
@@ -607,6 +614,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se05  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVse05"
@@ -678,6 +686,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- se06  Title   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVse06"
@@ -710,6 +719,7 @@
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <!-- se07  Title   -->
             <androidx.cardview.widget.CardView
@@ -1455,6 +1465,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="@string/se16" />
+
                     </LinearLayout>
 
                     <RadioGroup
@@ -1473,8 +1484,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/se1602" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- se17  CheckBox   -->
@@ -1504,6 +1518,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="@string/se17" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -1542,8 +1557,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/se1705" />
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <!-- se18  Title   -->
@@ -2200,5 +2218,8 @@
                     android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>
+
+
     </ScrollView>
+
 </layout>
