@@ -122,7 +122,8 @@ public class SyncActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.btnUpload:
-
+                uploadTables.clear();
+                uploadData.clear();
                 // Set tables to UPLOAD
                 // Forms
                 uploadTables.add(new SyncModel(FormsContract.FormsTable.TABLE_NAME));
@@ -144,7 +145,7 @@ public class SyncActivity extends AppCompatActivity {
                 BeginUpload();
                 break;
             case R.id.btnSync:
-
+                downloadTables.clear();
                 boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
                 if (sync_flag) {
                     distCode = getIntent().getStringExtra(CONSTANTS.SYNC_DISTRICTID_LOGIN);
