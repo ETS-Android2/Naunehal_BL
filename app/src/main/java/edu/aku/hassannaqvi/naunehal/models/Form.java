@@ -52,6 +52,7 @@ public class Form extends BaseObservable {
     public String hh23 = StringUtils.EMPTY;
     public String hh24 = StringUtils.EMPTY;
     public String hh25 = StringUtils.EMPTY;
+    public String hh25a = StringUtils.EMPTY;
     public String hh26 = StringUtils.EMPTY;
     public String hh2696x = StringUtils.EMPTY;
     //Section PD
@@ -950,6 +951,14 @@ public class Form extends BaseObservable {
     public void setHh25(String hh25) {
         this.hh25 = hh25;
         notifyPropertyChanged(BR.hh25);
+    }
+
+    public String getHh25a() {
+        return hh25a;
+    }
+
+    public void setHh25a(String hh25a) {
+        this.hh25a = hh25a;
     }
 
     @Bindable
