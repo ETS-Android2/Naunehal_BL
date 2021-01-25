@@ -2210,13 +2210,17 @@
                                 android:text='@{pd2496.checked ? pd2496x.getText().toString() : ""}'
                                 android:visibility='@{pd2496.checked? View.VISIBLE : View.GONE}' />
 
-                            <CheckBox
-                                android:id="@+id/pd2498"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/pd2498" />
                         </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/pd2498"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:tag="-1"
+                            android:text="@string/pd2498" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 

@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.validatorcrawler.aliazaz.Clear;
-import com.validatorcrawler.aliazaz.Validator;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
+import com.validatorcrawler.aliazaz.Clear;
+import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
@@ -143,6 +143,8 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
                 bi.fldGrpCVpd24.setVisibility(View.GONE);
             }
         });
+
+        bi.pd2498.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.pd24check, !b));
 
     }
 

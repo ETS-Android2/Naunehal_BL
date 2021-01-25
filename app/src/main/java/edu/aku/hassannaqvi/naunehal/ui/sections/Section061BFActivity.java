@@ -100,7 +100,7 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
         bi.bf18.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVbf19);
             bi.fldGrpCVbf19.setVisibility(View.VISIBLE);
-            if (i == bi.bf1802.getId()) {
+            if (i != bi.bf1801.getId()) {
                 bi.fldGrpCVbf19.setVisibility(View.GONE);
             }
         });
