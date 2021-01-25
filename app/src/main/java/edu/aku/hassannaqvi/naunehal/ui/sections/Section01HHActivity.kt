@@ -386,7 +386,16 @@ class Section01HHActivity : AppCompatActivity() {
 
         form.setHh14(if (bi.hh1401.isChecked) "1" else if (bi.hh1402.isChecked) "2" else "-1")
 
-        form.setHh15(if (bi.hh1501.isChecked) "1" else if (bi.hh1502.isChecked) "2" else if (bi.hh1503.isChecked) "3" else if (bi.hh1504.isChecked) "4" else if (bi.hh1505.isChecked) "5" else "-1")
+
+        /*Removal Instructed by Chaudary Sahab - 25Jan2021*/
+        /* form.setHh15(when {
+             bi.hh1501.isChecked -> "1"
+             bi.hh1502.isChecked -> "2"
+             bi.hh1503.isChecked -> "3"
+             bi.hh1504.isChecked -> "4"
+             bi.hh1505.isChecked -> "5"
+             else -> "-1"
+         })*/
 
         form.setHh16(bi.hh16.text.toString())
 

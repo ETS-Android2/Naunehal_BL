@@ -620,8 +620,9 @@
                     </androidx.cardview.widget.CardView>
 
 
+                    <!--Removal Instructed by Chaudary Sahab - 25Jan2021-->
                     <!-- hh15  Radio   -->
-                    <androidx.cardview.widget.CardView
+                    <!--<androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVhh15"
                         style="@style/cardView">
 
@@ -688,7 +689,7 @@
 
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>-->
 
 
                     <!-- hh16  Input-Numeric   -->
