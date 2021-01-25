@@ -2500,10 +2500,13 @@
                                 android:text="@string/bf15q98" />
                         </RadioGroup>
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- bf16  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVbf16"
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2527,6 +2530,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/bf16" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -2551,8 +2555,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/bf1698" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- bf17  Radio   -->

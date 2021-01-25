@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.naunehal.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -105,6 +106,59 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
             }
         });
 
+        radioGroup(bi.bf15a);
+        radioGroup(bi.bf15b);
+        radioGroup(bi.bf15c);
+        radioGroup(bi.bf15d);
+        radioGroup(bi.bf15e);
+        radioGroup(bi.bf15f);
+        radioGroup(bi.bf15g);
+        radioGroup(bi.bf15h);
+        radioGroup(bi.bf15i);
+        radioGroup(bi.bf15j);
+        radioGroup(bi.bf15k);
+        radioGroup(bi.bf15l);
+        radioGroup(bi.bf15m);
+        radioGroup(bi.bf15n);
+        radioGroup(bi.bf15o);
+        radioGroup(bi.bf15p);
+        radioGroup(bi.bf15q);
+
+
+        /*bi.bf16.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVbf19);
+            bi.fldGrpCVbf19.setVisibility(View.VISIBLE);
+            if (i != bi.bf1801.getId()) {
+                bi.fldGrpCVbf19.setVisibility(View.GONE);
+            }
+        });*/
+
+    }
+
+    private void radioGroup(RadioGroup rg) {
+        rg.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVbf16);
+            bi.fldGrpCVbf16.setVisibility(View.GONE);
+            if (bi.bf15a02.isChecked()
+                    && bi.bf15b02.isChecked()
+                    && bi.bf15c02.isChecked()
+                    && bi.bf15d02.isChecked()
+                    && bi.bf15e02.isChecked()
+                    && bi.bf15f02.isChecked()
+                    && bi.bf15g02.isChecked()
+                    && bi.bf15h02.isChecked()
+                    && bi.bf15i02.isChecked()
+                    && bi.bf15j02.isChecked()
+                    && bi.bf15k02.isChecked()
+                    && bi.bf15l02.isChecked()
+                    && bi.bf15m02.isChecked()
+                    && bi.bf15n02.isChecked()
+                    && bi.bf15o02.isChecked()
+                    && bi.bf15p02.isChecked()
+                    && bi.bf15q02.isChecked()) {
+                bi.fldGrpCVbf16.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
 
