@@ -252,7 +252,6 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
-            gotoActivityWithSerializable(this, EndingActivity.class, "complete", true);
         }
     }
 

@@ -84,7 +84,8 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
                     if (MainApp.form.se2201 == StringUtils.EMPTY) {
                         id = 1
                         title = "WARNING!"
-                        message = "Household Information Section not filled.\n Are you sure, you want to exit this interview?"
+                        message = "Household Information Section not filled.\n Are you sure, you " +
+                                "want to exit this interview?"
                         btnYesTxt = "YES"
                         btnNoTxt = "RE-THINK"
                     } else if (MainApp.form.g5Flag == "-1") {

@@ -67,6 +67,7 @@ class LoginActivity : AppCompatActivity(), LoginUISource {
                     approval = true
                     MainApp.user = it.data
                     MainApp.admin = it.data!!.userName.contains("@")
+                    gotoActivity(MainActivity::class.java)
                 }
                 ERROR -> {
                     setPasswordIncorrect()

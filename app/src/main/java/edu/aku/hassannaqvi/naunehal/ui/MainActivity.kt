@@ -28,6 +28,7 @@ import edu.aku.hassannaqvi.naunehal.ui.login_activity.LoginActivity
 import edu.aku.hassannaqvi.naunehal.base.viewmodel.MainViewModel
 import edu.aku.hassannaqvi.naunehal.ui.sections.IdentificationSectionActivity
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity
+import edu.aku.hassannaqvi.naunehal.ui.sections.Section04IMActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithNoHistory
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
@@ -220,6 +221,11 @@ class MainActivity : AppCompatActivity() {
                     gotoActivity(SyncActivity::class.java)
                 } else
                     Toast.makeText(this, "Network connection not available!", Toast.LENGTH_SHORT).show()
+
+                true
+            }
+            R.id.action_database -> {
+                gotoActivity(Section04IMActivity::class.java)
 
                 true
             }

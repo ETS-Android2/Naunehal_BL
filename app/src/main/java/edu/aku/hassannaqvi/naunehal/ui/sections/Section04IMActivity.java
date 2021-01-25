@@ -68,12 +68,12 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         /*
          * Setting DOB boundry
          * */
-        if (form.getLocalDate() != null) {
-            int maxYears = form.getLocalDate().getYear();
-            int minYears = form.getLocalDate().minusYears(3).getYear();
-            bi.im04yy.setMinvalue(minYears);
-            bi.im04yy.setMaxvalue(maxYears);
-        }
+//        if (form.getLocalDate() != null) {
+//            int maxYears = form.getLocalDate().getYear();
+//            int minYears = form.getLocalDate().minusYears(3).getYear();
+//            bi.im04yy.setMinvalue(minYears);
+//            bi.im04yy.setMaxvalue(maxYears);
+//        }
 
     }
 
