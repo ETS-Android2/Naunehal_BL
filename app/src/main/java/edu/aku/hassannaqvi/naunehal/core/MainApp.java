@@ -5,6 +5,10 @@ import android.view.View;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
+import org.json.JSONArray;
+
+import java.util.List;
+
 import edu.aku.hassannaqvi.naunehal.models.Child;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Form;
@@ -32,6 +36,8 @@ public class MainApp extends Application {
     public static AppInfo appInfo;
     public static Users user;
     public static Boolean admin = false;
+    public static List<JSONArray> uploadData;
+
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.

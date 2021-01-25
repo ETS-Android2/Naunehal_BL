@@ -13,7 +13,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
@@ -1015,10 +1014,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /*
      * get UnSyncedTables
      * */
-    public Collection<Form> getUnsyncedForms() {
+    public JSONArray getUnsyncedForms() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-        String[] columns = null;
+        String[] columns = {
+
+                FormsContract.FormsTable.COLUMN_ID,
+                FormsContract.FormsTable.COLUMN_UID,
+                FormsContract.FormsTable.COLUMN_USERNAME,
+                FormsContract.FormsTable.COLUMN_SYSDATE,
+                FormsContract.FormsTable.COLUMN_DCODE,
+                FormsContract.FormsTable.COLUMN_UCODE,
+                FormsContract.FormsTable.COLUMN_CLUSTER,
+                FormsContract.FormsTable.COLUMN_HHNO,
+                FormsContract.FormsTable.COLUMN_DEVICEID,
+                FormsContract.FormsTable.COLUMN_DEVICETAGID,
+                FormsContract.FormsTable.COLUMN_APPVERSION,
+                FormsContract.FormsTable.COLUMN_GPS,
+                FormsContract.FormsTable.COLUMN_ENDINGDATETIME,
+                FormsContract.FormsTable.COLUMN_ISTATUS,
+                FormsContract.FormsTable.COLUMN_ISTATUS96x,
+                FormsContract.FormsTable.COLUMN_SYNCED,
+                FormsContract.FormsTable.COLUMN_SYNCED_DATE,
+                FormsContract.FormsTable.COLUMN_G5FLAG,
+
+                //For childCount
+                FormsContract.FormsTable.COLUMN_S01HH,
+
+                FormsContract.FormsTable.COLUMN_S01HH,
+                FormsContract.FormsTable.COLUMN_S05PD,
+                FormsContract.FormsTable.COLUMN_S06BF,
+                FormsContract.FormsTable.COLUMN_S07CV,
+                FormsContract.FormsTable.COLUMN_S08SE,
+        };
 
         String whereClause;
         whereClause = FormsTable.COLUMN_SYNCED + " is null AND " + FormsTable.COLUMN_ISTATUS + "=?";
@@ -1030,7 +1058,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String orderBy = FormsTable.COLUMN_ID + " ASC";
 
-        Collection<Form> allFC = new ArrayList<>();
+        JSONArray allForms = new JSONArray();
         try {
             c = db.query(
                     FormsTable.TABLE_NAME,  // The table to query
@@ -1042,8 +1070,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                Form fc = new Form();
-                allFC.add(fc.Hydrate(c));
+                /** WorkManager Upload
+                 /*Form fc = new Form();
+                 allFC.add(fc.Hydrate(c));*/
+                Log.d(TAG, "getUnsyncedForms: " + c.getCount());
+                Form form = new Form();
+                allForms.put(form.Hydrate(c).toJSONObject());
+
+
             }
         } finally {
             if (c != null) {
@@ -1053,14 +1087,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        Log.d(TAG, "getUnsyncedForms: " + allFC.size());
-        return allFC;
+        Log.d(TAG, "getUnsyncedForms: " + allForms.length());
+        Log.d(TAG, "getUnsyncedForms: " + allForms);
+        return allForms;
     }
 
-    public Collection<Child> getUnsyncedChild() {
+    public JSONArray getUnsyncedChild() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-        String[] columns = null;
+        String[] columns = {
+                ChildContract.ChildTable.COLUMN_ID,
+                ChildContract.ChildTable.COLUMN_UID,
+                ChildContract.ChildTable.COLUMN_UUID,
+                ChildContract.ChildTable.COLUMN_FMUID,
+                ChildContract.ChildTable.COLUMN_USERNAME,
+                ChildContract.ChildTable.COLUMN_SYSDATE,
+                ChildContract.ChildTable.COLUMN_DCODE,
+                ChildContract.ChildTable.COLUMN_UCODE,
+                ChildContract.ChildTable.COLUMN_CLUSTER,
+                ChildContract.ChildTable.COLUMN_HHNO,
+                ChildContract.ChildTable.COLUMN_DEVICEID,
+                ChildContract.ChildTable.COLUMN_DEVICETAGID,
+                ChildContract.ChildTable.COLUMN_APPVERSION,
+                ChildContract.ChildTable.COLUMN_SYNCED,
+                ChildContract.ChildTable.COLUMN_SYNCED_DATE,
+                ChildContract.ChildTable.COLUMN_STATUS,
+                ChildContract.ChildTable.COLUMN_MOTHER_NAME,
+                ChildContract.ChildTable.COLUMN_CHILD_NAME,
+                ChildContract.ChildTable.COLUMN_SERIAL,
+                ChildContract.ChildTable.COLUMN_SCS,
+
+        };
 
         String whereClause;
         whereClause = ChildContract.ChildTable.COLUMN_SYNCED + " is null AND " + ChildContract.ChildTable.COLUMN_STATUS + "=?";
@@ -1072,7 +1129,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String orderBy = ChildContract.ChildTable.COLUMN_ID + " ASC";
 
-        Collection<Child> allFC = new ArrayList<>();
+//        Collection<Child> allFC = new ArrayList<>();
+        JSONArray allFC = new JSONArray();
+
         try {
             c = db.query(
                     ChildContract.ChildTable.TABLE_NAME,  // The table to query
@@ -1084,8 +1143,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                Child fc = new Child();
-                allFC.add(fc.Hydrate(c));
+              /*  Child fc = new Child();
+                allFC.add(fc.Hydrate(c));*/
+                Log.d(TAG, "getUnsyncedChild: " + c.getCount());
+                Child form = new Child();
+                allFC.put(form.Hydrate(c).toJSONObject());
+
             }
         } finally {
             if (c != null) {
@@ -1098,10 +1161,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<ChildInformation> getUnsyncedChildInfo() {
+    public JSONArray getUnsyncedChildInfo() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-        String[] columns = null;
+        String[] columns = {
+                ChildInformationContract.ChildInfoTable.COLUMN_ID,
+                ChildInformationContract.ChildInfoTable.COLUMN_UID,
+                ChildInformationContract.ChildInfoTable.COLUMN_UUID,
+                ChildInformationContract.ChildInfoTable.COLUMN_USERNAME,
+                ChildInformationContract.ChildInfoTable.COLUMN_SYSDATE,
+                ChildInformationContract.ChildInfoTable.COLUMN_DCODE,
+                ChildInformationContract.ChildInfoTable.COLUMN_UCODE,
+                ChildInformationContract.ChildInfoTable.COLUMN_CLUSTER,
+                ChildInformationContract.ChildInfoTable.COLUMN_HHNO,
+                ChildInformationContract.ChildInfoTable.COLUMN_DEVICEID,
+                ChildInformationContract.ChildInfoTable.COLUMN_DEVICETAGID,
+                ChildInformationContract.ChildInfoTable.COLUMN_APPVERSION,
+                ChildInformationContract.ChildInfoTable.COLUMN_SYNCED,
+                ChildInformationContract.ChildInfoTable.COLUMN_SYNCED_DATE,
+                ChildInformationContract.ChildInfoTable.COLUMN_STATUS,
+                ChildInformationContract.ChildInfoTable.COLUMN_ISSELECTED,
+
+                ChildInformationContract.ChildInfoTable.COLUMN_SCB,
+
+        };
+
 
         String whereClause;
         whereClause = ChildInformationContract.ChildInfoTable.COLUMN_SYNCED + " is null AND " + ChildInformationContract.ChildInfoTable.COLUMN_STATUS + "=?";
@@ -1113,7 +1197,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String orderBy = ChildInformationContract.ChildInfoTable.COLUMN_ID + " ASC";
 
-        Collection<ChildInformation> allFC = new ArrayList<>();
+        /*      Collection<ChildInformation> allFC = new ArrayList<>();     */
+        JSONArray allFC = new JSONArray();
+
         try {
             c = db.query(
                     ChildInformationContract.ChildInfoTable.TABLE_NAME,  // The table to query
@@ -1125,8 +1211,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                ChildInformation fc = new ChildInformation();
-                allFC.add(fc.Hydrate(c));
+             /*   ChildInformation fc = new ChildInformation();
+                allFC.add(fc.Hydrate(c));*/
+                Log.d(TAG, "getUnsyncedChildInfo: " + c.getCount());
+                ChildInformation childInfo = new ChildInformation();
+                allFC.put(childInfo.Hydrate(c).toJSONObject());
+
             }
         } finally {
             if (c != null) {
@@ -1139,10 +1229,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<Immunization> getUnsyncedIM() {
+    public JSONArray getUnsyncedIM() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-        String[] columns = null;
+        String[] columns = {
+                IMContract.IMTable.COLUMN_ID,
+                IMContract.IMTable.COLUMN_UID,
+                IMContract.IMTable.COLUMN_UUID,
+                IMContract.IMTable.COLUMN_FMUID,
+                IMContract.IMTable.COLUMN_USERNAME,
+                IMContract.IMTable.COLUMN_SYSDATE,
+                IMContract.IMTable.COLUMN_DCODE,
+                IMContract.IMTable.COLUMN_UCODE,
+                IMContract.IMTable.COLUMN_CLUSTER,
+                IMContract.IMTable.COLUMN_HHNO,
+                IMContract.IMTable.COLUMN_DEVICEID,
+                IMContract.IMTable.COLUMN_DEVICETAGID,
+                IMContract.IMTable.COLUMN_APPVERSION,
+                IMContract.IMTable.COLUMN_SYNCED,
+                IMContract.IMTable.COLUMN_SYNCED_DATE,
+                IMContract.IMTable.COLUMN_STATUS,
+                IMContract.IMTable.COLUMN_MOTHER_NAME,
+                IMContract.IMTable.COLUMN_CHILD_NAME,
+                IMContract.IMTable.COLUMN_SERIAL,
+                IMContract.IMTable.COLUMN_SIM
+        };
 
         String whereClause;
         whereClause = IMContract.IMTable.COLUMN_SYNCED + " is null AND " + IMContract.IMTable.COLUMN_STATUS + "=?";
@@ -1154,7 +1265,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String orderBy = IMContract.IMTable.COLUMN_ID + " ASC";
 
-        Collection<Immunization> allFC = new ArrayList<>();
+//        Collection<Immunization> allFC = new ArrayList<>();
+        JSONArray allFC = new JSONArray();
+
         try {
             c = db.query(
                     IMContract.IMTable.TABLE_NAME,  // The table to query
@@ -1166,8 +1279,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                Immunization fc = new Immunization();
-                allFC.add(fc.Hydrate(c));
+               /* Immunization fc = new Immunization();
+                allFC.add(fc.Hydrate(c));*/
+                Log.d(TAG, "getUnsyncedIM: " + c.getCount());
+                Immunization form = new Immunization();
+                allFC.put(form.Hydrate(c).toJSONObject());
             }
         } finally {
             if (c != null) {

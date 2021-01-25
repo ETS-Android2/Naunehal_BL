@@ -41,12 +41,12 @@ public class DataUpWorkerALL extends Worker {
     private final Context mContext;
     private final String uploadTable;
     HttpURLConnection urlConnection;
-    private JSONObject uploadData;
+    private final JSONArray uploadData;
     private final URL serverURL = null;
     private ProgressDialog pd;
     private int length;
     private Data data;
-    private final String nTitle = "Enrolment";
+    private final String nTitle = "Naunehal: Data Upload";
     private final int position;
     private final String uploadWhere;
 
@@ -55,12 +55,11 @@ public class DataUpWorkerALL extends Worker {
         super(context, workerParams);
         mContext = context;
         uploadTable = workerParams.getInputData().getString("table");
-        try {
-            uploadData = new JSONObject(workerParams.getInputData().getString("data"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
         position = workerParams.getInputData().getInt("position", -2);
+        uploadData = MainApp.uploadData.get(position);
+        Log.d(TAG, "Upload Begins uploadData.length(): " + uploadData.length());
+        Log.d(TAG, "Upload Begins uploadData: " + uploadData);
+
         Log.d(TAG, "DataDownWorkerALL: position " + position);
         //uploadColumns = workerParams.getInputData().getString("columns");
         uploadWhere = workerParams.getInputData().getString("where");
@@ -119,6 +118,7 @@ public class DataUpWorkerALL extends Worker {
                     .put(jsonTable)
                     .put(jsonSync);
 
+            Log.d(TAG, "Upload Begins Length: " + jsonParam.length());
             Log.d(TAG, "Upload Begins: " + jsonParam);
 
 

@@ -1552,6 +1552,10 @@
     <string name="Q_pd23">pd23</string>
     <string name="Q_pd24">pd24</string>
     <string name="bf14b01x" />
+    <string name="Q_hh25a">HH25a</string>
+    <string name="hh25a">کیا آپ اس گھر/یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر ہیں؟</string>
+    <string name="hh25a01">ہاں</string>
+    <string name="hh25a02">نہیں</string>
 
 
 </resources>

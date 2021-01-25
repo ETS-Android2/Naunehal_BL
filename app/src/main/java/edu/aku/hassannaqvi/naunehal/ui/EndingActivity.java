@@ -53,11 +53,11 @@ public class EndingActivity extends AppCompatActivity {
             bi.istatus96.setEnabled(false);
         } else {
             bi.istatusa.setEnabled(false);
-            bi.istatusb.setEnabled(true);
+            bi.istatusb.setEnabled(!sectionMainCheck);
             bi.istatusc.setEnabled(true);
             bi.istatusd.setEnabled(true);
             bi.istatuse.setEnabled(true);
-            bi.istatusf.setEnabled(true);
+            bi.istatusf.setEnabled(!sectionMainCheck);
             bi.istatusg.setEnabled(true);
             bi.istatus96.setEnabled(true);
         }
