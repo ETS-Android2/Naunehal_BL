@@ -1134,8 +1134,9 @@
                                 android:hint="@string/bf14b01"
                                 android:inputType="number"
                                 android:tag="bf14b01"
-
-
+                                android:maxLength="2"
+                                app:maxValue="99"
+                                app:minValue="0"
                                 android:text='@{bf14b01.checked ? bf14b01x.getText().toString() : ""}'
                                 android:visibility='@{bf14b01.checked? View.VISIBLE : View.GONE}'
                                 app:type="range" />
@@ -1200,8 +1201,9 @@
                                 android:hint="@string/bf14c01"
                                 android:inputType="number"
                                 android:tag="bf14c01"
-
-
+                                android:maxLength="2"
+                                app:maxValue="99"
+                                app:minValue="0"
                                 android:text='@{bf14c01.checked ? bf14c01x.getText().toString() : ""}'
                                 android:visibility='@{bf14c01.checked? View.VISIBLE : View.GONE}'
                                 app:type="range" />
@@ -1319,8 +1321,9 @@
                                 android:hint="@string/bf14e01"
                                 android:inputType="number"
                                 android:tag="bf14e01"
-
-
+                                android:maxLength="2"
+                                app:maxValue="99"
+                                app:minValue="0"
                                 android:text='@{bf14e01.checked ? bf14e01x.getText().toString() : ""}'
                                 android:visibility='@{bf14e01.checked? View.VISIBLE : View.GONE}'
                                 app:type="range" />
@@ -1385,8 +1388,9 @@
                                 android:hint="@string/bf14f01"
                                 android:inputType="number"
                                 android:tag="bf14f01"
-
-
+                                android:maxLength="2"
+                                app:maxValue="99"
+                                app:minValue="0"
                                 android:text='@{bf14f01.checked ? bf14f01x.getText().toString() : ""}'
                                 android:visibility='@{bf14f01.checked? View.VISIBLE : View.GONE}'
                                 app:type="range" />
