@@ -27,7 +27,6 @@ import org.json.JSONObject;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import edu.aku.hassannaqvi.naunehal.CONSTANTS;
@@ -64,7 +63,7 @@ public class SyncActivity extends AppCompatActivity {
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
     String distCode;
-    List<Collection> uploadData;
+   // List<JSONArray> uploadData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +74,7 @@ public class SyncActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         uploadTables = new ArrayList<>();
         downloadTables = new ArrayList<>();
-        uploadData = new ArrayList<>();
+        MainApp.uploadData = new ArrayList<>();
 
 
         //bi.noItem.setVisibility(View.VISIBLE);
@@ -123,23 +122,23 @@ public class SyncActivity extends AppCompatActivity {
 
             case R.id.btnUpload:
                 uploadTables.clear();
-                uploadData.clear();
+                MainApp.uploadData.clear();
                 // Set tables to UPLOAD
                 // Forms
                 uploadTables.add(new SyncModel(FormsContract.FormsTable.TABLE_NAME));
-                uploadData.add(db.getUnsyncedForms());
+                MainApp.uploadData.add(db.getUnsyncedForms());
 
                 // Child Info
                 uploadTables.add(new SyncModel(ChildInformationContract.ChildInfoTable.TABLE_NAME));
-                uploadData.add(db.getUnsyncedChildInfo());
+                MainApp.uploadData.add(db.getUnsyncedChildInfo());
 
                 // Child
                 uploadTables.add(new SyncModel(ChildContract.ChildTable.TABLE_NAME));
-                uploadData.add(db.getUnsyncedChild());
+                MainApp.uploadData.add(db.getUnsyncedChild());
 
                 // IM
                 uploadTables.add(new SyncModel(IMContract.IMTable.TABLE_NAME));
-                uploadData.add(db.getUnsyncedIM());
+                MainApp.uploadData.add(db.getUnsyncedIM());
 
                 setAdapter(uploadTables);
                 BeginUpload();
@@ -313,7 +312,7 @@ public class SyncActivity extends AppCompatActivity {
             Data data = new Data.Builder()
                     .putString("table", uploadTables.get(i).gettableName())
                     .putInt("position", i)
-                    .putString("data", uploadData.get(i).toString())
+                    //    .putString("data", uploadData.get(i).toString())
 
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)

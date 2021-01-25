@@ -40,14 +40,14 @@ public class DataDownWorkerALL extends Worker {
     private final Context mContext;
     private final int position;
     HttpURLConnection urlConnection;
-    private String uploadTable;
+    private final String uploadTable;
     private String uploadColumns;
-    private String uploadWhere;
-    private URL serverURL = null;
+    private final String uploadWhere;
+    private final URL serverURL = null;
     private ProgressDialog pd;
     private int length;
     private Data data;
-    private String nTitle = "Enrolment";
+    private final String nTitle = "Nsaunehal: Data Download";
 
     public DataDownWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
