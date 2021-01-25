@@ -98,10 +98,10 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
         });
 
         bi.bf18.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(bi.fldGrpCVbf19a);
-            bi.fldGrpCVbf19a.setVisibility(View.VISIBLE);
+            Clear.clearAllFields(bi.fldGrpCVbf19);
+            bi.fldGrpCVbf19.setVisibility(View.VISIBLE);
             if (i == bi.bf1802.getId()) {
-                bi.fldGrpCVbf19a.setVisibility(View.GONE);
+                bi.fldGrpCVbf19.setVisibility(View.GONE);
             }
         });
 
@@ -247,10 +247,10 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                 : bi.bf14i02.isChecked() ? "2"
                 : bi.bf14i98.isChecked() ? "98"
                 :  "-1");
-        /*form.setBf15a( bi.bf15a01.isChecked() ? "1"
+        form.setBf15a(bi.bf15a01.isChecked() ? "1"
                 : bi.bf15a02.isChecked() ? "2"
                 : bi.bf15a98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         form.setBf15b( bi.bf15b01.isChecked() ? "1"
                 : bi.bf15b02.isChecked() ? "2"
@@ -354,10 +354,10 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                 :  "-1");
 
         form.setBf1996x(bi.bf1996x.getText().toString());
-        form.setBf20( bi.bf2001.isChecked() ? "1"
+        form.setBf20(bi.bf2001.isChecked() ? "1"
                 : bi.bf2002.isChecked() ? "2"
                 : bi.bf2098.isChecked() ? "98"
-                :  "-1");*/
+                : "-1");
 
 
 
