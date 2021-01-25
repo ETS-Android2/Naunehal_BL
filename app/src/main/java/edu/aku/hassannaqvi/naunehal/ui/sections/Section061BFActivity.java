@@ -418,7 +418,7 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {
@@ -433,7 +433,7 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
     }
 
 
-    public void BtnEnd() {
+    public void BtnEnd(View view) {
         AppUtilsKt.contextEndActivity(this);
     }
 

@@ -691,6 +691,8 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+
                 <!-- pd08a  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVpd08a"
@@ -798,6 +800,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- pd08b  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVpd08b"
@@ -854,8 +857,11 @@
                                 android:layout_weight="1.5"
                                 android:text="@string/pd08b98" />
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- pd08c  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -896,7 +902,9 @@
                             app:maxValue="5"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
