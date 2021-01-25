@@ -27,6 +27,7 @@ import org.json.JSONObject;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import edu.aku.hassannaqvi.naunehal.CONSTANTS;
@@ -36,6 +37,7 @@ import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
+import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom;
@@ -62,20 +64,19 @@ public class SyncActivity extends AppCompatActivity {
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
     String distCode;
+    List<Collection> uploadData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_sync);
         bi.setCallback(this);
+
+        db = MainApp.appInfo.getDbHelper();
         uploadTables = new ArrayList<>();
         downloadTables = new ArrayList<>();
+        uploadData = new ArrayList<>();
 
-        // Set tables to UPLOAD
-        uploadTables.add(new SyncModel(FormsContract.FormsTable.TABLE_NAME));
-        uploadTables.add(new SyncModel(ChildInformationContract.ChildInfoTable.TABLE_NAME));
-        uploadTables.add(new SyncModel(ChildContract.ChildTable.TABLE_NAME));
-        uploadTables.add(new SyncModel(IMContract.IMTable.TABLE_NAME));
 
         //bi.noItem.setVisibility(View.VISIBLE);
         bi.noDataItem.setVisibility(View.VISIBLE);
@@ -85,18 +86,7 @@ public class SyncActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         dbBackup(this);
 
-        boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
-        if (sync_flag) {
-            distCode = getIntent().getStringExtra(CONSTANTS.SYNC_DISTRICTID_LOGIN);
-            downloadTables.add(new SyncModel(BLRandom.TableRandom.TABLE_NAME));
-        } else {
-            // Set tables to DOWNLOAD
-            downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
-            downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
-            downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
-            downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
-            downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
-        }
+
     }
 
 
@@ -132,10 +122,42 @@ public class SyncActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.btnUpload:
+
+                // Set tables to UPLOAD
+                // Forms
+                uploadTables.add(new SyncModel(FormsContract.FormsTable.TABLE_NAME));
+                uploadData.add(db.getUnsyncedForms());
+
+                // Child Info
+                uploadTables.add(new SyncModel(ChildInformationContract.ChildInfoTable.TABLE_NAME));
+                uploadData.add(db.getUnsyncedChildInfo());
+
+                // Child
+                uploadTables.add(new SyncModel(ChildContract.ChildTable.TABLE_NAME));
+                uploadData.add(db.getUnsyncedChild());
+
+                // IM
+                uploadTables.add(new SyncModel(IMContract.IMTable.TABLE_NAME));
+                uploadData.add(db.getUnsyncedIM());
+
                 setAdapter(uploadTables);
                 BeginUpload();
                 break;
             case R.id.btnSync:
+
+                boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
+                if (sync_flag) {
+                    distCode = getIntent().getStringExtra(CONSTANTS.SYNC_DISTRICTID_LOGIN);
+                    downloadTables.add(new SyncModel(BLRandom.TableRandom.TABLE_NAME));
+                } else {
+                    // Set tables to DOWNLOAD
+                    downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
+                    downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
+                    downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
+                }
+
                 setAdapter(downloadTables);
                 BeginDownload();
                 break;
@@ -290,6 +312,8 @@ public class SyncActivity extends AppCompatActivity {
             Data data = new Data.Builder()
                     .putString("table", uploadTables.get(i).gettableName())
                     .putInt("position", i)
+                    .putString("data", uploadData.get(i).toString())
+
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)
                     .build();
@@ -344,69 +368,95 @@ public class SyncActivity extends AppCompatActivity {
                         StringBuilder sSyncedError = new StringBuilder();
                         JSONArray json;
 
+                        if (result != null) {
+                            if (result.length() > 0) {
+                                try {
+                                    Log.d(TAG, "onPostExecute: " + result);
+                                    json = new JSONArray(result);
 
-                        try {
-                            Log.d(TAG, "onPostExecute: " + result);
-                            json = new JSONArray(result);
+                                    // DatabaseHelper db = new DatabaseHelper(SyncActivity.this); // Database Helper
 
-                            DatabaseHelper db = new DatabaseHelper(SyncActivity.this); // Database Helper
+                                    Method method = null;
+                                    for (Method method1 : db.getClass().getDeclaredMethods()) {
 
-                            Method method = null;
-                            for (Method method1 : db.getClass().getDeclaredMethods()) {
-                                if (method1.getName().equals("insert" + tableName)) {
-                                    method = method1;
-                                    break;
+
+                                        /**
+                                         * MAKE SURE TABLE_NAME = <table> IS SAME AS getUnsynced<table> :
+                                         *
+                                         *      -   public static final String TABLE_NAME = "<table>";  // in Contract
+                                         *      -   public JSONArray getUnsynced<table>() {              // in DatabaseHelper
+                                         *
+                                         *      e.g: Forms and getUnsyncedForms
+                                         *
+                                         */
+                                        if (method1.getName().equals("getUnsynced" + tableName)) {
+                                            method = method1;
+                                            break;
+                                        }
+                                    }
+
+                                    for (int i = 0; i < json.length(); i++) {
+                                        JSONObject jsonObject = new JSONObject(json.getString(i));
+
+                                        if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
+                                            method.invoke(db, jsonObject.getString("id"));
+                                            sSynced++;
+                                        } else if (jsonObject.getString("status").equals("2") && jsonObject.getString("error").equals("0")) {
+                                            method.invoke(db, jsonObject.getString("id"));
+                                            sDuplicate++;
+                                        } else {
+                                            sSyncedError.append("\nError: ").append(jsonObject.getString("message"));
+                                        }
+                                    }
+                                    Toast.makeText(SyncActivity.this, tableName + " synced: " + sSynced + "\r\n\r\n Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
+
+                                    if (sSyncedError.toString().equals("")) {
+                                        uploadTables.get(position).setmessage(tableName + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
+                                        uploadTables.get(position).setstatus("Completed");
+                                        uploadTables.get(position).setstatusID(3);
+                                        syncListAdapter.updatesyncList(uploadTables);
+                                    } else {
+                                        uploadTables.get(position).setmessage(tableName + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
+                                        uploadTables.get(position).setstatus("Failed 4");
+                                        uploadTables.get(position).setstatusID(1);
+                                        syncListAdapter.updatesyncList(uploadTables);
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                    Toast.makeText(SyncActivity.this, "Sync Result:  " + result, Toast.LENGTH_SHORT).show();
+
+                                    if (result.equals("No new records to sync.")) {
+                                        uploadTables.get(position).setmessage(result /*+ " Open Forms" + String.format("%02d", unclosedForms.size())*/);
+                                        uploadTables.get(position).setstatus("Not processed");
+                                        uploadTables.get(position).setstatusID(4);
+                                        syncListAdapter.updatesyncList(uploadTables);
+                                    } else {
+                                        uploadTables.get(position).setmessage(result);
+                                        uploadTables.get(position).setstatus("Failed 3");
+                                        uploadTables.get(position).setstatusID(1);
+                                        syncListAdapter.updatesyncList(uploadTables);
+                                    }
+                                } catch (IllegalAccessException | InvocationTargetException e) {
+                                    e.printStackTrace();
+                                    uploadTables.get(position).setstatus("Failed 2");
+                                    uploadTables.get(position).setstatusID(1);
+                                    uploadTables.get(position).setmessage(e.getMessage());
+                                    syncListAdapter.updatesyncList(uploadTables);
                                 }
-                            }
-
-                            for (int i = 0; i < json.length(); i++) {
-                                JSONObject jsonObject = new JSONObject(json.getString(i));
-
-                                if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                                    method.invoke(db, jsonObject.getString("id"));
-                                    sSynced++;
-                                } else if (jsonObject.getString("status").equals("2") && jsonObject.getString("error").equals("0")) {
-                                    method.invoke(db, jsonObject.getString("id"));
-                                    sDuplicate++;
-                                } else {
-                                    sSyncedError.append("\nError: ").append(jsonObject.getString("message"));
-                                }
-                            }
-                            Toast.makeText(SyncActivity.this, tableName + " synced: " + sSynced + "\r\n\r\n Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
-
-                            if (sSyncedError.toString().equals("")) {
-                                uploadTables.get(position).setmessage(tableName + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
-                                uploadTables.get(position).setstatus("Completed");
+                            } else {
+                                uploadTables.get(position).setmessage("Received: " + result.length() + "");
+                                uploadTables.get(position).setstatus("Successful");
                                 uploadTables.get(position).setstatusID(3);
                                 syncListAdapter.updatesyncList(uploadTables);
-                            } else {
-                                uploadTables.get(position).setmessage(tableName + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
-                                uploadTables.get(position).setstatus("Failed 4");
-                                uploadTables.get(position).setstatusID(1);
-                                syncListAdapter.updatesyncList(uploadTables);
+//                pd.show();
                             }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(SyncActivity.this, "Sync Result:  " + result, Toast.LENGTH_SHORT).show();
-
-                            if (result.equals("No new records to sync.")) {
-                                uploadTables.get(position).setmessage(result /*+ " Open Forms" + String.format("%02d", unclosedForms.size())*/);
-                                uploadTables.get(position).setstatus("Not processed");
-                                uploadTables.get(position).setstatusID(4);
-                                syncListAdapter.updatesyncList(uploadTables);
-                            } else {
-                                uploadTables.get(position).setmessage(result);
-                                uploadTables.get(position).setstatus("Failed 3");
-                                uploadTables.get(position).setstatusID(1);
-                                syncListAdapter.updatesyncList(uploadTables);
-                            }
-                        } catch (IllegalAccessException | InvocationTargetException e) {
-                            e.printStackTrace();
-                            uploadTables.get(position).setstatus("Failed 2");
+                        } else {
+                            uploadTables.get(position).setstatus("Failed");
                             uploadTables.get(position).setstatusID(1);
-                            uploadTables.get(position).setmessage(e.getMessage());
+                            uploadTables.get(position).setmessage("Server not found!");
                             syncListAdapter.updatesyncList(uploadTables);
+//            pd.show();
                         }
                     }
                     //mTextView1.append("\n" + workInfo.getState().name());

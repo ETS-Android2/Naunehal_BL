@@ -15,12 +15,10 @@ import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection082seBinding;
-import edu.aku.hassannaqvi.naunehal.ui.EndingActivity;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
-import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivityWithSerializable;
 
 public class Section082SEActivity extends AppCompatActivity implements EndSectionActivity {
 
@@ -252,7 +250,6 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
         if (!formValidation()) return;
         if (UpdateDB()) {
             finish();
-            gotoActivityWithSerializable(this, EndingActivity.class, "complete", true);
         }
     }
 

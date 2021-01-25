@@ -23,6 +23,8 @@ import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.models.BLRandom;
+import edu.aku.hassannaqvi.naunehal.models.BLRandom.TableRandom;
 import edu.aku.hassannaqvi.naunehal.models.Child;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Clusters;
@@ -37,8 +39,6 @@ import edu.aku.hassannaqvi.naunehal.models.UCs.TableUCs;
 import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
-import edu.aku.hassannaqvi.naunehal.models.BLRandom;
-import edu.aku.hassannaqvi.naunehal.models.BLRandom.TableRandom;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp.VersionAppTable;
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable;
 
@@ -1053,6 +1053,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
+        Log.d(TAG, "getUnsyncedForms: " + allFC.size());
         return allFC;
     }
 

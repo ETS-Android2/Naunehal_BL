@@ -249,7 +249,7 @@ public class Form extends BaseObservable {
     public String se189601x = StringUtils.EMPTY;
     public String se19 = StringUtils.EMPTY;
     public String se1996x = StringUtils.EMPTY;
-    public String se20 = StringUtils.EMPTY;
+    // public String se20 = StringUtils.EMPTY;
     public String se2001 = StringUtils.EMPTY;
     public String se2002 = StringUtils.EMPTY;
     public String se2003 = StringUtils.EMPTY;
@@ -4525,7 +4525,7 @@ public class Form extends BaseObservable {
                 this.se189601x = json.getString("se189601x");
                 this.se19 = json.getString("se19");
                 this.se1996x = json.getString("se1996x");
-                this.se20 = json.getString("se20");
+                //      this.se20 = json.getString("se20");
                 this.se2001 = json.getString("se2001");
                 this.se2002 = json.getString("se2002");
                 this.se2003 = json.getString("se2003");
@@ -4534,7 +4534,7 @@ public class Form extends BaseObservable {
                 this.se2006 = json.getString("se2006");
                 this.se2096 = json.getString("se2096");
                 this.se2096x = json.getString("se2096x");
-                this.se21 = json.getString("se21");
+//                this.se21 = json.getString("se21");
                 this.se2101 = json.getString("se2101");
                 this.se2102 = json.getString("se2102");
                 this.se2103 = json.getString("se2103");
