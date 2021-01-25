@@ -9,6 +9,7 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -134,6 +135,15 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
             }
         });*/
 
+        bi.pd23.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (bi.pd2301.getId() == i) {
+                bi.fldGrpCVpd24.setVisibility(View.VISIBLE);
+            } else {
+                Clear.clearAllFields(bi.fldGrpCVpd24);
+                bi.fldGrpCVpd24.setVisibility(View.GONE);
+            }
+        });
+
     }
 
 
@@ -220,7 +230,7 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
                 : "-1");
 
 
-        form.setPd08a( bi.pd08a01.isChecked() ? "1"
+        form.setPd08a(bi.pd08a01.isChecked() ? "1"
                 : bi.pd08a02.isChecked() ? "2"
                 : bi.pd08a03.isChecked() ? "3"
                 : bi.pd08a04.isChecked() ? "4"
@@ -230,13 +240,13 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
                 : bi.pd08a08.isChecked() ? "8"
                 : bi.pd08a09.isChecked() ? "9"
                 : bi.pd08a96.isChecked() ? "96"
-                :  "-1");
+                : "-1");
         form.setPd08a96x(bi.pd08a96x.getText().toString());
 
-        form.setPd08b( bi.pd08b01.isChecked() ? "1"
+        form.setPd08b(bi.pd08b01.isChecked() ? "1"
                 : bi.pd08b02.isChecked() ? "2"
                 : bi.pd08b98.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         form.setPd08c(bi.pd08c.getText().toString());
 
@@ -341,10 +351,10 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
         form.setPd22(bi.pd22.getText().toString());
 
 
-        form.setPd23( bi.pd2301.isChecked() ? "1"
+        form.setPd23(bi.pd2301.isChecked() ? "1"
                 : bi.pd2302.isChecked() ? "2"
                 : bi.pd2398.isChecked() ? "98"
-                :  "-1");
+                : "-1");
 
         form.setPd2401(bi.pd2401.isChecked() ? "1" : "-1");
 
@@ -362,7 +372,6 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
 
         form.setPd2496x(bi.pd2496x.getText().toString());
         form.setPd2498(bi.pd2498.isChecked() ? "98" : "-1");
-
 
 
     }

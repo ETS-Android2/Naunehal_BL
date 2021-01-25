@@ -123,9 +123,26 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             }
         }
 
+        bi.cs20.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
+            if (i == bi.cs2001.id) {
+                bi.fldGrpCVcs21.visibility = View.VISIBLE
+            } else {
+                Clear.clearAllFields(bi.fldGrpCVcs21)
+                bi.fldGrpCVcs21.visibility = View.GONE
+            }
+        }
+
         radioGroup(bi.cs12)
         radioGroup(bi.cs13)
         radioGroup(bi.cs14)
+
+        /*
+        * Skip for child age < 6 months
+        * */
+        if (info.totalMonths < 6) {
+            bi.fldGrpCVcs20.visibility = View.GONE
+            bi.fldGrpCVcs21.visibility = View.GONE
+        }
     }
 
     private fun radioGroup(grp: RadioGroup) {
