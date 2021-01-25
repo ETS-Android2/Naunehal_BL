@@ -67,6 +67,9 @@ public class Child extends BaseObservable {
     public String cs1896;
     public String cs1896x;
     public String cs19;
+    public String cs20;
+    public String cs21;
+
     public String cs1996x;
     public String csdate;
     // APP VARIABLES
@@ -864,6 +867,27 @@ public class Child extends BaseObservable {
         notifyPropertyChanged(BR.cs1996x);
     }
 
+
+    @Bindable
+    public String getCs20() {
+        return cs20;
+    }
+
+    public void setCs20(String cs20) {
+        this.cs20 = cs20;
+        notifyPropertyChanged(BR.cs20);
+    }
+
+    @Bindable
+    public String getCs21() {
+        return cs21;
+    }
+
+    public void setCs21(String cs21) {
+        this.cs21 = cs21;
+        notifyPropertyChanged(BR.cs21);
+    }
+
     @Bindable
     public String getCsdate() {
         return csdate;
@@ -994,6 +1018,8 @@ public class Child extends BaseObservable {
                     .put("cs1896x", cs1896x)
                     .put("cs19", cs19)
                     .put("cs1996x", cs1996x)
+                    .put("cs20", cs20)
+                    .put("cs21", cs21)
                     .put("csdate", csdate);
 
         } catch (JSONException e) {
@@ -1106,6 +1132,8 @@ public class Child extends BaseObservable {
                 this.cs1896x = json.getString("cs1896x");
                 this.cs19 = json.getString("cs19");
                 this.cs1996x = json.getString("cs1996x");
+                this.cs20 = json.getString("cs20");
+                this.cs21 = json.getString("cs21");
                 this.csdate = json.getString("csdate");
 
             } catch (JSONException e) {
