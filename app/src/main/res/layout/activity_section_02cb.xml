@@ -439,28 +439,37 @@
 
                     </LinearLayout>
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cb15"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:enabled="@{cb1598.checked ? false : true}"
-                        android:gravity="center"
-                        android:hint="#.#"
-                        android:inputType="number"
-                        android:text='@{cb1598.checked ? "" : cb15.getText().toString()}'
-                        app:mask="#.#"
-                        app:maxValue="9.9"
-                        app:minValue="0.5"
-                        app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
-                        app:type="range"
-                        tools:ignore="HardcodedText" />
+                        android:orientation="horizontal">
 
-                    <CheckBox
-                        android:id="@+id/cb1598"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:tag="-1"
-                        android:text="@string/cb1598" />
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/cb15"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:enabled="@{cb1598.checked ? false : true}"
+                            android:gravity="center"
+                            android:hint="#.#"
+                            android:inputType="number"
+                            android:text='@{cb1598.checked ? "" : cb15.getText().toString()}'
+                            app:mask="#.#"
+                            app:maxValue="9.9"
+                            app:minValue="0.5"
+                            app:pattern="^(\\d{1,1}\\.\\d{1,1})$"
+                            app:type="range"
+                            tools:ignore="HardcodedText" />
+
+                        <CheckBox
+                            android:id="@+id/cb1598"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="-1"
+                            android:text="@string/cb1598" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
