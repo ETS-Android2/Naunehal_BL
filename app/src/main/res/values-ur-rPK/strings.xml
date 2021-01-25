@@ -267,6 +267,18 @@
     <string name="cs1905"> مالی وجوہات </string>
     <string name="cs1906"> نقل و حرکت / ٹرانسپورٹ کا مسئلہ </string>
     <string name="cs1996">دیگر  وضاحت کریں </string>
+    <string name="cs20">کیا(نام) کو کبھی وٹامن اے کے قطرے پلائے گئے ہیں؟</string>
+    <string name="cs2001">ہاں</string>
+    <string name="cs2002">نہیں</string>
+    <string name="cs2098">معلوم نہیں</string>
+    <string name="cs21">نام) کو وٹامن اے کے قطروں کی آخری خوراک کب پلاوائی گئی تھی؟)</string>
+    <string name="cs2101">ایک ہفتے پہلے</string>
+    <string name="cs2102">ایک مہینے پہلے</string>
+    <string name="cs2103">آخری 3 مہینوں میں</string>
+    <string name="cs2104">آخری 6 مہینوں میں</string>
+    <string name="cs2105">ایک سال پہلے</string>
+
+
     <string name="im1_title1">سیکشن آئی ایم:   حفاظتی ٹیکے ہدایات:  گھر میں رہنے والے 35 ماہ اور اس سے کم عمر تمام بچوں کے لئے سیکشن آئی ایم کو مکمل کریں (اگر ایک سے زیادہ بچے ہیں ، تو دوسری شیٹ استعمال کریں)</string>
     <string name="im01"> کیا بچے کے لئے آپ کے پاس کبھی کسی سرکاری یا نجی مرکز صحت سے ملا ہوا حفاظتی ٹیکوں کا کارڈ موجود تھا ؟ جس میں حفاظتی ٹیکوں کا اندراج موجود ہو </string>
     <string name="im0101">ہاں</string>
@@ -1331,6 +1343,8 @@
     <string name="Q_se34">se34</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
     <string name="database">Database</string>
+    <string name="Q_cs20">CS20</string>
+    <string name="Q_cs21">CS21</string>
 
 
 </resources>

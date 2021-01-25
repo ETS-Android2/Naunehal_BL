@@ -265,6 +265,19 @@
     <string name="cs1905">Financial reasons</string>
     <string name="cs1906">Limitations of transport</string>
     <string name="cs1996">Others Please Specify</string>
+    <string name="cs20">Was (NAME) ever given vitamin A supplementation?</string>
+    <string name="cs2001">Yes</string>
+    <string name="cs2002">No</string>
+    <string name="cs2098">Don\'t Know</string>
+    <string name="cs21">When was last dosage of vitamin A supplementation given to (NAME)?</string>
+    <string name="cs2101">A week ago</string>
+    <string name="cs2102">One month ago</string>
+    <string name="cs2103">In last 3 months</string>
+    <string name="cs2104">In last 6 months</string>
+    <string name="cs2105">More than a year ago</string>
+
+
+
     <string name="im1_title1">Section IM: Child Immunization INSTRUCTION Complete Section IM for all children in household 35 months and under (if more than one child, then use another sheet)</string>
     <string name="im01">Did you ever have a vaccination card from a Government or private health provider where (name)’s vaccinations are written down?</string>
     <string name="im0101">Yes</string>
@@ -1329,6 +1342,8 @@
     <string name="Q_cs16">CS16</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
     <string name="cb1598">Dont Know</string>
+    <string name="Q_cs20">CS20</string>
+    <string name="Q_cs21">CS21</string>
 
 
 </resources>
