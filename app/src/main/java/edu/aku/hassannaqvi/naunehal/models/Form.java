@@ -1857,9 +1857,109 @@ public class Form extends BaseObservable {
     }
 
 
+    public String getBf14a() {
+        return bf14a;
+    }
 
+    public void setBf14a(String bf14a) {
+        this.bf14a = bf14a;
+    }
 
+    public String getBf14b() {
+        return bf14b;
+    }
 
+    public void setBf14b(String bf14b) {
+        this.bf14b = bf14b;
+    }
+
+    public String getBf14b01x() {
+        return bf14b01x;
+    }
+
+    public void setBf14b01x(String bf14b01x) {
+        this.bf14b01x = bf14b01x;
+    }
+
+    public String getBf14c() {
+        return bf14c;
+    }
+
+    public void setBf14c(String bf14c) {
+        this.bf14c = bf14c;
+    }
+
+    public String getBf14c01x() {
+        return bf14c01x;
+    }
+
+    public void setBf14c01x(String bf14c01x) {
+        this.bf14c01x = bf14c01x;
+    }
+
+    public String getBf14d() {
+        return bf14d;
+    }
+
+    public void setBf14d(String bf14d) {
+        this.bf14d = bf14d;
+    }
+
+    public String getBf14e() {
+        return bf14e;
+    }
+
+    public void setBf14e(String bf14e) {
+        this.bf14e = bf14e;
+    }
+
+    public String getBf14e01x() {
+        return bf14e01x;
+    }
+
+    public void setBf14e01x(String bf14e01x) {
+        this.bf14e01x = bf14e01x;
+    }
+
+    public String getBf14f() {
+        return bf14f;
+    }
+
+    public void setBf14f(String bf14f) {
+        this.bf14f = bf14f;
+    }
+
+    public String getBf14f01x() {
+        return bf14f01x;
+    }
+
+    public void setBf14f01x(String bf14f01x) {
+        this.bf14f01x = bf14f01x;
+    }
+
+    public String getBf14g() {
+        return bf14g;
+    }
+
+    public void setBf14g(String bf14g) {
+        this.bf14g = bf14g;
+    }
+
+    public String getBf14h() {
+        return bf14h;
+    }
+
+    public void setBf14h(String bf14h) {
+        this.bf14h = bf14h;
+    }
+
+    public String getBf14i() {
+        return Bf14i;
+    }
+
+    public void setBf14i(String bf14i) {
+        Bf14i = bf14i;
+    }
 
     @Bindable
     public String getCv01() {

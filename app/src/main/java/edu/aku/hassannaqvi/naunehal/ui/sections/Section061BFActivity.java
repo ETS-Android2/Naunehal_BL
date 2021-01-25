@@ -199,7 +199,7 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                 : bi.bf1398.isChecked() ? "98"
                 : "-1");
 
-        /*form.setBf14a( bi.bf14a01.isChecked() ? "1"
+        form.setBf14a( bi.bf14a01.isChecked() ? "1"
                 : bi.bf14a02.isChecked() ? "2"
                 : bi.bf14a98.isChecked() ? "98"
                 :  "-1");
@@ -247,7 +247,6 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                 : bi.bf14i02.isChecked() ? "2"
                 : bi.bf14i98.isChecked() ? "98"
                 :  "-1");
-*/
         /*form.setBf15a( bi.bf15a01.isChecked() ? "1"
                 : bi.bf15a02.isChecked() ? "2"
                 : bi.bf15a98.isChecked() ? "98"
