@@ -219,6 +219,28 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
                 : bi.pd0806.isChecked() ? "6"
                 : "-1");
 
+
+        form.setPd08a( bi.pd08a01.isChecked() ? "1"
+                : bi.pd08a02.isChecked() ? "2"
+                : bi.pd08a03.isChecked() ? "3"
+                : bi.pd08a04.isChecked() ? "4"
+                : bi.pd08a05.isChecked() ? "5"
+                : bi.pd08a06.isChecked() ? "6"
+                : bi.pd08a07.isChecked() ? "7"
+                : bi.pd08a08.isChecked() ? "8"
+                : bi.pd08a09.isChecked() ? "9"
+                : bi.pd08a96.isChecked() ? "96"
+                :  "-1");
+        form.setPd08a96x(bi.pd08a96x.getText().toString());
+
+        form.setPd08b( bi.pd08b01.isChecked() ? "1"
+                : bi.pd08b02.isChecked() ? "2"
+                : bi.pd08b98.isChecked() ? "98"
+                :  "-1");
+
+        form.setPd08c(bi.pd08c.getText().toString());
+
+
         form.setPd09(bi.pd0901.isChecked() ? "1"
                 : bi.pd0902.isChecked() ? "2"
                 : "-1");
@@ -317,6 +339,30 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
         form.setPd2102x(bi.pd2102x.getText().toString());
         form.setPd2103x(bi.pd2103x.getText().toString());
         form.setPd22(bi.pd22.getText().toString());
+
+
+        form.setPd23( bi.pd2301.isChecked() ? "1"
+                : bi.pd2302.isChecked() ? "2"
+                : bi.pd2398.isChecked() ? "98"
+                :  "-1");
+
+        form.setPd2401(bi.pd2401.isChecked() ? "1" : "-1");
+
+        form.setPd2402(bi.pd2402.isChecked() ? "2" : "-1");
+
+        form.setPd2403(bi.pd2403.isChecked() ? "3" : "-1");
+
+        form.setPd2404(bi.pd2404.isChecked() ? "4" : "-1");
+
+        form.setPd2405(bi.pd2405.isChecked() ? "5" : "-1");
+
+        form.setPd2406(bi.pd2406.isChecked() ? "6" : "-1");
+
+        form.setPd2496(bi.pd2496.isChecked() ? "96" : "-1");
+
+        form.setPd2496x(bi.pd2496x.getText().toString());
+        form.setPd2498(bi.pd2498.isChecked() ? "98" : "-1");
+
 
 
     }

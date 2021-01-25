@@ -67,6 +67,10 @@ public class Form extends BaseObservable {
     public String pd07 = StringUtils.EMPTY;
     public String pd0701x = StringUtils.EMPTY;
     public String pd08 = StringUtils.EMPTY;
+    public String pd08a = StringUtils.EMPTY;
+    public String pd08a96x = StringUtils.EMPTY;
+    public String pd08b = StringUtils.EMPTY;
+    public String pd08c = StringUtils.EMPTY;
     public String pd09 = StringUtils.EMPTY;
     public String pd10 = StringUtils.EMPTY;
     public String pd1101 = StringUtils.EMPTY;
@@ -110,6 +114,16 @@ public class Form extends BaseObservable {
     public String pd2102x = StringUtils.EMPTY;
     public String pd2103x = StringUtils.EMPTY;
     public String pd22 = StringUtils.EMPTY;
+    public String pd23 = StringUtils.EMPTY;
+    public String pd2401 = StringUtils.EMPTY;
+    public String pd2402 = StringUtils.EMPTY;
+    public String pd2403 = StringUtils.EMPTY;
+    public String pd2404 = StringUtils.EMPTY;
+    public String pd2405 = StringUtils.EMPTY;
+    public String pd2406 = StringUtils.EMPTY;
+    public String pd2496 = StringUtils.EMPTY;
+    public String pd2496x = StringUtils.EMPTY;
+    public String pd2498 = StringUtils.EMPTY;
     public String pddate = StringUtils.EMPTY;
     //Section PF
     public String bf01 = StringUtils.EMPTY;
@@ -249,7 +263,7 @@ public class Form extends BaseObservable {
     public String se189601x = StringUtils.EMPTY;
     public String se19 = StringUtils.EMPTY;
     public String se1996x = StringUtils.EMPTY;
-    public String se20 = StringUtils.EMPTY;
+    // public String se20 = StringUtils.EMPTY;
     public String se2001 = StringUtils.EMPTY;
     public String se2002 = StringUtils.EMPTY;
     public String se2003 = StringUtils.EMPTY;
@@ -1042,6 +1056,47 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.pd08);
     }
 
+
+    @Bindable
+    public String getPd08a() {
+        return pd08a;
+    }
+
+    public void setPd08a(String pd08a) {
+        this.pd08a = pd08a;
+    }
+
+
+    @Bindable
+    public String getPd08a96x() {
+        return pd08a96x;
+    }
+
+    public void setPd08a96x(String pd08a96x) {
+        this.pd08a96x = pd08a96x;
+    }
+
+
+    @Bindable
+    public String getPd08b() {
+        return pd08b;
+    }
+
+    public void setPd08b(String pd08b) {
+        this.pd08b = pd08b;
+    }
+
+
+    @Bindable
+    public String getPd08c() {
+        return pd08c;
+    }
+
+    public void setPd08c(String pd08c) {
+        this.pd08c = pd08c;
+    }
+
+
     @Bindable
     public String getPd09() {
         return pd09;
@@ -1471,6 +1526,96 @@ public class Form extends BaseObservable {
     public void setPd22(String pd22) {
         this.pd22 = pd22;
         notifyPropertyChanged(BR.pd22);
+    }
+
+    @Bindable
+    public String getPd23() {
+        return pd23;
+    }
+
+    public void setPd23(String pd23) {
+        this.pd23 = pd23;
+    }
+
+    @Bindable
+    public String getPd2401() {
+        return pd2401;
+    }
+
+    public void setPd2401(String pd2401) {
+        this.pd2401 = pd2401;
+    }
+
+    @Bindable
+    public String getPd2402() {
+        return pd2402;
+    }
+
+    public void setPd2402(String pd2402) {
+        this.pd2402 = pd2402;
+    }
+
+    @Bindable
+    public String getPd2403() {
+        return pd2403;
+    }
+
+    public void setPd2403(String pd2403) {
+        this.pd2403 = pd2403;
+    }
+
+    @Bindable
+    public String getPd2404() {
+        return pd2404;
+    }
+
+    public void setPd2404(String pd2404) {
+        this.pd2404 = pd2404;
+    }
+
+    @Bindable
+    public String getPd2405() {
+        return pd2405;
+    }
+
+    public void setPd2405(String pd2405) {
+        this.pd2405 = pd2405;
+    }
+
+    @Bindable
+    public String getPd2406() {
+        return pd2406;
+    }
+
+    public void setPd2406(String pd2406) {
+        this.pd2406 = pd2406;
+    }
+
+    @Bindable
+    public String getPd2496() {
+        return pd2496;
+    }
+
+    public void setPd2496(String pd2496) {
+        this.pd2496 = pd2496;
+    }
+
+    @Bindable
+    public String getPd2496x() {
+        return pd2496x;
+    }
+
+    public void setPd2496x(String pd2496x) {
+        this.pd2496x = pd2496x;
+    }
+
+    @Bindable
+    public String getPd2498() {
+        return pd2498;
+    }
+
+    public void setPd2498(String pd2498) {
+        this.pd2498 = pd2498;
     }
 
     @Bindable
@@ -3865,6 +4010,11 @@ public class Form extends BaseObservable {
                     .put("pd07", pd07)
                     .put("pd0701x", pd0701x)
                     .put("pd08", pd08)
+                    .put("pd08a", pd08a)
+                    .put("pd08a96x", pd08a96x)
+                    .put("pd08b", pd08b)
+                    .put("pd08c", pd08c)
+
                     .put("pd09", pd09)
                     .put("pd10", pd10)
                     .put("pd1101", pd1101)
@@ -3908,6 +4058,24 @@ public class Form extends BaseObservable {
                     .put("pd2102x", pd2102x)
                     .put("pd2103x", pd2103x)
                     .put("pd22", pd22)
+
+                    .put("pd23", pd23)
+                    .put("pd2401", pd2401)
+
+                    .put("pd2402", pd2402)
+
+                    .put("pd2403", pd2403)
+
+                    .put("pd2404", pd2404)
+
+                    .put("pd2405", pd2405)
+
+                    .put("pd2406", pd2406)
+
+                    .put("pd2496", pd2496)
+
+                    .put("pd2496x", pd2496x)
+                    .put("pd2498", pd2498)
                     .put("pddate", pddate);
 
         } catch (JSONException e) {
@@ -4298,6 +4466,10 @@ public class Form extends BaseObservable {
                 this.pd07 = json.getString("pd07");
                 this.pd0701x = json.getString("pd0701x");
                 this.pd08 = json.getString("pd08");
+                this.pd08a = json.getString("pd08a");
+                this.pd08a96x = json.getString("pd08a96x");
+                this.pd08b = json.getString("pd08b");
+                this.pd08c = json.getString("pd08c");
                 this.pd09 = json.getString("pd09");
                 this.pd10 = json.getString("pd10");
                 this.pd1101 = json.getString("pd1101");
@@ -4341,6 +4513,17 @@ public class Form extends BaseObservable {
                 this.pd2102x = json.getString("pd2102x");
                 this.pd2103x = json.getString("pd2103x");
                 this.pd22 = json.getString("pd22");
+                this.pd23 = json.getString("pd23");
+                this.pd2401 = json.getString("pd2401");
+                this.pd2402 = json.getString("pd2402");
+                this.pd2403 = json.getString("pd2403");
+                this.pd2404 = json.getString("pd2404");
+                this.pd2405 = json.getString("pd2405");
+                this.pd2406 = json.getString("pd2406");
+                this.pd2496 = json.getString("pd2496");
+                this.pd2496x = json.getString("pd2496x");
+                this.pd2498 = json.getString("pd2498");
+
                 this.pddate = json.getString("pddate");
 
             } catch (JSONException e) {
@@ -4525,7 +4708,7 @@ public class Form extends BaseObservable {
                 this.se189601x = json.getString("se189601x");
                 this.se19 = json.getString("se19");
                 this.se1996x = json.getString("se1996x");
-                this.se20 = json.getString("se20");
+                //      this.se20 = json.getString("se20");
                 this.se2001 = json.getString("se2001");
                 this.se2002 = json.getString("se2002");
                 this.se2003 = json.getString("se2003");
@@ -4534,7 +4717,7 @@ public class Form extends BaseObservable {
                 this.se2006 = json.getString("se2006");
                 this.se2096 = json.getString("se2096");
                 this.se2096x = json.getString("se2096x");
-                this.se21 = json.getString("se21");
+//                this.se21 = json.getString("se21");
                 this.se2101 = json.getString("se2101");
                 this.se2102 = json.getString("se2102");
                 this.se2103 = json.getString("se2103");

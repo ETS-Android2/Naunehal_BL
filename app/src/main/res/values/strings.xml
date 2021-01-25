@@ -522,6 +522,29 @@
     <string name="pd0804">گھر والے خود علاج جانتے تھے</string>
     <string name="pd0805">مالی وجوہات</string>
     <string name="pd0806">نقل و حرکت / ٹرانسپورٹ کا  مسئلہ</string>
+
+    <string name="pd08a">آپ کے حمل کے دوران قبل از پیدائش کی دیکھ بھال کے ایک حصے کے طور پر ، مندرجہ ذیل میں سے کوئی بھی  اقدام  کم از کم ایک بار کیا گیا تھا؟</string>
+
+    <string name="pd08a01">کیاآپ کا وزن کیا گیاتھا</string>
+
+    <string name="pd08a02">کیا آپ کا بلڈ پریشر چیک کیا گیا تھا</string>
+
+    <string name="pd08a03">کیا آپ کے پیشاب کا نمونہ لیا گیا تھا</string>
+
+    <string name="pd08a04">کیا آپ کے خون کا نمونہ لیا گیا تھا</string>
+
+    <string name="pd08a05">کیا آپ کا الٹراسائونڈ ہوا تھا</string>
+
+    <string name="pd08a06">کیا آپ نے غذائیت سے متعلق مشاورت لی تھی</string>
+    <string name="pd08a07">کیا آپ نے ماں کا دودھ پلانے کے حوالے سے مشاورت لی تھی</string>
+    <string name="pd08a08">کیا آپ نے خاندانی منصوبہ بندی کے حوالے سے مشاورت لی تھی</string>
+    <string name="pd08a09">مندرجہ بالا میں سے کوئی نہیں</string>
+    <string name="pd08a96">دیگر برائے مہربانی وضاحت کریں</string>
+    <string name="pd08b">اپنے آخری حمل کے دوران ، کیا آپ کو تشنج سے بچائو کا انجیکشن لگاتھا؟</string>
+    <string name="pd08b01">ہاں</string>
+    <string name="pd08b02">نہیں</string>
+    <string name="pd08b98">معلوم نہیں</string>
+    <string name="pd08c">آپ کو کتنی بار تشنج کا انجکشن لگا تھا؟تعداد</string>
     <string name="pd09">کیا آپ نےکبھی حمل کے دوارن فولاد کی گولیاں استعمال کیں؟</string>
     <string name="pd0901">ہاں </string>
     <string name="pd0902">نہیں </string>
@@ -601,6 +624,22 @@
     <string name="pd2198"> معلوم نہیں / یاد نہیں </string>
     <string name="pd22"> اس طرح کا معائنہ کتنی مرتبہ ہوا ؟ </string>
     <string name="pd22a"> تعداد </string>
+    <string name="pd23">حمل نال گرنے کے بعد، کیا اس پر کچھ لگایا گیا تھا؟</string>
+    <string name="pd2301">ہاں</string>
+    <string name="pd2302">نہیں</string>
+    <string name="pd2398">معلوم نہیں</string>
+    <string name="pd24">حمل نال پر کیا لگایا گیا تھا؟ ایک سے زیادہ جوابات آسکتے ہیں</string>
+    <string name="pd2401">کلوروپیکسیڈین</string>
+    <string name="pd2402">دیگر جراثیم کش ادویات(الکوحل،اسپرٹ،جینشن وائلیٹ،ڈیٹول)</string>
+    <string name="pd2403">سُرمہ</string>
+    <string name="pd2404">سرسوں کاتیل</string>
+    <string name="pd2405">راکھ</string>
+    <string name="pd2406">جانوروں کا گوبر</string>
+    <string name="pd2496">دیگر برائے مہربانی وضاحت کریں</string>
+    <string name="pd2498">معلوم نہیں/یاد نہیں</string>
+
+
+
     <string name="bf_title1">سیکشن بی ایف: دودھ پلانا ، صحت اور نگہداشت سے متعلق رویے ہدایات:    گھر میں رہنے والے 0-23 ماہ کے سب سے کم عمر بچے کی ماں سے بھروایا جائے۔</string>
     <string name="bf01">بچے کا لائن نمبر(2سال سے کم عمر)</string>
     <string name="bf02">بچے کی ماں کا نام</string>
@@ -1346,6 +1385,11 @@
     <string name="database">Database</string>
     <string name="Q_cs20">CS20</string>
     <string name="Q_cs21">CS21</string>
+    <string name="Q_pd08a">PD08a</string>
+    <string name="Q_pd08b">PD08b</string>
+    <string name="Q_pd08c">PD08c</string>
+    <string name="Q_pd23">pd23</string>
+    <string name="Q_pd24">pd24</string>
 
 
 </resources>

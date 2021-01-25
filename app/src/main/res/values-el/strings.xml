@@ -522,6 +522,31 @@
     <string name="pd0804">ChildInformation knew how to care for you themselves</string>
     <string name="pd0805">Financial reasons</string>
     <string name="pd0806">Limitations of transport</string>
+
+
+
+    <string name="pd08a">As part of your antenatal care during your pregnancy, were any of the following done at least once: (Ask about each option and circle all positive responses)</string>
+
+    <string name="pd08a01">Were you weighed </string>
+
+    <string name="pd08a02">Was your BP measured</string>
+
+    <string name="pd08a03">Did you give urine sample</string>
+
+    <string name="pd08a04">Did you give blood sample</string>
+
+    <string name="pd08a05">Ultrasound</string>
+
+    <string name="pd08a06">Received counselling on nutrition</string>
+    <string name="pd08a07">Received counselling on breastfeeding</string>
+    <string name="pd08a08">Received counselling on family planning</string>
+    <string name="pd08a09">none of the above</string>
+    <string name="pd08a96">Others Please Specify</string>
+    <string name="pd08b">During your last pregnancy, did you receive any tetanus injections?</string>
+    <string name="pd08b01">Yes</string>
+    <string name="pd08b02">No</string>
+    <string name="pd08b98">Don\'t know</string>
+    <string name="pd08c">How many times did you receive tetanus injection?</string>
     <string name="pd09">Have you ever taken any iron folic acid (IFA) while you were pregnant?</string>
     <string name="pd0901">Yes</string>
     <string name="pd0902">No</string>
@@ -601,6 +626,19 @@
     <string name="pd2198">Don’t know/ don’t remember</string>
     <string name="pd22"> How many times such check happen ? </string>
     <string name="pd22a"> Number of Times </string>
+    <string name="pd23">After the cord was cut and until it fell off, was anything applied to the cord?</string>
+    <string name="pd2301">Yes</string>
+    <string name="pd2302">No</string>
+    <string name="pd2398">Don\'t know</string>
+    <string name="pd24">What was applied to the cord? [Multiple responses]</string>
+    <string name="pd2401">Chlorhexidine</string>
+    <string name="pd2402">Other antiseptic (alcohol, spirit, gentian violet, Dettol)</string>
+    <string name="pd2403">Surma</string>
+    <string name="pd2404">Mustard oil </string>
+    <string name="pd2405">Ash</string>
+    <string name="pd2406">Animal dung</string>
+    <string name="pd2496">Others Please Specify</string>
+    <string name="pd2498">Don’t know / don’t remember</string>
 
 
     <string name="bf_title1">Section BF: Breastfeeding, Health &amp; Care-seeking Behaviors Instruction: To be administered to the mother of the youngest child in the household, between 0-23 months of age</string>
@@ -1346,6 +1384,11 @@
     <string name="cb1598">Dont Know</string>
     <string name="Q_cs20">CS20</string>
     <string name="Q_cs21">CS21</string>
+    <string name="Q_pd08a">PD08a</string>
+    <string name="Q_pd08b">PD08b</string>
+    <string name="Q_pd08c">PD08c</string>
+    <string name="Q_pd23">pd23</string>
+    <string name="Q_pd24">pd24</string>
 
 
 </resources>
