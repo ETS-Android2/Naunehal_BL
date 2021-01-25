@@ -357,10 +357,16 @@ class Section01HHActivity : AppCompatActivity() {
         }
 
 
+        form.setHh01(when {
+            bi.aa01.text.toString().trim().isNotEmpty() -> bi.aa01.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh01(bi.aa01.text.toString())
+        form.setHh0201(when {
+            bi.hh0201.text.toString().trim().isNotEmpty() -> bi.hh0201.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh0201(bi.hh0201.text.toString())
         /* form.setHh0202(bi.hh0202.getText().toString())
          form.setHh03(bi.hh03.getText().toString())
 
@@ -370,45 +376,147 @@ class Section01HHActivity : AppCompatActivity() {
 
         form.setHh06(bi.hh06.selectedItem.toString())
 
-        form.setHh07(bi.hh07.text.toString())
 
-        form.setHh08(bi.hh08.text.toString())
 
-        form.setHh09(bi.hh09.text.toString())
+        form.setHh07(when {
+            bi.hh07.text.toString().trim().isNotEmpty() -> bi.hh07.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh10(bi.hh10.text.toString())
+        form.setHh08(when {
+            bi.hh08.text.toString().trim().isNotEmpty() -> bi.hh08.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh11(if (bi.hh1101.isChecked) "1" else if (bi.hh1102.isChecked) "2" else "-1")
+        form.setHh09(when {
+            bi.hh09.text.toString().trim().isNotEmpty() -> bi.hh09.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh12(bi.hh12.text.toString())
+        form.setHh10(when {
+            bi.hh10.text.toString().trim().isNotEmpty() -> bi.hh10.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh13(bi.hh13.text.toString())
+        form.setHh11(when {
+            bi.hh1101.isChecked -> "1"
+            bi.hh1102.isChecked -> "2"
+            else -> "-1"
+        })
 
-        form.setHh14(if (bi.hh1401.isChecked) "1" else if (bi.hh1402.isChecked) "2" else "-1")
+        form.setHh12(when {
+            bi.hh12.text.toString().trim().isNotEmpty() -> bi.hh12.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh15(if (bi.hh1501.isChecked) "1" else if (bi.hh1502.isChecked) "2" else if (bi.hh1503.isChecked) "3" else if (bi.hh1504.isChecked) "4" else if (bi.hh1505.isChecked) "5" else "-1")
+        form.setHh13(when {
+            bi.hh13.text.toString().trim().isNotEmpty() -> bi.hh13.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh16(bi.hh16.text.toString())
+        form.setHh14(when {
+            bi.hh1401.isChecked -> "1"
+            bi.hh1402.isChecked -> "2"
+            else -> "-1"
+        })
 
-        form.setHh17(if (bi.hh1701.isChecked) "1" else if (bi.hh1702.isChecked) "2" else if (bi.hh1703.isChecked) "3" else if (bi.hh1704.isChecked) "4" else if (bi.hh1705.isChecked) "5" else if (bi.hh1706.isChecked) "6" else if (bi.hh1707.isChecked) "7" else if (bi.hh1708.isChecked) "8" else if (bi.hh1709.isChecked) "9" else if (bi.hh1710.isChecked) "10" else if (bi.hh1711.isChecked) "11" else if (bi.hh1712.isChecked) "12" else if (bi.hh1713.isChecked) "13" else if (bi.hh1796.isChecked) "96" else "-1")
 
-        form.setHh1796x(bi.hh1796x.text.toString())
-        form.setHh18(if (bi.hh1801.isChecked) "1" else if (bi.hh1802.isChecked) "2" else "-1")
+        /*Removal Instructed by Chaudary Sahab - 25Jan2021*/
+        /* form.setHh15(when {
+             bi.hh1501.isChecked -> "1"
+             bi.hh1502.isChecked -> "2"
+             bi.hh1503.isChecked -> "3"
+             bi.hh1504.isChecked -> "4"
+             bi.hh1505.isChecked -> "5"
+             else -> "-1"
+         })*/
 
-        form.setHh19(bi.hh19.text.toString())
+        form.setHh16(when {
+            bi.hh16.text.toString().trim().isNotEmpty() -> bi.hh16.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh20(if (bi.hh2001.isChecked) "1" else if (bi.hh2002.isChecked) "2" else if (bi.hh2003.isChecked) "3" else if (bi.hh2004.isChecked) "4" else if (bi.hh2005.isChecked) "5" else if (bi.hh2006.isChecked) "6" else if (bi.hh2007.isChecked) "7" else if (bi.hh2008.isChecked) "8" else if (bi.hh2009.isChecked) "9" else if (bi.hh2010.isChecked) "10" else if (bi.hh2011.isChecked) "11" else if (bi.hh2012.isChecked) "12" else if (bi.hh2013.isChecked) "13" else if (bi.hh2096.isChecked) "96" else "-1")
+        form.setHh17(when {
+            bi.hh1701.isChecked -> "1"
+            bi.hh1702.isChecked -> "2"
+            bi.hh1703.isChecked -> "3"
+            bi.hh1704.isChecked -> "4"
+            bi.hh1705.isChecked -> "5"
+            bi.hh1706.isChecked -> "6"
+            bi.hh1707.isChecked -> "7"
+            bi.hh1708.isChecked -> "8"
+            bi.hh1709.isChecked -> "9"
+            bi.hh1710.isChecked -> "10"
+            bi.hh1711.isChecked -> "11"
+            bi.hh1712.isChecked -> "12"
+            bi.hh1713.isChecked -> "13"
+            bi.hh1796.isChecked -> "96"
+            else -> "-1"
+        })
 
-        form.setHh2096x(bi.hh2096x.text.toString())
-        form.setHh21(bi.hh21.text.toString())
+        form.setHh1796x(when {
+            bi.hh1796x.text.toString().trim().isNotEmpty() -> bi.hh1796x.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh22(bi.hh22.text.toString())
+        form.setHh18(when {
+            bi.hh1801.isChecked -> "1"
+            bi.hh1802.isChecked -> "2"
+            else -> "-1"
+        })
 
-        form.setHh23(bi.hh23.text.toString())
+        form.setHh19(when {
+            bi.hh19.text.toString().trim().isNotEmpty() -> bi.hh19.text.toString()
+            else -> "-1"
+        })
 
-        form.setHh24(bi.hh24.text.toString())
+        form.setHh20(when {
+            bi.hh2001.isChecked -> "1"
+            bi.hh2002.isChecked -> "2"
+            bi.hh2003.isChecked -> "3"
+            bi.hh2004.isChecked -> "4"
+            bi.hh2005.isChecked -> "5"
+            bi.hh2006.isChecked -> "6"
+            bi.hh2007.isChecked -> "7"
+            bi.hh2008.isChecked -> "8"
+            bi.hh2009.isChecked -> "9"
+            bi.hh2010.isChecked -> "10"
+            bi.hh2011.isChecked -> "11"
+            bi.hh2012.isChecked -> "12"
+            bi.hh2013.isChecked -> "13"
+            bi.hh2096.isChecked -> "96"
+            else -> "-1"
+        })
 
-        form.setHh25(bi.hh25.text.toString())
+        form.setHh2096x(when {
+            bi.hh2096x.text.toString().trim().isNotEmpty() -> bi.hh2096x.text.toString()
+            else -> "-1"
+        })
+
+        form.setHh21(when {
+            bi.hh21.text.toString().trim().isNotEmpty() -> bi.hh21.text.toString()
+            else -> "-1"
+        })
+
+        form.setHh22(when {
+            bi.hh22.text.toString().trim().isNotEmpty() -> bi.hh22.text.toString()
+            else -> "-1"
+        })
+
+        form.setHh23(when {
+            bi.hh23.text.toString().trim().isNotEmpty() -> bi.hh23.text.toString()
+            else -> "-1"
+        })
+
+        form.setHh24(when {
+            bi.hh24.text.toString().trim().isNotEmpty() -> bi.hh24.text.toString()
+            else -> "-1"
+        })
+
+        form.setHh25(when {
+            bi.hh25.text.toString().trim().isNotEmpty() -> bi.hh25.text.toString()
+            else -> "-1"
+        })
 
 
     }
