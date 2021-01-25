@@ -148,6 +148,44 @@ public class Form extends BaseObservable {
     public String bf11 = StringUtils.EMPTY;
     public String bf12 = StringUtils.EMPTY;
     public String bf13 = StringUtils.EMPTY;
+    public String bf14a = StringUtils.EMPTY;
+    public String bf14b = StringUtils.EMPTY;
+    public String bf14b01x = StringUtils.EMPTY;
+    public String bf14c = StringUtils.EMPTY;
+    public String bf14c01x = StringUtils.EMPTY;
+    public String bf14d = StringUtils.EMPTY;
+    public String bf14e = StringUtils.EMPTY;
+    public String bf14e01x = StringUtils.EMPTY;
+    public String bf14f = StringUtils.EMPTY;
+    public String bf14f01x = StringUtils.EMPTY;
+    public String bf14g = StringUtils.EMPTY;
+    public String bf14h = StringUtils.EMPTY;
+    public String bf14i = StringUtils.EMPTY;
+    public String bf15a = StringUtils.EMPTY;
+    public String bf15b = StringUtils.EMPTY;
+    public String bf15c = StringUtils.EMPTY;
+    public String bf15d = StringUtils.EMPTY;
+    public String bf15e = StringUtils.EMPTY;
+    public String bf15f = StringUtils.EMPTY;
+    public String bf15g = StringUtils.EMPTY;
+    public String bf15h = StringUtils.EMPTY;
+    public String bf15i = StringUtils.EMPTY;
+    public String bf15j = StringUtils.EMPTY;
+    public String bf15k = StringUtils.EMPTY;
+    public String bf15l = StringUtils.EMPTY;
+    public String bf15m = StringUtils.EMPTY;
+    public String bf15n = StringUtils.EMPTY;
+    public String bf15o = StringUtils.EMPTY;
+    public String bf15p = StringUtils.EMPTY;
+    public String bf15q = StringUtils.EMPTY;
+    public String bf16 = StringUtils.EMPTY;
+    public String bf17 = StringUtils.EMPTY;
+    public String bf1701x = StringUtils.EMPTY;
+    public String bf18 = StringUtils.EMPTY;
+    public String bf19 = StringUtils.EMPTY;
+    public String bf1996x = StringUtils.EMPTY;
+    public String bf20 = StringUtils.EMPTY;
+
     public String bfdate = StringUtils.EMPTY;
     //Section CV
     public String cv01 = StringUtils.EMPTY;
@@ -1840,6 +1878,414 @@ public class Form extends BaseObservable {
         this.bf13 = bf13;
         notifyPropertyChanged(BR.bf13);
     }
+
+
+    @Bindable
+    public String getBf14a() {
+        return bf14a;
+    }
+
+    public void setBf14a(String bf14a) {
+        this.bf14a = bf14a;
+        notifyPropertyChanged(BR.bf14a);
+    }
+
+
+    @Bindable
+    public String getBf14b() {
+        return bf14b;
+    }
+
+    public void setBf14b(String bf14b) {
+        this.bf14b = bf14b;
+        notifyPropertyChanged(BR.bf14a);
+    }
+
+
+    @Bindable
+    public String getBf14b01x() {
+        return bf14b01x;
+    }
+
+    public void setBf14b01x(String bf14b01x) {
+        this.bf14b01x = bf14b01x;
+        notifyPropertyChanged(BR.bf14b01x);
+    }
+
+
+    @Bindable
+    public String getBf14c() {
+        return bf14c;
+    }
+
+    public void setBf14c(String bf14c) {
+        this.bf14c = bf14c;
+        notifyPropertyChanged(BR.bf14c);
+    }
+
+
+    @Bindable
+    public String getBf14c01x() {
+        return bf14c01x;
+    }
+
+    public void setBf14c01x(String bf14c01x) {
+        this.bf14c01x = bf14c01x;
+        notifyPropertyChanged(BR.bf14c01x);
+    }
+
+
+    @Bindable
+    public String getBf14d() {
+        return bf14d;
+    }
+
+    public void setBf14d(String bf14d) {
+        this.bf14d = bf14d;
+        notifyPropertyChanged(BR.bf14d);
+    }
+
+
+    @Bindable
+    public String getBf14e() {
+        return bf14e;
+    }
+
+    public void setBf14e(String bf14e) {
+        this.bf14e = bf14e;
+        notifyPropertyChanged(BR.bf14e);
+    }
+
+
+    @Bindable
+    public String getBf14e01x() {
+        return bf14e01x;
+    }
+
+    public void setBf14e01x(String bf14e01x) {
+        this.bf14e01x = bf14e01x;
+        notifyPropertyChanged(BR.bf14e01x);
+    }
+
+
+    @Bindable
+    public String getBf14f() {
+        return bf14f;
+    }
+
+    public void setBf14f(String bf14f) {
+        this.bf14f = bf14f;
+        notifyPropertyChanged(BR.bf14f);
+    }
+
+
+    @Bindable
+    public String getBf14f01x() {
+        return bf14f01x;
+    }
+
+    public void setBf14f01x(String bf14f01x) {
+        this.bf14f01x = bf14f01x;
+        notifyPropertyChanged(BR.bf14f01x);
+    }
+
+
+    @Bindable
+    public String getBf14g() {
+        return bf14g;
+    }
+
+    public void setBf14g(String bf14g) {
+        this.bf14g = bf14g;
+        notifyPropertyChanged(BR.bf14g);
+    }
+
+
+    @Bindable
+    public String getBf14h() {
+        return bf14h;
+    }
+
+    public void setBf14h(String bf14h) {
+        this.bf14h = bf14h;
+        notifyPropertyChanged(BR.bf14h);
+    }
+
+
+    @Bindable
+    public String getBf14i() {
+        return bf14i;
+    }
+
+    public void setBf14i(String bf14i) {
+        this.bf14i = bf14i;
+        notifyPropertyChanged(BR.bf14i);
+    }
+
+
+    @Bindable
+    public String getBf15a() {
+        return bf15a;
+    }
+
+    public void setBf15a(String bf15a) {
+        this.bf15a = bf15a;
+        notifyPropertyChanged(BR.bf15a);
+    }
+
+
+    @Bindable
+    public String getBf15b() {
+        return bf15b;
+    }
+
+    public void setBf15b(String bf15b) {
+        this.bf15b = bf15b;
+        notifyPropertyChanged(BR.bf15b);
+    }
+
+
+    @Bindable
+    public String getBf15c() {
+        return bf15c;
+    }
+
+    public void setBf15c(String bf15c) {
+        this.bf15c = bf15c;
+        notifyPropertyChanged(BR.bf15c);
+    }
+
+
+    @Bindable
+    public String getBf15d() {
+        return bf15d;
+    }
+
+    public void setBf15d(String bf15d) {
+        this.bf15d = bf15d;
+        notifyPropertyChanged(BR.bf15d);
+    }
+
+
+    @Bindable
+    public String getBf15e() {
+        return bf15e;
+    }
+
+    public void setBf15e(String bf15e) {
+        this.bf15e = bf15e;
+        notifyPropertyChanged(BR.bf15e);
+    }
+
+
+    @Bindable
+    public String getBf15f() {
+        return bf15f;
+    }
+
+    public void setBf15f(String bf15f) {
+        this.bf15f = bf15f;
+        notifyPropertyChanged(BR.bf15f);
+    }
+
+
+    @Bindable
+    public String getBf15g() {
+        return bf15g;
+    }
+
+    public void setBf15g(String bf15g) {
+        this.bf15g = bf15g;
+        notifyPropertyChanged(BR.bf15g);
+    }
+
+
+    @Bindable
+    public String getBf15h() {
+        return bf15h;
+    }
+
+    public void setBf15h(String bf15h) {
+        this.bf15h = bf15h;
+        notifyPropertyChanged(BR.bf15h);
+    }
+
+
+    @Bindable
+    public String getBf15i() {
+        return bf15i;
+    }
+
+    public void setBf15i(String bf15i) {
+        this.bf15i = bf15i;
+        notifyPropertyChanged(BR.bf15i);
+    }
+
+
+    @Bindable
+    public String getBf15j() {
+        return bf15j;
+    }
+
+    public void setBf15j(String bf15j) {
+        this.bf15j = bf15j;
+        notifyPropertyChanged(BR.bf15j);
+    }
+
+
+    @Bindable
+    public String getBf15k() {
+        return bf15k;
+    }
+
+    public void setBf15k(String bf15k) {
+        this.bf15k = bf15k;
+        notifyPropertyChanged(BR.bf15k);
+    }
+
+
+    @Bindable
+    public String getBf15l() {
+        return bf15l;
+    }
+
+    public void setBf15l(String bf15l) {
+        this.bf15l = bf15l;
+        notifyPropertyChanged(BR.bf15l);
+    }
+
+
+    @Bindable
+    public String getBf15m() {
+        return bf15m;
+    }
+
+    public void setBf15m(String bf15m) {
+        this.bf15m = bf15m;
+        notifyPropertyChanged(BR.bf15m);
+    }
+
+
+    @Bindable
+    public String getBf15n() {
+        return bf15n;
+    }
+
+    public void setBf15n(String bf15n) {
+        this.bf15n = bf15n;
+        notifyPropertyChanged(BR.bf15n);
+    }
+
+
+    @Bindable
+    public String getBf15o() {
+        return bf15o;
+    }
+
+    public void setBf15o(String bf15o) {
+        this.bf15o = bf15o;
+        notifyPropertyChanged(BR.bf15o);
+    }
+
+
+    @Bindable
+    public String getBf15p() {
+        return bf15p;
+    }
+
+    public void setBf15p(String bf15p) {
+        this.bf15p = bf15p;
+        notifyPropertyChanged(BR.bf15p);
+    }
+
+
+    @Bindable
+    public String getBf15q() {
+        return bf15q;
+    }
+
+    public void setBf15q(String bf15q) {
+        this.bf15q = bf15q;
+        notifyPropertyChanged(BR.bf15q);
+    }
+
+
+    @Bindable
+    public String getBf16() {
+        return bf16;
+    }
+
+    public void setBf16(String bf16) {
+        this.bf16 = bf16;
+        notifyPropertyChanged(BR.bf16);
+    }
+
+
+    @Bindable
+    public String getBf17() {
+        return bf17;
+    }
+
+    public void setBf17(String bf17) {
+        this.bf17 = bf17;
+        notifyPropertyChanged(BR.bf17);
+    }
+
+
+    @Bindable
+    public String getBf1701x() {
+        return bf1701x;
+    }
+
+    public void setBf1701x(String bf1701x) {
+        this.bf1701x = bf1701x;
+        notifyPropertyChanged(BR.bf1701x);
+    }
+
+
+    @Bindable
+    public String getBf18() {
+        return bf18;
+    }
+
+    public void setBf18(String bf18) {
+        this.bf18 = bf18;
+        notifyPropertyChanged(BR.bf18);
+    }
+
+
+    @Bindable
+    public String getBf19() {
+        return bf19;
+    }
+
+    public void setBf19(String bf19) {
+        this.bf19 = bf19;
+        notifyPropertyChanged(BR.bf19);
+    }
+
+
+    @Bindable
+    public String getBf1996x() {
+        return bf1996x;
+    }
+
+    public void setBf1996x(String bf1996x) {
+        this.bf1996x = bf1996x;
+        notifyPropertyChanged(BR.bf1996x);
+    }
+
+
+    @Bindable
+    public String getBf20() {
+        return bf20;
+    }
+
+    public void setBf20(String bf20) {
+        this.bf20 = bf20;
+        notifyPropertyChanged(BR.bf20);
+    }
+
 
     @Bindable
     public String getCv01() {
@@ -4113,6 +4559,43 @@ public class Form extends BaseObservable {
                     .put("bf11", bf11)
                     .put("bf12", bf12)
                     .put("bf13", bf13)
+                    .put("bf14a", bf14a)
+                    .put("bf14b", bf14b)
+                    .put("bf14b01x", bf14b01x)
+                    .put("bf14c", bf14c)
+                    .put("bf14c01x", bf14c01x)
+                    .put("bf14d", bf14d)
+                    .put("bf14e", bf14e)
+                    .put("bf14e01x", bf14e01x)
+                    .put("bf14f", bf14f)
+                    .put("bf14f01x", bf14f01x)
+                    .put("bf14g", bf14g)
+                    .put("bf14h", bf14h)
+                    .put("bf14i", bf14i)
+                    .put("bf15a", bf15a)
+                    .put("bf15b", bf15b)
+                    .put("bf15c", bf15c)
+                    .put("bf15d", bf15d)
+                    .put("bf15e", bf15e)
+                    .put("bf15f", bf15f)
+                    .put("bf15g", bf15g)
+                    .put("bf15h", bf15h)
+                    .put("bf15i", bf15i)
+                    .put("bf15j", bf15j)
+                    .put("bf15k", bf15k)
+                    .put("bf15l", bf15l)
+                    .put("bf15m", bf15m)
+                    .put("bf15n", bf15n)
+                    .put("bf15o", bf15o)
+                    .put("bf15p", bf15p)
+                    .put("bf15q", bf15q)
+                    .put("bf16", bf16)
+                    .put("bf17", bf17)
+                    .put("bf1701x", bf1701x)
+                    .put("bf18", bf18)
+                    .put("bf19", bf19)
+                    .put("bf1996x", bf1996x)
+                    .put("bf20", bf20)
                     .put("bfdate", bfdate);
 
         } catch (JSONException e) {
@@ -4563,6 +5046,43 @@ public class Form extends BaseObservable {
                 this.bf11 = json.getString("bf11");
                 this.bf12 = json.getString("bf12");
                 this.bf13 = json.getString("bf13");
+                this.bf14a = json.getString("bf14a");
+                this.bf14b = json.getString("bf14b");
+                this.bf14b01x = json.getString("bf14b01x");
+                this.bf14c = json.getString("bf14c");
+                this.bf14c01x = json.getString("bf14c01x");
+                this.bf14d = json.getString("bf14d");
+                this.bf14e = json.getString("bf14e");
+                this.bf14e01x = json.getString("bf14e01x");
+                this.bf14f = json.getString("bf14f");
+                this.bf14f01x = json.getString("bf14f01x");
+                this.bf14g = json.getString("bf14g");
+                this.bf14h = json.getString("bf14h");
+                this.bf14i = json.getString("bf14i");
+                this.bf15a = json.getString("bf15a");
+                this.bf15b = json.getString("bf15b");
+                this.bf15c = json.getString("bf15c");
+                this.bf15d = json.getString("bf15d");
+                this.bf15e = json.getString("bf15e");
+                this.bf15f = json.getString("bf15f");
+                this.bf15g = json.getString("bf15g");
+                this.bf15h = json.getString("bf15h");
+                this.bf15i = json.getString("bf15i");
+                this.bf15j = json.getString("bf15j");
+                this.bf15k = json.getString("bf15k");
+                this.bf15l = json.getString("bf15l");
+                this.bf15m = json.getString("bf15m");
+                this.bf15n = json.getString("bf15n");
+                this.bf15o = json.getString("bf15o");
+                this.bf15p = json.getString("bf15p");
+                this.bf15q = json.getString("bf15q");
+                this.bf16 = json.getString("bf16");
+                this.bf17 = json.getString("bf17");
+                this.bf1701x = json.getString("bf1701x");
+                this.bf18 = json.getString("bf18");
+                this.bf19 = json.getString("bf19");
+                this.bf1996x = json.getString("bf1996x");
+                this.bf20 = json.getString("bf20");
                 this.bfdate = json.getString("bfdate");
 
             } catch (JSONException e) {

@@ -15,7 +15,7 @@ import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection06bfBinding;
+import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection061bfBinding;
 import edu.aku.hassannaqvi.naunehal.models.ChildCard;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
@@ -25,15 +25,15 @@ import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
 
-public class Section06BFActivity extends AppCompatActivity implements EndSectionActivity {
+public class Section061BFActivity extends AppCompatActivity implements EndSectionActivity {
 
-    ActivitySection06bfBinding bi;
+    ActivitySection061bfBinding bi;
     ChildInformation info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_06bf);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_061bf);
         bi.setCallback(this);
         info = Section03CSActivity.selectedChildInfo;
         bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
@@ -94,6 +94,14 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
             bi.fldGrpCVbf11.setVisibility(View.VISIBLE);
             if (i == bi.bf1001.getId()) {
                 bi.fldGrpCVbf11.setVisibility(View.GONE);
+            }
+        });
+
+        bi.bf18.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVbf19);
+            bi.fldGrpCVbf19.setVisibility(View.VISIBLE);
+            if (i == bi.bf1802.getId()) {
+                bi.fldGrpCVbf19.setVisibility(View.GONE);
             }
         });
 
@@ -190,6 +198,169 @@ public class Section06BFActivity extends AppCompatActivity implements EndSection
                 : bi.bf1302.isChecked() ? "2"
                 : bi.bf1398.isChecked() ? "98"
                 : "-1");
+
+        form.setBf14a( bi.bf14a01.isChecked() ? "1"
+                : bi.bf14a02.isChecked() ? "2"
+                : bi.bf14a98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf14b( bi.bf14b01.isChecked() ? "1"
+                : bi.bf14b02.isChecked() ? "2"
+                : bi.bf14b98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf14b01x(bi.bf14b01x.getText().toString());
+        form.setBf14c( bi.bf14c01.isChecked() ? "1"
+                : bi.bf14c02.isChecked() ? "2"
+                : bi.bf14c98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf14c01x(bi.bf14c01x.getText().toString());
+        form.setBf14d( bi.bf14d01.isChecked() ? "1"
+                : bi.bf14d02.isChecked() ? "2"
+                : bi.bf14d98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf14e( bi.bf14e01.isChecked() ? "1"
+                : bi.bf14e02.isChecked() ? "2"
+                : bi.bf14e98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf14e01x(bi.bf14e01x.getText().toString());
+        form.setBf14f( bi.bf14f01.isChecked() ? "1"
+                : bi.bf14f02.isChecked() ? "2"
+                : bi.bf14f98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf14f01x(bi.bf14f01x.getText().toString());
+        form.setBf14g( bi.bf14g01.isChecked() ? "1"
+                : bi.bf14g02.isChecked() ? "2"
+                : bi.bf14g98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf14h( bi.bf14h01.isChecked() ? "1"
+                : bi.bf14h02.isChecked() ? "2"
+                : bi.bf14h98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf14i( bi.bf14i01.isChecked() ? "1"
+                : bi.bf14i02.isChecked() ? "2"
+                : bi.bf14i98.isChecked() ? "98"
+                :  "-1");
+        form.setBf15a(bi.bf15a01.isChecked() ? "1"
+                : bi.bf15a02.isChecked() ? "2"
+                : bi.bf15a98.isChecked() ? "98"
+                : "-1");
+
+        form.setBf15b( bi.bf15b01.isChecked() ? "1"
+                : bi.bf15b02.isChecked() ? "2"
+                : bi.bf15b98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15c( bi.bf15c01.isChecked() ? "1"
+                : bi.bf15c02.isChecked() ? "2"
+                : bi.bf15c98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15d( bi.bf15d01.isChecked() ? "1"
+                : bi.bf15d02.isChecked() ? "2"
+                : bi.bf15d98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15e( bi.bf15e01.isChecked() ? "1"
+                : bi.bf15e02.isChecked() ? "2"
+                : bi.bf15e98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15f( bi.bf15f01.isChecked() ? "1"
+                : bi.bf15f02.isChecked() ? "2"
+                : bi.bf15f98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15g( bi.bf15g01.isChecked() ? "1"
+                : bi.bf15g02.isChecked() ? "2"
+                : bi.bf15g98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15h( bi.bf15h01.isChecked() ? "1"
+                : bi.bf15h02.isChecked() ? "2"
+                : bi.bf15h98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15i( bi.bf15i01.isChecked() ? "1"
+                : bi.bf15i02.isChecked() ? "2"
+                : bi.bf15i98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15j( bi.bf15j01.isChecked() ? "1"
+                : bi.bf15j02.isChecked() ? "2"
+                : bi.bf15j98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15k( bi.bf15k01.isChecked() ? "1"
+                : bi.bf15k02.isChecked() ? "2"
+                : bi.bf15k98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15l( bi.bf15l01.isChecked() ? "1"
+                : bi.bf15l02.isChecked() ? "2"
+                : bi.bf15l98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15m( bi.bf15m01.isChecked() ? "1"
+                : bi.bf15m02.isChecked() ? "2"
+                : bi.bf15m98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15n( bi.bf15n01.isChecked() ? "1"
+                : bi.bf15n02.isChecked() ? "2"
+                : bi.bf15n98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15o( bi.bf15o01.isChecked() ? "1"
+                : bi.bf15o02.isChecked() ? "2"
+                : bi.bf15o98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15p( bi.bf15p01.isChecked() ? "1"
+                : bi.bf15p02.isChecked() ? "2"
+                : bi.bf15p98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf15q( bi.bf15q01.isChecked() ? "1"
+                : bi.bf15q02.isChecked() ? "2"
+                : bi.bf15q98.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf16( bi.bf1601.isChecked() ? "1"
+                : bi.bf1602.isChecked() ? "2"
+                : bi.bf1698.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf17( bi.bf1701.isChecked() ? ""
+                : bi.bf1798.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf1701x(bi.bf1701x.getText().toString());
+        form.setBf18( bi.bf1801.isChecked() ? "1"
+                : bi.bf1802.isChecked() ? "2"
+                : bi.bf1898.isChecked() ? "98"
+                :  "-1");
+
+        form.setBf19( bi.bf1901.isChecked() ? "1"
+                : bi.bf1902.isChecked() ? "2"
+                : bi.bf1903.isChecked() ? "3"
+                : bi.bf1996.isChecked() ? "96"
+                :  "-1");
+
+        form.setBf1996x(bi.bf1996x.getText().toString());
+        form.setBf20(bi.bf2001.isChecked() ? "1"
+                : bi.bf2002.isChecked() ? "2"
+                : bi.bf2098.isChecked() ? "98"
+                : "-1");
+
+
+
     }
 
 
