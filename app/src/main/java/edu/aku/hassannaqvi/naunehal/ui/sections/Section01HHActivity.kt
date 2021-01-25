@@ -18,6 +18,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.validatorcrawler.aliazaz.Clear
 import com.validatorcrawler.aliazaz.Validator
+import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
@@ -274,8 +275,8 @@ class Section01HHActivity : AppCompatActivity() {
         if (updateDB()) {
             finish()
             if (bi.hh1102.isChecked
-                    || bi.hh24.text.toString().toInt() + bi.hh25.text.toString().toInt() == 0)
-                startActivity(Intent(this, EndingActivity::class.java).putExtra("complete", true))
+                    || bi.hh24.text.toString().toInt() + bi.hh25.text.toString().toInt() == 0 || bi.hh25a02.isChecked)
+                startActivity(Intent(this, EndingActivity::class.java).putExtra(CONSTANTS.SECTION_MAIN_CHECK_FOR_END, true))
             else startActivity(Intent(this, ChildrenListActivity::class.java))
         }
     }
