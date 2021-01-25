@@ -148,6 +148,21 @@ public class Form extends BaseObservable {
     public String bf11 = StringUtils.EMPTY;
     public String bf12 = StringUtils.EMPTY;
     public String bf13 = StringUtils.EMPTY;
+    public String bf14a = StringUtils.EMPTY;
+    public String bf14b = StringUtils.EMPTY;
+    public String bf14b01x = StringUtils.EMPTY;
+    public String bf14c = StringUtils.EMPTY;
+    public String bf14c01x = StringUtils.EMPTY;
+    public String bf14d = StringUtils.EMPTY;
+    public String bf14e = StringUtils.EMPTY;
+    public String bf14e01x = StringUtils.EMPTY;
+    public String bf14f = StringUtils.EMPTY;
+    public String bf14f01x = StringUtils.EMPTY;
+    public String bf14g = StringUtils.EMPTY;
+    public String bf14h = StringUtils.EMPTY;
+
+   public String Bf14i = StringUtils.EMPTY;
+
     public String bfdate = StringUtils.EMPTY;
     //Section CV
     public String cv01 = StringUtils.EMPTY;
@@ -1840,6 +1855,11 @@ public class Form extends BaseObservable {
         this.bf13 = bf13;
         notifyPropertyChanged(BR.bf13);
     }
+
+
+
+
+
 
     @Bindable
     public String getCv01() {
@@ -4113,6 +4133,21 @@ public class Form extends BaseObservable {
                     .put("bf11", bf11)
                     .put("bf12", bf12)
                     .put("bf13", bf13)
+
+                    .put("bf14a", bf14a)
+                    .put("bf14b", bf14b)
+                    .put("bf14b01x", bf14b01x)
+                    .put("bf14c", bf14c)
+                    .put("bf14c01x", bf14c01x)
+                    .put("bf14d", bf14d)
+                    .put("bf14e", bf14e)
+                    .put("bf14e01x", bf14e01x)
+                    .put("bf14f", bf14f)
+                    .put("bf14f01x", bf14f01x)
+                    .put("bf14g", bf14g)
+                    .put("bf14h", bf14h)
+
+
                     .put("bfdate", bfdate);
 
         } catch (JSONException e) {

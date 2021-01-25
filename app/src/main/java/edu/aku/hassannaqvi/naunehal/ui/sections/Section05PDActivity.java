@@ -155,7 +155,7 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
         if (UpdateDB()) {
             finish();
             if (info.getIsSelected().equals("2"))
-                gotoActivity(this, Section06BFActivity.class);
+                gotoActivity(this, Section061BFActivity.class);
             else
                 gotoActivity(this, Section07CVActivity.class);
         }
