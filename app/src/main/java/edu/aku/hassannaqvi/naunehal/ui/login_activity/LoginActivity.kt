@@ -21,17 +21,17 @@ import com.nabinbhandari.android.permissions.PermissionHandler
 import com.nabinbhandari.android.permissions.Permissions
 import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
-import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
+import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
+import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus.*
+import edu.aku.hassannaqvi.naunehal.base.viewmodel.LoginViewModel
 import edu.aku.hassannaqvi.naunehal.core.MainApp
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityLoginBinding
 import edu.aku.hassannaqvi.naunehal.location.GPSLocationListener
 import edu.aku.hassannaqvi.naunehal.models.Users
-import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
-import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus.*
-import edu.aku.hassannaqvi.naunehal.ui.login_activity.login_view.LoginUISource
-import edu.aku.hassannaqvi.naunehal.base.viewmodel.LoginViewModel
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity
 import edu.aku.hassannaqvi.naunehal.ui.SyncActivity
+import edu.aku.hassannaqvi.naunehal.ui.login_activity.login_view.LoginUISource
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
 import edu.aku.hassannaqvi.naunehal.utils.isGPSEnabled
@@ -67,6 +67,7 @@ class LoginActivity : AppCompatActivity(), LoginUISource {
                     approval = true
                     MainApp.user = it.data
                     MainApp.admin = it.data!!.userName.contains("@")
+                    gotoActivity(MainActivity::class.java)
                 }
                 ERROR -> {
                     setPasswordIncorrect()
