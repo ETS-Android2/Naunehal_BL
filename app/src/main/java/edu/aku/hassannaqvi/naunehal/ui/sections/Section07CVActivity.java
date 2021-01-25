@@ -236,6 +236,8 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
 
         form.setCv1996x(bi.cv1996x.getText().toString());
 
+        form.setG5Flag("1");
+
     }
 
 
