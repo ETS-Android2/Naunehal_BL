@@ -32,6 +32,7 @@ import edu.aku.hassannaqvi.naunehal.models.Form
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
+import edu.aku.hassannaqvi.naunehal.utils.getDaysBack
 import edu.aku.hassannaqvi.naunehal.utils.shortStringLength
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -60,6 +61,7 @@ class Section01HHActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_01hh)
         bi.callback
+        bi.aa01.setMinDate(getDaysBack("dd/MM/yyyy", -7))
 
         /*
         * Obtaining ViewModel
