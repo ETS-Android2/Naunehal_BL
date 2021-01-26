@@ -1553,7 +1553,9 @@
     <string name="Q_pd24">pd24</string>
     <string name="bf14b01x" />
     <string name="Q_hh25a">HH25a</string>
-    <string name="hh25a01">ہاں</string>
+    <string name="hh25a"> Have you been living in this House / UC / area for more than six months ? </string>
+    <string name="hh25a01"> Yes </string>
+    <string name="hh25a02"> No </string>
 
 
 </resources>
