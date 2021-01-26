@@ -4,6 +4,7 @@
 
 
     <data>
+
         <import type="android.view.View" />
 
         <variable
@@ -186,8 +187,7 @@
                             android:gravity="center"
                             android:hint="#-####-###"
                             android:inputType="textCapCharacters"
-                            android:maxLength="10"
-                            />
+                            android:maxLength="10" />
 
                     </LinearLayout>
 
@@ -330,7 +330,8 @@
                                 android:layout_height="wrap_content"
                                 android:focusable="false"
                                 android:gravity="center"
-                                android:hint="hh02" />
+                                android:hint="HH:mm"
+                                app:theme="@style/DatePickerStyle" />
 
                         </LinearLayout>
 

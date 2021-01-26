@@ -98,6 +98,34 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
             }
         });
 
+
+/*        bi.bf15q.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (bi.bf15a02.isChecked()
+                    &&  bi.bf15b02.isChecked()
+                    &&  bi.bf15c02.isChecked()
+                    &&  bi.bf15d02.isChecked()
+                    &&  bi.bf15e02.isChecked()
+                    &&  bi.bf15f02.isChecked()
+                    &&  bi.bf15g02.isChecked()
+                    &&  bi.bf15h02.isChecked()
+                    &&  bi.bf15i02.isChecked()
+                    &&  bi.bf15j02.isChecked()
+                    &&  bi.bf15k02.isChecked()
+                    &&  bi.bf15l02.isChecked()
+                    &&  bi.bf15m02.isChecked()
+                    &&  bi.bf15n02.isChecked()
+                    &&  bi.bf15o02.isChecked()
+                    &&  bi.bf15p02.isChecked()
+                    &&  bi.bf15q02.isChecked()
+
+                ) {
+                    bi.f
+                }
+            }
+        });*/
+
         bi.bf18.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVbf19);
             bi.fldGrpCVbf19.setVisibility(View.VISIBLE);
