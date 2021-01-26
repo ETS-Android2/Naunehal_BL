@@ -23,9 +23,9 @@
     <application
         android:name=".core.MainApp"
         android:allowBackup="false"
-        android:icon="@drawable/appicon"
+        android:icon="@drawable/naunehal_baseline"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/appicon"
+        android:roundIcon="@drawable/naunehal_baseline"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"

@@ -443,14 +443,11 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
         bi.im08.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i == bi.im0801.getId()) {
-                bi.fldGrpim0801.setVisibility(View.VISIBLE);
                 bi.fldGrpim0802.setVisibility(View.VISIBLE);
                 bi.fldGrpIm24.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpIm24);
                 bi.fldGrpIm23.setVisibility(View.VISIBLE);
             } else if (i == bi.im0802.getId() || i == bi.im0803.getId()) {
-                bi.fldGrpim0801.setVisibility(View.GONE);
-                Clear.clearAllFields(bi.fldGrpim0801);
                 bi.fldGrpim0802.setVisibility(View.GONE);
                 Clear.clearAllFields(bi.fldGrpim0802);
                 bi.fldGrpIm24.setVisibility(View.VISIBLE);

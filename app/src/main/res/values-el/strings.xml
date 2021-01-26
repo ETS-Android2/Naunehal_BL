@@ -1554,6 +1554,9 @@
     <string name="bf14b01x" />
     <string name="Q_hh25a">HH25a</string>
     <string name="hh25a01">ہاں</string>
+    <string name="hh25a">کیا آپ اس گھر/یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر ہیں؟</string>
+    <string name="hh25a02">نہیں</string>
+    <string name="hh2608">" آپ اس گھر/یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر نہیں ہیں "</string>
 
 
 </resources>

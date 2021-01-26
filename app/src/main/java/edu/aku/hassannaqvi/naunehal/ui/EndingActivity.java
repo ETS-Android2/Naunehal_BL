@@ -26,7 +26,7 @@ import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoAct
 public class EndingActivity extends AppCompatActivity {
 
     ActivityEndingBinding bi;
-    boolean sectionMainCheck;
+    int sectionMainCheck;
 
 
     @Override
@@ -39,7 +39,7 @@ public class EndingActivity extends AppCompatActivity {
 */
 
         boolean check = getIntent().getBooleanExtra("complete", false);
-        sectionMainCheck = getIntent().getBooleanExtra(SECTION_MAIN_CHECK_FOR_END, false);
+        sectionMainCheck = getIntent().getIntExtra(SECTION_MAIN_CHECK_FOR_END, 0);
 
         if (check) {
             bi.istatusa.setEnabled(true);
@@ -49,15 +49,17 @@ public class EndingActivity extends AppCompatActivity {
             bi.istatuse.setEnabled(false);
             bi.istatusf.setEnabled(false);
             bi.istatusg.setEnabled(false);
+            bi.istatush.setEnabled(false);
             bi.istatus96.setEnabled(false);
         } else {
             bi.istatusa.setEnabled(false);
-            bi.istatusb.setEnabled(!sectionMainCheck);
+            bi.istatusb.setEnabled(sectionMainCheck == 0);
             bi.istatusc.setEnabled(true);
-            bi.istatusd.setEnabled(true);
-            bi.istatuse.setEnabled(true);
-            bi.istatusf.setEnabled(!sectionMainCheck);
-            bi.istatusg.setEnabled(true);
+            bi.istatusd.setEnabled(sectionMainCheck == 1);
+            bi.istatuse.setEnabled(sectionMainCheck == 1);
+            bi.istatusf.setEnabled(sectionMainCheck == 1);
+            bi.istatusg.setEnabled(sectionMainCheck == 2);
+            bi.istatush.setEnabled(sectionMainCheck == 3);
             bi.istatus96.setEnabled(true);
             bi.btnEnd.setBackgroundColor(getResources().getColor(R.color.redLight));
         }
@@ -74,6 +76,7 @@ public class EndingActivity extends AppCompatActivity {
                 : bi.istatuse.isChecked() ? "5"
                 : bi.istatusf.isChecked() ? "6"
                 : bi.istatusg.isChecked() ? "7"
+                : bi.istatush.isChecked() ? "8"
                 : bi.istatus96.isChecked() ? "96"
                 : "-1");
         form.setHh2696x(bi.istatus96x.getText().toString().trim().isEmpty() ? "-1" : bi.istatus96x.getText().toString());

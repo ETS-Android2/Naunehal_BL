@@ -32,6 +32,7 @@ import edu.aku.hassannaqvi.naunehal.models.BLRandom
 import edu.aku.hassannaqvi.naunehal.models.Form
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
+import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
 import edu.aku.hassannaqvi.naunehal.utils.getDaysBack
 import edu.aku.hassannaqvi.naunehal.utils.shortStringLength
@@ -276,9 +277,14 @@ class Section01HHActivity : AppCompatActivity() {
         saveDraft() //<== This function is no longer needed after DataBinding
         if (updateDB()) {
             finish()
-            if (bi.hh1102.isChecked
-                    || bi.hh24.text.toString().toInt() + bi.hh25.text.toString().toInt() == 0 || bi.hh25a02.isChecked)
-                startActivity(Intent(this, EndingActivity::class.java).putExtra(CONSTANTS.SECTION_MAIN_CHECK_FOR_END, true))
+            val response = when {
+                bi.hh1102.isChecked -> 1
+                bi.hh24.text.toString().toInt() + bi.hh25.text.toString().toInt() == 0 -> 2
+                bi.hh25a02.isChecked -> 3
+                else -> 0
+            }
+            if (response != 0)
+                gotoActivityWithSerializable(EndingActivity::class.java, CONSTANTS.SECTION_MAIN_CHECK_FOR_END, response)
             else startActivity(Intent(this, ChildrenListActivity::class.java))
         }
     }
