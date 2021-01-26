@@ -70,9 +70,10 @@
     </style>
 
     <style name="topBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorSecondary">@color/white</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:typeface">sans</item>
-        <item name="android:fontFamily">fonts/JameelNooriNastaleeq</item>
+        <item name="android:fontFamily">@font/roboto</item>
 
     </style>
 
