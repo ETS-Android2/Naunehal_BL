@@ -1552,13 +1552,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/se1704" />
 
-                        <CheckBox
-                            android:id="@+id/se1705"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/se1705" />
-
                     </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/se1705"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:tag="-1"
+                        android:text="@string/se1705" />
 
                 </LinearLayout>
 
@@ -2203,7 +2204,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/redLight"
-                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:onClick="BtnEnd"
                     android:text="Cancel"
                     android:textColor="@color/white" />
 
@@ -2213,7 +2214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/greenLight"
-                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:onClick="BtnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />
             </LinearLayout>

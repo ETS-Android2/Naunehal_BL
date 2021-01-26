@@ -236,10 +236,12 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
 
         form.setCv1996x(bi.cv1996x.getText().toString());
 
+        form.setG5Flag("1");
+
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {
@@ -253,7 +255,7 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
     }
 
 
-    public void BtnEnd() {
+    public void BtnEnd(View view) {
         AppUtilsKt.contextEndActivity(this);
     }
 

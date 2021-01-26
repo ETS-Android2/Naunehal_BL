@@ -521,6 +521,12 @@ class Section01HHActivity : AppCompatActivity() {
             else -> "-1"
         })
 
+        form.setHh25a(when {
+            bi.hh25a01.isChecked -> "1"
+            bi.hh25a02.isChecked -> "2"
+            else -> "-1"
+        })
+
 
     }
 

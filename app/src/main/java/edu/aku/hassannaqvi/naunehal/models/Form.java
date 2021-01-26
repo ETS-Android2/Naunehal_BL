@@ -4439,6 +4439,7 @@ public class Form extends BaseObservable {
                     .put("hh23", hh23)
                     .put("hh24", hh24)
                     .put("hh25", hh25)
+                    .put("hh25a", hh25a)
                     .put("hh26", hh26)
                     .put("hh2696x", hh2696x);
         } catch (JSONException e) {
@@ -4929,6 +4930,7 @@ public class Form extends BaseObservable {
                 this.hh23 = json.getString("hh23");
                 this.hh24 = json.getString("hh24");
                 this.hh25 = json.getString("hh25");
+                this.hh25a = json.getString("hh25a");
                 this.hh26 = json.getString("hh26");
                 this.hh2696x = json.getString("hh2696x");
             } catch (JSONException e) {
