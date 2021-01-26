@@ -67,14 +67,14 @@
     <string name="hh2013">خاتون خانہ</string>
     <string name="hh2096">دیگر وضاحت کریں</string>
     <string name="hh21">اس گھرانے میں کل کتنے افراد رہتے ہیں؟</string>
-    <string name="hh22">مردافراد بشمول ہر عمر کے مرد</string>
-    <string name="hh23">خواتین ،بشمول ہر عمر کی خواتین</string>
-    <string name="hh24">پانچ سال سے کم عمر بچوں کی تعداد - مرد</string>
-    <string name="hh25">پانچ سال سے کم عمر بچوں کی تعداد – خواتین</string>
-    <string name="hh26"> گھرانے کے انٹرویوکا نتیجہ: </string>
+    <string name="hh22"> مرد افراد بشمول ہر عمر کے مرد </string>
+    <string name="hh23"> خواتین ، بشمول ہر عمر کی خواتین </string>
+    <string name="hh24"> پانچ سال سے کم عمر بچوں کی تعداد - مرد </string>
+    <string name="hh25"> پانچ سال سے کم عمر بچوں کی تعداد – خواتین </string>
+    <string name="hh26"> گھرانے کے انٹرویو کا نتیجہ: </string>
     <string name="hh26hint"> نوٹ:  انٹرویو مکمل نہ ہونے  کی صورت میں سپروائزر سے رابطہ کریں۔ </string>
-    <string name="hh2601">مکمل</string>
-    <string name="hh2602">جزوی مکمل</string>
+    <string name="hh2601"> مکمل </string>
+    <string name="hh2602"> جزوی مکمل </string>
     <string name="hh2603">انکار  کردیا </string>
     <string name="hh2604">گھرانے کا کوئی فرد یا سمجھدار جواب دہندہ گھر پر موجود نہیں </string>
     <string name="hh2605">خالی گھر/غیر رہائشی</string>
@@ -98,25 +98,25 @@
     <string name="cb0602">باپ</string>
     <string name="cb0603"> دیکھ بھال کرنے والا  (ماں / باپ نہیں) </string>
     <string name="cb0696"> دیگر گھر کے افراد </string>
-    <string name="motherinfo"> والدہ کے بارے میں معلومات </string>
+    <string name="motherinfo"> والدہ: کے بارے میں معلومات </string>
     <string name="cb07"> نام </string>
     <string name="cb08"> عمر </string>
     <string name="cb09"> تعلیم </string>
     <string name="cb10"> پیشہ </string>
     <string name="cb1001"> پروفیشنل / ٹیکنیکل / مینیجیریل </string>
     <string name="cb1002"> دفتری کام </string>
-    <string name="cb11"> ماں موجود ہے ؟ </string>
     <string name="cb1003"> کاروبار </string>
-    <string name="cb1101"> ہاں </string>
     <string name="cb1004"> سیل اور سروسز </string>
-    <string name="cb1102"> نہیں </string>
     <string name="cb1005"> ہُنرمند مزدور </string>
-    <string name="fatherinfo"> والد کے بارے میں معلومات </string>
-    <string name="cb12"> باپ کا نام </string>
     <string name="cb1006"> غیر ہُنر مند مزدور </string>
-    <string name="cb13"> تعلیم </string>
     <string name="cb1007"> گھریلو کام کاج  </string>
-    <string name="cb14">شعبہ</string>
+    <string name="cb11"> ماں موجود ہے ؟ </string>
+    <string name="cb1101"> ہاں </string>
+    <string name="cb1102"> نہیں </string>
+    <string name="fatherinfo"> والد:  کے بارے میں معلومات </string>
+    <string name="cb12"> نام </string>
+    <string name="cb13"> تعلیم </string>
+    <string name="cb14"> شعبہ</string>
     <string name="cb1401">پروفیشنل/ٹیکنیکل/ مینیجیریل</string>
     <string name="cb1402">دفتری کام </string>
     <string name="cb1403">کاروبار</string>
@@ -247,11 +247,11 @@
     <string name="cs1712">دائی</string>
     <string name="cs1713">سی ایم ڈبلیو</string>
     <string name="cs17962">دوسرے نجی وضاحت کریں </string>
-    <string name="cs17a"> کیا بچے کو   کھانسی ، بخار یا سانس لینے میں دشواری کی وجہ سے ہسپتال میں داخل کروایا گیا ؟ </string>
-    <string name="cs17aa"> ہاں </string>
-    <string name="cs17ab"> نہیں </string>
-    <string name="cs17b"> اگر ہاں تو کتنے دن کے لئے ؟ </string>
-    <string name="cs17ba"> کتنے دن </string>
+    <string name="cs18a"> کیا بچے کو   کھانسی ، بخار یا سانس لینے میں دشواری کی وجہ سے ہسپتال میں داخل کروایا گیا ؟ </string>
+    <string name="cs18aa"> ہاں </string>
+    <string name="cs18ab"> نہیں </string>
+    <string name="cs18b"> اگر ہاں تو کتنے دن کے لئے ؟ </string>
+    <string name="cs18ba"> کتنے دن </string>
     <string name="cs18">کھانسی ، بخار یا سانس لینے میں دشواری کے علاج کے لئے کیا دیا گیا تھا؟</string>
     <string name="cs1802"> اینٹی بائیوٹک </string>
     <string name="cs1803"> نامعلوم گولیاں یا شربت </string>
@@ -523,7 +523,6 @@
     <string name="pd0805">مالی وجوہات</string>
     <string name="pd0806">نقل و حرکت / ٹرانسپورٹ کا  مسئلہ</string>
 
-
     <string name="pd08a">آپ کے حمل کے دوران قبل از پیدائش کی دیکھ بھال کے ایک حصے کے طور پر ، مندرجہ ذیل میں سے کوئی بھی  اقدام  کم از کم ایک بار کیا گیا تھا؟</string>
 
     <string name="pd08a01">کیاآپ کا وزن کیا گیاتھا</string>
@@ -605,27 +604,26 @@
     <string name="pd1798">معلوم نہیں /یاد نہیں</string>
     <string name="pd18"> اس طرح کا معائنہ کتنی مرتبہ ہوا ؟ </string>
     <string name="pd18a"> تعداد </string>
-    <string name="pd19">کیا کسی نے آپ کے )بچہ کا نام( کی صحت کا معائنہ کیاِتھا؟</string>
-    <string name="pd1901">ہاں</string>
-    <string name="pd1902">نہیں</string>
-    <string name="pd1998">معلوم نہیں</string>
-    <string name="pd20">زچگی کے بعد آپ کے نومولود بچے کی صحت کا معائنہ کس نے کیاتھا؟ [ایک سے زیادہ جوابات آسکتے ہیں]</string>
-    <string name="pd2001">بچوں کے ڈاکٹرنے  </string>
-    <string name="pd2002">کسی اور ڈاکٹر نے </string>
-    <string name="pd2003">نرس</string>
-    <string name="pd2004">سی ایم ڈبلیو</string>
-    <string name="pd2005">لیڈی ہیلتھ ورکر</string>
-    <string name="pd2006">لیڈی ہیلتھ وزیٹر</string>
-    <string name="pd2007">روایتی دائی  </string>
-    <string name="pd2096">دیگر وضاحت کریں</string>
-    <string name="pd21">زچگی کے کتنے عرصے بعد  پہلی بار اس طرح کامعائنہ ہوا؟ اگر ایک دن سے کم ہے (گھنٹے درج کریں) اگر ایک ہفتے سے کم ہے (دن درج کریں) دوسری صورت میں ہفتے ریکارڈ کریں۔</string>
-    <string name="pd2101">گھنٹے</string>
-    <string name="pd2102">دن</string>
-    <string name="pd2103">ہفتے </string>
-    <string name="pd2198">معلوم نہیں /یاد نہیں</string>
+    <string name="pd19"> کیا کسی نے آپ کے )بچہ کا نام( کی صحت کا معائنہ کیا ِتھا ؟ </string>
+    <string name="pd1901"> ہاں </string>
+    <string name="pd1902"> نہیں </string>
+    <string name="pd1998"> معلوم نہیں </string>
+    <string name="pd20">زچگی کے بعد آپ کے نومولود بچے کی صحت کا معائنہ کس نے کیاتھا؟ [ایک سے زیادہ جوابات آسکتے ہیں] </string>
+    <string name="pd2001"> بچوں کے ڈاکٹرنے </string>
+    <string name="pd2002"> کسی اور ڈاکٹر نے </string>
+    <string name="pd2003"> نرس </string>
+    <string name="pd2004"> سی ایم ڈبلیو </string>
+    <string name="pd2005"> لیڈی ہیلتھ ورکر </string>
+    <string name="pd2006"> لیڈی ہیلتھ وزیٹر </string>
+    <string name="pd2007"> روایتی دائی  </string>
+    <string name="pd2096"> دیگر وضاحت کریں </string>
+    <string name="pd21">زچگی کے کتنے عرصے بعد  پہلی بار اس طرح کامعائنہ ہوا؟ اگر ایک دن سے کم ہے (گھنٹے درج کریں) اگر ایک ہفتے سے کم ہے (دن درج کریں) دوسری صورت میں ہفتے ریکارڈ کریں۔ </string>
+    <string name="pd2101"> گھنٹے </string>
+    <string name="pd2102"> دن </string>
+    <string name="pd2103"> ہفتے </string>
+    <string name="pd2198"> معلوم نہیں / یاد نہیں </string>
     <string name="pd22"> اس طرح کا معائنہ کتنی مرتبہ ہوا ؟ </string>
     <string name="pd22a"> تعداد </string>
-
     <string name="pd23">حمل نال گرنے کے بعد، کیا اس پر کچھ لگایا گیا تھا؟</string>
     <string name="pd2301">ہاں</string>
     <string name="pd2302">نہیں</string>
@@ -639,6 +637,7 @@
     <string name="pd2406">جانوروں کا گوبر</string>
     <string name="pd2496">دیگر برائے مہربانی وضاحت کریں</string>
     <string name="pd2498">معلوم نہیں/یاد نہیں</string>
+
 
     <string name="bf_title1">سیکشن بی ایف: دودھ پلانا ، صحت اور نگہداشت سے متعلق رویے ہدایات:    گھر میں رہنے والے 0-23 ماہ کے سب سے کم عمر بچے کی ماں سے بھروایا جائے۔</string>
     <string name="bf01">بچے کا لائن نمبر(2سال سے کم عمر)</string>
@@ -1381,9 +1380,9 @@
     <string name='Q_cs15'>cs15</string>
     <string name="Q_cs16">CS16</string>
     <string name='Q_cs17'>cs17</string>
-    <string name='Q_cs17a'>cs17a</string>
-    <string name='Q_cs17b'>cs17b</string>
     <string name='Q_cs18'>cs18</string>
+    <string name='Q_cs18a'>cs18a</string>
+    <string name='Q_cs18b'>cs18b</string>
     <string name='Q_cs19'>cs19</string>
     <string name='Q_cv01'>cv01</string>
     <string name='Q_cv02'>cv02</string>
@@ -1544,7 +1543,7 @@
     <string name="dialog_text">"    برائے کرم دوسرے بچے کے لئے معلومات شامل کریں."</string>
     <string name="Q_se34">se34</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
-    <string name="database">Database</string>
+    <string name="database" translatable="false">Database</string>
     <string name="Q_cs20">CS20</string>
     <string name="Q_cs21">CS21</string>
     <string name="Q_pd08a">PD08a</string>
@@ -1554,7 +1553,9 @@
     <string name="Q_pd24">pd24</string>
     <string name="bf14b01x" />
     <string name="Q_hh25a">HH25a</string>
+    <string name="hh25a">کیا آپ اس گھر/یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر ہیں؟</string>
     <string name="hh25a01">ہاں</string>
+    <string name="hh25a02">نہیں</string>
 
 
 </resources>
