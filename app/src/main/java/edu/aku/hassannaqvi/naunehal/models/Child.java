@@ -53,8 +53,6 @@ public class Child extends BaseObservable {
     public String cs1596x;
     public String cs16;
     public String cs17;
-    public String cs17a;
-    public String cs17b;
     public String cs17961x;
     public String cs17962x;
     public String cs1802;
@@ -66,6 +64,8 @@ public class Child extends BaseObservable {
     public String cs1808;
     public String cs1896;
     public String cs1896x;
+    public String cs18a;
+    public String cs18b;
     public String cs19;
     public String cs20;
     public String cs21;
@@ -706,28 +706,6 @@ public class Child extends BaseObservable {
 
 
     @Bindable
-    public String getCs17a() {
-        return cs17a;
-    }
-
-    public void setCs17a(String cs17a) {
-        this.cs17a = cs17a;
-        notifyPropertyChanged(BR.cs17a);
-    }
-
-
-    @Bindable
-    public String getCs17b() {
-        return cs17b;
-    }
-
-    public void setCs17b(String cs17b) {
-        this.cs17b = cs17b;
-        notifyPropertyChanged(BR.cs17b);
-    }
-
-
-    @Bindable
     public String getCs17961x() {
         return cs17961x;
     }
@@ -844,6 +822,28 @@ public class Child extends BaseObservable {
     public void setCs1896x(String cs1896x) {
         this.cs1896x = cs1896x;
         notifyPropertyChanged(BR.cs1896x);
+    }
+
+
+    @Bindable
+    public String getCs18a() {
+        return cs18a;
+    }
+
+    public void setCs18a(String cs18a) {
+        this.cs18a = cs18a;
+        notifyPropertyChanged(BR.cs18a);
+    }
+
+
+    @Bindable
+    public String getCs18b() {
+        return cs18b;
+    }
+
+    public void setCs18b(String cs18b) {
+        this.cs18b = cs18b;
+        notifyPropertyChanged(BR.cs18b);
     }
 
 
@@ -1003,8 +1003,6 @@ public class Child extends BaseObservable {
                     .put("cs1596x", cs1596x)
                     .put("cs16", cs16)
                     .put("cs17", cs17)
-                    .put("cs17a", cs17a)
-                    .put("cs17b", cs17b)
                     .put("cs17961x", cs17961x)
                     .put("cs17962x", cs17962x)
                     .put("cs1802", cs1802)
@@ -1016,6 +1014,8 @@ public class Child extends BaseObservable {
                     .put("cs1808", cs1808)
                     .put("cs1896", cs1896)
                     .put("cs1896x", cs1896x)
+                    .put("cs18a", cs18a)
+                    .put("cs18b", cs18b)
                     .put("cs19", cs19)
                     .put("cs1996x", cs1996x)
                     .put("cs20", cs20)
@@ -1117,8 +1117,6 @@ public class Child extends BaseObservable {
                 this.cs1596x = json.getString("cs1596x");
                 this.cs16 = json.getString("cs16");
                 this.cs17 = json.getString("cs17");
-                this.cs17a = json.getString("cs17a");
-                this.cs17b = json.getString("cs17b");
                 this.cs17961x = json.getString("cs17961x");
                 this.cs17962x = json.getString("cs17962x");
                 this.cs1802 = json.getString("cs1802");
@@ -1130,6 +1128,8 @@ public class Child extends BaseObservable {
                 this.cs1808 = json.getString("cs1808");
                 this.cs1896 = json.getString("cs1896");
                 this.cs1896x = json.getString("cs1896x");
+                this.cs18a = json.getString("cs18a");
+                this.cs18b = json.getString("cs18b");
                 this.cs19 = json.getString("cs19");
                 this.cs1996x = json.getString("cs1996x");
                 this.cs20 = json.getString("cs20");
