@@ -18,14 +18,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
-import edu.aku.hassannaqvi.naunehal.core.AndroidDatabaseManager
-import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
-import edu.aku.hassannaqvi.naunehal.core.MainApp
-import edu.aku.hassannaqvi.naunehal.databinding.ActivityMainBinding
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
-import edu.aku.hassannaqvi.naunehal.ui.login_activity.LoginActivity
 import edu.aku.hassannaqvi.naunehal.base.viewmodel.MainViewModel
+import edu.aku.hassannaqvi.naunehal.core.AndroidDatabaseManager
+import edu.aku.hassannaqvi.naunehal.core.MainApp
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
+import edu.aku.hassannaqvi.naunehal.databinding.ActivityMainBinding
+import edu.aku.hassannaqvi.naunehal.ui.login_activity.LoginActivity
 import edu.aku.hassannaqvi.naunehal.ui.sections.IdentificationSectionActivity
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
@@ -52,6 +52,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        /**
+         * SET CUSTOM TOOLBAR
+         */
+        setSupportActionBar(bi.toolbar)
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main)
         bi.callback = this
         if (MainApp.admin) bi.adminSection.visibility = View.VISIBLE
