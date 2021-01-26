@@ -327,18 +327,19 @@
                                     android:text="@string/pd05" />
 
                             </LinearLayout>
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pd05_title1" />
+
 
                             <RadioGroup
                                 android:id="@+id/pd05"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:background="@color/white"
-                                    android:text="@string/pd05_title1" />
+
 
                                 <RadioButton
                                     android:id="@+id/pd0501"
@@ -365,10 +366,9 @@
                                     android:text="@string/pd0504" />
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:background="@color/white"
                                     android:text="@string/pd05_title2" />
 
                                 <RadioButton
@@ -459,10 +459,9 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:background="@color/white"
                                     android:text="@string/pd06_title1" />
 
                                 <RadioButton
@@ -478,10 +477,9 @@
                                     android:text="@string/pd0602" />
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:background="@color/white"
                                     android:text="@string/pd06_title2" />
 
                                 <RadioButton
@@ -518,10 +516,9 @@
                                     android:visibility='@{pd06961.checked ? View.VISIBLE : View.GONE}' />
 
                                 <TextView
-                                    android:layout_width="wrap_content"
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:background="@color/white"
                                     android:text="@string/pd06_title3" />
 
                                 <RadioButton
@@ -1167,10 +1164,9 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                style="@style/sub_labels"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="@color/white"
                                 android:text="@string/pd12_title1" />
 
                             <RadioButton
@@ -1204,10 +1200,9 @@
                                 android:text="@string/pd1205" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                style="@style/sub_labels"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="@color/white"
                                 android:text="@string/pd12_title2" />
 
                             <RadioButton
@@ -1636,72 +1631,83 @@
                         <RadioGroup
                             android:id="@+id/pd17"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/pd1701"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/pd1701" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/pd1701x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pd1701"
-                                android:inputType="number"
-                                android:tag="pd1701"
-                                android:text='@{pd1701.checked ? pd1701x.getText().toString() : "" }'
-                                android:visibility='@{pd1701.checked ? View.VISIBLE : View.GONE}'
-                                app:maxValue="23"
-                                app:minValue="1"
-                                app:type="range" />
 
                             <RadioButton
                                 android:id="@+id/pd1702"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/pd1702" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/pd1702x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pd1702"
-                                android:inputType="number"
-                                android:tag="pd1702"
-                                android:text='@{pd1702.checked ? pd1702x.getText().toString() : "" }'
-                                android:visibility='@{pd1702.checked ? View.VISIBLE : View.GONE}'
-                                app:maxValue="30"
-                                app:minValue="1"
-                                app:type="range" />
+
 
                             <RadioButton
                                 android:id="@+id/pd1703"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/pd1703" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/pd1703x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pd1703"
-                                android:inputType="number"
-                                android:tag="pd1703"
-                                android:text='@{pd1703.checked ? pd1703x.getText().toString() : "" }'
-                                android:visibility='@{pd1703.checked ? View.VISIBLE : View.GONE}'
-                                app:maxValue="8"
-                                app:minValue="1"
-                                app:type="range" />
+
 
                             <RadioButton
                                 android:id="@+id/pd1798"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:text="@string/pd1798" />
 
                         </RadioGroup>
+
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd1701x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pd1701"
+                            android:inputType="number"
+                            android:tag="pd1701"
+                            android:text='@{pd1701.checked ? pd1701x.getText().toString() : "" }'
+                            android:visibility='@{pd1701.checked ? View.VISIBLE : View.GONE}'
+                            app:maxValue="23"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd1702x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pd1702"
+                            android:inputType="number"
+                            android:tag="pd1702"
+                            android:text='@{pd1702.checked ? pd1702x.getText().toString() : "" }'
+                            android:visibility='@{pd1702.checked ? View.VISIBLE : View.GONE}'
+                            app:maxValue="30"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd1703x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pd1703"
+                            android:inputType="number"
+                            android:tag="pd1703"
+                            android:text='@{pd1703.checked ? pd1703x.getText().toString() : "" }'
+                            android:visibility='@{pd1703.checked ? View.VISIBLE : View.GONE}'
+                            app:maxValue="8"
+                            app:minValue="1"
+                            app:type="range" />
 
                     </LinearLayout>
 
@@ -1965,72 +1971,82 @@
                         <RadioGroup
                             android:id="@+id/pd21"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/pd2101"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/pd2101" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/pd2101x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pd2101"
-                                android:inputType="number"
-                                android:tag="pd2101"
-                                android:text='@{pd2101.checked ? pd2101x.getText().toString() : "" }'
-                                android:visibility='@{pd2101.checked ? View.VISIBLE : View.GONE}'
-                                app:maxValue="23"
-                                app:minValue="1"
-                                app:type="range" />
+
 
                             <RadioButton
                                 android:id="@+id/pd2102"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/pd2102" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/pd2102x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pd2102"
-                                android:inputType="number"
-                                android:tag="pd2102"
-                                android:text='@{pd2102.checked ? pd2102x.getText().toString() : "" }'
-                                android:visibility='@{pd2102.checked ? View.VISIBLE : View.GONE}'
-                                app:maxValue="30"
-                                app:minValue="1"
-                                app:type="range" />
+
 
                             <RadioButton
                                 android:id="@+id/pd2103"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/pd2103" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/pd2103x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pd2103"
-                                android:inputType="number"
-                                android:tag="pd2103"
-                                android:text='@{pd2103.checked ? pd2103x.getText().toString() : "" }'
-                                android:visibility='@{pd2103.checked ? View.VISIBLE : View.GONE}'
-                                app:maxValue="8"
-                                app:minValue="1"
-                                app:type="range" />
+
 
                             <RadioButton
                                 android:id="@+id/pd2198"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1" android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:text="@string/pd2198" />
 
                         </RadioGroup>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd2101x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pd2101"
+                            android:inputType="number"
+                            android:tag="pd2101"
+                            android:text='@{pd2101.checked ? pd2101x.getText().toString() : "" }'
+                            android:visibility='@{pd2101.checked ? View.VISIBLE : View.GONE}'
+                            app:maxValue="23"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd2102x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pd2102"
+                            android:inputType="number"
+                            android:tag="pd2102"
+                            android:text='@{pd2102.checked ? pd2102x.getText().toString() : "" }'
+                            android:visibility='@{pd2102.checked ? View.VISIBLE : View.GONE}'
+                            app:maxValue="30"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd2103x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/pd2103"
+                            android:inputType="number"
+                            android:tag="pd2103"
+                            android:text='@{pd2103.checked ? pd2103x.getText().toString() : "" }'
+                            android:visibility='@{pd2103.checked ? View.VISIBLE : View.GONE}'
+                            app:maxValue="8"
+                            app:minValue="1"
+                            app:type="range" />
 
                     </LinearLayout>
 
