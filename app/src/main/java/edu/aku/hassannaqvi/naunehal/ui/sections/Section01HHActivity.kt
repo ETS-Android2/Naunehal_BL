@@ -44,6 +44,7 @@ import org.threeten.bp.ZoneId
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.pow
 
 
 class Section01HHActivity : AppCompatActivity() {
@@ -329,6 +330,8 @@ class Section01HHActivity : AppCompatActivity() {
                 return Validator.emptyCustomTextBox(this, bi.hh25, "Total female Children cannot be greater than HH22")
             }
             bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt()) == 0 -> return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero")
+            bi.hh22.text.toString().toInt().plus(bi.hh23.text.toString().toInt()).div(bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt())).toFloat().pow(2) == 1f ->
+                return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female children count couldn't be same as Men & Women count")
             else -> return true
         }
     }
@@ -539,8 +542,6 @@ class Section01HHActivity : AppCompatActivity() {
             val lang = gpsPref.getString("Longitude", "0")
             if (lat == "0" && lang == "0") {
                 Toast.makeText(activity, "Could not obtained GPS points", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(activity, "GPS set", Toast.LENGTH_SHORT).show()
             }
             val date = DateFormat.format("dd-MM-yyyy HH:mm", gpsPref.getString("Time", "0")!!.toLong()).toString()
             json.put("gpslat", gpsPref.getString("Latitude", "0"))

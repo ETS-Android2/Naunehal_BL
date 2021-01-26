@@ -7,7 +7,7 @@
         android:id="@+id/parentLayout"
         style="@style/cardView"
         android:layout_width="@dimen/_115sdp"
-        android:layout_height="@dimen/_103sdp"
+        android:layout_height="@dimen/_115sdp"
         android:layout_margin="@dimen/_6sdp"
         android:elevation="@dimen/_2sdp">
 
@@ -32,7 +32,7 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_65sdp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="@dimen/_2sdp"
+                android:paddingTop="@dimen/_2sdp"
                 android:src="@drawable/ctr_childboy"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_3sdp"
                 android:fontFamily="monospace"
-                android:text="Child Namejjjjjjj jj (35M)"
+                android:text="Child Namejjjjjjj jj"
                 android:textAlignment="center"
                 android:textColor="#009688"
                 android:textSize="20sp"
@@ -52,6 +52,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/childImg"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp"
+                android:fontFamily="monospace"
+                android:text="Age"
+                android:textAlignment="center"
+                android:textColor="#FF5722"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -68,7 +85,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name"
+                app:layout_constraintTop_toBottomOf="@+id/age"
                 tools:ignore="HardcodedText" />
 
 
