@@ -25,4 +25,5 @@
     <color name="blackOverlay">#7f000000</color>
     <color name="whiteOverlay">#7fffffff</color>
     <color name="redDark">#990000</color>
+    <color name="lightPink">#EEE4C4BA</color>
 </resources>

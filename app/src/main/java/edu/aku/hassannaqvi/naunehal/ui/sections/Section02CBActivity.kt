@@ -193,6 +193,8 @@ class Section02CBActivity : AppCompatActivity() {
 
     private fun formValidation(): Boolean {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false
+        if (bi.cb0501.text.toString().toInt().plus(bi.cb0502.text.toString().toInt()) == 0)
+            return Validator.emptyCustomTextBox(this, bi.cb0501, "Both year and month couldn't be zero!")
         val totalMonths = bi.cb0501.text.toString().toInt() * 12 + bi.cb0502.text.toString().toInt()
         if (totalMonths > 59) {
             this.openWarningDialog("Warning", "Add children having age of less then or equal to 59 Months")

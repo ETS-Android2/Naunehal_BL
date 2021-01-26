@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import edu.aku.hassannaqvi.naunehal.R
-import edu.aku.hassannaqvi.naunehal.databinding.ChildViewBinding
 import edu.aku.hassannaqvi.naunehal.databinding.SelectedChildViewBinding
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation
 import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
@@ -21,7 +20,9 @@ class SelectedChildViewHolder(private val bi: SelectedChildViewBinding) :
 
     fun bind(item: ChildInformation) {
         bi.resName.text = String.format("Mother: %s", item.cb07.convertStringToUpperCase().shortStringLength())
-        bi.name.text = item.cb02.convertStringToUpperCase().shortStringLength().plus("[${item.cb0501.toInt().times(12).plus(item.cb0502.toInt())}M]")
+        bi.name.text = item.cb02.convertStringToUpperCase().shortStringLength()
+        bi.age.text = String.format("Age: [%d]M", item.cb0501.toInt().times(12).plus(item.cb0502.toInt()))
+        if (item.isSelected == "1" || item.isSelected == "2") bi.childImg.setBackgroundColor(ContextCompat.getColor(this.itemView.context, R.color.lightPink))
         val imageRes: Int = if (item.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl
         val flagImage: Int
         if (item.childTableDataExist == null) {
