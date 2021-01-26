@@ -2020,7 +2020,7 @@
                             android:visibility='@{pd2101.checked ? View.VISIBLE : View.GONE}'
                             app:maxValue="23"
                             app:minValue="1"
-                            app:type="range" />
+                            app:type="range"/>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/pd2102x"
