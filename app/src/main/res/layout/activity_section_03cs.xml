@@ -958,63 +958,63 @@
                     </androidx.cardview.widget.CardView>
 
 
-                </LinearLayout>
-
-
-                <!-- cs11  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcs11"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <!-- cs11  Radio   -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVcs11"
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cs11" />
-
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/cs11" />
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_cs11" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/cs11" />
+
+                            </LinearLayout>
+
+                            <RadioGroup
+                                android:id="@+id/cs11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/cs1101"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/cs1101" />
+
+                                <RadioButton
+                                    android:id="@+id/cs1102"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/cs1102" />
+
+                            </RadioGroup>
 
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/cs11"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                    </androidx.cardview.widget.CardView>
 
-                            <RadioButton
-                                android:id="@+id/cs1101"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/cs1101" />
 
-                            <RadioButton
-                                android:id="@+id/cs1102"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/cs1102" />
-
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                </LinearLayout>
 
 
                 <!-- cs12  Radio   -->
