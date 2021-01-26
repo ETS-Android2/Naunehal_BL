@@ -33,7 +33,6 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:titleTextColor="#ffff" />
 
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -384,7 +383,7 @@
                                     android:maxLength="2"
                                     android:text="@{childInformation.cb0501}"
                                     app:maxValue="5"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -413,7 +412,6 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@{childInformation.cb0502}"
-                                    app:defaultValue="00"
                                     app:maxValue="11"
                                     app:minValue="0"
                                     app:type="range" />
@@ -1257,6 +1255,5 @@
         </ScrollView>
 
     </LinearLayout>
-
 
 </layout>
