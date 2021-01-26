@@ -80,7 +80,7 @@
     <string name="hh2605">خالی گھر/غیر رہائشی</string>
     <string name="hh2606"> گھر نہیں ملا </string>
     <string name="hh2607"> اس گھر میں 5 سال سے کم عمر کا بچہ موجود نہیں ہے </string>
-    <string name="hh2608"> آپ اس گھر/یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر نہیں ہیں </string>
+    <string name="hh2608">"اس گھر /   یو سی میں رہتے ہوئے چھ ماہ سے کم عرصہ ہوا ہے       "</string>
     <string name="hh2696">دیگر وضاحت کریں </string>
     <string name="cb01">لائن نمبر</string>
     <string name="cb02">نام</string>

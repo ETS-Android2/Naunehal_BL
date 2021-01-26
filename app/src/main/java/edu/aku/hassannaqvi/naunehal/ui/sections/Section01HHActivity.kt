@@ -337,7 +337,7 @@ class Section01HHActivity : AppCompatActivity() {
                 return Validator.emptyCustomTextBox(this, bi.hh25, "Total female Children cannot be greater than HH22")
             }
             bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt()) == 0 -> return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero")
-            bi.hh22.text.toString().toInt().plus(bi.hh23.text.toString().toInt()).div(bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt())).toFloat().pow(2) == 1f ->
+            bi.hh22.text.toString().toInt().plus(bi.hh23.text.toString().toInt()).minus(bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt())) == 0 ->
                 return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female children count couldn't be same as Men & Women count")
             else -> return true
         }
