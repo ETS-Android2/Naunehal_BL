@@ -240,7 +240,7 @@
                         android:background="@color/colorPrimaryDark"
                         android:onClick="checkHHExist"
                         android:padding="10dp"
-                        android:text="CHECK HH Exist"
+                        android:text="CHECK HH"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
