@@ -67,14 +67,14 @@
     <string name="hh2013">خاتون خانہ</string>
     <string name="hh2096">دیگر وضاحت کریں</string>
     <string name="hh21">اس گھرانے میں کل کتنے افراد رہتے ہیں؟</string>
-    <string name="hh22">مردافراد بشمول ہر عمر کے مرد</string>
-    <string name="hh23">خواتین ،بشمول ہر عمر کی خواتین</string>
-    <string name="hh24">پانچ سال سے کم عمر بچوں کی تعداد - مرد</string>
-    <string name="hh25">پانچ سال سے کم عمر بچوں کی تعداد – خواتین</string>
-    <string name="hh26"> گھرانے کے انٹرویوکا نتیجہ: </string>
+    <string name="hh22"> مرد افراد بشمول ہر عمر کے مرد </string>
+    <string name="hh23"> خواتین ، بشمول ہر عمر کی خواتین </string>
+    <string name="hh24"> پانچ سال سے کم عمر بچوں کی تعداد - مرد </string>
+    <string name="hh25"> پانچ سال سے کم عمر بچوں کی تعداد – خواتین </string>
+    <string name="hh26"> گھرانے کے انٹرویو کا نتیجہ: </string>
     <string name="hh26hint"> نوٹ:  انٹرویو مکمل نہ ہونے  کی صورت میں سپروائزر سے رابطہ کریں۔ </string>
-    <string name="hh2601">مکمل</string>
-    <string name="hh2602">جزوی مکمل</string>
+    <string name="hh2601"> مکمل </string>
+    <string name="hh2602"> جزوی مکمل </string>
     <string name="hh2603">انکار  کردیا </string>
     <string name="hh2604">گھرانے کا کوئی فرد یا سمجھدار جواب دہندہ گھر پر موجود نہیں </string>
     <string name="hh2605">خالی گھر/غیر رہائشی</string>
@@ -248,11 +248,11 @@
     <string name="cs1712">دائی</string>
     <string name="cs1713">سی ایم ڈبلیو</string>
     <string name="cs17962">دوسرے نجی وضاحت کریں </string>
-    <string name="cs17a"> کیا بچے کو   کھانسی ، بخار یا سانس لینے میں دشواری کی وجہ سے ہسپتال میں داخل کروایا گیا ؟ </string>
-    <string name="cs17aa"> ہاں </string>
-    <string name="cs17ab"> نہیں </string>
-    <string name="cs17b"> اگر ہاں تو کتنے دن کے لئے ؟ </string>
-    <string name="cs17ba"> کتنے دن </string>
+    <string name="cs18a"> کیا بچے کو   کھانسی ، بخار یا سانس لینے میں دشواری کی وجہ سے ہسپتال میں داخل کروایا گیا ؟ </string>
+    <string name="cs18aa"> ہاں </string>
+    <string name="cs18ab"> نہیں </string>
+    <string name="cs18b"> اگر ہاں تو کتنے دن کے لئے ؟ </string>
+    <string name="cs18ba"> کتنے دن </string>
     <string name="cs18">کھانسی ، بخار یا سانس لینے میں دشواری کے علاج کے لئے کیا دیا گیا تھا؟</string>
     <string name="cs1802"> اینٹی بائیوٹک </string>
     <string name="cs1803"> نامعلوم گولیاں یا شربت </string>
@@ -1381,9 +1381,9 @@
     <string name='Q_cs15'>cs15</string>
     <string name="Q_cs16">CS16</string>
     <string name='Q_cs17'>cs17</string>
-    <string name='Q_cs17a'>cs17a</string>
-    <string name='Q_cs17b'>cs17b</string>
     <string name='Q_cs18'>cs18</string>
+    <string name='Q_cs18a'>cs18a</string>
+    <string name='Q_cs18b'>cs18b</string>
     <string name='Q_cs19'>cs19</string>
     <string name='Q_cv01'>cv01</string>
     <string name='Q_cv02'>cv02</string>
@@ -1554,9 +1554,9 @@
     <string name="Q_pd24">pd24</string>
     <string name="bf14b01x" />
     <string name="Q_hh25a">HH25a</string>
-    <string name="hh25a">کیا آپ اس گھر/یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر ہیں؟</string>
-    <string name="hh25a01">ہاں</string>
-    <string name="hh25a02">نہیں</string>
+    <string name="hh25a"> کیا آپ اس گھر / یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر ہیں ؟ </string>
+    <string name="hh25a01"> ہاں </string>
+    <string name="hh25a02"> نہیں </string>
 
 
 </resources>

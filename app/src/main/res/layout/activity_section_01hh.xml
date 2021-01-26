@@ -25,9 +25,10 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
+            android:textAlignment="center"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:titleTextColor="#ffff" />
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleTextColor="@color/white" />
 
 
         <ScrollView

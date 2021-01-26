@@ -245,11 +245,6 @@
     <string name="cs1712">Dai, TBA</string>
     <string name="cs1713">CMW</string>
     <string name="cs17962">Other Private</string>
-    <string name="cs17a"> Was the child hospitalized for Fever / Cough / difficulty breathing ? </string>
-    <string name="cs17aa"> Yes </string>
-    <string name="cs17ab"> No </string>
-    <string name="cs17b"> If yes, what was the duration of hospitalization ? </string>
-    <string name="cs17ba"> Number of Days </string>
     <string name="cs18">What Was Given to Treat cough, fever or difficulty breathing?</string>
     <string name="cs1802">antibiotic</string>
     <string name="cs1803">unknown pill or syrup</string>
@@ -259,6 +254,11 @@
     <string name="cs1807">Intravenous (iv)</string>
     <string name="cs1808">Home remedy/herbal medicine</string>
     <string name="cs1896">Others Please Specify</string>
+    <string name="cs18a"> Was the child hospitalized for Fever / Cough / difficulty breathing ? </string>
+    <string name="cs18aa"> Yes </string>
+    <string name="cs18ab"> No </string>
+    <string name="cs18b"> If yes, what was the duration of hospitalization ? </string>
+    <string name="cs18ba"> Number of Days </string>
     <string name="cs19">Why did you not seek treatment?</string>
     <string name="cs1901">Fear of COVID-19</string>
     <string name="cs1902">Confidence that child will get better himself</string>
@@ -1378,10 +1378,11 @@
     <string name='Q_cs13'>cs13</string>
     <string name='Q_cs14'>cs14</string>
     <string name='Q_cs15'>cs15</string>
+    <string name="Q_cs16">CS16</string>
     <string name='Q_cs17'>cs17</string>
-    <string name='Q_cs17a'>cs17a</string>
-    <string name='Q_cs17b'>cs17b</string>
     <string name='Q_cs18'>cs18</string>
+    <string name='Q_cs18a'>cs18a</string>
+    <string name='Q_cs18b'>cs18b</string>
     <string name='Q_cs19'>cs19</string>
     <string name='Q_cv01'>cv01</string>
     <string name='Q_cv02'>cv02</string>
@@ -1541,7 +1542,6 @@
     <string name='Q_se39'>se39</string>
     <string name='Q_se40'>se40</string>
     <string name="dialog_text">"    Please add Info for second child."</string>
-    <string name="Q_cs16">CS16</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
     <string name="cb1598">Dont Know</string>
     <string name="Q_cs20">CS20</string>
@@ -1553,9 +1553,9 @@
     <string name="Q_pd24">pd24</string>
     <string name="bf14b01x" />
     <string name="Q_hh25a">HH25a</string>
-    <string name="hh25a01">ہاں</string>
-    <string name="hh25a">کیا آپ اس گھر/یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر ہیں؟</string>
-    <string name="hh25a02">نہیں</string>
+    <string name="hh25a"> Have you been living in this House / UC / area for more than six months ? </string>
+    <string name="hh25a01"> Yes </string>
+    <string name="hh25a02"> No </string>
     <string name="hh2608">" آپ اس گھر/یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر نہیں ہیں "</string>
 
 

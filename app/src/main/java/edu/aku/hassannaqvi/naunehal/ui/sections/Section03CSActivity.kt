@@ -95,32 +95,32 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
 
         bi.cs16.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
             Clear.clearAllFields(bi.fldGrpCVcs17)
-            Clear.clearAllFields(bi.fldGrpCVcs17a)
-            Clear.clearAllFields(bi.fldGrpCVcs17b)
             Clear.clearAllFields(bi.fldGrpCVcs18)
+            Clear.clearAllFields(bi.fldGrpCVcs18a)
+            Clear.clearAllFields(bi.fldGrpCVcs18b)
             Clear.clearAllFields(bi.fldGrpCVcs19)
             if (i == bi.cs1601.id) {
                 bi.fldGrpCVcs17.visibility = View.VISIBLE
-                bi.fldGrpCVcs17a.visibility = View.VISIBLE
-                bi.fldGrpCVcs17b.visibility = View.VISIBLE
                 bi.fldGrpCVcs18.visibility = View.VISIBLE
+                bi.fldGrpCVcs18a.visibility = View.VISIBLE
+                bi.fldGrpCVcs18b.visibility = View.VISIBLE
                 bi.fldGrpCVcs19.visibility = View.GONE
             } else if (i == bi.cs1602.id) {
                 bi.fldGrpCVcs17.visibility = View.GONE
-                bi.fldGrpCVcs17a.visibility = View.GONE
-                bi.fldGrpCVcs17b.visibility = View.GONE
                 bi.fldGrpCVcs18.visibility = View.GONE
+                bi.fldGrpCVcs18a.visibility = View.GONE
+                bi.fldGrpCVcs18b.visibility = View.GONE
                 bi.fldGrpCVcs19.visibility = View.VISIBLE
             }
         }
 
 
 
-        bi.cs17a.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
-            Clear.clearAllFields(bi.fldGrpCVcs17b)
-            bi.fldGrpCVcs17b.visibility = View.VISIBLE
-            if (i == bi.cs17ab.id) {
-                bi.fldGrpCVcs17b.visibility = View.GONE
+        bi.cs18a.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
+            Clear.clearAllFields(bi.fldGrpCVcs18b)
+            bi.fldGrpCVcs18b.visibility = View.VISIBLE
+            if (i == bi.cs18ab.id) {
+                bi.fldGrpCVcs18b.visibility = View.GONE
             }
         }
 
@@ -151,16 +151,16 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             Clear.clearAllFields(bi.fldGrpCVcs15)
             Clear.clearAllFields(bi.fldGrpCVcs16)
             Clear.clearAllFields(bi.fldGrpCVcs17)
-            Clear.clearAllFields(bi.fldGrpCVcs17a)
-            Clear.clearAllFields(bi.fldGrpCVcs17b)
             Clear.clearAllFields(bi.fldGrpCVcs18)
+            Clear.clearAllFields(bi.fldGrpCVcs18a)
+            Clear.clearAllFields(bi.fldGrpCVcs18b)
             Clear.clearAllFields(bi.fldGrpCVcs19)
             bi.fldGrpCVcs15.visibility = View.VISIBLE
             bi.fldGrpCVcs16.visibility = View.VISIBLE
             bi.fldGrpCVcs17.visibility = View.VISIBLE
-            bi.fldGrpCVcs17a.visibility = View.VISIBLE
-            bi.fldGrpCVcs17b.visibility = View.VISIBLE
             bi.fldGrpCVcs18.visibility = View.VISIBLE
+            bi.fldGrpCVcs18a.visibility = View.VISIBLE
+            bi.fldGrpCVcs18b.visibility = View.VISIBLE
             bi.fldGrpCVcs19.visibility = View.VISIBLE
             if (bi.cs1202.isChecked
                     && bi.cs1302.isChecked
@@ -168,9 +168,9 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
                 bi.fldGrpCVcs15.visibility = View.GONE
                 bi.fldGrpCVcs16.visibility = View.GONE
                 bi.fldGrpCVcs17.visibility = View.GONE
-                bi.fldGrpCVcs17a.visibility = View.GONE
-                bi.fldGrpCVcs17b.visibility = View.GONE
                 bi.fldGrpCVcs18.visibility = View.GONE
+                bi.fldGrpCVcs18a.visibility = View.GONE
+                bi.fldGrpCVcs18b.visibility = View.GONE
                 bi.fldGrpCVcs19.visibility = View.GONE
             }
             if (i == bi.cs1402.id) {
@@ -425,17 +425,6 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
                 if (bi.cs17962x.text.toString().trim().isEmpty()) "-1"
                 else bi.cs17962x.text.toString())
 
-        MainApp.child.setCs17a(
-                when {
-                    bi.cs17aa.isChecked -> "1"
-                    bi.cs17ab.isChecked -> "2"
-                    else -> "-1"
-                })
-
-        MainApp.child.setCs17b(
-                if (bi.cs17b.text.toString().trim().isEmpty()) "-1"
-                else bi.cs17b.text.toString())
-
 
         MainApp.child.setCs1802(if (bi.cs1802.isChecked) "2" else "-1")
         MainApp.child.setCs1803(if (bi.cs1803.isChecked) "3" else "-1")
@@ -449,6 +438,19 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
         MainApp.child.setCs1896x(
                 if (bi.cs1896x.text.toString().trim().isEmpty()) "-1"
                 else bi.cs1896x.text.toString())
+
+
+        MainApp.child.setCs18a(
+                when {
+                    bi.cs18aa.isChecked -> "1"
+                    bi.cs18ab.isChecked -> "2"
+                    else -> "-1"
+                })
+
+        MainApp.child.setCs18b(
+                if (bi.cs18b.text.toString().trim().isEmpty()) "-1"
+                else bi.cs18b.text.toString())
+
 
         MainApp.child.setCs19(
                 when {
