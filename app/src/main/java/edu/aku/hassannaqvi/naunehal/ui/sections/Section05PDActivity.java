@@ -35,6 +35,7 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_05pd);
         bi.setCallback(this);
+        setSupportActionBar(bi.toolbar);
         info = Section03CSActivity.selectedChildInfo;
         bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
         form.setPd01(info.cb01);

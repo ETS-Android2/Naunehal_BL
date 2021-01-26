@@ -58,10 +58,12 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_04im);
         bi.setCallback(this);
+//        setSupportActionBar(bi.toolbar);
         info = Section03CSActivity.selectedChildInfo;
 
         MainApp.immunization = new Immunization();
         bi.setCallback(this);
+        setSupportActionBar(bi.toolbar);
         //bi.setForm(MainApp.immunization);
         setupSkips();
         setupTextWatchers();

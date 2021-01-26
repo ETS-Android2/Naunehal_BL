@@ -32,7 +32,6 @@ public class EndingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
         bi.setForm(MainApp.form);
 /*
@@ -60,6 +59,7 @@ public class EndingActivity extends AppCompatActivity {
             bi.istatusf.setEnabled(!sectionMainCheck);
             bi.istatusg.setEnabled(true);
             bi.istatus96.setEnabled(true);
+            bi.btnEnd.setBackgroundColor(getResources().getColor(R.color.redLight));
         }
 
 //

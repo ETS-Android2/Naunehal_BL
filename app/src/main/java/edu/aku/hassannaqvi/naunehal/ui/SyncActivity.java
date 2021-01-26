@@ -70,7 +70,7 @@ public class SyncActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_sync);
         bi.setCallback(this);
-
+        //setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.getDbHelper();
         uploadTables = new ArrayList<>();
         downloadTables = new ArrayList<>();

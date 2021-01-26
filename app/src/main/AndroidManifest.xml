@@ -109,24 +109,29 @@
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
+
         <activity
             android:name=".ui.sections.IdentificationSectionActivity"
             android:label="Section HH"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
+
         <activity
             android:name=".ui.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+
         <activity
             android:name=".core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
+
         <activity
             android:name=".ui.TakePhoto"
             android:hardwareAccelerated="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>

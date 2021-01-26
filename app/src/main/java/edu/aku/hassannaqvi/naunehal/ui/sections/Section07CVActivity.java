@@ -40,6 +40,7 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
         ChildInformation info = Section03CSActivity.selectedChildInfo;
         bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
         bi.setCallback(this);
+        setSupportActionBar(bi.toolbar);
         setupSkips();
 
     }
