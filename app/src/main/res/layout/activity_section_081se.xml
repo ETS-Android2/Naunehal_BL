@@ -953,24 +953,28 @@
                         <RadioGroup
                             android:id="@+id/se09"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/se0901"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se0901" />
 
                             <RadioButton
                                 android:id="@+id/se0902"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se0902" />
 
                             <RadioButton
                                 android:id="@+id/se0998"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se0998" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1486,18 +1490,21 @@
                         <RadioGroup
                             android:id="@+id/se16"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/se1601"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se1601" />
 
                             <RadioButton
                                 android:id="@+id/se1602"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se1602" />
 
                         </RadioGroup>
@@ -1629,18 +1636,21 @@
                         <RadioGroup
                             android:id="@+id/se1801"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/se180101"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180101" />
 
                             <RadioButton
                                 android:id="@+id/se180102"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180102" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1678,18 +1688,21 @@
                         <RadioGroup
                             android:id="@+id/se1802"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/se180201"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180201" />
 
                             <RadioButton
                                 android:id="@+id/se180202"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180202" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1727,18 +1740,21 @@
                         <RadioGroup
                             android:id="@+id/se1803"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/se180301"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180301" />
 
                             <RadioButton
                                 android:id="@+id/se180302"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180302" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1776,18 +1792,21 @@
                         <RadioGroup
                             android:id="@+id/se1804"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/se180401"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180401" />
 
                             <RadioButton
                                 android:id="@+id/se180402"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180402" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1825,18 +1844,21 @@
                         <RadioGroup
                             android:id="@+id/se1805"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/se180501"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180501" />
 
                             <RadioButton
                                 android:id="@+id/se180502"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se180502" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1874,30 +1896,35 @@
                         <RadioGroup
                             android:id="@+id/se1896"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/se189601"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se189601" />
 
-                            <EditText
-                                android:id="@+id/se189601x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/se189601"
-                                android:tag="se189601"
-                                android:text='@{se189601.checked ? se189601x.getText().toString() : ""}'
-                                android:visibility='@{se189601.checked? View.VISIBLE : View.GONE}' />
+
 
                             <RadioButton
                                 android:id="@+id/se189602"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:text="@string/se189602" />
                         </RadioGroup>
+
+                        <EditText
+                            android:id="@+id/se189601x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/se189601"
+                            android:tag="se189601"
+                            android:text='@{se189601.checked ? se189601x.getText().toString() : ""}'
+                            android:visibility='@{se189601.checked? View.VISIBLE : View.GONE}' />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
