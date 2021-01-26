@@ -53,13 +53,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        bi.callback = this
         /**
          * SET CUSTOM TOOLBAR
          */
         setSupportActionBar(bi.toolbar)
 
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        bi.callback = this
         if (MainApp.admin) bi.adminSection.visibility = View.VISIBLE
         viewModel = obtainViewModel(MainViewModel::class.java, GeneralRepository(DatabaseHelper(this)))
 
