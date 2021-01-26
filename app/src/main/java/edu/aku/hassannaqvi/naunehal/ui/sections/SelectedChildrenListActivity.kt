@@ -183,9 +183,9 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
 
         if (MainApp.form.se2201 != StringUtils.EMPTY) {
             if (MainApp.form.se2201 == StringUtils.EMPTY) {
-                bi.btnHHSection.text = "Incomplete HH Section Filled"
+                bi.btnHHSection.text = "HH Section Refused"
             } else
-                bi.btnHHSection.text = "Complete HH Section Filled"
+                bi.btnHHSection.text = "HH Section Complete"
             bi.btnHHSection.isEnabled = false
         }
     }
