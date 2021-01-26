@@ -37,6 +37,7 @@ class Section02CBActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_02cb)
         bi.callback = this
+        setSupportActionBar(bi.toolbar)
 
         // TODO: After itemClick on childlist fetchChildByUID() from TABLE_FAMILY and update contents MainApp.Family before entering this activity.
         if (MainApp.form.hh14 == "1") bi.cb0601.isEnabled = false

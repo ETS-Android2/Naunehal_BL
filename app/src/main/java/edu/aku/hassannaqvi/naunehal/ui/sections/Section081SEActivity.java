@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -31,7 +32,7 @@ public class Section081SEActivity extends AppCompatActivity implements EndSectio
         //MainApp.form = new Form();
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_081se);
         bi.setCallback(this);
-
+        setSupportActionBar(bi.toolbar);
         setupSkips();
     }
 

@@ -27,12 +27,9 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // only in First Section
-        //MainApp.form = new Form();
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_082se);
-
         bi.setCallback(this);
+        setSupportActionBar(bi.toolbar);
         setupSkips();
     }
 
