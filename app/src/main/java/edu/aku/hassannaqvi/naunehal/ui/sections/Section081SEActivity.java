@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -89,9 +88,8 @@ public class Section081SEActivity extends AppCompatActivity implements EndSectio
         });
 
         // se1705
-        bi.se1705.setOnCheckedChangeListener((compoundButton, id) -> {
-            Clear.clearAllFields(bi.se17check, !id);
-        });
+        bi.se1705.setOnCheckedChangeListener((compoundButton, id) -> Clear.clearAllFields(bi.se17check, !id));
+
     }
 
 
