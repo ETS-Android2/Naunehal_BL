@@ -3227,7 +3227,7 @@
 
                                     </LinearLayout>
 
-                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                    <!--<com.edittextpicker.aliazaz.EditTextPicker
                                         android:id="@+id/im08b"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -3237,7 +3237,36 @@
                                         android:text='@{im08a1.checked ? im08b.getText().toString() : ""}'
                                         app:maxValue="35"
                                         app:minValue="1"
-                                        app:type="range" />
+                                        app:type="range" />-->
+
+                                    <RadioGroup
+                                        android:id="@+id/im08b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <RadioButton
+                                            android:id="@+id/im08b1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@string/im08a1" />
+
+                                        <RadioButton
+                                            android:id="@+id/im08b2"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@string/im08a2" />
+
+                                        <RadioButton
+                                            android:id="@+id/im08b98"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="@string/im08a3" />
+
+                                    </RadioGroup>
 
                                 </LinearLayout>
 
