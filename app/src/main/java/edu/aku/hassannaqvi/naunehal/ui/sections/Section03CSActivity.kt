@@ -155,6 +155,13 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             Clear.clearAllFields(bi.fldGrpCVcs18a)
             Clear.clearAllFields(bi.fldGrpCVcs18b)
             Clear.clearAllFields(bi.fldGrpCVcs19)
+            bi.fldGrpCVcs15.visibility = View.VISIBLE
+            bi.fldGrpCVcs16.visibility = View.VISIBLE
+            bi.fldGrpCVcs17.visibility = View.VISIBLE
+            bi.fldGrpCVcs18.visibility = View.VISIBLE
+            bi.fldGrpCVcs18a.visibility = View.VISIBLE
+            bi.fldGrpCVcs18b.visibility = View.VISIBLE
+            bi.fldGrpCVcs19.visibility = View.VISIBLE
             if (bi.cs1202.isChecked
                     && bi.cs1302.isChecked
                     && bi.cs1402.isChecked) {
@@ -165,16 +172,8 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
                 bi.fldGrpCVcs18a.visibility = View.GONE
                 bi.fldGrpCVcs18b.visibility = View.GONE
                 bi.fldGrpCVcs19.visibility = View.GONE
-            } else if (i == bi.cs1402.id) {
+            } else if (bi.cs1402.isChecked) {
                 bi.fldGrpCVcs15.visibility = View.GONE
-            } else {
-                bi.fldGrpCVcs15.visibility = View.VISIBLE
-                bi.fldGrpCVcs16.visibility = View.VISIBLE
-                bi.fldGrpCVcs17.visibility = View.VISIBLE
-                bi.fldGrpCVcs18.visibility = View.VISIBLE
-                bi.fldGrpCVcs18a.visibility = View.VISIBLE
-                bi.fldGrpCVcs18b.visibility = View.VISIBLE
-                bi.fldGrpCVcs19.visibility = View.VISIBLE
             }
         }
     }
