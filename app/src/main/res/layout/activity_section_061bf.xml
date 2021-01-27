@@ -1392,19 +1392,7 @@
                         </RadioGroup>
 
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/bf14e01x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/bf14e01"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:tag="bf14e01"
-                            android:text='@{bf14e01.checked ? bf14e01x.getText().toString() : ""}'
-                            android:visibility='@{bf14e01.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="99"
-                            app:minValue="0"
-                            app:type="range" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

@@ -704,6 +704,8 @@
     <string name="bf1301">Yes</string>
     <string name="bf1302">No</string>
     <string name="bf1398">Don’t know</string>
+
+
     <string name="bf14">Next I would like to ask you about some liquids that (NAME) may have had yesterday during the day or at night. Did (NAME) have any (ITEM FORM LIST)? READ THE LIST OF LIQUIDS STARTING WITH ‘PLAN WATER’</string>
     <string name="bf14a">Plain water</string>
     <string name="bf14a01">Yes</string>
@@ -718,11 +720,11 @@
     <string name="bf14c02">No</string>
     <string name="bf14c98">Don’t know</string>
     <string name="bf14d">Juice or juice drinks</string>
-    <string name="bf14d01">Yes, If yes Number of time</string>
+    <string name="bf14d01">Yes</string>
     <string name="bf14d02">No</string>
     <string name="bf14d98">Don’t know</string>
     <string name="bf14e">Clear broth</string>
-    <string name="bf14e01">Yes, If yes Number of time</string>
+    <string name="bf14e01">Yes</string>
     <string name="bf14e02">No</string>
     <string name="bf14e98">Don’t know</string>
     <string name="bf14f">Yogurt</string>
@@ -741,6 +743,8 @@
     <string name="bf14i01">Yes</string>
     <string name="bf14i02">No</string>
     <string name="bf14i98">Don’t know</string>
+
+
     <string name="bf15">Please describe everything that (NAME) ate yesterday during the day or night, whether at home or outside the home.</string>
     <string name="bf15_title">Check categories A-Q.  If all ‘no’ for BF15*, go BF16 If at least one ‘yes’ or all ‘DK’ go to BF17</string>
     <string name="bf15a">Porridge, bread, rice, noodles, or other foods made from grains</string>

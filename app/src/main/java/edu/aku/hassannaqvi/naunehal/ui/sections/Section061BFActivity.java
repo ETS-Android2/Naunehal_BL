@@ -309,7 +309,7 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                 : bi.bf14e98.isChecked() ? "98"
                 :  "-1");
 
-        form.setBf14e01x(bi.bf14e01x.getText().toString());
+       /* form.setBf14e01x(bi.bf14e01x.getText().toString());*/ /*Remove Editted Text Picker Not Required */
         form.setBf14f( bi.bf14f01.isChecked() ? "1"
                 : bi.bf14f02.isChecked() ? "2"
                 : bi.bf14f98.isChecked() ? "98"
