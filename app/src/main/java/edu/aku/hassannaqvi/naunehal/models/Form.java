@@ -403,6 +403,7 @@ public class Form extends BaseObservable {
     private String synced = StringUtils.EMPTY;
     private String syncDate = StringUtils.EMPTY;
     private String g5Flag = "-1";
+    private String hhflag = "";
     // SECTION VARIABLES
     private String s01HH = StringUtils.EMPTY;
     private String s05PD = StringUtils.EMPTY;
@@ -623,6 +624,16 @@ public class Form extends BaseObservable {
 
     public Form setG5Flag(String g5Flag) {
         this.g5Flag = g5Flag;
+        return this;
+    }
+
+
+    public String getHhflag() {
+        return hhflag;
+    }
+
+    public Form setHhflag(String hhflag) {
+        this.hhflag = hhflag;
         return this;
     }
 
@@ -4354,6 +4365,7 @@ public class Form extends BaseObservable {
         this.synced = jsonObject.getString(FormsContract.FormsTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(FormsContract.FormsTable.COLUMN_SYNCED_DATE);
         this.g5Flag = jsonObject.getString(FormsContract.FormsTable.COLUMN_G5FLAG);
+        this.hhflag = jsonObject.getString(FormsContract.FormsTable.COLUMN_HHFLAG);
 
         this.s01HH = jsonObject.getString(FormsContract.FormsTable.COLUMN_S01HH);
         this.s05PD = jsonObject.getString(FormsContract.FormsTable.COLUMN_S05PD);
@@ -4385,6 +4397,7 @@ public class Form extends BaseObservable {
         this.synced = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_SYNCED_DATE));
         this.g5Flag = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_G5FLAG));
+        this.hhflag = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_HHFLAG));
 
         //For childCount
         //this.s01HH = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_S01HH));
@@ -4859,6 +4872,7 @@ public class Form extends BaseObservable {
             json.put(FormsContract.FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(FormsContract.FormsTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
             json.put(FormsContract.FormsTable.COLUMN_G5FLAG, this.g5Flag == null ? JSONObject.NULL : this.g5Flag);
+            json.put(FormsContract.FormsTable.COLUMN_HHFLAG, this.hhflag == null ? JSONObject.NULL : this.hhflag);
 
             json.put(FormsContract.FormsTable.COLUMN_S01HH, new JSONObject(s01HHtoString()));
             json.put(FormsContract.FormsTable.COLUMN_S05PD, new JSONObject(s05PDtoString()));

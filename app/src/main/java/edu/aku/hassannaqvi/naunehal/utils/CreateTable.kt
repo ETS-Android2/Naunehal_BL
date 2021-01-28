@@ -1,10 +1,13 @@
 package edu.aku.hassannaqvi.naunehal.utils
 
-import edu.aku.hassannaqvi.naunehal.contracts.*
+import edu.aku.hassannaqvi.naunehal.contracts.ChildContract
+import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
+import edu.aku.hassannaqvi.naunehal.contracts.IMContract
 import edu.aku.hassannaqvi.naunehal.models.*
 
 object CreateTable {
-    public const val PROJECT_NAME = "NAUNEHAL2021"
+    const val PROJECT_NAME = "NAUNEHAL2021"
     const val DATABASE_NAME = "$PROJECT_NAME.db"
     const val DATABASE_COPY = "${PROJECT_NAME}_copy.db"
     const val DATABASE_VERSION = 1
@@ -26,6 +29,7 @@ object CreateTable {
             + FormsContract.FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsContract.FormsTable.COLUMN_APPVERSION + " TEXT,"
             + FormsContract.FormsTable.COLUMN_G5FLAG + " TEXT,"
+            + FormsContract.FormsTable.COLUMN_HHFLAG + " TEXT,"
             + FormsContract.FormsTable.COLUMN_DCODE + " TEXT,"
             + FormsContract.FormsTable.COLUMN_UCODE + " TEXT,"
             + FormsContract.FormsTable.COLUMN_CLUSTER + " TEXT,"

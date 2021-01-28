@@ -2,16 +2,18 @@ package edu.aku.hassannaqvi.naunehal.models;
 
 import android.database.Cursor;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
 import com.google.gson.GsonBuilder;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.LocalDate;
 
 import java.io.Serializable;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -43,28 +45,28 @@ public class ChildInformation extends BaseObservable implements Serializable {
     private String scb;
 
     // FIELD VARIABLES
-    public String cb01;
-    public String cb02;
-    public String cb03;
-    public String cb04dd;
-    public String cb04mm;
-    public String cb04yy;
-    public String cb0501;
-    public String cb0502;
-    public String cb06;
-    public String cb07;
-    public String cb08;
-    public String cb09;
-    public String cb10;
-    public String cb1096x;
-    public String cb11;
-    public String cb12;
-    public String cb13;
-    public String cb14;
-    public String cb1496x;
-    public String cb15;
-    public String cb1598;
-    public String cb16;
+    private String cb01 = StringUtils.EMPTY;
+    private String cb02 = StringUtils.EMPTY;
+    private String cb03 = StringUtils.EMPTY;
+    private String cb04dd = StringUtils.EMPTY;
+    private String cb04mm = StringUtils.EMPTY;
+    private String cb04yy = StringUtils.EMPTY;
+    private String cb0501 = StringUtils.EMPTY;
+    private String cb0502 = StringUtils.EMPTY;
+    private String cb06 = StringUtils.EMPTY;
+    private String cb07 = StringUtils.EMPTY;
+    private String cb08 = StringUtils.EMPTY;
+    private String cb09 = StringUtils.EMPTY;
+    private String cb10 = StringUtils.EMPTY;
+    private String cb1096x = StringUtils.EMPTY;
+    private String cb11 = StringUtils.EMPTY;
+    private String cb12 = StringUtils.EMPTY;
+    private String cb13 = StringUtils.EMPTY;
+    private String cb14 = StringUtils.EMPTY;
+    private String cb1496x = StringUtils.EMPTY;
+    private String cb15 = StringUtils.EMPTY;
+    private String cb1598 = StringUtils.EMPTY;
+    private String cb16 = StringUtils.EMPTY;
 
     //Not saving in db
     private boolean flag = true,
