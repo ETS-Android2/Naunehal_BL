@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main)
         bi.callback = this
-        //setSupportActionBar(bi.toolbar)
+        setSupportActionBar(bi.toolbar)
         if (MainApp.admin) bi.adminSection.visibility = View.VISIBLE
         viewModel = obtainViewModel(MainViewModel::class.java, GeneralRepository(DatabaseHelper(this)))
 
