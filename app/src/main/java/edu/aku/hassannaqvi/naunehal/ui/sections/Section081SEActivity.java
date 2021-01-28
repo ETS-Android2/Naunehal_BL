@@ -350,6 +350,10 @@ public class Section081SEActivity extends AppCompatActivity implements EndSectio
 
     @Override
     public void endSecActivity(boolean flag) {
-        finish();
+        saveDraft();
+        form.setHhflag("2");
+        if (UpdateDB()) {
+            finish();
+        }
     }
 }

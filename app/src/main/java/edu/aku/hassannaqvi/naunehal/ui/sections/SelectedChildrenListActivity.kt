@@ -81,7 +81,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
                     var message = "Are you sure, you want to exit this interview?"
                     var btnYesTxt = "YES"
                     var btnNoTxt = "No"
-                    if (MainApp.form.se2201 == StringUtils.EMPTY) {
+                    if (MainApp.form.hhflag == "-1") {
                         id = 1
                         title = "WARNING!"
                         message = "Household Information Section not filled.\n Are you sure, you want to exit this interview?"
@@ -181,11 +181,13 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
 
         viewModel.getChildDataFromDB(MainApp.form.cluster, MainApp.form.hhno, MainApp.form.uid)
 
-        if (MainApp.form.se2201 != StringUtils.EMPTY) {
-            if (MainApp.form.se2201 == StringUtils.EMPTY) {
+        if (MainApp.form.hhflag != "-1") {
+            if (MainApp.form.hhflag == "2") {
                 bi.btnHHSection.text = "HH Section Refused"
-            } else
-                bi.btnHHSection.text = "HH Section Complete"
+            } else {
+                bi.btnHHSection.text = "HH Section Completed"
+                bi.btnHHSection.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
+            }
             bi.btnHHSection.isEnabled = false
         }
     }

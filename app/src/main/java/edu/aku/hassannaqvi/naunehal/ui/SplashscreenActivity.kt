@@ -1,6 +1,9 @@
 package edu.aku.hassannaqvi.naunehal.ui
 
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowInsets
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.ui.login_activity.LoginActivity
@@ -17,6 +20,12 @@ class SplashscreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
         activityScope = launchSplashScope()
+
+        /*
+        * Show FullScreen
+        * */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) window.insetsController?.hide(WindowInsets.Type.statusBars())
+        else window?.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
 
     override fun onPause() {

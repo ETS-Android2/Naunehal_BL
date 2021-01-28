@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     ResponseStatus.ERROR -> {
                         bi.btnDownloadDistrict.visibility = View.VISIBLE
+                        Log.d("district: ", "false")
                     }
                     ResponseStatus.LOADING -> {
                         lifecycleScope.launch {
@@ -102,7 +103,7 @@ class MainActivity : AppCompatActivity() {
 
 
         /*
-        * Get Today's form DB
+        * Get Today's form from DB
         * If it's null then return 0 otherwise return count
         * Show loading while data is fetching
         * */
@@ -121,7 +122,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         /*
-        * Get Today's form DB
+        * Get Form status from DB
         * If it's null then return 0 otherwise return count
         * Show loading while data is fetching
         * */
@@ -147,7 +148,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         /*
-        * Get Today's form DB
+        * Get Upload & Download status of form from DB
         * If it's null then return 0 otherwise return count
         * Show loading while data is fetching
         * */

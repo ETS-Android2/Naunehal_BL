@@ -816,7 +816,7 @@
     <string name="bf15q02">No</string>
     <string name="bf15q98">Don’t know</string>
     <string name="bf16">Did (NAME) eat any solid, semi- solid, or soft foods yesterday during the day or at night?  IF ‘YES’ PROBE: what kind of solid, semi-solid, or soft foods did (NAME) eat?</string>
-    <string name="bf1601">Yes Go back to BF15 and record foods eaten. Then continue with BF17</string>
+    <string name="bf1601">Yes</string>
     <string name="bf1602">No</string>
     <string name="bf1698">Don’t know</string>
     <string name="bf17">How many times did (NAME) eat solid, semi-solid, or soft foods other than liquids yesterday during the day or at night?</string>

@@ -34,6 +34,7 @@ public class EndingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
         bi.setForm(MainApp.form);
+        setSupportActionBar(bi.toolbar);
 /*
         setupSkips();
 */
@@ -54,13 +55,13 @@ public class EndingActivity extends AppCompatActivity {
         } else {
             bi.istatusa.setEnabled(false);
             bi.istatusb.setEnabled(sectionMainCheck == 0);
-            bi.istatusc.setEnabled(true);
+            bi.istatusc.setEnabled(sectionMainCheck == 0);
             bi.istatusd.setEnabled(sectionMainCheck == 1);
             bi.istatuse.setEnabled(sectionMainCheck == 1);
             bi.istatusf.setEnabled(sectionMainCheck == 1);
             bi.istatusg.setEnabled(sectionMainCheck == 2);
             bi.istatush.setEnabled(sectionMainCheck == 3);
-            bi.istatus96.setEnabled(true);
+            bi.istatus96.setEnabled(sectionMainCheck == 0);
             bi.btnEnd.setBackgroundColor(getResources().getColor(R.color.redLight));
         }
 
@@ -116,10 +117,7 @@ public class EndingActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (sectionMainCheck != 0)
-            super.onBackPressed();
-        else
-            Toast.makeText(getApplicationContext(), "Back Press Not Allowed", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Back Press Not Allowed", Toast.LENGTH_LONG).show();
     }
 
 }

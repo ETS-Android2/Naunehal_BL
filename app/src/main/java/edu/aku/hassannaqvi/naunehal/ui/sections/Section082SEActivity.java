@@ -57,7 +57,7 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
     }
 
 
-    private void saveDraft() {
+    private void saveDraft(boolean flag) {
 
         form.setSe2201(bi.se220101.isChecked() ? "1"
                 : bi.se220102.isChecked() ? "2"
@@ -228,6 +228,9 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
                 : bi.se4002.isChecked() ? "2"
                 : bi.se4098.isChecked() ? "98"
                 : "-1");
+
+
+        form.setHhflag(flag ? "1" : "2");
     }
 
 
@@ -245,7 +248,7 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
 
     public void BtnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
+        saveDraft(true);
         if (UpdateDB()) {
             finish();
         }
@@ -264,7 +267,10 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
 
     @Override
     public void endSecActivity(boolean flag) {
-        finish();
+        saveDraft(false);
+        if (UpdateDB()) {
+            finish();
+        }
     }
 
 
