@@ -24,7 +24,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -57,6 +56,8 @@ public class DataUpWorkerALL extends Worker {
         uploadTable = workerParams.getInputData().getString("table");
         position = workerParams.getInputData().getInt("position", -2);
         uploadData = MainApp.uploadData.get(position);
+
+
         Log.d(TAG, "Upload Begins uploadData.length(): " + uploadData.length());
         Log.d(TAG, "Upload Begins uploadData: " + uploadData);
 
@@ -79,7 +80,14 @@ public class DataUpWorkerALL extends Worker {
     @NonNull
     @Override
     public Result doWork() {
+        if (uploadData.length() == 0) {
+            data = new Data.Builder()
+                    .putString("error", "No new records to upload")
+                    .putInt("position", this.position)
+                    .build();
 
+            return Result.failure(data);
+        }
         Log.d(TAG, "doWork: Starting");
         displayNotification(nTitle, "Starting upload");
 
@@ -113,16 +121,19 @@ public class DataUpWorkerALL extends Worker {
             JSONArray jsonParam = new JSONArray();
 
             jsonTable.put("table", uploadTable);
-            jsonSync.put(uploadData);
+            Log.d(TAG, "doWork: " + uploadData);
+            System.out.print("doWork: " + uploadData);
+            //jsonSync.put(uploadData);
             jsonParam
                     .put(jsonTable)
-                    .put(jsonSync);
+                    .put(uploadData);
 
             Log.d(TAG, "Upload Begins Length: " + jsonParam.length());
             Log.d(TAG, "Upload Begins: " + jsonParam);
 
 
-            wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
+            //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
+            wr.writeBytes(jsonParam.toString());
             wr.flush();
             wr.close();
 

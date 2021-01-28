@@ -1087,7 +1087,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        Log.d(TAG, "getUnsyncedForms: " + allForms.length());
+        Log.d(TAG, "getUnsyncedForms: " + allForms.toString().length());
         Log.d(TAG, "getUnsyncedForms: " + allForms);
         return allForms;
     }
@@ -1315,7 +1315,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedChild(String id) {
+    public void updateSyncedCSChild(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -1353,7 +1353,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedIM(String id) {
+    public void updateSyncedIMChild(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
