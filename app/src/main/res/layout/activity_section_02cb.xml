@@ -28,10 +28,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layoutDirection="ltr"
+            android:textAlignment="center"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:titleTextColor="#ffff" />
+            app:titleTextColor="@color/black" />
 
         <ScrollView
             android:layout_width="match_parent"
