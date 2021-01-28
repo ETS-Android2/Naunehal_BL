@@ -105,7 +105,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_ISTATUS, form.getIStatus());
         values.put(FormsTable.COLUMN_ISTATUS96x, form.getIStatus96x());
         values.put(FormsTable.COLUMN_ENDINGDATETIME, form.getEndTime());
-        values.put(FormsTable.COLUMN_GPS, form.getGps());
 
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
@@ -1018,34 +1017,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public JSONArray getUnsyncedForms() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-        String[] columns = {
-
-                FormsTable.COLUMN_ID,
-                FormsTable.COLUMN_UID,
-                FormsTable.COLUMN_USERNAME,
-                FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_DCODE,
-                FormsTable.COLUMN_UCODE,
-                FormsTable.COLUMN_CLUSTER,
-                FormsTable.COLUMN_HHNO,
-                FormsTable.COLUMN_DEVICEID,
-                FormsTable.COLUMN_DEVICETAGID,
-                FormsTable.COLUMN_APPVERSION,
-                FormsTable.COLUMN_GPS,
-                FormsTable.COLUMN_ENDINGDATETIME,
-                FormsTable.COLUMN_ISTATUS,
-                FormsTable.COLUMN_ISTATUS96x,
-                FormsTable.COLUMN_SYNCED,
-                FormsTable.COLUMN_SYNCED_DATE,
-                FormsTable.COLUMN_G5FLAG,
-                FormsTable.COLUMN_HHFLAG,
-
-                FormsContract.FormsTable.COLUMN_S01HH,
-                FormsContract.FormsTable.COLUMN_S05PD,
-                FormsContract.FormsTable.COLUMN_S06BF,
-                FormsContract.FormsTable.COLUMN_S07CV,
-                FormsContract.FormsTable.COLUMN_S08SE,
-        };
+        String[] columns = null;
 
         String whereClause;
         whereClause = FormsTable.COLUMN_SYNCED + " is null AND " + FormsTable.COLUMN_ISTATUS + "=?";

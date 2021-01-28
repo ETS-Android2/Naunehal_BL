@@ -27,16 +27,13 @@ import edu.aku.hassannaqvi.naunehal.base.viewmodel.LoginViewModel
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityLoginBinding
-import edu.aku.hassannaqvi.naunehal.location.GPSLocationListener
 import edu.aku.hassannaqvi.naunehal.models.Users
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity
 import edu.aku.hassannaqvi.naunehal.ui.SyncActivity
 import edu.aku.hassannaqvi.naunehal.ui.login_activity.login_view.LoginUISource
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
-import edu.aku.hassannaqvi.naunehal.utils.isGPSEnabled
 import edu.aku.hassannaqvi.naunehal.utils.isNetworkConnected
-import edu.aku.hassannaqvi.naunehal.utils.showGPSAlert
 import kotlinx.coroutines.*
 
 
@@ -109,13 +106,12 @@ class LoginActivity : AppCompatActivity(), LoginUISource {
     /*
     * Click on login button, it works in steps:
     * 1. Check the permissions @checkPermissions
-    * 2. Check the GPS is enabled @isGPSEnabled or not otherwise show GPS setting to enable it @showGPSAlert
     * 3. If both of above conditions are okay then start coroutine to check login and proceed to MainActivity
     * */
     fun onLoginClick(v: View) {
         if (!permissionFlag)
             checkPermissions()
-        else if (isGPSEnabled(this)) {
+        else {
             // Store values at the time of the login attempt.
             val username = bi.username.text.toString()
             val password = bi.password.text.toString()
@@ -136,8 +132,7 @@ class LoginActivity : AppCompatActivity(), LoginUISource {
                 }
             }
 
-        } else
-            showGPSAlert(this)
+        }
     }
 
     /*
@@ -224,13 +219,11 @@ class LoginActivity : AppCompatActivity(), LoginUISource {
     * */
     private fun checkPermissions() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            grantedPermissions()
             permissionFlag = true
             return
         }
         val permissions = arrayOf(
                 Manifest.permission.READ_PHONE_STATE,
-                Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.CAMERA,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -240,26 +233,9 @@ class LoginActivity : AppCompatActivity(), LoginUISource {
                 .setSettingsDialogTitle("Warning")
         Permissions.check(this, permissions, null, options, object : PermissionHandler() {
             override fun onGranted() {
-                grantedPermissions()
                 permissionFlag = true
             }
         })
-    }
-
-    /*
-    * If all permissions are granted [work for device > M], the location listener will activate
-    * */
-    private fun grantedPermissions() {
-        val locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
-        if (ActivityCompat.checkSelfPermission(this@LoginActivity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this@LoginActivity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return
-        }
-        locationManager.requestLocationUpdates(
-                LocationManager.GPS_PROVIDER,
-                CONSTANTS.MINIMUM_TIME_BETWEEN_UPDATES,
-                CONSTANTS.MINIMUM_DISTANCE_CHANGE_FOR_UPDATES.toFloat(),
-                GPSLocationListener(this@LoginActivity) // Implement this class from code
-        )
     }
 
 }

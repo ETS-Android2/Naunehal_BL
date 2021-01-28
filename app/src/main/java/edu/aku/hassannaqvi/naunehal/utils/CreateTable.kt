@@ -22,7 +22,6 @@ object CreateTable {
             + FormsContract.FormsTable.COLUMN_ISTATUS + " TEXT,"
             + FormsContract.FormsTable.COLUMN_ISTATUS96x + " TEXT,"
             + FormsContract.FormsTable.COLUMN_ENDINGDATETIME + " TEXT,"
-            + FormsContract.FormsTable.COLUMN_GPS + " TEXT,"
             + FormsContract.FormsTable.COLUMN_DEVICEID + " TEXT,"
             + FormsContract.FormsTable.COLUMN_DEVICETAGID + " TEXT,"
             + FormsContract.FormsTable.COLUMN_SYNCED + " TEXT,"

@@ -185,23 +185,6 @@ interface WarningActivityInterface {
     fun callWarningActivity(id: Int, item: Any? = null)
 }
 
-fun showGPSAlert(context: Context) {
-    val alertDialogBuilder = AlertDialog.Builder(context)
-    alertDialogBuilder
-            .setMessage("GPS is disabled in your device. Enable it?")
-            .setCancelable(false)
-            .setPositiveButton("Enable GPS"
-            ) { dialog: DialogInterface?, id: Int ->
-                val callGPSSettingIntent = Intent(
-                        Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-                context.startActivity(callGPSSettingIntent)
-            }
-    alertDialogBuilder.setNegativeButton("Cancel"
-    ) { dialog: DialogInterface, id: Int -> dialog.cancel() }
-    val alert = alertDialogBuilder.create()
-    alert.show()
-}
-
 fun String.convertStringToUpperCase(): String {
     /*
      * Program that first convert all uper case into lower case then

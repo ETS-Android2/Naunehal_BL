@@ -88,7 +88,6 @@ public class Child extends BaseObservable {
     private String deviceId;
     private String deviceTag;
     private String appver;
-    private String gps;
     private String endTime;
     private String synced;
     private String syncDate;
@@ -259,15 +258,6 @@ public class Child extends BaseObservable {
         return this;
     }
 
-    @Bindable
-    public String getGps() {
-        return gps;
-    }
-
-    public Child setGps(String gps) {
-        this.gps = gps;
-        return this;
-    }
 
     @Bindable
     public String getEndTime() {

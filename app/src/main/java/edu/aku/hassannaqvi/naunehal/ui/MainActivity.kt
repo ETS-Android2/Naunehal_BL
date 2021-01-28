@@ -31,9 +31,7 @@ import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithNoHistory
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
-import edu.aku.hassannaqvi.naunehal.utils.isGPSEnabled
 import edu.aku.hassannaqvi.naunehal.utils.isNetworkConnected
-import edu.aku.hassannaqvi.naunehal.utils.showGPSAlert
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -237,8 +235,7 @@ class MainActivity : AppCompatActivity() {
     fun openSpecificActivity(v: View) {
         when (v.id) {
             R.id.formA -> {
-                if (isGPSEnabled(this)) gotoActivity(Section01HHActivity::class.java)
-                else showGPSAlert(this)
+                gotoActivity(Section01HHActivity::class.java)
             }
             R.id.editForm -> {
                 gotoActivity(IdentificationSectionActivity::class.java)

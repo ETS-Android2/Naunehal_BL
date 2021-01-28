@@ -34,7 +34,6 @@ public class ChildInformation extends BaseObservable implements Serializable {
     private String deviceId;
     private String deviceTag;
     private String appver;
-    private String gps;
     private String endTime;
     private String status;
     private String synced;
@@ -290,16 +289,6 @@ public class ChildInformation extends BaseObservable implements Serializable {
 
     public ChildInformation setSysDate(String sysDate) {
         this.sysDate = sysDate;
-        return this;
-    }
-
-    @Bindable
-    public String getGps() {
-        return gps;
-    }
-
-    public ChildInformation setGps(String gps) {
-        this.gps = gps;
         return this;
     }
 

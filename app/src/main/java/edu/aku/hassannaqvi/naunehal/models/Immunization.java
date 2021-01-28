@@ -126,7 +126,6 @@ public class Immunization extends BaseObservable {
     private String deviceId;
     private String deviceTag;
     private String appver;
-    private String gps;
     private String endTime;
     private String status;
     private String synced;
@@ -291,15 +290,6 @@ public class Immunization extends BaseObservable {
         return this;
     }
 
-    @Bindable
-    public String getGps() {
-        return gps;
-    }
-
-    public Immunization setGps(String gps) {
-        this.gps = gps;
-        return this;
-    }
 
     @Bindable
     public String getEndTime() {

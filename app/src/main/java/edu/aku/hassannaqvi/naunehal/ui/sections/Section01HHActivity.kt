@@ -357,7 +357,6 @@ class Section01HHActivity : AppCompatActivity() {
         form.deviceId = MainApp.appInfo.deviceID
         form.deviceTag = MainApp.appInfo.tagName
         form.appver = MainApp.appInfo.appVersion
-        form.gps = getGPS(this).toString()
 
         //Setting Date
         try {
@@ -541,28 +540,6 @@ class Section01HHActivity : AppCompatActivity() {
         })
 
 
-    }
-
-
-    private fun getGPS(activity: Activity): JSONObject? {
-        val json = JSONObject()
-        val gpsPref = activity.getSharedPreferences("GPSCoordinates", MODE_PRIVATE)
-        try {
-            val lat = gpsPref.getString("Latitude", "0")
-            val lang = gpsPref.getString("Longitude", "0")
-            if (lat == "0" && lang == "0") {
-                Toast.makeText(activity, "Could not obtained GPS points", Toast.LENGTH_SHORT).show()
-            }
-            val date = DateFormat.format("dd-MM-yyyy HH:mm", gpsPref.getString("Time", "0")!!.toLong()).toString()
-            json.put("gpslat", gpsPref.getString("Latitude", "0"))
-            json.put("gpslng", gpsPref.getString("Longitude", "0"))
-            json.put("gpsacc", gpsPref.getString("Accuracy", "0"))
-            json.put("gpsdate", date)
-            return json
-        } catch (e: Exception) {
-            Log.e("GPS", "setGPS: " + e.message)
-        }
-        return null
     }
 
 

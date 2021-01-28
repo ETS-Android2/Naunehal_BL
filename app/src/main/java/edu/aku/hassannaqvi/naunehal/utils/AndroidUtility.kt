@@ -47,8 +47,3 @@ fun getIMEIInfo(context: Context): String {
         mTelephony.deviceId
     }
 }
-
-fun isGPSEnabled(context: Context): Boolean {
-    val mLocManager = (context.getSystemService(Context.LOCATION_SERVICE) as LocationManager)
-    return mLocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
-}

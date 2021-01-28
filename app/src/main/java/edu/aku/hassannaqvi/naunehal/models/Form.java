@@ -396,7 +396,6 @@ public class Form extends BaseObservable {
     private String deviceId = StringUtils.EMPTY;
     private String deviceTag = StringUtils.EMPTY;
     private String appver = StringUtils.EMPTY;
-    private String gps = StringUtils.EMPTY;
     private String endTime = StringUtils.EMPTY;
     private String iStatus = StringUtils.EMPTY;
     private String iStatus96x = StringUtils.EMPTY;
@@ -435,7 +434,7 @@ public class Form extends BaseObservable {
         this.localDate = localDate;
     }
 
-    public void setForm(String userName, String sysDate, String dcode, String ucode, String cluster, String hhno, String deviceId, String deviceTag, String appver, String gps) {
+    public void setForm(String userName, String sysDate, String dcode, String ucode, String cluster, String hhno, String deviceId, String deviceTag, String appver) {
         this.userName = userName;
         this.sysDate = sysDate;
         this.dcode = dcode;
@@ -445,7 +444,6 @@ public class Form extends BaseObservable {
         this.deviceId = deviceId;
         this.deviceTag = deviceTag;
         this.appver = appver;
-        this.gps = gps;
     }
 
     @Bindable
@@ -573,16 +571,6 @@ public class Form extends BaseObservable {
 
     public Form setSysDate(String sysDate) {
         this.sysDate = sysDate;
-        return this;
-    }
-
-    @Bindable
-    public String getGps() {
-        return gps;
-    }
-
-    public Form setGps(String gps) {
-        this.gps = gps;
         return this;
     }
 
@@ -4356,7 +4344,6 @@ public class Form extends BaseObservable {
         this.deviceId = jsonObject.getString(FormsContract.FormsTable.COLUMN_DEVICEID);
         this.deviceTag = jsonObject.getString(FormsContract.FormsTable.COLUMN_DEVICETAGID);
         this.appver = jsonObject.getString(FormsContract.FormsTable.COLUMN_APPVERSION);
-        this.gps = jsonObject.getString(FormsContract.FormsTable.COLUMN_GPS);
         this.endTime = jsonObject.getString(FormsContract.FormsTable.COLUMN_ENDINGDATETIME);
         this.iStatus = jsonObject.getString(FormsContract.FormsTable.COLUMN_ISTATUS);
         this.iStatus96x = jsonObject.getString(FormsContract.FormsTable.COLUMN_ISTATUS96x);
@@ -4389,7 +4376,6 @@ public class Form extends BaseObservable {
         this.deviceId = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_APPVERSION));
-        this.gps = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_GPS));
         this.endTime = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_ENDINGDATETIME));
         this.iStatus = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_ISTATUS));
         this.iStatus96x = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_ISTATUS96x));
@@ -4864,7 +4850,6 @@ public class Form extends BaseObservable {
             json.put(FormsContract.FormsTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
             json.put(FormsContract.FormsTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
             json.put(FormsContract.FormsTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
-            json.put(FormsContract.FormsTable.COLUMN_GPS, this.gps == null ? JSONObject.NULL : this.gps);
             json.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, this.endTime == null ? JSONObject.NULL : this.endTime);
             json.put(FormsContract.FormsTable.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
             json.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
