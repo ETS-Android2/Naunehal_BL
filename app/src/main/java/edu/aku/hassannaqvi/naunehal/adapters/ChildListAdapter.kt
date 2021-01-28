@@ -44,6 +44,9 @@ class ChildListAdapter(private val clickListener: OnItemClickListener) : Recycle
         holder.itemView.addSiblings.setOnClickListener {
             clickListener.onButtonItemClick(item, false)
         }
+        /*holder.itemView.parentLayout.setOnLongClickListener {
+            clickListener.onItemClick(item, i)
+        }*/
     }
 
     override fun getItemCount(): Int = filteredChildItems.size

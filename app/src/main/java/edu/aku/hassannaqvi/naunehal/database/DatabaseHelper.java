@@ -111,6 +111,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
         values.put(FormsTable.COLUMN_G5FLAG, form.getG5Flag());
+        values.put(FormsTable.COLUMN_HHFLAG, form.getHhflag());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -379,7 +380,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 ChildInformation childItem = new ChildInformation().Hydrate(c);
-                childItem.setMotherAvailable(childItem.cb11.equals("1"));
+                childItem.setMotherAvailable(childItem.getCb11().equals("1"));
                 childItem.setTotalMonths((Integer.parseInt(childItem.getCb0501()) * 12) + Integer.parseInt(childItem.getCb0502()));
                 allForms.add(childItem);
             }
@@ -417,7 +418,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 ChildInformation info = new ChildInformation().Hydrate(c);
-                info.setMotherAvailable(info.cb11.equals("1"));
+                info.setMotherAvailable(info.getCb11().equals("1"));
                 int calculateMonth = (Integer.parseInt(info.getCb0501()) * 12) + Integer.parseInt(info.getCb0502());
                 if (calculateMonth <= 35) info.setUnder35(true);
                 info.setChildTableDataExist(
@@ -1019,27 +1020,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {
 
-                FormsContract.FormsTable.COLUMN_ID,
-                FormsContract.FormsTable.COLUMN_UID,
-                FormsContract.FormsTable.COLUMN_USERNAME,
-                FormsContract.FormsTable.COLUMN_SYSDATE,
-                FormsContract.FormsTable.COLUMN_DCODE,
-                FormsContract.FormsTable.COLUMN_UCODE,
-                FormsContract.FormsTable.COLUMN_CLUSTER,
-                FormsContract.FormsTable.COLUMN_HHNO,
-                FormsContract.FormsTable.COLUMN_DEVICEID,
-                FormsContract.FormsTable.COLUMN_DEVICETAGID,
-                FormsContract.FormsTable.COLUMN_APPVERSION,
-                FormsContract.FormsTable.COLUMN_GPS,
-                FormsContract.FormsTable.COLUMN_ENDINGDATETIME,
-                FormsContract.FormsTable.COLUMN_ISTATUS,
-                FormsContract.FormsTable.COLUMN_ISTATUS96x,
-                FormsContract.FormsTable.COLUMN_SYNCED,
-                FormsContract.FormsTable.COLUMN_SYNCED_DATE,
-                FormsContract.FormsTable.COLUMN_G5FLAG,
-
-                //For childCount
-                FormsContract.FormsTable.COLUMN_S01HH,
+                FormsTable.COLUMN_ID,
+                FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_USERNAME,
+                FormsTable.COLUMN_SYSDATE,
+                FormsTable.COLUMN_DCODE,
+                FormsTable.COLUMN_UCODE,
+                FormsTable.COLUMN_CLUSTER,
+                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_DEVICEID,
+                FormsTable.COLUMN_DEVICETAGID,
+                FormsTable.COLUMN_APPVERSION,
+                FormsTable.COLUMN_GPS,
+                FormsTable.COLUMN_ENDINGDATETIME,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_ISTATUS96x,
+                FormsTable.COLUMN_SYNCED,
+                FormsTable.COLUMN_SYNCED_DATE,
+                FormsTable.COLUMN_G5FLAG,
+                FormsTable.COLUMN_HHFLAG,
 
                 FormsContract.FormsTable.COLUMN_S01HH,
                 FormsContract.FormsTable.COLUMN_S05PD,

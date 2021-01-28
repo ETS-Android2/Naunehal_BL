@@ -37,9 +37,9 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
         bi.setCallback(this);
         setSupportActionBar(bi.toolbar);
         info = Section03CSActivity.selectedChildInfo;
-        bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
-        form.setPd01(info.cb01);
-        form.setPd02(info.cb07);
+        bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.getCb02())), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.getCb07()))), Integer.parseInt(info.getCb03())));
+        form.setPd01(info.getCb01());
+        form.setPd02(info.getCb07());
         setupSkips();
 
     }

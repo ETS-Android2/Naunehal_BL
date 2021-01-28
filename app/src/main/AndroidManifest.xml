@@ -118,8 +118,7 @@
             android:theme="@style/AppThemeUrdu" />
 
         <activity
-            android:name=".ui.MainActivity"
-         />
+            android:name=".ui.MainActivity"/>
 
         <activity
             android:name=".core.AndroidDatabaseManager"

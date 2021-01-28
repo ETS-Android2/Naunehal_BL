@@ -30,7 +30,8 @@ public class FormsContract {
         public static final String COLUMN_S06BF = "s06BF";
         public static final String COLUMN_S07CV = "s07CV";
         public static final String COLUMN_S08SE = "s08SE";
-        public static final String COLUMN_G5FLAG = "hhFLAG";
+        public static final String COLUMN_G5FLAG = "g5FLAG";
+        public static final String COLUMN_HHFLAG = "hhFLAG";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96x = "istatus96x";
         public static final String COLUMN_ENDINGDATETIME = "endingdatetime";

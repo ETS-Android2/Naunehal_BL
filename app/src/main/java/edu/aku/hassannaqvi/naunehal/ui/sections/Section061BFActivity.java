@@ -38,9 +38,9 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
         bi.setCallback(this);
         setSupportActionBar(bi.toolbar);
         info = Section03CSActivity.selectedChildInfo;
-        bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.cb02)), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.cb07))), Integer.parseInt(info.cb03)));
-        bi.bf01.setText(info.cb01);
-        bi.bf02.setText(info.cb07);
+        bi.mainCard.setChildCard(new ChildCard(shortStringLength(convertStringToUpperCase(info.getCb02())), String.format("Mother: %s", shortStringLength(convertStringToUpperCase(info.getCb07()))), Integer.parseInt(info.getCb03())));
+        bi.bf01.setText(info.getCb01());
+        bi.bf02.setText(info.getCb07());
         bi.bf03m.setText(info.getCb04mm());
         bi.bf3y.setText(info.getCb04yy());
         bi.bf3d.setText(info.getCb04dd());
