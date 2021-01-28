@@ -19,20 +19,21 @@
 
 
         <!-- CUSTOM TOOLBAR -->
-        <!--<androidx.appcompat.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
+            android:textAlignment="center"
+            android:layoutDirection="ltr"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:titleTextColor="#ffff" />-->
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleTextColor="@color/black" />
 
         <TextView
             android:id="@+id/testing"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryLight"
             android:gravity="center"
             android:keepScreenOn="true"
             android:text="@string/only_for_testing"
