@@ -260,9 +260,10 @@ class MainActivity : AppCompatActivity() {
 
         animateFadeIn()
         viewModel.getDistrictFromDB()
-        viewModel.getTodayForms(sysdateToday)
-        viewModel.getUploadFormsStatus()
-        viewModel.getFormsStatus(sysdateToday)
+//        viewModel.getTodayForms(sysdateToday)
+//        viewModel.getUploadFormsStatus()
+//        viewModel.getFormsStatus(sysdateToday)
+        viewModel.getFormsStatusUploadStatus(sysdateToday)
     }
 
     /*

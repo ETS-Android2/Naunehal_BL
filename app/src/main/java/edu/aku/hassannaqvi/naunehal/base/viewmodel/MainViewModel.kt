@@ -47,11 +47,10 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         get() = _districtResponse
 
 
-     fun getTodayForms(date: String) {
+    fun getTodayForms(date: String) {
         _tf.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
-                delay(1000)
                 val todayData = repository.getFormsByDate(date)
                 _tf.value = ResponseStatusCallbacks.success(data = todayData.size, message = "Forms exist")
             } catch (e: Exception) {
@@ -65,7 +64,6 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         _uf.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
-                delay(1000)
                 val todayData = repository.getUploadStatus()
                 _uf.value = ResponseStatusCallbacks.success(data = todayData, message = "Upload status exist")
             } catch (e: Exception) {
@@ -79,11 +77,43 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         _fs.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
-                delay(1000)
                 val todayData = repository.getFormStatus(date)
                 _fs.value = ResponseStatusCallbacks.success(data = todayData, message = "Form status exist")
             } catch (e: Exception) {
                 _fs.value = ResponseStatusCallbacks.error(null, e.message.toString())
+            }
+        }
+    }
+
+
+    fun getFormsStatusUploadStatus(date: String) {
+        _uf.value = ResponseStatusCallbacks.loading(null)
+        _fs.value = ResponseStatusCallbacks.loading(null)
+        _tf.value = ResponseStatusCallbacks.loading(null)
+        viewModelScope.launch {
+            launch {
+                try {
+                    val todayData = repository.getFormsByDate(date)
+                    _tf.value = ResponseStatusCallbacks.success(data = todayData.size, message = "Forms exist")
+                } catch (e: Exception) {
+                    _tf.value = ResponseStatusCallbacks.error(null, e.message.toString())
+                }
+            }
+            launch {
+                try {
+                    val todayData = repository.getUploadStatus()
+                    _uf.value = ResponseStatusCallbacks.success(data = todayData, message = "Upload status exist")
+                } catch (e: Exception) {
+                    _fs.value = ResponseStatusCallbacks.error(null, e.message.toString())
+                }
+            }
+            launch {
+                try {
+                    val fstatus = repository.getFormStatus(date)
+                    _fs.value = ResponseStatusCallbacks.success(data = fstatus, message = "Form status exist")
+                } catch (e: Exception) {
+                    _fs.value = ResponseStatusCallbacks.error(null, e.message.toString())
+                }
             }
         }
     }
