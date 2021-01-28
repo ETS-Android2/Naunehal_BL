@@ -305,4 +305,6 @@ class MainActivity : AppCompatActivity() {
         bi.statisticLayout.loading.alpha = 1f
         bi.statisticLayout.loading.visibility = View.VISIBLE
     }
+
+
 }

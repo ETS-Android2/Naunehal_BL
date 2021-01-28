@@ -1,12 +1,14 @@
 package edu.aku.hassannaqvi.naunehal.core;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.view.View;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import org.json.JSONArray;
 
+import java.io.File;
 import java.util.List;
 
 import edu.aku.hassannaqvi.naunehal.models.Child;
@@ -21,13 +23,15 @@ public class MainApp extends Application {
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
     public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
-//    public static final String _IP = "http://f38158";// .TEST server
+    //    public static final String _IP = "http://f38158";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/naunehal/api/";// .TEST server;
     public static final String _SERVER_URL = "sync.php";
     public static final String _SERVER_GET_URL = "getData.php";
-    public static final String _PHOTO_UPLOAD_URL = MainApp._IP + _HOST_URL + "uploads.php";
+    public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/naunehal/app/";
+    public static File sdDir;
+
     public static Form form;
     public static Child child;
     public static Immunization immunization;
@@ -37,7 +41,8 @@ public class MainApp extends Application {
     public static Users user;
     public static Boolean admin = false;
     public static List<JSONArray> uploadData;
-
+    SharedPreferences.Editor editor;
+    SharedPreferences sharedPref;
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.
@@ -63,5 +68,6 @@ public class MainApp extends Application {
         AndroidThreeTen.init(this);
         //Initializ App info
         appInfo = new AppInfo(this);
+
     }
 }

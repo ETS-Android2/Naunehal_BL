@@ -329,13 +329,13 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
             /*File sdDir = Environment
                     .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);*/
             File sdDir = new File(this.getExternalFilesDir(
-                    Environment.DIRECTORY_PICTURES), albumName);
+                    Environment.DIRECTORY_PICTURES), PROJECT_NAME);
             return sdDir;
         } else {
             /*File sdDir = Environment
                     .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);*/
             File sdDir = new File(this.getExternalFilesDir(
-                    Environment.DIRECTORY_PICTURES), albumName + File.separator + "temp");
+                    Environment.DIRECTORY_PICTURES), PROJECT_NAME + File.separator + "temp");
             return sdDir;
         }
     }
