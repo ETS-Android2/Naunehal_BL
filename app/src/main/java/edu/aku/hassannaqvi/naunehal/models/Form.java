@@ -403,7 +403,7 @@ public class Form extends BaseObservable {
     private String synced = StringUtils.EMPTY;
     private String syncDate = StringUtils.EMPTY;
     private String g5Flag = "-1";
-    private String hhflag = "";
+    private String hhflag = StringUtils.EMPTY;
     // SECTION VARIABLES
     private String s01HH = StringUtils.EMPTY;
     private String s05PD = StringUtils.EMPTY;
