@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -242,7 +241,7 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
                 : "-1");
 
 
-        form.setPd08a(bi.pd08a01.isChecked() ? "1"
+/*        form.setPd08a(bi.pd08a01.isChecked() ? "1"
                 : bi.pd08a02.isChecked() ? "2"
                 : bi.pd08a03.isChecked() ? "3"
                 : bi.pd08a04.isChecked() ? "4"
@@ -253,7 +252,21 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
                 : bi.pd08a09.isChecked() ? "9"
                 : bi.pd08a96.isChecked() ? "96"
                 : "-1");
+        form.setPd08a96x(bi.pd08a96x.getText().toString());*/
+
+        form.setPd08a01(bi.pd08a01.isChecked() ? "1" : "-1");
+        form.setPd08a02(bi.pd08a02.isChecked() ? "2" : "-1");
+        form.setPd08a03(bi.pd08a03.isChecked() ? "3" : "-1");
+        form.setPd08a04(bi.pd08a04.isChecked() ? "4" : "-1");
+        form.setPd08a05(bi.pd08a05.isChecked() ? "5" : "-1");
+        form.setPd08a06(bi.pd08a06.isChecked() ? "6" : "-1");
+        form.setPd08a07(bi.pd08a07.isChecked() ? "7" : "-1");
+        form.setPd08a08(bi.pd08a08.isChecked() ? "8" : "-1");
+        form.setPd08a09(bi.pd08a09.isChecked() ? "9" : "-1");
+        form.setPd08a96(bi.pd08a96.isChecked() ? "96" : "-1");
+
         form.setPd08a96x(bi.pd08a96x.getText().toString());
+
 
         form.setPd08b(bi.pd08b01.isChecked() ? "1"
                 : bi.pd08b02.isChecked() ? "2"
