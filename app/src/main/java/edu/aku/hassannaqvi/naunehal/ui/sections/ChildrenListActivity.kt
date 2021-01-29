@@ -124,7 +124,9 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
     * Callback call after pressing Child item in recyclerview
     * */
     override fun callWarningActivity(id: Int, item: Any?) {
-        MainApp.childInformation = item as ChildInformation
+        val childItem = item as ChildInformation
+        childItem.isEditFlag = true
+        MainApp.childInformation = item
         gotoActivity(Section02CBActivity::class.java)
     }
 
@@ -133,17 +135,14 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
     * */
     private fun callingRecyclerView() {
         adapter = ChildListAdapter(object : ChildListAdapter.OnItemClickListener {
-            override fun onItemClick(item: ChildInformation, position: Int) {
-
-            }
-            /*override fun onItemClick(item: ChildInformation, position: Int): Boolean {
+            override fun onItemClick(item: ChildInformation, position: Int): Boolean {
                 openWarningActivity(
                         title = "CONFIRMATION!",
                         message = "Are you sure, you want to edit ${item.cb02.toUpperCase(Locale.ENGLISH)} interview?",
                         item = item,
                         id = 1)
                 return true
-            }*/
+            }
 
             override fun onButtonItemClick(item: ChildInformation, flag: Boolean) {
                 MainApp.childInformation = ChildInformation((adapter.childItems.size + 1).toString(), flag, item)

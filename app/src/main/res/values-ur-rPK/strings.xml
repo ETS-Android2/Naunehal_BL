@@ -1552,6 +1552,13 @@
     <string name="hh25a"> کیا آپ اس گھر / یو سی / محلے میں 6 ماہ سے زیادہ عرصہ سے رہائش پزیر ہیں ؟ </string>
     <string name="hh25a01"> ہاں </string>
     <string name="hh25a02"> نہیں </string>
+    <string name="cs02a">" جواب دہندہ کے ساتھ بچے کا رشتہ کیا ہے؟"</string>
+    <string name="cs02a02">باپ</string>
+    <string name="cs02a03">دیکھ بھال کرنے والا(والدین کے علاوہ)</string>
+    <string name="cs02a04">" گھر کا کوئی اور فرد"</string>
+    <string name="Q_cs02a">cs02a</string>
+    <string name="cs02b">" جواب دہندہ کا نام"</string>
+    <string name="Q_cs02b">cs02b</string>
 
 
 </resources>

@@ -38,21 +38,21 @@ class ChildListAdapter(private val clickListener: OnItemClickListener) : Recycle
     override fun onBindViewHolder(holder: ChildViewHolder, i: Int) {
         val item = filteredChildItems[i]
         holder.bind(item)
-        holder.itemView.parentLayout.setOnClickListener {
+        /*holder.itemView.parentLayout.setOnClickListener {
             clickListener.onItemClick(item, i)
-        }
+        }*/
         holder.itemView.addSiblings.setOnClickListener {
             clickListener.onButtonItemClick(item, false)
         }
-        /*holder.itemView.parentLayout.setOnLongClickListener {
+        holder.itemView.parentLayout.setOnLongClickListener {
             clickListener.onItemClick(item, i)
-        }*/
+        }
     }
 
     override fun getItemCount(): Int = filteredChildItems.size
 
     interface OnItemClickListener {
-        fun onItemClick(item: ChildInformation, position: Int)
+        fun onItemClick(item: ChildInformation, position: Int): Boolean
         fun onButtonItemClick(item: ChildInformation, flag: Boolean)
     }
 }

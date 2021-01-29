@@ -1561,6 +1561,13 @@
     <string name="hh25a01"> Yes </string>
     <string name="hh25a02"> No </string>
     <string name="hh2608">"اس گھر /   یو سی میں رہتے ہوئے چھ ماہ سے کم عرصہ ہوا ہے       "</string>
+    <string name="cs02a">What is the relationship of child with respondent?</string>
+    <string name="cs02a02">Father</string>
+    <string name="cs02a03">Primary Caretaker (not parents)</string>
+    <string name="cs02a04">Other family member</string>
+    <string name="Q_cs02a">cs02a</string>
+    <string name="Q_cs02b">cs02b</string>
+    <string name="cs02b">Name of the respondent\n</string>
 
 
 </resources>

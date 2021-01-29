@@ -32,7 +32,7 @@ class SelectedChildViewHolder(private val bi: SelectedChildViewBinding) :
             flagImage = R.drawable.ic_complete_star
         }
         if (!item.isMotherAvailable) {
-            bi.parentLayout.isEnabled = false
+//            bi.parentLayout.isEnabled = false
             bi.containeridcard.setBackgroundColor(ContextCompat.getColor(this.itemView.context, R.color.grayLight))
         }
         Glide.with(this.itemView.context)

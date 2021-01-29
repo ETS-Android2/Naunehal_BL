@@ -70,10 +70,19 @@ public class ChildInformation extends BaseObservable implements Serializable {
     //Not saving in db
     private boolean flag = true,
             motherAvailable = true,
-            under35 = false;
+            under35 = false,
+            editFlag = false;
     private int totalMonths = 0;
     private Child childTableDataExist = null;
     private LocalDate calculatedDOB = null;
+
+    public boolean isEditFlag() {
+        return editFlag;
+    }
+
+    public void setEditFlag(boolean editFlag) {
+        this.editFlag = editFlag;
+    }
 
     public int getTotalMonths() {
         return totalMonths;

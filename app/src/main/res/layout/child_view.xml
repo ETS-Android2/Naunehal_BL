@@ -25,6 +25,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/subLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -51,7 +52,7 @@
                     android:layout_marginTop="@dimen/_3sdp"
                     android:text="Mother: Adefg"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textColor="#FFBB86FC"
+                    android:textColor="#00BCD4"
                     android:textSize="@dimen/_8sdp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@+id/linearLayout"

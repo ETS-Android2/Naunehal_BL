@@ -47,9 +47,23 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
         setSupportActionBar(bi.toolbar)
         selectedChildInfo = info
         setupSkips()
+
+        if (info.isMotherAvailable) {
+            bi.fldGrpCVcs02a.visibility = View.GONE
+            bi.fldGrpCVcs02b.visibility = View.GONE
+        }
     }
 
     private fun setupSkips() {
+        bi.cs02a.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
+            Clear.clearAllFields(bi.fldGrpCS02)
+            bi.fldGrpCS02.visibility = View.VISIBLE
+            if (i == bi.cs02a04.id) {
+                bi.fldGrpCS02.visibility = View.GONE
+                Clear.clearAllFields(bi.fldGrpCS02)
+            }
+        }
+
         bi.cs03.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
             Clear.clearAllFields(bi.llcs03)
             bi.llcs03.visibility = View.VISIBLE
@@ -57,6 +71,7 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
                 bi.llcs03.visibility = View.GONE
             }
         }
+
         bi.cs06.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
             Clear.clearAllFields(bi.fldGrpCVcs07)
             Clear.clearAllFields(bi.fldGrpCVcs08)
@@ -92,7 +107,6 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             }
         }
 
-
         bi.cs16.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
             Clear.clearAllFields(bi.fldGrpCVcs17)
             Clear.clearAllFields(bi.fldGrpCVcs18)
@@ -113,8 +127,6 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
                 bi.fldGrpCVcs19.visibility = View.VISIBLE
             }
         }
-
-
 
         bi.cs18a.setOnCheckedChangeListener { radioGroup: RadioGroup, i: Int ->
             Clear.clearAllFields(bi.fldGrpCVcs18b)
@@ -184,8 +196,12 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
         MainApp.child.status = "1"
         if (updateDB()) {
             finish()
-            if (info.isUnder35)
-                gotoActivity(Section04IMActivity::class.java)
+            if (info.isMotherAvailable) {
+                if (info.isUnder35)
+                    gotoActivity(Section04IMActivity::class.java)
+            } else if (!bi.cs02a04.isChecked)
+                if (info.isUnder35)
+                    gotoActivity(Section04IMActivity::class.java)
         }
     }
 
@@ -488,7 +504,6 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
 
     }
 
-
     private fun formValidation(): Boolean {
         return Validator.emptyCheckingContainer(this, bi.GrpName)
     }
@@ -505,10 +520,8 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
         }
     }
 
-
     override fun onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show()
     }
-
 
 }

@@ -5,11 +5,13 @@ import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.View
+import android.widget.CompoundButton
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.lifecycleScope
 import com.edittextpicker.aliazaz.EditTextPicker
 import com.validatorcrawler.aliazaz.Clear
 import com.validatorcrawler.aliazaz.Validator
@@ -21,6 +23,10 @@ import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection02cbBinding
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository.Companion.getCalculatedAge
 import edu.aku.hassannaqvi.naunehal.utils.openWarningDialog
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import org.threeten.bp.Instant
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZoneId
@@ -73,10 +79,10 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb10, false)
                     Clear.clearAllFields(bi.fldGrpCVcb11, false)
                     bi.fldGrpCVcb11.visibility = View.GONE
-                    MainApp.childInformation.setCb07(MainApp.form.getHh12())
-                    MainApp.childInformation.setCb08(MainApp.form.getHh13())
-                    MainApp.childInformation.setCb09(MainApp.form.getHh16())
-                    MainApp.childInformation.setCb10(MainApp.form.getHh17())
+                    MainApp.childInformation.cb07 = MainApp.form.hh12
+                    MainApp.childInformation.cb08 = MainApp.form.hh13
+                    MainApp.childInformation.cb09 = MainApp.form.hh16
+                    MainApp.childInformation.cb10 = MainApp.form.hh17
 
 
                     Clear.clearAllFields(bi.fldGrpCVcb12, true)
@@ -84,21 +90,22 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb14, true)
                     bi.cb1413.isEnabled = false
 
-                    MainApp.childInformation.setCb11("1")
+                    MainApp.childInformation.cb11 = "1"
                 }
                 bi.cb0602.id -> {
                     Clear.clearAllFields(bi.fldGrpCVcb12, false)
                     Clear.clearAllFields(bi.fldGrpCVcb13, false)
                     Clear.clearAllFields(bi.fldGrpCVcb14, false)
 
-                    MainApp.childInformation.setCb12(MainApp.form.getHh12())
-                    MainApp.childInformation.setCb13(MainApp.form.getHh16())
-                    MainApp.childInformation.setCb14(MainApp.form.getHh17())
+                    MainApp.childInformation.cb12 = MainApp.form.hh12
+                    MainApp.childInformation.cb13 = MainApp.form.hh16
+                    MainApp.childInformation.cb14 = MainApp.form.hh17
 
                     Clear.clearAllFields(bi.fldGrpCVcb07, true)
                     Clear.clearAllFields(bi.fldGrpCVcb08, true)
                     Clear.clearAllFields(bi.fldGrpCVcb09, true)
                     Clear.clearAllFields(bi.fldGrpCVcb10, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb11, true)
 
                     bi.fldGrpCVcb11.visibility = View.VISIBLE
                 }
@@ -110,6 +117,7 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb08, true)
                     Clear.clearAllFields(bi.fldGrpCVcb09, true)
                     Clear.clearAllFields(bi.fldGrpCVcb10, true)
+                    Clear.clearAllFields(bi.fldGrpCVcb11, true)
                     bi.cb1413.isEnabled = false
 
                     bi.fldGrpCVcb11.visibility = View.VISIBLE
@@ -129,6 +137,14 @@ class Section02CBActivity : AppCompatActivity() {
             }
         }
 
+        bi.cb1598.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                bi.cb15.isEnabled = false
+                bi.cb15.text = null
+            } else
+                bi.cb15.isEnabled = true
+        }
+
         bi.cb10.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
             when (i) {
                 bi.cb1096.id -> {
@@ -146,7 +162,6 @@ class Section02CBActivity : AppCompatActivity() {
 
     }
 
-
     private fun txtWatch(edx: EditTextPicker) {
         edx.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -163,7 +178,6 @@ class Section02CBActivity : AppCompatActivity() {
         })
     }
 
-
     fun BtnContinue(view: View) {
         if (!formValidation()) return
         initForm()
@@ -175,19 +189,29 @@ class Section02CBActivity : AppCompatActivity() {
 
     private fun updateDB(): Boolean {
         val db = MainApp.appInfo.dbHelper
-        val updcount = db.addChildInformation(MainApp.childInformation)
-        MainApp.childInformation.id = updcount.toString()
-        return if (updcount > 0) {
-            MainApp.childInformation.uid = MainApp.childInformation.deviceId + MainApp.childInformation.id
-            var count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_UID, MainApp.childInformation.uid)
-            if (count > 0) count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_SCB, MainApp.childInformation.sCBtoString())
-            if (count > 0) true else {
-                Toast.makeText(this, "SORRY! Failed to update DB)", Toast.LENGTH_SHORT).show()
+        if (!MainApp.childInformation.isEditFlag) {
+            val updcount = db.addChildInformation(MainApp.childInformation)
+            return if (updcount > 0) {
+                MainApp.childInformation.id = updcount.toString()
+                MainApp.childInformation.uid = MainApp.childInformation.deviceId + MainApp.childInformation.id
+                var count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_UID, MainApp.childInformation.uid)
+                if (count > 0) count = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_SCB, MainApp.childInformation.sCBtoString())
+                if (count > 0) true else {
+                    Toast.makeText(this, "Sorry. You can't go further.\n" +
+                            " Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
+                    false
+                }
+            } else {
+                Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
                 false
             }
         } else {
-            Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
-            false
+            val updcount = db.updatesChildInformationColumn(ChildInformationContract.ChildInfoTable.COLUMN_SCB, MainApp.childInformation.sCBtoString())
+            return if (updcount > 0) true else {
+                Toast.makeText(this, "Sorry. You can't go further.\n" +
+                        " Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show()
+                false
+            }
         }
     }
 
@@ -209,47 +233,49 @@ class Section02CBActivity : AppCompatActivity() {
 
     // Only in First Section of every Table.
     private fun initForm() {
-        MainApp.childInformation.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
-        MainApp.childInformation.uuid = MainApp.form.uid
-        MainApp.childInformation.userName = MainApp.user.userName
-        MainApp.childInformation.dcode = MainApp.form.dcode
-        MainApp.childInformation.ucode = MainApp.form.ucode
-        MainApp.childInformation.cluster = MainApp.form.cluster
-        MainApp.childInformation.hhno = MainApp.form.hhno
-        MainApp.childInformation.deviceId = MainApp.appInfo.deviceID
-        MainApp.childInformation.deviceTag = MainApp.appInfo.tagName
-        MainApp.childInformation.appver = MainApp.appInfo.appVersion
-        MainApp.childInformation.cb15 = if (bi.cb1598.isChecked) "98" else MainApp.childInformation.cb15
+        if (!MainApp.childInformation.isEditFlag) {
+            MainApp.childInformation.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
+            MainApp.childInformation.uuid = MainApp.form.uid
+            MainApp.childInformation.userName = MainApp.user.userName
+            MainApp.childInformation.dcode = MainApp.form.dcode
+            MainApp.childInformation.ucode = MainApp.form.ucode
+            MainApp.childInformation.cluster = MainApp.form.cluster
+            MainApp.childInformation.hhno = MainApp.form.hhno
+            MainApp.childInformation.deviceId = MainApp.appInfo.deviceID
+            MainApp.childInformation.deviceTag = MainApp.appInfo.tagName
+            MainApp.childInformation.appver = MainApp.appInfo.appVersion
+        }
 
+        MainApp.childInformation.cb15 = bi.cb15.text.toString()
+        MainApp.childInformation.cb1598 = if (bi.cb1598.isChecked) "98" else "-1"
 
+        MainApp.childInformation.cb01 = bi.cb01.text.toString()
 
-        MainApp.childInformation.setCb01(bi.cb01.text.toString())
+        MainApp.childInformation.cb02 = bi.cb02.text.toString()
 
-        MainApp.childInformation.setCb02(bi.cb02.text.toString())
+        MainApp.childInformation.cb03 = if (bi.cb0301.isChecked) "1" else if (bi.cb0302.isChecked) "2" else "-1"
 
-        MainApp.childInformation.setCb03(if (bi.cb0301.isChecked) "1" else if (bi.cb0302.isChecked) "2" else "-1")
+        MainApp.childInformation.cb04dd = bi.cb04dd.text.toString()
+        MainApp.childInformation.cb04mm = bi.cb04mm.text.toString()
+        MainApp.childInformation.cb04yy = bi.cb04yy.text.toString()
+        MainApp.childInformation.cb0501 = bi.cb0501.text.toString()
+        MainApp.childInformation.cb0502 = bi.cb0502.text.toString()
 
-        MainApp.childInformation.setCb04dd(bi.cb04dd.text.toString())
-        MainApp.childInformation.setCb04mm(bi.cb04mm.text.toString())
-        MainApp.childInformation.setCb04yy(bi.cb04yy.text.toString())
-        MainApp.childInformation.setCb0501(bi.cb0501.text.toString())
-        MainApp.childInformation.setCb0502(bi.cb0502.text.toString())
-
-        MainApp.childInformation.setCb06(when {
+        MainApp.childInformation.cb06 = when {
             bi.cb0601.isChecked -> "1"
             bi.cb0602.isChecked -> "2"
             bi.cb0603.isChecked -> "3"
             bi.cb0696.isChecked -> "4"
             else -> "-1"
-        })
+        }
 
-        MainApp.childInformation.setCb07(bi.cb07.text.toString())
+        MainApp.childInformation.cb07 = bi.cb07.text.toString()
 
-        MainApp.childInformation.setCb08(bi.cb08.text.toString())
+        MainApp.childInformation.cb08 = bi.cb08.text.toString()
 
-        MainApp.childInformation.setCb09(bi.cb09.text.toString())
+        MainApp.childInformation.cb09 = bi.cb09.text.toString()
 
-        MainApp.childInformation.setCb10(when {
+        MainApp.childInformation.cb10 = when {
             bi.cb1001.isChecked -> "1"
             bi.cb1002.isChecked -> "2"
             bi.cb1003.isChecked -> "3"
@@ -265,21 +291,21 @@ class Section02CBActivity : AppCompatActivity() {
             bi.cb1013.isChecked -> "13"
             bi.cb1096.isChecked -> "96"
             else -> "-1"
-        })
+        }
 
-        MainApp.childInformation.setCb1096x(bi.cb1096x.text.toString())
-        MainApp.childInformation.setCb11(if (bi.cb1101.isChecked) "1" else if (bi.cb1102.isChecked) "2" else "-1")
+        MainApp.childInformation.cb1096x = bi.cb1096x.text.toString()
+        MainApp.childInformation.cb11 = if (bi.cb1101.isChecked) "1" else if (bi.cb1102.isChecked) "2" else "-1"
 
-        MainApp.childInformation.setCb12(bi.cb12.text.toString())
+        MainApp.childInformation.cb12 = bi.cb12.text.toString()
 
-        MainApp.childInformation.setCb13(bi.cb13.text.toString())
+        MainApp.childInformation.cb13 = bi.cb13.text.toString()
 
-        MainApp.childInformation.setCb14(if (bi.cb1401.isChecked) "1" else if (bi.cb1402.isChecked) "2" else if (bi.cb1403.isChecked) "3" else if (bi.cb1404.isChecked) "4" else if (bi.cb1405.isChecked) "5" else if (bi.cb1406.isChecked) "6" else if (bi.cb1407.isChecked) "7" else if (bi.cb1408.isChecked) "8" else if (bi.cb1409.isChecked) "9" else if (bi.cb1410.isChecked) "10" else if (bi.cb1411.isChecked) "11" else if (bi.cb1412.isChecked) "12" else if (bi.cb1413.isChecked) "13" else if (bi.cb1496.isChecked) "96" else "-1")
+        MainApp.childInformation.cb14 = if (bi.cb1401.isChecked) "1" else if (bi.cb1402.isChecked) "2" else if (bi.cb1403.isChecked) "3" else if (bi.cb1404.isChecked) "4" else if (bi.cb1405.isChecked) "5" else if (bi.cb1406.isChecked) "6" else if (bi.cb1407.isChecked) "7" else if (bi.cb1408.isChecked) "8" else if (bi.cb1409.isChecked) "9" else if (bi.cb1410.isChecked) "10" else if (bi.cb1411.isChecked) "11" else if (bi.cb1412.isChecked) "12" else if (bi.cb1413.isChecked) "13" else if (bi.cb1496.isChecked) "96" else "-1"
 
-        MainApp.childInformation.setCb1496x(bi.cb1496x.text.toString())
-        MainApp.childInformation.setCb15(bi.cb15.text.toString())
+        MainApp.childInformation.cb1496x = bi.cb1496x.text.toString()
+        MainApp.childInformation.cb15 = bi.cb15.text.toString()
 
-        MainApp.childInformation.setCb16(if (bi.cb1601.isChecked) "1" else if (bi.cb1602.isChecked) "2" else if (bi.cb1603.isChecked) "3" else "-1")
+        MainApp.childInformation.cb16 = if (bi.cb1601.isChecked) "1" else if (bi.cb1602.isChecked) "2" else if (bi.cb1603.isChecked) "3" else "-1"
 
 
     }
