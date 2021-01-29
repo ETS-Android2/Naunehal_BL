@@ -3,9 +3,6 @@ package edu.aku.hassannaqvi.naunehal.models;
 import android.database.Cursor;
 import android.util.Log;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
-
 import com.google.gson.GsonBuilder;
 
 import org.apache.commons.lang3.StringUtils;
@@ -13,6 +10,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.LocalDate;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -68,7 +67,16 @@ public class Form extends BaseObservable {
     private String pd07 = StringUtils.EMPTY;
     private String pd0701x = StringUtils.EMPTY;
     private String pd08 = StringUtils.EMPTY;
-    private String pd08a = StringUtils.EMPTY;
+    private String pd08a01 = StringUtils.EMPTY;
+    private String pd08a02 = StringUtils.EMPTY;
+    private String pd08a03 = StringUtils.EMPTY;
+    private String pd08a04 = StringUtils.EMPTY;
+    private String pd08a05 = StringUtils.EMPTY;
+    private String pd08a06 = StringUtils.EMPTY;
+    private String pd08a07 = StringUtils.EMPTY;
+    private String pd08a08 = StringUtils.EMPTY;
+    private String pd08a09 = StringUtils.EMPTY;
+    private String pd08a96 = StringUtils.EMPTY;
     private String pd08a96x = StringUtils.EMPTY;
     private String pd08b = StringUtils.EMPTY;
     private String pd08c = StringUtils.EMPTY;
@@ -1101,16 +1109,105 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.pd08);
     }
 
+    @Bindable
+    public String getPd08a01() {
+        return pd08a01;
+    }
+
+    public void setPd08a01(String pd08a01) {
+        this.pd08a01 = pd08a01;
+        notifyPropertyChanged(BR.pd08a01);
+    }
 
     @Bindable
-    public String getPd08a() {
-        return pd08a;
+    public String getPd08a02() {
+        return pd08a02;
     }
 
-    public void setPd08a(String pd08a) {
-        this.pd08a = pd08a;
+    public void setPd08a02(String pd08a02) {
+        this.pd08a02 = pd08a02;
+        notifyPropertyChanged(BR.pd08a02);
     }
 
+    @Bindable
+    public String getPd08a03() {
+        return pd08a03;
+    }
+
+    public void setPd08a03(String pd08a03) {
+        this.pd08a03 = pd08a03;
+        notifyPropertyChanged(BR.pd08a03);
+    }
+
+    @Bindable
+    public String getPd08a04() {
+        return pd08a04;
+    }
+
+    public void setPd08a04(String pd08a04) {
+        this.pd08a04 = pd08a04;
+        notifyPropertyChanged(BR.pd08a04);
+    }
+
+    @Bindable
+    public String getPd08a05() {
+        return pd08a05;
+    }
+
+    public void setPd08a05(String pd08a05) {
+        this.pd08a05 = pd08a05;
+        notifyPropertyChanged(BR.pd08a05);
+    }
+
+    @Bindable
+    public String getPd08a06() {
+        return pd08a06;
+    }
+
+    public void setPd08a06(String pd08a06) {
+        this.pd08a06 = pd08a06;
+        notifyPropertyChanged(BR.pd08a06);
+    }
+
+    @Bindable
+    public String getPd08a07() {
+        return pd08a07;
+    }
+
+    public void setPd08a07(String pd08a07) {
+        this.pd08a07 = pd08a07;
+        notifyPropertyChanged(BR.pd08a07);
+    }
+
+    @Bindable
+    public String getPd08a08() {
+        return pd08a08;
+    }
+
+    public void setPd08a08(String pd08a08) {
+        this.pd08a08 = pd08a08;
+        notifyPropertyChanged(BR.pd08a08);
+    }
+
+    @Bindable
+    public String getPd08a09() {
+        return pd08a09;
+    }
+
+    public void setPd08a09(String pd08a09) {
+        this.pd08a09 = pd08a09;
+        notifyPropertyChanged(BR.pd08a09);
+    }
+
+    @Bindable
+    public String getPd08a96() {
+        return pd08a96;
+    }
+
+    public void setPd08a96(String pd08a96) {
+        this.pd08a96 = pd08a96;
+        notifyPropertyChanged(BR.pd08a96);
+    }
 
     @Bindable
     public String getPd08a96x() {
@@ -1119,8 +1216,8 @@ public class Form extends BaseObservable {
 
     public void setPd08a96x(String pd08a96x) {
         this.pd08a96x = pd08a96x;
+        notifyPropertyChanged(BR.pd08a96x);
     }
-
 
     @Bindable
     public String getPd08b() {
@@ -4464,11 +4561,19 @@ public class Form extends BaseObservable {
                     .put("pd07", pd07)
                     .put("pd0701x", pd0701x)
                     .put("pd08", pd08)
-                    .put("pd08a", pd08a)
-                    .put("pd08a96x", pd08a96x)
                     .put("pd08b", pd08b)
                     .put("pd08c", pd08c)
-
+                    .put("pd08a01", pd08a01)
+                    .put("pd08a02", pd08a02)
+                    .put("pd08a03", pd08a03)
+                    .put("pd08a04", pd08a04)
+                    .put("pd08a05", pd08a05)
+                    .put("pd08a06", pd08a06)
+                    .put("pd08a07", pd08a07)
+                    .put("pd08a08", pd08a08)
+                    .put("pd08a09", pd08a09)
+                    .put("pd08a96", pd08a96)
+                    .put("pd08a96x", pd08a96x)
                     .put("pd09", pd09)
                     .put("pd10", pd10)
                     .put("pd1101", pd1101)
@@ -4958,7 +5063,16 @@ public class Form extends BaseObservable {
                 this.pd07 = json.getString("pd07");
                 this.pd0701x = json.getString("pd0701x");
                 this.pd08 = json.getString("pd08");
-                this.pd08a = json.getString("pd08a");
+                this.pd08a01 = json.getString("pd08a01");
+                this.pd08a02 = json.getString("pd08a02");
+                this.pd08a03 = json.getString("pd08a03");
+                this.pd08a04 = json.getString("pd08a04");
+                this.pd08a05 = json.getString("pd08a05");
+                this.pd08a06 = json.getString("pd08a06");
+                this.pd08a07 = json.getString("pd08a07");
+                this.pd08a08 = json.getString("pd08a08");
+                this.pd08a09 = json.getString("pd08a09");
+                this.pd08a96 = json.getString("pd08a96");
                 this.pd08a96x = json.getString("pd08a96x");
                 this.pd08b = json.getString("pd08b");
                 this.pd08c = json.getString("pd08c");
@@ -5324,5 +5438,4 @@ public class Form extends BaseObservable {
             }
         }
     }
-
 }
