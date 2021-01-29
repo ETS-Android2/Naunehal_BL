@@ -252,6 +252,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun uploadPhotos(v: View) {
+
+    }
+
     override fun onResume() {
         super.onResume()
 

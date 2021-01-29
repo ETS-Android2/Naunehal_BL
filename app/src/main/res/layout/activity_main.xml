@@ -170,6 +170,19 @@
                         android:textColor="@color/white"
                         android:visibility="gone" />
 
+                    <Button
+                        android:id="@+id/photos"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/openform_background"
+                        android:drawableStart="@drawable/open_form"
+                        android:onClick="@{callback::uploadPhotos}"
+                        android:padding="8dp"
+                        android:text="UPLOAD PHOTOS"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/white" />
+
                 </LinearLayout>
 
                 <LinearLayout
