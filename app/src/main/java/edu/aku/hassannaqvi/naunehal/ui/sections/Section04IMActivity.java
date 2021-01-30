@@ -82,7 +82,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
 
     // Only in First Section of every Table.
-    private void initForm() {
+    private void saveDraft() {
         MainApp.immunization.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         MainApp.immunization.setUuid(MainApp.form.getUid());
         MainApp.immunization.setUserName(MainApp.user.getUserName());
