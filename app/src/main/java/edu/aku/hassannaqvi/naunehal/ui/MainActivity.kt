@@ -25,6 +25,8 @@ import edu.aku.hassannaqvi.naunehal.core.AndroidDatabaseManager
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityMainBinding
+import edu.aku.hassannaqvi.naunehal.ui.list_activity.FormsReportCluster
+import edu.aku.hassannaqvi.naunehal.ui.list_activity.FormsReportDate
 import edu.aku.hassannaqvi.naunehal.ui.login_activity.LoginActivity
 import edu.aku.hassannaqvi.naunehal.ui.sections.IdentificationSectionActivity
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity
@@ -215,18 +217,29 @@ class MainActivity : AppCompatActivity() {
     * Menu items selection
     * */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+        when (item.itemId) {
             R.id.action_data_sync -> {
                 if (isNetworkConnected(this)) {
                     gotoActivity(SyncActivity::class.java)
+
                 } else
                     Toast.makeText(this, "Network connection not available!", Toast.LENGTH_SHORT).show()
 
-                true
+                return true
             }
-            else -> super.onOptionsItemSelected(item)
+            R.id.formsReportDate -> {
+                gotoActivity(FormsReportDate::class.java)
+                return true
+            }
+
+            R.id.formsReportCluster -> {
+                gotoActivity(FormsReportCluster::class.java)
+                return true
+            }
         }
+        return super.onOptionsItemSelected(item)
     }
+
 
     /*
     * Route to specific activity according to selection

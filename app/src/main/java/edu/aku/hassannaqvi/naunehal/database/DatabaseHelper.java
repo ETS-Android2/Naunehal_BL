@@ -13,14 +13,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
+import edu.aku.hassannaqvi.naunehal.contracts.ChildContract.ChildTable;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract.ChildInfoTable;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
+import edu.aku.hassannaqvi.naunehal.contracts.IMContract.IMTable;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom.TableRandom;
@@ -1291,15 +1294,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(ChildContract.ChildTable.COLUMN_SYNCED, true);
-        values.put(ChildContract.ChildTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(ChildTable.COLUMN_SYNCED, true);
+        values.put(ChildTable.COLUMN_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = ChildContract.ChildTable.COLUMN_ID + " = ?";
+        String where = ChildTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
-                ChildContract.ChildTable.TABLE_NAME,
+                ChildTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -1329,19 +1332,215 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(IMContract.IMTable.COLUMN_SYNCED, true);
-        values.put(IMContract.IMTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(IMTable.COLUMN_SYNCED, true);
+        values.put(IMTable.COLUMN_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = IMContract.IMTable.COLUMN_ID + " = ?";
+        String where = IMTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
-                IMContract.IMTable.TABLE_NAME,
+                IMTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
     }
 
+    public Collection<Form> getFormsByCluster(String cluster) {
 
+        // String sysdate =  spDateT.substring(0, 8).trim()
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable._ID,
+                FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
+                FormsTable.COLUMN_CLUSTER,
+                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_SYNCED,
+
+        };
+        String whereClause = FormsTable.COLUMN_CLUSTER + " = ? ";
+        String[] whereArgs = new String[]{cluster};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormsTable.COLUMN_ID + " ASC";
+
+        Collection<Form> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Form fc = new Form();
+                fc.setId(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
+                fc.setCluster(c.getString(c.getColumnIndex(FormsTable.COLUMN_CLUSTER)));
+                fc.setHhno(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHNO)));
+                fc.setIStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
+                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
+                allFC.add(fc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public ArrayList<Form> getUnclosedForms() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable._ID,
+                FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
+                FormsTable.COLUMN_CLUSTER,
+                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_SYNCED,
+        };
+        String whereClause = FormsTable.COLUMN_ISTATUS + " = ''";
+        String[] whereArgs = null;
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
+        ArrayList<Form> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Form fc = new Form();
+                fc.setId(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
+                fc.setCluster(c.getString(c.getColumnIndex(FormsTable.COLUMN_CLUSTER)));
+                fc.setHhno(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHNO)));
+                fc.setIStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
+                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
+                allFC.add(fc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public int getChildrenByUUID(String UUID) {
+        String countQuery = "SELECT  * FROM " + ChildTable.TABLE_NAME + " WHERE " + ChildTable.COLUMN_UUID + " = '" + UUID + "' AND " + ChildTable.COLUMN_STATUS + " = '1'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public int getChildrenPhotoCheck(String UID) {
+        String countQuery = "SELECT  * FROM " + IMTable.TABLE_NAME +
+                " WHERE " + IMTable.COLUMN_UUID + " = '" + UID +
+                "' AND " + IMTable.COLUMN_STATUS + " = '1' " +
+                " AND (" + IMTable.COLUMN_SIM + " NOT LIKE '%\"frontFileName\":\"\"%' " +
+                " OR " + IMTable.COLUMN_SIM + " NOT LIKE '%\"backFileName\":\"\"%') ";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public int getChildrenCardCheck(String UID) {
+        String countQuery = "SELECT  * FROM " + IMTable.TABLE_NAME +
+                " WHERE " + IMTable.COLUMN_UUID + " = '" + UID +
+                "' AND " + IMTable.COLUMN_STATUS + " = '1' " +
+                " AND " + IMTable.COLUMN_SIM + " LIKE '%\"im01\":\"1\"%' ";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public Collection<Form> getTodayForms(String sysdate) {
+
+        // String sysdate =  spDateT.substring(0, 8).trim()
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormsTable._ID,
+                FormsTable.COLUMN_UID,
+                FormsTable.COLUMN_SYSDATE,
+                FormsTable.COLUMN_CLUSTER,
+                FormsTable.COLUMN_HHNO,
+                FormsTable.COLUMN_ISTATUS,
+                FormsTable.COLUMN_SYNCED,
+
+        };
+        String whereClause = FormsTable.COLUMN_SYSDATE + " Like ? ";
+        String[] whereArgs = new String[]{"%" + sysdate + " %"};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_ID + " DESC";
+
+        Collection<Form> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Form fc = new Form();
+                fc.setId(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
+                fc.setCluster(c.getString(c.getColumnIndex(FormsTable.COLUMN_CLUSTER)));
+                fc.setHhno(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHNO)));
+                fc.setIStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
+                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
+                allFC.add(fc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
 }

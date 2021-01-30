@@ -29,6 +29,7 @@
         <item name="android:exitFadeDuration">200</item>
         <item name="android:layoutDirection">ltr</item>
         <item name="android:animateLayoutChanges">false</item>
+
     </style>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
@@ -36,6 +37,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="fontFamily">@font/roboto</item>
         <item name="android:layoutDirection">ltr</item>
+        <item name="android:actionBarStyle">@style/topBarStyle</item>
     </style>
 
     <style name="AppThemeUrdu" parent="Theme.AppCompat.Light.NoActionBar">
