@@ -380,7 +380,6 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="@string/cs0498" />
-
                                 </RadioGroup>
 
                             </LinearLayout>
@@ -901,9 +900,8 @@
 
                                     <TextView
                                         style="@style/sub_labels"
-                                        android:layout_width="0dp"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
-                                        android:layout_weight="1"
                                         android:text="@string/cs08ba" />
 
                                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -1779,9 +1777,8 @@
 
                                 <TextView
                                     style="@style/sub_labels"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/cs18ba" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
