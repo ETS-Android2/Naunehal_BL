@@ -80,6 +80,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
     }
 
+
     // Only in First Section of every Table.
     private void initForm() {
         MainApp.immunization.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
@@ -97,6 +98,8 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         MainApp.immunization.setChildname(info.getCb02());
         MainApp.immunization.setMothername(info.getCb07());
 
+        MainApp.immunization.setPhotoFront(bi.frontFileName.getText().toString());
+        MainApp.immunization.setPhotoBack(bi.backFileName.getText().toString());
 
         MainApp.immunization.setIm01(bi.im0101.isChecked() ? "1"
                 : bi.im0102.isChecked() ? "2"
@@ -314,6 +317,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
 
     }
+
 
     private void setupSkips() {
 

@@ -111,6 +111,8 @@ public class Immunization extends BaseObservable {
     private String im2496x = StringUtils.EMPTY;
     private String im25 = StringUtils.EMPTY;
     private String imdate = StringUtils.EMPTY;
+    private String photoFront = StringUtils.EMPTY;
+    private String photoBack = StringUtils.EMPTY;
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
     private String id;
@@ -1269,6 +1271,28 @@ public class Immunization extends BaseObservable {
 
 
     @Bindable
+    public String getPhotoFront() {
+        return photoFront;
+    }
+
+    public void setPhotoFront(String photoFront) {
+        this.photoFront = photoFront;
+        notifyPropertyChanged(BR.photoFront);
+    }
+
+
+    @Bindable
+    public String getPhotoBack() {
+        return photoBack;
+    }
+
+    public void setPhotoBack(String photoBack) {
+        this.photoBack = photoBack;
+        notifyPropertyChanged(BR.photoBack);
+    }
+
+
+    @Bindable
     public String getStatus() {
         return status;
     }
@@ -1437,7 +1461,9 @@ public class Immunization extends BaseObservable {
                     .put("im24", im24)
                     .put("im2496x", im2496x)
                     .put("im25", im25)
-                    .put("imdate", imdate);
+                    .put("imdate", imdate)
+                    .put("photoFront", photoFront)
+                    .put("photoBack", photoBack);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1589,6 +1615,8 @@ public class Immunization extends BaseObservable {
                 this.im2496x = json.getString("im2496x");
                 this.im25 = json.getString("im25");
                 this.imdate = json.getString("imdate");
+                this.photoFront = json.getString("photoFront");
+                this.photoBack = json.getString("photoBack");
 
             } catch (JSONException e) {
                 e.printStackTrace();
