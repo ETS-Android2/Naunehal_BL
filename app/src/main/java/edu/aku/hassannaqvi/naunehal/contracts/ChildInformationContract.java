@@ -23,7 +23,6 @@ public class ChildInformationContract {
         public static final String COLUMN_HHNO = "hhno";
         public static final String COLUMN_ISSELECTED = "isselected";
         public static final String COLUMN_SCB = "scb";
-
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_SYNCED = "synced";

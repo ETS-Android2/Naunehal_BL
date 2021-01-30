@@ -794,12 +794,6 @@
                                 android:text="@string/pd08a08" />
 
                             <CheckBox
-                                android:id="@+id/pd08a09"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/pd08a09" />
-
-                            <CheckBox
                                 android:id="@+id/pd08a96"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -816,6 +810,13 @@
                                 android:visibility='@{pd08a96.checked? View.VISIBLE : View.GONE}' />
 
                         </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/pd08a09"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:tag="-1"
+                            android:text="@string/pd08a09" />
 
                     </LinearLayout>
 

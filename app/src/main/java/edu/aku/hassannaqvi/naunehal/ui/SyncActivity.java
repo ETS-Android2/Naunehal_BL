@@ -33,6 +33,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.naunehal.CONSTANTS;
 import edu.aku.hassannaqvi.naunehal.R;
@@ -71,7 +72,10 @@ public class SyncActivity extends AppCompatActivity {
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
     String distCode;
-   // List<JSONArray> uploadData;
+    private int totalFiles;
+    private long tStart;
+    private String progress;
+    // List<JSONArray> uploadData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +137,7 @@ public class SyncActivity extends AppCompatActivity {
                 bi.dataLayout.setVisibility(View.VISIBLE);
                 bi.photoLayout.setVisibility(View.GONE);
                 bi.mTextViewS.setVisibility(View.GONE);
+                bi.pBar.setVisibility(View.GONE);
                 uploadTables.clear();
                 MainApp.uploadData.clear();
                 // Set tables to UPLOAD
@@ -160,6 +165,7 @@ public class SyncActivity extends AppCompatActivity {
                 bi.dataLayout.setVisibility(View.VISIBLE);
                 bi.photoLayout.setVisibility(View.GONE);
                 bi.mTextViewS.setVisibility(View.GONE);
+                bi.pBar.setVisibility(View.GONE);
                 downloadTables.clear();
                 boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
                 if (sync_flag) {
@@ -503,24 +509,30 @@ public class SyncActivity extends AppCompatActivity {
         bi.dataLayout.setVisibility(View.GONE);
         bi.photoLayout.setVisibility(View.VISIBLE);
         bi.mTextViewS.setVisibility(View.VISIBLE);
+        bi.pBar.setVisibility(View.VISIBLE);
         bi.photoLayout.removeAllViews();
         /*File directory = new File(this.getExternalFilesDir(
                 Environment.DIRECTORY_PICTURES), PROJECT_NAME);*/
         Log.d("Directory", "uploadPhotos: " + sdDir);
         if (sdDir.exists()) {
             File[] files = sdDir.listFiles(file -> (file.getPath().endsWith(".jpg") || file.getPath().endsWith(".jpeg")));
-            bi.mTextViewS.setText(files.length + " Photos remaining");
+            bi.mTextViewS.setText(files.length + " Photos remaining (waiting for server...)");
+            bi.pBar.setProgress(0);
             Log.d("Files", "Count: " + files.length);
             if (files.length > 0) {
+
                 int fcount = Math.min(files.length, 300);
                 for (int i = 0; i < fcount; i++) {
-
+                    totalFiles = files.length;
                     File fileZero = files[i];
                     TextView textView = new TextView(this);
                     textView.setText("PROCESSING: " + fileZero.getName());
                     textView.setId(i);
                     bi.photoLayout.addView(textView);
-                    Log.d("Files", "FileName:" + fileZero.getName());
+                    tStart = System.currentTimeMillis();
+
+                    // Log.d("Files", "FileName:" + fileZero.getName());
+                    // Log.d("Files", "FileName:" + fileZero.getName());
                     //   SyncAllPhotos syncAllPhotos = new SyncAllPhotos(file.getName(), this);
 
                     Constraints constraints = new Constraints.Builder()
@@ -528,7 +540,9 @@ public class SyncActivity extends AppCompatActivity {
                             .build();
 
                     Data data = new Data.Builder()
-                            .putString("filename", fileZero.getName()).build();
+                            .putString("filename", fileZero.getName())
+                            .putInt("fCount", i)
+                            .build();
 
                     //This is the subclass of our WorkRequest
 
@@ -573,30 +587,31 @@ public class SyncActivity extends AppCompatActivity {
 
                                         upDatePhotoCount();
                                     }
-                                    String fCount = String.valueOf(workInfo.getOutputData().getInt("fCount", 0));
-                                    Toast.makeText(SyncActivity.this, "Files Left: " + fCount, Toast.LENGTH_SHORT).show();
+                                    /*String fCount = String.valueOf(workInfo.getOutputData().getInt("fCount", 0));
+                                    Toast.makeText(SyncActivity.this, "Files Left: " + fCount, Toast.LENGTH_SHORT).show();*/
                                 }
                             });
-/*
+
                     if (i%25 == 0){
                         try {
                             //3000 ms delay to process upload of next file.
-                            Thread.sleep(12500);
+                            Thread.sleep(14000);
 
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }*/
+                    }
 
                 }
 
 
             } else {
                 bi.mTextViewS.setText(files.length + " Photos remaining");
+
                 Toast.makeText(this, "No photos to upload.", Toast.LENGTH_SHORT).show();
             }
         } else {
-            bi.mTextViewS.setText("This app is not compatible with your device.");
+            bi.mTextViewS.setText("No photots were taken.");
 
             Toast.makeText(this, "No photos were taken", Toast.LENGTH_SHORT).show();
         }
@@ -609,13 +624,34 @@ public class SyncActivity extends AppCompatActivity {
 
 
             if (files.length > 0) {
+
+                int filesProcessed = totalFiles - files.length;
+                long tEnd = System.currentTimeMillis();
+                long tDelta = tEnd - tStart;
+                String elapsedSeconds = String.format("%d min, %d sec",
+                        TimeUnit.MILLISECONDS.toMinutes(tDelta),
+                        TimeUnit.MILLISECONDS.toSeconds(tDelta) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(tDelta))
+                );
+                long tPerFile = tDelta / filesProcessed + 1;
+                long timeRemaining = files.length * tPerFile;
+                long absTimeRemaining = ((timeRemaining / 25) * 14) + timeRemaining;
+                double secRemain = absTimeRemaining / 1000;
+                String tRemain = String.format("%d min, %d sec",
+                        TimeUnit.MILLISECONDS.toMinutes(absTimeRemaining),
+                        TimeUnit.MILLISECONDS.toSeconds(absTimeRemaining) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(absTimeRemaining))
+                );
+
                 // WORK MANAGER
-                bi.mTextViewS.setText((files.length + " Photos remaining"));
+                progress = files.length + " Photos remaining \r\n( Time elapsed: " + elapsedSeconds + " - Time remaining: " + tRemain + " )";
+                bi.mTextViewS.setText(progress);
+                int fProgress = (int) Math.ceil(((totalFiles - files.length) * 100) / totalFiles);
+                bi.pBar.setProgress(fProgress);
                 //This is for setting Contraints for sync
 
-
             } else {
-                bi.mTextViewS.setText("0 Photos remaining");
+                bi.mTextViewS.setText(progress + "\r\n DONE!");
 
             }
         } else {
