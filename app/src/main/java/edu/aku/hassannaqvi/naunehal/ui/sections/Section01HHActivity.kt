@@ -275,11 +275,11 @@ class Section01HHActivity : AppCompatActivity() {
 
     fun BtnContinue(view: View) {
         if (!formValidation()) return
-        saveDraft() //<== This function is no longer needed after DataBinding
+        saveDraft()
         if (updateDB()) {
             val response = when {
                 bi.hh1102.isChecked -> 1
-                bi.hh24.text.toString().toInt() + bi.hh25.text.toString().toInt() == 0 -> 2
+                bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt()) == 0 -> 2
                 bi.hh25a02.isChecked -> 3
                 else -> 0
             }
@@ -339,14 +339,13 @@ class Section01HHActivity : AppCompatActivity() {
             bi.hh25.text.toString().toInt() > bi.hh23.text.toString().toInt() -> {
                 return Validator.emptyCustomTextBox(this, bi.hh25, "Total female Children cannot be greater than HH22")
             }
-            bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt()) == 0 -> return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero")
+//            bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt()) == 0 -> return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female Children cannot be zero")
             bi.hh22.text.toString().toInt().plus(bi.hh23.text.toString().toInt()).minus(bi.hh24.text.toString().toInt().plus(bi.hh25.text.toString().toInt())) == 0 ->
                 return Validator.emptyCustomTextBox(this, bi.hh21, "Male & Female children count couldn't be same as Men & Women count")
             else -> return true
         }
     }
 
-    // Only in First Section of every Table.
     private fun saveDraft() {
         form.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
         form.userName = MainApp.user.userName
@@ -541,6 +540,5 @@ class Section01HHActivity : AppCompatActivity() {
 
 
     }
-
 
 }

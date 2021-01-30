@@ -80,8 +80,8 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
     }
 
-    // Only in First Section of every Table.
-    private void initForm() {
+
+    private void saveDraft() {
         MainApp.immunization.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         MainApp.immunization.setUuid(MainApp.form.getUid());
         MainApp.immunization.setUserName(MainApp.user.getUserName());
@@ -500,7 +500,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
             Clear.clearAllFields(bi.fldGrpDOBCheck01);
             Clear.clearAllFields(bi.fldGrpDOBCheck02);
         }
-        initForm();
+        saveDraft();
         MainApp.immunization.setStatus("1");
         if (updateDB()) {
             finish();
@@ -893,7 +893,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
     @Override
     public void endSecActivity(boolean flag) {
-        initForm();
+        saveDraft();
         MainApp.immunization.setStatus("2");
         if (updateDB()) {
             finish();
