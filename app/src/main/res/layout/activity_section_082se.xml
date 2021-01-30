@@ -1350,7 +1350,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 app:maxValue="11"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <TextView
@@ -1365,8 +1365,8 @@
                                 android:hint="@string/se3402"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                app:maxValue="50"
-                                app:minValue="1"
+                                app:maxValue="99"
+                                app:minValue="0"
                                 app:type="range" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>

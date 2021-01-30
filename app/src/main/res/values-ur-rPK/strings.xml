@@ -157,7 +157,7 @@
     <string name="cs0404"> معمول سے زیادہ / مزید </string>
     <string name="cs0405"> پینے کو کچھ نہیں دیا </string>
     <string name="cs0498"> معلوم نہیں </string>
-    <string name="cs05"> دستوں یا جلاب کے دوران بچے کو کھانے والی اشیاء کی کتنی مقدار دی گئی تھی؟ </string>
+    <string name="cs05">اسہال(دست یا  جلاب)  کے دوران بچے کو کھانے والی اشیاء کی کتنی مقدار دی گئی تھی؟</string>
     <string name="cs0501"> معمول سے بہت کم </string>
     <string name="cs0502"> معمول  سے کچھ کم </string>
     <string name="cs0503"> معمول جتنا ہی </string>
@@ -186,10 +186,12 @@
     <string name="cs07962">دوسرے نجی وضاحت کریں </string>
     <string name="cs08"> بچے کو اسہال(دست یا  جلاب)  کی بیماری کے علاج کے لئے کون کونسی دوا دی گئی؟ </string>
     <string name="cs0801"> نمکول (او آر ایس) </string>
+    <string name="cs08_title1">گولیاں یا شربت</string>
     <string name="cs0802"> اینٹی بائیوٹک انجکشن </string>
     <string name="cs0803"> دست روکنے والی ادویات </string>
     <string name="cs0804"> زنک </string>
     <string name="cs0805">نامعلوم گولیاں/شربت </string>
+    <string name="cs08_title2">انجیکشن</string>
     <string name="cs0806">اینٹی بائیوٹک </string>
     <string name="cs0807">اینٹی بائیوٹک کے علاوہ </string>
     <string name="cs0808">نامعلوم انجکش </string>
@@ -516,7 +518,7 @@
     <string name="pd07">گزشتہ حمل کے دوران آپ نے کتنی مرتبہ اپنا معائنہ کروایا؟ حمل کے معائنوں کی تعداد کے بارے میں مزید پوچھیں ،اگر کوئی اندازًتعداد بتائ ہے تو جو کم سے کم نمبر ہو ، لکھیں</string>
     <string name="pd0701">معائنوں  کی تعداد</string>
     <string name="pd0798">معلوم نہیں</string>
-    <string name="pd08">آپ نے حمل کے دوران  معائنہ کیوں نہیں کروایا؟</string>
+    <string name="pd08">آپ نے گزشتہ  حمل کے دوران  معائنہ کیوں نہیں کروایا؟</string>
     <string name="pd0801">کورونا کے خوف سے</string>
     <string name="pd0802">مفروضہ ہے کہ حمل کے دوران دیکھ بھال کی ضرورت نہیں ہے </string>
     <string name="pd0803">رشتہ دار یا دوست نے مشورہ  دیا تھا</string>

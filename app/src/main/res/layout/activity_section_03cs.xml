@@ -718,6 +718,11 @@
                                         android:layout_height="wrap_content"
                                         android:text="@string/cs0801" />
 
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/cs08_title1" />
+
                                     <CheckBox
                                         android:id="@+id/cs0802"
                                         android:layout_width="match_parent"
@@ -741,6 +746,11 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="@string/cs0805" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/cs08_title2" />
 
                                     <CheckBox
                                         android:id="@+id/cs0806"

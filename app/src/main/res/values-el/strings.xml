@@ -183,10 +183,12 @@
     <string name="cs07962">Other Private</string>
     <string name="cs08">What Was Given to Treat Diarrhea?</string>
     <string name="cs0801">ORS</string>
+    <string name="cs08_title1">Pill or syrup</string>
     <string name="cs0802">Antibiotic</string>
     <string name="cs0803">Antimotility (anti-diarrhoea) </string>
     <string name="cs0804">Zinc</string>
     <string name="cs0805">Unknown pill or syrup</string>
+    <string name="cs08_title2">Injection</string>
     <string name="cs0806">Antibiotic</string>
     <string name="cs0807">Non-antibiotic</string>
     <string name="cs0808">Unknown injection</string>

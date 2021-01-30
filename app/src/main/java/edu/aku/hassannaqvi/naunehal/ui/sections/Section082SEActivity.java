@@ -256,7 +256,14 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+
+        if (bi.se2301.isChecked()) {
+            if (Integer.parseInt(bi.se3401.getText().toString()) + Integer.parseInt(bi.se3402.getText().toString()) == 0)
+                return Validator.emptyCustomTextBox(this, bi.se3401, "Both Month and Year can't be zero");
+        }
+
+        return true;
 
     }
 
