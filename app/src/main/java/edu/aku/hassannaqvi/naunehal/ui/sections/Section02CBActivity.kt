@@ -5,13 +5,11 @@ import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.View
-import android.widget.CompoundButton
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.lifecycleScope
 import com.edittextpicker.aliazaz.EditTextPicker
 import com.validatorcrawler.aliazaz.Clear
 import com.validatorcrawler.aliazaz.Validator
@@ -23,10 +21,6 @@ import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection02cbBinding
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository.Companion.getCalculatedAge
 import edu.aku.hassannaqvi.naunehal.utils.openWarningDialog
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 import org.threeten.bp.Instant
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZoneId
@@ -180,8 +174,7 @@ class Section02CBActivity : AppCompatActivity() {
 
     fun BtnContinue(view: View) {
         if (!formValidation()) return
-        initForm()
-        // SaveDraft(); //<== This function is no longer needed after DataBinding
+        saveDraft()
         if (updateDB()) {
             finish()
         }
@@ -231,8 +224,8 @@ class Section02CBActivity : AppCompatActivity() {
         finish()
     }
 
-    // Only in First Section of every Table.
-    private fun initForm() {
+
+    private fun saveDraft() {
         if (!MainApp.childInformation.isEditFlag) {
             MainApp.childInformation.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
             MainApp.childInformation.uuid = MainApp.form.uid

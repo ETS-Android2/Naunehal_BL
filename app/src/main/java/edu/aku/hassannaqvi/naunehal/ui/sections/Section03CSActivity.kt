@@ -192,7 +192,7 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
 
     fun BtnContinue(view: View) {
         if (!formValidation()) return
-        initForm()
+        saveDraft()
         MainApp.child.status = "1"
         if (updateDB()) {
             finish()
@@ -223,8 +223,8 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
         }
     }
 
-    // Only in First Section of every Table.
-    private fun initForm() {
+
+    private fun saveDraft() {
         MainApp.child.sysDate = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(Date().time)
         MainApp.child.uuid = MainApp.form.uid
         MainApp.child.userName = MainApp.user.userName
@@ -491,7 +491,7 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
     }
 
     override fun endSecActivity(flag: Boolean) {
-        initForm()
+        saveDraft()
         MainApp.child.status = "2"
         if (updateDB()) {
             finish()
