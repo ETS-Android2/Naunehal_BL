@@ -735,6 +735,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/pd08a" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -813,8 +814,11 @@
                                 android:tag="pd08a96"
                                 android:text='@{pd08a96.checked ? pd08a96x.getText().toString() : ""}'
                                 android:visibility='@{pd08a96.checked? View.VISIBLE : View.GONE}' />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 

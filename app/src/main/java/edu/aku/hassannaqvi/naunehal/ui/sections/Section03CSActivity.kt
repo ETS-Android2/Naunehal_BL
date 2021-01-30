@@ -240,267 +240,245 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
         MainApp.child.mothername = info.cb07
 
 
-        MainApp.child.setCs01(
-                if (bi.cs01.text.toString().trim().isEmpty()) "-1"
-                else bi.cs01.text.toString())
+        MainApp.child.cs01 = if (bi.cs01.text.toString().trim().isEmpty()) "-1"
+        else bi.cs01.text.toString()
 
-        MainApp.child.setCs02(
-                if (bi.cs02.text.toString().trim().isEmpty()) "-1"
-                else bi.cs02.text.toString())
+        MainApp.child.cs02 = if (bi.cs02.text.toString().trim().isEmpty()) "-1"
+        else bi.cs02.text.toString()
 
-        MainApp.child.setCs03(
-                when {
-                    bi.cs0301.isChecked -> "1"
-                    bi.cs0302.isChecked -> "2"
-                    else -> "-1"
-                })
+        MainApp.child.cs02a = when {
+            bi.cs02a02.isChecked -> "2"
+            bi.cs02a03.isChecked -> "3"
+            bi.cs02a04.isChecked -> "4"
+            else -> "-1"
+        }
 
-        MainApp.child.setCs04(
-                when {
-                    bi.cs0401.isChecked -> "1"
-                    bi.cs0402.isChecked -> "2"
-                    bi.cs0403.isChecked -> "3"
-                    bi.cs0404.isChecked -> "4"
-                    bi.cs0405.isChecked -> "5"
-                    bi.cs0498.isChecked -> "98"
-                    else -> "-1"
-                })
+        MainApp.child.cs02b = if (bi.cs02b.text.toString().trim().isEmpty()) "-1"
+        else bi.cs02b.text.toString()
 
-        MainApp.child.setCs05(
-                when {
-                    bi.cs0501.isChecked -> "1"
-                    bi.cs0502.isChecked -> "2"
-                    bi.cs0503.isChecked -> "3"
-                    bi.cs0504.isChecked -> "4"
-                    bi.cs0505.isChecked -> "5"
-                    bi.cs0598.isChecked -> "98"
-                    else -> "-1"
-                })
+        MainApp.child.cs03 = when {
+            bi.cs0301.isChecked -> "1"
+            bi.cs0302.isChecked -> "2"
+            else -> "-1"
+        }
 
-        MainApp.child.setCs06(
-                when {
-                    bi.cs0601.isChecked -> "1"
-                    bi.cs0602.isChecked -> "2"
-                    else -> "-1"
-                })
+        MainApp.child.cs04 = when {
+            bi.cs0401.isChecked -> "1"
+            bi.cs0402.isChecked -> "2"
+            bi.cs0403.isChecked -> "3"
+            bi.cs0404.isChecked -> "4"
+            bi.cs0405.isChecked -> "5"
+            bi.cs0498.isChecked -> "98"
+            else -> "-1"
+        }
 
-        MainApp.child.setCs07(
-                when {
-                    bi.cs0701.isChecked -> "1"
-                    bi.cs0702.isChecked -> "2"
-                    bi.cs0703.isChecked -> "3"
-                    bi.cs0704.isChecked -> "4"
-                    bi.cs0706.isChecked -> "6"
-                    bi.cs07961.isChecked -> "961"
-                    bi.cs0707.isChecked -> "7"
-                    bi.cs0708.isChecked -> "8"
-                    bi.cs0709.isChecked -> "9"
-                    bi.cs0710.isChecked -> "10"
-                    bi.cs0711.isChecked -> "11"
-                    bi.cs0712.isChecked -> "12"
-                    bi.cs0713.isChecked -> "13"
-                    bi.cs07962.isChecked -> "962"
-                    else -> "-1"
-                })
+        MainApp.child.cs05 = when {
+            bi.cs0501.isChecked -> "1"
+            bi.cs0502.isChecked -> "2"
+            bi.cs0503.isChecked -> "3"
+            bi.cs0504.isChecked -> "4"
+            bi.cs0505.isChecked -> "5"
+            bi.cs0598.isChecked -> "98"
+            else -> "-1"
+        }
 
-        MainApp.child.setCs07961x(
-                if (bi.cs07961x.text.toString().trim().isEmpty()) "-1"
-                else bi.cs07961x.text.toString())
+        MainApp.child.cs06 = when {
+            bi.cs0601.isChecked -> "1"
+            bi.cs0602.isChecked -> "2"
+            else -> "-1"
+        }
 
-        MainApp.child.setCs07962x(
-                if (bi.cs07962x.text.toString().trim().isEmpty()) "-1"
-                else bi.cs07962x.text.toString())
+        MainApp.child.cs07 = when {
+            bi.cs0701.isChecked -> "1"
+            bi.cs0702.isChecked -> "2"
+            bi.cs0703.isChecked -> "3"
+            bi.cs0704.isChecked -> "4"
+            bi.cs0706.isChecked -> "6"
+            bi.cs07961.isChecked -> "961"
+            bi.cs0707.isChecked -> "7"
+            bi.cs0708.isChecked -> "8"
+            bi.cs0709.isChecked -> "9"
+            bi.cs0710.isChecked -> "10"
+            bi.cs0711.isChecked -> "11"
+            bi.cs0712.isChecked -> "12"
+            bi.cs0713.isChecked -> "13"
+            bi.cs07962.isChecked -> "962"
+            else -> "-1"
+        }
 
+        MainApp.child.cs07961x = if (bi.cs07961x.text.toString().trim().isEmpty()) "-1"
+        else bi.cs07961x.text.toString()
 
-        MainApp.child.setCs0801(if (bi.cs0801.isChecked) "1" else "-1")
-        MainApp.child.setCs0802(if (bi.cs0802.isChecked) "2" else "-1")
-        MainApp.child.setCs0803(if (bi.cs0803.isChecked) "3" else "-1")
-        MainApp.child.setCs0804(if (bi.cs0804.isChecked) "4" else "-1")
-        MainApp.child.setCs0805(if (bi.cs0805.isChecked) "5" else "-1")
-        MainApp.child.setCs0806(if (bi.cs0806.isChecked) "6" else "-1")
-        MainApp.child.setCs0807(if (bi.cs0807.isChecked) "7" else "-1")
-        MainApp.child.setCs0808(if (bi.cs0808.isChecked) "8" else "-1")
-        MainApp.child.setCs0809(if (bi.cs0809.isChecked) "9" else "-1")
-        MainApp.child.setCs0810(if (bi.cs0810.isChecked) "10" else "-1")
-        MainApp.child.setCs0896(if (bi.cs0896.isChecked) "96" else "-1")
-
-        MainApp.child.setCs0896x(
-                when {
-                    bi.cs0896x.text.toString().trim().isEmpty() -> "-1"
-                    else -> bi.cs0896x.text.toString()
-                })
-
-        MainApp.child.setCs08a(
-                when {
-                    bi.cs08aa.isChecked -> "1"
-                    bi.cs08ab.isChecked -> "2"
-                    else -> "-1"
-                })
-
-        MainApp.child.setCs08b(
-                if (bi.cs08b.text.toString().trim().isEmpty()) "-1"
-                else bi.cs08b.text.toString())
+        MainApp.child.cs07962x = if (bi.cs07962x.text.toString().trim().isEmpty()) "-1"
+        else bi.cs07962x.text.toString()
 
 
-        MainApp.child.setCs09(
-                when {
-                    bi.cs0901.isChecked -> "1"
-                    bi.cs0902.isChecked -> "2"
-                    bi.cs0903.isChecked -> "3"
-                    bi.cs0904.isChecked -> "4"
-                    bi.cs0905.isChecked -> "5"
-                    bi.cs0906.isChecked -> "6"
-                    bi.cs0996.isChecked -> "96"
-                    else -> "-1"
-                })
+        MainApp.child.cs0801 = if (bi.cs0801.isChecked) "1" else "-1"
+        MainApp.child.cs0802 = if (bi.cs0802.isChecked) "2" else "-1"
+        MainApp.child.cs0803 = if (bi.cs0803.isChecked) "3" else "-1"
+        MainApp.child.cs0804 = if (bi.cs0804.isChecked) "4" else "-1"
+        MainApp.child.cs0805 = if (bi.cs0805.isChecked) "5" else "-1"
+        MainApp.child.cs0806 = if (bi.cs0806.isChecked) "6" else "-1"
+        MainApp.child.cs0807 = if (bi.cs0807.isChecked) "7" else "-1"
+        MainApp.child.cs0808 = if (bi.cs0808.isChecked) "8" else "-1"
+        MainApp.child.cs0809 = if (bi.cs0809.isChecked) "9" else "-1"
+        MainApp.child.cs0810 = if (bi.cs0810.isChecked) "10" else "-1"
+        MainApp.child.cs0896 = if (bi.cs0896.isChecked) "96" else "-1"
 
-        MainApp.child.setCs0996x(
-                if (bi.cs0996x.text.toString().trim().isEmpty()) "-1"
-                else bi.cs0996x.text.toString())
+        MainApp.child.cs0896x = when {
+            bi.cs0896x.text.toString().trim().isEmpty() -> "-1"
+            else -> bi.cs0896x.text.toString()
+        }
 
-        MainApp.child.setCs10(
-                when {
-                    bi.cs1001.isChecked -> "1"
-                    bi.cs1002.isChecked -> "2"
-                    else -> "-1"
-                })
+        MainApp.child.cs08a = when {
+            bi.cs08aa.isChecked -> "1"
+            bi.cs08ab.isChecked -> "2"
+            else -> "-1"
+        }
 
-        MainApp.child.setCs11(
-                when {
-                    bi.cs1101.isChecked -> "1"
-                    bi.cs1102.isChecked -> "2"
-                    else -> "-1"
-                })
-
-        MainApp.child.setCs12(
-                when {
-                    bi.cs1201.isChecked -> "1"
-                    bi.cs1202.isChecked -> "2"
-                    else -> "-1"
-                })
-
-        MainApp.child.setCs13(
-                when {
-                    bi.cs1301.isChecked -> "1"
-                    bi.cs1302.isChecked -> "2"
-                    else -> "-1"
-                })
-
-        MainApp.child.setCs14(
-                when {
-                    bi.cs1401.isChecked -> "1"
-                    bi.cs1402.isChecked -> "2"
-                    else -> "-1"
-                })
-
-        MainApp.child.setCs15(
-                when {
-                    bi.cs1501.isChecked -> "1"
-                    bi.cs1502.isChecked -> "2"
-                    bi.cs1503.isChecked -> "3"
-                    bi.cs1596.isChecked -> "96"
-                    else -> "-1"
-                })
-
-        MainApp.child.setCs1596x(
-                if (bi.cs1596x.text.toString().trim().isEmpty()) "-1"
-                else bi.cs1596x.text.toString())
-
-        MainApp.child.setCs16(
-                when {
-                    bi.cs1601.isChecked -> "1"
-                    bi.cs1602.isChecked -> "2"
-                    else -> "-1"
-                })
-
-        MainApp.child.setCs17(
-                when {
-                    bi.cs1701.isChecked -> "1"
-                    bi.cs1702.isChecked -> "2"
-                    bi.cs1703.isChecked -> "3"
-                    bi.cs1704.isChecked -> "4"
-                    bi.cs17961.isChecked -> "961"
-                    bi.cs1706.isChecked -> "6"
-                    bi.cs1707.isChecked -> "7"
-                    bi.cs1708.isChecked -> "8"
-                    bi.cs1709.isChecked -> "9"
-                    bi.cs1710.isChecked -> "10"
-                    bi.cs1711.isChecked -> "11"
-                    bi.cs1712.isChecked -> "12"
-                    bi.cs1713.isChecked -> "13"
-                    bi.cs17962.isChecked -> "962"
-                    else -> "-1"
-                })
-
-        MainApp.child.setCs17961x(
-                if (bi.cs17961x.text.toString().trim().isEmpty()) "-1"
-                else bi.cs17961x.text.toString())
-
-        MainApp.child.setCs17962x(
-                if (bi.cs17962x.text.toString().trim().isEmpty()) "-1"
-                else bi.cs17962x.text.toString())
+        MainApp.child.cs08b = if (bi.cs08b.text.toString().trim().isEmpty()) "-1"
+        else bi.cs08b.text.toString()
 
 
-        MainApp.child.setCs1802(if (bi.cs1802.isChecked) "2" else "-1")
-        MainApp.child.setCs1803(if (bi.cs1803.isChecked) "3" else "-1")
-        MainApp.child.setCs1804(if (bi.cs1804.isChecked) "4" else "-1")
-        MainApp.child.setCs1805(if (bi.cs1805.isChecked) "5" else "-1")
-        MainApp.child.setCs1806(if (bi.cs1806.isChecked) "6" else "-1")
-        MainApp.child.setCs1807(if (bi.cs1807.isChecked) "7" else "-1")
-        MainApp.child.setCs1808(if (bi.cs1808.isChecked) "8" else "-1")
-        MainApp.child.setCs1896(if (bi.cs1896.isChecked) "96" else "-1")
+        MainApp.child.cs09 = when {
+            bi.cs0901.isChecked -> "1"
+            bi.cs0902.isChecked -> "2"
+            bi.cs0903.isChecked -> "3"
+            bi.cs0904.isChecked -> "4"
+            bi.cs0905.isChecked -> "5"
+            bi.cs0906.isChecked -> "6"
+            bi.cs0996.isChecked -> "96"
+            else -> "-1"
+        }
 
-        MainApp.child.setCs1896x(
-                if (bi.cs1896x.text.toString().trim().isEmpty()) "-1"
-                else bi.cs1896x.text.toString())
+        MainApp.child.cs0996x = if (bi.cs0996x.text.toString().trim().isEmpty()) "-1"
+        else bi.cs0996x.text.toString()
+
+        MainApp.child.cs10 = when {
+            bi.cs1001.isChecked -> "1"
+            bi.cs1002.isChecked -> "2"
+            else -> "-1"
+        }
+
+        MainApp.child.cs11 = when {
+            bi.cs1101.isChecked -> "1"
+            bi.cs1102.isChecked -> "2"
+            else -> "-1"
+        }
+
+        MainApp.child.cs12 = when {
+            bi.cs1201.isChecked -> "1"
+            bi.cs1202.isChecked -> "2"
+            else -> "-1"
+        }
+
+        MainApp.child.cs13 = when {
+            bi.cs1301.isChecked -> "1"
+            bi.cs1302.isChecked -> "2"
+            else -> "-1"
+        }
+
+        MainApp.child.cs14 = when {
+            bi.cs1401.isChecked -> "1"
+            bi.cs1402.isChecked -> "2"
+            else -> "-1"
+        }
+
+        MainApp.child.cs15 = when {
+            bi.cs1501.isChecked -> "1"
+            bi.cs1502.isChecked -> "2"
+            bi.cs1503.isChecked -> "3"
+            bi.cs1596.isChecked -> "96"
+            else -> "-1"
+        }
+
+        MainApp.child.cs1596x = if (bi.cs1596x.text.toString().trim().isEmpty()) "-1"
+        else bi.cs1596x.text.toString()
+
+        MainApp.child.cs16 = when {
+            bi.cs1601.isChecked -> "1"
+            bi.cs1602.isChecked -> "2"
+            else -> "-1"
+        }
+
+        MainApp.child.cs17 = when {
+            bi.cs1701.isChecked -> "1"
+            bi.cs1702.isChecked -> "2"
+            bi.cs1703.isChecked -> "3"
+            bi.cs1704.isChecked -> "4"
+            bi.cs17961.isChecked -> "961"
+            bi.cs1706.isChecked -> "6"
+            bi.cs1707.isChecked -> "7"
+            bi.cs1708.isChecked -> "8"
+            bi.cs1709.isChecked -> "9"
+            bi.cs1710.isChecked -> "10"
+            bi.cs1711.isChecked -> "11"
+            bi.cs1712.isChecked -> "12"
+            bi.cs1713.isChecked -> "13"
+            bi.cs17962.isChecked -> "962"
+            else -> "-1"
+        }
+
+        MainApp.child.cs17961x = if (bi.cs17961x.text.toString().trim().isEmpty()) "-1"
+        else bi.cs17961x.text.toString()
+
+        MainApp.child.cs17962x = if (bi.cs17962x.text.toString().trim().isEmpty()) "-1"
+        else bi.cs17962x.text.toString()
 
 
-        MainApp.child.setCs18a(
-                when {
-                    bi.cs18aa.isChecked -> "1"
-                    bi.cs18ab.isChecked -> "2"
-                    else -> "-1"
-                })
+        MainApp.child.cs1802 = if (bi.cs1802.isChecked) "2" else "-1"
+        MainApp.child.cs1803 = if (bi.cs1803.isChecked) "3" else "-1"
+        MainApp.child.cs1804 = if (bi.cs1804.isChecked) "4" else "-1"
+        MainApp.child.cs1805 = if (bi.cs1805.isChecked) "5" else "-1"
+        MainApp.child.cs1806 = if (bi.cs1806.isChecked) "6" else "-1"
+        MainApp.child.cs1807 = if (bi.cs1807.isChecked) "7" else "-1"
+        MainApp.child.cs1808 = if (bi.cs1808.isChecked) "8" else "-1"
+        MainApp.child.cs1896 = if (bi.cs1896.isChecked) "96" else "-1"
 
-        MainApp.child.setCs18b(
-                if (bi.cs18b.text.toString().trim().isEmpty()) "-1"
-                else bi.cs18b.text.toString())
+        MainApp.child.cs1896x = if (bi.cs1896x.text.toString().trim().isEmpty()) "-1"
+        else bi.cs1896x.text.toString()
 
 
-        MainApp.child.setCs19(
-                when {
-                    bi.cs1901.isChecked -> "1"
-                    bi.cs1902.isChecked -> "2"
-                    bi.cs1903.isChecked -> "3"
-                    bi.cs1904.isChecked -> "4"
-                    bi.cs1905.isChecked -> "5"
-                    bi.cs1906.isChecked -> "6"
-                    bi.cs1996.isChecked -> "96"
-                    else -> "-1"
-                })
+        MainApp.child.cs18a = when {
+            bi.cs18aa.isChecked -> "1"
+            bi.cs18ab.isChecked -> "2"
+            else -> "-1"
+        }
 
-        MainApp.child.setCs1996x(
-                if (bi.cs1996x.text.toString().trim().isEmpty()) "-1"
-                else bi.cs1996x.text.toString())
+        MainApp.child.cs18b = if (bi.cs18b.text.toString().trim().isEmpty()) "-1"
+        else bi.cs18b.text.toString()
 
-        MainApp.child.setCs20(
-                when {
-                    bi.cs2001.isChecked -> "1"
-                    bi.cs2002.isChecked -> "2"
-                    bi.cs2098.isChecked -> "98"
-                    else -> "-1"
-                })
 
-        MainApp.child.setCs21(
-                when {
-                    bi.cs2101.isChecked -> "1"
-                    bi.cs2102.isChecked -> "2"
-                    bi.cs2103.isChecked -> "3"
-                    bi.cs2104.isChecked -> "4"
-                    bi.cs2105.isChecked -> "5"
+        MainApp.child.cs19 = when {
+            bi.cs1901.isChecked -> "1"
+            bi.cs1902.isChecked -> "2"
+            bi.cs1903.isChecked -> "3"
+            bi.cs1904.isChecked -> "4"
+            bi.cs1905.isChecked -> "5"
+            bi.cs1906.isChecked -> "6"
+            bi.cs1996.isChecked -> "96"
+            else -> "-1"
+        }
 
-                    else -> "-1"
-                })
+        MainApp.child.cs1996x = if (bi.cs1996x.text.toString().trim().isEmpty()) "-1"
+        else bi.cs1996x.text.toString()
+
+        MainApp.child.cs20 = when {
+            bi.cs2001.isChecked -> "1"
+            bi.cs2002.isChecked -> "2"
+            bi.cs2098.isChecked -> "98"
+            else -> "-1"
+        }
+
+        MainApp.child.cs21 = when {
+            bi.cs2101.isChecked -> "1"
+            bi.cs2102.isChecked -> "2"
+            bi.cs2103.isChecked -> "3"
+            bi.cs2104.isChecked -> "4"
+            bi.cs2105.isChecked -> "5"
+
+            else -> "-1"
+        }
 
     }
 

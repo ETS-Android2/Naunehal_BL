@@ -21,6 +21,8 @@ public class Child extends BaseObservable {
     //Section CS
     private String cs01 = StringUtils.EMPTY;
     private String cs02 = StringUtils.EMPTY;
+    private String cs02a = StringUtils.EMPTY;
+    private String cs02b = StringUtils.EMPTY;
     private String cs03 = StringUtils.EMPTY;
     private String cs04 = StringUtils.EMPTY;
     private String cs05 = StringUtils.EMPTY;
@@ -360,6 +362,29 @@ public class Child extends BaseObservable {
         this.cs02 = cs02;
         notifyPropertyChanged(BR.cs02);
     }
+
+
+    @Bindable
+    public String getCs02a() {
+        return cs02a;
+    }
+
+    public void setCs02a(String cs02a) {
+        this.cs02a = cs02a;
+        notifyPropertyChanged(BR.cs02a);
+    }
+
+
+    @Bindable
+    public String getCs02b() {
+        return cs02b;
+    }
+
+    public void setCs02b(String cs02b) {
+        this.cs02b = cs02b;
+        notifyPropertyChanged(BR.cs02b);
+    }
+
 
     @Bindable
     public String getCs03() {
@@ -961,6 +986,8 @@ public class Child extends BaseObservable {
         try {
             json.put("cs01", cs01)
                     .put("cs02", cs02)
+                    .put("cs02a", cs02a)
+                    .put("cs02b", cs02b)
                     .put("cs03", cs03)
                     .put("cs04", cs04)
                     .put("cs05", cs05)
@@ -1075,6 +1102,8 @@ public class Child extends BaseObservable {
 
                 this.cs01 = json.getString("cs01");
                 this.cs02 = json.getString("cs02");
+                this.cs02a = json.getString("cs02a");
+                this.cs02b = json.getString("cs02b");
                 this.cs03 = json.getString("cs03");
                 this.cs04 = json.getString("cs04");
                 this.cs05 = json.getString("cs05");
