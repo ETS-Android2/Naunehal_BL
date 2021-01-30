@@ -21,8 +21,8 @@ import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
 import edu.aku.hassannaqvi.naunehal.base.viewmodel.MainViewModel
-import edu.aku.hassannaqvi.naunehal.core.AndroidDatabaseManager
 import edu.aku.hassannaqvi.naunehal.core.MainApp
+import edu.aku.hassannaqvi.naunehal.database.AndroidDatabaseManager
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityMainBinding
 import edu.aku.hassannaqvi.naunehal.ui.list_activity.FormsReportCluster
@@ -30,6 +30,7 @@ import edu.aku.hassannaqvi.naunehal.ui.list_activity.FormsReportDate
 import edu.aku.hassannaqvi.naunehal.ui.login_activity.LoginActivity
 import edu.aku.hassannaqvi.naunehal.ui.sections.IdentificationSectionActivity
 import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity
+import edu.aku.hassannaqvi.naunehal.ui.sections.Section02CBActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithNoHistory
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
@@ -236,6 +237,10 @@ class MainActivity : AppCompatActivity() {
                 gotoActivity(FormsReportCluster::class.java)
                 return true
             }
+            R.id.action_database -> {
+                gotoActivity(AndroidDatabaseManager::class.java)
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -249,6 +254,12 @@ class MainActivity : AppCompatActivity() {
         when (v.id) {
             R.id.formA -> {
                 gotoActivity(Section01HHActivity::class.java)
+            }
+            R.id.btn01 -> {
+                gotoActivity(Section01HHActivity::class.java)
+            }
+            R.id.btn02 -> {
+                gotoActivity(Section02CBActivity::class.java)
             }
             R.id.editForm -> {
                 gotoActivity(IdentificationSectionActivity::class.java)

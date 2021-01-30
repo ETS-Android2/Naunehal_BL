@@ -147,7 +147,7 @@ public class SyncActivity extends AppCompatActivity {
 
                 // Child Info
                 uploadTables.add(new SyncModel(ChildInformationContract.ChildInfoTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedChildInfo());
+                MainApp.uploadData.add(db.getUnsyncedHHChildrens());
 
                 // Child
                 uploadTables.add(new SyncModel(ChildContract.ChildTable.TABLE_NAME));
@@ -447,7 +447,7 @@ public class SyncActivity extends AppCompatActivity {
                                             syncListAdapter.updatesyncList(uploadTables);
                                         }
                                     } else {
-                                        uploadTables.get(position).setmessage("Method not found: getUnsynced" + tableName);
+                                        uploadTables.get(position).setmessage("Method not found: updateSynced" + tableName);
                                         uploadTables.get(position).setstatus("Process Failed");
                                         uploadTables.get(position).setstatusID(1);
                                         syncListAdapter.updatesyncList(uploadTables);
@@ -516,13 +516,14 @@ public class SyncActivity extends AppCompatActivity {
         Log.d("Directory", "uploadPhotos: " + sdDir);
         if (sdDir.exists()) {
             File[] files = sdDir.listFiles(file -> (file.getPath().endsWith(".jpg") || file.getPath().endsWith(".jpeg")));
-            bi.mTextViewS.setText(files.length + " Photos remaining (waiting for server...)");
+
             bi.pBar.setProgress(0);
             Log.d("Files", "Count: " + files.length);
             if (files.length > 0) {
 
                 int fcount = Math.min(files.length, 300);
                 for (int i = 0; i < fcount; i++) {
+                    bi.mTextViewS.setText(i + " Photos found (processing...)");
                     totalFiles = files.length;
                     File fileZero = files[i];
                     TextView textView = new TextView(this);
@@ -604,6 +605,7 @@ public class SyncActivity extends AppCompatActivity {
 
                 }
 
+                bi.mTextViewS.setText(totalFiles + " Photos found (waiting for server...)");
 
             } else {
                 bi.mTextViewS.setText(files.length + " Photos remaining");
@@ -623,21 +625,21 @@ public class SyncActivity extends AppCompatActivity {
             File[] files = sdDir.listFiles(file -> (file.getPath().endsWith(".jpg") || file.getPath().endsWith(".jpeg")));
 
 
-            if (files.length > 0) {
+            if (files.length < totalFiles) {
 
                 int filesProcessed = totalFiles - files.length;
                 long tEnd = System.currentTimeMillis();
                 long tDelta = tEnd - tStart;
-                String elapsedSeconds = String.format("%d min, %d sec",
+                String elapsedSeconds = String.format("%dm, %ds",
                         TimeUnit.MILLISECONDS.toMinutes(tDelta),
                         TimeUnit.MILLISECONDS.toSeconds(tDelta) -
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(tDelta))
                 );
-                long tPerFile = tDelta / filesProcessed + 1;
+                long tPerFile = tDelta / filesProcessed;
                 long timeRemaining = files.length * tPerFile;
                 long absTimeRemaining = ((timeRemaining / 25) * 14) + timeRemaining;
                 double secRemain = absTimeRemaining / 1000;
-                String tRemain = String.format("%d min, %d sec",
+                String tRemain = String.format("%dm, %ds",
                         TimeUnit.MILLISECONDS.toMinutes(absTimeRemaining),
                         TimeUnit.MILLISECONDS.toSeconds(absTimeRemaining) -
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(absTimeRemaining))

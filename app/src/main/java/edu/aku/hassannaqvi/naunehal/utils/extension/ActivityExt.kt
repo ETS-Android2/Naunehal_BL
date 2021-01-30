@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.naunehal.utils.extension
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -19,6 +20,11 @@ fun <T : ViewModel> Fragment.obtainViewModel(activity: AppCompatActivity, viewMo
         ViewModelProvider(activity, ViewModelFactory(generalRepository)).get(viewModelClass)
 
 fun <T : AppCompatActivity> AppCompatActivity.gotoActivity(targetActivityClass: Class<T>) {
+    val intent = Intent(this, targetActivityClass)
+    startActivity(intent)
+}
+
+fun <T : Activity> Activity.gotoActivity(targetActivityClass: Class<T>) {
     val intent = Intent(this, targetActivityClass)
     startActivity(intent)
 }

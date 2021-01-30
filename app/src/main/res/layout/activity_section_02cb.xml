@@ -168,18 +168,21 @@
                         <RadioGroup
                             android:id="@+id/cb03"
                             android:layout_width="match_parent"
+                            android:orientation="horizontal"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cb0301"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{childInformation.cb03.equals(`1`)}"
                                 android:text="@string/cb0301" />
 
                             <RadioButton
                                 android:id="@+id/cb0302"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{childInformation.cb03.equals(`2`)}"
                                 android:text="@string/cb0302" />
@@ -524,25 +527,29 @@
                         <RadioGroup
                             android:id="@+id/cb16"
                             android:layout_width="match_parent"
+                            android:orientation="horizontal"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cb1601"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{childInformation.cb16.equals(`1`)}"
                                 android:text="@string/cb1601" />
 
                             <RadioButton
                                 android:id="@+id/cb1602"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{childInformation.cb16.equals(`2`)}"
                                 android:text="@string/cb1602" />
 
                             <RadioButton
                                 android:id="@+id/cb1603"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{childInformation.cb16.equals(`3`)}"
                                 android:text="@string/cb1603" />
@@ -595,34 +602,49 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <RadioButton
-                                    android:id="@+id/cb0601"
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb06.equals(`1`)}"
-                                    android:text="@string/cb0601" />
+                                    android:orientation="horizontal">
 
-                                <RadioButton
-                                    android:id="@+id/cb0602"
+                                    <RadioButton
+                                        android:id="@+id/cb0601"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:checked="@{childInformation.cb06.equals(`1`)}"
+                                        android:text="@string/cb0601" />
+
+                                    <RadioButton
+                                        android:id="@+id/cb0602"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:checked="@{childInformation.cb06.equals(`2`)}"
+                                        android:text="@string/cb0602" />
+                                </LinearLayout>
+
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb06.equals(`2`)}"
-                                    android:text="@string/cb0602" />
+                                    android:orientation="horizontal">
 
-                                <RadioButton
-                                    android:id="@+id/cb0603"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb06.equals(`3`)}"
-                                    android:text="@string/cb0603" />
+                                    <RadioButton
+                                        android:id="@+id/cb0603"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:checked="@{childInformation.cb06.equals(`3`)}"
+                                        android:text="@string/cb0603" />
 
-                                <RadioButton
-                                    android:id="@+id/cb0696"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb06.equals(`4`)}"
-                                    android:text="@string/cb0696" />
-
+                                    <RadioButton
+                                        android:id="@+id/cb0696"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:checked="@{childInformation.cb06.equals(`4`)}"
+                                        android:text="@string/cb0696" />
+                                </LinearLayout>
                             </RadioGroup>
 
                         </LinearLayout>
@@ -904,18 +926,18 @@
                                     android:checked="@{childInformation.cb10.equals(`96`)}"
                                     android:text="@string/cb1096" />
 
-                                <EditText
-                                    android:id="@+id/cb1096x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                    android:hint="@string/cb1096"
-                                    android:tag="cb1096"
-                                    android:text="@{childInformation.cb1096x}"
-                                    android:visibility="gone" />
 
                             </RadioGroup>
 
+                            <EditText
+                                android:id="@+id/cb1096x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/cb1096"
+                                android:tag="cb1096"
+                                android:text="@{childInformation.cb1096x}"
+                                android:visibility="gone" />
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
@@ -953,18 +975,21 @@
                             <RadioGroup
                                 android:id="@+id/cb11"
                                 android:layout_width="match_parent"
+                                android:orientation="horizontal"
                                 android:layout_height="wrap_content">
 
                                 <RadioButton
                                     android:id="@+id/cb1101"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:checked="@{childInformation.cb11.equals(`1`)}"
                                     android:text="@string/cb1101" />
 
                                 <RadioButton
                                     android:id="@+id/cb1102"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:checked="@{childInformation.cb11.equals(`2`)}"
                                     android:text="@string/cb1102" />
@@ -1103,106 +1128,120 @@
                             <RadioGroup
                                 android:id="@+id/cb14"
                                 android:layout_width="match_parent"
+                                android:orientation="horizontal"
                                 android:layout_height="wrap_content">
 
-                                <RadioButton
-                                    android:id="@+id/cb1401"
-                                    android:layout_width="match_parent"
+                                <LinearLayout
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`1`)}"
-                                    android:text="@string/cb1401" />
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
 
-                                <RadioButton
-                                    android:id="@+id/cb1402"
-                                    android:layout_width="match_parent"
+                                    <RadioButton
+                                        android:id="@+id/cb1401"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`1`)}"
+                                        android:text="@string/cb1401" />
+
+                                    <RadioButton
+                                        android:id="@+id/cb1402"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`2`)}"
+                                        android:text="@string/cb1402" />
+
+                                    <RadioButton
+                                        android:id="@+id/cb1403"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`3`)}"
+                                        android:text="@string/cb1403" />
+
+                                    <RadioButton
+                                        android:id="@+id/cb1404"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`4`)}"
+                                        android:text="@string/cb1404" />
+
+                                    <RadioButton
+                                        android:id="@+id/cb1405"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`5`)}"
+                                        android:text="@string/cb1405" />
+
+                                    <RadioButton
+                                        android:id="@+id/cb1406"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`6`)}"
+                                        android:text="@string/cb1406" />
+
+                                    <RadioButton
+                                        android:id="@+id/cb1407"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`7`)}"
+                                        android:text="@string/cb1407" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`2`)}"
-                                    android:text="@string/cb1402" />
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
 
-                                <RadioButton
-                                    android:id="@+id/cb1403"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`3`)}"
-                                    android:text="@string/cb1403" />
+                                    <RadioButton
+                                        android:id="@+id/cb1408"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`8`)}"
+                                        android:text="@string/cb1408" />
 
-                                <RadioButton
-                                    android:id="@+id/cb1404"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`4`)}"
-                                    android:text="@string/cb1404" />
+                                    <RadioButton
+                                        android:id="@+id/cb1409"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`9`)}"
+                                        android:text="@string/cb1409" />
 
-                                <RadioButton
-                                    android:id="@+id/cb1405"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`5`)}"
-                                    android:text="@string/cb1405" />
+                                    <RadioButton
+                                        android:id="@+id/cb1410"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`10`)}"
+                                        android:text="@string/cb1410" />
 
-                                <RadioButton
-                                    android:id="@+id/cb1406"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`6`)}"
-                                    android:text="@string/cb1406" />
+                                    <RadioButton
+                                        android:id="@+id/cb1411"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`11`)}"
+                                        android:text="@string/cb1411" />
 
-                                <RadioButton
-                                    android:id="@+id/cb1407"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`7`)}"
-                                    android:text="@string/cb1407" />
+                                    <RadioButton
+                                        android:id="@+id/cb1412"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`12`)}"
+                                        android:text="@string/cb1412" />
 
-                                <RadioButton
-                                    android:id="@+id/cb1408"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`8`)}"
-                                    android:text="@string/cb1408" />
+                                    <RadioButton
+                                        android:id="@+id/cb1413"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`13`)}"
+                                        android:text="@string/cb1413" />
 
-                                <RadioButton
-                                    android:id="@+id/cb1409"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`9`)}"
-                                    android:text="@string/cb1409" />
-
-                                <RadioButton
-                                    android:id="@+id/cb1410"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`10`)}"
-                                    android:text="@string/cb1410" />
-
-                                <RadioButton
-                                    android:id="@+id/cb1411"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`11`)}"
-                                    android:text="@string/cb1411" />
-
-                                <RadioButton
-                                    android:id="@+id/cb1412"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`12`)}"
-                                    android:text="@string/cb1412" />
-
-                                <RadioButton
-                                    android:id="@+id/cb1413"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`13`)}"
-                                    android:text="@string/cb1413" />
-
-                                <RadioButton
-                                    android:id="@+id/cb1496"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{childInformation.cb14.equals(`96`)}"
-                                    android:text="@string/cb1496" />
-
+                                    <RadioButton
+                                        android:id="@+id/cb1496"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{childInformation.cb14.equals(`96`)}"
+                                        android:text="@string/cb1496" />
+                                </LinearLayout>
                                 <EditText
                                     android:id="@+id/cb1496x"
                                     android:layout_width="match_parent"

@@ -44,6 +44,7 @@
         <activity
             android:name=".ui.SyncActivity"
             android:label="Download and Upload Data Activity"
+            android:theme=""
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.sections.ChildrenListActivity"
@@ -118,7 +119,7 @@
             android:name=".ui.MainActivity"/>
 
         <activity
-            android:name=".core.AndroidDatabaseManager"
+            android:name=".database.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
 

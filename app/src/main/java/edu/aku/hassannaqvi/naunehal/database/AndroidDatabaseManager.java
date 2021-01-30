@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.naunehal.core;
+package edu.aku.hassannaqvi.naunehal.database;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -31,12 +31,8 @@ import android.widget.TableRow.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
-
-import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 
 public class AndroidDatabaseManager extends Activity implements OnItemClickListener {
 

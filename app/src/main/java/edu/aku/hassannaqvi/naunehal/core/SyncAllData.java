@@ -1,6 +1,6 @@
 package edu.aku.hassannaqvi.naunehal.core;
 
-import   android.app.ProgressDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -37,15 +37,18 @@ public class SyncAllData extends AsyncTask<Void, Integer, String> {
 
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
-    private SyncListAdapter adapter;
-    private List<SyncModel> uploadlist;
-    private int position;
-    private String TAG;
-    private Context mContext;
+    private final SyncListAdapter adapter;
+    private final List<SyncModel> uploadlist;
+    private final int position;
+    private final String TAG;
+    private final Context mContext;
     private ProgressDialog pd;
-    private String syncClass, url, tableName, updateSyncClass;
-    private Class contractClass;
-    private Collection dbData;
+    private final String syncClass;
+    private final String url;
+    private final String tableName;
+    private final String updateSyncClass;
+    private final Class contractClass;
+    private final Collection dbData;
     private DatabaseHelper db;
 
     public SyncAllData(Context mContext, String syncClass, String updateSyncClass, Class contractClass, String url,
@@ -238,13 +241,16 @@ public class SyncAllData extends AsyncTask<Void, Integer, String> {
             pd.setMessage(syncClass + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
             pd.setTitle("Done uploading +" + syncClass + " data");
 //            pd.show();
+
+            String message = sDuplicate == 0 ? (" synced: " + sSynced) : ("Duplicates: " + sDuplicate);
+
             if (sSyncedError.toString().equals("")) {
-                uploadlist.get(position).setmessage(syncClass + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
+                uploadlist.get(position).setmessage(message);
                 uploadlist.get(position).setstatus("Completed");
                 uploadlist.get(position).setstatusID(3);
                 adapter.updatesyncList(uploadlist);
             } else {
-                uploadlist.get(position).setmessage(syncClass + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
+                uploadlist.get(position).setmessage(" Errors: " + sSyncedError);
                 uploadlist.get(position).setstatus("Failed");
                 uploadlist.get(position).setstatusID(1);
                 adapter.updatesyncList(uploadlist);

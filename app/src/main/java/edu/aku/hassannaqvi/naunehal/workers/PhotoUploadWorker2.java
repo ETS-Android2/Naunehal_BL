@@ -182,6 +182,8 @@ public class PhotoUploadWorker2 extends Worker {
         displayNotification(fileZero.toString(), "Processing...");
 
         JSONArray json;
+
+
         try {
             Log.d(TAG, "onPostExecute: " + result);
             // json = new JSONArray(result);
@@ -333,7 +335,7 @@ public class PhotoUploadWorker2 extends Worker {
 
             return response.toString();
         }
-
+            return String.valueOf(status);
         } catch (FileNotFoundException | ProtocolException e) {
             e.printStackTrace();
             data = new Data.Builder()
@@ -354,11 +356,7 @@ public class PhotoUploadWorker2 extends Worker {
             errMsg = true;
 
             return e.getMessage();
-        } finally {
-
-            return "";
         }
-
     }
 
 }
