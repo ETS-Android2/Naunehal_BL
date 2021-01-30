@@ -53,14 +53,15 @@
 
                 <Button
                     android:id="@+id/btnHHSection"
-                    android:layout_width="@dimen/_200sdp"
+                    style="@style/button"
+                    android:layout_width="@dimen/_150sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:background="@color/redDark"
+                    android:background="@color/colorPrimaryBeta"
                     android:drawableStart="@drawable/se_section"
                     android:onClick="seSectionClick"
                     android:padding="@dimen/_8sdp"
-                    android:text="Fill Household Information"
+                    android:text="HH Information"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"

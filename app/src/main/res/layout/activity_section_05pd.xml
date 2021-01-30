@@ -794,12 +794,6 @@
                                 android:text="@string/pd08a08" />
 
                             <CheckBox
-                                android:id="@+id/pd08a09"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/pd08a09" />
-
-                            <CheckBox
                                 android:id="@+id/pd08a96"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -809,13 +803,20 @@
                                 android:id="@+id/pd08a96x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/pd08a96"
                                 android:tag="pd08a96"
                                 android:text='@{pd08a96.checked ? pd08a96x.getText().toString() : ""}'
                                 android:visibility='@{pd08a96.checked? View.VISIBLE : View.GONE}' />
 
                         </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/pd08a09"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:tag="-1"
+                            android:text="@string/pd08a09" />
 
                     </LinearLayout>
 
@@ -2259,7 +2260,7 @@
                                 android:id="@+id/pd2496x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/pd2496"
                                 android:tag="pd2496"
                                 android:text='@{pd2496.checked ? pd2496x.getText().toString() : ""}'

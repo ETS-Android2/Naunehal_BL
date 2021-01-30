@@ -421,7 +421,7 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                 : bi.bf1698.isChecked() ? "98"
                 : "-1");
 
-        form.setBf17(bi.bf1701.isChecked() ? ""
+        form.setBf17(bi.bf1701.isChecked() ? "1"
                 : bi.bf1798.isChecked() ? "98"
                 : "-1");
 

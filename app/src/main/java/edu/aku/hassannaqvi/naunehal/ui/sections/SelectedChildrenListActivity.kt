@@ -183,9 +183,10 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
 
         if (MainApp.form.hhflag != "-1") {
             if (MainApp.form.hhflag == "2") {
-                bi.btnHHSection.text = "HH Section Refused"
+                bi.btnHHSection.text = "HH Information Refused"
+                bi.btnHHSection.setBackgroundColor(ContextCompat.getColor(this, R.color.redOverlay))
             } else {
-                bi.btnHHSection.text = "HH Section Completed"
+                bi.btnHHSection.text = "HH Information Completed"
                 bi.btnHHSection.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
             }
             bi.btnHHSection.isEnabled = false
