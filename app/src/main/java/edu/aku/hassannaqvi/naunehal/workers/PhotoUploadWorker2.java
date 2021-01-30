@@ -21,31 +21,31 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp._PHOTO_UPLOAD_URL;
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.sdDir;
 
 public class PhotoUploadWorker2 extends Worker {
 
-    public static final String PROJECT_NAME = "TMK_EL";
-
-    //public static final String _PHOTO_UPLOAD_URL = "http://f38158" + "/tmk_el/api/uploads.php";
-    //  public static final String _PHOTO_UPLOAD_URL = "https://vcoe1.aku.edu" + "/tmk_el/api/uploads.php";
     private final String TAG = "PhotoUploadWorker2()";
-    private final Context mContext;
     public Boolean errMsg = false;
     HttpURLConnection urlConnection;
     File fileZero;
+    private final Context mContext;
     private Data data;
 
+    // private File sdDir;
 
     public PhotoUploadWorker2(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
@@ -55,8 +55,8 @@ public class PhotoUploadWorker2 extends Worker {
 
         fileZero = new File(workerParams.getInputData().getString("filename"));
 
-        //sdDir = new File("/storage/emulated/0/Pictures/");
-        Log.d(TAG, "PhotoUploadWorker: " + sdDir.getAbsolutePath());
+        // sdDir = new File("/storage/emulated/0/Pictures/UenTmkEl2020/uploaded/");
+//        Log.d(TAG, "PhotoUploadWorker: " + sdDir.getAbsolutePath());
         displayNotification(fileZero.toString(), "Starting...");
     }
 
@@ -78,7 +78,7 @@ public class PhotoUploadWorker2 extends Worker {
         /*File directory = new File(mContext.getExternalFilesDir(
                 Environment.DIRECTORY_PICTURES), PROJECT_NAME);*/
 
-        Log.d("Files", "FileName:" + fileZero.getName());
+        //Log.d("Files", "FileName:" + fileZero.getName());
 /*                    SyncAllPhotos syncAllPhotos = new SyncAllPhotos(file.getName(), this);
                     syncAllPhotos.execute();*/
 
@@ -92,7 +92,7 @@ public class PhotoUploadWorker2 extends Worker {
             displayNotification(fileZero.toString(), "Error: " + e.getMessage());
 
             data = new Data.Builder()
-                    .putString("error", e.getMessage()).build();
+                    .putString("error", "1 " + e.getMessage()).build();
             return Result.failure(data);
         } finally {
             if (errMsg) {
@@ -101,8 +101,8 @@ public class PhotoUploadWorker2 extends Worker {
         }
 
         onPostExecute(res, fileZero.getName());
-        // return errMsg ? Result.failure(data) : Result.success(data);
-        return Result.success(data);
+        return errMsg ? Result.failure(data) : Result.success(data);
+        //return Result.success(data);
 
     }
 
@@ -224,13 +224,13 @@ public class PhotoUploadWorker2 extends Worker {
             displayNotification(fileZero.toString(), "Error: " + e.getMessage());
 
             data = new Data.Builder()
-                    .putString("error", e.getMessage()).build();
+                    .putString("error", "2 " + e.getMessage()).build();
             errMsg = true;
         }
     }
 
 
-    private String uploadPhoto(String filepath) throws Exception {
+    private String uploadPhoto(String filepath) {
         displayNotification(fileZero.toString(), "Connecting...");
 
         HttpURLConnection connection = null;
@@ -253,15 +253,17 @@ public class PhotoUploadWorker2 extends Worker {
         File file = new File(filepath);
         FileInputStream fileInputStream = null;
         Log.d(TAG, "uploadPhoto: " + file);
-        fileInputStream = new FileInputStream(file);
-
-
-        URL url = null;
         try {
-            url = new URL(_PHOTO_UPLOAD_URL);
-        } catch (MalformedURLException e) {
-            Log.d(TAG, "uploadPhoto: " + e.getMessage());
-        }
+            fileInputStream = new FileInputStream(file);
+
+
+            URL url = null;
+            try {
+                url = new URL(_PHOTO_UPLOAD_URL);
+            } catch (MalformedURLException e) {
+                Log.d(TAG, "uploadPhoto: " + e.getMessage());
+                return e.getMessage();
+            }
         Log.d(TAG, "uploadPhoto: " + file);
 
         connection = (HttpURLConnection) url.openConnection();
@@ -301,9 +303,9 @@ public class PhotoUploadWorker2 extends Worker {
         outputStream.writeBytes(twoHyphens + boundary + lineEnd);
         outputStream.writeBytes("Content-Disposition: form-data; name=\"tagname\"" + lineEnd);
         outputStream.writeBytes("Content-Type: text/plain" + lineEnd);
-        outputStream.writeBytes(lineEnd);
-        outputStream.writeBytes("9999");  // DEVICETAG
-        outputStream.writeBytes(lineEnd);
+            outputStream.writeBytes(lineEnd);
+            outputStream.writeBytes(MainApp.appInfo.getTagName() == null ? "" : MainApp.appInfo.getTagName());  // DEVICETAG
+            outputStream.writeBytes(lineEnd);
         outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
         inputStream = connection.getInputStream();
@@ -330,11 +332,33 @@ public class PhotoUploadWorker2 extends Worker {
             outputStream.close();
 
             return response.toString();
-        } else {
-            displayNotification(fileZero.toString(), "No server response. Status Code:(" + status + ")");
-
-            throw new Exception("Non ok response returned");
         }
+
+        } catch (FileNotFoundException | ProtocolException e) {
+            e.printStackTrace();
+            data = new Data.Builder()
+                    .putString("error", "1 " + e.getMessage()).build();
+            errMsg = true;
+            return e.getMessage();
+        } catch (IOException e) {
+            e.printStackTrace();
+            data = new Data.Builder()
+                    .putString("error", "1 " + e.getMessage()).build();
+            errMsg = true;
+
+            return e.getMessage();
+        } catch (Exception e) {
+            e.printStackTrace();
+            data = new Data.Builder()
+                    .putString("error", "1 " + e.getMessage()).build();
+            errMsg = true;
+
+            return e.getMessage();
+        } finally {
+
+            return "";
+        }
+
     }
 
 }
