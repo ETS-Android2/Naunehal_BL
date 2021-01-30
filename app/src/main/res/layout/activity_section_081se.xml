@@ -156,7 +156,7 @@
                                 android:id="@+id/se0196x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se0196"
                                 android:tag="se0196"
                                 android:text='@{se0196.checked ? se0196x.getText().toString() : ""}'
@@ -291,7 +291,7 @@
                                 android:id="@+id/se0296x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se0296"
                                 android:tag="se0296"
                                 android:text='@{se0296.checked ? se0296x.getText().toString() : ""}'
@@ -462,7 +462,7 @@
                                 android:id="@+id/se0396x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se0396"
                                 android:tag="se0396"
                                 android:text='@{se0396.checked ? se0396x.getText().toString() : ""}'
@@ -621,7 +621,7 @@
                                 android:id="@+id/se0496x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se0496"
                                 android:tag="se0496"
                                 android:text='@{se0496.checked ? se0496x.getText().toString() : ""}'
@@ -693,7 +693,7 @@
                                 android:id="@+id/se0596x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se0596"
                                 android:tag="se0596"
                                 android:text='@{se0596.checked ? se0596x.getText().toString() : ""}'
@@ -913,7 +913,7 @@
                                 android:id="@+id/se0896x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se0896"
                                 android:tag="se0896"
                                 android:text='@{se0896.checked ? se0896x.getText().toString() : ""}'
@@ -1067,7 +1067,7 @@
                                 android:id="@+id/se1099x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se1099"
                                 android:tag="se1099"
                                 android:text='@{se1099.checked ? se1099x.getText().toString() : ""}'
@@ -1202,7 +1202,7 @@
                                 android:id="@+id/se1196x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se1196"
                                 android:tag="se1196"
                                 android:text='@{se1196.checked ? se1196x.getText().toString() : ""}'
@@ -1273,7 +1273,7 @@
                                 android:id="@+id/se1296x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se1296"
                                 android:tag="se1296"
                                 android:text='@{se1296.checked ? se1296x.getText().toString() : ""}'
@@ -1921,7 +1921,7 @@
                             android:id="@+id/se189601x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/se189601"
                             android:tag="se189601"
                             android:text='@{se189601.checked ? se189601x.getText().toString() : ""}'
@@ -2045,7 +2045,7 @@
                                 android:id="@+id/se1996x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se1996"
                                 android:tag="se1996"
                                 android:text='@{se1996.checked ? se1996x.getText().toString() : ""}'
@@ -2136,7 +2136,7 @@
                                 android:id="@+id/se2096x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se2096"
                                 android:tag="se2096"
                                 android:text='@{se2096.checked ? se2096x.getText().toString() : ""}'
@@ -2221,7 +2221,7 @@
                                 android:id="@+id/se2196x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/se2196"
                                 android:tag="se2196"
                                 android:text='@{se2196.checked ? se2196x.getText().toString() : ""}'

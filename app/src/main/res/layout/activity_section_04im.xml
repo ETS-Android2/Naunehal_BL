@@ -3485,7 +3485,7 @@
                                         android:id="@+id/im23a96x"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                         android:hint="@string/im23a96"
                                         android:tag="im23a96"
                                         android:text='@{im23a96.checked ? im23a96x.getText().toString() : ""}'
