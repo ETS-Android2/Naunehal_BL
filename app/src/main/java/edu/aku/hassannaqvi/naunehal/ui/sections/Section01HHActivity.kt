@@ -277,7 +277,7 @@ class Section01HHActivity : AppCompatActivity() {
             }
             if (response != 0) {
                 if (response == 2) {
-                    openWarningDialogh("WARNING", "There's No Child < 5 Years")
+                    openWarningDialogh("WARNING", resources.getString(R.string.hh2607))
                     return
                 }
                 gotoActivityWithSerializable(EndingActivity::class.java, CONSTANTS.SECTION_MAIN_CHECK_FOR_END, response)
