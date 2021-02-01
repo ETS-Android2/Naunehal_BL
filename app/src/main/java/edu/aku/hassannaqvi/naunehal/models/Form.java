@@ -3,6 +3,9 @@ package edu.aku.hassannaqvi.naunehal.models;
 import android.database.Cursor;
 import android.util.Log;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
 import com.google.gson.GsonBuilder;
 
 import org.apache.commons.lang3.StringUtils;
@@ -10,8 +13,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.LocalDate;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
 import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -151,7 +152,18 @@ public class Form extends BaseObservable {
     private String bf07 = StringUtils.EMPTY;
     private String bf0796x = StringUtils.EMPTY;
     private String bf08 = StringUtils.EMPTY;
-    private String bf09 = StringUtils.EMPTY;
+    private String bf0901 = StringUtils.EMPTY;
+    private String bf0902 = StringUtils.EMPTY;
+    private String bf0903 = StringUtils.EMPTY;
+    private String bf0904 = StringUtils.EMPTY;
+    private String bf0905 = StringUtils.EMPTY;
+    private String bf0906 = StringUtils.EMPTY;
+    private String bf0907 = StringUtils.EMPTY;
+    private String bf0908 = StringUtils.EMPTY;
+    private String bf0909 = StringUtils.EMPTY;
+    private String bf0910 = StringUtils.EMPTY;
+    private String bf0999 = StringUtils.EMPTY;
+    private String bf0996 = StringUtils.EMPTY;
     private String bf0996x = StringUtils.EMPTY;
     private String bf10 = StringUtils.EMPTY;
     private String bf11 = StringUtils.EMPTY;
@@ -1923,15 +1935,138 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.bf08);
     }
 
+
     @Bindable
-    public String getBf09() {
-        return bf09;
+    public String getBf0901() {
+        return bf0901;
     }
 
-    public void setBf09(String bf09) {
-        this.bf09 = bf09;
-        notifyPropertyChanged(BR.bf09);
+    public void setBf0901(String bf0901) {
+        this.bf0901 = bf0901;
+        notifyPropertyChanged(BR.bf0901);
     }
+
+
+    @Bindable
+    public String getBf0902() {
+        return bf0902;
+    }
+
+    public void setBf0902(String bf0902) {
+        this.bf0902 = bf0902;
+        notifyPropertyChanged(BR.bf0902);
+    }
+
+
+    @Bindable
+    public String getBf0903() {
+        return bf0903;
+    }
+
+    public void setBf0903(String bf0903) {
+        this.bf0903 = bf0903;
+        notifyPropertyChanged(BR.bf0903);
+    }
+
+
+    @Bindable
+    public String getBf0904() {
+        return bf0904;
+    }
+
+    public void setBf0904(String bf0904) {
+        this.bf0904 = bf0904;
+        notifyPropertyChanged(BR.bf0904);
+    }
+
+
+    @Bindable
+    public String getBf0905() {
+        return bf0905;
+    }
+
+    public void setBf0905(String bf0905) {
+        this.bf0905 = bf0905;
+        notifyPropertyChanged(BR.bf0905);
+    }
+
+
+    @Bindable
+    public String getBf0906() {
+        return bf0906;
+    }
+
+    public void setBf0906(String bf0906) {
+        this.bf0906 = bf0906;
+        notifyPropertyChanged(BR.bf0906);
+    }
+
+
+    @Bindable
+    public String getBf0907() {
+        return bf0907;
+    }
+
+    public void setBf0907(String bf0907) {
+        this.bf0907 = bf0907;
+        notifyPropertyChanged(BR.bf0907);
+    }
+
+
+    @Bindable
+    public String getBf0908() {
+        return bf0908;
+    }
+
+    public void setBf0908(String bf0908) {
+        this.bf0908 = bf0908;
+        notifyPropertyChanged(BR.bf0908);
+    }
+
+
+    @Bindable
+    public String getBf0909() {
+        return bf0909;
+    }
+
+    public void setBf0909(String bf0909) {
+        this.bf0909 = bf0909;
+        notifyPropertyChanged(BR.bf0909);
+    }
+
+
+    @Bindable
+    public String getBf0910() {
+        return bf0910;
+    }
+
+    public void setBf0910(String bf0910) {
+        this.bf0910 = bf0910;
+        notifyPropertyChanged(BR.bf0910);
+    }
+
+
+    @Bindable
+    public String getBf0999() {
+        return bf0999;
+    }
+
+    public void setBf0999(String bf0999) {
+        this.bf0999 = bf0999;
+        notifyPropertyChanged(BR.bf0999);
+    }
+
+
+    @Bindable
+    public String getBf0996() {
+        return bf0996;
+    }
+
+    public void setBf0996(String bf0996) {
+        this.bf0996 = bf0996;
+        notifyPropertyChanged(BR.bf0996);
+    }
+
 
     @Bindable
     public String getBf0996x() {
@@ -1942,6 +2077,7 @@ public class Form extends BaseObservable {
         this.bf0996x = bf0996x;
         notifyPropertyChanged(BR.bf0996x);
     }
+
 
     @Bindable
     public String getBf10() {
@@ -4666,7 +4802,18 @@ public class Form extends BaseObservable {
                     .put("bf07", bf07)
                     .put("bf0796x", bf0796x)
                     .put("bf08", bf08)
-                    .put("bf09", bf09)
+                    .put("bf0901", bf0901)
+                    .put("bf0902", bf0902)
+                    .put("bf0903", bf0903)
+                    .put("bf0904", bf0904)
+                    .put("bf0905", bf0905)
+                    .put("bf0906", bf0906)
+                    .put("bf0907", bf0907)
+                    .put("bf0908", bf0908)
+                    .put("bf0909", bf0909)
+                    .put("bf0910", bf0910)
+                    .put("bf0999", bf0999)
+                    .put("bf0996", bf0996)
                     .put("bf0996x", bf0996x)
                     .put("bf10", bf10)
                     .put("bf11", bf11)
@@ -5163,7 +5310,18 @@ public class Form extends BaseObservable {
                 this.bf07 = json.getString("bf07");
                 this.bf0796x = json.getString("bf0796x");
                 this.bf08 = json.getString("bf08");
-                this.bf09 = json.getString("bf09");
+                this.bf0901 = json.getString("bf0901");
+                this.bf0902 = json.getString("bf0902");
+                this.bf0903 = json.getString("bf0903");
+                this.bf0904 = json.getString("bf0904");
+                this.bf0905 = json.getString("bf0905");
+                this.bf0906 = json.getString("bf0906");
+                this.bf0907 = json.getString("bf0907");
+                this.bf0908 = json.getString("bf0908");
+                this.bf0909 = json.getString("bf0909");
+                this.bf0910 = json.getString("bf0910");
+                this.bf0999 = json.getString("bf0999");
+                this.bf0996 = json.getString("bf0996");
                 this.bf0996x = json.getString("bf0996x");
                 this.bf10 = json.getString("bf10");
                 this.bf11 = json.getString("bf11");

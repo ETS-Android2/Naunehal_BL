@@ -301,7 +301,12 @@
     <string name="im04dd">Day</string>
     <string name="im04mm">Month</string>
     <string name="im04yy">Year</string>
-    <string name="im05_title1">INSTRUCTION Please record the date of immunization for each antigen from the card 1.	If the date is recorded but not readable, record 44 in day column 2.	If the date is not recorded but a tick () mark is present, record 88 in day column 3.	If neither date is recorded nor a tick () mark is present, prompt the mother for each such antigen and record 66 if she confirms the receipt of respective antigen by recall otherwise record 97.</string>
+    <string name="im05_title1"> INSTRUCTION Please record the date of immunization for each antigen from the card 1.	If the date is recorded but not readable, record 44 in day column 2.	If the date is not recorded but a tick () mark is present, record 88 in day column 3.	If neither date is recorded nor a tick () mark is present, prompt the mother for each such antigen and record 66 if she confirms the receipt of respective antigen by recall otherwise record 97.</string>
+    <string name="im05_title11"> INSTRUCTION Please record the date of immunization for each antigen from the card </string>
+    <string name="im05_title12"> \t1 - If the date is recorded but not readable, record 44 in day column </string>
+    <string name="im05_title13"> \t2 - If the date is not recorded but a tick (&#x2713;) mark is present, record 88 in day column. </string>
+    <string name="im05_title14"> \t3 - If neither date is recorded nor a tick (&#x2713;) mark is present, prompt the mother for each such antigen and record 66. </string>
+    <string name="im05_title15"> \t4 - if she confirms the receipt of respective antigen by recall otherwise record 97. </string>
     <string name="im0501">At Birth  -BCG</string>
     <string name="im0501dd">Day</string>
     <string name="im0501mm">Month</string>

@@ -152,7 +152,7 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
         /*
         * Skip for child age < 6 months
         * */
-        if (info.totalMonths < 6) {
+        if ((info.cb0501.toInt() * 12) + Integer.parseInt(info.cb0502) < 6) {
             bi.fldGrpCVcs20.visibility = View.GONE
             bi.fldGrpCVcs21.visibility = View.GONE
         }
@@ -482,13 +482,16 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
 
     }
 
+
     private fun formValidation(): Boolean {
         return Validator.emptyCheckingContainer(this, bi.GrpName)
     }
 
+
     fun BtnEnd(view: View) {
         contextEndActivity(this)
     }
+
 
     override fun endSecActivity(flag: Boolean) {
         saveDraft()
@@ -497,6 +500,7 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             finish()
         }
     }
+
 
     override fun onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show()

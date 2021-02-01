@@ -216,21 +216,18 @@
                                 android:id="@+id/im0302"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-
                                 android:text="@string/im0302" />
 
                             <RadioButton
                                 android:id="@+id/im0303"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-
                                 android:text="@string/im0303" />
 
                             <RadioButton
                                 android:id="@+id/im0304"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-
                                 android:text="@string/im0304" />
 
                             <RadioButton
@@ -477,7 +474,31 @@
                             style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/im05_title1" />
+                            android:text="@string/im05_title11" />
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_title12" />
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_title13" />
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_title14" />
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im05_title15" />
 
 
                         <!-- im0501  Title   -->

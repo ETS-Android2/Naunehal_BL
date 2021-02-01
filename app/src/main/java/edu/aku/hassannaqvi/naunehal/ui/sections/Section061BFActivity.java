@@ -19,7 +19,6 @@ import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection061bfBinding;
 import edu.aku.hassannaqvi.naunehal.models.ChildCard;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
-import edu.aku.hassannaqvi.naunehal.utils.AndroidUtilityKt;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
 
@@ -91,6 +90,8 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                 bi.fldGrpCVbf09.setVisibility(View.VISIBLE);
             }
         });
+
+        bi.bf0999.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.bf09, !b));
 
         bi.bf10.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVbf11);
@@ -247,21 +248,19 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                 : bi.bf0898.isChecked() ? "98"
                 : "-1");
 
-        form.setBf09(bi.bf0901.isChecked() ? "1"
-                : bi.bf0902.isChecked() ? "2"
-                : bi.bf0903.isChecked() ? "3"
-                : bi.bf0904.isChecked() ? "4"
-                : bi.bf0905.isChecked() ? "5"
-                : bi.bf0906.isChecked() ? "6"
-                : bi.bf0907.isChecked() ? "7"
-                : bi.bf0908.isChecked() ? "8"
-                : bi.bf0909.isChecked() ? "9"
-                : bi.bf0910.isChecked() ? "10"
-                : bi.bf0999.isChecked() ? "99"
-                : bi.bf0996.isChecked() ? "96"
-                : "-1");
-
-        form.setBf0996x(bi.bf0996x.getText().toString());
+        form.setBf0901(bi.bf0901.isChecked() ? "1" : "-1");
+        form.setBf0902(bi.bf0902.isChecked() ? "2" : "-1");
+        form.setBf0903(bi.bf0903.isChecked() ? "3" : "-1");
+        form.setBf0904(bi.bf0904.isChecked() ? "4" : "-1");
+        form.setBf0905(bi.bf0905.isChecked() ? "5" : "-1");
+        form.setBf0906(bi.bf0906.isChecked() ? "6" : "-1");
+        form.setBf0907(bi.bf0907.isChecked() ? "7" : "-1");
+        form.setBf0908(bi.bf0908.isChecked() ? "8" : "-1");
+        form.setBf0909(bi.bf0909.isChecked() ? "9" : "-1");
+        form.setBf0910(bi.bf0910.isChecked() ? "10" : "-1");
+        form.setBf0999(bi.bf0999.isChecked() ? "99" : "-1");
+        form.setBf0996(bi.bf0996.isChecked() ? "96" : "-1");
+        form.setBf0996x(bi.bf0996x.getText().toString().trim().isEmpty() ? "-1" : bi.bf0996x.getText().toString());
 
         form.setBf10(bi.bf1001.isChecked() ? "1"
                 : bi.bf1002.isChecked() ? "2"
