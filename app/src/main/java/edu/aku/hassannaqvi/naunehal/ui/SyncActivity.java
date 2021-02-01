@@ -177,13 +177,14 @@ public class SyncActivity extends AppCompatActivity {
                 if (sync_flag) {
                     distCode = getIntent().getStringExtra(CONSTANTS.SYNC_DISTRICTID_LOGIN);
                     downloadTables.add(new SyncModel(BLRandom.TableRandom.TABLE_NAME));
+                    downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
                 } else {
                     // Set tables to DOWNLOAD
                     downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
                     downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
-                    downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
+
                 }
 
                 setAdapter(downloadTables);
@@ -211,6 +212,10 @@ public class SyncActivity extends AppCompatActivity {
             if (downloadTables.get(i).gettableName().equals(BLRandom.TableRandom.TABLE_NAME)) {
                 data.putString("where", BLRandom.TableRandom.COLUMN_DIST_CODE + "='" + distCode + "'");
             }
+            if (downloadTables.get(i).gettableName().equals(Clusters.TableClusters.TABLE_NAME)) {
+                data.putString("where", Clusters.TableClusters.COLUMN_DIST_CODE + "='" + distCode + "'");
+            }
+
             OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(DataDownWorkerALL.class)
                     .addTag(String.valueOf(i))
                     .setInputData(data.build()).build();

@@ -64,6 +64,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         MainApp.immunization = new Immunization();
         bi.setCallback(this);
         setSupportActionBar(bi.toolbar);
+        setTitle(R.string.im1_title1);
         //bi.setForm(MainApp.immunization);
         setupSkips();
         setupTextWatchers();
