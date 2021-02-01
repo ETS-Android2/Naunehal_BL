@@ -676,6 +676,9 @@ public class SyncActivity extends AppCompatActivity {
 
                 // WORK MANAGER
                 progress = files.length + "/" + totalFiles + " Photos remaining \r\nTime remaining: " + tRemain;
+                if (TimeUnit.MILLISECONDS.toMinutes(absTimeRemaining / files.length) > 1) {
+                    progress += "\r\n (!) - slow internet detected";
+                }
                 bi.mTextViewS.setText(progress);
                 int fProgress = (int) Math.ceil(((totalFiles - files.length) * 100) / totalFiles);
                 bi.pBar.setProgress(fProgress);
