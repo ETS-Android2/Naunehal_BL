@@ -468,17 +468,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+<LinearLayout
+    style="@style/info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!-- im05title1  Title   -->
+    <TextView
+        style="@style/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/im05_title11" />
 
-                        <!-- im05title1  Title   -->
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/im05_title11" />
-
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
+    <TextView
+        style="@style/info"
+        android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/im05_title12" />
 
@@ -494,12 +498,12 @@
                             android:layout_height="wrap_content"
                             android:text="@string/im05_title14" />
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/im05_title15" />
-
+    <TextView
+        style="@style/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/im05_title15" />
+</LinearLayout>
 
                         <!-- im0501  Title   -->
                         <androidx.cardview.widget.CardView style="@style/cardView">
