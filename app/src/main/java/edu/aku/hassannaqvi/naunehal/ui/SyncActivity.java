@@ -1,9 +1,12 @@
 package edu.aku.hassannaqvi.naunehal.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -32,6 +35,8 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -75,6 +80,7 @@ public class SyncActivity extends AppCompatActivity {
     private int totalFiles;
     private long tStart;
     private String progress;
+    final Handler handler = new Handler();
     // List<JSONArray> uploadData;
 
     @Override
@@ -516,93 +522,114 @@ public class SyncActivity extends AppCompatActivity {
         Log.d("Directory", "uploadPhotos: " + sdDir);
         if (sdDir.exists()) {
             File[] files = sdDir.listFiles(file -> (file.getPath().endsWith(".jpg") || file.getPath().endsWith(".jpeg")));
-
+            sortBySize(files);
             bi.pBar.setProgress(0);
             Log.d("Files", "Count: " + files.length);
             if (files.length > 0) {
 
                 int fcount = Math.min(files.length, 300);
                 for (int i = 0; i < fcount; i++) {
-                    bi.mTextViewS.setText(i + " Photos found (processing...)");
-                    totalFiles = files.length;
-                    File fileZero = files[i];
-                    TextView textView = new TextView(this);
-                    textView.setText("PROCESSING: " + fileZero.getName());
+                    TextView textView = new TextView(SyncActivity.this);
+                    textView.setText("PROCESSING: " + files[i].getName());
                     textView.setId(i);
                     bi.photoLayout.addView(textView);
-                    tStart = System.currentTimeMillis();
+                    bi.mTextViewS.setText(i + " Photos found (processing...)");
 
-                    // Log.d("Files", "FileName:" + fileZero.getName());
-                    // Log.d("Files", "FileName:" + fileZero.getName());
-                    //   SyncAllPhotos syncAllPhotos = new SyncAllPhotos(file.getName(), this);
-
-                    Constraints constraints = new Constraints.Builder()
-                            .setRequiredNetworkType(NetworkType.CONNECTED)
-                            .build();
-
-                    Data data = new Data.Builder()
-                            .putString("filename", fileZero.getName())
-                            .putInt("fCount", i)
-                            .build();
-
-                    //This is the subclass of our WorkRequest
-
-                    OneTimeWorkRequest photoUpload = new OneTimeWorkRequest.Builder(PhotoUploadWorker2.class).setInputData(data).setConstraints(constraints).build();
-
-
-                    WorkManager.getInstance().enqueue(photoUpload);
-                    //Listening to the work status
                     int finalI = i;
-                    final TextView[] mTextView1 = new TextView[1];
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
 
-                    WorkManager.getInstance().getWorkInfoByIdLiveData(photoUpload.getId())
-                            .observe(this, new Observer<WorkInfo>() {
+                            totalFiles = files.length;
 
-                                @Override
-                                public void onChanged(@Nullable WorkInfo workInfo) {
-                                    //mTextViewS.append("\n" + workInfo.getState().name());
-                                    //Displaying the status into TextView
-                                    // mTextViewS.append("\n"+workInfo.getState().name());
-                                    mTextView1[0] = findViewById(finalI);
-                                    if (workInfo.getState() == WorkInfo.State.SUCCEEDED) {
-                                        String message = workInfo.getState().name() + ": " + workInfo.getOutputData().getString("message");
-                                        mTextView1[0].setText(message);
-                                        mTextView1[0].setTextColor(Color.parseColor("#007f00"));
 
-                                        upDatePhotoCount();
-                                    }
+                            File fileZero = files[finalI];
 
-                                    if (workInfo.getState() == WorkInfo.State.FAILED) {
-                                        Toast.makeText(SyncActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-                                        String error = workInfo.getState().name() + ": " + workInfo.getOutputData().getString("error");
-                                        mTextView1[0].setText(error);
-                                        mTextView1[0].setTextColor(Color.RED);
+                            tStart = System.currentTimeMillis();
 
-                                        upDatePhotoCount();
-                                    }
+                            // Log.d("Files", "FileName:" + fileZero.getName());
+                            // Log.d("Files", "FileName:" + fileZero.getName());
+                            //   SyncAllPhotos syncAllPhotos = new SyncAllPhotos(file.getName(), this);
 
-                                    if (workInfo.getState() == WorkInfo.State.CANCELLED) {
-                                        //String message = workInfo.getState().name() + ": " + workInfo.getOutputData().getString("message");
-                                        mTextView1[0].setText("CANCELLED: " + fileZero.getName());
-                                        mTextView1[0].setTextColor(Color.RED);
+                            Constraints constraints = new Constraints.Builder()
+                                    .setRequiredNetworkType(NetworkType.CONNECTED)
+                                    .build();
 
-                                        upDatePhotoCount();
-                                    }
+                            Data data = new Data.Builder()
+                                    .putString("filename", fileZero.getName())
+                                    .putInt("fCount", finalI)
+                                    .build();
+
+                            //This is the subclass of our WorkRequest
+
+                            OneTimeWorkRequest photoUpload = new OneTimeWorkRequest.Builder(PhotoUploadWorker2.class).setInputData(data).setConstraints(constraints).build();
+
+
+                            WorkManager.getInstance().enqueue(photoUpload);
+                            //Listening to the work status
+                            final TextView[] mTextView1 = new TextView[1];
+
+                            WorkManager.getInstance().getWorkInfoByIdLiveData(photoUpload.getId())
+                                    .observe(SyncActivity.this, new Observer<WorkInfo>() {
+
+                                        @Override
+                                        public void onChanged(@Nullable WorkInfo workInfo) {
+                                            //mTextViewS.append("\n" + workInfo.getState().name());
+                                            //Displaying the status into TextView
+                                            // mTextViewS.append("\n"+workInfo.getState().name());
+                                            mTextView1[0] = findViewById(finalI);
+                                            String message = workInfo.getState().name() + ": " + files[finalI].getName();
+                                            mTextView1[0].setText(message);
+                                            if (workInfo.getState() == WorkInfo.State.SUCCEEDED) {
+                                                message = workInfo.getState().name() + ": " + workInfo.getOutputData().getString("message");
+                                                mTextView1[0].setText(message);
+                                                mTextView1[0].setTextColor(Color.parseColor("#007f00"));
+                                                mTextView1[0].animate()
+                                                        .translationY(-mTextView1[0].getHeight() * finalI)
+                                                        .alpha(0.0f)
+                                                        .setDuration(3500)
+                                                        .setListener(new AnimatorListenerAdapter() {
+                                                            @Override
+                                                            public void onAnimationEnd(Animator animation) {
+                                                                super.onAnimationEnd(animation);
+                                                                mTextView1[0].setVisibility(View.GONE);
+                                                            }
+                                                        });
+                                                upDatePhotoCount();
+                                            }
+
+                                            if (workInfo.getState() == WorkInfo.State.FAILED) {
+                                                Toast.makeText(SyncActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                                                String error = workInfo.getState().name() + ": " + workInfo.getOutputData().getString("error");
+                                                mTextView1[0].setText(error);
+                                                mTextView1[0].setTextColor(Color.RED);
+
+                                                upDatePhotoCount();
+                                            }
+
+                                            if (workInfo.getState() == WorkInfo.State.CANCELLED) {
+                                                //String message = workInfo.getState().name() + ": " + workInfo.getOutputData().getString("message");
+                                                mTextView1[0].setText("CANCELLED: " + fileZero.getName());
+                                                mTextView1[0].setTextColor(Color.RED);
+
+                                                upDatePhotoCount();
+                                            }
                                     /*String fCount = String.valueOf(workInfo.getOutputData().getInt("fCount", 0));
                                     Toast.makeText(SyncActivity.this, "Files Left: " + fCount, Toast.LENGTH_SHORT).show();*/
+                                        }
+                                    });
+
+                            if (finalI % 25 == 0) {
+                                try {
+                                    //3000 ms delay to process upload of next file.
+                                    Thread.sleep(14000);
+
+                                } catch (Exception e) {
+                                    e.printStackTrace();
                                 }
-                            });
-
-                    if (i%25 == 0){
-                        try {
-                            //3000 ms delay to process upload of next file.
-                            Thread.sleep(14000);
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                            }
                         }
-                    }
-
+                    }, 300);
                 }
 
                 bi.mTextViewS.setText(totalFiles + " Photos found (waiting for server...)");
@@ -630,7 +657,8 @@ public class SyncActivity extends AppCompatActivity {
                 int filesProcessed = totalFiles - files.length;
                 long tEnd = System.currentTimeMillis();
                 long tDelta = tEnd - tStart;
-                String elapsedSeconds = String.format("%dm, %ds",
+                String elapsedSeconds = String.format("%dh:%dm %ds",
+                        TimeUnit.MILLISECONDS.toHours(tDelta),
                         TimeUnit.MILLISECONDS.toMinutes(tDelta),
                         TimeUnit.MILLISECONDS.toSeconds(tDelta) -
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(tDelta))
@@ -639,14 +667,18 @@ public class SyncActivity extends AppCompatActivity {
                 long timeRemaining = files.length * tPerFile;
                 long absTimeRemaining = ((timeRemaining / 25) * 14) + timeRemaining;
                 double secRemain = absTimeRemaining / 1000;
-                String tRemain = String.format("%dm, %ds",
+                String tRemain = String.format("%dh:%dm %ds",
+                        TimeUnit.MILLISECONDS.toHours(absTimeRemaining),
                         TimeUnit.MILLISECONDS.toMinutes(absTimeRemaining),
                         TimeUnit.MILLISECONDS.toSeconds(absTimeRemaining) -
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(absTimeRemaining))
                 );
 
                 // WORK MANAGER
-                progress = files.length + " Photos remaining \r\n( Time elapsed: " + elapsedSeconds + " - Time remaining: " + tRemain + " )";
+                progress = files.length + "/" + totalFiles + " Photos remaining \r\nTime remaining: " + tRemain;
+                if (TimeUnit.MILLISECONDS.toMinutes(absTimeRemaining / files.length) > 1) {
+                    progress += "\r\n (!) - slow internet detected";
+                }
                 bi.mTextViewS.setText(progress);
                 int fProgress = (int) Math.ceil(((totalFiles - files.length) * 100) / totalFiles);
                 bi.pBar.setProgress(fProgress);
@@ -661,4 +693,13 @@ public class SyncActivity extends AppCompatActivity {
         }
     }
 
+
+    private void sortBySize(File[] files) {
+        Arrays.sort(files, new Comparator<File>() {
+            @Override
+            public int compare(File t, File t1) {
+                return (int) (t.length() - t1.length());
+            }
+        });
+    }
 }

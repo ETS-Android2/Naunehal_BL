@@ -29,6 +29,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.Random;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -44,6 +45,7 @@ public class PhotoUploadWorker2 extends Worker {
     File fileZero;
     private final Context mContext;
     private Data data;
+    private final int photoid;
 
     // private File sdDir;
 
@@ -54,10 +56,10 @@ public class PhotoUploadWorker2 extends Worker {
                 Environment.DIRECTORY_PICTURES), PROJECT_NAME);*/
 
         fileZero = new File(workerParams.getInputData().getString("filename"));
-
+        photoid = new Random().nextInt();
         // sdDir = new File("/storage/emulated/0/Pictures/UenTmkEl2020/uploaded/");
 //        Log.d(TAG, "PhotoUploadWorker: " + sdDir.getAbsolutePath());
-        displayNotification(fileZero.toString(), "Starting...");
+        displayNotification(fileZero.toString(), "Starting...", 100, 0);
     }
 
     /*
@@ -89,7 +91,7 @@ public class PhotoUploadWorker2 extends Worker {
 
         } catch (Exception e) {
             Log.d(TAG, "doWork: " + e.getMessage());
-            displayNotification(fileZero.toString(), "Error: " + e.getMessage());
+            displayNotification(fileZero.toString(), "Error: " + e.getMessage(), 100, 0);
 
             data = new Data.Builder()
                     .putString("error", "1 " + e.getMessage()).build();
@@ -113,7 +115,7 @@ public class PhotoUploadWorker2 extends Worker {
      * If you are confused about it
      * you should check the Android Notification Tutorial
      * */
-    private void displayNotification(String title, String task) {
+    private void displayNotification(String title, String task, int maxProgress, int curProgress) {
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -126,11 +128,16 @@ public class PhotoUploadWorker2 extends Worker {
                 .setContentText(task)
                 .setSmallIcon(R.mipmap.ic_launcher);
 
-        final int maxProgress = 100;
-        int curProgress = 0;
-        //notification.setProgress(length, curProgress, false);
+        if (curProgress >= maxProgress) {
 
-        notificationManager.notify(1, notification.build());
+            notification.setContentTitle("[DONE] " + title);
+
+            notification.setTimeoutAfter(3500);
+        }
+        notification.setProgress(maxProgress, curProgress, false);
+
+
+        notificationManager.notify(photoid, notification.build());
 
     }
 
@@ -179,7 +186,7 @@ public class PhotoUploadWorker2 extends Worker {
     }
 
     private void onPostExecute(String result, String fileName) {
-        displayNotification(fileZero.toString(), "Processing...");
+        displayNotification(fileZero.toString(), "Processing...", 100, 0);
 
         JSONArray json;
 
@@ -194,7 +201,7 @@ public class PhotoUploadWorker2 extends Worker {
             if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
 
                 //TODO:   db.updateUploadedPhoto(jsonObject.getString("id"));  // UPDATE SYNCED
-                displayNotification(fileZero.toString(), "Successfully Uploaded.");
+                displayNotification(fileZero.toString(), "Successfully Uploaded.", 100, 0);
 
                 data = new Data.Builder()
                         .putString("message", fileName).build();
@@ -203,7 +210,7 @@ public class PhotoUploadWorker2 extends Worker {
 
 
             } else if (jsonObject.getString("status").equals("2") && jsonObject.getString("error").equals("0")) {
-                displayNotification(fileZero.toString(), "Duplicate file.");
+                displayNotification(fileZero.toString(), "Duplicate file.", 100, 0);
 
                 data = new Data.Builder()
                         .putString("message", "Duplicate: " + fileName).build();
@@ -212,7 +219,7 @@ public class PhotoUploadWorker2 extends Worker {
 
 
             } else {
-                displayNotification(fileZero.toString(), "Error: " + jsonObject.getString("message"));
+                displayNotification(fileZero.toString(), "Error: " + jsonObject.getString("message"), 100, 0);
 
                 data = new Data.Builder()
                         .putString("error", jsonObject.getString("message")).build();
@@ -223,7 +230,7 @@ public class PhotoUploadWorker2 extends Worker {
         } catch (JSONException e) {
             e.printStackTrace();
             //syncStatus.setText(syncStatus.getText() + "\r\n" + syncClass + " Sync Failed");
-            displayNotification(fileZero.toString(), "Error: " + e.getMessage());
+            displayNotification(fileZero.toString(), "Error: " + e.getMessage(), 100, 0);
 
             data = new Data.Builder()
                     .putString("error", "2 " + e.getMessage()).build();
@@ -233,7 +240,7 @@ public class PhotoUploadWorker2 extends Worker {
 
 
     private String uploadPhoto(String filepath) {
-        displayNotification(fileZero.toString(), "Connecting...");
+        displayNotification(fileZero.toString(), "Connecting...", 100, 0);
 
         HttpURLConnection connection = null;
         DataOutputStream outputStream = null;
@@ -254,10 +261,10 @@ public class PhotoUploadWorker2 extends Worker {
 
         File file = new File(filepath);
         FileInputStream fileInputStream = null;
-        Log.d(TAG, "uploadPhoto: " + file);
+        Log.d(TAG, "uploadPhoto: (" + file.length() + ")" + file);
+
         try {
             fileInputStream = new FileInputStream(file);
-
 
             URL url = null;
             try {
@@ -266,75 +273,80 @@ public class PhotoUploadWorker2 extends Worker {
                 Log.d(TAG, "uploadPhoto: " + e.getMessage());
                 return e.getMessage();
             }
-        Log.d(TAG, "uploadPhoto: " + file);
+            Log.d(TAG, "uploadPhoto: " + file);
 
-        connection = (HttpURLConnection) url.openConnection();
+            connection = (HttpURLConnection) url.openConnection();
 
-        connection.setDoInput(true);
-        connection.setDoOutput(true);
-        connection.setUseCaches(false);
+            connection.setDoInput(true);
+            connection.setDoOutput(true);
+            connection.setUseCaches(false);
 
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Connection", "Keep-Alive");
-        connection.setRequestProperty("User-Agent", "Android Multipart HTTP Client 1.0");
-        connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Connection", "Keep-Alive");
+            connection.setRequestProperty("User-Agent", "Android Multipart HTTP Client 1.0");
+            connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
 
-        outputStream = new DataOutputStream(connection.getOutputStream());
-        outputStream.writeBytes(twoHyphens + boundary + lineEnd);
-        outputStream.writeBytes("Content-Disposition: form-data; name=\"" + filefield + "\"; filename=\"" + q[idx] + "\"" + lineEnd);
-        outputStream.writeBytes("Content-Type: image/jpeg" + lineEnd);
-        outputStream.writeBytes("Content-Transfer-Encoding: binary" + lineEnd);
-        outputStream.writeBytes(lineEnd);
+            outputStream = new DataOutputStream(connection.getOutputStream());
+            outputStream.writeBytes(twoHyphens + boundary + lineEnd);
+            outputStream.writeBytes("Content-Disposition: form-data; name=\"" + filefield + "\"; filename=\"" + q[idx] + "\"" + lineEnd);
+            outputStream.writeBytes("Content-Type: image/jpeg" + lineEnd);
+            outputStream.writeBytes("Content-Transfer-Encoding: binary" + lineEnd);
+            outputStream.writeBytes(lineEnd);
 
-        bytesAvailable = fileInputStream.available();
-        bufferSize = Math.min(bytesAvailable, maxBufferSize);
-        buffer = new byte[bufferSize];
-
-        bytesRead = fileInputStream.read(buffer, 0, bufferSize);
-        while (bytesRead > 0) {
-            Log.d(TAG, "uploadPhoto: " + bytesRead);
-            Log.d(TAG, "uploadPhoto: " + buffer.length);
-            outputStream.write(buffer, 0, bufferSize);
             bytesAvailable = fileInputStream.available();
             bufferSize = Math.min(bytesAvailable, maxBufferSize);
+            buffer = new byte[bufferSize];
+            int progress = 0;
             bytesRead = fileInputStream.read(buffer, 0, bufferSize);
-        }
+            while (bytesRead > 0) {
+                Log.d(TAG, "uploadPhoto: " + bytesRead);
+                Log.d(TAG, "uploadPhoto: " + buffer.length);
+                outputStream.write(buffer, 0, bufferSize);
+                bytesAvailable = fileInputStream.available();
+                bufferSize = Math.min(bytesAvailable, maxBufferSize);
+                bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+                progress += bytesRead;
+                // update progress bar
+                // publishProgress(progress);
+                displayNotification(fileZero.toString(), "Connected to server...", 100, Math.round(progress * 100 / file.length()));
 
-        outputStream.writeBytes(lineEnd);
+            }
 
-        outputStream.writeBytes(twoHyphens + boundary + lineEnd);
-        outputStream.writeBytes("Content-Disposition: form-data; name=\"tagname\"" + lineEnd);
-        outputStream.writeBytes("Content-Type: text/plain" + lineEnd);
+            outputStream.writeBytes(lineEnd);
+
+            outputStream.writeBytes(twoHyphens + boundary + lineEnd);
+            outputStream.writeBytes("Content-Disposition: form-data; name=\"tagname\"" + lineEnd);
+            outputStream.writeBytes("Content-Type: text/plain" + lineEnd);
             outputStream.writeBytes(lineEnd);
             outputStream.writeBytes(MainApp.appInfo.getTagName() == null ? "" : MainApp.appInfo.getTagName());  // DEVICETAG
             outputStream.writeBytes(lineEnd);
-        outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
+            outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
-        inputStream = connection.getInputStream();
+            inputStream = connection.getInputStream();
 
-        int status = connection.getResponseCode();
-        if (status == HttpURLConnection.HTTP_OK) {
-            displayNotification(fileZero.toString(), "Connected to server...");
+            int status = connection.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                displayNotification(fileZero.toString(), "Connected to server...", 100, 0);
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuffer response = new StringBuffer();
 
-            while ((inputLine = in.readLine()) != null) {
+                while ((inputLine = in.readLine()) != null) {
 
 
-                response.append(inputLine);
-                displayNotification(fileZero.toString(), "Uploading...");
+                    response.append(inputLine);
+                    displayNotification(fileZero.toString(), "Uploading...", 100, 0);
+                }
+
+                inputStream.close();
+                connection.disconnect();
+                fileInputStream.close();
+                outputStream.flush();
+                outputStream.close();
+
+                return response.toString();
             }
-
-            inputStream.close();
-            connection.disconnect();
-            fileInputStream.close();
-            outputStream.flush();
-            outputStream.close();
-
-            return response.toString();
-        }
             return String.valueOf(status);
         } catch (FileNotFoundException | ProtocolException e) {
             e.printStackTrace();
