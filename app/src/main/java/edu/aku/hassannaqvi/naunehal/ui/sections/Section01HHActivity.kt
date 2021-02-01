@@ -1,14 +1,10 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
-import android.text.format.DateFormat
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
@@ -31,22 +27,18 @@ import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding
 import edu.aku.hassannaqvi.naunehal.models.BLRandom
 import edu.aku.hassannaqvi.naunehal.models.Form
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
-import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
+import edu.aku.hassannaqvi.naunehal.utils.*
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
-import edu.aku.hassannaqvi.naunehal.utils.getDaysBack
-import edu.aku.hassannaqvi.naunehal.utils.shortStringLength
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 import org.threeten.bp.Instant
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZoneId
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.pow
 
 
 class Section01HHActivity : AppCompatActivity() {
@@ -283,9 +275,13 @@ class Section01HHActivity : AppCompatActivity() {
                 bi.hh25a02.isChecked -> 3
                 else -> 0
             }
-            if (response != 0)
+            if (response != 0) {
+                if (response == 2) {
+                    openWarningDialogh("WARNING", "There's No Child < 5 Years")
+                    return
+                }
                 gotoActivityWithSerializable(EndingActivity::class.java, CONSTANTS.SECTION_MAIN_CHECK_FOR_END, response)
-            else {
+            } else {
                 finish()
                 gotoActivity(ChildrenListActivity::class.java)
             }
@@ -371,68 +367,68 @@ class Section01HHActivity : AppCompatActivity() {
         }
 
 
-        form.setHh01(when {
+        form.hh01 = when {
             bi.aa01.text.toString().trim().isNotEmpty() -> bi.aa01.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh0201(when {
+        form.hh0201 = when {
             bi.hh0201.text.toString().trim().isNotEmpty() -> bi.hh0201.text.toString()
             else -> "-1"
-        })
+        }
 
         /* form.setHh0202(bi.hh0202.getText().toString())
          form.setHh03(bi.hh03.getText().toString())
 
          form.setHh04(bi.hh04.getText().toString())*/
 
-        form.setHh05(bi.hh05.selectedItem.toString())
+        form.hh05 = bi.hh05.selectedItem.toString()
 
-        form.setHh06(bi.hh06.selectedItem.toString())
+        form.hh06 = bi.hh06.selectedItem.toString()
 
 
 
-        form.setHh07(when {
+        form.hh07 = when {
             bi.hh07.text.toString().trim().isNotEmpty() -> bi.hh07.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh08(when {
+        form.hh08 = when {
             bi.hh08.text.toString().trim().isNotEmpty() -> bi.hh08.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh09(when {
+        form.hh09 = when {
             bi.hh09.text.toString().trim().isNotEmpty() -> bi.hh09.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh10(when {
+        form.hh10 = when {
             bi.hh10.text.toString().trim().isNotEmpty() -> bi.hh10.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh11(when {
+        form.hh11 = when {
             bi.hh1101.isChecked -> "1"
             bi.hh1102.isChecked -> "2"
             else -> "-1"
-        })
+        }
 
-        form.setHh12(when {
+        form.hh12 = when {
             bi.hh12.text.toString().trim().isNotEmpty() -> bi.hh12.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh13(when {
+        form.hh13 = when {
             bi.hh13.text.toString().trim().isNotEmpty() -> bi.hh13.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh14(when {
+        form.hh14 = when {
             bi.hh1401.isChecked -> "1"
             bi.hh1402.isChecked -> "2"
             else -> "-1"
-        })
+        }
 
 
         /*Removal Instructed by Chaudary Sahab - 25Jan2021*/
@@ -445,12 +441,12 @@ class Section01HHActivity : AppCompatActivity() {
              else -> "-1"
          })*/
 
-        form.setHh16(when {
+        form.hh16 = when {
             bi.hh16.text.toString().trim().isNotEmpty() -> bi.hh16.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh17(when {
+        form.hh17 = when {
             bi.hh1701.isChecked -> "1"
             bi.hh1702.isChecked -> "2"
             bi.hh1703.isChecked -> "3"
@@ -466,25 +462,25 @@ class Section01HHActivity : AppCompatActivity() {
             bi.hh1713.isChecked -> "13"
             bi.hh1796.isChecked -> "96"
             else -> "-1"
-        })
+        }
 
-        form.setHh1796x(when {
+        form.hh1796x = when {
             bi.hh1796x.text.toString().trim().isNotEmpty() -> bi.hh1796x.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh18(when {
+        form.hh18 = when {
             bi.hh1801.isChecked -> "1"
             bi.hh1802.isChecked -> "2"
             else -> "-1"
-        })
+        }
 
-        form.setHh19(when {
+        form.hh19 = when {
             bi.hh19.text.toString().trim().isNotEmpty() -> bi.hh19.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh20(when {
+        form.hh20 = when {
             bi.hh2001.isChecked -> "1"
             bi.hh2002.isChecked -> "2"
             bi.hh2003.isChecked -> "3"
@@ -500,43 +496,43 @@ class Section01HHActivity : AppCompatActivity() {
             bi.hh2013.isChecked -> "13"
             bi.hh2096.isChecked -> "96"
             else -> "-1"
-        })
+        }
 
-        form.setHh2096x(when {
+        form.hh2096x = when {
             bi.hh2096x.text.toString().trim().isNotEmpty() -> bi.hh2096x.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh21(when {
+        form.hh21 = when {
             bi.hh21.text.toString().trim().isNotEmpty() -> bi.hh21.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh22(when {
+        form.hh22 = when {
             bi.hh22.text.toString().trim().isNotEmpty() -> bi.hh22.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh23(when {
+        form.hh23 = when {
             bi.hh23.text.toString().trim().isNotEmpty() -> bi.hh23.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh24(when {
+        form.hh24 = when {
             bi.hh24.text.toString().trim().isNotEmpty() -> bi.hh24.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh25(when {
+        form.hh25 = when {
             bi.hh25.text.toString().trim().isNotEmpty() -> bi.hh25.text.toString()
             else -> "-1"
-        })
+        }
 
-        form.setHh25a(when {
+        form.hh25a = when {
             bi.hh25a01.isChecked -> "1"
             bi.hh25a02.isChecked -> "2"
             else -> "-1"
-        })
+        }
 
 
     }

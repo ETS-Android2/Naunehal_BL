@@ -1,14 +1,11 @@
 package edu.aku.hassannaqvi.naunehal.utils
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
 import android.os.Environment
-import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,12 +15,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
+import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.databinding.EndSectionDialogBinding
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_COPY
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_NAME
 import edu.aku.hassannaqvi.naunehal.utils.CreateTable.PROJECT_NAME
+import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -173,6 +172,33 @@ fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTx
     dialog.window!!.attributes = params
     dialog.show()
     bi.btnOk.setOnClickListener {
+        dialog.dismiss()
+    }
+}
+
+@JvmOverloads
+fun AppCompatActivity.openWarningDialogh(title: String, message: String, btnYesTxt: String = "SURE", btnNoTxt: String = "NO") {
+    val dialog = Dialog(this)
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    val bi: EndSectionDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.end_section_dialog, null, false)
+    dialog.setContentView(bi.root)
+    bi.alertTitle.text = title
+    bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.green))
+    bi.content.text = message
+    bi.btnOk.text = btnYesTxt
+    bi.btnNo.text = btnNoTxt
+    bi.btnOk.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
+    bi.btnNo.setBackgroundColor(ContextCompat.getColor(this, R.color.redLight))
+    val params = WindowManager.LayoutParams()
+    params.copyFrom(dialog.window!!.attributes)
+    params.width = WindowManager.LayoutParams.WRAP_CONTENT
+    params.height = WindowManager.LayoutParams.WRAP_CONTENT
+    dialog.window!!.attributes = params
+    dialog.show()
+    bi.btnOk.setOnClickListener {
+        gotoActivityWithSerializable(EndingActivity::class.java, CONSTANTS.SECTION_MAIN_CHECK_FOR_END, 2)
+    }
+    bi.btnNo.setOnClickListener {
         dialog.dismiss()
     }
 }
