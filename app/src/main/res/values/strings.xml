@@ -493,7 +493,7 @@
     <string name="im2498">معلوم نہیں</string>
     <string name="im2496">دیگر(وضاحت کریں)</string>
     <string name="pd_title1">سیکشن پی ڈی: حمل اور زچگی کے دوران دیکھ بھال </string>
-    <string name="pd_info"> (گھرمیں رہنے والے پانچ سال سے کم عمربچے کی ماں سے بھروایا جائے)</string>
+    <string name="pdinfo"> (اوپر منتخب شدہ پانچ سال سے کم عمربچے کی ماں سے پوچھا جائے)</string>
     <string name="pd01">بچے کا لائن نمبر(5 سال سے کم عمر)</string>
     <string name="pd02">تولیدی صحت کی حامل عورت کا نام</string>
     <string name="pd03">آپ کا آخری حمل کب ہوا تھا؟</string>
@@ -634,7 +634,7 @@
     <string name="pd2007"> روایتی دائی </string>
     <string name="pd2096"> دیگر وضاحت کریں </string>
     <string name="pd21">زچگی کے کتنے عرصے بعد پہلی بار اس طرح کا معائنہ ہوا؟ </string>
-    <string name="pd21info">زچگی کے کتنے عرصے بعد پہلی بار اس طرح کا معائنہ ہوا؟ اگر ایک دن سے کم ہے (گھنٹے درج کریں) اگر ایک ہفتے سے کم ہے (دن درج کریں) دوسری صورت میں ہفتے ریکارڈ کریں۔ </string>
+    <string name="pd21info"> اگر ایک دن سے کم ہے (گھنٹے درج کریں) اگر ایک ہفتے سے کم ہے (دن درج کریں) دوسری صورت میں ہفتے ریکارڈ کریں۔ </string>
     <string name="pd2101"> گھنٹے </string>
     <string name="pd2102"> دن </string>
     <string name="pd2103"> ہفتے </string>
@@ -657,7 +657,7 @@
 
 
     <string name="bf_title1">سیکشن بی ایف: دودھ پلانا ، صحت اور نگہداشت سے متعلق رویے </string>
-    <string name="bf_info"> ہدایات: گھر میں رہنے والے 0–23 ماہ کے سب سے کم عمر بچے کی ماں سے بھروایا جائے۔</string>
+    <string name="bfinfo"> ہدایات: اوپر منتخب شدہ 0–23 ماہ کے سب سے کم عمر بچے کی ماں سے پوچھا جائے۔</string>
     <string name="bf01">بچے کا لائن نمبر(2سال سے کم عمر)</string>
     <string name="bf02">بچے کی ماں کا نام</string>
 
@@ -683,7 +683,7 @@
     <string name="bf0601">ہاں </string>
     <string name="bf0602">نہیں </string>
     <string name="bf0698">معلوم نہیں</string>
-    <string name="bf07">بچے (نام) کو آپ نے شروع میں آنے والا گھاڑھا دودھ کیوں نہیں پلایا تھا؟</string>
+    <string name="bf07">بچے (نام) کو آپ نے شروع میں آنے والا گاڑھا دودھ کیوں نہیں پلایا تھا؟</string>
     <string name="bf0701">اس دودھ کو خراب سمجھتی ہیں</string>
     <string name="bf0702">بچے کے لئے نقصان دہ ہے</string>
     <string name="bf0703">گاڑھاپن</string>
@@ -761,7 +761,7 @@
     <string name="bf14i01">ہاں</string>
     <string name="bf14i02">نہیں</string>
     <string name="bf14i98">معلوم نہیں</string>
-
+    <string name="bf15_title"></string>
     <string name="bf15">کیا (نام) نے گزشتہ کل دن اور رات گھر میں یا گھر سے باہر کچھ کھایا؟</string>
     <string name="bf15info">اگر ہاں تو مندرجہ زیل میں سے تفصیلات نوٹ کریں۔</string>
     <string name="bf15a">دلیہ،ڈبل روٹی، چاول،نوڈلس،کھچٹری،یا دیگر خوراک جو اناج سے بنی ہو</string>

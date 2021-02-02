@@ -51,22 +51,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- bf_title1  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVbf_title1"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/bf_title1" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bfinfo" />
 
                 <!-- bf01  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -1070,25 +1059,35 @@
                 <!-- bf14  Title   -->
                 <androidx.cardview.widget.CardView style="@style/cardView">
 
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/bf14" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            android:background="@drawable/bottom">
 
-                <!-- bf14a  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
+                            <TextView
+                                android:id="@+id/qtxt_bf14"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_bf14"
+                                android:text="@string/bf14" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/q_bf14"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_bf14"
+                                android:layout_alignBottom="@id/qtxt_bf14"
+                                android:text="@string/Q_bf14" />
+
+                        </RelativeLayout>
+
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1096,56 +1095,47 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf14a" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf14a" />
+
+                            <RadioGroup
+                                android:id="@+id/bf14a"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf14a01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf14a01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14a02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14a02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14a98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14a98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf14a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/bf14a01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14a01" />
-
-                            <RadioButton
-                                android:id="@+id/bf14a02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14a02" />
-
-                            <RadioButton
-                                android:id="@+id/bf14a98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14a98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf14b  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1153,71 +1143,58 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf14b" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf14b" />
+
+                            <RadioGroup
+                                android:id="@+id/bf14b"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf14b01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf14b01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14b02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14b02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14b98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14b98" />
+                            </RadioGroup>
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf14b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf14b01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14b01" />
-
-
-                            <RadioButton
-                                android:id="@+id/bf14b02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14b02" />
-
-                            <RadioButton
-                                android:id="@+id/bf14b98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14b98" />
-                        </RadioGroup>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/bf14b01x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/bf14b01"
                             android:inputType="number"
                             android:maxLength="2"
                             android:tag="bf14b01"
                             android:text='@{bf14b01.checked ? bf14b01x.getText().toString() : ""}'
                             android:visibility='@{bf14b01.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="99"
-                            app:minValue="0"
+                            app:maxValue="20"
+                            app:minValue="1"
                             app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
-                <!-- bf14c  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1225,71 +1202,59 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf14c" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf14c" />
+
+
+                            <RadioGroup
+                                android:id="@+id/bf14c"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf14c01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf14c01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14c02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14c02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14c98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14c98" />
+                            </RadioGroup>
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf14c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf14c01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14c01" />
-
-
-                            <RadioButton
-                                android:id="@+id/bf14c02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14c02" />
-
-                            <RadioButton
-                                android:id="@+id/bf14c98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14c98" />
-                        </RadioGroup>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/bf14c01x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/bf14c01"
                             android:inputType="number"
                             android:maxLength="2"
                             android:tag="bf14c01"
                             android:text='@{bf14c01.checked ? bf14c01x.getText().toString() : ""}'
                             android:visibility='@{bf14c01.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="99"
-                            app:minValue="0"
+                            app:maxValue="20"
+                            app:minValue="1"
                             app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
-                <!-- bf14d  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1297,56 +1262,46 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf14d" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf14d" />
+
+                            <RadioGroup
+                                android:id="@+id/bf14d"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf14d01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf14d01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14d02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14d02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14d98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14d98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf14d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf14d01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14d01" />
-
-                            <RadioButton
-                                android:id="@+id/bf14d02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14d02" />
-
-                            <RadioButton
-                                android:id="@+id/bf14d98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14d98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf14e  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1354,132 +1309,105 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf14e" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf14e" />
+
+                            <RadioGroup
+                                android:id="@+id/bf14e"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf14e01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf14e01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14e02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14e02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14e98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14e98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf14e"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf14e01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14e01" />
-
-
-                            <RadioButton
-                                android:id="@+id/bf14e02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14e02" />
-
-                            <RadioButton
-                                android:id="@+id/bf14e98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14e98" />
-                        </RadioGroup>
-
-
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf14f  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf14f" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf14f" />
+
+
+                            <RadioGroup
+                                android:id="@+id/bf14f"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf14f01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf14f01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14f02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14f02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14f98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14f98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf14f"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf14f01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14f01" />
-
-
-                            <RadioButton
-                                android:id="@+id/bf14f02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14f02" />
-
-                            <RadioButton
-                                android:id="@+id/bf14f98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14f98" />
-                        </RadioGroup>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/bf14f01x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/bf14f01"
                             android:inputType="number"
                             android:maxLength="2"
                             android:tag="bf14f01"
                             android:text='@{bf14f01.checked ? bf14f01x.getText().toString() : ""}'
                             android:visibility='@{bf14f01.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="99"
-                            app:minValue="0"
+                            app:maxValue="20"
+                            app:minValue="1"
                             app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
-                <!-- bf14g  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1487,56 +1415,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf14g" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf14g" />
+
+                            <RadioGroup
+                                android:id="@+id/bf14g"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf14g01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf14g01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14g02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14g02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14g98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14g98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf14g"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf14g01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14g01" />
-
-                            <RadioButton
-                                android:id="@+id/bf14g02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14g02" />
-
-                            <RadioButton
-                                android:id="@+id/bf14g98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14g98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf14h  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1544,56 +1461,47 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf14h" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf14h" />
+
+                            <RadioGroup
+                                android:id="@+id/bf14h"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf14h01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf14h01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14h02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14h02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14h98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14h98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf14h"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/bf14h01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14h01" />
-
-                            <RadioButton
-                                android:id="@+id/bf14h02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14h02" />
-
-                            <RadioButton
-                                android:id="@+id/bf14h98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14h98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf14i  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1601,62 +1509,46 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf14i" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf14i" />
+
+                            <RadioGroup
+                                android:id="@+id/bf14i"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf14i01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf14i01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14i02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14i02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf14i98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf14i98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf14i"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf14i01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14i01" />
-
-                            <RadioButton
-                                android:id="@+id/bf14i02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-
-                                android:text="@string/bf14i02" />
-
-                            <RadioButton
-                                android:id="@+id/bf14i98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf14i98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15  Title   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/bf15" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1685,62 +1577,76 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom">
+
+                            <TextView
+                                android:id="@+id/qtxt_bf15"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/q_bf15"
+                                android:text="@string/bf15" />
+
+                            <TextView
+                                android:id="@+id/q_bf15"
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/qtxt_bf15"
+                                android:layout_alignBottom="@id/qtxt_bf15"
+                                android:text="@string/Q_bf15" />
+
+                        </RelativeLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15a" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15a" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15a"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15a01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15a01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15a02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15a02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15a98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15a98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf15a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/bf15a01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15a01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15a02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15a02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15a98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15a98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15b  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1748,56 +1654,47 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15b" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15b" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15b"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15b01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15b01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15b02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15b02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15b98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15b98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf15b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/bf15b01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15b01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15b02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15b02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15b98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15b98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15c  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1805,56 +1702,47 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15c" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15c" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15c"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15c01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15c01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15c02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15c02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15c98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15c98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf15c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/bf15c01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15c01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15c02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15c02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15c98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15c98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15d  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1862,56 +1750,46 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15d" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15d" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15d"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15d01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15d01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15d02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15d02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15d98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15d98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf15d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15d01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15d01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15d02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15d02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15d98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15d98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15e  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1919,113 +1797,94 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15e" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15e" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15e"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15e01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15e01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15e02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15e02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15e98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15e98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15e"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15e01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15e01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15e02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15e02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15e98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15e98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15f  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15f" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15f" />
+
+
+                            <RadioGroup
+                                android:id="@+id/bf15f"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15f01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15f01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15f02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15f02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15f98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15f98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf15f"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/bf15f01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15f01" />
 
-                            <RadioButton
-                                android:id="@+id/bf15f02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15f02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15f98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15f98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15g  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2033,56 +1892,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15g" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15g" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15g"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15g01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15g01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15g02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15g02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15g98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15g98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15g"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15g01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15g01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15g02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15g02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15g98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15g98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15h  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2090,56 +1938,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15h" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15h" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15h"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15h01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15h01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15h02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15h02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15h98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15h98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15h"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15h01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15h01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15h02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15h02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15h98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15h98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15i  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2147,56 +1984,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15i" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15i" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15i"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15i01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15i01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15i02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15i02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15i98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15i98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15i"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15i01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15i01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15i02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15i02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15i98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15i98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15j  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2204,56 +2030,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15j" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15j" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15j"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15j01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15j01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15j02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15j02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15j98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15j98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15j"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15j01"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15j01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15j02"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15j02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15j98"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/bf15j98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15k  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2261,56 +2076,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15k" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15k" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15k"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15k01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15k01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15k02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15k02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15k98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15k98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15k"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15k01"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15k01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15k02"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15k02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15k98"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15k98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15l  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2318,56 +2122,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15l" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15l" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15l"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15l01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15l01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15l02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15l02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15l98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15l98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15l"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15l01"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15l01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15l02"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15l02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15l98"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15l98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15m  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2375,56 +2168,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15m" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15m" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15m"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15m01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15m01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15m02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15m02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15m98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15m98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15m"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15m01"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15m01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15m02"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15m02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15m98"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15m98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15n  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2432,56 +2214,45 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15n" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15n" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15n"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15n01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15n01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15n02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15n02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15n98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15n98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15n"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15n01"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15n01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15n02"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15n02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15n98"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15n98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15o  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2489,113 +2260,91 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15o" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15o" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15o"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15o01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15o01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15o02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15o02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15o98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15o98" />
+
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15o"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15o01"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15o01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15o02"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15o02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15o98"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15o98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15p  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15p" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15p" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15p"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15p01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15p01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15p02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15p02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15p98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15p98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/bf15p"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15p01"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15p01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15p02"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15p02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15p98"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15p98" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- bf15q  Radio   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2603,49 +2352,49 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_bf15q" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
                                 android:text="@string/bf15q" />
+
+                            <RadioGroup
+                                android:id="@+id/bf15q"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/bf15q01"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/bf15q01" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15q02"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15q02" />
+
+                                <RadioButton
+                                    android:id="@+id/bf15q98"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/bf15q98" />
+                            </RadioGroup>
+
+
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/bf15q"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/bf15q01"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15q01" />
-
-                            <RadioButton
-                                android:id="@+id/bf15q02"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15q02" />
-
-                            <RadioButton
-                                android:id="@+id/bf15q98"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/bf15q98" />
-                        </RadioGroup>
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- bf16  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2680,23 +2429,27 @@
                         <RadioGroup
                             android:id="@+id/bf16"
                             android:layout_width="match_parent"
+                            android:orientation="horizontal"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/bf1601"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:text="@string/bf1601" />
 
                             <RadioButton
                                 android:id="@+id/bf1602"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:text="@string/bf1602" />
 
                             <RadioButton
                                 android:id="@+id/bf1698"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:text="@string/bf1698" />
 
@@ -2736,34 +2489,39 @@
                         <RadioGroup
                             android:id="@+id/bf17"
                             android:layout_width="match_parent"
+                            android:orientation="horizontal"
                             android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/bf1701"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+
                                 android:text="@string/bf1701" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/bf1701x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/bf1701"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:tag="bf1701"
-                                android:text='@{bf1701.checked ? bf1701x.getText().toString() : ""}'
-                                android:visibility='@{bf1701.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="20"
-                                app:minValue="1"
-                                app:type="range" />
 
                             <RadioButton
                                 android:id="@+id/bf1798"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/bf1798" />
                         </RadioGroup>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/bf1701x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/bf1701"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:tag="bf1701"
+                            android:text='@{bf1701.checked ? bf1701x.getText().toString() : ""}'
+                            android:visibility='@{bf1701.checked? View.VISIBLE : View.GONE}'
+                            app:maxValue="20"
+                            app:minValue="1"
+                            app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

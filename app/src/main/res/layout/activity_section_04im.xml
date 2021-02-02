@@ -41,22 +41,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- im1_title1  Title   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <TextView
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/im1_title1" />
+                            android:text="@string/im1info" />
 
-                    </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- im01  Radio   -->
@@ -143,6 +136,12 @@
                                 android:text="@string/im02" />
 
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/im02info" />
 
                         <RadioGroup
                             android:id="@+id/im02"
@@ -2177,6 +2176,12 @@
 
                             </LinearLayout>
 
+                            <TextView
+                                style="@style/info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/im08info" />
+
                             <RadioGroup
                                 android:id="@+id/im08"
                                 android:layout_width="match_parent"
@@ -3648,6 +3653,12 @@
                                     android:text="@string/im24" />
 
                             </LinearLayout>
+
+                            <TextView
+                                style="@style/info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/im24info" />
 
                             <RadioGroup
                                 android:id="@+id/im24"
