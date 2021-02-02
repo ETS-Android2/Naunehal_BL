@@ -749,7 +749,7 @@
     style="@style/info"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/bf16info" />
+    android:text="@string/hh16info" />
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/hh16"
                                     android:layout_width="match_parent"
@@ -1414,13 +1414,16 @@
                                         android:layout_weight="1"
                                         android:orientation="vertical"
                                         android:layout_height="wrap_content"
+                                        android:layout_width="0dp"
                                         android:text="@string/hh25a01" />
 
                                     <RadioButton
                                         android:id="@+id/hh25a02"
+                                        android:layout_width="0dp"
                                         android:layout_weight="1"
                                         android:orientation="vertical"
                                         android:layout_height="wrap_content"
+                                        android:width="0dp"
                                         android:text="@string/hh25a02" />
 
                                 </RadioGroup>
