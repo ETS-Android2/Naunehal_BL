@@ -177,18 +177,18 @@ fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTx
 }
 
 @JvmOverloads
-fun AppCompatActivity.openWarningDialogh(title: String, message: String, btnYesTxt: String = "SURE", btnNoTxt: String = "NO") {
+fun AppCompatActivity.openWarningDialogh(title: String, message: String, btnYesTxt: String = "SURE", btnNoTxt: String = "RETURN") {
     val dialog = Dialog(this)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     val bi: EndSectionDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.end_section_dialog, null, false)
     dialog.setContentView(bi.root)
     bi.alertTitle.text = title
-    bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.green))
+    bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.redLight))
     bi.content.text = message
     bi.btnOk.text = btnYesTxt
     bi.btnNo.text = btnNoTxt
-    bi.btnOk.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
-    bi.btnNo.setBackgroundColor(ContextCompat.getColor(this, R.color.redLight))
+    bi.btnOk.setBackgroundColor(ContextCompat.getColor(this, R.color.redLight))
+    bi.btnNo.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
     val params = WindowManager.LayoutParams()
     params.copyFrom(dialog.window!!.attributes)
     params.width = WindowManager.LayoutParams.WRAP_CONTENT
