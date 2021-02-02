@@ -168,6 +168,8 @@ public class SyncActivity extends AppCompatActivity {
                 BeginUpload();
                 break;
             case R.id.btnSync:
+
+                MainApp.downloadData = new String[0];
                 bi.dataLayout.setVisibility(View.VISIBLE);
                 bi.photoLayout.setVisibility(View.GONE);
                 bi.mTextViewS.setVisibility(View.GONE);
@@ -186,11 +188,13 @@ public class SyncActivity extends AppCompatActivity {
                     downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
 
                 }
-
+                MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
                 BeginDownload();
                 break;
 
+            default:
+                throw new IllegalStateException("Unexpected value: " + view.getId());
         }
     }
 
@@ -250,10 +254,13 @@ public class SyncActivity extends AppCompatActivity {
                     if (workInfo.getState() != null &&
                             workInfo.getState() == WorkInfo.State.SUCCEEDED) {
 
-                        String result = workInfo.getOutputData().getString("data");
+                        //String result = workInfo.getOutputData().getString("data");
+                        String result = MainApp.downloadData[position];
 //Do something with the JSON string
                         if (result != null) {
                             if (result.length() > 0) {
+                                Log.d(TAG, "onChanged: result " + result);
+                                System.out.println("SYSTEM onChanged: result" + result);
                                 DatabaseHelper db = new DatabaseHelper(SyncActivity.this);
                                 try {
                                     JSONArray jsonArray = new JSONArray();
