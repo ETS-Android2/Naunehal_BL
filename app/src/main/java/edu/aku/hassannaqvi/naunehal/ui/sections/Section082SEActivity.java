@@ -47,7 +47,7 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
         bi.se36.setOnCheckedChangeListener(((radioGroup, i) -> {
             bi.fldGrpse36.setVisibility(View.VISIBLE);
             bi.fldGrpse37.setVisibility(View.VISIBLE);
-            if (i == bi.se3602.getId()) {
+            if (i == bi.se3602.getId() || i == bi.se3698.getId()) {
                 Clear.clearAllFields(bi.fldGrpse36);
                 Clear.clearAllFields(bi.fldGrpse37);
                 bi.fldGrpse36.setVisibility(View.GONE);

@@ -1088,6 +1088,11 @@
 
                         </RelativeLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf14a" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1096,17 +1101,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf14a" />
-
                             <RadioGroup
                                 android:id="@+id/bf14a"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1136,6 +1134,11 @@
                         </LinearLayout>
 
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf14b" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1144,17 +1147,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf14b" />
-
                             <RadioGroup
                                 android:id="@+id/bf14b"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1195,6 +1191,11 @@
                             app:minValue="1"
                             app:type="range" />
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf14c" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1203,18 +1204,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf14c" />
-
-
                             <RadioGroup
                                 android:id="@+id/bf14c"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1255,6 +1248,11 @@
                             app:minValue="1"
                             app:type="range" />
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf14d" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1263,17 +1261,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf14d" />
-
                             <RadioGroup
                                 android:id="@+id/bf14d"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1302,6 +1293,11 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf14e" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1310,17 +1306,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf14e" />
-
                             <RadioGroup
                                 android:id="@+id/bf14e"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1348,6 +1337,13 @@
 
 
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf14f" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1355,18 +1351,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf14f" />
-
-
                             <RadioGroup
                                 android:id="@+id/bf14f"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1408,6 +1396,11 @@
                             app:minValue="1"
                             app:type="range" />
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf14g" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1416,17 +1409,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf14g" />
-
                             <RadioGroup
                                 android:id="@+id/bf14g"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1455,6 +1441,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf14h" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1462,17 +1454,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf14h" />
-
                             <RadioGroup
                                 android:id="@+id/bf14h"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1501,7 +1486,11 @@
 
                         </LinearLayout>
 
-
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf14i" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1510,17 +1499,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf14i" />
-
                             <RadioGroup
                                 android:id="@+id/bf14i"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1600,6 +1582,12 @@
 
                         </RelativeLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15a" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1607,17 +1595,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15a" />
-
                             <RadioGroup
                                 android:id="@+id/bf15a"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1647,6 +1628,11 @@
                         </LinearLayout>
 
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15b" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1655,17 +1641,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15b" />
-
                             <RadioGroup
                                 android:id="@+id/bf15b"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1694,7 +1673,11 @@
 
                         </LinearLayout>
 
-
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15c" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1703,17 +1686,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15c" />
-
                             <RadioGroup
                                 android:id="@+id/bf15c"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1743,6 +1719,11 @@
                         </LinearLayout>
 
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15d" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1751,17 +1732,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15d" />
-
                             <RadioGroup
                                 android:id="@+id/bf15d"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1790,6 +1764,11 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15e" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1798,17 +1777,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15e" />
-
                             <RadioGroup
                                 android:id="@+id/bf15e"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1836,6 +1808,13 @@
 
 
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15f" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1843,18 +1822,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15f" />
-
-
                             <RadioGroup
                                 android:id="@+id/bf15f"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1884,7 +1855,11 @@
                         </LinearLayout>
 
 
-
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15g" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1893,17 +1868,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15g" />
-
                             <RadioGroup
                                 android:id="@+id/bf15g"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1932,6 +1900,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15h" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1939,17 +1913,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15h" />
-
                             <RadioGroup
                                 android:id="@+id/bf15h"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -1978,6 +1945,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15i" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1985,17 +1958,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15i" />
-
                             <RadioGroup
                                 android:id="@+id/bf15i"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -2024,6 +1990,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15j" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -2031,17 +2003,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15j" />
-
                             <RadioGroup
                                 android:id="@+id/bf15j"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -2070,6 +2035,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15k" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -2077,17 +2048,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15k" />
-
                             <RadioGroup
                                 android:id="@+id/bf15k"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -2116,6 +2080,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15l" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -2123,17 +2093,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15l" />
-
                             <RadioGroup
                                 android:id="@+id/bf15l"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -2162,6 +2125,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15m" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -2169,17 +2138,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15m" />
-
                             <RadioGroup
                                 android:id="@+id/bf15m"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -2208,6 +2170,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15n" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -2215,17 +2183,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15n" />
-
                             <RadioGroup
                                 android:id="@+id/bf15n"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -2254,6 +2215,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15o" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -2261,17 +2228,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15o" />
-
                             <RadioGroup
                                 android:id="@+id/bf15o"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -2300,6 +2260,13 @@
 
 
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15p" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -2307,17 +2274,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15p" />
-
                             <RadioGroup
                                 android:id="@+id/bf15p"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 
@@ -2346,6 +2306,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bf15q" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -2353,17 +2319,10 @@
                             android:orientation="horizontal">
 
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:text="@string/bf15q" />
-
                             <RadioGroup
                                 android:id="@+id/bf15q"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="3"
                                 android:orientation="horizontal">
 

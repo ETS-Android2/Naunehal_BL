@@ -790,8 +790,8 @@
                                 android:hint="@string/se25"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                app:maxValue="20"
-                                app:minValue="1"
+                                app:maxValue="@{se24.getText()}"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -843,8 +843,8 @@
                                     android:hint="@string/se26"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    app:maxValue="20"
-                                    app:minValue="1"
+                                    app:maxValue="@{se25.getText()}"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1373,7 +1373,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     app:maxValue="59"
-                                    app:minValue="1"
+                                    app:minValue="0"
                                     app:type="range" />
 
                             </LinearLayout>
