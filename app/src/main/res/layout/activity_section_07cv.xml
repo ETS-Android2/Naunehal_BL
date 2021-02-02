@@ -386,36 +386,51 @@
                                     android:id="@+id/cv0502"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{cv0501.checked}"
+                                    android:enabled="@{!cv0501.checked}"
+
                                     android:text="@string/cv0502" />
 
                                 <CheckBox
                                     android:id="@+id/cv0503"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{cv0501.checked}"
+                                    android:enabled="@{!cv0501.checked}"
+
                                     android:text="@string/cv0503" />
 
                                 <CheckBox
                                     android:id="@+id/cv0504"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{cv0501.checked}"
+                                    android:enabled="@{!cv0501.checked}"
+
                                     android:text="@string/cv0504" />
 
                                 <CheckBox
                                     android:id="@+id/cv0505"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{cv0501.checked}"
+                                    android:enabled="@{!cv0501.checked}"
                                     android:text="@string/cv0505" />
 
                                 <CheckBox
                                     android:id="@+id/cv0506"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{cv0501.checked}"
+                                    android:enabled="@{!cv0501.checked}"
                                     android:text="@string/cv0506" />
 
                                 <CheckBox
                                     android:id="@+id/cv0507"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:checked="@{cv0501.checked}"
+                                    android:enabled="@{!cv0501.checked}"
                                     android:text="@string/cv0507" />
 
                                 <CheckBox
