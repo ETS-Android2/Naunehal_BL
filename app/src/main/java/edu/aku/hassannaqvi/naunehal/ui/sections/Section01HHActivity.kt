@@ -277,7 +277,11 @@ class Section01HHActivity : AppCompatActivity() {
             }
             if (response != 0) {
                 if (response == 2) {
-                    openWarningDialogh("WARNING", resources.getString(R.string.hh2607))
+                    openWarningDialogh("WARNING", 2, resources.getString(R.string.hh2607))
+                    return
+                }
+                if (response == 3) {
+                    openWarningDialogh("WARNING", 3, resources.getString(R.string.hh2608))
                     return
                 }
                 gotoActivityWithSerializable(EndingActivity::class.java, CONSTANTS.SECTION_MAIN_CHECK_FOR_END, response)

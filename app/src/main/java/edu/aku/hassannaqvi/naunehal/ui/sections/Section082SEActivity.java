@@ -45,13 +45,11 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
         });
 
         bi.se36.setOnCheckedChangeListener(((radioGroup, i) -> {
-            bi.fldGrpse36.setVisibility(View.VISIBLE);
-            bi.fldGrpse37.setVisibility(View.VISIBLE);
-            if (i == bi.se3602.getId() || i == bi.se3698.getId()) {
-                Clear.clearAllFields(bi.fldGrpse36);
-                Clear.clearAllFields(bi.fldGrpse37);
-                bi.fldGrpse36.setVisibility(View.GONE);
-                bi.fldGrpse37.setVisibility(View.GONE);
+            if (i == bi.se3601.getId()) {
+                bi.llse36.setVisibility(View.VISIBLE);
+            } else {
+                Clear.clearAllFields(bi.llse36);
+                bi.llse36.setVisibility(View.GONE);
             }
         }));
     }
@@ -259,9 +257,13 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
 
         // TODO: *** THIS IS A DOUBTFUL CONDITION FOR VALIDATION.
-        if (bi.se2301.isChecked()) {
-            if (Integer.parseInt(bi.se3401.getText().toString()) + Integer.parseInt(bi.se3402.getText().toString()) == 0)
-                return Validator.emptyCustomTextBox(this, bi.se3401, "Both Month and Year can't be zero");
+
+        if (Integer.parseInt(bi.se3301.getText().toString()) + Integer.parseInt(bi.se3302.getText().toString()) == 0) {
+            return Validator.emptyCustomTextBox(this, bi.se3301, "Both Minutes & Hours can't be zero");
+        }
+
+        if (Integer.parseInt(bi.se3401.getText().toString()) + Integer.parseInt(bi.se3402.getText().toString()) == 0) {
+            return Validator.emptyCustomTextBox(this, bi.se3401, "Both Month and Year can't be zero");
         }
 
         if (bi.se2301.isChecked()) {

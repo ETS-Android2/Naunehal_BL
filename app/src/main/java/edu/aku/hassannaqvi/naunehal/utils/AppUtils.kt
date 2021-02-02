@@ -177,7 +177,7 @@ fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTx
 }
 
 @JvmOverloads
-fun AppCompatActivity.openWarningDialogh(title: String, message: String, btnYesTxt: String = "SURE", btnNoTxt: String = "RETURN") {
+fun AppCompatActivity.openWarningDialogh(title: String, response: Int, message: String, btnYesTxt: String = "SURE", btnNoTxt: String = "RETURN") {
     val dialog = Dialog(this)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     val bi: EndSectionDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.end_section_dialog, null, false)
@@ -196,7 +196,7 @@ fun AppCompatActivity.openWarningDialogh(title: String, message: String, btnYesT
     dialog.window!!.attributes = params
     dialog.show()
     bi.btnOk.setOnClickListener {
-        gotoActivityWithSerializable(EndingActivity::class.java, CONSTANTS.SECTION_MAIN_CHECK_FOR_END, 2)
+        gotoActivityWithSerializable(EndingActivity::class.java, CONSTANTS.SECTION_MAIN_CHECK_FOR_END, response)
     }
     bi.btnNo.setOnClickListener {
         dialog.dismiss()
