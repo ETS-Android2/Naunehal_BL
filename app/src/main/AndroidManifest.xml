@@ -57,59 +57,58 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section082SEActivity"
-            android:label="Section SE"
+            android:label="@string/se08_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.EndingActivity"
-            android:label="Section SE"
+            android:label="ِانٹرویو اسٹیٹس"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section081SEActivity"
-            android:label="Section SE"
+            android:label="@string/se08_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section07CVActivity"
-            android:label="Section CV"
+            android:label="@string/cv07_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section061BFActivity"
-            android:label="Section BF"
+            android:label="@string/bf06_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section05PDActivity"
-            android:label="Section PD"
+            android:label="@string/pd05_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section04IMActivity"
-            android:label="Section IM"
+            android:label="@string/im04_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section03CSActivity"
-            android:label="Section CS"
+            android:label="@string/cs03_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section02CBActivity"
-            android:label="Section CB"
+            android:label="@string/cb02_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section01HHActivity"
-            android:label="Section HH"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
+            android:label="@string/hh01_headding"
             android:theme="@style/AppThemeUrdu" />
 
         <activity
             android:name=".ui.sections.IdentificationSectionActivity"
-            android:label="Section HH"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />

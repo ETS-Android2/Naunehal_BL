@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> نونِہال </string>
+    <string name="app_name"> نونِہال: بیس لاین سروے </string>
     <string name="action_database">Database Manager</string>
     <string name="action_data_sync">Sync Data</string>
     <string name="btnDownload">Download Data</string>
@@ -9,6 +9,18 @@
     <string name="splashText"> </string>
     <string name="year"> سال </string>
     <string name="month"> مہینہ </string>
+
+    <!--SECTION HEADINGS-->
+    <string name="hh01_headding"> شناخت کی معلومات </string>
+    <string name="cb02_headding"> سیکشن سی بی: بچے کی معلومات </string>
+    <string name="cs03_headding"> انٹرویو کی تاریخ </string>
+    <string name="im04_headding"> سیکشن آئی ایم: حفاظتی ٹیکے </string>
+    <string name="pd05_headding"> سیکشن پی ڈی: حمل اور زچگی کے دوران دیکھ بھال </string>
+    <string name="bf06_headding"> سیکشن بی ایف: دودھ پلانا ، صحت اور نگہداشت سے متعلق رویے </string>
+    <string name="cv07_headding"> سیکشن G5: کوویڈ </string>
+    <string name="se08_headding"> سیکشن ایس ای: گھرانے کی خصوصیات </string>
+
+
     <string name="hh01"> انٹرویو کی تاریخ </string>
     <string name="hh02"> انٹرویو شروع کرنےکا وقت </string>
     <string name="hh05">ضلع کا نام</string>
