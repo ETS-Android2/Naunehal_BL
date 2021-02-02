@@ -157,7 +157,10 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
 
 
         bi.bf16.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVbf17);
+            bi.fldGrpCVbf17.setVisibility(View.GONE);
             if (i == bi.bf1601.getId()) {
+                bi.fldGrpCVbf17.setVisibility(View.VISIBLE);
                 AppUtilsKt.openWarningDialog(this, "WARNING!", "اگر BF16 کا جواب \" ہاں\"  میں ہے مگر BF15  کے تمام جوابات \"نہیں\"  میں ہیں تو سوال نمبر BF15  پر واپس جائیں اور کھانوں کی تفصیلات ریکارڈ کریں۔ اسکے بعد سوال نمبر BF17 کو جاری رکھیں۔");
                 bi.bf1601.setChecked(false);
                 bi.bf15a01.requestFocus();
