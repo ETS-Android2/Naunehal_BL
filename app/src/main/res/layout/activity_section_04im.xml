@@ -42,14 +42,11 @@
                 android:orientation="vertical">
 
 
-
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/im1info" />
-
-
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/im1info" />
 
 
                 <!-- im01  Radio   -->
@@ -84,21 +81,21 @@
                         <RadioGroup
                             android:id="@+id/im01"
                             android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im0101"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/im0101" />
 
                             <RadioButton
                                 android:id="@+id/im0102"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/im0102" />
 
                         </RadioGroup>
@@ -146,21 +143,21 @@
                         <RadioGroup
                             android:id="@+id/im02"
                             android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im0201"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/im0201" />
 
                             <RadioButton
                                 android:id="@+id/im0202"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:text="@string/im0202" />
 
                         </RadioGroup>
@@ -408,10 +405,10 @@
                                     android:layout_marginEnd="8dp"
                                     android:background="@drawable/action_button"
                                     android:fontFamily="@font/roboto"
-                                    android:paddingStart="16dp"
                                     android:onClick="@{(v) -> callback.takePhoto(1)}"
-                                    android:text="Take Front Photo"
+                                    android:paddingStart="16dp"
                                     android:paddingEnd="16dp"
+                                    android:text="Take Front Photo"
                                     android:textColor="@color/white" />
 
                                 <Button
@@ -423,10 +420,10 @@
                                     android:layout_marginEnd="8dp"
                                     android:background="@drawable/action_button"
                                     android:fontFamily="@font/roboto"
-                                    android:paddingStart="16dp"
                                     android:onClick="@{(v) -> callback.takePhoto(2)}"
-                                    android:text="Take Back Photo"
+                                    android:paddingStart="16dp"
                                     android:paddingEnd="16dp"
+                                    android:text="Take Back Photo"
                                     android:textColor="@color/white" />
 
                             </LinearLayout>
@@ -467,42 +464,43 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
-<LinearLayout
-    style="@style/info"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <!-- im05title1  Title   -->
-    <TextView
-        style="@style/info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/im05_title11" />
 
-    <TextView
-        style="@style/info"
-        android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/im05_title12" />
-
-                        <TextView
+                        <LinearLayout
                             style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/im05_title13" />
+                            android:orientation="vertical">
+                            <!-- im05title1  Title   -->
+                            <TextView
+                                style="@style/info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/im05_title11" />
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/im05_title14" />
+                            <TextView
+                                style="@style/info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/im05_title12" />
 
-    <TextView
-        style="@style/info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/im05_title15" />
-</LinearLayout>
+                            <TextView
+                                style="@style/info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/im05_title13" />
+
+                            <TextView
+                                style="@style/info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/im05_title14" />
+
+                            <TextView
+                                style="@style/info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/im05_title15" />
+                        </LinearLayout>
 
                         <!-- im0501  Title   -->
                         <androidx.cardview.widget.CardView style="@style/cardView">
@@ -2424,8 +2422,7 @@
 
 
                             <!-- im12  Radio   -->
-                            <androidx.cardview.widget.CardView
-                                style="@style/cardView">
+                            <androidx.cardview.widget.CardView style="@style/cardView">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -3160,15 +3157,14 @@
 
 
                         <LinearLayout
-                            android:visibility="@{im08a1.checked ? View.VISIBLE : View.GONE}"
                             android:id="@+id/fldGrpIm8a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:visibility="@{im08a1.checked ? View.VISIBLE : View.GONE}">
 
                             <!-- im12a  Radio   -->
-                            <androidx.cardview.widget.CardView
-                                style="@style/cardView">
+                            <androidx.cardview.widget.CardView style="@style/cardView">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -3236,8 +3232,7 @@
                             </androidx.cardview.widget.CardView>
 
                             <!-- im08b  Input-Numeric   -->
-                            <androidx.cardview.widget.CardView
-                                style="@style/cardView">
+                            <androidx.cardview.widget.CardView style="@style/cardView">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -3308,7 +3303,6 @@
                                 </LinearLayout>
 
                             </androidx.cardview.widget.CardView>
-
 
 
                             <!-- im13  Radio   -->
