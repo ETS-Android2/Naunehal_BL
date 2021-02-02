@@ -258,11 +258,21 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
 
+        // TODO: *** THIS IS A DOUBTFUL CONDITION FOR VALIDATION.
         if (bi.se2301.isChecked()) {
             if (Integer.parseInt(bi.se3401.getText().toString()) + Integer.parseInt(bi.se3402.getText().toString()) == 0)
                 return Validator.emptyCustomTextBox(this, bi.se3401, "Both Month and Year can't be zero");
         }
 
+        if (bi.se2301.isChecked()) {
+            if (Integer.valueOf(bi.se25.getText().toString()) > Integer.valueOf(bi.se24.getText().toString())) {
+                return Validator.emptyCustomTextBox(this, bi.se25, "Smart phones cannot be more than total mobile phones");
+            }
+
+            if (Integer.valueOf(bi.se26.getText().toString()) > Integer.valueOf(bi.se25.getText().toString())) {
+                return Validator.emptyCustomTextBox(this, bi.se25, "Android phones cannot be more than total smart phones");
+            }
+        }
         return true;
 
     }
