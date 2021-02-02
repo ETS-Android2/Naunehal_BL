@@ -367,6 +367,7 @@
                                     android:layout_alignTop="@id/qtxt_cv05"
                                     android:layout_alignBottom="@id/qtxt_cv05"
                                     android:text="@string/Q_cv05" />
+
                             </RelativeLayout>
 
                             <LinearLayout
@@ -388,7 +389,6 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{cv0501.checked}"
                                     android:enabled="@{!cv0501.checked}"
-
                                     android:text="@string/cv0502" />
 
                                 <CheckBox
@@ -397,7 +397,6 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{cv0501.checked}"
                                     android:enabled="@{!cv0501.checked}"
-
                                     android:text="@string/cv0503" />
 
                                 <CheckBox
@@ -406,7 +405,6 @@
                                     android:layout_height="wrap_content"
                                     android:checked="@{cv0501.checked}"
                                     android:enabled="@{!cv0501.checked}"
-
                                     android:text="@string/cv0504" />
 
                                 <CheckBox
@@ -448,9 +446,13 @@
                                     android:tag="cv0596"
                                     android:text='@{cv0596.checked ? cv0596x.getText().toString() : ""}'
                                     android:visibility='@{cv0596.checked? View.VISIBLE : View.GONE}' />
+
                             </LinearLayout>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- cv06  CheckBox   -->
                     <androidx.cardview.widget.CardView
@@ -576,6 +578,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+
                     <!-- cv07  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVcv07"
@@ -606,6 +609,7 @@
                                     android:layout_alignTop="@id/qtxt_cv07"
                                     android:layout_alignBottom="@id/qtxt_cv07"
                                     android:text="@string/Q_cv07" />
+
                             </RelativeLayout>
 
                             <RadioGroup
@@ -634,9 +638,13 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:text="@string/cv0798" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- cv08  CheckBox   -->
                     <androidx.cardview.widget.CardView
