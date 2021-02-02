@@ -476,7 +476,7 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             bi.cs2103.isChecked -> "3"
             bi.cs2104.isChecked -> "4"
             bi.cs2105.isChecked -> "5"
-
+            bi.cs2198.isChecked -> "98"//@HassanBhaiRequest
             else -> "-1"
         }
 
