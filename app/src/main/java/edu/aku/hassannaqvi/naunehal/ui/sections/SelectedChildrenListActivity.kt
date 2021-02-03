@@ -67,7 +67,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
         bi.speedDial.setOnActionSelectedListener { actionItem ->
             when (actionItem.id) {
                 R.id.fab_finish -> {
-                    if (adapter.childItems.filter { it.childTableDataExist != null }.size != adapter.childItems.filter { it.isMotherAvailable }.size) {
+                    if (adapter.childItems.filter { it.childTableDataExist != null }.size < 0) {
                         Snackbar.make(findViewById(android.R.id.content), "Please update all children's for proceeding to the next section", Snackbar.LENGTH_LONG)
                                 .show()
                         return@setOnActionSelectedListener false
@@ -90,7 +90,7 @@ class SelectedChildrenListActivity : AppCompatActivity(), WarningActivityInterfa
                     } else if (MainApp.form.g5Flag == "-1") {
                         id = 1
                         title = "WARNING!"
-                        message = "${adapter.childItems.find { it.isSelected == "1" || it.isSelected == "2" }?.cb02?.convertStringToUpperCase()}" +
+                        message = (adapter.childItems.find { it.isSelected == "1" || it.isSelected == "2" }?.cb02?.convertStringToUpperCase() ?: "") +
                                 " - Covid19 section not filled\n Are you sure, you want to exit this interview?"
                     }
                     openWarningActivity(

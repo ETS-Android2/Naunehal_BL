@@ -65,11 +65,11 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
                                 .show()
                         return@setOnActionSelectedListener false
                     }
-                    if (adapter.childItems.find { it.isMotherAvailable } == null) {
+                    /*if (adapter.childItems.find { it.isMotherAvailable } == null) {
                         Snackbar.make(findViewById(android.R.id.content), "Please add Mother available children for proceeding to the next section", Snackbar.LENGTH_LONG)
                                 .show()
                         return@setOnActionSelectedListener false
-                    }
+                    }*/
                     childSelection()
                 }
                 R.id.fab_exit -> {
@@ -170,9 +170,12 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
     * */
     private fun childSelection() {
         val childList = adapter.childItems
-        val selectedItem = childList.filter {
+        val selectedItems = childList.filter {
             it.cb11 == "1"
-        }.sortedBy { it.totalMonths }[0]
-        viewModel.updateChildrenDataForSelectionDB(selectedItem)
+        }
+        if (selectedItems.isNotEmpty()) {
+            val selectedItem = selectedItems.sortedBy { it.totalMonths }[0]
+            viewModel.updateChildrenDataForSelectionDB(selectedItem)
+        } else gotoActivity(SelectedChildrenListActivity::class.java)
     }
 }

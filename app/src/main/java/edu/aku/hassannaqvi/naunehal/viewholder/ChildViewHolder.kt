@@ -24,6 +24,7 @@ class ChildViewHolder(private val bi: ChildViewBinding) :
         bi.name.text = item.cb02.convertStringToUpperCase().shortStringLength()
         bi.age.text = item.cb0501.toInt().times(12).plus(item.cb0502.toInt()).toString()
         if (item.cb11 == "2") bi.subLayout.setBackgroundColor(ContextCompat.getColor(this.itemView.context, R.color.redOverlay))
+        else bi.subLayout.setBackgroundColor(ContextCompat.getColor(this.itemView.context, R.color.white))
         val imageRes: Int = if (item.cb03 == "1") R.drawable.ctr_childboy else R.drawable.ctr_childgirl
 
         Glide.with(this.itemView.context)
