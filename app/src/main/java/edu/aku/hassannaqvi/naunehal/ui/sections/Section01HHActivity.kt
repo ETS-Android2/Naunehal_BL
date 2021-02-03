@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
@@ -209,6 +210,7 @@ class Section01HHActivity : AppCompatActivity() {
 
         bi.hh09.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+                Log.d("TAG", "beforeTextChanged: " + i + " " + i1 + " " + i2 + " ")
                 //      Toast.makeText(SectionHHActivity.this, charSequence+" i="+i+" i1="+i1+" i2="+i2, Toast.LENGTH_LONG).show();
                 if (i == 1 && i1 == 0 && i2 == 1) {
                     bi.hh09.setText(bi.hh09.text.toString().plus("-"))
@@ -219,6 +221,8 @@ class Section01HHActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+                Log.d("TAG", "beforeTextChanged: " + i + " " + i1 + " " + i2 + " ")
+
                 if (i == 0 && i1 == 0 && i2 == 1) {
                     bi.hh09.setText(bi.hh09.text.toString().plus("-"))
                 }
@@ -234,7 +238,9 @@ class Section01HHActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(editable: Editable) {
+
                 bi.hh09.setSelection(bi.hh09.text.toString().length)
+
             }
         })
 
