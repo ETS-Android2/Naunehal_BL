@@ -152,7 +152,7 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
         radioGroup(bi.bf15m);
         radioGroup(bi.bf15n);
         radioGroup(bi.bf15o);
-        radioGroup(bi.bf15p);
+       // radioGroup(bi.bf15p);
         radioGroup(bi.bf15q);
 
 
@@ -188,7 +188,7 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                     && bi.bf15m02.isChecked()
                     && bi.bf15n02.isChecked()
                     && bi.bf15o02.isChecked()
-                    && bi.bf15p02.isChecked()
+                    //&& bi.bf15p02.isChecked()
                     && bi.bf15q02.isChecked()) {
                 bi.fldGrpCVbf16.setVisibility(View.VISIBLE);
             }
@@ -408,11 +408,11 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                 : bi.bf15o98.isChecked() ? "98"
                 : "-1");
 
-        form.setBf15p(bi.bf15p01.isChecked() ? "1"
+   /*     form.setBf15p(bi.bf15p01.isChecked() ? "1"
                 : bi.bf15p02.isChecked() ? "2"
                 : bi.bf15p98.isChecked() ? "98"
                 : "-1");
-
+*/
         form.setBf15q(bi.bf15q01.isChecked() ? "1"
                 : bi.bf15q02.isChecked() ? "2"
                 : bi.bf15q98.isChecked() ? "98"

@@ -197,7 +197,7 @@ public class Form extends BaseObservable {
     private String bf15m = StringUtils.EMPTY;
     private String bf15n = StringUtils.EMPTY;
     private String bf15o = StringUtils.EMPTY;
-    private String bf15p = StringUtils.EMPTY;
+   // private String bf15p = StringUtils.EMPTY;
     private String bf15q = StringUtils.EMPTY;
     private String bf16 = StringUtils.EMPTY;
     private String bf17 = StringUtils.EMPTY;
@@ -2427,7 +2427,7 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.bf15o);
     }
 
-
+/*
     @Bindable
     public String getBf15p() {
         return bf15p;
@@ -2436,7 +2436,7 @@ public class Form extends BaseObservable {
     public void setBf15p(String bf15p) {
         this.bf15p = bf15p;
         notifyPropertyChanged(BR.bf15p);
-    }
+    }*/
 
 
     @Bindable
@@ -4847,7 +4847,7 @@ public class Form extends BaseObservable {
                     .put("bf15m", bf15m)
                     .put("bf15n", bf15n)
                     .put("bf15o", bf15o)
-                    .put("bf15p", bf15p)
+                    //    .put("bf15p", bf15p)
                     .put("bf15q", bf15q)
                     .put("bf16", bf16)
                     .put("bf17", bf17)
@@ -5355,7 +5355,7 @@ public class Form extends BaseObservable {
                 this.bf15m = json.getString("bf15m");
                 this.bf15n = json.getString("bf15n");
                 this.bf15o = json.getString("bf15o");
-                this.bf15p = json.getString("bf15p");
+                //      this.bf15p = json.getString("bf15p");
                 this.bf15q = json.getString("bf15q");
                 this.bf16 = json.getString("bf16");
                 this.bf17 = json.getString("bf17");
