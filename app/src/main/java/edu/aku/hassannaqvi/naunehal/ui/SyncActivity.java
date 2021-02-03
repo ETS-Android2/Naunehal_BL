@@ -442,10 +442,10 @@ public class SyncActivity extends AppCompatActivity {
                                             JSONObject jsonObject = new JSONObject(json.getString(i));
                                             Log.d(TAG, "onChanged: " + json.getString(i));
                                             if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
-                                                method.invoke(db, jsonObject.getString("_id"));
+                                                method.invoke(db, jsonObject.getString("id"));
                                                 sSynced++;
                                             } else if (jsonObject.getString("status").equals("2") && jsonObject.getString("error").equals("0")) {
-                                                method.invoke(db, jsonObject.getString("_id"));
+                                                method.invoke(db, jsonObject.getString("id"));
                                                 sDuplicate++;
                                             } else {
                                                 sSyncedError.append("\nError: ").append(jsonObject.getString("message"));
