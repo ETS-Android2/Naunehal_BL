@@ -523,7 +523,8 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
             MainApp.immunization.setUid(MainApp.immunization.getDeviceId() + MainApp.immunization.getId());
             long count = db.updatesIMColumn(IMContract.IMTable.COLUMN_UID, MainApp.immunization.getUid());
             if (count > 0)
-                count = db.updatesIMColumn(IMContract.IMTable.COLUMN_SIM, MainApp.immunization.getSim());
+                count = db.updatesIMColumn(IMContract.IMTable.COLUMN_SIM, MainApp.immunization.s04IMtoString());
+            //count = db.updatesIMColumn(IMContract.IMTable.COLUMN_SIM, MainApp.immunization.getSim());
             if (count > 0) return true;
             else {
                 Toast.makeText(this, "SORRY! Failed to update DB)", Toast.LENGTH_SHORT).show();
