@@ -46,6 +46,7 @@ public class PhotoUploadWorker2 extends Worker {
     private final Context mContext;
     private Data data;
     private final int photoid;
+    private final String nTitle = "Naunehal: Photo Upload";
 
     // private File sdDir;
 
@@ -119,7 +120,7 @@ public class PhotoUploadWorker2 extends Worker {
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("simplifiedcoding", "simplifiedcoding", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel("simplifiedcoding", nTitle, NotificationManager.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(channel);
         }
 

@@ -1024,9 +1024,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = FormsTable.COLUMN_SYNCED + " is null AND " + FormsTable.COLUMN_ISTATUS + "=?";
+        whereClause = FormsTable.COLUMN_SYNCED + " is null ";
 
-        String[] whereArgs = new String[]{"1"};
+        String[] whereArgs = null;
 
         String groupBy = null;
         String having = null;
@@ -1095,9 +1095,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
         String whereClause;
-        whereClause = ChildContract.ChildTable.COLUMN_SYNCED + " is null AND " + ChildContract.ChildTable.COLUMN_STATUS + "=?";
+        whereClause = ChildContract.ChildTable.COLUMN_SYNCED + " is null ";
 
-        String[] whereArgs = new String[]{"1"};
+        String[] whereArgs = null;
 
         String groupBy = null;
         String having = null;
@@ -1231,9 +1231,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
         String whereClause;
-        whereClause = IMContract.IMTable.COLUMN_SYNCED + " is null AND " + IMContract.IMTable.COLUMN_STATUS + "=?";
+        whereClause = IMContract.IMTable.COLUMN_SYNCED + " is null ";
 
-        String[] whereArgs = new String[]{"1"};
+        String[] whereArgs = null;
 
         String groupBy = null;
         String having = null;

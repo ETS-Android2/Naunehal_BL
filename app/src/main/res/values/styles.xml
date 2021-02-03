@@ -256,9 +256,7 @@
 
     <style name="DatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:layout_gravity">center_horizontal|center_vertical</item>
-        <item name="colorAccent">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="colorControlActivated">@color/colorAccent</item>
         <item name="android:selectableItemBackgroundBorderless">@color/white</item>
         <item name="colorControlHighlight">@color/colorPrimaryBeta</item>
     </style>
