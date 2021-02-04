@@ -181,12 +181,15 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                 : bi.im0803.isChecked() ? "98"
                 : "-1");
 
+
+        //Its IM22A saved as IM08A @instructedByChaudarySahab
         MainApp.immunization.setIm08a(bi.im08a1.isChecked() ? "1"
                 : bi.im08a2.isChecked() ? "2"
                 : bi.im08a3.isChecked() ? "98"
                 : "-1");
 
 //        MainApp.immunization.setIm08b(bi.im08b.getText().toString());
+        //Its IM22C saved as IM08B @instructedByChaudarySahab
         MainApp.immunization.setIm08b(bi.im08b1.isChecked() ? "1"
                 : bi.im08b2.isChecked() ? "2"
                 : bi.im08b98.isChecked() ? "98"
@@ -213,12 +216,16 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
         MainApp.immunization.setIm1201x(bi.im1201x.getText().toString().isEmpty() ? "-1" : bi.im1201x.getText().toString());
 
+
+        //Its IM22B saved as IM12A @instructedByChaudarySahab
         MainApp.immunization.setIm12a(bi.im12a1.isChecked() ? "1"
                 : bi.im12a98.isChecked() ? "98"
                 : "-1");
 
         MainApp.immunization.setIm12a1x(bi.im12a1x.getText().toString().isEmpty() ? "-1" : bi.im12a1x.getText().toString());
 
+
+        //Its IM22D saved as IM13 @instructedByChaudarySahab
         MainApp.immunization.setIm13(bi.im1301.isChecked() ? "1"
                 : bi.im1302.isChecked() ? "2"
                 : bi.im1303.isChecked() ? "98"
