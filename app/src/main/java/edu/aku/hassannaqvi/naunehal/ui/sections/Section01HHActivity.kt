@@ -15,7 +15,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.validatorcrawler.aliazaz.Clear
 import com.validatorcrawler.aliazaz.Validator
-import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
@@ -27,10 +26,8 @@ import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding
 import edu.aku.hassannaqvi.naunehal.models.BLRandom
 import edu.aku.hassannaqvi.naunehal.models.Form
-import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.*
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
-import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -281,19 +278,14 @@ class Section01HHActivity : AppCompatActivity() {
                 bi.hh25a02.isChecked -> 3
                 else -> 0
             }
-            if (response != 0) {
-                if (response == 2) {
-                    openWarningDialogh("WARNING", 2, resources.getString(R.string.hh2607))
-                    return
+            when (response) {
+                1 -> return openWarningDialogh("WARNING", response, resources.getString(R.string.hh2603))
+                2 -> return openWarningDialogh("WARNING", response, resources.getString(R.string.hh2607))
+                3 -> return openWarningDialogh("WARNING", response, resources.getString(R.string.hh2608))
+                0 -> {
+                    finish()
+                    gotoActivity(ChildrenListActivity::class.java)
                 }
-                if (response == 3) {
-                    openWarningDialogh("WARNING", 3, resources.getString(R.string.hh2608))
-                    return
-                }
-                gotoActivityWithSerializable(EndingActivity::class.java, CONSTANTS.SECTION_MAIN_CHECK_FOR_END, response)
-            } else {
-                finish()
-                gotoActivity(ChildrenListActivity::class.java)
             }
         }
     }
