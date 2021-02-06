@@ -177,7 +177,7 @@ fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTx
 }
 
 @JvmOverloads
-fun AppCompatActivity.openWarningDialogh(title: String, response: Int, message: String, btnYesTxt: String = "SURE", btnNoTxt: String = "RETURN") {
+fun AppCompatActivity.openWarningDialogh(title: String, response: Int, message: String) {
     val dialog = Dialog(this)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     val bi: EndSectionDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.end_section_dialog, null, false)
@@ -185,8 +185,8 @@ fun AppCompatActivity.openWarningDialogh(title: String, response: Int, message: 
     bi.alertTitle.text = title
     bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.redLight))
     bi.content.text = message
-    bi.btnOk.text = btnYesTxt
-    bi.btnNo.text = btnNoTxt
+    bi.btnOk.text = "SURE"
+    bi.btnNo.text = "RETURN"
     bi.btnOk.setBackgroundColor(ContextCompat.getColor(this, R.color.redLight))
     bi.btnNo.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
     val params = WindowManager.LayoutParams()
