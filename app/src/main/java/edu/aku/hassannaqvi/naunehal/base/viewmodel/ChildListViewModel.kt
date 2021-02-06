@@ -42,13 +42,12 @@ class ChildListViewModel(internal val repository: GeneralRepository) : ViewModel
 
     }
 
-    fun updateChildrenDataForSelectionDB(selectedItem: ChildInformation) {
+    fun updateChildrenDataForSelectionDB(selectedItem: ChildInformation, item: String) {
         _childUpdateResponse.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
                 delay(1000)
-                val item = selectedItem.totalMonths < 24
-                val children = repository.updateSpecificChildList(selectedItem, if (item) "2" else "1")
+                val children = repository.updateSpecificChildList(selectedItem, item)
                 _childUpdateResponse.value = if (children > 0) {
                     ResponseStatusCallbacks.success(data = children, message = "Child updated")
                 } else

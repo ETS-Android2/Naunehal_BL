@@ -517,8 +517,10 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         MainApp.immunization.setStatus("1");
         if (updateDB()) {
             finish();
-            if (info.getIsSelected().equals("1") || info.getIsSelected().equals("2"))
+            if ((info.getIsSelected().equals("1") || info.getIsSelected().equals("2")) && info.isMotherAvailable())
                 gotoActivity(this, Section05PDActivity.class);
+            else if (info.getIsSelected().equals("1"))
+                gotoActivity(this, Section07CVActivity.class);
         }
     }
 

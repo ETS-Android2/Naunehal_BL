@@ -175,7 +175,11 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         }
         if (selectedItems.isNotEmpty()) {
             val selectedItem = selectedItems.sortedBy { it.totalMonths }[0]
-            viewModel.updateChildrenDataForSelectionDB(selectedItem)
-        } else gotoActivity(SelectedChildrenListActivity::class.java)
+            val item = selectedItem.totalMonths < 24
+            viewModel.updateChildrenDataForSelectionDB(selectedItem, if (item) "2" else "1")
+        } else {
+            val selectedItem = childList.sortedBy { it.totalMonths }[0]
+            viewModel.updateChildrenDataForSelectionDB(selectedItem, "1")
+        }
     }
 }

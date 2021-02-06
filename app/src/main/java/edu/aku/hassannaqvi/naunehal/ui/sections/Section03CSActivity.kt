@@ -199,9 +199,13 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             if (info.isMotherAvailable) {
                 if (info.isUnder35)
                     gotoActivity(Section04IMActivity::class.java)
+                else if (info.isSelected == "1")
+                    gotoActivity(Section05PDActivity::class.java)
             } else if (!bi.cs02a04.isChecked)
                 if (info.isUnder35)
                     gotoActivity(Section04IMActivity::class.java)
+                else if (info.isSelected == "1")
+                    gotoActivity(Section07CVActivity::class.java)
         }
     }
 
