@@ -81,11 +81,10 @@ class MainActivity : AppCompatActivity() {
                             district.add("....")
                             it.data?.forEach { item ->
                                 //
-                                if (item.districtCode != "9") {
+                                if (item.districtCode == MainApp.user.dist_id) {
                                     district.add(item.districtName)
                                     districtCode.add(item.districtCode)
-                                }
-                                if (item.districtCode == "9" && (MainApp.admin || MainApp.user.userName == "test1234")) {
+                                } else if (MainApp.admin || MainApp.user.userName == "test1234") {
                                     district.add(item.districtName)
                                     districtCode.add(item.districtCode)
                                 }

@@ -116,7 +116,8 @@ object CreateTable {
             + Users.UsersTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + Users.UsersTable.COLUMN_USERNAME + " TEXT,"
             + Users.UsersTable.COLUMN_PASSWORD + " TEXT,"
-            + Users.UsersTable.COLUMN_FULLNAME + " TEXT"
+            + Users.UsersTable.COLUMN_FULLNAME + " TEXT,"
+            + Users.UsersTable.COLUMN_DIST_ID + " TEXT"
             + " );")
 
     const val SQL_CREATE_DISTRICTS = ("CREATE TABLE " + Districts.TableDistricts.TABLE_NAME + "("
