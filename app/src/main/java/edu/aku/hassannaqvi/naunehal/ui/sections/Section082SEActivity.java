@@ -272,7 +272,7 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
             }
 
             if (Integer.valueOf(bi.se26.getText().toString()) > Integer.valueOf(bi.se25.getText().toString())) {
-                return Validator.emptyCustomTextBox(this, bi.se25, "Android phones cannot be more than total smart phones");
+                return Validator.emptyCustomTextBox(this, bi.se26, "Android phones cannot be more than total smart phones");
             }
         }
         return true;
