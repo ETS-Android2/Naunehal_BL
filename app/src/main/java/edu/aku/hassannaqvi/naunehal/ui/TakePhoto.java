@@ -95,7 +95,6 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
         wl.acquire();
         //
 
-
         previewFlag = false;
 
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);

@@ -244,6 +244,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 UsersTable.COLUMN_USERNAME,
                 UsersTable.COLUMN_PASSWORD,
                 UsersTable.COLUMN_FULLNAME,
+                UsersTable.COLUMN_DIST_ID,
         };
         String whereClause = UsersTable.COLUMN_USERNAME + "=? AND " + UsersTable.COLUMN_PASSWORD + "=?";
         String[] whereArgs = {username, password};
@@ -1001,6 +1002,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
                 values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(UsersTable.COLUMN_FULLNAME, user.getFullname());
+                values.put(UsersTable.COLUMN_DIST_ID, user.getDist_id());
                 long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
