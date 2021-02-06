@@ -80,8 +80,15 @@ class MainActivity : AppCompatActivity() {
                             districtCode.clear()
                             district.add("....")
                             it.data?.forEach { item ->
-                                district.add(item.districtName)
-                                districtCode.add(item.districtCode)
+                                //
+                                if (item.districtCode != "9") {
+                                    district.add(item.districtName)
+                                    districtCode.add(item.districtCode)
+                                }
+                                if (item.districtCode == "9" && (MainApp.admin || MainApp.user.userName == "test1234")) {
+                                    district.add(item.districtName)
+                                    districtCode.add(item.districtCode)
+                                }
                             }
                             districtAdapter.notifyDataSetChanged()
 
