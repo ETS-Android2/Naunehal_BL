@@ -2,10 +2,10 @@ package edu.aku.hassannaqvi.naunehal.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.location.LocationManager
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import android.provider.Settings
 import android.telephony.TelephonyManager
 
 
@@ -40,10 +40,13 @@ fun isNetworkConnected(context: Context): Boolean {
 
 @SuppressLint("HardwareIds")
 fun getIMEIInfo(context: Context): String {
-    val mTelephony = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        mTelephony.imei
+        Settings.Secure.getString(
+                context.contentResolver,
+                Settings.Secure.ANDROID_ID)
     } else {
-        mTelephony.deviceId
+        val mTelephony = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+        mTelephony.imei
     }
 }
