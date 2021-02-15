@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityEndingBinding;
@@ -100,8 +101,9 @@ public class EndingActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updateEnding();
-        if (updcount == 1) {
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, form.s01HHtoString());
+        if (updcount > 0) {
+            db.updateEnding();
             return true;
         } else {
             Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
