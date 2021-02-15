@@ -103,8 +103,8 @@ public class EndingActivity extends AppCompatActivity {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, form.s01HHtoString());
         if (updcount > 0) {
-            db.updateEnding();
-            return true;
+            int count = db.updateEnding();
+            return count > 0;
         } else {
             Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
             return false;
