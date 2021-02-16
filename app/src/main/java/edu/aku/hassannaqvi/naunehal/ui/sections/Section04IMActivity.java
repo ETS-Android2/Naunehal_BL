@@ -84,6 +84,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
     // Only in First Section of every Table.
     private void saveDraft() {
+        bi.btnContinue.setEnabled(false);
         MainApp.immunization.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         MainApp.immunization.setUuid(MainApp.form.getUid());
         MainApp.immunization.setUserName(MainApp.user.getUserName());
@@ -537,10 +538,12 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
             //count = db.updatesIMColumn(IMContract.IMTable.COLUMN_SIM, MainApp.immunization.getSim());
             if (count > 0) return true;
             else {
+                bi.btnContinue.setEnabled(true);
                 Toast.makeText(this, "SORRY! Failed to update DB)", Toast.LENGTH_SHORT).show();
                 return false;
             }
         } else {
+            bi.btnContinue.setEnabled(true);
             Toast.makeText(this, "Sorry. You can't go further.\n Please contact IT Team (Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -562,7 +565,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
             Toast.makeText(this, "No Photos attached", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (bi.im0801.isChecked())
+        if (bi.im0801.isChecked() && !bi.im2303.isChecked())
             if (Integer.parseInt(bi.im23b1.getText().toString()) + Integer.parseInt(bi.im23b2.getText().toString()) == 0) {
                 return Validator.emptyCustomTextBox(this, bi.im23b1, "Both values can't be ZERO");
             }
