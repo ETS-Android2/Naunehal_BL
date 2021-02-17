@@ -1453,8 +1453,7 @@
                             android:background="@color/redLight"
                             android:onClick="BtnEnd"
                             android:text="Cancel"
-                            android:textColor="@color/white"
-                            android:visibility="gone" />
+                            android:textColor="@color/white" />
 
                         <Button
                             android:id="@+id/btn_Continue"

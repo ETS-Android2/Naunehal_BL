@@ -290,6 +290,13 @@ class Section01HHActivity : AppCompatActivity() {
         }
     }
 
+    fun BtnEnd(view: View) {
+        saveDraft()
+        if (updateDB()) {
+            return openWarningDialogh("WARNING", 4, resources.getString(R.string.hh2606))
+        }
+    }
+
     fun checkHHExist(view: View) {
         Clear.clearAllFields(bi.fldGrpcheck)
         if (!Validator.emptyCheckingContainer(this, bi.fldGrpHH01)) return

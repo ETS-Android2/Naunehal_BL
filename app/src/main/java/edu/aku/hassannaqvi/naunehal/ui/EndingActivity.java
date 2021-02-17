@@ -57,9 +57,9 @@ public class EndingActivity extends AppCompatActivity {
             bi.istatusa.setEnabled(false);
             bi.istatusb.setEnabled(sectionMainCheck == 0);
             bi.istatusc.setEnabled(sectionMainCheck == 0 || sectionMainCheck == 1);
-            bi.istatusd.setEnabled(sectionMainCheck == 0);//@AliHasRequested from 1 to 0
-            bi.istatuse.setEnabled(sectionMainCheck == 0);//@AliHasRequested from 1 to 0
-            bi.istatusf.setEnabled(sectionMainCheck == 0);//@AliHasRequested from 1 to 0
+            bi.istatusd.setEnabled(sectionMainCheck == 4);
+            bi.istatuse.setEnabled(sectionMainCheck == 4);
+            bi.istatusf.setEnabled(sectionMainCheck == 4);
             bi.istatusg.setEnabled(sectionMainCheck == 2);
             bi.istatush.setEnabled(sectionMainCheck == 3);
             bi.istatus96.setEnabled(sectionMainCheck == 0);
