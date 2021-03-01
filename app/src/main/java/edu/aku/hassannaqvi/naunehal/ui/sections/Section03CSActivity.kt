@@ -244,11 +244,9 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
         MainApp.child.mothername = info.cb07
 
 
-        MainApp.child.cs01 = if (bi.cs01.text.toString().trim().isEmpty()) "-1"
-        else bi.cs01.text.toString()
+        MainApp.child.cs01 = info.cb01
 
-        MainApp.child.cs02 = if (bi.cs02.text.toString().trim().isEmpty()) "-1"
-        else bi.cs02.text.toString()
+        MainApp.child.cs02 = info.cb02
 
         MainApp.child.cs02a = when {
             bi.cs02a02.isChecked -> "2"
