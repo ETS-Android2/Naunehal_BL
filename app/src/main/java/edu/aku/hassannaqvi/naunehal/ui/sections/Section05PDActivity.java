@@ -187,9 +187,9 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
 
     private void saveDraft() {
 
-        form.setPd01(bi.pd01.getText().toString());
+        form.setPd01(info.getCb01());
 
-        form.setPd02(bi.pd02.getText().toString());
+        form.setPd02(info.getCb07());
 
         form.setPd03(bi.pd0301.isChecked() ? "1"
                 : bi.pd0302.isChecked() ? "2"
