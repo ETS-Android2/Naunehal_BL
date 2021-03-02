@@ -177,7 +177,7 @@ fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTx
 }
 
 @JvmOverloads
-fun AppCompatActivity.openWarningDialogh(title: String, response: Int, message: String) {
+fun AppCompatActivity.openWarningDialog(title: String, response: Int, message: String) {
     val dialog = Dialog(this)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     val bi: EndSectionDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.end_section_dialog, null, false)

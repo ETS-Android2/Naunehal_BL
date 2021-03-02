@@ -279,9 +279,9 @@ class Section01HHActivity : AppCompatActivity() {
                 else -> 0
             }
             when (response) {
-                1 -> return openWarningDialogh("WARNING", response, resources.getString(R.string.hh2603))
-                2 -> return openWarningDialogh("WARNING", response, resources.getString(R.string.hh2607))
-                3 -> return openWarningDialogh("WARNING", response, resources.getString(R.string.hh2608))
+                1 -> return openWarningDialog("WARNING", response, resources.getString(R.string.hh2603))
+                2 -> return openWarningDialog("WARNING", response, resources.getString(R.string.hh2607))
+                3 -> return openWarningDialog("WARNING", response, resources.getString(R.string.hh2608))
                 0 -> {
                     finish()
                     gotoActivity(ChildrenListActivity::class.java)
@@ -293,7 +293,7 @@ class Section01HHActivity : AppCompatActivity() {
     fun BtnEnd(view: View) {
         saveDraft()
         if (updateDB()) {
-            return openWarningDialogh("WARNING", 4, resources.getString(R.string.hh2606))
+            return openWarningDialog("WARNING", 4, resources.getString(R.string.hh2606))
         }
     }
 
