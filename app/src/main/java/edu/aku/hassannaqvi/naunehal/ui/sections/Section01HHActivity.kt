@@ -293,7 +293,7 @@ class Section01HHActivity : AppCompatActivity() {
     fun BtnEnd(view: View) {
         saveDraft()
         if (updateDB()) {
-            return openWarningDialog("WARNING", 4, resources.getString(R.string.hh2606))
+            return openWarningDialog("WARNING", 4, "گھرانے سے رابطہ نہیں ہو سکا")
         }
     }
 
