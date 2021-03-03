@@ -185,7 +185,7 @@ fun AppCompatActivity.openWarningDialog(title: String, response: Int, message: S
     bi.alertTitle.text = title
     bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.redLight))
     bi.content.text = message
-    bi.btnOk.text = "SURE"
+    bi.btnOk.text = "OK"
     bi.btnNo.text = "RETURN"
     bi.btnOk.setBackgroundColor(ContextCompat.getColor(this, R.color.redLight))
     bi.btnNo.setBackgroundColor(ContextCompat.getColor(this, R.color.green))

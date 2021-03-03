@@ -1452,7 +1452,7 @@
                             android:layout_marginStart="12dp"
                             android:background="@color/redLight"
                             android:onClick="BtnEnd"
-                            android:text="Cancel"
+                            android:text="Exit"
                             android:textColor="@color/white" />
 
                         <Button
