@@ -66,6 +66,7 @@ public class ChildInformation extends BaseObservable implements Serializable {
     private String cb15 = StringUtils.EMPTY;
     private String cb1598 = StringUtils.EMPTY;
     private String cb16 = StringUtils.EMPTY;
+    private String cb17 = StringUtils.EMPTY;
 
     //Not saving in db
     private boolean flag = true,
@@ -567,6 +568,18 @@ public class ChildInformation extends BaseObservable implements Serializable {
     }
 
     @Bindable
+    public String getCb17() {
+        return cb17;
+    }
+
+
+    public void setCb17(String cb17) {
+        this.cb17 = cb17;
+        notifyPropertyChanged(BR.cb17);
+    }
+
+
+    @Bindable
     public String getStatus() {
         return status;
     }
@@ -661,7 +674,8 @@ public class ChildInformation extends BaseObservable implements Serializable {
                     .put("cb1496x", cb1496x)
                     .put("cb15", cb15)
                     .put("cb1598", cb1598)
-                    .put("cb16", cb16);
+                    .put("cb16", cb16)
+                    .put("cb17", cb17);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -737,6 +751,7 @@ public class ChildInformation extends BaseObservable implements Serializable {
                 this.cb15 = json.getString("cb15");
                 this.cb1598 = json.getString("cb1598");
                 this.cb16 = json.getString("cb16");
+                this.cb17 = json.getString("cb17");
 
             } catch (JSONException e) {
                 e.printStackTrace();

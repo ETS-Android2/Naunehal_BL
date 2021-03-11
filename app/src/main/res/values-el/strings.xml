@@ -138,7 +138,14 @@
     <string name="cb1413">Housewife</string>
     <string name="cb1496">Others Please Specify</string>
     <string name="cb15">Birth weight (kg)</string>
-    <string name="cb16">Was this birth registered? If yes with? </string>
+    <string name="cb17"> When (name) was born, was s/he very large, larger than average, average, smaller than average or very small ? </string>
+    <string name="cb1701"> Very large </string>
+    <string name="cb1702"> Larger than average </string>
+    <string name="cb1703"> Average </string>
+    <string name="cb1704"> Smaller than average </string>
+    <string name="cb1705"> Very small </string>
+    <string name="cb1798"> Don’t know </string>
+    <string name="cb16"> Was this birth registered ? If yes with ? </string>
     <string name="cb1601">Not registered</string>
     <string name="cb1602">NADRA</string>
     <string name="cb1603">LHW</string>
@@ -1373,6 +1380,7 @@
     <string name='Q_cb14'>cb14</string>
     <string name='Q_cb15'>cb15</string>
     <string name='Q_cb16'>cb16</string>
+    <string name='Q_cb17'>cb17</string>
     <string name='Q_cs01'>cs01</string>
     <string name='Q_cs02'>cs02</string>
     <string name='Q_cs03'>cs03</string>

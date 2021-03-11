@@ -150,9 +150,16 @@
     <string name="cb1008">زراعت</string>
     <string name="cb15">پیدائشی وزن (کلوگرام میں۔)</string>
     <string name="cb1598">معلوم نہیں</string>
-    <string name="cb1009">طالب علم </string>
-    <string name="cb1010">بےروزگار</string>
-    <string name="cb16">کیا یہ پیدائش رجسٹرڈ تھی؟ اگر ہاں تو کہاں رجسٹرد تھی ؟</string>
+    <string name="cb17"> جب آپ کے بچے (نام) کی پیدائش ہوئی تھی ، کیا وہ بہت بڑا تھا، اوسطاً سے بڑا، اوسطً سے چھوٹا یا پھر بہت چھوٹا ؟ </string>
+    <string name="cb1701"> بہت بڑا </string>
+    <string name="cb1702"> اوسطاً سے بڑا </string>
+    <string name="cb1703"> اوسطاً </string>
+    <string name="cb1704"> اوسطاً سے چھوٹا </string>
+    <string name="cb1705"> بہت چھوٹا </string>
+    <string name="cb1798"> معلوم نہیں</string>
+    <string name="cb1009"> طالب علم </string>
+    <string name="cb1010"> بےروزگار </string>
+    <string name="cb16">کیا یہ پیدائش رجسٹرڈ تھی؟ اگر ہاں تو کہاں رجسٹرد تھی ؟ </string>
     <string name="cb1601">رجسٹرڈ نہیں</string>
     <string name="cb1602">نادرا</string>
     <string name="cb1603">ایل ایچ ڈبلیو</string>
@@ -1402,6 +1409,7 @@
     <string name='Q_cb14'>cb14</string>
     <string name='Q_cb15'>cb15</string>
     <string name='Q_cb16'>cb16</string>
+    <string name='Q_cb17'>cb17</string>
     <string name='Q_cs01'>cs01</string>
     <string name='Q_cs02'>cs02</string>
     <string name='Q_cs02a'>cs02a</string>

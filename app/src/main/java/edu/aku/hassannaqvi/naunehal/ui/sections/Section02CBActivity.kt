@@ -113,7 +113,6 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb10, true)
                     Clear.clearAllFields(bi.fldGrpCVcb11, true)
                     bi.cb1413.isEnabled = false
-
                     bi.fldGrpCVcb11.visibility = View.VISIBLE
                 }
             }
@@ -131,13 +130,19 @@ class Section02CBActivity : AppCompatActivity() {
             }
         }
 
+
         bi.cb1598.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 bi.cb15.isEnabled = false
                 bi.cb15.text = null
-            } else
+                Clear.clearAllFields(bi.cvcb17)
+                bi.cvcb17.visibility = View.VISIBLE
+            } else {
                 bi.cb15.isEnabled = true
+                bi.cvcb17.visibility = View.GONE
+            }
         }
+
 
         bi.cb10.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
             when (i) {
@@ -241,6 +246,16 @@ class Section02CBActivity : AppCompatActivity() {
 
         MainApp.childInformation.cb15 = bi.cb15.text.toString()
         MainApp.childInformation.cb1598 = if (bi.cb1598.isChecked) "98" else "-1"
+
+        MainApp.childInformation.cb17 = when {
+            bi.cb1701.isChecked -> "1"
+            bi.cb1702.isChecked -> "2"
+            bi.cb1703.isChecked -> "3"
+            bi.cb1704.isChecked -> "4"
+            bi.cb1705.isChecked -> "5"
+            bi.cb1798.isChecked -> "98"
+            else -> "-1"
+        }
 
         MainApp.childInformation.cb01 = bi.cb01.text.toString()
 
