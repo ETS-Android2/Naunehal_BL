@@ -135,10 +135,10 @@ class Section02CBActivity : AppCompatActivity() {
             if (isChecked) {
                 bi.cb15.isEnabled = false
                 bi.cb15.text = null
-                Clear.clearAllFields(bi.cvcb17)
                 bi.cvcb17.visibility = View.VISIBLE
             } else {
                 bi.cb15.isEnabled = true
+                Clear.clearAllFields(bi.cvcb17)
                 bi.cvcb17.visibility = View.GONE
             }
         }
