@@ -512,7 +512,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
         if (calculatedDOB == null) {
             Clear.clearAllFields(bi.fldGrpDOBCheck01);
-            Clear.clearAllFields(bi.fldGrpDOBCheck02);
+//            Clear.clearAllFields(bi.fldGrpDOBCheck02);
         }
         saveDraft();
         MainApp.immunization.setStatus("1");
