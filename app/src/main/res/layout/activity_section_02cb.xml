@@ -510,6 +510,7 @@
                 <!-- cb17  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvcb17"
+                    android:visibility="gone"
                     style="@style/cardView">
 
                     <LinearLayout
