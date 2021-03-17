@@ -28,7 +28,7 @@ import java.util.List;
 import edu.aku.hassannaqvi.naunehal.R;
 import id.zelory.compressor.Compressor;
 
-import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.naunehal.database.CreateTable.PROJECT_NAME;
 
 public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camera.PictureCallback {
 

@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.naunehal.utils
+package edu.aku.hassannaqvi.naunehal.database
 
 import edu.aku.hassannaqvi.naunehal.contracts.ChildContract
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract

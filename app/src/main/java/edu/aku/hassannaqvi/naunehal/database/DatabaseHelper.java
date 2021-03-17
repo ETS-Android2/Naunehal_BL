@@ -43,7 +43,6 @@ import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp.VersionAppTable;
-import edu.aku.hassannaqvi.naunehal.utils.CreateTable;
 
 /*import edu.aku.hassannaqvi.naunehal.models.Immunization;*/
 

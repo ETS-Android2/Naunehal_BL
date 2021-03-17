@@ -28,7 +28,7 @@ import java.net.URL;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
-import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.naunehal.database.CreateTable.PROJECT_NAME;
 
 
 public class DataUpWorkerALL extends Worker {

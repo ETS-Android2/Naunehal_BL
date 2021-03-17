@@ -64,7 +64,7 @@ import edu.aku.hassannaqvi.naunehal.workers.PhotoUploadWorker2;
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.sdDir;
 import static edu.aku.hassannaqvi.naunehal.utils.AndroidUtilityKt.isNetworkConnected;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.dbBackup;
-import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.naunehal.database.CreateTable.PROJECT_NAME;
 
 
 public class SyncActivity extends AppCompatActivity {

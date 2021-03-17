@@ -19,9 +19,9 @@ import edu.aku.hassannaqvi.naunehal.CONSTANTS
 import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.databinding.EndSectionDialogBinding
 import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
-import edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_COPY
-import edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_NAME
-import edu.aku.hassannaqvi.naunehal.utils.CreateTable.PROJECT_NAME
+import edu.aku.hassannaqvi.naunehal.database.CreateTable.DATABASE_COPY
+import edu.aku.hassannaqvi.naunehal.database.CreateTable.DATABASE_NAME
+import edu.aku.hassannaqvi.naunehal.database.CreateTable.PROJECT_NAME
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import java.io.*
 import java.text.SimpleDateFormat
