@@ -2471,9 +2471,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-
                                 android:text="@string/bf1701" />
-
 
                             <RadioButton
                                 android:id="@+id/bf1798"

@@ -157,10 +157,10 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
 
 
         bi.bf16.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(bi.fldGrpCVbf17);
-            bi.fldGrpCVbf17.setVisibility(View.GONE);
+            //Clear.clearAllFields(bi.fldGrpCVbf17);
+            //bi.fldGrpCVbf17.setVisibility(View.GONE);
             if (i == bi.bf1601.getId()) {
-                bi.fldGrpCVbf17.setVisibility(View.VISIBLE);
+                //bi.fldGrpCVbf17.setVisibility(View.VISIBLE);
                 AppUtilsKt.openWarningDialog(this, "WARNING!", "اگر BF16 کا جواب \" ہاں\"  میں ہے مگر BF15  کے تمام جوابات \"نہیں\"  میں ہیں تو سوال نمبر BF15  پر واپس جائیں اور کھانوں کی تفصیلات ریکارڈ کریں۔ اسکے بعد سوال نمبر BF17 کو جاری رکھیں۔");
                 bi.bf1601.setChecked(false);
                 bi.bf15a01.requestFocus();
@@ -171,8 +171,6 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
 
     private void radioGroup(RadioGroup rg) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
-            Clear.clearAllFields(bi.fldGrpCVbf16);
-            bi.fldGrpCVbf16.setVisibility(View.GONE);
             if (bi.bf15a02.isChecked()
                     && bi.bf15b02.isChecked()
                     && bi.bf15c02.isChecked()
@@ -190,7 +188,13 @@ public class Section061BFActivity extends AppCompatActivity implements EndSectio
                     && bi.bf15o02.isChecked()
                     //&& bi.bf15p02.isChecked()
                     && bi.bf15q02.isChecked()) {
+                Clear.clearAllFields(bi.fldGrpCVbf17);
+                bi.fldGrpCVbf17.setVisibility(View.GONE);
                 bi.fldGrpCVbf16.setVisibility(View.VISIBLE);
+            } else {
+                Clear.clearAllFields(bi.fldGrpCVbf16);
+                bi.fldGrpCVbf16.setVisibility(View.GONE);
+                bi.fldGrpCVbf17.setVisibility(View.VISIBLE);
             }
         });
     }
