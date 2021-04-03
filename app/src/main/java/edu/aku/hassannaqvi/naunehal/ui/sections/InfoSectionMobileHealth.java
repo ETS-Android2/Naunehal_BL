@@ -1,0 +1,91 @@
+package edu.aku.hassannaqvi.naunehal.ui.sections;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.validatorcrawler.aliazaz.Validator;
+
+import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.databinding.ActivityInfoMobileHealthBinding;
+import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
+import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
+
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+
+public class InfoSectionMobileHealth extends AppCompatActivity implements EndSectionActivity {
+
+    ActivityInfoMobileHealthBinding bi;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_info_mobile_health);
+        bi.setCallback(this);
+        setupSkips();
+    }
+
+    private void setupSkips() {
+    }
+
+
+    private boolean UpdateDB() {
+        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S08SE, form.s08SEtoString());
+        if (updcount == 1) {
+            return true;
+        } else {
+            Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
+        return true;
+    }
+
+
+    private void saveDraft() {
+
+       /* form.setMh01(bi.mh01.getText().toString());
+
+        form.setMh02(bi.mh02.getText().toString());
+
+        form.setMh03(bi.mh03.getText().toString());
+
+        form.setMh04(bi.mh04.getText().toString());
+
+        form.setMh05(bi.mh05.getText().toString());*/
+
+
+    }
+
+
+    public void BtnContinue(View view) {
+        if (!formValidation()) return;
+        saveDraft();
+        if (UpdateDB()) {
+            finish();
+            startActivity(new Intent(this, InfoSectionMobileHealth.class));
+        }
+    }
+
+
+    private boolean formValidation() {
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
+
+    }
+
+    public void BtnEnd(View view) {
+        AppUtilsKt.contextEndActivity(this);
+    }
+
+    @Override
+    public void endSecActivity(boolean flag) {
+        saveDraft();
+        form.setHhflag("2");
+        if (UpdateDB()) {
+            finish();
+        }
+    }
+}
