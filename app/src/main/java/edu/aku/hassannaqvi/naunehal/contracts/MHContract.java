@@ -26,6 +26,11 @@ public class MHContract {
         public static final String COLUMN_CHILD_NAME = "childname";
         public static final String COLUMN_SERIAL = "serial";
         public static final String COLUMN_SA = "sA";
+        public static final String COLUMN_MH01 = "mh01";
+        public static final String COLUMN_MH02 = "mh02";
+        public static final String COLUMN_MH03 = "mh03";
+        public static final String COLUMN_MH04 = "mh04";
+        public static final String COLUMN_MH05 = "mh05";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
