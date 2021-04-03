@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.naunehal.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -10,6 +11,9 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
+import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityMobileHealthBinding;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
@@ -35,29 +39,18 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S08SE, form.s08SEtoString());
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesMHColumn(MHContract.MHTable.COLUMN_SA, mobileHealth.sAtoString());
         if (updcount == 1) {
             return true;
         } else {
             Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
 
 
     private void saveDraft() {
-
-        mobileHealth.setMh01(bi.mh01.getText().toString());
-
-        mobileHealth.setMh02(bi.mh02.getText().toString());
-
-        mobileHealth.setMh03(bi.mh03.getText().toString());
-
-        mobileHealth.setMh04(bi.mh04.getText().toString());
-
-        mobileHealth.setMh05(bi.mh05.getText().toString());
 
         mobileHealth.setMh06(bi.mh06.getText().toString());
 
