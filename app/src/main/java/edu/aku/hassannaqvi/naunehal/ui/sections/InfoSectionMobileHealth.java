@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.naunehal.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -10,6 +11,9 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
+import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
+import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityInfoMobileHealthBinding;
 import edu.aku.hassannaqvi.naunehal.models.MobileHealth;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
@@ -35,15 +39,23 @@ public class InfoSectionMobileHealth extends AppCompatActivity implements EndSec
 
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S08SE, form.s08SEtoString());
-        if (updcount == 1) {
-            return true;
+        DatabaseHelper db = MainApp.appInfo.dbHelper;
+        long updcount = db.addMH(mobileHealth);
+        mobileHealth.setId(String.valueOf(updcount));
+        if (updcount > 0) {
+            mobileHealth.setUid(mobileHealth.getDeviceId() + mobileHealth.getId());
+            long count = db.updatesMHColumn(MHContract.MHTable.COLUMN_UID, mobileHealth.getUid());
+            if (count > 0)
+                count = db.updatesMHColumn(MHContract.MHTable.COLUMN_SA, mobileHealth.sAtoString());
+            if (count > 0) return true;
+            else {
+                Toast.makeText(this, "SORRY! Failed to update DB)", Toast.LENGTH_SHORT).show();
+                return false;
+            }
         } else {
-            Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "SORRY!! Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return true;
+        }
     }
 
 
