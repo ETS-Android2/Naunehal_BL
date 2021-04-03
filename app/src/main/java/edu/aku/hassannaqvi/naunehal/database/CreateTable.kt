@@ -1,9 +1,6 @@
 package edu.aku.hassannaqvi.naunehal.database
 
-import edu.aku.hassannaqvi.naunehal.contracts.ChildContract
-import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
-import edu.aku.hassannaqvi.naunehal.contracts.IMContract
+import edu.aku.hassannaqvi.naunehal.contracts.*
 import edu.aku.hassannaqvi.naunehal.models.*
 
 object CreateTable {
@@ -110,6 +107,36 @@ object CreateTable {
             + IMContract.IMTable.COLUMN_CHILD_NAME + " TEXT,"
             + IMContract.IMTable.COLUMN_SERIAL + " TEXT,"
             + IMContract.IMTable.COLUMN_SIM + " TEXT"
+            + " );")
+
+    const val SQL_CREATE_MOBILE_HEALTH = ("CREATE TABLE "
+            + MHContract.MHTable.TABLE_NAME + "("
+            + MHContract.MHTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + MHContract.MHTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + MHContract.MHTable.COLUMN_UID + " TEXT,"
+            + MHContract.MHTable.COLUMN_UUID + " TEXT,"
+            + MHContract.MHTable.COLUMN_FMUID + " TEXT,"
+            + MHContract.MHTable.COLUMN_USERNAME + " TEXT,"
+            + MHContract.MHTable.COLUMN_SYSDATE + " TEXT,"
+            + MHContract.MHTable.COLUMN_STATUS + " TEXT,"
+            + MHContract.MHTable.COLUMN_DEVICEID + " TEXT,"
+            + MHContract.MHTable.COLUMN_DEVICETAGID + " TEXT,"
+            + MHContract.MHTable.COLUMN_SYNCED + " TEXT,"
+            + MHContract.MHTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + MHContract.MHTable.COLUMN_APPVERSION + " TEXT,"
+            + MHContract.MHTable.COLUMN_DCODE + " TEXT,"
+            + MHContract.MHTable.COLUMN_UCODE + " TEXT,"
+            + MHContract.MHTable.COLUMN_CLUSTER + " TEXT,"
+            + MHContract.MHTable.COLUMN_HHNO + " TEXT,"
+            + MHContract.MHTable.COLUMN_MOTHER_NAME + " TEXT,"
+            + MHContract.MHTable.COLUMN_CHILD_NAME + " TEXT,"
+            + MHContract.MHTable.COLUMN_SERIAL + " TEXT,"
+            + MHContract.MHTable.COLUMN_MH01 + " TEXT,"
+            + MHContract.MHTable.COLUMN_MH02 + " TEXT,"
+            + MHContract.MHTable.COLUMN_MH03 + " TEXT,"
+            + MHContract.MHTable.COLUMN_MH04 + " TEXT,"
+            + MHContract.MHTable.COLUMN_MH05 + " TEXT,"
+            + MHContract.MHTable.COLUMN_SA + " TEXT"
             + " );")
 
     const val SQL_CREATE_USERS = ("CREATE TABLE " + Users.UsersTable.TABLE_NAME + "("
