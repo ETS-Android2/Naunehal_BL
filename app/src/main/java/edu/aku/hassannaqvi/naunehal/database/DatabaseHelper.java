@@ -25,6 +25,7 @@ import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract.IMTable;
+import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom.TableRandom;
@@ -37,12 +38,15 @@ import edu.aku.hassannaqvi.naunehal.models.Districts.TableDistricts;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel;
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
+import edu.aku.hassannaqvi.naunehal.models.MobileHealth;
 import edu.aku.hassannaqvi.naunehal.models.UCs;
 import edu.aku.hassannaqvi.naunehal.models.UCs.TableUCs;
 import edu.aku.hassannaqvi.naunehal.models.Users;
 import edu.aku.hassannaqvi.naunehal.models.Users.UsersTable;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp;
 import edu.aku.hassannaqvi.naunehal.models.VersionApp.VersionAppTable;
+
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.mobileHealth;
 
 /*import edu.aku.hassannaqvi.naunehal.models.Immunization;*/
 
@@ -68,6 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_CHILD_INFO);
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
         db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
+        db.execSQL(CreateTable.SQL_CREATE_MOBILE_HEALTH);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
         db.execSQL(CreateTable.SQL_CREATE_BL_RANDOM);
     }
@@ -227,6 +232,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 IMContract.IMTable.TABLE_NAME,
                 IMContract.IMTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addMH(MobileHealth mobileHealth) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(MHContract.MHTable.COLUMN_PROJECT_NAME, mobileHealth.getProjectName());
+        values.put(MHContract.MHTable.COLUMN_UID, mobileHealth.getUid());
+        values.put(MHContract.MHTable.COLUMN_UUID, mobileHealth.getUuid());
+        values.put(MHContract.MHTable.COLUMN_FMUID, mobileHealth.getFmuid());
+        values.put(MHContract.MHTable.COLUMN_USERNAME, mobileHealth.getUserName());
+        values.put(MHContract.MHTable.COLUMN_SYSDATE, mobileHealth.getSysDate());
+        values.put(MHContract.MHTable.COLUMN_DCODE, mobileHealth.getDcode());
+        values.put(MHContract.MHTable.COLUMN_UCODE, mobileHealth.getUcode());
+        values.put(MHContract.MHTable.COLUMN_CLUSTER, mobileHealth.getCluster());
+        values.put(MHContract.MHTable.COLUMN_HHNO, mobileHealth.getHhno());
+        values.put(MHContract.MHTable.COLUMN_SA, mobileHealth.sAtoString());
+        values.put(MHContract.MHTable.COLUMN_MH01, mobileHealth.getMh01());
+        values.put(MHContract.MHTable.COLUMN_MH02, mobileHealth.getMh02());
+        values.put(MHContract.MHTable.COLUMN_MH03, mobileHealth.getMh03());
+        values.put(MHContract.MHTable.COLUMN_MH04, mobileHealth.getMh04());
+        values.put(MHContract.MHTable.COLUMN_MH05, mobileHealth.getMh05());
+        values.put(MHContract.MHTable.COLUMN_DEVICEID, mobileHealth.getDeviceId());
+        values.put(MHContract.MHTable.COLUMN_DEVICETAGID, mobileHealth.getDeviceTag());
+        values.put(MHContract.MHTable.COLUMN_SYNCED, mobileHealth.getSynced());
+        values.put(MHContract.MHTable.COLUMN_SYNCED_DATE, mobileHealth.getSyncDate());
+        values.put(MHContract.MHTable.COLUMN_APPVERSION, mobileHealth.getAppver());
+        values.put(MHContract.MHTable.COLUMN_STATUS, mobileHealth.getStatus());
+        values.put(MHContract.MHTable.COLUMN_CHILD_NAME, mobileHealth.getChildname());
+        values.put(MHContract.MHTable.COLUMN_SERIAL, mobileHealth.getSerial());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                MHContract.MHTable.TABLE_NAME,
+                MHContract.MHTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -788,6 +834,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.immunization.getId())};
 
         return db.update(IMContract.IMTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesMHColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = MHContract.MHTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(mobileHealth.getId())};
+
+        return db.update(MHContract.MHTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
