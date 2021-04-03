@@ -1335,8 +1335,15 @@
     <string name="mh01002">Female</string>
     <string name="mh011">Presenting Complaints</string>
     <string name="mh012">Weight (KG)</string>
-    <string name="mh013">Pallor</string>
-    <string name="mh014">Hydration</string>
+
+    <string name="mh013"> Pallor </string>
+    <string name="mh013a"> Positive </string>
+    <string name="mh013b"> Negative </string>
+
+    <string name="mh014"> Hydration </string>
+    <string name="mh014a"> Adequate </string>
+    <string name="mh014b"> Inadequate </string>
+
     <string name="mh015">Height/Length (CM)</string>
     <string name="mh016">MUAC (CM)</string>
     <string name="mh017">Diagnosis in Pregnant Women/Mothers</string>
