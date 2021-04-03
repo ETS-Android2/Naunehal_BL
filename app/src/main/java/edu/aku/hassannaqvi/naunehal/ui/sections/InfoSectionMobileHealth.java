@@ -11,10 +11,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityInfoMobileHealthBinding;
+import edu.aku.hassannaqvi.naunehal.models.MobileHealth;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.mobileHealth;
 
 public class InfoSectionMobileHealth extends AppCompatActivity implements EndSectionActivity {
 
@@ -47,16 +49,17 @@ public class InfoSectionMobileHealth extends AppCompatActivity implements EndSec
 
     private void saveDraft() {
 
-       /* form.setMh01(bi.mh01.getText().toString());
+        mobileHealth = new MobileHealth();
 
-        form.setMh02(bi.mh02.getText().toString());
+        mobileHealth.setMh01(bi.mh01.getText().toString().trim().isEmpty() ? "-1" : bi.mh01.getText().toString());
 
-        form.setMh03(bi.mh03.getText().toString());
+        mobileHealth.setMh02(bi.mh02.getText().toString().trim().isEmpty() ? "-1" : bi.mh02.getText().toString());
 
-        form.setMh04(bi.mh04.getText().toString());
+        mobileHealth.setMh03(bi.mh03.getText().toString().trim().isEmpty() ? "-1" : bi.mh03.getText().toString());
 
-        form.setMh05(bi.mh05.getText().toString());*/
+        mobileHealth.setMh04(bi.mh04.getText().toString().trim().isEmpty() ? "-1" : bi.mh04.getText().toString());
 
+        mobileHealth.setMh05(bi.mh05.getText().toString().trim().isEmpty() ? "-1" : bi.mh05.getText().toString());
 
     }
 

@@ -15,10 +15,17 @@ public class MHContract {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_FMUID = "_fmuid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
+        public static final String COLUMN_DCODE = "districtCode";
+        public static final String COLUMN_UCODE = "ucCode";
+        public static final String COLUMN_CLUSTER = "clusterno";
+        public static final String COLUMN_HHNO = "hhno";
+        public static final String COLUMN_MOTHER_NAME = "mothername";
+        public static final String COLUMN_CHILD_NAME = "childname";
         public static final String COLUMN_SERIAL = "serial";
-        public static final String COLUMN_SA = "sa";
+        public static final String COLUMN_SA = "sA";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
