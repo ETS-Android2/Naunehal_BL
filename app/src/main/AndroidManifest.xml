@@ -4,11 +4,11 @@
     package="edu.aku.hassannaqvi.naunehal">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
@@ -30,6 +30,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
+        <activity android:name=".ui.sections.SectionMobileHealth"></activity>
         <activity
             android:name=".ui.SplashscreenActivity"
             android:screenOrientation="portrait"
@@ -105,25 +106,20 @@
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section01HHActivity"
+            android:label="@string/hh01_headding"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
-            android:label="@string/hh01_headding"
             android:theme="@style/AppThemeUrdu" />
-
         <activity
             android:name=".ui.sections.IdentificationSectionActivity"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
-
-        <activity
-            android:name=".ui.MainActivity"/>
-
+        <activity android:name=".ui.MainActivity" />
         <activity
             android:name=".database.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
-
         <activity
             android:name=".ui.TakePhoto"
             android:hardwareAccelerated="true"
