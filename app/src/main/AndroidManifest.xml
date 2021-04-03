@@ -18,7 +18,6 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".core.MainApp"
@@ -30,16 +29,26 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.sections.SectionMobileHealth"></activity>
         <activity
-            android:name=".ui.SplashscreenActivity"
+            android:name=".ui.sections.SectionMobileHealth"
+            android:label="@string/bf06_headding"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.NoActionBar">
+
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".ui.SplashscreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.NoActionBar">
+
         </activity>
         <activity
             android:name=".ui.login_activity.LoginActivity"
