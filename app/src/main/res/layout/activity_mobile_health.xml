@@ -662,11 +662,27 @@
 
                     </LinearLayout>
 
-                    <EditText
+                    <RadioGroup
                         android:id="@+id/mh013"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/mh013" />
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/mh013a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/mh013a" />
+
+                        <RadioButton
+                            android:id="@+id/mh013b"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/mh013b" />
+
+                    </RadioGroup>
 
                 </LinearLayout>
 
@@ -702,11 +718,27 @@
 
                     </LinearLayout>
 
-                    <EditText
+                    <RadioGroup
                         android:id="@+id/mh014"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/mh014" />
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/mh014a"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/mh014a" />
+
+                        <RadioButton
+                            android:id="@+id/mh014b"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/mh014b" />
+
+                    </RadioGroup>
 
                 </LinearLayout>
 
