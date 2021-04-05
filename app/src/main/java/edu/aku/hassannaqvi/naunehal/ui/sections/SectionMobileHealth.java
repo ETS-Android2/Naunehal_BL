@@ -2,12 +2,14 @@ package edu.aku.hassannaqvi.naunehal.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.naunehal.R;
@@ -35,6 +37,36 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
     }
 
     private void setupSkips() {
+        bi.mh010.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == bi.mh01001.getId()) {
+                Clear.clearAllFields(bi.fldGrpCVmh017);
+                Clear.clearAllFields(bi.llmh020);
+                bi.fldGrpCVmh017.setVisibility(View.GONE);
+                bi.llmh020.setVisibility(View.GONE);
+            } else {
+                bi.fldGrpCVmh017.setVisibility(View.VISIBLE);
+                bi.llmh020.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+
+    public void mh09yOnTextChanged(CharSequence s, int i, int i1, int i2) {
+
+        if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))
+            return;
+
+        int age = Integer.parseInt(bi.mh09m.getText().toString()) + (Integer.parseInt(bi.mh09y.getText().toString()) * 12);
+
+        if (age > 60) {
+            Clear.clearAllFields(bi.fldGrpCVmh015);
+            Clear.clearAllFields(bi.fldGrpCVmh016);
+            bi.fldGrpCVmh015.setVisibility(View.GONE);
+            bi.fldGrpCVmh016.setVisibility(View.GONE);
+        } else {
+            bi.fldGrpCVmh015.setVisibility(View.VISIBLE);
+            bi.fldGrpCVmh016.setVisibility(View.VISIBLE);
+        }
     }
 
 
