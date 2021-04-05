@@ -49,17 +49,7 @@ public class InfoSectionMobileHealth extends AppCompatActivity implements EndSec
         if (updcount > 0) {
             mobileHealth.setUid(mobileHealth.getDeviceId() + mobileHealth.getId());
             long count = db.updatesMHColumn(MHContract.MHTable.COLUMN_UID, mobileHealth.getUid());
-            if (count > 0)
-                count = db.updatesMHColumn(MHContract.MHTable.COLUMN_MH01, mobileHealth.getMh01());
-            count = db.updatesMHColumn(MHContract.MHTable.COLUMN_MH02, mobileHealth.getMh02());
-            count = db.updatesMHColumn(MHContract.MHTable.COLUMN_MH03, mobileHealth.getMh03());
-            count = db.updatesMHColumn(MHContract.MHTable.COLUMN_MH04, mobileHealth.getMh04());
-            count = db.updatesMHColumn(MHContract.MHTable.COLUMN_MH05, mobileHealth.getMh05());
-            if (count > 0) return true;
-            else {
-                Toast.makeText(this, "SORRY! Failed to update DB)", Toast.LENGTH_SHORT).show();
-                return false;
-            }
+            return true;
         } else {
             Toast.makeText(this, "SORRY!! Failed to update DB)", Toast.LENGTH_SHORT).show();
             return false;
