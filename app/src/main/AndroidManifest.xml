@@ -29,11 +29,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
+
         <activity
             android:name=".ui.sections.SectionMobileHealth"
             android:label="@string/mobilehealthserviceform_heading"
             android:screenOrientation="portrait"
-
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden">
 
@@ -44,30 +44,35 @@
             </intent-filter>
 
         </activity>
+
         <activity
             android:name=".ui.SplashscreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.NoActionBar">
-
         </activity>
+
         <activity
             android:name=".ui.login_activity.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge" />
+
         <activity
             android:name=".ui.SyncActivity"
             android:label="Download and Upload Data Activity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".ui.sections.ChildrenListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
         <activity
             android:name=".ui.sections.SelectedChildrenListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
         <activity
             android:name=".ui.sections.Section082SEActivity"
             android:label="@string/se08_headding"
