@@ -1401,11 +1401,11 @@
     <string name="mh018077">Other</string>
     <string name="mh019">Medicines Prescribed</string>
     <string name="mh01901">Paracetamol</string>
-    <string name="mh01902">Flagyl</string>
-    <string name="mh01903">Augmentin</string>
-    <string name="mh01904">Amoxil</string>
-    <string name="mh01905">Cefixime</string>
-    <string name="mh01906">Antipyretic</string>
+    <string name="mh01902">Metroinidazole</string>
+    <string name="mh01903">Aminophylline Plus Compound</string>
+    <string name="mh01904">Amoxicillin</string>
+    <string name="mh01905">Cetrizine</string>
+    <string name="mh01906">Nonsteroidal-Anti-Inflammatory Drug</string>
     <string name="mh01907">Antiemetic</string>
     <string name="mh01908">Antimalarial</string>
     <string name="mh01909">Deworming</string>
@@ -1462,7 +1462,7 @@
     <string name="mh028">Referred</string>
     <string name="mh02801">Yes</string>
     <string name="mh02802">No</string>
-    <string name="mh029">Signature</string>
+    <string name="mh029">Consent given</string>
     <string name="mh02901">Yes</string>
     <string name="mh02902">No</string>
 
@@ -1765,5 +1765,12 @@
     <string name='Q_mh09d'>mh09d</string>
     <string name='Q_mh09m'>mh09m</string>
     <string name='Q_mh09y'>mh09y</string>
+    <string name="Q_mh027a">MH27a</string>
+    <string name="mh027a">OPV</string>
+    <string name="mh027a01">Administered</string>
+    <string name="mh027a02">Refused</string>
+    <string name="Q_mh027b">MH27B</string>
+    <string name="Q_mh030">MH30</string>
+    <string name="mh030">Remarks</string>
 
 </resources>
