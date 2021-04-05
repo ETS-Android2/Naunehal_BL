@@ -390,21 +390,21 @@
 
                         </RadioGroup>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <EditText
                             android:id="@+id/mh0801x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:Digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/mh0801"
                             android:maxLength="20"
                             android:text='@{mh0801.checked ? mh0801x.getText().toString() : ""}'
                             android:visibility='@{mh0801.checked ? View.VISIBLE : View.GONE}' />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <EditText
                             android:id="@+id/mh0802x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:Digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/mh0802"
                             android:maxLength="20"
                             android:text='@{mh0802.checked ? mh0802x.getText().toString() : ""}'

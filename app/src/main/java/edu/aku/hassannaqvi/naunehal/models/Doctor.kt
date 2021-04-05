@@ -28,7 +28,7 @@ class Doctor {
     }
 
     object TableDoctor : BaseColumns {
-        const val TABLE_NAME = "camp"
+        const val TABLE_NAME = "camp_dr"
         const val COLUMN_NAME_NULLABLE = "nullColumnHack"
         const val COLUMN_ID = "_ID"
         const val COLUMN_ID_CAMP = "idCamp"
