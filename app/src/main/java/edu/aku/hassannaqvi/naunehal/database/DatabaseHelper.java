@@ -29,12 +29,14 @@ import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom.TableRandom;
+import edu.aku.hassannaqvi.naunehal.models.Camp;
 import edu.aku.hassannaqvi.naunehal.models.Child;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Clusters;
 import edu.aku.hassannaqvi.naunehal.models.Clusters.TableClusters;
 import edu.aku.hassannaqvi.naunehal.models.Districts;
 import edu.aku.hassannaqvi.naunehal.models.Districts.TableDistricts;
+import edu.aku.hassannaqvi.naunehal.models.Doctor;
 import edu.aku.hassannaqvi.naunehal.models.Form;
 import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel;
 import edu.aku.hassannaqvi.naunehal.models.Immunization;
@@ -75,6 +77,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_MOBILE_HEALTH);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
         db.execSQL(CreateTable.SQL_CREATE_BL_RANDOM);
+        db.execSQL(CreateTable.SQL_CREATE_CAMP);
+        db.execSQL(CreateTable.SQL_CREATE_DOCTOR);
     }
 
     @Override
@@ -1013,6 +1017,70 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
             Log.d(TAG, "syncUc(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
+    public int syncCamp(JSONArray campList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Camp.TableCamp.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+
+            for (int i = 0; i < campList.length(); i++) {
+                JSONObject json = campList.getJSONObject(i);
+                Camp camp = new Camp();
+                camp.sync(json);
+                ContentValues values = new ContentValues();
+
+                values.put(Camp.TableCamp.COLUMN_ID_CAMP, camp.getIdCamp());
+                values.put(Camp.TableCamp.COLUMN_CAMP_NO, camp.getCamp_no());
+                values.put(Camp.TableCamp.COLUMN_DIST_ID, camp.getDist_id());
+                values.put(Camp.TableCamp.COLUMN_DISTRICT, camp.getDistrict());
+                values.put(Camp.TableCamp.COLUMN_UC_CODE, camp.getUcCode());
+                values.put(Camp.TableCamp.COLUMN_UC_NAME, camp.getUcname());
+                values.put(Camp.TableCamp.COLUMN_AREA_NAME, camp.getArea_name());
+
+                long rowID = db.insert(Camp.TableCamp.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncCamp(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
+    public int syncDoctor(JSONArray docList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Doctor.TableDoctor.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+
+            for (int i = 0; i < docList.length(); i++) {
+                JSONObject json = docList.getJSONObject(i);
+                Doctor doc = new Doctor();
+                doc.sync(json);
+                ContentValues values = new ContentValues();
+
+                values.put(Doctor.TableDoctor.COLUMN_ID_CAMP, doc.getIdCamp());
+                values.put(Doctor.TableDoctor.COLUMN_ID_DOCTOR, doc.getIddoctor());
+                values.put(Doctor.TableDoctor.COLUMN_DOCTOR_NAME, doc.getDoctor_name());
+
+                long rowID = db.insert(Doctor.TableDoctor.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+            db.close();
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncDoctor(e): " + e);
             db.close();
         } finally {
             db.close();
