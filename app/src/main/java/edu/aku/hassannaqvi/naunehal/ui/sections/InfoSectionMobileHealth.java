@@ -10,6 +10,10 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
@@ -66,6 +70,16 @@ public class InfoSectionMobileHealth extends AppCompatActivity implements EndSec
     private void saveDraft() {
 
         mobileHealth = new MobileHealth();
+        mobileHealth.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        mobileHealth.setUuid(MainApp.form.getUid());
+        mobileHealth.setUserName(MainApp.user.getUserName());
+        mobileHealth.setDcode(MainApp.form.getDcode());
+        mobileHealth.setUcode(MainApp.form.getUcode());
+        mobileHealth.setCluster(MainApp.form.getCluster());
+        mobileHealth.setHhno(MainApp.form.getHhno());
+        mobileHealth.setDeviceId(MainApp.appInfo.getDeviceID());
+        mobileHealth.setDeviceTag(MainApp.appInfo.getTagName());
+        mobileHealth.setAppver(MainApp.appInfo.getAppVersion());
 
         mobileHealth.setMh01(bi.mh01.getText().toString().trim().isEmpty() ? "-1" : bi.mh01.getText().toString());
 
