@@ -61,7 +61,7 @@ public class InfoSectionMobileHealth extends AppCompatActivity implements EndSec
 
         mobileHealth = new MobileHealth();
         mobileHealth.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        mobileHealth.setUuid(MainApp.form.getUid());
+       /* mobileHealth.setUuid(MainApp.form.getUid());
         mobileHealth.setUserName(MainApp.user.getUserName());
         mobileHealth.setDcode(MainApp.form.getDcode());
         mobileHealth.setUcode(MainApp.form.getUcode());
@@ -69,7 +69,7 @@ public class InfoSectionMobileHealth extends AppCompatActivity implements EndSec
         mobileHealth.setHhno(MainApp.form.getHhno());
         mobileHealth.setDeviceId(MainApp.appInfo.getDeviceID());
         mobileHealth.setDeviceTag(MainApp.appInfo.getTagName());
-        mobileHealth.setAppver(MainApp.appInfo.getAppVersion());
+        mobileHealth.setAppver(MainApp.appInfo.getAppVersion());*/
 
         mobileHealth.setMh01(bi.mh01.getText().toString().trim().isEmpty() ? "-1" : bi.mh01.getText().toString());
 

@@ -31,7 +31,7 @@
         tools:replace="android:allowBackup">
 
         <activity
-            android:name=".ui.sections.SectionMobileHealth"
+            android:name=".ui.sections.InfoSectionMobileHealth"
             android:label="@string/bf06_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
@@ -78,6 +78,13 @@
             android:label="@string/se08_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
+
+        <activity
+            android:name=".ui.sections.SectionMobileHealth"
+            android:label="@string/se08_headding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
         <activity
             android:name=".ui.EndingActivity"
             android:label="ِانٹرویو اسٹیٹس"

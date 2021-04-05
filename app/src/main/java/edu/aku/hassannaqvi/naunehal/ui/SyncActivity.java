@@ -47,6 +47,7 @@ import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
 import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
 import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
+import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
@@ -62,9 +63,9 @@ import edu.aku.hassannaqvi.naunehal.workers.DataUpWorkerALL;
 import edu.aku.hassannaqvi.naunehal.workers.PhotoUploadWorker2;
 
 import static edu.aku.hassannaqvi.naunehal.core.MainApp.sdDir;
+import static edu.aku.hassannaqvi.naunehal.database.CreateTable.PROJECT_NAME;
 import static edu.aku.hassannaqvi.naunehal.utils.AndroidUtilityKt.isNetworkConnected;
 import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.dbBackup;
-import static edu.aku.hassannaqvi.naunehal.database.CreateTable.PROJECT_NAME;
 
 
 public class SyncActivity extends AppCompatActivity {
@@ -162,6 +163,10 @@ public class SyncActivity extends AppCompatActivity {
                 // IM
                 uploadTables.add(new SyncModel(IMContract.IMTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedIM());
+
+                // MobileHealth
+                uploadTables.add(new SyncModel(MHContract.MHTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedMH());
 
 
                 setAdapter(uploadTables);

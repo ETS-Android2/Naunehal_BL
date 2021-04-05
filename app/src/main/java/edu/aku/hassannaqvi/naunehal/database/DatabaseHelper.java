@@ -1077,9 +1077,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    /*
-     * get UnSyncedTables
-     * */
+    //get UnSyncedTables
     public JSONArray getUnsyncedForms() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -1333,6 +1331,77 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
+    public JSONArray getUnsyncedMH() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                MHContract.MHTable.COLUMN_ID,
+                MHContract.MHTable.COLUMN_UID,
+                MHContract.MHTable.COLUMN_UUID,
+                MHContract.MHTable.COLUMN_FMUID,
+                MHContract.MHTable.COLUMN_USERNAME,
+                MHContract.MHTable.COLUMN_SYSDATE,
+                MHContract.MHTable.COLUMN_DCODE,
+                MHContract.MHTable.COLUMN_UCODE,
+                MHContract.MHTable.COLUMN_CLUSTER,
+                MHContract.MHTable.COLUMN_HHNO,
+                MHContract.MHTable.COLUMN_DEVICEID,
+                MHContract.MHTable.COLUMN_DEVICETAGID,
+                MHContract.MHTable.COLUMN_APPVERSION,
+                MHContract.MHTable.COLUMN_SYNCED,
+                MHContract.MHTable.COLUMN_SYNCED_DATE,
+                MHContract.MHTable.COLUMN_STATUS,
+                MHContract.MHTable.COLUMN_MOTHER_NAME,
+                MHContract.MHTable.COLUMN_CHILD_NAME,
+                MHContract.MHTable.COLUMN_SERIAL,
+                MHContract.MHTable.COLUMN_MH01,
+                MHContract.MHTable.COLUMN_MH02,
+                MHContract.MHTable.COLUMN_MH03,
+                MHContract.MHTable.COLUMN_MH04,
+                MHContract.MHTable.COLUMN_MH05,
+                MHContract.MHTable.COLUMN_SA
+        };
+
+        String whereClause;
+        whereClause = MHContract.MHTable.COLUMN_SYNCED + " is null ";
+
+        String[] whereArgs = null;
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = MHContract.MHTable.COLUMN_ID + " ASC";
+
+        JSONArray jsa = new JSONArray();
+
+        try {
+            c = db.query(
+                    MHContract.MHTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedMH: " + c.getCount());
+                MobileHealth mhForm = new MobileHealth();
+                jsa.put(mhForm.Hydrate(c).toJSONObject());
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return jsa;
+    }
+
+
+    //update SyncedTables
     public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -1408,6 +1477,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 where,
                 whereArgs);
     }
+
+    public void updateSyncedMH(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(MHContract.MHTable.COLUMN_SYNCED, true);
+        values.put(MHContract.MHTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = MHContract.MHTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                MHContract.MHTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
 
     public Collection<Form> getFormsByCluster(String cluster) {
 
