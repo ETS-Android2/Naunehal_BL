@@ -368,13 +368,47 @@
 
                         </LinearLayout>
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <RadioGroup
                             android:id="@+id/mh08"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:Digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/mh0801"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/mh0801" />
+
+                            <RadioButton
+                                android:id="@+id/mh0802"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/mh0802" />
+
+                        </RadioGroup>
+
+                        <EditText
+                            android:id="@+id/mh0801x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/mh0801"
-                            android:maxLength="25" />
+                            android:maxLength="20"
+                            android:text='@{mh0801.checked ? mh0801x.getText().toString() : ""}'
+                            android:visibility='@{mh0801.checked ? View.VISIBLE : View.GONE}' />
+
+                        <EditText
+                            android:id="@+id/mh0802x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:hint="@string/mh0802"
+                            android:maxLength="20"
+                            android:text='@{mh0802.checked ? mh0802x.getText().toString() : ""}'
+                            android:visibility='@{mh0802.checked ? View.VISIBLE : View.GONE}' />
 
                     </LinearLayout>
 

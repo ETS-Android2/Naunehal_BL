@@ -52,8 +52,10 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom;
+import edu.aku.hassannaqvi.naunehal.models.Camp;
 import edu.aku.hassannaqvi.naunehal.models.Clusters;
 import edu.aku.hassannaqvi.naunehal.models.Districts;
+import edu.aku.hassannaqvi.naunehal.models.Doctor;
 import edu.aku.hassannaqvi.naunehal.models.SyncModel;
 import edu.aku.hassannaqvi.naunehal.models.UCs;
 import edu.aku.hassannaqvi.naunehal.models.Users;
@@ -278,6 +280,16 @@ public class SyncActivity extends AppCompatActivity {
                                         case VersionApp.VersionAppTable.TABLE_NAME:
                                             insertCount = db.syncVersionApp(new JSONObject(result));
                                             if (insertCount == 1) jsonArray.put("1");
+                                            break;
+                                        case Camp.TableCamp.TABLE_NAME:
+                                            jsonArray = new JSONArray(result);
+                                            insertCount = db.syncCamp(jsonArray);
+                                            Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
+                                            break;
+                                        case Doctor.TableDoctor.TABLE_NAME:
+                                            jsonArray = new JSONArray(result);
+                                            insertCount = db.syncDoctor(jsonArray);
+                                            Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
                                             break;
                                         case UCs.TableUCs.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
