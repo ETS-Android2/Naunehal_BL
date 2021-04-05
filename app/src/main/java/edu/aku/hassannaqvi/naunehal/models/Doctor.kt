@@ -10,20 +10,20 @@ import org.json.JSONObject
 class Doctor {
     var idCamp: String = StringUtils.EMPTY
     var iddoctor: String = StringUtils.EMPTY
-    var doctor_name: String = StringUtils.EMPTY
+    var staff_name: String = StringUtils.EMPTY
 
     @Throws(JSONException::class)
     fun sync(jsonObject: JSONObject): Doctor {
         idCamp = jsonObject.getString(TableDoctor.COLUMN_ID_CAMP)
         iddoctor = jsonObject.getString(TableDoctor.COLUMN_ID_DOCTOR)
-        doctor_name = jsonObject.getString(TableDoctor.COLUMN_DOCTOR_NAME)
+        staff_name = jsonObject.getString(TableDoctor.COLUMN_STAFF_NAME)
         return this
     }
 
     fun hydrate(cursor: Cursor): Doctor {
         idCamp = cursor.getString(cursor.getColumnIndex(TableDoctor.COLUMN_ID_CAMP))
         iddoctor = cursor.getString(cursor.getColumnIndex(TableDoctor.COLUMN_ID_DOCTOR))
-        doctor_name = cursor.getString(cursor.getColumnIndex(TableDoctor.COLUMN_DOCTOR_NAME))
+        staff_name = cursor.getString(cursor.getColumnIndex(TableDoctor.COLUMN_STAFF_NAME))
         return this
     }
 
@@ -32,7 +32,7 @@ class Doctor {
         const val COLUMN_NAME_NULLABLE = "nullColumnHack"
         const val COLUMN_ID = "_ID"
         const val COLUMN_ID_CAMP = "idCamp"
-        const val COLUMN_ID_DOCTOR = "iddoctor"
-        const val COLUMN_DOCTOR_NAME = "doctor_name"
+        const val COLUMN_ID_DOCTOR = "idDoctor"
+        const val COLUMN_STAFF_NAME = "staff_name"
     }
 }

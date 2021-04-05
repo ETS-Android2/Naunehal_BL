@@ -193,6 +193,8 @@ public class SyncActivity extends AppCompatActivity {
                     downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
                     downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
+                    downloadTables.add(new SyncModel(Camp.TableCamp.TABLE_NAME));
+                    downloadTables.add(new SyncModel(Doctor.TableDoctor.TABLE_NAME));
 
                 }
                 MainApp.downloadData = new String[downloadTables.size()];

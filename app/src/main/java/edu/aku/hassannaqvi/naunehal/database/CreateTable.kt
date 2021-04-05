@@ -203,6 +203,6 @@ object CreateTable {
             + Doctor.TableDoctor.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + Doctor.TableDoctor.COLUMN_ID_CAMP + " TEXT,"
             + Doctor.TableDoctor.COLUMN_ID_DOCTOR + " TEXT,"
-            + Doctor.TableDoctor.COLUMN_DOCTOR_NAME + " TEXT"
+            + Doctor.TableDoctor.COLUMN_STAFF_NAME + " TEXT"
             + " );")
 }

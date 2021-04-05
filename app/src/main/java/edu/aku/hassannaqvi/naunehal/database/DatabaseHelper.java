@@ -1072,7 +1072,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 values.put(Doctor.TableDoctor.COLUMN_ID_CAMP, doc.getIdCamp());
                 values.put(Doctor.TableDoctor.COLUMN_ID_DOCTOR, doc.getIddoctor());
-                values.put(Doctor.TableDoctor.COLUMN_DOCTOR_NAME, doc.getDoctor_name());
+                values.put(Doctor.TableDoctor.COLUMN_STAFF_NAME, doc.getStaff_name());
 
                 long rowID = db.insert(Doctor.TableDoctor.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
