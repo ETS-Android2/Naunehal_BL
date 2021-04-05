@@ -33,6 +33,8 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_mobile_health);
         bi.setCallback(this);
+        setSupportActionBar(bi.toolbar);
+
         setupSkips();
     }
 
