@@ -1765,12 +1765,12 @@
     <string name='Q_mh09d'>mh09d</string>
     <string name='Q_mh09m'>mh09m</string>
     <string name='Q_mh09y'>mh09y</string>
-    <string name="Q_mh027a">MH27a</string>
+    <string name="Q_mh027a">MH027a</string>
     <string name="mh027a">OPV</string>
     <string name="mh027a01">Administered</string>
     <string name="mh027a02">Refused</string>
-    <string name="Q_mh027b">MH27B</string>
-    <string name="Q_mh030">MH30</string>
+    <string name="Q_mh027b">MH027B</string>
+    <string name="Q_mh030">MH030</string>
     <string name="mh030">Remarks</string>
 
 </resources>
