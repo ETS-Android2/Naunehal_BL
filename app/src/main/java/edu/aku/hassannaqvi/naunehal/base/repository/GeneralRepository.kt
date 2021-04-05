@@ -32,7 +32,7 @@ open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource
         db.getFormByClusterHH(distCode, cluster, hhno)
     }
 
-    override suspend fun getLoginInformation(username: String, password: String): Users? = withContext(Dispatchers.IO) {
+    override suspend fun getLoginInformation(username: String, password: String): Users = withContext(Dispatchers.IO) {
         db.getLoginUser(username, password)
     }
 

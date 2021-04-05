@@ -35,7 +35,6 @@ import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithNoHistory
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
 import edu.aku.hassannaqvi.naunehal.utils.isNetworkConnected
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat

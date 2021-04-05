@@ -8,7 +8,7 @@ interface GeneralDataSource {
     /*
     * For login Start
     * */
-    suspend fun getLoginInformation(username: String, password: String): Users?
+    suspend fun getLoginInformation(username: String, password: String): Users
     /*
     * For login End
     * */

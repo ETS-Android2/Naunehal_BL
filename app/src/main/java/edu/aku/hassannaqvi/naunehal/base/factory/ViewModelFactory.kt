@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.naunehal.base.factory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
+import edu.aku.hassannaqvi.naunehal.base.usecase.LoginUsecase
 import edu.aku.hassannaqvi.naunehal.base.viewmodel.*
 
 /*
@@ -15,7 +16,7 @@ class ViewModelFactory(private val repository: GeneralRepository) : ViewModelPro
         return when {
             modelClass.isAssignableFrom(MainViewModel::class.java) -> MainViewModel(repository) as T
             modelClass.isAssignableFrom(ChildListViewModel::class.java) -> ChildListViewModel(repository) as T
-            modelClass.isAssignableFrom(LoginViewModel::class.java) -> LoginViewModel(repository) as T
+            modelClass.isAssignableFrom(LoginViewModel::class.java) -> LoginViewModel(LoginUsecase(repository)) as T
             modelClass.isAssignableFrom(H1ViewModel::class.java) -> H1ViewModel(repository) as T
             modelClass.isAssignableFrom(SelectedChildrenListViewModel::class.java) -> SelectedChildrenListViewModel(repository) as T
             else -> throw IllegalArgumentException("Unknown viewModel class $modelClass")

@@ -6,9 +6,10 @@ import androidx.lifecycle.viewModelScope
 import edu.aku.hassannaqvi.naunehal.models.Users
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralDataSource
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatusCallbacks
+import edu.aku.hassannaqvi.naunehal.base.usecase.LoginUsecase
 import kotlinx.coroutines.launch
 
-class LoginViewModel(private val repository: GeneralDataSource) : ViewModel() {
+class LoginViewModel(private val loginUsecase: LoginUsecase) : ViewModel() {
 
     private val _loginResponse: MutableLiveData<ResponseStatusCallbacks<Users>> = MutableLiveData()
 
@@ -19,10 +20,8 @@ class LoginViewModel(private val repository: GeneralDataSource) : ViewModel() {
         _loginResponse.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
-                val loginData = repository.getLoginInformation(username, password)
-                _loginResponse.value = loginData?.let {
-                    ResponseStatusCallbacks.success(data = it, "User exist")
-                } ?: ResponseStatusCallbacks.error(null, "User not exist")
+                val loginData = loginUsecase(username, password)
+                _loginResponse.value = ResponseStatusCallbacks.success(data = loginData, "User exist")
             } catch (e: Exception) {
                 _loginResponse.value = ResponseStatusCallbacks.error(null, e.message.toString())
             }
