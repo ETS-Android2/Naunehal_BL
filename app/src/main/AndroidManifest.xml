@@ -31,7 +31,8 @@
         tools:replace="android:allowBackup">
 
         <activity
-            android:name=".ui.SplashscreenActivity"
+            android:name=".ui.sections.SectionMobileHealth"
+            android:label="@string/bf06_headding"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden">
@@ -45,8 +46,7 @@
         </activity>
 
         <activity
-            android:name=".ui.sections.SectionMobileHealth"
-            android:label="@string/bf06_headding"
+            android:name=".ui.SplashscreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.NoActionBar" />
 

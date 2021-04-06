@@ -12,7 +12,7 @@ class Camp {
     var dist_id: String = StringUtils.EMPTY
     var district: String = StringUtils.EMPTY
     var ucCode: String = StringUtils.EMPTY
-    var ucname: String = StringUtils.EMPTY
+    var ucName: String = StringUtils.EMPTY
     var area_name: String = StringUtils.EMPTY
 
     @Throws(JSONException::class)
@@ -22,7 +22,7 @@ class Camp {
         dist_id = jsonObject.getString(TableCamp.COLUMN_DIST_ID)
         district = jsonObject.getString(TableCamp.COLUMN_DISTRICT)
         ucCode = jsonObject.getString(TableCamp.COLUMN_UC_CODE)
-        ucname = jsonObject.getString(TableCamp.COLUMN_UC_NAME)
+        ucName = jsonObject.getString(TableCamp.COLUMN_UC_NAME)
         area_name = jsonObject.getString(TableCamp.COLUMN_AREA_NAME)
         return this
     }
@@ -33,7 +33,7 @@ class Camp {
         dist_id = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_DIST_ID))
         district = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_DISTRICT))
         ucCode = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_UC_CODE))
-        ucname = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_UC_NAME))
+        ucName = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_UC_NAME))
         area_name = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_AREA_NAME))
         return this
     }
@@ -47,7 +47,7 @@ class Camp {
         const val COLUMN_DIST_ID = "dist_id"
         const val COLUMN_DISTRICT = "district"
         const val COLUMN_UC_CODE = "ucCode"
-        const val COLUMN_UC_NAME = "ucname"
+        const val COLUMN_UC_NAME = "ucName"
         const val COLUMN_AREA_NAME = "area_name"
     }
 }

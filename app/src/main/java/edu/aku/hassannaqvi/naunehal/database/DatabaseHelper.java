@@ -1032,17 +1032,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             for (int i = 0; i < campList.length(); i++) {
                 JSONObject json = campList.getJSONObject(i);
-                Camp camp = new Camp();
-                camp.sync(json);
+                Camp cmp = new Camp();
+                cmp.sync(json);
                 ContentValues values = new ContentValues();
 
-                values.put(Camp.TableCamp.COLUMN_ID_CAMP, camp.getIdCamp());
-                values.put(Camp.TableCamp.COLUMN_CAMP_NO, camp.getCamp_no());
-                values.put(Camp.TableCamp.COLUMN_DIST_ID, camp.getDist_id());
-                values.put(Camp.TableCamp.COLUMN_DISTRICT, camp.getDistrict());
-                values.put(Camp.TableCamp.COLUMN_UC_CODE, camp.getUcCode());
-                values.put(Camp.TableCamp.COLUMN_UC_NAME, camp.getUcname());
-                values.put(Camp.TableCamp.COLUMN_AREA_NAME, camp.getArea_name());
+                values.put(Camp.TableCamp.COLUMN_ID_CAMP, cmp.getIdCamp());
+                values.put(Camp.TableCamp.COLUMN_CAMP_NO, cmp.getCamp_no());
+                values.put(Camp.TableCamp.COLUMN_DIST_ID, cmp.getDist_id());
+                values.put(Camp.TableCamp.COLUMN_DISTRICT, cmp.getDistrict());
+                values.put(Camp.TableCamp.COLUMN_UC_CODE, cmp.getUcCode());
+                values.put(Camp.TableCamp.COLUMN_UC_NAME, cmp.getUcName());
+                values.put(Camp.TableCamp.COLUMN_AREA_NAME, cmp.getArea_name());
 
                 long rowID = db.insert(Camp.TableCamp.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
