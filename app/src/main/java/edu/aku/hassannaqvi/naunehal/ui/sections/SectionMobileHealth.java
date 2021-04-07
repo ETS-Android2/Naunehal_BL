@@ -12,11 +12,16 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityMobileHealthBinding;
+import edu.aku.hassannaqvi.naunehal.models.MobileHealth;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
@@ -39,6 +44,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
     }
 
     private void setupSkips() {
+
         bi.mh010.setOnCheckedChangeListener((radioGroup, i) -> {
             if (i == bi.mh01001.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVmh017);
@@ -73,18 +79,43 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
 
     private boolean UpdateDB() {
-        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
         int updcount = db.updatesMHColumn(MHContract.MHTable.COLUMN_SA, mobileHealth.sAtoString());
         if (updcount == 1) {
             return true;
         } else {
             Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
             return false;
+        }*/
+
+        DatabaseHelper db = MainApp.appInfo.dbHelper;
+        long updcount = db.addMH(mobileHealth);
+        mobileHealth.setId(String.valueOf(updcount));
+        if (updcount > 0) {
+            mobileHealth.setUid(mobileHealth.getDeviceId() + mobileHealth.getId());
+            long count = db.updatesMHColumn(MHContract.MHTable.COLUMN_UID, mobileHealth.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, "SORRY!! Failed to update DB)", Toast.LENGTH_SHORT).show();
+            return false;
         }
+
     }
 
 
     private void saveDraft() {
+
+        mobileHealth = new MobileHealth();
+        mobileHealth.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+       /* mobileHealth.setUuid(MainApp.form.getUid());
+        mobileHealth.setUserName(MainApp.user.getUserName());
+        mobileHealth.setDcode(MainApp.form.getDcode());
+        mobileHealth.setUcode(MainApp.form.getUcode());
+        mobileHealth.setCluster(MainApp.form.getCluster());
+        mobileHealth.setHhno(MainApp.form.getHhno());
+        mobileHealth.setDeviceId(MainApp.appInfo.getDeviceID());
+        mobileHealth.setDeviceTag(MainApp.appInfo.getTagName());
+        mobileHealth.setAppver(MainApp.appInfo.getAppVersion());*/
 
         mobileHealth.setMh06(bi.mh06.getText().toString().trim().isEmpty() ? "-1" : bi.mh06.getText().toString());
 
