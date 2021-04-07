@@ -32,7 +32,7 @@
 
         <activity
             android:name=".ui.sections.SectionMobileHealth"
-            android:label="@string/bf06_headding"
+            android:label="@string/mobilehealthserviceform_heading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden">

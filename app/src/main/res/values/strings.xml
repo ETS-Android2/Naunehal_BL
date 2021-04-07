@@ -1772,5 +1772,12 @@
     <string name="Q_mh027b">MH027B</string>
     <string name="Q_mh030">MH030</string>
     <string name="mh030">Remarks</string>
+    <string name="mh026birth">Birth</string>
+    <string name="mh026w06">06 Weeks</string>
+    <string name="mh026w10">10 Weeks</string>
+    <string name="mh026w14">14 Weeks</string>
+    <string name="mh026m09">09 Months</string>
+    <string name="mh026m15">15 Months</string>
+    <string name="mh026m59">0-59 Months</string>
 
 </resources>
