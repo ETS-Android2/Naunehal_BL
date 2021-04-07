@@ -79,24 +79,21 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
 
     private boolean UpdateDB() {
-        /*DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesMHColumn(MHContract.MHTable.COLUMN_SA, mobileHealth.sAtoString());
-        if (updcount == 1) {
-            return true;
-        } else {
-            Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
-
         DatabaseHelper db = MainApp.appInfo.dbHelper;
         long updcount = db.addMH(mobileHealth);
         mobileHealth.setId(String.valueOf(updcount));
         if (updcount > 0) {
             mobileHealth.setUid(mobileHealth.getDeviceId() + mobileHealth.getId());
             long count = db.updatesMHColumn(MHContract.MHTable.COLUMN_UID, mobileHealth.getUid());
-            return true;
+            if (count > 0)
+                count = db.updatesMHColumn(MHContract.MHTable.COLUMN_SA, mobileHealth.sAtoString());
+            if (count > 0) return true;
+            else {
+                Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
+                return false;
+            }
         } else {
-            Toast.makeText(this, "SORRY!! Failed to update DB)", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
             return false;
         }
 
