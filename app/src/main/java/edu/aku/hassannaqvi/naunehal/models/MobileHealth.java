@@ -110,9 +110,12 @@ public class MobileHealth extends BaseObservable {
     private String mh026017 = StringUtils.EMPTY;
     private String mh026018 = StringUtils.EMPTY;
     private String mh026019 = StringUtils.EMPTY;
+    private String mh027a = StringUtils.EMPTY;
+    private String mh027b = StringUtils.EMPTY;
     private String mh027 = StringUtils.EMPTY;
     private String mh028 = StringUtils.EMPTY;
     private String mh029 = StringUtils.EMPTY;
+    private String mh030 = StringUtils.EMPTY;
     private String photoFront = StringUtils.EMPTY;
     private String photoBack = StringUtils.EMPTY;
 
@@ -1370,6 +1373,28 @@ public class MobileHealth extends BaseObservable {
 
 
     @Bindable
+    public String getMh027a() {
+        return mh027a;
+    }
+
+    public void setMh027a(String mh027a) {
+        this.mh027a = mh027a;
+        notifyPropertyChanged(BR.mh027a);
+    }
+
+
+    @Bindable
+    public String getMh027b() {
+        return mh027b;
+    }
+
+    public void setMh027b(String mh027b) {
+        this.mh027b = mh027b;
+        notifyPropertyChanged(BR.mh027b);
+    }
+
+
+    @Bindable
     public String getMh027() {
         return mh027;
     }
@@ -1399,6 +1424,17 @@ public class MobileHealth extends BaseObservable {
     public void setMh029(String mh029) {
         this.mh029 = mh029;
         notifyPropertyChanged(BR.mh029);
+    }
+
+
+    @Bindable
+    public String getMh030() {
+        return mh030;
+    }
+
+    public void setMh030(String mh030) {
+        this.mh030 = mh030;
+        notifyPropertyChanged(BR.mh030);
     }
 
 
@@ -1600,9 +1636,11 @@ public class MobileHealth extends BaseObservable {
                     .put("mh026017", mh026017)
                     .put("mh026018", mh026018)
                     .put("mh026019", mh026019)
-                    .put("mh027", mh027)
+                    .put("mh027a", mh027a)
+                    .put("mh027b", mh027b)
                     .put("mh028", mh028)
                     .put("mh029", mh029)
+                    .put("mh030", mh030)
                     .put("photoFront", photoFront)
                     .put("photoBack", photoBack);
 
@@ -1757,9 +1795,12 @@ public class MobileHealth extends BaseObservable {
                 this.mh026017 = json.getString("mh026017");
                 this.mh026018 = json.getString("mh026018");
                 this.mh026019 = json.getString("mh026019");
+                this.mh027a = json.getString("mh027a");
+                this.mh027b = json.getString("mh027b");
                 this.mh027 = json.getString("mh027");
                 this.mh028 = json.getString("mh028");
                 this.mh029 = json.getString("mh029");
+                this.mh030 = json.getString("mh030");
                 this.photoFront = json.getString("photoFront");
                 this.photoBack = json.getString("photoBack");
 

@@ -242,6 +242,14 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         //mobileHealth.setMh026018(bi.mh026018.isChecked() ? "18" : "-1");
         //mobileHealth.setMh026019(bi.mh026019.isChecked() ? "19" : "-1");
 
+        mobileHealth.setMh027a(bi.mh027a01.isChecked() ? "1"
+                : bi.mh027a02.isChecked() ? "2"
+                : "-1");
+
+        mobileHealth.setMh027b(bi.mh027b01.isChecked() ? "1"
+                : bi.mh027b02.isChecked() ? "2"
+                : "-1");
+
         mobileHealth.setMh027(bi.mh02701.isChecked() ? "1"
                 : bi.mh02702.isChecked() ? "2"
                 : "-1");
@@ -253,6 +261,8 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setMh029(bi.mh02901.isChecked() ? "1"
                 : bi.mh02902.isChecked() ? "2"
                 : "-1");
+
+        mobileHealth.setMh030(bi.mh030.getText().toString().trim().isEmpty() ? "-1" : bi.mh030.getText().toString());
     }
 
 
