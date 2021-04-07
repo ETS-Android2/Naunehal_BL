@@ -33,7 +33,9 @@ public class MobileHealth extends BaseObservable {
     private String mh09m = StringUtils.EMPTY;
     private String mh09d = StringUtils.EMPTY;
     private String mh010 = StringUtils.EMPTY;
-    private String mh011 = StringUtils.EMPTY;
+    private String mh01101 = StringUtils.EMPTY;
+    private String mh01102 = StringUtils.EMPTY;
+    private String mh01103 = StringUtils.EMPTY;
     private String mh012 = StringUtils.EMPTY;
     private String mh013 = StringUtils.EMPTY;
     private String mh014 = StringUtils.EMPTY;
@@ -521,13 +523,35 @@ public class MobileHealth extends BaseObservable {
 
 
     @Bindable
-    public String getMh011() {
-        return mh011;
+    public String getMh01101() {
+        return mh01101;
     }
 
-    public void setMh011(String mh011) {
-        this.mh011 = mh011;
-        notifyPropertyChanged(BR.mh011);
+    public void setMh01101(String mh01101) {
+        this.mh01101 = mh01101;
+        notifyPropertyChanged(BR.mh01101);
+    }
+
+
+    @Bindable
+    public String getMh01102() {
+        return mh01102;
+    }
+
+    public void setMh01102(String mh01102) {
+        this.mh01102 = mh01102;
+        notifyPropertyChanged(BR.mh01102);
+    }
+
+
+    @Bindable
+    public String getMh01103() {
+        return mh01103;
+    }
+
+    public void setMh01103(String mh01103) {
+        this.mh01103 = mh01103;
+        notifyPropertyChanged(BR.mh01103);
     }
 
 
@@ -1499,7 +1523,9 @@ public class MobileHealth extends BaseObservable {
                     .put("mh09m", mh09m)
                     .put("mh09d", mh09d)
                     .put("mh010", mh010)
-                    .put("mh011", mh011)
+                    .put("mh01101", mh01101)
+                    .put("mh01102", mh01102)
+                    .put("mh01103", mh01103)
                     .put("mh012", mh012)
                     .put("mh013", mh013)
                     .put("mh014", mh014)
@@ -1654,7 +1680,9 @@ public class MobileHealth extends BaseObservable {
                 this.mh09m = json.getString("mh09m");
                 this.mh09d = json.getString("mh09d");
                 this.mh010 = json.getString("mh010");
-                this.mh011 = json.getString("mh011");
+                this.mh01101 = json.getString("mh01101");
+                this.mh01102 = json.getString("mh01102");
+                this.mh01103 = json.getString("mh01103");
                 this.mh012 = json.getString("mh012");
                 this.mh013 = json.getString("mh013");
                 this.mh014 = json.getString("mh014");
