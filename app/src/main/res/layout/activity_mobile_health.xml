@@ -613,13 +613,29 @@
 
                         </LinearLayout>
 
+
+                        <!--Only first EditText will be checked for empty-->
                         <EditText
-                            android:id="@+id/mh011"
-                            android:lines="5"
+                            android:id="@+id/mh01101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
                             android:hint="@string/mh011" />
+
+                        <EditText
+                            android:id="@+id/mh01102"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
+                            android:hint="@string/mh011" />
+
+                        <EditText
+                            android:id="@+id/mh01103"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
+                            android:hint="@string/mh011" />
+
 
                     </LinearLayout>
 
@@ -1943,12 +1959,14 @@
                                             android:layout_height="wrap_content"
                                             android:text="@string/mh026018" />
 
-                                        <RadioButton
-                                            android:id="@+id/mh026019"
-                                            android:layout_width="110dp"
-                                            android:layout_height="wrap_content"
-                                            android:text="@string/mh026019" />
+
                                     </RadioGroup>
+
+                                    <RadioButton
+                                        android:id="@+id/mh026019"
+                                        android:layout_width="110dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/mh026019" />
 
                                     <View
                                         android:layout_width="330dp"
