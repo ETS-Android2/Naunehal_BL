@@ -111,7 +111,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
         mobileHealth = new MobileHealth();
         mobileHealth.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        mobileHealth.setUserName(MainApp.user.getUserName());
+        //mobileHealth.setUserName(MainApp.user.getUserName());
         mobileHealth.setDeviceId(MainApp.appInfo.getDeviceID());
         mobileHealth.setDeviceTag(MainApp.appInfo.getTagName());
         mobileHealth.setAppver(MainApp.appInfo.getAppVersion());
