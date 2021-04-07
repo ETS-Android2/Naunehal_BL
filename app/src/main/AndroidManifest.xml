@@ -73,12 +73,6 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
-            android:name=".ui.sections.Section082SEActivity"
-            android:label="@string/se08_headding"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-
-        <activity
             android:name=".ui.sections.InfoSectionMobileHealth"
             android:label="@string/se08_headding"
             android:screenOrientation="portrait"
@@ -87,52 +81,6 @@
         <activity
             android:name=".ui.EndingActivity"
             android:label="ِانٹرویو اسٹیٹس"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.Section081SEActivity"
-            android:label="@string/se08_headding"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.Section07CVActivity"
-            android:label="@string/cv07_headding"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.Section061BFActivity"
-            android:label="@string/bf06_headding"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.Section05PDActivity"
-            android:label="@string/pd05_headding"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.Section04IMActivity"
-            android:label="@string/im04_headding"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.Section03CSActivity"
-            android:label="@string/cs03_headding"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.Section02CBActivity"
-            android:label="@string/cb02_headding"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.Section01HHActivity"
-            android:label="@string/hh01_headding"
-            android:parentActivityName=".ui.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
-        <activity
-            android:name=".ui.sections.IdentificationSectionActivity"
-            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity android:name=".ui.MainActivity" />

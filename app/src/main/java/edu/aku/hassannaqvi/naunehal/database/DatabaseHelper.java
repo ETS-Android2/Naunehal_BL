@@ -29,7 +29,7 @@ import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom.TableRandom;
-import edu.aku.hassannaqvi.naunehal.models.Camp;
+import edu.aku.hassannaqvi.naunehal.models.Camps;
 import edu.aku.hassannaqvi.naunehal.models.Child;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.models.Clusters;
@@ -567,6 +567,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
+    public Camps getSpecificCamp(String campNo) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = Camps.TableCamp.COLUMN_CAMP_NO + "=?";
+        String[] whereArgs = {campNo};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = Camps.TableCamp._ID + " ASC";
+        Camps camp = null;
+        try {
+            c = db.query(
+                    Camps.TableCamp.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                camp = new Camps().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return camp;
+    }
+
     public ArrayList<UCs> getUCsByDistricts(String dCode) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -1026,25 +1063,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int syncCamp(JSONArray campList) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(Camp.TableCamp.TABLE_NAME, null, null);
+        db.delete(Camps.TableCamp.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
 
             for (int i = 0; i < campList.length(); i++) {
                 JSONObject json = campList.getJSONObject(i);
-                Camp cmp = new Camp();
-                cmp.sync(json);
+                Camps camps = new Camps();
+                camps.sync(json);
                 ContentValues values = new ContentValues();
 
-                values.put(Camp.TableCamp.COLUMN_ID_CAMP, cmp.getIdCamp());
-                values.put(Camp.TableCamp.COLUMN_CAMP_NO, cmp.getCamp_no());
-                values.put(Camp.TableCamp.COLUMN_DIST_ID, cmp.getDist_id());
-                values.put(Camp.TableCamp.COLUMN_DISTRICT, cmp.getDistrict());
-                values.put(Camp.TableCamp.COLUMN_UC_CODE, cmp.getUcCode());
-                values.put(Camp.TableCamp.COLUMN_UC_NAME, cmp.getUcName());
-                values.put(Camp.TableCamp.COLUMN_AREA_NAME, cmp.getArea_name());
+                values.put(Camps.TableCamp.COLUMN_ID_CAMP, camps.getIdCamp());
+                values.put(Camps.TableCamp.COLUMN_CAMP_NO, camps.getCamp_no());
+                values.put(Camps.TableCamp.COLUMN_DIST_ID, camps.getDist_id());
+                values.put(Camps.TableCamp.COLUMN_DISTRICT, camps.getDistrict());
+                values.put(Camps.TableCamp.COLUMN_UC_CODE, camps.getUcCode());
+                values.put(Camps.TableCamp.COLUMN_UC_NAME, camps.getUcName());
+                values.put(Camps.TableCamp.COLUMN_AREA_NAME, camps.getArea_name());
 
-                long rowID = db.insert(Camp.TableCamp.TABLE_NAME, null, values);
+                long rowID = db.insert(Camps.TableCamp.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
             db.close();

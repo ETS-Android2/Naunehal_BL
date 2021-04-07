@@ -16,11 +16,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import edu.aku.hassannaqvi.naunehal.CONSTANTS;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityMobileHealthBinding;
+import edu.aku.hassannaqvi.naunehal.models.Camps;
 import edu.aku.hassannaqvi.naunehal.models.MobileHealth;
 import edu.aku.hassannaqvi.naunehal.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
@@ -39,6 +41,11 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi = DataBindingUtil.setContentView(this, R.layout.activity_mobile_health);
         bi.setCallback(this);
         setSupportActionBar(bi.toolbar);
+
+        /*
+         * Get camp data and set it to xml
+         * */
+        Camps camp = getIntent().getParcelableExtra(CONSTANTS.CAMP_DATA);
 
         setupSkips();
     }

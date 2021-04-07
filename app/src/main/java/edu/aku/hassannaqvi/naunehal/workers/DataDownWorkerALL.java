@@ -36,12 +36,9 @@ public class DataDownWorkerALL extends Worker {
     private static final Object APP_NAME = PROJECT_NAME;
     private final String TAG = "DataWorkerEN()";
 
-    // to be initialised by workParams
-    private final Context mContext;
     private final int position;
     HttpURLConnection urlConnection;
     private final String uploadTable;
-    private String uploadColumns;
     private final String uploadWhere;
     private final URL serverURL = null;
     private ProgressDialog pd;
@@ -51,7 +48,7 @@ public class DataDownWorkerALL extends Worker {
 
     public DataDownWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
-        mContext = context;
+        // to be initialised by workParams
         uploadTable = workerParams.getInputData().getString("table");
         position = workerParams.getInputData().getInt("position", -2);
         Log.d(TAG, "DataDownWorkerALL: position " + position);

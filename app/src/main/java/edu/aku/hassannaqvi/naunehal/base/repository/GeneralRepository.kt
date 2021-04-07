@@ -16,8 +16,8 @@ open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource
         db.updateSpecificChildInformationColumn(info, isSelected)
     }
 
-    override suspend fun getDistrictsFromDB(): ArrayList<Districts> = withContext(Dispatchers.IO) {
-        db.allDistricts
+    override suspend fun getCampsFromDB(campNo: String): Camps = withContext(Dispatchers.IO) {
+        db.getSpecificCamp(campNo)
     }
 
     override suspend fun getUcsByDistrictsFromDB(dCode: String): ArrayList<UCs> = withContext(Dispatchers.IO) {

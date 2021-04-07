@@ -43,16 +43,12 @@ import java.util.concurrent.TimeUnit;
 import edu.aku.hassannaqvi.naunehal.CONSTANTS;
 import edu.aku.hassannaqvi.naunehal.R;
 import edu.aku.hassannaqvi.naunehal.adapters.SyncListAdapter;
-import edu.aku.hassannaqvi.naunehal.contracts.ChildContract;
-import edu.aku.hassannaqvi.naunehal.contracts.ChildInformationContract;
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract;
-import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.contracts.MHContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.naunehal.models.BLRandom;
-import edu.aku.hassannaqvi.naunehal.models.Camp;
+import edu.aku.hassannaqvi.naunehal.models.Camps;
 import edu.aku.hassannaqvi.naunehal.models.Clusters;
 import edu.aku.hassannaqvi.naunehal.models.Districts;
 import edu.aku.hassannaqvi.naunehal.models.Doctor;
@@ -79,12 +75,11 @@ public class SyncActivity extends AppCompatActivity {
     List<SyncModel> downloadTables;
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
-    String distCode;
+    String campCode;
     private int totalFiles;
     private long tStart;
     private String progress;
     final Handler handler = new Handler();
-    // List<JSONArray> uploadData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +105,6 @@ public class SyncActivity extends AppCompatActivity {
 
     }
 
-
     void setAdapter(List<SyncModel> tables) {
         syncListAdapter = new SyncListAdapter(tables);
         RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(getApplicationContext());
@@ -125,14 +119,12 @@ public class SyncActivity extends AppCompatActivity {
         }
     }
 
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         setResult(RESULT_OK);
         finish();
     }
-
 
     @SuppressLint("NonConstantResourceId")
     public void ProcessStart(View view) {
@@ -149,22 +141,6 @@ public class SyncActivity extends AppCompatActivity {
                 bi.pBar.setVisibility(View.GONE);
                 uploadTables.clear();
                 MainApp.uploadData.clear();
-                // Set tables to UPLOAD
-                // Forms
-                uploadTables.add(new SyncModel(FormsContract.FormsTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedForms());
-
-                // Child Info
-                uploadTables.add(new SyncModel(ChildInformationContract.ChildInfoTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedHHChildrens());
-
-                // Child
-                uploadTables.add(new SyncModel(ChildContract.ChildTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedChild());
-
-                // IM
-                uploadTables.add(new SyncModel(IMContract.IMTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedIM());
 
                 // MobileHealth
                 uploadTables.add(new SyncModel(MHContract.MHTable.TABLE_NAME));
@@ -184,18 +160,13 @@ public class SyncActivity extends AppCompatActivity {
                 downloadTables.clear();
                 boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
                 if (sync_flag) {
-                    distCode = getIntent().getStringExtra(CONSTANTS.SYNC_DISTRICTID_LOGIN);
-                    downloadTables.add(new SyncModel(BLRandom.TableRandom.TABLE_NAME));
-                    downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
+                    //campCode = getIntent().getStringExtra(CONSTANTS.SYNC_CAMPID_LOGIN);
                 } else {
                     // Set tables to DOWNLOAD
                     downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
-                    downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
-                    downloadTables.add(new SyncModel(Camp.TableCamp.TABLE_NAME));
+                    downloadTables.add(new SyncModel(Camps.TableCamp.TABLE_NAME));
                     downloadTables.add(new SyncModel(Doctor.TableDoctor.TABLE_NAME));
-
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
@@ -206,7 +177,6 @@ public class SyncActivity extends AppCompatActivity {
                 throw new IllegalStateException("Unexpected value: " + view.getId());
         }
     }
-
 
     private void BeginDownload() {
 
@@ -222,12 +192,9 @@ public class SyncActivity extends AppCompatActivity {
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)
                     ;
-            if (downloadTables.get(i).gettableName().equals(BLRandom.TableRandom.TABLE_NAME)) {
-                data.putString("where", BLRandom.TableRandom.COLUMN_DIST_CODE + "='" + distCode + "'");
-            }
-            if (downloadTables.get(i).gettableName().equals(Clusters.TableClusters.TABLE_NAME)) {
-                data.putString("where", Clusters.TableClusters.COLUMN_DIST_CODE + "='" + distCode + "'");
-            }
+            /*if (downloadTables.get(i).gettableName().equals(Doctor.TableDoctor.TABLE_NAME)) {
+                data.putString("where", Doctor.TableDoctor.COLUMN_ID_CAMP + "='" + campCode + "'");
+            }*/
 
             OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(DataDownWorkerALL.class)
                     .addTag(String.valueOf(i))
@@ -283,7 +250,7 @@ public class SyncActivity extends AppCompatActivity {
                                             insertCount = db.syncVersionApp(new JSONObject(result));
                                             if (insertCount == 1) jsonArray.put("1");
                                             break;
-                                        case Camp.TableCamp.TABLE_NAME:
+                                        case Camps.TableCamp.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncCamp(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
@@ -358,7 +325,6 @@ public class SyncActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void BeginUpload() {
 
@@ -677,7 +643,7 @@ public class SyncActivity extends AppCompatActivity {
         }
     }
 
-    public void upDatePhotoCount() {
+    private void upDatePhotoCount() {
         if (sdDir.exists()) {
             Log.d("DIR", "onCreate: " + sdDir.getName());
             File[] files = sdDir.listFiles(file -> (file.getPath().endsWith(".jpg") || file.getPath().endsWith(".jpeg")));
@@ -725,7 +691,6 @@ public class SyncActivity extends AppCompatActivity {
             bi.mTextViewS.setText("No photos found.");
         }
     }
-
 
     private void sortBySize(File[] files) {
         Arrays.sort(files, new Comparator<File>() {

@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.naunehal.base.repository
 
 import edu.aku.hassannaqvi.naunehal.models.*
+import kotlinx.coroutines.flow.Flow
 import kotlin.collections.ArrayList
 
 interface GeneralDataSource {
@@ -38,7 +39,7 @@ interface GeneralDataSource {
     /*
     * For SectionH1 & Identification
     * */
-    suspend fun getDistrictsFromDB(): ArrayList<Districts>
+    suspend fun getCampsFromDB(campNo:String): Camps
 
     suspend fun getUcsByDistrictsFromDB(dCode: String): ArrayList<UCs>
 

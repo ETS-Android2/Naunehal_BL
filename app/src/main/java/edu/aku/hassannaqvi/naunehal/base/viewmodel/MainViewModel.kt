@@ -6,8 +6,9 @@ import androidx.lifecycle.viewModelScope
 import edu.aku.hassannaqvi.naunehal.models.FormIndicatorsModel
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatusCallbacks
-import edu.aku.hassannaqvi.naunehal.models.Districts
+import edu.aku.hassannaqvi.naunehal.models.Camps
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import java.text.SimpleDateFormat
@@ -42,9 +43,9 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
     /*
     * Get districts from DB
     * */
-    private val _districtResponse: MutableLiveData<ResponseStatusCallbacks<List<Districts>>> = MutableLiveData()
-    val districtResponse: MutableLiveData<ResponseStatusCallbacks<List<Districts>>>
-        get() = _districtResponse
+    private val _campsResponse: MutableLiveData<ResponseStatusCallbacks<Camps>> = MutableLiveData()
+    val campsResponse: MutableLiveData<ResponseStatusCallbacks<Camps>>
+        get() = _campsResponse
 
 
     fun getTodayForms(date: String) {
@@ -118,18 +119,15 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         }
     }
 
-    fun getDistrictFromDB() {
-        _districtResponse.value = ResponseStatusCallbacks.loading(null)
+    fun getCampFromDB(campNo: String) {
+        _campsResponse.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
                 delay(1000)
-                val district = repository.getDistrictsFromDB()
-                _districtResponse.value = if (district.size > 0) {
-                    ResponseStatusCallbacks.success(data = district, message = "District item found")
-                } else
-                    ResponseStatusCallbacks.error(data = null, message = "No district found!")
+                val camp = repository.getCampsFromDB(campNo)
+                _campsResponse.value = ResponseStatusCallbacks.success(data = camp)
             } catch (e: Exception) {
-                _districtResponse.value =
+                _campsResponse.value =
                         ResponseStatusCallbacks.error(data = null, message = e.message.toString())
             }
 

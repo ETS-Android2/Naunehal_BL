@@ -10,8 +10,6 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -25,17 +23,14 @@ import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.AndroidDatabaseManager
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityMainBinding
+import edu.aku.hassannaqvi.naunehal.models.Camps
 import edu.aku.hassannaqvi.naunehal.ui.list_activity.FormsReportCluster
 import edu.aku.hassannaqvi.naunehal.ui.list_activity.FormsReportDate
 import edu.aku.hassannaqvi.naunehal.ui.login_activity.LoginActivity
-import edu.aku.hassannaqvi.naunehal.ui.sections.IdentificationSectionActivity
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section02CBActivity
-import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
-import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithNoHistory
-import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
+import edu.aku.hassannaqvi.naunehal.ui.sections.SectionMobileHealth
+import edu.aku.hassannaqvi.naunehal.utils.extension.*
+import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivityWithSerializable
 import edu.aku.hassannaqvi.naunehal.utils.isNetworkConnected
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -47,9 +42,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel: MainViewModel
     private var exit = false
     private var sysdateToday = SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).format(Date())
-    private var district = mutableListOf("....")
-    private var districtCode = mutableListOf<String>()
-    private lateinit var districtAdapter: ArrayAdapter<String>
+    private lateinit var camp: Camps
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,52 +55,35 @@ class MainActivity : AppCompatActivity() {
 
 
         /*
-        * Setting Adapters
-        * */
-        districtAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, district)
-        bi.districts.adapter = districtAdapter
-
-        /*
         * Calling viewmodel district data function
         * Fetch district result response
         * */
-        viewModel.districtResponse.observe(this) {
+        viewModel.campsResponse.observe(this) {
             it?.let {
                 when (it.status) {
                     ResponseStatus.SUCCESS -> {
                         lifecycleScope.launch {
-                            district.clear()
-                            districtCode.clear()
-                            district.add("....")
-                            it.data?.forEach { item ->
-                                //
-                                if (item.districtCode == MainApp.user.dist_id) {
-                                    district.add(item.districtName)
-                                    districtCode.add(item.districtCode)
-                                } else if (MainApp.admin || MainApp.user.userName == "test1234") {
-                                    district.add(item.districtName)
-                                    districtCode.add(item.districtCode)
-                                }
+                            it.data?.let { item ->
+                                bi.btnSection.visibility = View.VISIBLE
+                                camp = item
                             }
-                            districtAdapter.notifyDataSetChanged()
 
-                            bi.btnDownloadDistrict.visibility = View.VISIBLE
+                            bi.btnCheckCamp.visibility = View.VISIBLE
                         }
                     }
                     ResponseStatus.ERROR -> {
-                        bi.btnDownloadDistrict.visibility = View.VISIBLE
-                        Log.d("district: ", "false")
+                        bi.btnCheckCamp.visibility = View.VISIBLE
                     }
                     ResponseStatus.LOADING -> {
                         lifecycleScope.launch {
-                            bi.btnDownloadDistrict.visibility = View.GONE
+                            bi.btnCheckCamp.visibility = View.GONE
+                            bi.btnSection.visibility = View.GONE
                             delay(2000)
                         }
                     }
                 }
             }
         }
-
 
         /*
         * Get Today's form from DB
@@ -180,21 +156,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        setupSkips()
-    }
-
-    private fun setupSkips() {
-        bi.districts.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
-                if (position == 0) {
-                    bi.btnDownloadDistrict.isEnabled = false
-                    return
-                }
-                bi.btnDownloadDistrict.isEnabled = true
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
-        }
     }
 
     /*
@@ -251,6 +212,13 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        animateFadeIn()
+        viewModel.getFormsStatusUploadStatus(sysdateToday)
+    }
+
 
     /*
     * Route to specific activity according to selection
@@ -259,40 +227,15 @@ class MainActivity : AppCompatActivity() {
     fun openSpecificActivity(v: View) {
         when (v.id) {
             R.id.formA -> {
-                gotoActivity(Section01HHActivity::class.java)
-            }
-            R.id.btn01 -> {
-                gotoActivity(Section01HHActivity::class.java)
-            }
-            R.id.btn02 -> {
-                gotoActivity(Section02CBActivity::class.java)
-            }
-            R.id.editForm -> {
-                gotoActivity(IdentificationSectionActivity::class.java)
+                gotoActivityWithParcelable(SectionMobileHealth::class.java, CONSTANTS.CAMP_DATA, camp)
             }
             R.id.databaseBtn -> startActivity(Intent(this, AndroidDatabaseManager::class.java))
-            R.id.btn_download_district -> {
-                if (isNetworkConnected(this)) {
-                    startActivity(Intent(this@MainActivity, SyncActivity::class.java)
-                            .putExtra(CONSTANTS.SYNC_LOGIN, true)
-                            .putExtra(CONSTANTS.SYNC_DISTRICTID_LOGIN, districtCode[bi.districts.selectedItemPosition - 1]))
-                } else
-                    Toast.makeText(this, "Network connection not available!", Toast.LENGTH_SHORT).show()
+            R.id.btn_check_camp -> {
+                viewModel.getCampFromDB(bi.camps.text.toString())
             }
         }
     }
 
-
-    override fun onResume() {
-        super.onResume()
-
-        animateFadeIn()
-        viewModel.getDistrictFromDB()
-//        viewModel.getTodayForms(sysdateToday)
-//        viewModel.getUploadFormsStatus()
-//        viewModel.getFormsStatus(sysdateToday)
-        viewModel.getFormsStatusUploadStatus(sysdateToday)
-    }
 
     /*
     * Stop animation on statistic Layout

@@ -188,15 +188,15 @@ object CreateTable {
             VersionApp.VersionAppTable.COLUMN_PATH_NAME + " TEXT " +
             ");"
 
-    const val SQL_CREATE_CAMP = ("CREATE TABLE " + Camp.TableCamp.TABLE_NAME + "("
-            + Camp.TableCamp.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + Camp.TableCamp.COLUMN_ID_CAMP + " TEXT,"
-            + Camp.TableCamp.COLUMN_CAMP_NO + " TEXT,"
-            + Camp.TableCamp.COLUMN_DIST_ID + " TEXT,"
-            + Camp.TableCamp.COLUMN_DISTRICT + " TEXT,"
-            + Camp.TableCamp.COLUMN_UC_CODE + " TEXT,"
-            + Camp.TableCamp.COLUMN_UC_NAME + " TEXT,"
-            + Camp.TableCamp.COLUMN_AREA_NAME + " TEXT"
+    const val SQL_CREATE_CAMP = ("CREATE TABLE " + Camps.TableCamp.TABLE_NAME + "("
+            + Camps.TableCamp.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + Camps.TableCamp.COLUMN_ID_CAMP + " TEXT,"
+            + Camps.TableCamp.COLUMN_CAMP_NO + " TEXT,"
+            + Camps.TableCamp.COLUMN_DIST_ID + " TEXT,"
+            + Camps.TableCamp.COLUMN_DISTRICT + " TEXT,"
+            + Camps.TableCamp.COLUMN_UC_CODE + " TEXT,"
+            + Camps.TableCamp.COLUMN_UC_NAME + " TEXT,"
+            + Camps.TableCamp.COLUMN_AREA_NAME + " TEXT"
             + " );")
 
     const val SQL_CREATE_DOCTOR = ("CREATE TABLE " + Doctor.TableDoctor.TABLE_NAME + "("

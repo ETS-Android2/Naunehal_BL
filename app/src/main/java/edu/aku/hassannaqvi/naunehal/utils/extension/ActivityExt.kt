@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.naunehal.utils.extension
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
@@ -30,6 +31,11 @@ fun <T : Activity> Activity.gotoActivity(targetActivityClass: Class<T>) {
 }
 
 fun <T : AppCompatActivity> AppCompatActivity.gotoActivityWithSerializable(targetActivityClass: Class<T>, key: String, data: Serializable) {
+    val intent = Intent(this, targetActivityClass).putExtra(key, data)
+    startActivity(intent)
+}
+
+fun <T : AppCompatActivity> AppCompatActivity.gotoActivityWithParcelable(targetActivityClass: Class<T>, key: String, data: Parcelable) {
     val intent = Intent(this, targetActivityClass).putExtra(key, data)
     startActivity(intent)
 }
