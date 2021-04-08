@@ -6,6 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -170,6 +172,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        bi.camps.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable) {
+                if (s.toString().isEmpty()) return
+                bi.cam.root.visibility = View.GONE
+                bi.btnSection.visibility = View.GONE
+            }
+        })
 
     }
 

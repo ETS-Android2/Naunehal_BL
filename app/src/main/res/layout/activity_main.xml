@@ -141,10 +141,10 @@
                 <include
                     android:id="@+id/cam"
                     layout="@layout/cardlayout"
-                    android:layout_width="@dimen/_170sdp"
-                    android:layout_height="@dimen/_170sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_margin="@dimen/_10sdp"
                     android:visibility="gone"
                     tools:visibility="visible" />
 
