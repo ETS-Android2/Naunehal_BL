@@ -33,8 +33,7 @@
         <activity
             android:name=".ui.SplashscreenActivity"
             android:label="@string/mobilehealthserviceform_heading"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
+            android:theme="@style/Theme.Design.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden">
 
             <intent-filter>
@@ -48,7 +47,7 @@
         <activity
             android:name=".ui.sections.SectionMobileHealth"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.NoActionBar" />
+            android:theme="@style/AppThemeEnglish1" />
 
         <activity
             android:name=".ui.login_activity.LoginActivity"
@@ -71,21 +70,26 @@
             android:label="ِانٹرویو اسٹیٹس"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
+
         <activity android:name=".ui.MainActivity" />
+
         <activity
             android:name=".database.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
+
         <activity
             android:name=".ui.TakePhoto"
             android:hardwareAccelerated="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".ui.list_activity.FormsReportCluster"
             android:label="Forms Report"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
+
         <activity
             android:name=".ui.list_activity.FormsReportDate"
             android:label="Forms Report"
