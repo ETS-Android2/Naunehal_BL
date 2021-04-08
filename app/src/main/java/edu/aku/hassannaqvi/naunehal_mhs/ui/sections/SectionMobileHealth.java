@@ -47,6 +47,10 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
          * Get camp data and set it to xml
          * */
         Camps camp = new Gson().fromJson(SharedStorage.INSTANCE.getSelectedCampData(this), Camps.class);
+        bi.mh02.setText(camp.getCamp_no());
+        bi.mh03.setText(camp.getDistrict());
+        bi.mh04.setText(camp.getUcName());
+        bi.mh05.setText(camp.getArea_name());
 
         setupSkips();
     }

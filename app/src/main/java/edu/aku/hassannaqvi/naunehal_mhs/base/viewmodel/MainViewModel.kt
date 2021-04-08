@@ -3,16 +3,13 @@ package edu.aku.hassannaqvi.naunehal_mhs.base.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import edu.aku.hassannaqvi.naunehal_mhs.models.FormIndicatorsModel
 import edu.aku.hassannaqvi.naunehal_mhs.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal_mhs.base.repository.ResponseStatusCallbacks
 import edu.aku.hassannaqvi.naunehal_mhs.models.Camps
+import edu.aku.hassannaqvi.naunehal_mhs.models.FormIndicatorsModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import java.lang.Exception
-import java.text.SimpleDateFormat
-import java.util.*
 
 class MainViewModel(val repository: GeneralRepository) : ViewModel() {
 
@@ -92,9 +89,7 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
                 _campsResponse.value =
                         ResponseStatusCallbacks.error(data = null, message = e.message.toString())
             }
-
         }
-
     }
 
     init {

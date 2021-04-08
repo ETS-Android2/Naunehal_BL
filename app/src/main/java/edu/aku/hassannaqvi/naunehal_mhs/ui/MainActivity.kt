@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
+import com.validatorcrawler.aliazaz.Validator
 import edu.aku.hassannaqvi.naunehal_mhs.R
 import edu.aku.hassannaqvi.naunehal_mhs.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal_mhs.base.repository.ResponseStatus
@@ -28,7 +29,9 @@ import edu.aku.hassannaqvi.naunehal_mhs.ui.list_activity.FormsReportCluster
 import edu.aku.hassannaqvi.naunehal_mhs.ui.list_activity.FormsReportDate
 import edu.aku.hassannaqvi.naunehal_mhs.ui.login_activity.LoginActivity
 import edu.aku.hassannaqvi.naunehal_mhs.ui.sections.SectionMobileHealth
-import edu.aku.hassannaqvi.naunehal_mhs.utils.extension.*
+import edu.aku.hassannaqvi.naunehal_mhs.utils.extension.gotoActivity
+import edu.aku.hassannaqvi.naunehal_mhs.utils.extension.gotoActivityWithNoHistory
+import edu.aku.hassannaqvi.naunehal_mhs.utils.extension.obtainViewModel
 import edu.aku.hassannaqvi.naunehal_mhs.utils.isNetworkConnected
 import edu.aku.hassannaqvi.naunehal_mhs.utils.shared.SharedStorage
 import kotlinx.coroutines.delay
@@ -66,6 +69,8 @@ class MainActivity : AppCompatActivity() {
                             it.data?.let { item ->
                                 bi.btnSection.visibility = View.VISIBLE
                                 camp = item
+
+                                //TODO: CardToPopulate
                             }
                             bi.btnCheckCamp.visibility = View.VISIBLE
                             bi.btnSearchCampProgress.visibility = View.GONE
@@ -74,6 +79,7 @@ class MainActivity : AppCompatActivity() {
                     ResponseStatus.ERROR -> {
                         bi.btnCheckCamp.visibility = View.VISIBLE
                         bi.btnSearchCampProgress.visibility = View.GONE
+                        Validator.emptyCustomTextBox(this, bi.camps, "CAMP NOT FOUND", false)
                     }
                     ResponseStatus.LOADING -> {
                         lifecycleScope.launch {
@@ -234,6 +240,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.databaseBtn -> startActivity(Intent(this, AndroidDatabaseManager::class.java))
             R.id.btn_check_camp -> {
+                if (!Validator.emptyTextBox(this, bi.camps)) return
                 viewModel.getCampFromDB(bi.camps.text.toString())
             }
         }

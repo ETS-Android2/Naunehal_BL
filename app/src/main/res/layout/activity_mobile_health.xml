@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -26,9 +27,8 @@
             android:background="?attr/colorPrimary"
             android:elevation="4dp"
             android:theme="@style/ToolbarTheme"
-            app:titleTextAppearance="@style/ToolbarTheme"
+            app:titleTextAppearance="@style/ToolbarTheme" />
 
-            />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -80,8 +80,8 @@
                                 android:inputType="number"
                                 app:maxDate="CR_DATE"
                                 app:minDate="CR_DATE" />
-                        </LinearLayout>
 
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -120,11 +120,13 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:hint="@string/mh02"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 app:maxValue="100"
                                 app:minValue="1"
+                                android:gravity="center"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -167,9 +169,11 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:enabled="false"
+                                android:gravity="center"
                                 android:hint="@string/mh03" />
-                        </LinearLayout>
 
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -208,9 +212,11 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:enabled="false"
+                                android:gravity="center"
                                 android:hint="@string/mh04" />
-                        </LinearLayout>
 
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -249,9 +255,11 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:enabled="false"
+                                android:gravity="center"
                                 android:hint="@string/mh05" />
-                        </LinearLayout>
 
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -291,8 +299,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:hint="@string/mh06" />
-                        </LinearLayout>
 
+                        </LinearLayout>
 
                     </LinearLayout>
 
