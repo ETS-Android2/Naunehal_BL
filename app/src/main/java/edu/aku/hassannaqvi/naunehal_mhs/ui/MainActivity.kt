@@ -68,9 +68,15 @@ class MainActivity : AppCompatActivity() {
                         lifecycleScope.launch {
                             it.data?.let { item ->
                                 bi.btnSection.visibility = View.VISIBLE
+                                bi.cam.root.visibility = View.VISIBLE
                                 camp = item
 
                                 //TODO: CardToPopulate
+                                //openWarningDialog(item.camp_no, item.district, item.ucName)
+                                bi.cam.campno.text = camp.camp_no
+                                bi.cam.dist2.text = camp.district
+                                bi.cam.uc2.text = camp.ucName
+                                bi.cam.area2.text = camp.area_name
                             }
                             bi.btnCheckCamp.visibility = View.VISIBLE
                             bi.btnSearchCampProgress.visibility = View.GONE
@@ -86,6 +92,7 @@ class MainActivity : AppCompatActivity() {
                             bi.btnSearchCampProgress.visibility = View.VISIBLE
                             bi.btnCheckCamp.visibility = View.GONE
                             bi.btnSection.visibility = View.GONE
+                            bi.cam.root.visibility = View.GONE
                             delay(2000)
                         }
                     }
