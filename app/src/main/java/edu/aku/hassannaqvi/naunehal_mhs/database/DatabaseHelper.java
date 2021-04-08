@@ -604,19 +604,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return camp;
     }
 
-    public Doctor getSpecificDoc(String camNo) {
-
+    public ArrayList<Doctor> getDocbyCam(String camno) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
 
         String whereClause = Doctor.TableDoctor.COLUMN_ID_CAMP + "=?";
-        String[] whereArgs = {camNo};
+        String[] whereArgs = new String[]{camno};
         String groupBy = null;
         String having = null;
 
-        String orderBy = Doctor.TableDoctor._ID + " ASC";
-        Doctor doc = null;
+        String orderBy =
+                Doctor.TableDoctor.COLUMN_STAFF_NAME + " ASC";
+
+        ArrayList<Doctor> docs = new ArrayList<>();
         try {
             c = db.query(
                     Doctor.TableDoctor.TABLE_NAME,  // The table to query
@@ -628,7 +629,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                doc = new Doctor().hydrate(c);
+                Doctor dc = new Doctor();
+                docs.add(dc.hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -638,7 +640,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return doc;
+        return docs;
     }
 
     public ArrayList<UCs> getUCsByDistricts(String dCode) {

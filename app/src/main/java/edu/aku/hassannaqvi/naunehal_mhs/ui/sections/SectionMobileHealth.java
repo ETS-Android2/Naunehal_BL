@@ -17,8 +17,6 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -61,6 +59,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.mh03.setText(camp.getDistrict());
         bi.mh04.setText(camp.getUcName());
         bi.mh05.setText(camp.getArea_name());
+        db = MainApp.appInfo.dbHelper;
         populateSpinner(this);
 
         setupSkips();
@@ -103,7 +102,6 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
 
     private boolean UpdateDB() {
-        DatabaseHelper db = MainApp.appInfo.dbHelper;
         long updcount = db.addMH(mobileHealth);
         mobileHealth.setId(String.valueOf(updcount));
         if (updcount > 0) {
@@ -327,7 +325,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         camNo.add("....");
         doc.add("....");
 
-        Collection<Doctor> dc = Collections.singleton(db.getSpecificDoc(bi.mh02.getText().toString()));
+        ArrayList<Doctor> dc = db.getDocbyCam(bi.mh02.getText().toString());
 
         for (Doctor d : dc) {
             camNo.add(d.getIdCamp());
