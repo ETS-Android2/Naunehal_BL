@@ -292,8 +292,9 @@
                                 android:layout_height="match_parent"
                                 android:text="@string/mh06" />
 
-                            <EditText
+                            <Spinner
                                 android:id="@+id/mh06"
+                                style="@style/spinner"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"

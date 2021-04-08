@@ -1,9 +1,11 @@
 package edu.aku.hassannaqvi.naunehal_mhs.ui.sections;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +16,11 @@ import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.naunehal_mhs.R;
@@ -23,6 +29,7 @@ import edu.aku.hassannaqvi.naunehal_mhs.core.MainApp;
 import edu.aku.hassannaqvi.naunehal_mhs.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal_mhs.databinding.ActivityMobileHealthBinding;
 import edu.aku.hassannaqvi.naunehal_mhs.models.Camps;
+import edu.aku.hassannaqvi.naunehal_mhs.models.Doctor;
 import edu.aku.hassannaqvi.naunehal_mhs.models.MobileHealth;
 import edu.aku.hassannaqvi.naunehal_mhs.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.AppUtilsKt;
@@ -35,6 +42,9 @@ import static edu.aku.hassannaqvi.naunehal_mhs.core.MainApp.mobileHealth;
 public class SectionMobileHealth extends AppCompatActivity implements EndSectionActivity {
 
     ActivityMobileHealthBinding bi;
+    private List<String> camNo, doc;
+    private DatabaseHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +61,11 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.mh03.setText(camp.getDistrict());
         bi.mh04.setText(camp.getUcName());
         bi.mh05.setText(camp.getArea_name());
+        populateSpinner(this);
 
         setupSkips();
     }
+
 
     private void setupSkips() {
 
@@ -127,7 +139,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setMh04(bi.mh04.getText().toString().trim().isEmpty() ? "-1" : bi.mh04.getText().toString());
         mobileHealth.setMh05(bi.mh05.getText().toString().trim().isEmpty() ? "-1" : bi.mh05.getText().toString());
 
-        mobileHealth.setMh06(bi.mh06.getText().toString().trim().isEmpty() ? "-1" : bi.mh06.getText().toString());
+        mobileHealth.setMh06(bi.mh06.getSelectedItem().toString());
 
         mobileHealth.setMh07(bi.mh07.getText().toString().trim().isEmpty() ? "-1" : bi.mh07.getText().toString());
 
@@ -291,9 +303,11 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
     }
 
+
     public void BtnEnd(View view) {
         AppUtilsKt.contextEndActivity(this);
     }
+
 
     @Override
     public void endSecActivity(boolean flag) {
@@ -303,4 +317,24 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             finish();
         }
     }
+
+
+    public void populateSpinner(final Context context) {
+        // Spinner Drop down elements
+        camNo = new ArrayList<>();
+        doc = new ArrayList<>();
+
+        camNo.add("....");
+        doc.add("....");
+
+        Collection<Doctor> dc = Collections.singleton(db.getSpecificDoc(bi.mh02.getText().toString()));
+
+        for (Doctor d : dc) {
+            camNo.add(d.getIdCamp());
+            doc.add(d.getStaff_name());
+        }
+
+        bi.mh06.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, doc));
+    }
+
 }

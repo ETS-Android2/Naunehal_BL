@@ -604,6 +604,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return camp;
     }
 
+    public Doctor getSpecificDoc(String camNo) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause = Doctor.TableDoctor.COLUMN_ID_CAMP + "=?";
+        String[] whereArgs = {camNo};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = Doctor.TableDoctor._ID + " ASC";
+        Doctor doc = null;
+        try {
+            c = db.query(
+                    Doctor.TableDoctor.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                doc = new Doctor().hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return doc;
+    }
+
     public ArrayList<UCs> getUCsByDistricts(String dCode) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
