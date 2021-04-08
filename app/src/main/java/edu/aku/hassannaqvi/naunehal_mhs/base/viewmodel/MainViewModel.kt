@@ -8,14 +8,13 @@ import edu.aku.hassannaqvi.naunehal_mhs.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal_mhs.base.repository.ResponseStatusCallbacks
 import edu.aku.hassannaqvi.naunehal_mhs.models.Camps
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 
 class MainViewModel(val repository: GeneralRepository) : ViewModel() {
-
-    var sysdateToday = SimpleDateFormat("dd-MM-yy", Locale.ENGLISH).format(Date())
 
     /*
     * Today's form
@@ -47,45 +46,6 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         get() = _campsResponse
 
 
-    fun getTodayForms(date: String) {
-        _tf.value = ResponseStatusCallbacks.loading(null)
-        viewModelScope.launch {
-            try {
-                val todayData = repository.getFormsByDate(date)
-                _tf.value = ResponseStatusCallbacks.success(data = todayData.size, message = "Forms exist")
-            } catch (e: Exception) {
-                _tf.value = ResponseStatusCallbacks.error(null, e.message.toString())
-            }
-        }
-    }
-
-
-    fun getUploadFormsStatus() {
-        _uf.value = ResponseStatusCallbacks.loading(null)
-        viewModelScope.launch {
-            try {
-                val todayData = repository.getUploadStatus()
-                _uf.value = ResponseStatusCallbacks.success(data = todayData, message = "Upload status exist")
-            } catch (e: Exception) {
-                _uf.value = ResponseStatusCallbacks.error(null, e.message.toString())
-            }
-        }
-    }
-
-
-    fun getFormsStatus(date: String) {
-        _fs.value = ResponseStatusCallbacks.loading(null)
-        viewModelScope.launch {
-            try {
-                val todayData = repository.getFormStatus(date)
-                _fs.value = ResponseStatusCallbacks.success(data = todayData, message = "Form status exist")
-            } catch (e: Exception) {
-                _fs.value = ResponseStatusCallbacks.error(null, e.message.toString())
-            }
-        }
-    }
-
-
     fun getFormsStatusUploadStatus(date: String) {
         _uf.value = ResponseStatusCallbacks.loading(null)
         _fs.value = ResponseStatusCallbacks.loading(null)
@@ -93,24 +53,27 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         viewModelScope.launch {
             launch {
                 try {
-                    val todayData = repository.getFormsByDate(date)
-                    _tf.value = ResponseStatusCallbacks.success(data = todayData.size, message = "Forms exist")
+                    repository.getFormsByDate(date).collect { item ->
+                        _tf.value = ResponseStatusCallbacks.success(data = item.size, message = "Forms exist")
+                    }
                 } catch (e: Exception) {
                     _tf.value = ResponseStatusCallbacks.error(null, e.message.toString())
                 }
             }
             launch {
                 try {
-                    val todayData = repository.getUploadStatus()
-                    _uf.value = ResponseStatusCallbacks.success(data = todayData, message = "Upload status exist")
+                    repository.getUploadStatus().collect { item ->
+                        _uf.value = ResponseStatusCallbacks.success(data = item, message = "Upload status exist")
+                    }
                 } catch (e: Exception) {
                     _fs.value = ResponseStatusCallbacks.error(null, e.message.toString())
                 }
             }
             launch {
                 try {
-                    val fstatus = repository.getFormStatus(date)
-                    _fs.value = ResponseStatusCallbacks.success(data = fstatus, message = "Form status exist")
+                    repository.getFormStatus(date).collect { fstatus ->
+                        _fs.value = ResponseStatusCallbacks.success(data = fstatus, message = "Form status exist")
+                    }
                 } catch (e: Exception) {
                     _fs.value = ResponseStatusCallbacks.error(null, e.message.toString())
                 }

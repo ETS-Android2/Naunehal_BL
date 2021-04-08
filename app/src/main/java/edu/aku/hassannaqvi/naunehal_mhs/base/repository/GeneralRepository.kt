@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.naunehal_mhs.base.repository
 import edu.aku.hassannaqvi.naunehal_mhs.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal_mhs.models.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 import kotlin.collections.ArrayList
 
@@ -36,16 +38,23 @@ open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource
         db.getLoginUser(username, password)
     }
 
-    override suspend fun getFormsByDate(date: String): ArrayList<Form> = withContext(Dispatchers.IO) {
-        db.getFormsByDate(date)
+    override suspend fun getFormsByDate(date: String): Flow<ArrayList<Form>> {
+        return flow {
+            val item = db.getFormsByDate(date)
+            emit(item)
+        }
     }
 
-    override suspend fun getUploadStatus(): FormIndicatorsModel = withContext(Dispatchers.IO) {
-        db.uploadStatusCount
+    override suspend fun getUploadStatus(): Flow<FormIndicatorsModel> {
+        return flow {
+            emit(db.uploadStatusCount)
+        }
     }
 
-    override suspend fun getFormStatus(date: String): FormIndicatorsModel = withContext(Dispatchers.IO) {
-        db.getFormStatusCount(date)
+    override suspend fun getFormStatus(date: String): Flow<FormIndicatorsModel> {
+        return flow {
+            emit(db.getFormStatusCount(date))
+        }
     }
 
     override suspend fun getSelectedChildList(cluster: String, hhno: String, uuid: String): ArrayList<ChildInformation> = withContext(Dispatchers.IO) {

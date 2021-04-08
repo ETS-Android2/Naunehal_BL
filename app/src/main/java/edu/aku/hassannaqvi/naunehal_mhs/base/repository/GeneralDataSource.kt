@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.naunehal_mhs.base.repository
 
 import edu.aku.hassannaqvi.naunehal_mhs.models.*
+import kotlinx.coroutines.flow.Flow
 import kotlin.collections.ArrayList
 
 interface GeneralDataSource {
@@ -16,11 +17,11 @@ interface GeneralDataSource {
     /*
     * For MainActivity Start
     * */
-    suspend fun getFormsByDate(date: String): ArrayList<Form>
+    suspend fun getFormsByDate(date: String): Flow<ArrayList<Form>>
 
-    suspend fun getUploadStatus(): FormIndicatorsModel
+    suspend fun getUploadStatus(): Flow<FormIndicatorsModel>
 
-    suspend fun getFormStatus(date: String): FormIndicatorsModel
+    suspend fun getFormStatus(date: String): Flow<FormIndicatorsModel>
     /*
     * For MainActivity End
     * */
@@ -38,7 +39,7 @@ interface GeneralDataSource {
     /*
     * For SectionH1 & Identification
     * */
-    suspend fun getCampsFromDB(campNo:String): Camps
+    suspend fun getCampsFromDB(campNo: String): Camps
 
     suspend fun getUcsByDistrictsFromDB(dCode: String): ArrayList<UCs>
 
