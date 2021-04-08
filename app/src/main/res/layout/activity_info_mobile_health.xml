@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.naunehal.ui.sections.InfoSectionMobileHealth" />
+            type="edu.aku.hassannaqvi.naunehal_mhs.ui.sections.InfoSectionMobileHealth" />
     </data>
 
 

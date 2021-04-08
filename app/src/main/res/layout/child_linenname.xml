@@ -8,7 +8,7 @@
 
         <variable
             name="childCard"
-            type="edu.aku.hassannaqvi.naunehal.models.ChildCard" />
+            type="edu.aku.hassannaqvi.naunehal_mhs.models.ChildCard" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

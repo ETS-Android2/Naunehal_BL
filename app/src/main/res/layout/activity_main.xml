@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.naunehal.ui.MainActivity" />
+            type="edu.aku.hassannaqvi.naunehal_mhs.ui.MainActivity" />
     </data>
 
     <LinearLayout
@@ -104,16 +104,16 @@
                             android:layout_weight="1"
                             android:background="@drawable/bacground_border"
                             android:hint="###-####-#"
+                            android:inputType="number"
                             android:padding="@dimen/_5sdp"
                             app:mask="###-####-#" />
 
                         <ProgressBar
-                            android:id="@+id/btn_download_district_progress"
+                            android:id="@+id/btn_search_camp_progress"
                             android:layout_width="@dimen/_12sdp"
                             android:layout_height="match_parent"
                             android:layout_marginEnd="10dp"
                             android:gravity="center_horizontal|center_vertical"
-                            android:onClick="@{callback::openSpecificActivity}"
                             android:visibility="gone"
                             tools:ignore="ContentDescription" />
 

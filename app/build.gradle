@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -30,9 +30,9 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.naunehal"
+            applicationId "edu.aku.hassannaqvi.naunehal_mhs"
             minSdkVersion 21
-            targetSdkVersion 29
+            targetSdkVersion 30
             versionCode code
             versionName "1.30"
             testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

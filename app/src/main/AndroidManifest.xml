@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="edu.aku.hassannaqvi.naunehal">
+    package="edu.aku.hassannaqvi.naunehal_mhs">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,7 +20,7 @@
         tools:ignore="ScopedStorage" />
 
     <application
-        android:name=".core.MainApp"
+        android:name="edu.aku.hassannaqvi.naunehal_mhs.core.MainApp"
         android:allowBackup="false"
         android:icon="@drawable/naunehal_baseline"
         android:label="@string/app_name"
@@ -31,7 +31,7 @@
         tools:replace="android:allowBackup">
 
         <activity
-            android:name=".ui.sections.SectionMobileHealth"
+            android:name=".ui.SplashscreenActivity"
             android:label="@string/mobilehealthserviceform_heading"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
@@ -46,7 +46,7 @@
         </activity>
 
         <activity
-            android:name=".ui.SplashscreenActivity"
+            android:name=".ui.sections.SectionMobileHealth"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.NoActionBar" />
 
@@ -59,18 +59,6 @@
             android:name=".ui.SyncActivity"
             android:label="Download and Upload Data Activity"
             android:screenOrientation="portrait" />
-
-        <activity
-            android:name=".ui.sections.ChildrenListActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name=".ui.sections.SelectedChildrenListActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name=".ui.sections.InfoSectionMobileHealth"
