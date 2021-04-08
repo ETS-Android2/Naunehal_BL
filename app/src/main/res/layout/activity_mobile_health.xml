@@ -78,7 +78,6 @@
                                 android:gravity="center"
                                 android:hint="DD - MM - YYYY"
                                 android:inputType="number"
-                                android:theme="@style/DatePickerStyle"
                                 app:maxDate="CR_DATE"
                                 app:minDate="CR_DATE" />
 
