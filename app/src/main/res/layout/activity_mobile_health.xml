@@ -120,14 +120,12 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:enabled="false"
-                                android:hint="@string/mh02"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
-                                app:minValue="1"
                                 android:gravity="center"
-                                app:type="range" />
+                                android:enabled="false"
+                                android:hint="###-####-#"
+                                android:inputType="number"
+                                app:mask="###-####-#"
+                                app:pattern="^(\\d{3,3}\\-\\d{4,4}\\-\\d{1,1})$" />
 
                         </LinearLayout>
 
