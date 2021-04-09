@@ -103,52 +103,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/hh2603" />
 
-                            <RadioButton
-                                android:id="@+id/istatusd"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hh2604" />
-
-                            <RadioButton
-                                android:id="@+id/istatuse"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hh2605" />
-
-                            <RadioButton
-                                android:id="@+id/istatusf"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hh2606" />
-
-                            <RadioButton
-                                android:id="@+id/istatusg"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hh2607" />
-
-                            <RadioButton
-                                android:id="@+id/istatush"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hh2608" />
-
-                            <RadioButton
-                                android:id="@+id/istatus96"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hh2696" />
-
-                            <EditText
-                                android:id="@+id/istatus96x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/hh2696"
-                                android:maxLength="40"
-                                android:tag="istatus96"
-                                android:text='@{istatus96.checked ? istatus96x.getText().toString() : "" }'
-                                android:visibility='@{istatus96.checked ? View.VISIBLE : View.GONE}' />
-
                         </RadioGroup>
 
                     </LinearLayout>

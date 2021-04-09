@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.naunehal_mhs.ui.sections;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -29,6 +28,7 @@ import edu.aku.hassannaqvi.naunehal_mhs.databinding.ActivityMobileHealthBinding;
 import edu.aku.hassannaqvi.naunehal_mhs.models.Camps;
 import edu.aku.hassannaqvi.naunehal_mhs.models.Doctor;
 import edu.aku.hassannaqvi.naunehal_mhs.models.MobileHealth;
+import edu.aku.hassannaqvi.naunehal_mhs.ui.EndingActivity;
 import edu.aku.hassannaqvi.naunehal_mhs.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.EndSectionActivity;
@@ -36,11 +36,13 @@ import edu.aku.hassannaqvi.naunehal_mhs.utils.shared.SharedStorage;
 
 import static edu.aku.hassannaqvi.naunehal_mhs.core.MainApp.form;
 import static edu.aku.hassannaqvi.naunehal_mhs.core.MainApp.mobileHealth;
+import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.gotoActivity;
+import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.gotoActivityWithPutExtra;
 
 public class SectionMobileHealth extends AppCompatActivity implements EndSectionActivity {
 
     ActivityMobileHealthBinding bi;
-    private List<String> camNo, doc;
+    private List<String> campNo;
     private DatabaseHelper db;
 
 
@@ -55,12 +57,9 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
          * Get camp data and set it to xml
          * */
         Camps camp = new Gson().fromJson(SharedStorage.INSTANCE.getSelectedCampData(this), Camps.class);
-        bi.mh02.setText(camp.getCamp_no());
-        bi.mh03.setText(camp.getDistrict());
-        bi.mh04.setText(camp.getUcName());
-        bi.mh05.setText(camp.getArea_name());
+        bi.setMob(camp);
         db = MainApp.appInfo.dbHelper;
-        populateSpinner(this);
+        populateSpinner(camp.getIdCamp());
 
         setupSkips();
     }
@@ -83,12 +82,9 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
 
     public void mh09yOnTextChanged(CharSequence s, int i, int i1, int i2) {
-
         if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))
             return;
-
         int age = Integer.parseInt(bi.mh09m.getText().toString()) + (Integer.parseInt(bi.mh09y.getText().toString()) * 12);
-
         if (age > 60) {
             Clear.clearAllFields(bi.fldGrpCVmh015);
             Clear.clearAllFields(bi.fldGrpCVmh016);
@@ -137,7 +133,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setMh04(bi.mh04.getText().toString().trim().isEmpty() ? "-1" : bi.mh04.getText().toString());
         mobileHealth.setMh05(bi.mh05.getText().toString().trim().isEmpty() ? "-1" : bi.mh05.getText().toString());
 
-        mobileHealth.setMh06(bi.mh06.getSelectedItem().toString());
+        mobileHealth.setMh06(campNo.get(bi.mh06.getSelectedItemPosition()));
 
         mobileHealth.setMh07(bi.mh07.getText().toString().trim().isEmpty() ? "-1" : bi.mh07.getText().toString());
 
@@ -291,7 +287,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         saveDraft();
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, MainActivity.class));
+            gotoActivityWithPutExtra(this, SectionMobileHealth.class, "complete", true);
         }
     }
 
@@ -309,30 +305,33 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
     @Override
     public void endSecActivity(boolean flag) {
+        if (!Validator.emptyTextBox(this, bi.mh01)) return;
         saveDraft();
-        form.setHhflag("2");
         if (UpdateDB()) {
             finish();
+            gotoActivity(this, EndingActivity.class);
         }
     }
 
 
-    public void populateSpinner(final Context context) {
+    private void populateSpinner(String camp_id) {
         // Spinner Drop down elements
-        camNo = new ArrayList<>();
-        doc = new ArrayList<>();
-
-        camNo.add("....");
-        doc.add("....");
-
-        ArrayList<Doctor> dc = db.getDocbyCam(bi.mh02.getText().toString());
-
+        campNo = new ArrayList<String>() {
+            {
+                add("....");
+            }
+        };
+        List<String> campDoc = new ArrayList<String>() {
+            {
+                add("....");
+            }
+        };
+        ArrayList<Doctor> dc = db.getDoctorByCamp(camp_id);
         for (Doctor d : dc) {
-            camNo.add(d.getIdCamp());
-            doc.add(d.getStaff_name());
+            campNo.add(d.getIddoctor());
+            campDoc.add(d.getStaff_name());
         }
-
-        bi.mh06.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, doc));
+        bi.mh06.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, campDoc));
     }
 
 }

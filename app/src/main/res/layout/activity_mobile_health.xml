@@ -5,9 +5,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.naunehalintegratedimmunizationandphcforentericpathogencontrol.models.Form" />-->
+        <variable
+            name="mob"
+            type="edu.aku.hassannaqvi.naunehal_mhs.models.Camps" />
 
         <variable
             name="callback"
@@ -39,8 +39,8 @@
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="12dp">
 
 
                 <!-- mh01  Input-Numeric   -->
@@ -120,12 +120,10 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:enabled="false"
-                                android:hint="###-####-#"
+                                android:gravity="center"
                                 android:inputType="number"
-                                app:mask="###-####-#"
-                                app:pattern="^(\\d{3,3}\\-\\d{4,4}\\-\\d{1,1})$" />
+                                android:text="@{mob.camp_no}" />
 
                         </LinearLayout>
 
@@ -169,7 +167,8 @@
                                 android:layout_weight="1"
                                 android:enabled="false"
                                 android:gravity="center"
-                                android:hint="@string/mh03" />
+                                android:hint="@string/mh03"
+                                android:text="@{mob.dist_id}" />
 
                         </LinearLayout>
 
@@ -212,7 +211,8 @@
                                 android:layout_weight="1"
                                 android:enabled="false"
                                 android:gravity="center"
-                                android:hint="@string/mh04" />
+                                android:hint="@string/mh04"
+                                android:text="@{mob.ucCode}" />
 
                         </LinearLayout>
 
@@ -255,7 +255,8 @@
                                 android:layout_weight="1"
                                 android:enabled="false"
                                 android:gravity="center"
-                                android:hint="@string/mh05" />
+                                android:hint="@string/mh05"
+                                android:text="@{mob.area_name}" />
 
                         </LinearLayout>
 
@@ -1387,8 +1388,8 @@
                                     <RadioButton
                                         android:id="@+id/mh02001"
                                         android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
                                         android:text="@string/mh02001" />
 
                                     <RadioButton
@@ -1415,8 +1416,8 @@
                                     <RadioButton
                                         android:id="@+id/mh02101"
                                         android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
                                         android:text="@string/mh02101" />
 
                                     <RadioButton
@@ -1464,8 +1465,8 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/mh022" />
 
                             <View
@@ -1496,8 +1497,8 @@
                             <RadioGroup
                                 android:id="@+id/mh022"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -1549,8 +1550,6 @@
                 </androidx.cardview.widget.CardView>
 
 
-
-
                 <!-- mh024  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVmh024"
@@ -1575,8 +1574,8 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/mh024" />
 
                             <View
@@ -1607,8 +1606,8 @@
                             <RadioGroup
                                 android:id="@+id/mh024"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:orientation="horizontal">
 
                                 <RadioButton
@@ -1678,7 +1677,6 @@
 
 
                         </LinearLayout>
-
 
 
                     </LinearLayout>

@@ -60,12 +60,6 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.sections.InfoSectionMobileHealth"
-            android:label="@string/se08_headding"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1" />
-
-        <activity
             android:name=".ui.EndingActivity"
             android:label="ِانٹرویو اسٹیٹس"
             android:screenOrientation="portrait"

@@ -326,6 +326,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+
     public ArrayList<Form> getFormsByDate(String sysdate) {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -409,6 +410,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return count;
     }
+
 
     public ArrayList<ChildInformation> getFamilyFromDB(String cluster, String hhno, String uuid) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -604,18 +606,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return camp;
     }
 
-    public ArrayList<Doctor> getDocbyCam(String camno) {
+    public ArrayList<Doctor> getDoctorByCamp(String camno) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
 
         String whereClause = Doctor.TableDoctor.COLUMN_ID_CAMP + "=?";
-        String[] whereArgs = new String[]{camno};
+        String[] whereArgs = {camno};
         String groupBy = null;
         String having = null;
 
-        String orderBy =
-                Doctor.TableDoctor.COLUMN_STAFF_NAME + " ASC";
+        String orderBy = Doctor.TableDoctor.COLUMN_STAFF_NAME + " ASC";
 
         ArrayList<Doctor> docs = new ArrayList<>();
         try {
@@ -629,8 +630,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                Doctor dc = new Doctor();
-                docs.add(dc.hydrate(c));
+                docs.add(new Doctor().hydrate(c));
             }
         } finally {
             if (c != null) {
