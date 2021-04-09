@@ -34,7 +34,7 @@
     <string name="mh05">Location</string>
     <string name="mh06">Doctor Name</string>
     <string name="mh07">Patient Name</string>
-    <string name="mh08">Relationship with Patient</string>
+    <string name="mh08">Father/Husband\'s Name</string>
     <string name="mh0801">Father</string>
     <string name="mh0802">Husband</string>
     <string name="mh09"> Age </string>
@@ -129,7 +129,7 @@
     <string name="mh02609">OPV1</string>
     <string name="mh026010">OPV2</string>
     <string name="mh026011">OPV3</string>
-    <string name="mh026012">Refused for routine immunization</string>
+    <string name="mh026012">Immunization Status</string>
     <string name="mh026013">Refused for OPV</string>
     <string name="mh026014">PCV1</string>
     <string name="mh026015">PCV2</string>
@@ -138,12 +138,12 @@
     <string name="mh026018">Rota2</string>
     <string name="mh026019">IPV</string>
     <string name="mh027">Vaccination Card Issued</string>
-    <string name="mh02701">Yes</string>
-    <string name="mh02702">No</string>
+    <string name="mh02701">Refused</string>
+    <string name="mh02702">Vaccinated At Camp</string>
     <string name="mh028">Referred</string>
     <string name="mh02801">Yes</string>
     <string name="mh02802">No</string>
-    <string name="mh029">Consent given</string>
+    <string name="mh029">Consent given?</string>
     <string name="mh02901">Yes</string>
     <string name="mh02902">No</string>
 
@@ -459,5 +459,7 @@
     <string name="mh026m09">09 Months</string>
     <string name="mh026m15">15 Months</string>
     <string name="mh026m59">0-59 Months</string>
+    <string name="mh02703">Fully Immunized</string>
+    <string name="none">None</string>
 
 </resources>

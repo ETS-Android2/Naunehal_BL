@@ -376,47 +376,14 @@
 
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/mh08"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/mh0801"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/mh0801" />
-
-                            <RadioButton
-                                android:id="@+id/mh0802"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/mh0802" />
-
-                        </RadioGroup>
 
                         <EditText
                             android:id="@+id/mh0801x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:hint="@string/mh0801"
-                            android:maxLength="20"
-                            android:text='@{mh0801.checked ? mh0801x.getText().toString() : ""}'
-                            android:visibility='@{mh0801.checked ? View.VISIBLE : View.GONE}' />
-
-                        <EditText
-                            android:id="@+id/mh0802x"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:hint="@string/mh0802"
-                            android:maxLength="20"
-                            android:text='@{mh0802.checked ? mh0802x.getText().toString() : ""}'
-                            android:visibility='@{mh0802.checked ? View.VISIBLE : View.GONE}' />
+                            android:hint="@string/mh08"
+                            android:maxLength="20" />
 
                     </LinearLayout>
 
@@ -626,7 +593,7 @@
                         <EditText
                             android:id="@+id/mh01101"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="54dp"
                             android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
                             android:hint="@string/mh011" />
 
@@ -685,6 +652,7 @@
                             android:id="@+id/mh012"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
                             android:hint="@string/mh012" />
 
                     </LinearLayout>
@@ -837,6 +805,7 @@
                             android:id="@+id/mh015"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
                             android:hint="@string/mh015" />
 
                     </LinearLayout>
@@ -877,6 +846,8 @@
                             android:id="@+id/mh016"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+
                             android:hint="@string/mh016" />
 
                     </LinearLayout>
@@ -1006,80 +977,79 @@
                                 <CheckBox
                                     android:id="@+id/mh01801"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh01801" />
 
                                 <CheckBox
                                     android:id="@+id/mh01804"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh01804" />
 
                                 <CheckBox
                                     android:id="@+id/mh01807"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh01807" />
 
                                 <CheckBox
                                     android:id="@+id/mh018010"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh018010" />
 
                                 <CheckBox
                                     android:id="@+id/mh01813"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh018013" />
 
                                 <CheckBox
                                     android:id="@+id/mh018016"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh018016" />
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:orientation="vertical">
 
                                 <CheckBox
                                     android:id="@+id/mh01802"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh01802" />
 
                                 <CheckBox
                                     android:id="@+id/mh01805"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh01805" />
 
                                 <CheckBox
                                     android:id="@+id/mh01808"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh01808" />
 
                                 <CheckBox
                                     android:id="@+id/mh018011"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh018011" />
 
                                 <CheckBox
                                     android:id="@+id/mh018014"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh018014" />
 
                                 <CheckBox
                                     android:id="@+id/mh018077"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh018077" />
                             </LinearLayout>
 
@@ -1092,32 +1062,40 @@
                                 <CheckBox
                                     android:id="@+id/mh01803"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh01803" />
 
                                 <CheckBox
                                     android:id="@+id/mh01806"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh01806" />
 
                                 <CheckBox
                                     android:id="@+id/mh01809"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh01809" />
 
                                 <CheckBox
                                     android:id="@+id/mh018012"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh018012" />
 
                                 <CheckBox
                                     android:id="@+id/mh018015"
                                     android:layout_width="match_parent"
-                                    android:layout_height="67dp"
+                                    android:layout_height="wrap_content"
                                     android:text="@string/mh018015" />
+
+                                <CheckBox
+                                    android:id="@+id/mh018097"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#7fefd6d6"
+                                    android:text="@string/none"
+                                    android:textColor="@color/redDark" />
 
 
                             </LinearLayout>
@@ -1270,6 +1248,7 @@
                                     android:id="@+id/mh01906"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:lineHeight="16dp"
                                     android:text="@string/mh01906" />
 
                                 <CheckBox
@@ -1289,6 +1268,14 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/mh019015" />
+
+                                <CheckBox
+                                    android:id="@+id/mh019097"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#7fefd6d6"
+                                    android:text="@string/none"
+                                    android:textColor="@color/redDark" />
                             </LinearLayout>
 
 
@@ -1683,7 +1670,66 @@
 
                 </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVmh027b"
+                    style="@style/cardView">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_mh027b" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/mh026012" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/mh027b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/mh027b01"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/mh02701" />
+
+                            <RadioButton
+                                android:id="@+id/mh027b02"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/mh02702" />
+
+                            <RadioButton
+                                android:id="@+id/mh027b03"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/mh02703" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
                 <!-- mh026  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVmh026"
@@ -1770,13 +1816,6 @@
                                         android:gravity="center_vertical|center_horizontal"
                                         android:text="@string/mh026m15" />
 
-                                    <TextView
-                                        style="@style/sub_labels"
-                                        android:layout_width="110dp"
-                                        android:layout_height="match_parent"
-                                        android:gravity="center_vertical|center_horizontal"
-                                        android:text="@string/mh026m59" />
-
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -1834,12 +1873,6 @@
 
                                     </RadioGroup>
 
-                                    <RadioButton
-                                        android:id="@+id/mh02607"
-                                        android:layout_width="110dp"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/mh02607" />
-
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -1880,7 +1913,7 @@
                                     </RadioGroup>
 
                                     <View
-                                        android:layout_width="330dp"
+                                        android:layout_width="220dp"
                                         android:layout_height="wrap_content" />
 
 
@@ -1921,7 +1954,7 @@
                                     </RadioGroup>
 
                                     <View
-                                        android:layout_width="330dp"
+                                        android:layout_width="220dp"
                                         android:layout_height="wrap_content" />
 
                                 </LinearLayout>
@@ -1961,7 +1994,7 @@
                                         android:text="@string/mh026019" />
 
                                     <View
-                                        android:layout_width="330dp"
+                                        android:layout_width="220dp"
                                         android:layout_height="wrap_content" />
 
                                 </LinearLayout>
@@ -2149,7 +2182,60 @@
 
                 </androidx.cardview.widget.CardView>
 
+                <!-- mh027  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVmh027"
+                    style="@style/cardView">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_mh027" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/mh027" />
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/mh027"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/mh02701"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/mh02701" />
+
+                            <RadioButton
+                                android:id="@+id/mh02702"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/mh02702" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
                 <!-- mh027a  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVmh027a"
@@ -2207,115 +2293,10 @@
 
 
                 <!-- mh027b  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVmh027b"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_mh027b" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/mh026012" />
-
-                        </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/mh027b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/mh027b01"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/mh02701" />
-
-                            <RadioButton
-                                android:id="@+id/mh027b02"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/mh02702" />
-
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
 
 
-                <!-- mh027  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVmh027"
-                    style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_mh027" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/mh027" />
-
-                        </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/mh027"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/mh02701"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/mh02701" />
-
-                            <RadioButton
-                                android:id="@+id/mh02702"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/mh02702" />
-
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- mh028  Radio   -->
@@ -2465,6 +2446,7 @@
                             android:layout_height="wrap_content"
                             android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
                             android:hint="@string/mh030"
+                            android:gravity="top"
                             android:lines="5" />
 
                     </LinearLayout>
