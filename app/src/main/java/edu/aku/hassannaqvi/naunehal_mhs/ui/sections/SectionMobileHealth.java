@@ -66,25 +66,26 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
     private void setupSkips() {
 
         bi.mh010.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))
+                return;
+            int age = Integer.parseInt(bi.mh09m.getText().toString()) + (Integer.parseInt(bi.mh09y.getText().toString()) * 12);
             if (i == bi.mh01001.getId()) {
                 Clear.clearAllFields(bi.fldGrpCVmh017);
                 Clear.clearAllFields(bi.llmh020);
                 bi.fldGrpCVmh017.setVisibility(View.GONE);
                 bi.llmh020.setVisibility(View.GONE);
+                if (age <= 60) {
+                    bi.mh012.setMinvalue(0.9f);
+                    bi.mh012.setMaxvalue(58f);
+                    bi.mh012.setMask("##.##");
+                }
             } else {
                 bi.fldGrpCVmh017.setVisibility(View.VISIBLE);
                 bi.llmh020.setVisibility(View.VISIBLE);
-                if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))
-                    return;
-                int age = Integer.parseInt(bi.mh09m.getText().toString()) + (Integer.parseInt(bi.mh09y.getText().toString()) * 12);
                 if (age > 168 && age < 600) {
                     bi.mh012.setMinvalue(15f);
                     bi.mh012.setMaxvalue(250f);
                     bi.mh012.setMask("###.##");
-                } else {
-                    bi.mh012.setMinvalue(0.9f);
-                    bi.mh012.setMaxvalue(58f);
-                    bi.mh012.setMask("##.##");
                 }
             }
         });

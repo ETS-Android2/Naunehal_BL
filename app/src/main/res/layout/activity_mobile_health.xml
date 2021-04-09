@@ -1778,7 +1778,7 @@
                             android:layout_width="match_parent"
                             android:fadeScrollbars="false"
                             android:scrollbarAlwaysDrawHorizontalTrack="true"
-                            android:scrollbarThumbHorizontal="#ef0000"
+                            android:scrollbarThumbHorizontal="@color/redLight"
                             android:scrollbars="horizontal"
                             android:layout_height="wrap_content">
 
