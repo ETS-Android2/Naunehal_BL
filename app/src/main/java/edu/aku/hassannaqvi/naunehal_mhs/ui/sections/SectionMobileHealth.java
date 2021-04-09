@@ -80,6 +80,11 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
                 if (age > 168 && age < 600) {
                     bi.mh012.setMinvalue(15f);
                     bi.mh012.setMaxvalue(250f);
+                    bi.mh012.setMask("###.##");
+                } else {
+                    bi.mh012.setMinvalue(0.9f);
+                    bi.mh012.setMaxvalue(58f);
+                    bi.mh012.setMask("##.##");
                 }
             }
         });
@@ -102,6 +107,11 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         if (age > 168 && age < 600 && bi.mh01002.isChecked()) {
             bi.mh012.setMinvalue(15f);
             bi.mh012.setMaxvalue(250f);
+            bi.mh012.setMask("###.##");
+        } else {
+            bi.mh012.setMinvalue(0.9f);
+            bi.mh012.setMaxvalue(58f);
+            bi.mh012.setMask("##.##");
         }
     }
 
