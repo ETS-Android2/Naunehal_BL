@@ -25,6 +25,11 @@ fun <T : AppCompatActivity> AppCompatActivity.gotoActivity(targetActivityClass: 
     startActivity(intent)
 }
 
+fun <T : Activity> Activity.gotoActivity(targetActivityClass: Class<T>) {
+    val intent = Intent(this, targetActivityClass)
+    startActivity(intent)
+}
+
 fun <T : Activity> Activity.gotoActivityWithPutExtra(targetActivityClass: Class<T>, key: String, data: Any) {
     val intent = Intent(this, targetActivityClass)
     when (data) {

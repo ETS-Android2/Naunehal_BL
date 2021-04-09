@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.naunehal_mhs.ui.sections;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -29,12 +28,10 @@ import edu.aku.hassannaqvi.naunehal_mhs.models.Camps;
 import edu.aku.hassannaqvi.naunehal_mhs.models.Doctor;
 import edu.aku.hassannaqvi.naunehal_mhs.models.MobileHealth;
 import edu.aku.hassannaqvi.naunehal_mhs.ui.EndingActivity;
-import edu.aku.hassannaqvi.naunehal_mhs.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.EndSectionActivity;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.shared.SharedStorage;
 
-import static edu.aku.hassannaqvi.naunehal_mhs.core.MainApp.form;
 import static edu.aku.hassannaqvi.naunehal_mhs.core.MainApp.mobileHealth;
 import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.gotoActivity;
 import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.gotoActivityWithPutExtra;
@@ -52,6 +49,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi = DataBindingUtil.setContentView(this, R.layout.activity_mobile_health);
         bi.setCallback(this);
         setSupportActionBar(bi.toolbar);
+        setTitle(R.string.mobilehealthserviceform_heading);
 
         /*
          * Get camp data and set it to xml

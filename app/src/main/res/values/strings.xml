@@ -14,6 +14,14 @@
     <string name="mobilehealthserviceform_heading">Mobile Health Service Form: Mobile Health Service Form</string>
 
 
+    <!-- Replace with correct text-->
+    <string name="hh05"> ضلع کا نام </string>
+    <string name="hh06"> یونین کونسل </string>
+    <string name="hh08"> کلسٹر نمبر </string>
+    <string name="hh09"> گھرانہ نمبر </string>
+
+
+    <string name="hh26">Interview Status</string>
     <string name="hh26hint">Result of Interview</string>
     <string name="hh2601">Completed</string>
     <string name="hh2602">Partially completed</string>
@@ -437,5 +445,19 @@
     <string name='Q_mh09d'>mh09d</string>
     <string name='Q_mh09m'>mh09m</string>
     <string name='Q_mh09y'>mh09y</string>
+    <string name="Q_mh027a">MH027a</string>
+    <string name="mh027a">OPV</string>hh26
+    <string name="mh027a01">Administered</string>
+    <string name="mh027a02">Refused</string>
+    <string name="Q_mh027b">MH027B</string>
+    <string name="Q_mh030">MH030</string>
+    <string name="mh030">Remarks</string>
+    <string name="mh026birth">Birth</string>
+    <string name="mh026w06">06 Weeks</string>
+    <string name="mh026w10">10 Weeks</string>
+    <string name="mh026w14">14 Weeks</string>
+    <string name="mh026m09">09 Months</string>
+    <string name="mh026m15">15 Months</string>
+    <string name="mh026m59">0-59 Months</string>
 
 </resources>
