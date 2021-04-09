@@ -265,7 +265,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- mh06  Input   -->
+                <!-- mh06  Spinner   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVmh06"
                     style="@style/cardView">
@@ -296,7 +296,7 @@
                                 android:id="@+id/mh06"
                                 style="@style/spinner"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:hint="@string/mh06" />
 
@@ -347,7 +347,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- mh08  Radio   -->
+                <!-- mh08  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVmh08"
                     style="@style/cardView">
@@ -378,7 +378,7 @@
 
 
                         <EditText
-                            android:id="@+id/mh0801x"
+                            android:id="@+id/mh08"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
@@ -465,8 +465,8 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:onTextChanged="@{callback.mh09yOnTextChanged}"
-                                app:maxValue="15"
-                                app:minValue="1"
+                                app:maxValue="99"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -480,7 +480,7 @@
                                 android:maxLength="2"
                                 android:onTextChanged="@{callback.mh09yOnTextChanged}"
                                 app:maxValue="11"
-                                app:minValue="1"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -648,12 +648,17 @@
 
                         </LinearLayout>
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/mh012"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="numberDecimal"
-                            android:hint="@string/mh012" />
+                            android:gravity="center"
+                            android:hint="##.##"
+                            android:inputType="number"
+                            app:mask="##.##"
+                            app:maxValue="58"
+                            app:minValue="0.9"
+                            app:type="range" />
 
                     </LinearLayout>
 
@@ -801,12 +806,17 @@
 
                         </LinearLayout>
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/mh015"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="numberDecimal"
-                            android:hint="@string/mh015" />
+                            android:gravity="center"
+                            android:hint="###.#"
+                            android:inputType="number"
+                            app:mask="###.#"
+                            app:maxValue="150"
+                            app:minValue="38"
+                            app:type="range" />
 
                     </LinearLayout>
 
@@ -842,13 +852,17 @@
 
                         </LinearLayout>
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/mh016"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="numberDecimal"
-
-                            android:hint="@string/mh016" />
+                            android:gravity="center"
+                            android:hint="##.#"
+                            android:inputType="number"
+                            app:mask="##.#"
+                            app:maxValue="35"
+                            app:minValue="6"
+                            app:type="range" />
 
                     </LinearLayout>
 
@@ -1009,6 +1023,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/mh018016" />
+
                             </LinearLayout>
 
                             <LinearLayout

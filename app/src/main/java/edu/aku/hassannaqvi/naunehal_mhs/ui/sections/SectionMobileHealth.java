@@ -74,6 +74,13 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             } else {
                 bi.fldGrpCVmh017.setVisibility(View.VISIBLE);
                 bi.llmh020.setVisibility(View.VISIBLE);
+                if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))
+                    return;
+                int age = Integer.parseInt(bi.mh09m.getText().toString()) + (Integer.parseInt(bi.mh09y.getText().toString()) * 12);
+                if (age > 168 && age < 600) {
+                    bi.mh012.setMinvalue(15f);
+                    bi.mh012.setMaxvalue(250f);
+                }
             }
         });
     }
@@ -91,6 +98,10 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         } else {
             bi.fldGrpCVmh015.setVisibility(View.VISIBLE);
             bi.fldGrpCVmh016.setVisibility(View.VISIBLE);
+        }
+        if (age > 168 && age < 600 && bi.mh01002.isChecked()) {
+            bi.mh012.setMinvalue(15f);
+            bi.mh012.setMaxvalue(250f);
         }
     }
 
@@ -120,7 +131,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
         mobileHealth = new MobileHealth();
         mobileHealth.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        //mobileHealth.setUserName(MainApp.user.getUserName());
+        mobileHealth.setUserName(MainApp.user.getUserName());
         mobileHealth.setDeviceId(MainApp.appInfo.getDeviceID());
         mobileHealth.setDeviceTag(MainApp.appInfo.getTagName());
         mobileHealth.setAppver(MainApp.appInfo.getAppVersion());
@@ -131,18 +142,11 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setMh04(bi.mh04.getText().toString().trim().isEmpty() ? "-1" : bi.mh04.getText().toString());
         mobileHealth.setMh05(bi.mh05.getText().toString().trim().isEmpty() ? "-1" : bi.mh05.getText().toString());
 
-        mobileHealth.setMh06(campNo.get(bi.mh06.getSelectedItemPosition()));
+        mobileHealth.setMh06(bi.mh06.getSelectedItem().toString());
 
         mobileHealth.setMh07(bi.mh07.getText().toString().trim().isEmpty() ? "-1" : bi.mh07.getText().toString());
 
-/*        mobileHealth.setMh08(bi.mh0801.isChecked() ? "1"
-                : bi.mh0802.isChecked() ? "2"
-                : "-1");*/
-
-        mobileHealth.setMh0801x(bi.mh0801x.getText().toString().trim().isEmpty() ? "-1" : bi.mh0801x.getText().toString());
-/*
-        mobileHealth.setMh0802x(bi.mh0802x.getText().toString().trim().isEmpty() ? "-1" : bi.mh0802x.getText().toString());
-*/
+        mobileHealth.setMh08(bi.mh08.getText().toString().trim().isEmpty() ? "-1" : bi.mh08.getText().toString());
 
         mobileHealth.setMh09y(bi.mh09y.getText().toString().trim().isEmpty() ? "-1" : bi.mh09y.getText().toString());
         mobileHealth.setMh09m(bi.mh09m.getText().toString().trim().isEmpty() ? "-1" : bi.mh09m.getText().toString());
@@ -330,7 +334,9 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             campNo.add(d.getIddoctor());
             campDoc.add(d.getStaff_name());
         }
+
         bi.mh06.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, campDoc));
+
     }
 
 }

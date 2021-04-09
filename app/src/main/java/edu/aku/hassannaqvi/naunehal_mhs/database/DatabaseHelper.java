@@ -249,27 +249,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(MHContract.MHTable.COLUMN_PROJECT_NAME, mobileHealth.getProjectName());
         values.put(MHContract.MHTable.COLUMN_UID, mobileHealth.getUid());
-        values.put(MHContract.MHTable.COLUMN_UUID, mobileHealth.getUuid());
-        values.put(MHContract.MHTable.COLUMN_FMUID, mobileHealth.getFmuid());
         values.put(MHContract.MHTable.COLUMN_USERNAME, mobileHealth.getUserName());
         values.put(MHContract.MHTable.COLUMN_SYSDATE, mobileHealth.getSysDate());
-        values.put(MHContract.MHTable.COLUMN_DCODE, mobileHealth.getDcode());
-        values.put(MHContract.MHTable.COLUMN_UCODE, mobileHealth.getUcode());
-        values.put(MHContract.MHTable.COLUMN_CLUSTER, mobileHealth.getCluster());
-        values.put(MHContract.MHTable.COLUMN_HHNO, mobileHealth.getHhno());
         values.put(MHContract.MHTable.COLUMN_SA, mobileHealth.sAtoString());
         values.put(MHContract.MHTable.COLUMN_MH01, mobileHealth.getMh01());
         values.put(MHContract.MHTable.COLUMN_MH02, mobileHealth.getMh02());
         values.put(MHContract.MHTable.COLUMN_MH03, mobileHealth.getMh03());
         values.put(MHContract.MHTable.COLUMN_MH04, mobileHealth.getMh04());
         values.put(MHContract.MHTable.COLUMN_MH05, mobileHealth.getMh05());
+        values.put(MHContract.MHTable.COLUMN_MH06, mobileHealth.getMh06());
+        values.put(MHContract.MHTable.COLUMN_MH07, mobileHealth.getMh07());
         values.put(MHContract.MHTable.COLUMN_DEVICEID, mobileHealth.getDeviceId());
         values.put(MHContract.MHTable.COLUMN_DEVICETAGID, mobileHealth.getDeviceTag());
         values.put(MHContract.MHTable.COLUMN_SYNCED, mobileHealth.getSynced());
         values.put(MHContract.MHTable.COLUMN_SYNCED_DATE, mobileHealth.getSyncDate());
         values.put(MHContract.MHTable.COLUMN_APPVERSION, mobileHealth.getAppver());
         values.put(MHContract.MHTable.COLUMN_STATUS, mobileHealth.getStatus());
-        values.put(MHContract.MHTable.COLUMN_CHILD_NAME, mobileHealth.getChildname());
         values.put(MHContract.MHTable.COLUMN_SERIAL, mobileHealth.getSerial());
 
         // Insert the new row, returning the primary key value of the new row
@@ -1481,28 +1476,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 MHContract.MHTable.COLUMN_ID,
                 MHContract.MHTable.COLUMN_UID,
-                MHContract.MHTable.COLUMN_UUID,
-                MHContract.MHTable.COLUMN_FMUID,
                 MHContract.MHTable.COLUMN_USERNAME,
                 MHContract.MHTable.COLUMN_SYSDATE,
-                MHContract.MHTable.COLUMN_DCODE,
-                MHContract.MHTable.COLUMN_UCODE,
-                MHContract.MHTable.COLUMN_CLUSTER,
-                MHContract.MHTable.COLUMN_HHNO,
                 MHContract.MHTable.COLUMN_DEVICEID,
                 MHContract.MHTable.COLUMN_DEVICETAGID,
                 MHContract.MHTable.COLUMN_APPVERSION,
                 MHContract.MHTable.COLUMN_SYNCED,
                 MHContract.MHTable.COLUMN_SYNCED_DATE,
                 MHContract.MHTable.COLUMN_STATUS,
-                MHContract.MHTable.COLUMN_MOTHER_NAME,
-                MHContract.MHTable.COLUMN_CHILD_NAME,
                 MHContract.MHTable.COLUMN_SERIAL,
                 MHContract.MHTable.COLUMN_MH01,
                 MHContract.MHTable.COLUMN_MH02,
                 MHContract.MHTable.COLUMN_MH03,
                 MHContract.MHTable.COLUMN_MH04,
                 MHContract.MHTable.COLUMN_MH05,
+                MHContract.MHTable.COLUMN_MH06,
+                MHContract.MHTable.COLUMN_MH07,
                 MHContract.MHTable.COLUMN_SA
         };
 
@@ -1622,7 +1611,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedMH(String id) {
+    public void updateSyncedMobileHealth(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column

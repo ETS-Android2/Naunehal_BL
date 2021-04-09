@@ -14,17 +14,15 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.naunehal_mhs.R;
-import edu.aku.hassannaqvi.naunehal_mhs.contracts.FormsContract;
+import edu.aku.hassannaqvi.naunehal_mhs.contracts.MHContract;
 import edu.aku.hassannaqvi.naunehal_mhs.core.MainApp;
 import edu.aku.hassannaqvi.naunehal_mhs.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal_mhs.databinding.ActivityEndingBinding;
 import edu.aku.hassannaqvi.naunehal_mhs.ui.sections.SectionMobileHealth;
 
 import static edu.aku.hassannaqvi.naunehal_mhs.CONSTANTS.SECTION_MAIN_CHECK_FOR_END;
-import static edu.aku.hassannaqvi.naunehal_mhs.core.MainApp.form;
 import static edu.aku.hassannaqvi.naunehal_mhs.core.MainApp.mobileHealth;
 import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.gotoActivity;
-import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.gotoActivityWithNoHistory;
 
 
 public class EndingActivity extends AppCompatActivity {
@@ -78,10 +76,10 @@ public class EndingActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S01HH, form.s01HHtoString());
+        int updcount = db.updatesMHColumn(MHContract.MHTable.COLUMN_STATUS, mobileHealth.getStatus());
         if (updcount > 0) {
-            int count = db.updateEnding();
-            return count > 0;
+            //int count = db.updateEnding();
+            return updcount > 0;
         } else {
             Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
             return false;

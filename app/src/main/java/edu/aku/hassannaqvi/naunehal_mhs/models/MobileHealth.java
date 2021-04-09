@@ -116,21 +116,13 @@ public class MobileHealth extends BaseObservable {
     private String mh028 = StringUtils.EMPTY;
     private String mh029 = StringUtils.EMPTY;
     private String mh030 = StringUtils.EMPTY;
-    private String photoFront = StringUtils.EMPTY;
-    private String photoBack = StringUtils.EMPTY;
 
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
     private String id;
     private String uid;
-    private String uuid;
-    private String fmuid;
     private String userName;
     private String sysDate;
-    private String dcode;
-    private String ucode;
-    private String cluster;
-    private String hhno;
     private String deviceId;
     private String deviceTag;
     private String appver;
@@ -139,22 +131,12 @@ public class MobileHealth extends BaseObservable {
     private String synced;
     private String syncDate;
     // SECTION VARIABLES
-    private String mothername;
-    private String childname;
     private String serial;
     private String sA;
 
 
     public MobileHealth() {
 
-    }
-
-    public String getFmuid() {
-        return fmuid;
-    }
-
-    public void setFmuid(String fmuid) {
-        this.fmuid = fmuid;
     }
 
     @Bindable
@@ -193,67 +175,12 @@ public class MobileHealth extends BaseObservable {
 
 
     @Bindable
-    public String getUuid() {
-        return uuid;
-    }
-
-    public MobileHealth setUuid(String uuid) {
-        this.uuid = uuid;
-        return this;
-    }
-
-
-    @Bindable
     public String getUserName() {
         return userName;
     }
 
     public MobileHealth setUserName(String userName) {
         this.userName = userName;
-        return this;
-    }
-
-
-    @Bindable
-    public String getDcode() {
-        return dcode;
-    }
-
-    public MobileHealth setDcode(String dcode) {
-        this.dcode = dcode;
-        return this;
-    }
-
-
-    @Bindable
-    public String getUcode() {
-        return ucode;
-    }
-
-    public MobileHealth setUcode(String ucode) {
-        this.ucode = ucode;
-        return this;
-    }
-
-
-    @Bindable
-    public String getCluster() {
-        return cluster;
-    }
-
-    public MobileHealth setCluster(String cluster) {
-        this.cluster = cluster;
-        return this;
-    }
-
-
-    @Bindable
-    public String getHhno() {
-        return hhno;
-    }
-
-    public MobileHealth setHhno(String hhno) {
-        this.hhno = hhno;
         return this;
     }
 
@@ -327,26 +254,6 @@ public class MobileHealth extends BaseObservable {
 
     public MobileHealth setSyncDate(String syncDate) {
         this.syncDate = syncDate;
-        return this;
-    }
-
-
-    public String getMothername() {
-        return mothername;
-    }
-
-    public MobileHealth setMothername(String mothername) {
-        this.mothername = mothername;
-        return this;
-    }
-
-
-    public String getChildname() {
-        return childname;
-    }
-
-    public MobileHealth setChildname(String childname) {
-        this.childname = childname;
         return this;
     }
 
@@ -1439,28 +1346,6 @@ public class MobileHealth extends BaseObservable {
 
 
     @Bindable
-    public String getPhotoFront() {
-        return photoFront;
-    }
-
-    public void setPhotoFront(String photoFront) {
-        this.photoFront = photoFront;
-        notifyPropertyChanged(BR.photoFront);
-    }
-
-
-    @Bindable
-    public String getPhotoBack() {
-        return photoBack;
-    }
-
-    public void setPhotoBack(String photoBack) {
-        this.photoBack = photoBack;
-        notifyPropertyChanged(BR.photoBack);
-    }
-
-
-    @Bindable
     public String getStatus() {
         return status;
     }
@@ -1474,28 +1359,22 @@ public class MobileHealth extends BaseObservable {
     public MobileHealth Sync(JSONObject jsonObject) throws JSONException {
         this.id = jsonObject.getString(MHContract.MHTable.COLUMN_ID);
         this.uid = jsonObject.getString(MHContract.MHTable.COLUMN_UID);
-        this.uuid = jsonObject.getString(MHContract.MHTable.COLUMN_UUID);
-        this.fmuid = jsonObject.getString(MHContract.MHTable.COLUMN_FMUID);
         this.userName = jsonObject.getString(MHContract.MHTable.COLUMN_USERNAME);
         this.sysDate = jsonObject.getString(MHContract.MHTable.COLUMN_SYSDATE);
-        this.dcode = jsonObject.getString(MHContract.MHTable.COLUMN_DCODE);
-        this.ucode = jsonObject.getString(MHContract.MHTable.COLUMN_UCODE);
-        this.cluster = jsonObject.getString(MHContract.MHTable.COLUMN_CLUSTER);
-        this.hhno = jsonObject.getString(MHContract.MHTable.COLUMN_HHNO);
         this.deviceId = jsonObject.getString(MHContract.MHTable.COLUMN_DEVICEID);
         this.deviceTag = jsonObject.getString(MHContract.MHTable.COLUMN_DEVICETAGID);
         this.appver = jsonObject.getString(MHContract.MHTable.COLUMN_APPVERSION);
         this.synced = jsonObject.getString(MHContract.MHTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(MHContract.MHTable.COLUMN_SYNCED_DATE);
         this.status = jsonObject.getString(MHContract.MHTable.COLUMN_STATUS);
-        this.mothername = jsonObject.getString(MHContract.MHTable.COLUMN_MOTHER_NAME);
-        this.childname = jsonObject.getString(MHContract.MHTable.COLUMN_CHILD_NAME);
         this.serial = jsonObject.getString(MHContract.MHTable.COLUMN_SERIAL);
         this.mh01 = jsonObject.getString(MHContract.MHTable.COLUMN_MH01);
         this.mh02 = jsonObject.getString(MHContract.MHTable.COLUMN_MH02);
         this.mh03 = jsonObject.getString(MHContract.MHTable.COLUMN_MH03);
         this.mh04 = jsonObject.getString(MHContract.MHTable.COLUMN_MH04);
         this.mh05 = jsonObject.getString(MHContract.MHTable.COLUMN_MH05);
+        this.mh06 = jsonObject.getString(MHContract.MHTable.COLUMN_MH06);
+        this.mh07 = jsonObject.getString(MHContract.MHTable.COLUMN_MH07);
 
         this.sA = jsonObject.getString(MHContract.MHTable.COLUMN_SA);
 
@@ -1507,28 +1386,22 @@ public class MobileHealth extends BaseObservable {
     public MobileHealth Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_UUID));
-        this.fmuid = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_FMUID));
         this.userName = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_SYSDATE));
-        this.dcode = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_DCODE));
-        this.ucode = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_UCODE));
-        this.cluster = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_CLUSTER));
-        this.hhno = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_HHNO));
         this.deviceId = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_SYNCED_DATE));
         this.status = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_STATUS));
-        this.mothername = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_MOTHER_NAME));
-        this.childname = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_CHILD_NAME));
         this.serial = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_SERIAL));
         this.mh01 = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_MH01));
         this.mh02 = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_MH02));
         this.mh03 = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_MH03));
         this.mh04 = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_MH04));
         this.mh05 = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_MH05));
+        this.mh06 = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_MH06));
+        this.mh07 = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_MH07));
 
         //For childCount
         //this.sA = cursor.getString(cursor.getColumnIndex(MHContract.MHTable.COLUMN_SA));
@@ -1550,9 +1423,7 @@ public class MobileHealth extends BaseObservable {
         JSONObject json = new JSONObject();
 
         try {
-            json.put("mh06", mh06)
-                    .put("mh07", mh07)
-                    .put("mh08", mh08)
+            json.put("mh08", mh08)
                     .put("mh0801x", mh0801x)
                     .put("mh0802x", mh0802x)
                     .put("mh09y", mh09y)
@@ -1640,9 +1511,7 @@ public class MobileHealth extends BaseObservable {
                     .put("mh027b", mh027b)
                     .put("mh028", mh028)
                     .put("mh029", mh029)
-                    .put("mh030", mh030)
-                    .put("photoFront", photoFront)
-                    .put("photoBack", photoBack);
+                    .put("mh030", mh030);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1660,28 +1529,22 @@ public class MobileHealth extends BaseObservable {
         try {
             json.put(MHContract.MHTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
             json.put(MHContract.MHTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
-            json.put(MHContract.MHTable.COLUMN_UUID, this.uuid == null ? JSONObject.NULL : this.uuid);
-            json.put(MHContract.MHTable.COLUMN_FMUID, this.fmuid == null ? JSONObject.NULL : this.fmuid);
             json.put(MHContract.MHTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
             json.put(MHContract.MHTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
-            json.put(MHContract.MHTable.COLUMN_DCODE, this.dcode == null ? JSONObject.NULL : this.dcode);
-            json.put(MHContract.MHTable.COLUMN_UCODE, this.ucode == null ? JSONObject.NULL : this.ucode);
-            json.put(MHContract.MHTable.COLUMN_CLUSTER, this.cluster == null ? JSONObject.NULL : this.cluster);
-            json.put(MHContract.MHTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
             json.put(MHContract.MHTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
             json.put(MHContract.MHTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
             json.put(MHContract.MHTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
             json.put(MHContract.MHTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(MHContract.MHTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
             json.put(MHContract.MHTable.COLUMN_STATUS, this.status == null ? JSONObject.NULL : this.status);
-            json.put(MHContract.MHTable.COLUMN_MOTHER_NAME, this.mothername == null ? JSONObject.NULL : this.mothername);
-            json.put(MHContract.MHTable.COLUMN_CHILD_NAME, this.childname == null ? JSONObject.NULL : this.childname);
             json.put(MHContract.MHTable.COLUMN_SERIAL, this.serial == null ? JSONObject.NULL : this.serial);
             json.put(MHContract.MHTable.COLUMN_MH01, this.mh01 == null ? JSONObject.NULL : this.mh01);
             json.put(MHContract.MHTable.COLUMN_MH02, this.mh02 == null ? JSONObject.NULL : this.mh02);
             json.put(MHContract.MHTable.COLUMN_MH03, this.mh03 == null ? JSONObject.NULL : this.mh03);
             json.put(MHContract.MHTable.COLUMN_MH04, this.mh04 == null ? JSONObject.NULL : this.mh04);
             json.put(MHContract.MHTable.COLUMN_MH05, this.mh05 == null ? JSONObject.NULL : this.mh05);
+            json.put(MHContract.MHTable.COLUMN_MH06, this.mh06 == null ? JSONObject.NULL : this.mh06);
+            json.put(MHContract.MHTable.COLUMN_MH07, this.mh07 == null ? JSONObject.NULL : this.mh07);
 
             //For ChildCount
             //json.put(MHContract.MHTable.COLUMN_SA, this.sA == null ? JSONObject.NULL : this.sA);
@@ -1709,8 +1572,6 @@ public class MobileHealth extends BaseObservable {
                 JSONObject json = null;
                 json = new JSONObject(string);
 
-                this.mh06 = json.getString("mh06");
-                this.mh07 = json.getString("mh07");
                 this.mh08 = json.getString("mh08");
                 this.mh0801x = json.getString("mh0801x");
                 this.mh0802x = json.getString("mh0802x");
@@ -1801,8 +1662,6 @@ public class MobileHealth extends BaseObservable {
                 this.mh028 = json.getString("mh028");
                 this.mh029 = json.getString("mh029");
                 this.mh030 = json.getString("mh030");
-                this.photoFront = json.getString("photoFront");
-                this.photoBack = json.getString("photoBack");
 
             } catch (JSONException e) {
                 e.printStackTrace();
