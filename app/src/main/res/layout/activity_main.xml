@@ -147,6 +147,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:visibility="gone"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
                     tools:visibility="visible" />
 
                 <LinearLayout
@@ -168,6 +170,8 @@
                         android:drawableStart="@drawable/action_button"
                         android:text="+ ADD PATIENT  "
                         android:textStyle="bold"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="@color/white" />
 
