@@ -1806,9 +1806,11 @@
                                 android:scrollbars="horizontal">
 
                                 <LinearLayout
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/llscrollviewmh26"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+                                    android:orientation="vertical"
+                                    android:tag="-1">
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -1862,7 +1864,7 @@
                                     <View
                                         android:layout_width="match_parent"
                                         android:layout_height="2dp"
-                                        android:background="#696969" />
+                                        android:background="@color/grayDark1" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -1876,6 +1878,7 @@
                                             android:text="@string/mh02601" />
 
                                         <RadioGroup
+                                            android:id="@+id/rgmh02601"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:orientation="horizontal">
@@ -1901,6 +1904,7 @@
                                         </RadioGroup>
 
                                         <RadioGroup
+                                            android:id="@+id/rgmh02602"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:orientation="horizontal">
@@ -1924,16 +1928,16 @@
                                     <View
                                         android:layout_width="match_parent"
                                         android:layout_height="2dp"
-                                        android:background="#696969" />
+                                        android:background="@color/grayDark1" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:background="#7fefd6d6"
-                                        android:orientation="horizontal"
-                                        android:tag="-1">
+                                        android:background="@color/lightPink1"
+                                        android:orientation="horizontal">
 
                                         <RadioGroup
+                                            android:id="@+id/rgmh02603"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:orientation="horizontal">
@@ -1968,13 +1972,12 @@
                                             android:layout_width="220dp"
                                             android:layout_height="wrap_content" />
 
-
                                     </LinearLayout>
 
                                     <View
                                         android:layout_width="match_parent"
                                         android:layout_height="2dp"
-                                        android:background="#696969" />
+                                        android:background="@color/grayDark1" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -1986,6 +1989,7 @@
                                             android:layout_height="wrap_content" />
 
                                         <RadioGroup
+                                            android:id="@+id/rgmh02604"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:orientation="horizontal">
@@ -2019,12 +2023,12 @@
                                     <View
                                         android:layout_width="match_parent"
                                         android:layout_height="2dp"
-                                        android:background="#696969" />
+                                        android:background="@color/grayDark1" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:background="#7fefd6d6"
+                                        android:background="@color/lightPink1"
                                         android:orientation="horizontal">
 
                                         <View
@@ -2032,6 +2036,7 @@
                                             android:layout_height="wrap_content" />
 
                                         <RadioGroup
+                                            android:id="@+id/rgmh02605"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:orientation="horizontal">

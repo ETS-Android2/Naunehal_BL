@@ -14,6 +14,7 @@
 
     <!-- Standard App Colors -->
     <color name="grayDark">#5e5e5e</color>
+    <color name="grayDark1">#696969</color>
     <color name="grayLight">#efefef</color>
     <color name="greenLight">#d600ef00</color>
     <color name="redLight">#d6ef0000</color>
@@ -26,4 +27,5 @@
     <color name="whiteOverlay">#7fffffff</color>
     <color name="redDark">#990000</color>
     <color name="lightPink">#EEE4C4BA</color>
+    <color name="lightPink1">#7fefd6d6</color>
 </resources>
