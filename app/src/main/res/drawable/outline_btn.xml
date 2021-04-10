@@ -9,7 +9,9 @@
             <stroke
                 android:width="2dp"
                 android:color="@color/colorPrimary" />
+<!--
             <corners android:radius="5dp" />
+-->
             <solid android:color="@color/grayLight" />
         </shape>
     </item>
