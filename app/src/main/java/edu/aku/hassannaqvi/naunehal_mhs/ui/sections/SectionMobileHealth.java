@@ -71,6 +71,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             if (i == bi.mh027b02.getId()) {
                 bi.fldGrpCVmh026.setVisibility(View.VISIBLE);
                 bi.fldGrpCVmh027.setVisibility(View.VISIBLE);
+                //bi.mh02601.setTag("0");
             } else {
                 Clear.clearAllFields(bi.fldGrpCVmh026);
                 Clear.clearAllFields(bi.fldGrpCVmh027);
@@ -84,7 +85,17 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.mh018097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh018check, !b));
         bi.mh019097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh019check, !b));
 
+        //bi.mh02601.setOnClickListener(radio);
+
     }
+
+    /*View.OnClickListener radio = v -> {
+        bi.rgmh02601.setTag("-1");
+        bi.rgmh02602.setTag("-1");
+        bi.rgmh02603.setTag("-1");
+        bi.rgmh02604.setTag("-1");
+        bi.rgmh02605.setTag("-1");
+    };*/
 
 
     public void segregate(CharSequence s, int i, int i1, int i2) {
