@@ -464,7 +464,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:onTextChanged="@{callback.mh09yOnTextChanged}"
+                                android:onTextChanged="@{callback::mh09yOnTextChanged}"
                                 app:maxValue="99"
                                 app:minValue="0"
                                 app:type="range" />
@@ -478,7 +478,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:onTextChanged="@{callback.mh09yOnTextChanged}"
+                                android:onTextChanged="@{callback::mh09yOnTextChanged}"
                                 app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
@@ -653,9 +653,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:hint="##.##"
+                            android:hint="###.##"
                             android:inputType="number"
-                            app:mask="##.##"
+                            app:mask="###.##"
                             app:maxValue="58"
                             app:minValue="0.9"
                             app:type="range" />
@@ -1780,6 +1780,7 @@
                             android:scrollbarAlwaysDrawHorizontalTrack="true"
                             android:scrollbarThumbHorizontal="@color/redLight"
                             android:scrollbars="horizontal"
+                            android:background="@drawable/bacground_border"
                             android:layout_height="wrap_content">
 
                             <LinearLayout
@@ -1836,6 +1837,11 @@
                                         android:text="@string/mh026m15" />
 
                                 </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="#696969" />
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -1894,10 +1900,16 @@
 
                                 </LinearLayout>
 
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="#696969" />
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
+                                    android:background="#7fefd6d6"
                                     android:tag="-1">
 
                                     <RadioGroup
@@ -1938,10 +1950,14 @@
 
                                 </LinearLayout>
 
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="#696969" />
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:background="#7fefd6d6"
                                     android:orientation="horizontal">
 
                                     <View
@@ -1979,9 +1995,16 @@
 
                                 </LinearLayout>
 
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="#696969" />
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:background="#7fefd6d6"
+
                                     android:orientation="horizontal">
 
                                     <View

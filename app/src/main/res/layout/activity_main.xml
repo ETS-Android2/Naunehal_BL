@@ -15,6 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
         android:orientation="vertical">
 
 
@@ -138,22 +139,20 @@
 
                 </LinearLayout>
 
+
                 <include
                     android:id="@+id/cam"
                     layout="@layout/cardlayout"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="@dimen/_10sdp"
                     android:visibility="gone"
                     tools:visibility="visible" />
-
 
                 <LinearLayout
                     android:id="@+id/btnSection"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:visibility="gone"
@@ -161,16 +160,17 @@
 
                     <Button
                         android:id="@+id/formA"
-                        android:layout_width="220dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:background="@drawable/openform_background"
-                        android:drawableStart="@drawable/open_form"
+                        android:background="@color/colorPrimary"
                         android:onClick="@{callback::openSpecificActivity}"
                         android:padding="12dp"
-                        android:text="OPEN FORM"
+                        android:drawableStart="@drawable/action_button"
+                        android:text="+ ADD PATIENT  "
+                        android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="@color/white" />
+
 
                     <Button
                         android:id="@+id/editForm"
