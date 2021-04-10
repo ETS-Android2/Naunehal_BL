@@ -18,7 +18,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:background="@drawable/naunehal_baseline" />
+            android:layout_margin="24dp"
+            android:paddingTop="24dp"
+            android:src="@drawable/naunehal_mobile_service" />
 
         <TextView
             android:id="@+id/textView7"
@@ -26,11 +28,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView2"
             android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="24dp"
             android:gravity="center"
+            android:fontFamily="@font/roboto"
+            android:textSize="30sp"
             android:text="@string/app_name"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp" />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
