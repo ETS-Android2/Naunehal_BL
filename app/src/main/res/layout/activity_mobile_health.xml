@@ -464,7 +464,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:onTextChanged="@{callback::mh09yOnTextChanged}"
+                                android:onTextChanged="@{callback::segregate}"
                                 app:maxValue="99"
                                 app:minValue="0"
                                 app:type="range" />
@@ -478,7 +478,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:onTextChanged="@{callback::mh09yOnTextChanged}"
+                                android:onTextChanged="@{callback::segregate}"
                                 app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
@@ -1066,6 +1066,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/mh018077" />
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -1104,15 +1105,6 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/mh018015" />
 
-                                <CheckBox
-                                    android:id="@+id/mh018097"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="#7fefd6d6"
-                                    android:text="@string/none"
-                                    android:textColor="@color/redDark" />
-
-
                             </LinearLayout>
 
                         </LinearLayout>
@@ -1126,6 +1118,15 @@
                             android:tag="mh018077"
                             android:text='@{mh018077.checked ? mh018077x.getText().toString() : ""}'
                             android:visibility='@{mh018077.checked? View.VISIBLE : View.GONE}' />
+
+                        <CheckBox
+                            android:id="@+id/mh018097"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#7fefd6d6"
+                            android:text="@string/none"
+                            android:textColor="@color/redDark" />
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -1208,6 +1209,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/mh019077" />
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -1245,6 +1247,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/mh019014" />
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -1284,15 +1287,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/mh019015" />
 
-                                <CheckBox
-                                    android:id="@+id/mh019097"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:background="#7fefd6d6"
-                                    android:text="@string/none"
-                                    android:textColor="@color/redDark" />
                             </LinearLayout>
-
 
                         </LinearLayout>
 
@@ -1305,6 +1300,15 @@
                             android:tag="mh019077"
                             android:text='@{mh019077.checked ? mh019077x.getText().toString() : ""}'
                             android:visibility='@{mh019077.checked? View.VISIBLE : View.GONE}' />
+
+                        <CheckBox
+                            android:id="@+id/mh019097"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#7fefd6d6"
+                            android:text="@string/none"
+                            android:textColor="@color/redDark" />
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
