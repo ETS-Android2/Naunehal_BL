@@ -43,14 +43,25 @@
                 android:layout_gravity="center"
                 android:background="@color/white"
                 android:gravity="center"
-                android:padding="8dp"
+                android:paddingTop="8dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/naunehal_baseline" />
+                    android:paddingTop="24dp"
+                    android:src="@drawable/naunehal_mobile_service" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:padding="24dp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24dp" />
 
                 <TextView
                     style="@style/labels"
@@ -91,7 +102,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
-                                android:padding="4dp"
                                 android:orientation="vertical">
 
                                 <EditText
@@ -99,7 +109,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_gravity="center_horizontal"
-
+                                    android:layout_marginBottom="12dp"
                                     android:background="@color/white"
                                     android:drawableStart="@drawable/ic_username"
                                     android:drawablePadding="8dp"
@@ -122,7 +132,6 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:padding="4dp"
                                     android:orientation="horizontal">
 
                                     <EditText
@@ -152,9 +161,10 @@
 
                                     <ImageButton
                                         android:id="@+id/showPassword"
-                                        android:layout_width="0dp"
+                                        android:layout_width="wrap_content"
+                                        android:paddingStart="12dp"
+                                        android:paddingEnd="12dp"
                                         android:layout_height="match_parent"
-                                        android:layout_weight="2"
                                         android:background="@drawable/login_eyestyle"
                                         android:onClick="@{callback::onShowPasswordClick}"
                                         android:src="@drawable/ic_login_eye"
@@ -184,49 +194,49 @@
                                     android:textColor="@color/white"
                                     android:radius="5dp"
                                     android:textStyle="bold"
+                                    android:elevation="1dp"
                                     android:visibility="visible" />
 
-                                <Button
-                                    android:id="@+id/syncData"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="16dp"
-                                    android:layout_marginBottom="16dp"
-                                    android:background="@drawable/action_button_dull"
-                                    android:drawableStart="@drawable/ic_upload"
-                                    android:drawablePadding="12dp"
-                                    android:onClick="@{callback::onSyncDataClick}"
-                                    android:paddingStart="12dp"
-                                    android:paddingEnd="12dp"
-                                    android:text="Download User Data"
-                                    android:textColor="@color/white" />
                             </LinearLayout>
 
+                            <Button
+                                android:id="@+id/syncData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginBottom="16dp"
+                                android:background="@drawable/action_button_dull"
+                                android:drawableStart="@drawable/ic_upload"
+                                android:drawablePadding="12dp"
+                                android:onClick="@{callback::onSyncDataClick}"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="12dp"
+                                android:text="Download User Data"
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
 
                     </androidx.cardview.widget.CardView>
 
 
-                    <TextView
-                        android:id="@+id/txtinstalldate"
-                        style="@style/labels"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="24dp"
-                        android:gravity="center"
-                        android:shadowColor="#d6d6d6"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="Ver."
-                        android:textColor="#7f7f7f"
-                        android:textSize="12sp" />
-
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/txtinstalldate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:paddingBottom="4dp"
+                    android:shadowColor="#d6d6d6"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="1"
+                    android:text="Ver."
+                    android:textColor="#989898"
+                    android:textSize="11sp" />
             </LinearLayout>
 
         </ScrollView>

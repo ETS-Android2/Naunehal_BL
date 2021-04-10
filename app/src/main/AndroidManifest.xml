@@ -22,9 +22,9 @@
     <application
         android:name="edu.aku.hassannaqvi.naunehal_mhs.core.MainApp"
         android:allowBackup="false"
-        android:icon="@drawable/naunehal_baseline"
+        android:icon="@drawable/naunehal_mobile_service"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/naunehal_baseline"
+        android:roundIcon="@drawable/naunehal_mobile_service"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
@@ -32,7 +32,7 @@
 
         <activity
             android:name=".ui.SplashscreenActivity"
-            android:label="@string/mobilehealthserviceform_heading"
+            android:label="@string/app_name"
             android:theme="@style/Theme.Design.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden">
 
