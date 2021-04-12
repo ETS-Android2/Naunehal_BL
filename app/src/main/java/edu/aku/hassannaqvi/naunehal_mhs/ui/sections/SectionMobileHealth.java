@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,6 +70,13 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.mh010.setOnCheckedChangeListener((radioGroup, i) -> segregate());
 
         bi.mh027b.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.mh02601.setTag(null);
+            bi.rgmh02601.setTag(null);
+            bi.rgmh02602.setTag(null);
+            bi.rgmh02603.setTag(null);
+            bi.rgmh02604.setTag(null);
+            bi.rgmh02605.setTag(null);
+            bi.mh026019.setTag(null);
             if (i == bi.mh027b02.getId()) {
                 bi.fldGrpCVmh026.setVisibility(View.VISIBLE);
                 bi.fldGrpCVmh027.setVisibility(View.VISIBLE);
@@ -85,17 +94,33 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.mh018097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh018check, !b));
         bi.mh019097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh019check, !b));
 
-        //bi.mh02601.setOnClickListener(radio);
+        setTags(bi.mh02601, new View[]{bi.rgmh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02604, bi.rgmh02605, bi.mh026019});
+        setTags(bi.rgmh02601, new View[]{bi.mh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02604, bi.rgmh02605, bi.mh026019});
+        setTags(bi.rgmh02602, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02603, bi.rgmh02604, bi.rgmh02605, bi.mh026019});
+        setTags(bi.rgmh02603, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02602, bi.rgmh02604, bi.rgmh02605, bi.mh026019});
+        setTags(bi.rgmh02604, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02605, bi.mh026019});
+        setTags(bi.rgmh02605, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02604, bi.mh026019});
+        setTags(bi.mh026019, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02604, bi.rgmh02605});
 
     }
 
-    /*View.OnClickListener radio = v -> {
-        bi.rgmh02601.setTag("-1");
-        bi.rgmh02602.setTag("-1");
-        bi.rgmh02603.setTag("-1");
-        bi.rgmh02604.setTag("-1");
-        bi.rgmh02605.setTag("-1");
-    };*/
+    public void setTags(RadioGroup rg, View[] views) {
+        rg.setOnCheckedChangeListener((radioGroup, i) -> {
+            for (View view : views) {
+                view.setTag("-1");
+            }
+        });
+    }
+
+    public void setTags(RadioButton rb, View[] views) {
+        rb.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                for (View view : views) {
+                    view.setTag("-1");
+                }
+            }
+        });
+    }
 
 
     public void segregate(CharSequence s, int i, int i1, int i2) {
