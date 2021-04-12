@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.naunehal_mhs.ui.sections;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
@@ -43,8 +45,10 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
     ActivityMobileHealthBinding bi;
     private List<String> campNo;
     private DatabaseHelper db;
+    private boolean AllVaccinationsViewed = false;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +71,22 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
     private void setupSkips() {
 
+
         bi.mh010.setOnCheckedChangeListener((radioGroup, i) -> segregate());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            bi.llscrollviewmh26.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+                @Override
+                public void onScrollChange(View view, int i, int i1, int i2, int i3) {
+
+                    bi.llscrollviewmh26.getChildAt(bi.llscrollviewmh26.getChildCount() - 1);
+                    int diff = (bi.llscrollviewmh26.getRight() - (bi.llscrollviewmh26.getWidth() + bi.llscrollviewmh26.getScrollX()));
+                    if (diff == 0) {
+                        AllVaccinationsViewed = true;
+                    }
+                }
+            });
+        }
+
 
         bi.mh027b.setOnCheckedChangeListener((radioGroup, i) -> {
             bi.mh02601.setTag(null);
@@ -396,7 +415,21 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
 
     private boolean formValidation() {
+
+
+        if (!AllVaccinationsViewed && Integer.valueOf(bi.mh09y.getText().toString()) < 5) {
+
+            Toast.makeText(
+                    this,
+                    "ERROR(Vaccinations) Probe all vaccinations ",
+                    Toast.LENGTH_SHORT
+            ).show();
+            bi.llscrollviewmh26.requestFocus();
+            return false;
+        }
+
         return Validator.emptyCheckingContainer(this, bi.GrpName);
+
 
     }
 

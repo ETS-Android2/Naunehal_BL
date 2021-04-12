@@ -280,6 +280,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
     <style name="Summary_Layout" parent="Theme.AppCompat.Light.DarkActionBar"></style>
 
     <style name="ToolbarTheme">

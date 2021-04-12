@@ -340,6 +340,8 @@
                             android:id="@+id/mh07"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                            android:inputType="text|textCapWords|textNoSuggestions"
                             android:hint="@string/mh07" />
 
                     </LinearLayout>
@@ -381,7 +383,8 @@
                             android:id="@+id/mh08"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:digits="qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM"
+                            android:inputType="text|textCapWords|textNoSuggestions"
                             android:hint="@string/mh08"
                             android:maxLength="20" />
 
@@ -594,6 +597,7 @@
                             android:id="@+id/mh01101"
                             android:layout_width="match_parent"
                             android:layout_height="54dp"
+                            android:inputType="textNoSuggestions"
                             android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
                             android:hint="@string/mh011" />
 
@@ -601,6 +605,7 @@
                             android:id="@+id/mh01102"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:inputType="textNoSuggestions"
                             android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
                             android:hint="@string/mh011"
                             android:tag="-1" />
@@ -609,6 +614,7 @@
                             android:id="@+id/mh01103"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:inputType="textNoSuggestions"
                             android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
                             android:hint="@string/mh011"
                             android:tag="-1" />
@@ -933,6 +939,8 @@
                                 android:id="@+id/mh017077x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:inputType="textNoSuggestions"
+
                                 android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/mh017077"
                                 android:tag="mh017077"
@@ -1115,6 +1123,7 @@
                             android:layout_height="wrap_content"
                             android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/mh018077"
+                            android:inputType="textNoSuggestions"
                             android:tag="mh018077"
                             android:text='@{mh018077.checked ? mh018077x.getText().toString() : ""}'
                             android:visibility='@{mh018077.checked? View.VISIBLE : View.GONE}' />
@@ -1298,6 +1307,8 @@
                             android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/mh019077"
                             android:tag="mh019077"
+                            android:inputType="textNoSuggestions"
+
                             android:text='@{mh019077.checked ? mh019077x.getText().toString() : ""}'
                             android:visibility='@{mh019077.checked? View.VISIBLE : View.GONE}' />
 
@@ -2512,6 +2523,7 @@
                             android:layout_height="wrap_content"
                             android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
                             android:hint="@string/mh030"
+                            android:inputType="textNoSuggestions"
                             android:gravity="top"
                             android:lines="5" />
 
