@@ -121,6 +121,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         setTags(bi.rgmh02605, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02604, bi.mh026019});
         setTags(bi.mh026019, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02604, bi.rgmh02605});
 
+
     }
 
     public void setTags(RadioGroup rg, View[] views) {
@@ -141,8 +142,16 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         });
     }
 
+    public void segregateByAge(CharSequence s, int i, int i1, int i2) {
+        segregate();
+    }
 
-    public void segregate(CharSequence s, int i, int i1, int i2) {
+    public void segregateByGender(RadioGroup radioGroup, int i) {
+        segregate();
+    }
+
+
+    /*public void segregate(CharSequence s, int i, int i1, int i2) {
         if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))
             return;
         int age = Integer.parseInt(bi.mh09m.getText().toString()) + (Integer.parseInt(bi.mh09y.getText().toString()) * 12);
@@ -180,7 +189,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             bi.mh012.setMask("##.##");
             bi.mh012.setHint("##.##");
         }
-    }
+    }*/
 
     public void segregate() {
         if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))

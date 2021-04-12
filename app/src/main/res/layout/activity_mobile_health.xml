@@ -467,7 +467,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:onTextChanged="@{callback::segregate}"
+                                android:onTextChanged="@{callback::segregateByAge}"
                                 app:maxValue="99"
                                 app:minValue="0"
                                 app:type="range" />
@@ -481,7 +481,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:onTextChanged="@{callback::segregate}"
+                                android:onTextChanged="@{callback::segregateByAge}"
                                 app:maxValue="11"
                                 app:minValue="0"
                                 app:type="range" />
@@ -493,6 +493,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
+                                android:onTextChanged="@{callback::segregateByAge}"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 app:maxValue="29"
@@ -539,12 +540,14 @@
                             android:id="@+id/mh010"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{callback::segregateByGender}"
                             android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/mh01001"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+
                                 android:layout_weight="1"
                                 android:text="@string/mh01001" />
 
