@@ -191,7 +191,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
     }*/
 
     public void segregate() {
-        if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))
+        if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()) || bi.mh010.getCheckedRadioButtonId() == -1)
             return;
         int age = Integer.parseInt(bi.mh09m.getText().toString()) + (Integer.parseInt(bi.mh09y.getText().toString()) * 12);
 
@@ -432,6 +432,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
                     "ERROR(Vaccinations) Probe all vaccinations ",
                     Toast.LENGTH_SHORT
             ).show();
+
             bi.llscrollviewmh26.requestFocus();
             return false;
         }
