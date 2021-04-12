@@ -80,7 +80,6 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             if (i == bi.mh027b02.getId()) {
                 bi.fldGrpCVmh026.setVisibility(View.VISIBLE);
                 bi.fldGrpCVmh027.setVisibility(View.VISIBLE);
-                //bi.mh02601.setTag("0");
             } else {
                 Clear.clearAllFields(bi.fldGrpCVmh026);
                 Clear.clearAllFields(bi.fldGrpCVmh027);
