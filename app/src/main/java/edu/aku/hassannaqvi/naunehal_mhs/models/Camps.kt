@@ -16,6 +16,7 @@ class Camps() : Parcelable {
     var ucCode: String = StringUtils.EMPTY
     var ucName: String = StringUtils.EMPTY
     var area_name: String = StringUtils.EMPTY
+    var plan_date: String = StringUtils.EMPTY
 
     constructor(parcel: Parcel) : this() {
         idCamp = parcel.readString().toString()
@@ -25,6 +26,7 @@ class Camps() : Parcelable {
         ucCode = parcel.readString().toString()
         ucName = parcel.readString().toString()
         area_name = parcel.readString().toString()
+        plan_date = parcel.readString().toString()
     }
 
     @Throws(JSONException::class)
@@ -36,6 +38,7 @@ class Camps() : Parcelable {
         ucCode = jsonObject.getString(TableCamp.COLUMN_UC_CODE)
         ucName = jsonObject.getString(TableCamp.COLUMN_UC_NAME)
         area_name = jsonObject.getString(TableCamp.COLUMN_AREA_NAME)
+        plan_date = jsonObject.getString(TableCamp.COLUMN_PLAN_DATE)
         return this
     }
 
@@ -47,6 +50,7 @@ class Camps() : Parcelable {
         ucCode = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_UC_CODE))
         ucName = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_UC_NAME))
         area_name = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_AREA_NAME))
+        plan_date = cursor.getString(cursor.getColumnIndex(TableCamp.COLUMN_PLAN_DATE))
         return this
     }
 
@@ -61,6 +65,7 @@ class Camps() : Parcelable {
         const val COLUMN_UC_CODE = "ucCode"
         const val COLUMN_UC_NAME = "ucName"
         const val COLUMN_AREA_NAME = "area_name"
+        const val COLUMN_PLAN_DATE = "plan_date"
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -71,6 +76,7 @@ class Camps() : Parcelable {
         parcel.writeString(ucCode)
         parcel.writeString(ucName)
         parcel.writeString(area_name)
+        parcel.writeString(plan_date)
     }
 
     override fun describeContents(): Int {

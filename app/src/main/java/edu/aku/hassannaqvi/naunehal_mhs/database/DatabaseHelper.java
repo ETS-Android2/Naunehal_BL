@@ -1114,6 +1114,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(Camps.TableCamp.COLUMN_UC_CODE, camps.getUcCode());
                 values.put(Camps.TableCamp.COLUMN_UC_NAME, camps.getUcName());
                 values.put(Camps.TableCamp.COLUMN_AREA_NAME, camps.getArea_name());
+                values.put(Camps.TableCamp.COLUMN_PLAN_DATE, camps.getPlan_date());
 
                 long rowID = db.insert(Camps.TableCamp.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;

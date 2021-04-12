@@ -64,15 +64,13 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.setMob(camp);
         db = MainApp.appInfo.dbHelper;
         populateSpinner(camp.getIdCamp());
-
+        //bi.mh01.setMaxDate(camp.getPlan_date().replaceAll("-", "/"));
         setupSkips();
     }
 
 
     private void setupSkips() {
 
-
-        bi.mh010.setOnCheckedChangeListener((radioGroup, i) -> segregate());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             bi.llscrollviewmh26.setOnScrollChangeListener(new View.OnScrollChangeListener() {
                 @Override
@@ -109,6 +107,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             }
         });
 
+        bi.mh017097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh017check, !b));
         bi.mh018097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh018check, !b));
         bi.mh019097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh019check, !b));
 
@@ -150,50 +149,10 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
     }
 
 
-    /*public void segregate(CharSequence s, int i, int i1, int i2) {
-        if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))
-            return;
-        int age = Integer.parseInt(bi.mh09m.getText().toString()) + (Integer.parseInt(bi.mh09y.getText().toString()) * 12);
-
-        bi.mh012.setMinvalue(15f);
-        bi.mh012.setMaxvalue(250f);
-        bi.mh012.setMask("###.##");
-        bi.mh012.setHint("###.##");
-        Clear.clearAllFields(bi.fldGrpCVmh017);
-        Clear.clearAllFields(bi.llmh020);
-        Clear.clearAllFields(bi.fldGrpCVmh015);
-        Clear.clearAllFields(bi.fldGrpCVmh016);
-        Clear.clearAllFields(bi.fldGrpCVmh018);
-        Clear.clearAllFields(bi.llchild);
-        bi.mh02601.setChecked(false);
-        bi.mh026019.setChecked(false);
-        bi.fldGrpCVmh017.setVisibility(View.GONE);
-        bi.llmh020.setVisibility(View.GONE);
-        bi.fldGrpCVmh015.setVisibility(View.GONE);
-        bi.fldGrpCVmh016.setVisibility(View.GONE);
-        bi.fldGrpCVmh018.setVisibility(View.GONE);
-        bi.llchild.setVisibility(View.GONE);
-
-        if (age > 168 && age < 600 && bi.mh01002.isChecked()) {
-            bi.fldGrpCVmh017.setVisibility(View.VISIBLE);
-            bi.llmh020.setVisibility(View.VISIBLE);
-        }
-        if (age <= 60) {
-            bi.fldGrpCVmh015.setVisibility(View.VISIBLE);
-            bi.fldGrpCVmh016.setVisibility(View.VISIBLE);
-            bi.fldGrpCVmh018.setVisibility(View.VISIBLE);
-            bi.llchild.setVisibility(View.VISIBLE);
-            bi.mh012.setMinvalue(0.9f);
-            bi.mh012.setMaxvalue(58f);
-            bi.mh012.setMask("##.##");
-            bi.mh012.setHint("##.##");
-        }
-    }*/
-
     public void segregate() {
-        if (TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()) || bi.mh010.getCheckedRadioButtonId() == -1)
+        if (TextUtils.isEmpty(bi.mh09d.getText()) || TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()) || bi.mh010.getCheckedRadioButtonId() == -1)
             return;
-        int age = Integer.parseInt(bi.mh09m.getText().toString()) + (Integer.parseInt(bi.mh09y.getText().toString()) * 12);
+        int age = Integer.parseInt(bi.mh09d.getText().toString()) + (Integer.parseInt(bi.mh09m.getText().toString()) * 29) + (Integer.parseInt(bi.mh09y.getText().toString()) * 365);
 
         bi.mh012.setMinvalue(15f);
         bi.mh012.setMaxvalue(250f);
@@ -214,11 +173,11 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.fldGrpCVmh018.setVisibility(View.GONE);
         bi.llchild.setVisibility(View.GONE);
 
-        if (age >= 168 && age < 600 && bi.mh01002.isChecked()) {
+        if (age >= 5110 && age < 18250 && bi.mh01002.isChecked()) {
             bi.fldGrpCVmh017.setVisibility(View.VISIBLE);
             bi.llmh020.setVisibility(View.VISIBLE);
         }
-        if (age <= 60) {
+        if (age <= 1825) {
             bi.fldGrpCVmh015.setVisibility(View.VISIBLE);
             bi.fldGrpCVmh016.setVisibility(View.VISIBLE);
             bi.fldGrpCVmh018.setVisibility(View.VISIBLE);
@@ -302,8 +261,9 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setMh01701(bi.mh01701.isChecked() ? "1" : "-1");
         mobileHealth.setMh01702(bi.mh01702.isChecked() ? "2" : "-1");
         mobileHealth.setMh01703(bi.mh01703.isChecked() ? "3" : "-1");
-        mobileHealth.setMh017077(bi.mh017077.isChecked() ? "" : "-1");
+        mobileHealth.setMh017077(bi.mh017077.isChecked() ? "77" : "-1");
         mobileHealth.setMh017077x(bi.mh017077x.getText().toString().trim().isEmpty() ? "-1" : bi.mh017077x.getText().toString());
+        mobileHealth.setMh017097(bi.mh017097.isChecked() ? "97" : "-1");
 
         mobileHealth.setMh01801(bi.mh01801.isChecked() ? "1" : "-1");
         mobileHealth.setMh01802(bi.mh01802.isChecked() ? "2" : "-1");

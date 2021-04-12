@@ -47,6 +47,7 @@ public class MobileHealth extends BaseObservable {
     private String mh01703 = StringUtils.EMPTY;
     private String mh017077 = StringUtils.EMPTY;
     private String mh017077x = StringUtils.EMPTY;
+    private String mh017097 = StringUtils.EMPTY;
     private String mh018 = StringUtils.EMPTY;
     private String mh01801 = StringUtils.EMPTY;
     private String mh01802 = StringUtils.EMPTY;
@@ -585,6 +586,17 @@ public class MobileHealth extends BaseObservable {
     public void setMh017077x(String mh017077x) {
         this.mh017077x = mh017077x;
         notifyPropertyChanged(BR.mh017077x);
+    }
+
+
+    @Bindable
+    public String getMh017097() {
+        return mh017097;
+    }
+
+    public void setMh017097(String mh017097) {
+        this.mh017097 = mh017097;
+        notifyPropertyChanged(BR.mh017097);
     }
 
 
@@ -1468,6 +1480,7 @@ public class MobileHealth extends BaseObservable {
                     .put("mh01703", mh01703)
                     .put("mh017077", mh017077)
                     .put("mh017077x", mh017077x)
+                    .put("mh017097", mh017097)
                     .put("mh018", mh018)
                     .put("mh01801", mh01801)
                     .put("mh01802", mh01802)
@@ -1619,6 +1632,7 @@ public class MobileHealth extends BaseObservable {
                 this.mh01703 = json.getString("mh01703");
                 this.mh017077 = json.getString("mh017077");
                 this.mh017077x = json.getString("mh017077x");
+                this.mh017097 = json.getString("mh017097");
                 this.mh018 = json.getString("mh018");
                 this.mh01801 = json.getString("mh01801");
                 this.mh01802 = json.getString("mh01802");
