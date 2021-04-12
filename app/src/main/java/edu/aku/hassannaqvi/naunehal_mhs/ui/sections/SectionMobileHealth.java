@@ -214,7 +214,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.fldGrpCVmh018.setVisibility(View.GONE);
         bi.llchild.setVisibility(View.GONE);
 
-        if (age > 168 && age < 600 && bi.mh01002.isChecked()) {
+        if (age >= 168 && age < 600 && bi.mh01002.isChecked()) {
             bi.fldGrpCVmh017.setVisibility(View.VISIBLE);
             bi.llmh020.setVisibility(View.VISIBLE);
         }
