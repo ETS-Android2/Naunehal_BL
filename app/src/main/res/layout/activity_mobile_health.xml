@@ -1810,21 +1810,19 @@
 
                             </LinearLayout>
 
-                            <HorizontalScrollView
-                                android:focusable="true"
+                            <LinearLayout
                                 android:id="@+id/llscrollviewmh26"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bacground_border"
-                                android:fadeScrollbars="false"
-                                android:scrollbarAlwaysDrawHorizontalTrack="true"
-                                android:scrollbarThumbHorizontal="@color/redLight"
-                                android:scrollbars="horizontal">
+                                android:layout_gravity="center_horizontal"
+                                android:focusable="true">
 
                                 <LinearLayout
                                     android:id="@+id/llmh26"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
                                     android:orientation="vertical">
 
                                     <LinearLayout
@@ -1834,42 +1832,42 @@
 
                                         <TextView
                                             style="@style/sub_labels"
-                                            android:layout_width="110dp"
+                                            android:layout_width="77dp"
                                             android:layout_height="match_parent"
                                             android:gravity="center_vertical|center_horizontal"
                                             android:text="@string/mh026birth" />
 
                                         <TextView
                                             style="@style/sub_labels"
-                                            android:layout_width="110dp"
+                                            android:layout_width="84dp"
                                             android:layout_height="match_parent"
                                             android:gravity="center_vertical|center_horizontal"
                                             android:text="@string/mh026w06" />
 
                                         <TextView
                                             style="@style/sub_labels"
-                                            android:layout_width="110dp"
+                                            android:layout_width="85dp"
                                             android:layout_height="match_parent"
                                             android:gravity="center_vertical|center_horizontal"
                                             android:text="@string/mh026w10" />
 
                                         <TextView
                                             style="@style/sub_labels"
-                                            android:layout_width="110dp"
+                                            android:layout_width="85dp"
                                             android:layout_height="match_parent"
                                             android:gravity="center_vertical|center_horizontal"
                                             android:text="@string/mh026w14" />
 
                                         <TextView
                                             style="@style/sub_labels"
-                                            android:layout_width="110dp"
+                                            android:layout_width="102dp"
                                             android:layout_height="match_parent"
                                             android:gravity="center_vertical|center_horizontal"
                                             android:text="@string/mh026m09" />
 
                                         <TextView
                                             style="@style/sub_labels"
-                                            android:layout_width="110dp"
+                                            android:layout_width="102dp"
                                             android:layout_height="match_parent"
                                             android:gravity="center_vertical|center_horizontal"
                                             android:text="@string/mh026m15" />
@@ -1888,7 +1886,7 @@
 
                                         <RadioButton
                                             android:id="@+id/mh02601"
-                                            android:layout_width="110dp"
+                                            android:layout_width="77dp"
                                             android:layout_height="wrap_content"
                                             android:text="@string/mh02601" />
 
@@ -1900,19 +1898,19 @@
 
                                             <RadioButton
                                                 android:id="@+id/mh02602"
-                                                android:layout_width="110dp"
+                                                android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh02602" />
 
                                             <RadioButton
                                                 android:id="@+id/mh02603"
-                                                android:layout_width="110dp"
+                                                android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh02603" />
 
                                             <RadioButton
                                                 android:id="@+id/mh02604"
-                                                android:layout_width="110dp"
+                                                android:layout_width="85dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh02604" />
 
@@ -1926,13 +1924,13 @@
 
                                             <RadioButton
                                                 android:id="@+id/mh02605"
-                                                android:layout_width="110dp"
+                                                android:layout_width="103dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh02605" />
 
                                             <RadioButton
                                                 android:id="@+id/mh02606"
-                                                android:layout_width="110dp"
+                                                android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh02606" />
 
@@ -1959,32 +1957,32 @@
 
                                             <RadioButton
                                                 android:id="@+id/mh02608"
-                                                android:layout_width="110dp"
+                                                android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh02608" />
 
                                             <RadioButton
                                                 android:id="@+id/mh02609"
-                                                android:layout_width="110dp"
+                                                android:layout_width="84dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh02609" />
 
                                             <RadioButton
                                                 android:id="@+id/mh026010"
-                                                android:layout_width="110dp"
+                                                android:layout_width="85dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh026010" />
 
                                             <RadioButton
                                                 android:id="@+id/mh026011"
-                                                android:layout_width="110dp"
+                                                android:layout_width="85dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh026011" />
 
                                         </RadioGroup>
 
                                         <View
-                                            android:layout_width="220dp"
+                                            android:layout_width="204dp"
                                             android:layout_height="wrap_content" />
 
                                     </LinearLayout>
@@ -2000,7 +1998,7 @@
                                         android:orientation="horizontal">
 
                                         <View
-                                            android:layout_width="110dp"
+                                            android:layout_width="77dp"
                                             android:layout_height="wrap_content" />
 
                                         <RadioGroup
@@ -2011,26 +2009,26 @@
 
                                             <RadioButton
                                                 android:id="@+id/mh026014"
-                                                android:layout_width="110dp"
+                                                android:layout_width="84dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh026014" />
 
                                             <RadioButton
                                                 android:id="@+id/mh026015"
-                                                android:layout_width="110dp"
+                                                android:layout_width="85dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh026015" />
 
                                             <RadioButton
                                                 android:id="@+id/mh026016"
-                                                android:layout_width="110dp"
+                                                android:layout_width="85dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh026016" />
 
                                         </RadioGroup>
 
                                         <View
-                                            android:layout_width="220dp"
+                                            android:layout_width="204dp"
                                             android:layout_height="wrap_content" />
 
                                     </LinearLayout>
@@ -2047,7 +2045,7 @@
                                         android:orientation="horizontal">
 
                                         <View
-                                            android:layout_width="110dp"
+                                            android:layout_width="77dp"
                                             android:layout_height="wrap_content" />
 
                                         <RadioGroup
@@ -2058,13 +2056,13 @@
 
                                             <RadioButton
                                                 android:id="@+id/mh026017"
-                                                android:layout_width="110dp"
+                                                android:layout_width="84dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh026017" />
 
                                             <RadioButton
                                                 android:id="@+id/mh026018"
-                                                android:layout_width="110dp"
+                                                android:layout_width="85dp"
                                                 android:layout_height="wrap_content"
                                                 android:text="@string/mh026018" />
 
@@ -2072,12 +2070,12 @@
 
                                         <RadioButton
                                             android:id="@+id/mh026019"
-                                            android:layout_width="110dp"
+                                            android:layout_width="85dp"
                                             android:layout_height="wrap_content"
                                             android:text="@string/mh026019" />
 
                                         <View
-                                            android:layout_width="220dp"
+                                            android:layout_width="204dp"
                                             android:layout_height="wrap_content" />
 
                                     </LinearLayout>
@@ -2259,7 +2257,7 @@
                                                                     android:orientation="vertical" />
                                                             </LinearLayout>-->
 
-                            </HorizontalScrollView>
+                            </LinearLayout>
 
                         </LinearLayout>
 
