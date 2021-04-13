@@ -45,7 +45,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
     ActivityMobileHealthBinding bi;
     private List<String> campNo;
     private DatabaseHelper db;
-    private boolean AllVaccinationsViewed = false;
+    private final boolean AllVaccinationsViewed = false;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -71,7 +71,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
     private void setupSkips() {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             bi.llscrollviewmh26.setOnScrollChangeListener(new View.OnScrollChangeListener() {
                 @Override
                 public void onScrollChange(View view, int i, int i1, int i2, int i3) {
@@ -83,7 +83,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
                     }
                 }
             });
-        }
+        }*/
 
 
         bi.mh027b.setOnCheckedChangeListener((radioGroup, i) -> {
@@ -248,7 +248,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setMh01103(bi.mh01103.getText().toString().trim().isEmpty() ? "-1" : bi.mh01103.getText().toString());
 
         mobileHealth.setMh012(bi.mh012.getText().toString().trim().isEmpty() ? "-1" : bi.mh012.getText().toString());
-        mobileHealth.setChkWeight(bi.chkWeight.isChecked() ? "997" : "-1");
+        mobileHealth.setChkWeight(bi.chkWeight.isChecked() ? "97" : "-1");
 
         mobileHealth.setMh013(bi.mh013a.isChecked() ? "1"
                 : bi.mh013b.isChecked() ? "2"
@@ -259,10 +259,10 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
                 : "-1");
 
         mobileHealth.setMh015(bi.mh015.getText().toString().trim().isEmpty() ? "-1" : bi.mh015.getText().toString());
-        mobileHealth.setChkHeight(bi.chkHeight.isChecked() ? "997" : "-1");
+        mobileHealth.setChkHeight(bi.chkHeight.isChecked() ? "97" : "-1");
 
         mobileHealth.setMh016(bi.mh016.getText().toString().trim().isEmpty() ? "-1" : bi.mh016.getText().toString());
-        mobileHealth.setChkMUAC(bi.chkMUAC.isChecked() ? "997" : "-1");
+        mobileHealth.setChkMUAC(bi.chkMUAC.isChecked() ? "97" : "-1");
 
         mobileHealth.setMh01701(bi.mh01701.isChecked() ? "1" : "-1");
         mobileHealth.setMh01702(bi.mh01702.isChecked() ? "2" : "-1");
@@ -344,13 +344,10 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setMh02604(bi.mh02604.isChecked() ? "4" : "-1");
         mobileHealth.setMh02605(bi.mh02605.isChecked() ? "5" : "-1");
         mobileHealth.setMh02606(bi.mh02606.isChecked() ? "6" : "-1");
-        //mobileHealth.setMh02607(bi.mh02607.isChecked() ? "7" : "-1");
         mobileHealth.setMh02608(bi.mh02608.isChecked() ? "8" : "-1");
         mobileHealth.setMh02609(bi.mh02609.isChecked() ? "9" : "-1");
         mobileHealth.setMh026010(bi.mh026010.isChecked() ? "10" : "-1");
         mobileHealth.setMh026011(bi.mh026011.isChecked() ? "11" : "-1");
-        //mobileHealth.setMh026012(bi.mh026012.isChecked() ? "12" : "-1");
-        //mobileHealth.setMh026013(bi.mh026013.isChecked() ? "13" : "-1");
         mobileHealth.setMh026014(bi.mh026014.isChecked() ? "14" : "-1");
         mobileHealth.setMh026015(bi.mh026015.isChecked() ? "15" : "-1");
         mobileHealth.setMh026016(bi.mh026016.isChecked() ? "16" : "-1");
@@ -391,7 +388,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
     private boolean formValidation() {
 
 
-        if (!AllVaccinationsViewed && Integer.valueOf(bi.mh09y.getText().toString()) < 5) {
+       /* if (!AllVaccinationsViewed && Integer.valueOf(bi.mh09y.getText().toString()) <= 5 && bi.mh027b02.isChecked()) {
 
             Toast.makeText(
                     this,
@@ -401,7 +398,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
             bi.llscrollviewmh26.requestFocus();
             return false;
-        }
+        }*/
 
         return Validator.emptyCheckingContainer(this, bi.GrpName);
 
