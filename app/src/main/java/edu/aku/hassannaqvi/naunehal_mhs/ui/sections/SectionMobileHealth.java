@@ -107,6 +107,9 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             }
         });
 
+        bi.chkWeight.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh012, !b));
+        bi.chkHeight.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh015, !b));
+        bi.chkMUAC.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh016, !b));
         bi.mh017097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh017check, !b));
         bi.mh018097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh018check, !b));
         bi.mh019097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh019check, !b));
@@ -245,6 +248,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setMh01103(bi.mh01103.getText().toString().trim().isEmpty() ? "-1" : bi.mh01103.getText().toString());
 
         mobileHealth.setMh012(bi.mh012.getText().toString().trim().isEmpty() ? "-1" : bi.mh012.getText().toString());
+        mobileHealth.setChkWeight(bi.chkWeight.isChecked() ? "997" : "-1");
 
         mobileHealth.setMh013(bi.mh013a.isChecked() ? "1"
                 : bi.mh013b.isChecked() ? "2"
@@ -255,8 +259,10 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
                 : "-1");
 
         mobileHealth.setMh015(bi.mh015.getText().toString().trim().isEmpty() ? "-1" : bi.mh015.getText().toString());
+        mobileHealth.setChkHeight(bi.chkHeight.isChecked() ? "997" : "-1");
 
         mobileHealth.setMh016(bi.mh016.getText().toString().trim().isEmpty() ? "-1" : bi.mh016.getText().toString());
+        mobileHealth.setChkMUAC(bi.chkMUAC.isChecked() ? "997" : "-1");
 
         mobileHealth.setMh01701(bi.mh01701.isChecked() ? "1" : "-1");
         mobileHealth.setMh01702(bi.mh01702.isChecked() ? "2" : "-1");

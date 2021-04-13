@@ -37,10 +37,13 @@ public class MobileHealth extends BaseObservable {
     private String mh01102 = StringUtils.EMPTY;
     private String mh01103 = StringUtils.EMPTY;
     private String mh012 = StringUtils.EMPTY;
+    private String chkWeight = StringUtils.EMPTY;
     private String mh013 = StringUtils.EMPTY;
     private String mh014 = StringUtils.EMPTY;
     private String mh015 = StringUtils.EMPTY;
+    private String chkHeight = StringUtils.EMPTY;
     private String mh016 = StringUtils.EMPTY;
+    private String chkMUAC = StringUtils.EMPTY;
     private String mh017 = StringUtils.EMPTY;
     private String mh01701 = StringUtils.EMPTY;
     private String mh01702 = StringUtils.EMPTY;
@@ -480,6 +483,17 @@ public class MobileHealth extends BaseObservable {
 
 
     @Bindable
+    public String getChkWeight() {
+        return chkWeight;
+    }
+
+    public void setChkWeight(String chkWeight) {
+        this.chkWeight = chkWeight;
+        notifyPropertyChanged(BR.chkWeight);
+    }
+
+
+    @Bindable
     public String getMh013() {
         return mh013;
     }
@@ -513,6 +527,17 @@ public class MobileHealth extends BaseObservable {
 
 
     @Bindable
+    public String getChkHeight() {
+        return chkHeight;
+    }
+
+    public void setChkHeight(String chkHeight) {
+        this.chkHeight = chkHeight;
+        notifyPropertyChanged(BR.chkHeight);
+    }
+
+
+    @Bindable
     public String getMh016() {
         return mh016;
     }
@@ -520,6 +545,17 @@ public class MobileHealth extends BaseObservable {
     public void setMh016(String mh016) {
         this.mh016 = mh016;
         notifyPropertyChanged(BR.mh016);
+    }
+
+
+    @Bindable
+    public String getChkMUAC() {
+        return chkMUAC;
+    }
+
+    public void setChkMUAC(String chkMUAC) {
+        this.chkMUAC = chkMUAC;
+        notifyPropertyChanged(BR.chkMUAC);
     }
 
 
@@ -1470,10 +1506,13 @@ public class MobileHealth extends BaseObservable {
                     .put("mh01102", mh01102)
                     .put("mh01103", mh01103)
                     .put("mh012", mh012)
+                    .put("chkWeight", chkWeight)
                     .put("mh013", mh013)
                     .put("mh014", mh014)
                     .put("mh015", mh015)
+                    .put("chkHeight", chkHeight)
                     .put("mh016", mh016)
+                    .put("chkMUAC", chkMUAC)
                     .put("mh017", mh017)
                     .put("mh01701", mh01701)
                     .put("mh01702", mh01702)
@@ -1622,10 +1661,13 @@ public class MobileHealth extends BaseObservable {
                 this.mh01102 = json.getString("mh01102");
                 this.mh01103 = json.getString("mh01103");
                 this.mh012 = json.getString("mh012");
+                this.chkWeight = json.getString("chkWeight");
                 this.mh013 = json.getString("mh013");
                 this.mh014 = json.getString("mh014");
                 this.mh015 = json.getString("mh015");
+                this.chkHeight = json.getString("chkHeight");
                 this.mh016 = json.getString("mh016");
+                this.chkMUAC = json.getString("chkMUAC");
                 this.mh017 = json.getString("mh017");
                 this.mh01701 = json.getString("mh01701");
                 this.mh01702 = json.getString("mh01702");

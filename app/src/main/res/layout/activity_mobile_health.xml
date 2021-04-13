@@ -655,31 +655,35 @@
                                 android:text="@string/mh012" />
 
                         </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
 
-    <com.edittextpicker.aliazaz.EditTextPicker
-        android:id="@+id/mh012"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:hint="###.##"
-        android:inputType="number"
-        app:mask="###.##"
-        app:maxValue="58"
-        app:minValue="0.9"
-        app:type="range" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/chkWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#7fefd6d6"
-        android:text="N/A" />
-</LinearLayout>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/mh012"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###.#"
+                                android:inputType="number"
+                                app:mask="###.#"
+                                app:maxValue="58"
+                                app:minValue="0.9"
+                                app:type="range" />
+
+                            <CheckBox
+                                android:id="@+id/chkWeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="#7fefd6d6"
+                                android:tag="-1"
+                                android:text="N/A" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -849,8 +853,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:background="#7fefd6d6"
+                                android:tag="-1"
                                 android:text="N/A" />
+
                         </LinearLayout>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -908,8 +915,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:background="#7fefd6d6"
+                                android:tag="-1"
                                 android:text="N/A" />
+
                         </LinearLayout>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
