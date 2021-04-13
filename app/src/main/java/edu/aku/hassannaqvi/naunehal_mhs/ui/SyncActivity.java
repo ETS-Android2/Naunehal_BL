@@ -163,7 +163,10 @@ public class SyncActivity extends AppCompatActivity {
                     // Set tables to DOWNLOAD
                     downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(Camps.TableCamp.TABLE_NAME));
+
+                    String select = " idCamp, camp_no, dist_id, district, ucCode, ucName, area_name, plan_date ";
+                    String filter = " camp_status = 'Planned' ";
+                    downloadTables.add(new SyncModel(Camps.TableCamp.TABLE_NAME, " idCamp, camp_no, dist_id, district, ucCode, ucName, area_name, plan_date ", filter));
                     downloadTables.add(new SyncModel(Doctor.TableDoctor.TABLE_NAME));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
@@ -187,8 +190,8 @@ public class SyncActivity extends AppCompatActivity {
             Data.Builder data = new Data.Builder()
                     .putString("table", downloadTables.get(i).gettableName())
                     .putInt("position", i)
-                    //.putString("columns", "_id, sysdate")
-                    // .putString("where", where)
+                    .putString("select", downloadTables.get(i).getSelect() != null ? downloadTables.get(i).getSelect() : " * ")
+                    .putString("filter", downloadTables.get(i).getFilter() != null ? downloadTables.get(i).getFilter() : " 1=1 ")
                     ;
             /*if (downloadTables.get(i).gettableName().equals(Doctor.TableDoctor.TABLE_NAME)) {
                 data.putString("where", Doctor.TableDoctor.COLUMN_ID_CAMP + "='" + campCode + "'");
