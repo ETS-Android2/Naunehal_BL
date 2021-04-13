@@ -661,9 +661,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:hint="###.##"
+                            android:hint="###.#"
                             android:inputType="number"
-                            app:mask="###.##"
+                            app:mask="###.#"
                             app:maxValue="58"
                             app:minValue="0.9"
                             app:type="range" />

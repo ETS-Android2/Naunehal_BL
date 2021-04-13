@@ -156,8 +156,8 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
         bi.mh012.setMinvalue(15f);
         bi.mh012.setMaxvalue(250f);
-        bi.mh012.setMask("###.##");
-        bi.mh012.setHint("###.##");
+        bi.mh012.setMask("###.#");
+        bi.mh012.setHint("###.#");
         Clear.clearAllFields(bi.fldGrpCVmh017);
         Clear.clearAllFields(bi.llmh020);
         Clear.clearAllFields(bi.fldGrpCVmh015);
@@ -184,8 +184,8 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             bi.llchild.setVisibility(View.VISIBLE);
             bi.mh012.setMinvalue(0.9f);
             bi.mh012.setMaxvalue(58f);
-            bi.mh012.setMask("##.##");
-            bi.mh012.setHint("##.##");
+            bi.mh012.setMask("###.#");
+            bi.mh012.setHint("###.#");
         }
     }
 
