@@ -1031,7 +1031,7 @@
                                     android:text="@string/mh018010" />
 
                                 <CheckBox
-                                    android:id="@+id/mh01813"
+                                    android:id="@+id/mh018013"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="@string/mh018013" />
