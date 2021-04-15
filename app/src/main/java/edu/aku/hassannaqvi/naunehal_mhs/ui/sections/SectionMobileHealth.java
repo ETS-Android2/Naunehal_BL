@@ -37,7 +37,6 @@ import edu.aku.hassannaqvi.naunehal_mhs.utils.EndSectionActivity;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.shared.SharedStorage;
 
 import static edu.aku.hassannaqvi.naunehal_mhs.core.MainApp.mobileHealth;
-import static edu.aku.hassannaqvi.naunehal_mhs.utils.DateUtilsKt.convertDateFormatYMD;
 import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.gotoActivity;
 import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.gotoActivityWithPutExtra;
 
@@ -225,7 +224,8 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setAppver(MainApp.appInfo.getAppVersion());
 
 
-        mobileHealth.setMh01(bi.mh01.getText().toString().trim().isEmpty() ? "-1" : convertDateFormatYMD(bi.mh01.getText().toString()));
+        //mobileHealth.setMh01(bi.mh01.getText().toString().trim().isEmpty() ? "-1" : convertDateFormatYMD(bi.mh01.getText().toString()));
+        mobileHealth.setMh01(bi.mh01.getText().toString().trim().isEmpty() ? "-1" : bi.mh01.getText().toString());
         mobileHealth.setMh02(bi.mh02.getText().toString().trim().isEmpty() ? "-1" : bi.mh02.getText().toString());
         mobileHealth.setMh03(bi.mh03.getText().toString().trim().isEmpty() ? "-1" : bi.mh03.getText().toString());
         mobileHealth.setMh04(bi.mh04.getText().toString().trim().isEmpty() ? "-1" : bi.mh04.getText().toString());
