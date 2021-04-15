@@ -31,7 +31,7 @@ import edu.aku.hassannaqvi.naunehal_mhs.databinding.ActivityMobileHealthBinding;
 import edu.aku.hassannaqvi.naunehal_mhs.models.Camps;
 import edu.aku.hassannaqvi.naunehal_mhs.models.Doctor;
 import edu.aku.hassannaqvi.naunehal_mhs.models.MobileHealth;
-import edu.aku.hassannaqvi.naunehal_mhs.ui.EndingActivity;
+import edu.aku.hassannaqvi.naunehal_mhs.ui.MainActivity;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.EndSectionActivity;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.shared.SharedStorage;
@@ -416,12 +416,11 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
     @Override
     public void endSecActivity(boolean flag) {
-        if (!Validator.emptyTextBox(this, bi.mh01)) return;
-        saveDraft();
-        if (UpdateDB()) {
-            finish();
-            gotoActivity(this, EndingActivity.class);
-        }
+        //if (!Validator.emptyTextBox(this, bi.mh01)) return;
+
+        finish();
+        gotoActivity(this, MainActivity.class);
+
     }
 
 
