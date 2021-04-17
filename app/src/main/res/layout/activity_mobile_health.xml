@@ -1185,7 +1185,7 @@
                             android:inputType="textNoSuggestions"
                             android:tag="mh018077"
                             android:text='@{mh018077.checked ? mh018077x.getText().toString() : ""}'
-                            android:visibility='@{mh018077.checked? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{mh018077.checked ? View.VISIBLE : View.GONE}' />
 
                         <CheckBox
                             android:id="@+id/mh018097"

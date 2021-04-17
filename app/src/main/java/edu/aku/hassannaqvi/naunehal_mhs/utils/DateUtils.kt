@@ -45,7 +45,7 @@ fun ageInMonths(year: String, month: String): Long {
 }
 
 fun convertDateFormat(dateStr: String): String {
-    val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH)
+    val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
     try {
         val d = sdf.parse(dateStr)
         return SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH).format(d)
