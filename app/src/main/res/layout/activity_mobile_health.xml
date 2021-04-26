@@ -1812,24 +1812,28 @@
 
                                 <RadioButton
                                     android:id="@+id/mh027b01"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:text="@string/mh027b01" />
 
                                 <RadioButton
                                     android:id="@+id/mh027b02"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:text="@string/mh027b02" />
 
                                 <RadioButton
                                     android:id="@+id/mh027b03"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:text="@string/mh027b03" />
+
+                                <RadioButton
+                                    android:id="@+id/mh027b04"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#7fefd6d6"
+                                    android:text="@string/mh027b04" />
 
                             </RadioGroup>
 

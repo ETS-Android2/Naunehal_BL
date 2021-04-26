@@ -122,7 +122,8 @@
     <string name="mh027b"> Immunization Status </string>
     <string name="mh027b01"> Refused </string>
     <string name="mh027b02"> Vaccinated At Camp </string>
-    <string name="mh027b03"> Fully Immunized </string>
+    <string name="mh027b03"> Fully Immunized as per age </string>
+    <string name="mh027b04"> N/A </string>
 
     <string name="mh026">Vaccinations done at MHS</string>
     <string name="mh02601">BCG</string>
