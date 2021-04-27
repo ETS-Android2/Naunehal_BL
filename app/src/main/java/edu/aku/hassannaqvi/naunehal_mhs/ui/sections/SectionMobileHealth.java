@@ -37,6 +37,7 @@ import edu.aku.hassannaqvi.naunehal_mhs.utils.EndSectionActivity;
 import edu.aku.hassannaqvi.naunehal_mhs.utils.shared.SharedStorage;
 
 import static edu.aku.hassannaqvi.naunehal_mhs.core.MainApp.mobileHealth;
+import static edu.aku.hassannaqvi.naunehal_mhs.utils.AppUtilsKt.openWarningDialog;
 import static edu.aku.hassannaqvi.naunehal_mhs.utils.DateUtilsKt.convertDateFormat;
 import static edu.aku.hassannaqvi.naunehal_mhs.utils.DateUtilsKt.convertDateFormatYMD;
 import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.gotoActivity;
@@ -94,8 +95,32 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.mh018097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh018check, !b));
         bi.mh019097.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.mh019check, !b));
 
-        bi.mh022.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearRadioGroup(bi.mh025, i != bi.mh02202.getId()));
-        bi.mh023.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearRadioGroup(bi.mh024, i != bi.mh02302.getId()));
+
+        //TODO:
+        bi.mh025.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (bi.mh02202.isChecked() && bi.mh02501.isChecked()) {
+                openWarningDialog(this, "Error", "Please Compare MH022 & MH025", bi.mh02501);
+            }
+        });
+        bi.mh022.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (bi.mh02202.isChecked() && bi.mh02501.isChecked()) {
+                openWarningDialog(this, "Error", "Please Compare MH022 & MH025", bi.mh02501);
+            }
+        });
+
+        bi.mh024.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (bi.mh02302.isChecked() && bi.mh02401.isChecked()) {
+                openWarningDialog(this, "Error", "Please Compare MH023 & MH024", bi.mh02401);
+            }
+        });
+
+        bi.mh023.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (bi.mh02302.isChecked() && bi.mh02401.isChecked()) {
+                openWarningDialog(this, "Error", "Please Compare MH023 & MH024", bi.mh02401);
+            }
+        });
+        //bi.mh023.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearRadioGroup(bi.mh024, i != bi.mh02302.getId()));
+
 
         bi.mh027b.setOnCheckedChangeListener((radioGroup, i) -> {
             bi.mh02601.setTag(null);
