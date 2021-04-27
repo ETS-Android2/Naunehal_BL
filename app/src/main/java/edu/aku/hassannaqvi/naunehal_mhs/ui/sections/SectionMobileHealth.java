@@ -105,16 +105,20 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             bi.rgmh02604.setTag(null);
             bi.rgmh02605.setTag(null);
             bi.mh026019.setTag(null);
+            Clear.clearAllFields(bi.fldGrpCVmh026);
+            Clear.clearAllFields(bi.fldGrpCVmh027);
+            Clear.clearAllFields(bi.fldGrpCVmh027a);
+            bi.mh02601.setChecked(false);
+            bi.mh026019.setChecked(false);
+            bi.fldGrpCVmh026.setVisibility(View.GONE);
+            bi.fldGrpCVmh027.setVisibility(View.GONE);
+            bi.fldGrpCVmh027a.setVisibility(View.GONE);
             if (i == bi.mh027b02.getId()) {
                 bi.fldGrpCVmh026.setVisibility(View.VISIBLE);
                 bi.fldGrpCVmh027.setVisibility(View.VISIBLE);
-            } else {
-                Clear.clearAllFields(bi.fldGrpCVmh026);
-                Clear.clearAllFields(bi.fldGrpCVmh027);
-                bi.mh02601.setChecked(false);
-                bi.mh026019.setChecked(false);
-                bi.fldGrpCVmh026.setVisibility(View.GONE);
-                bi.fldGrpCVmh027.setVisibility(View.GONE);
+                bi.fldGrpCVmh027a.setVisibility(View.VISIBLE);
+            } else if (i == bi.mh027b01.getId()) {
+                bi.fldGrpCVmh027a.setVisibility(View.VISIBLE);
             }
         });
 
@@ -125,6 +129,11 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         setTags(bi.rgmh02604, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02605, bi.mh026019});
         setTags(bi.rgmh02605, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02604, bi.mh026019});
         setTags(bi.mh026019, new View[]{bi.mh02601, bi.rgmh02601, bi.rgmh02602, bi.rgmh02603, bi.rgmh02604, bi.rgmh02605});
+
+        bi.rgmh02603.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVmh027a);
+            bi.fldGrpCVmh027a.setVisibility(View.GONE);
+        });
 
 
     }
