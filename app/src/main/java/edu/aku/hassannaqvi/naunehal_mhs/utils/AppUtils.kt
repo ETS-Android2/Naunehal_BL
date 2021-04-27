@@ -160,6 +160,7 @@ fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTx
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     val bi: EndSectionDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.end_section_dialog, null, false)
     dialog.setContentView(bi.root)
+    dialog.setCancelable(false)
     bi.alertTitle.text = title
     bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.redLight))
     bi.content.text = message
