@@ -18,6 +18,8 @@
             android:drawablePadding="12dp"
             android:gravity="center_vertical"
             android:text="WARNING!"
+            android:background="@android:color/white"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="@color/blackOverlay"
             android:textSize="24sp"
@@ -32,6 +34,7 @@
             android:drawablePadding="12dp"
             android:gravity="center_vertical"
             android:text="Are you sure, you want to edit form?"
+            android:background="@android:color/white"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="@color/blackOverlay" />
 

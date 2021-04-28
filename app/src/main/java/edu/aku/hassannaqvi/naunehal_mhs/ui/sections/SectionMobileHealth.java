@@ -97,25 +97,28 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
 
         //TODO:
         bi.mh025.setOnCheckedChangeListener((radioGroup, i) -> {
+            //Log.d("TAG", "setupSkips:1 "+bi.mh02202.isChecked()+"|"+bi.mh02501.isChecked());
             if (bi.mh02202.isChecked() && bi.mh02501.isChecked()) {
-                openWarningDialog(this, "Error", "Please Compare MH022 & MH025", bi.mh02501);
+                // Log.d("TAG", "setupSkips:2 ");
+                openWarningDialog(this, "Error", "Answer conflicts with Q. MH022", bi.mh025);
+                //bi.mh025.clearCheck();
             }
         });
         bi.mh022.setOnCheckedChangeListener((radioGroup, i) -> {
             if (bi.mh02202.isChecked() && bi.mh02501.isChecked()) {
-                openWarningDialog(this, "Error", "Please Compare MH022 & MH025", bi.mh02501);
+                openWarningDialog(this, "Error", "Answer conflicts with Q. MH025", bi.mh022);
             }
         });
 
         bi.mh024.setOnCheckedChangeListener((radioGroup, i) -> {
             if (bi.mh02302.isChecked() && bi.mh02401.isChecked()) {
-                openWarningDialog(this, "Error", "Please Compare MH023 & MH024", bi.mh02401);
+                openWarningDialog(this, "Error", "Answer conflicts with Q. MH023", bi.mh024);
             }
         });
 
         bi.mh023.setOnCheckedChangeListener((radioGroup, i) -> {
             if (bi.mh02302.isChecked() && bi.mh02401.isChecked()) {
-                openWarningDialog(this, "Error", "Please Compare MH023 & MH024", bi.mh02401);
+                openWarningDialog(this, "Error", "Answer conflicts with Q. MH024", bi.mh023);
             }
         });
         //bi.mh023.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearRadioGroup(bi.mh024, i != bi.mh02302.getId()));

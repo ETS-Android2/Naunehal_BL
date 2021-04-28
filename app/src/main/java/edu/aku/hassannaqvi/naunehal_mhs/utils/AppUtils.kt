@@ -11,7 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -155,7 +155,7 @@ fun AppCompatActivity.openWarningActivity(
 }
 
 @JvmOverloads
-fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTxt: String = "OK", btn: RadioButton) {
+fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTxt: String = "OK", btn: RadioGroup) {
     val dialog = Dialog(this)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     val bi: EndSectionDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.end_section_dialog, null, false)
@@ -174,9 +174,12 @@ fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTx
     dialog.window!!.attributes = params
     dialog.show()
     bi.btnOk.setOnClickListener {
-        btn.isChecked = false
+        btn.clearCheck()
         dialog.dismiss()
+        //bi.btnOk.setOnClickListener(null)
     }
+
+
 }
 
 @JvmOverloads

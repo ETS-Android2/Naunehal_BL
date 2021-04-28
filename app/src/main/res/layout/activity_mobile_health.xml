@@ -681,6 +681,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:background="#7fefd6d6"
+                                android:textColor="@color/redDark"
                                 android:tag="-1"
                                 android:text="N/A" />
 
@@ -853,6 +854,7 @@
                             <CheckBox
                                 android:id="@+id/chkHeight"
                                 android:layout_width="wrap_content"
+                                android:textColor="@color/redDark"
                                 android:layout_height="match_parent"
                                 android:background="#7fefd6d6"
                                 android:tag="-1"
@@ -915,6 +917,7 @@
                             <CheckBox
                                 android:id="@+id/chkMUAC"
                                 android:layout_width="wrap_content"
+                                android:textColor="@color/redDark"
                                 android:layout_height="match_parent"
                                 android:background="#7fefd6d6"
                                 android:tag="-1"
