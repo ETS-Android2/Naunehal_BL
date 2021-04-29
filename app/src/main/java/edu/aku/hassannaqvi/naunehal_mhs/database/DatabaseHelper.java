@@ -1677,8 +1677,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setMh02(c.getString(c.getColumnIndex(MHTable.COLUMN_MH02)));
                 fc.setMh06(c.getString(c.getColumnIndex(MHTable.COLUMN_MH06)));
                 fc.setMh07(c.getString(c.getColumnIndex(MHTable.COLUMN_MH07)));
-                fc.setsA(c.getString(c.getColumnIndex(MHTable.COLUMN_SA)));
                 fc.setSynced(c.getString(c.getColumnIndex(MHTable.COLUMN_SYNCED)));
+                fc.sAHydrate(c.getString(c.getColumnIndex(MHTable.COLUMN_SA)));
+                Log.d(TAG, "getFormsByCluster: " + c.getString(c.getColumnIndex(MHTable.COLUMN_SA)));
                 allFC.add(fc);
             }
         } finally {
@@ -1821,7 +1822,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setMh02(c.getString(c.getColumnIndex(MHTable.COLUMN_MH02)));
                 fc.setMh06(c.getString(c.getColumnIndex(MHTable.COLUMN_MH06)));
                 fc.setMh07(c.getString(c.getColumnIndex(MHTable.COLUMN_MH07)));
-                fc.setsA(c.getString(c.getColumnIndex(MHTable.COLUMN_SA)));
+                fc.sAHydrate(c.getString(c.getColumnIndex(MHTable.COLUMN_SA)));
                 fc.setSynced(c.getString(c.getColumnIndex(MHTable.COLUMN_SYNCED)));
                 allFC.add(fc);
             }

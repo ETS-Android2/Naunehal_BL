@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -59,8 +60,18 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         cardChild = db.getChildrenCardCheck(fc.get(position).getUid());*/
 
 
-        String iStatus = "Status  Unknown";
+        String Status = "Status  Unknown";
         int iColor = 0;
+        switch (fc.get(position).getMh010()) {
+            case "1":
+                holder.status.setBackgroundColor(c.getResources().getColor(R.color.colorAccent));
+                holder.status.setImageResource(R.drawable.male);
+                break;
+            case "2":
+                holder.status.setBackgroundColor(c.getResources().getColor(R.color.colorPrimary));
+                holder.status.setImageResource(R.drawable.female);
+                break;
+        }
       /*  switch (fc.get(position).getIStatus()) {
             case "1":
                 iStatus = "Complete";
@@ -97,11 +108,13 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         }*/
 
-        holder.hhno.setText(fc.get(position).getMh06() + " \t\t(" + fc.get(position).getSysDate() + ")");
-        holder.cluster.setText(fc.get(position).getMh02());
-        holder.istatus.setText(iStatus);
-        holder.sysdate.setText("  Father\\Husband: " + fc.get(position).getMh08() + " \t\t\t Age: " + fc.get(position).getMh09y() + " \t\t\t Gender: " + (fc.get(position).getMh010() == "1" ? "Male" : "Female"));
-        holder.istatus.setTextColor(iColor);
+        holder.hhno.setText(fc.get(position).getMh02() + "\t\t\t | \t\t\t" + fc.get(position).getSysDate());
+        holder.father.setText(" ( " + fc.get(position).getMh08() + " )");
+        holder.cluster.setText(fc.get(position).getMh07());
+        holder.istatus.setText(fc.get(position).getMh06());
+        Log.d("TAG", "onBindViewHolder: gender " + fc.get(position).getMh010());
+        holder.sysdate.setText(fc.get(position).getMh09y() + "y \t\t\t " + (fc.get(position).getMh010().equals("1") ? "Male" : "Female"));
+        holder.status.setBackgroundColor(iColor);
 
 
     }
@@ -122,6 +135,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         public TextView cluster;
         public TextView hhno;
         public TextView istatus;
+        public ImageView status;
+        public TextView father;
         // each data item is just a string in this case
 
         public ViewHolder(View v) {
@@ -131,6 +146,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
             cluster = v.findViewById(R.id.cluster);
             hhno = v.findViewById(R.id.hhno);
             istatus = v.findViewById(R.id.istatus);
+            status = v.findViewById(R.id.status);
+            father = v.findViewById(R.id.fathername);
 
         }
 

@@ -22,12 +22,12 @@
                 app:showAsAction="collapseActionView" />
             <item
                 android:id="@+id/formsReportDate"
-                android:title="Forms Report by Date"
+                android:title="Patient Report by Date"
                 android:titleCondensed="List of all forms by date"
                 app:showAsAction="collapseActionView" />
             <item
                 android:id="@+id/formsReportCluster"
-                android:title="Forms Report by Cluster"
+                android:title="Patient Report by Camp"
                 android:titleCondensed="List of all forms by date"
                 app:showAsAction="collapseActionView" />
 

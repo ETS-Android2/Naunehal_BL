@@ -28,7 +28,8 @@
                     android:layout_margin="0dp"
                     android:padding="0dp"
                     android:paddingStart="18dp"
-                    android:text="Forms By Cluster" />
+                    android:text="Patients By Camp No." />
+
 
                 <TextView
                     style="@style/labels"
@@ -38,7 +39,7 @@
                     android:layout_marginBottom="12dp"
                     android:padding="0dp"
                     android:paddingStart="20dp"
-                    android:text="Please enter a cluster to search forms"
+                    android:text="Please enter a Camp No. to search patients"
                     android:textColor="#7f7f7f"
                     android:textSize="14dp"
                     android:textStyle="normal" />
@@ -57,8 +58,7 @@
                     android:layout_marginEnd="0dp"
                     android:layout_weight="1"
                     android:digits="01234567890-"
-                    android:inputType="number"
-                    android:maxLength="9" />
+                    android:maxLength="10" />
 
                 <Button
                     android:layout_width="wrap_content"

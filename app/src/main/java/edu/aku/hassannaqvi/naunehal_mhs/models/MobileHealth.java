@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.naunehal_mhs.models;
 
 import android.database.Cursor;
+import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -354,22 +355,27 @@ public class MobileHealth extends BaseObservable {
 
     @Bindable
     public String getMh08() {
+        Log.d("TAG", "Mh08: " + this.mh08);
         return mh08;
     }
 
     public void setMh08(String mh08) {
         this.mh08 = mh08;
+        Log.d("TAG", "Mh08: " + this.mh08);
+
         notifyPropertyChanged(BR.mh08);
     }
 
 
     @Bindable
     public String getMh09y() {
+        Log.d("TAG", "Mh09y: " + this.mh09y);
         return mh09y;
     }
 
     public void setMh09y(String mh09y) {
         this.mh09y = mh09y;
+        Log.d("TAG", "Mh09y: " + this.mh09y);
         notifyPropertyChanged(BR.mh09y);
     }
 
@@ -381,6 +387,7 @@ public class MobileHealth extends BaseObservable {
 
     public void setMh09m(String mh09m) {
         this.mh09m = mh09m;
+
         notifyPropertyChanged(BR.mh09m);
     }
 
@@ -1526,7 +1533,8 @@ public class MobileHealth extends BaseObservable {
     }
 
 
-    private void sAHydrate(String string) {
+    public void sAHydrate(String string) {
+        Log.d("sAHydrateS", "string: " + string);
 
         if (string != null) {
 
@@ -1535,7 +1543,13 @@ public class MobileHealth extends BaseObservable {
                 json = new JSONObject(string);
 
                 this.mh08 = json.getString("mh08");
+                Log.d("sAHydrate", "Mh08: " + this.mh08);
+                Log.d("sAHydrateJ", "Mh08: " + json.getString("mh08"));
+
                 this.mh09y = json.getString("mh09y");
+                Log.d("sAHydrate", "Mh09y: " + this.mh09y);
+                Log.d("sAHydrateJ", "Mh09y: " + json.getString("mh09y"));
+
                 this.mh09m = json.getString("mh09m");
                 this.mh09d = json.getString("mh09d");
                 this.mh010 = json.getString("mh010");
