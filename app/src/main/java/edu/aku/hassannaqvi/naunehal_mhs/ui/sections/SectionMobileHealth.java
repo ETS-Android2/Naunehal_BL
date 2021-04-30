@@ -45,6 +45,7 @@ import static edu.aku.hassannaqvi.naunehal_mhs.utils.extension.ActivityExtKt.got
 public class SectionMobileHealth extends AppCompatActivity implements EndSectionActivity {
 
     ActivityMobileHealthBinding bi;
+    private String patientType;
     private List<String> campNo;
     private DatabaseHelper db;
     private final boolean AllVaccinationsViewed = false;
@@ -183,9 +184,20 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         });
     }
 
+
+    /*public void ageZeroCheck(CharSequence s, int i, int i1, int i2) {
+        if (TextUtils.isEmpty(bi.mh09d.getText()) || TextUtils.isEmpty(bi.mh09m.getText()) || TextUtils.isEmpty(bi.mh09y.getText()))
+            return;
+        int check = Integer.parseInt(bi.mh09d.getText().toString()) + Integer.parseInt(bi.mh09m.getText().toString()) + Integer.parseInt(bi.mh09y.getText().toString());
+        if (check == 0) openWarningDialog(this, "Error", "All Fields Can't be ZERO", new EditTextPicker[]{bi.mh09y, bi.mh09m, bi.mh09d});
+        segregate();
+    }*/
+
+
     public void segregateByAge(CharSequence s, int i, int i1, int i2) {
         segregate();
     }
+
 
     public void segregateByGender(RadioGroup radioGroup, int i) {
         segregate();
@@ -215,10 +227,12 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         bi.fldGrpCVmh016.setVisibility(View.GONE);
         bi.fldGrpCVmh018.setVisibility(View.GONE);
         bi.llchild.setVisibility(View.GONE);
+        patientType = "General";
 
         if (age >= 5110 && age < 18250 && bi.mh01002.isChecked()) {
             bi.fldGrpCVmh017.setVisibility(View.VISIBLE);
             bi.llmh020.setVisibility(View.VISIBLE);
+            patientType = "MWRA";
         }
         if (age <= 1825) {
             bi.fldGrpCVmh015.setVisibility(View.VISIBLE);
@@ -229,6 +243,7 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
             bi.mh012.setMaxvalue(58f);
             bi.mh012.setMask("###.#");
             bi.mh012.setHint("###.#");
+            patientType = "Child";
         }
     }
 
@@ -280,6 +295,8 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         mobileHealth.setMh09y(bi.mh09y.getText().toString().trim().isEmpty() ? "-1" : bi.mh09y.getText().toString());
         mobileHealth.setMh09m(bi.mh09m.getText().toString().trim().isEmpty() ? "-1" : bi.mh09m.getText().toString());
         mobileHealth.setMh09d(bi.mh09d.getText().toString().trim().isEmpty() ? "-1" : bi.mh09d.getText().toString());
+
+        mobileHealth.setPatientType(patientType);
 
         mobileHealth.setMh010(bi.mh01001.isChecked() ? "1"
                 : bi.mh01002.isChecked() ? "2"
@@ -433,6 +450,12 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
     private boolean formValidation() {
 
 
+        if (!TextUtils.isEmpty(bi.mh09d.getText()) || !TextUtils.isEmpty(bi.mh09m.getText()) || !TextUtils.isEmpty(bi.mh09y.getText())) {
+            int check = Integer.parseInt(bi.mh09d.getText().toString()) + Integer.parseInt(bi.mh09m.getText().toString()) + Integer.parseInt(bi.mh09y.getText().toString());
+            if (check == 0)
+                return Validator.emptyCustomTextBox(this, bi.mh09d, "All Fields can't be zero");
+        }
+
        /* if (!AllVaccinationsViewed && Integer.valueOf(bi.mh09y.getText().toString()) <= 5 && bi.mh027b02.isChecked()) {
 
             Toast.makeText(
@@ -446,7 +469,6 @@ public class SectionMobileHealth extends AppCompatActivity implements EndSection
         }*/
 
         return Validator.emptyCheckingContainer(this, bi.GrpName);
-
 
     }
 

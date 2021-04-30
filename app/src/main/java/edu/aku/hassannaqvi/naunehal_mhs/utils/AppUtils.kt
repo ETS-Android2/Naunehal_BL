@@ -178,9 +178,8 @@ fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTx
         dialog.dismiss()
         //bi.btnOk.setOnClickListener(null)
     }
-
-
 }
+
 
 @JvmOverloads
 fun AppCompatActivity.openWarningDialog(title: String, response: Int, message: String) {

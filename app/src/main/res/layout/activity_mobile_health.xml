@@ -2413,6 +2413,12 @@
 
                             </LinearLayout>
 
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0 – 59 months OPV   ( other than routine immunization )" />
+
                             <RadioGroup
                                 android:id="@+id/mh027a"
                                 android:layout_width="match_parent"
@@ -2591,6 +2597,7 @@
                             android:hint="@string/mh030"
                             android:inputType="textNoSuggestions"
                             android:gravity="top"
+                            android:tag="-1"
                             android:lines="5" />
 
                     </LinearLayout>
