@@ -78,6 +78,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="YYYY-MM-DD"
+                                app:theme="@style/MyDatePickerDialogTheme"
                                 android:inputType="number"
                                 app:dateFormat="yyyy-MM-dd"
                                 app:maxDate="CR_DATE"
