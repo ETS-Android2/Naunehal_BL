@@ -274,7 +274,7 @@ class MainActivity : AppCompatActivity() {
 
     fun populateCampDetails() {
         if (!Validator.emptyTextBox(this, bi.camps)) return
-        viewModel.getCampFromDB(bi.camps.text.toString())
+        viewModel.getCampFromDB(bi.camps.text.toString(), MainApp.user.dist_id)
     }
 
     /*

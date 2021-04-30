@@ -565,14 +565,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public Camps getSpecificCamp(String campNo) {
+    public Camps getSpecificCamp(String campNo, String distCode) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = Camps.TableCamp.COLUMN_CAMP_NO + "=?";
-        String[] whereArgs = {campNo};
+        String whereClause = Camps.TableCamp.COLUMN_CAMP_NO + "=? AND" + Camps.TableCamp.COLUMN_DIST_ID + "=?";
+        String[] whereArgs = {campNo, distCode};
         String groupBy = null;
         String having = null;
 
