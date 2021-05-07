@@ -25,21 +25,25 @@
                 <TextView
                     style="@style/labels"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="38dp"
+                    android:gravity="bottom"
+                    android:lineHeight="20dp"
+                    android:paddingStart="24dp"
+                    android:text="Patients By Date"
                     android:layout_margin="0dp"
                     android:padding="0dp"
-                    android:paddingStart="18dp"
-                    android:text="Forms By Date" />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     style="@style/labels"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="38dp"
                     android:layout_margin="0dp"
-                    android:layout_marginBottom="12dp"
+                    android:gravity="top"
                     android:padding="0dp"
-                    android:paddingStart="20dp"
-                    android:text="Please select a date to search forms"
+                    android:paddingStart="24dp"
+                    android:text="Please select a date to search patients"
                     android:textColor="#7f7f7f"
                     android:textSize="14dp"
                     android:textStyle="normal" />
@@ -48,24 +52,25 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
                 android:orientation="horizontal">
 
                 <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                     android:id="@+id/dtFilter"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="0dp"
                     android:layout_weight="1"
-                    app:dateFormat="dd-MM-yy" />
+                    android:backgroundTint="@color/colorPrimary"
+                    app:theme="@style/MyDatePickerDialogTheme"
+                    app:dateFormat="yyyy-MM-dd" />
 
-                <Button
+                <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="0dp"
-                    android:drawableStart="@drawable/search"
-                    android:onClick="filterForms"
-                    android:text="Search" />
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/search"
+                    android:onClick="filterForms" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -77,5 +82,17 @@
         android:layout_margin="12dp"
         android:scrollbars="vertical"
         tools:listitem="@layout/pendingform_layout" />
+
+
+    <TextView
+        android:id="@+id/noresult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="No results found"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:visibility="gone" />
 
 </LinearLayout>

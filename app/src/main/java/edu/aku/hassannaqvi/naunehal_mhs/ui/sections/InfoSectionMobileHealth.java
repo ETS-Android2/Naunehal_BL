@@ -60,7 +60,7 @@ public class InfoSectionMobileHealth extends AppCompatActivity implements EndSec
     private void saveDraft() {
 
         mobileHealth = new MobileHealth();
-        mobileHealth.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        mobileHealth.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
        /* mobileHealth.setUuid(MainApp.form.getUid());
         mobileHealth.setUserName(MainApp.user.getUserName());
         mobileHealth.setDcode(MainApp.form.getDcode());

@@ -6,7 +6,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
-import kotlin.collections.ArrayList
 
 open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource {
 
@@ -18,8 +17,8 @@ open class GeneralRepository(private val db: DatabaseHelper) : GeneralDataSource
         db.updateSpecificChildInformationColumn(info, isSelected)
     }
 
-    override suspend fun getCampsFromDB(campNo: String): Camps = withContext(Dispatchers.IO) {
-        db.getSpecificCamp(campNo)
+    override suspend fun getCampsFromDB(campNo: String, distCode: String): Camps = withContext(Dispatchers.IO) {
+        db.getSpecificCamp(campNo, distCode)
     }
 
     override suspend fun getUcsByDistrictsFromDB(dCode: String): ArrayList<UCs> = withContext(Dispatchers.IO) {

@@ -11,17 +11,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import edu.aku.hassannaqvi.naunehal_mhs.CONSTANTS
 import edu.aku.hassannaqvi.naunehal_mhs.R
-import edu.aku.hassannaqvi.naunehal_mhs.databinding.EndSectionDialogBinding
-import edu.aku.hassannaqvi.naunehal_mhs.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal_mhs.database.CreateTable.DATABASE_COPY
 import edu.aku.hassannaqvi.naunehal_mhs.database.CreateTable.DATABASE_NAME
 import edu.aku.hassannaqvi.naunehal_mhs.database.CreateTable.PROJECT_NAME
+import edu.aku.hassannaqvi.naunehal_mhs.databinding.EndSectionDialogBinding
+import edu.aku.hassannaqvi.naunehal_mhs.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal_mhs.utils.extension.gotoActivityWithSerializable
 import java.io.*
 import java.text.SimpleDateFormat
@@ -154,13 +155,14 @@ fun AppCompatActivity.openWarningActivity(
 }
 
 @JvmOverloads
-fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTxt: String = "OK") {
+fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTxt: String = "OK", btn: RadioGroup) {
     val dialog = Dialog(this)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     val bi: EndSectionDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.end_section_dialog, null, false)
     dialog.setContentView(bi.root)
+    dialog.setCancelable(false)
     bi.alertTitle.text = title
-    bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.green))
+    bi.alertTitle.setTextColor(ContextCompat.getColor(this, R.color.redLight))
     bi.content.text = message
     bi.btnOk.text = btnYesTxt
     bi.btnOk.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
@@ -172,9 +174,12 @@ fun AppCompatActivity.openWarningDialog(title: String, message: String, btnYesTx
     dialog.window!!.attributes = params
     dialog.show()
     bi.btnOk.setOnClickListener {
+        btn.clearCheck()
         dialog.dismiss()
+        //bi.btnOk.setOnClickListener(null)
     }
 }
+
 
 @JvmOverloads
 fun AppCompatActivity.openWarningDialog(title: String, response: Int, message: String) {

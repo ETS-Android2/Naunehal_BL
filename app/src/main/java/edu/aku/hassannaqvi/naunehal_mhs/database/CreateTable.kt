@@ -190,7 +190,8 @@ object CreateTable {
             + Camps.TableCamp.COLUMN_DISTRICT + " TEXT,"
             + Camps.TableCamp.COLUMN_UC_CODE + " TEXT,"
             + Camps.TableCamp.COLUMN_UC_NAME + " TEXT,"
-            + Camps.TableCamp.COLUMN_AREA_NAME + " TEXT"
+            + Camps.TableCamp.COLUMN_AREA_NAME + " TEXT,"
+            + Camps.TableCamp.COLUMN_PLAN_DATE + " TEXT"
             + " );")
 
     const val SQL_CREATE_DOCTOR = ("CREATE TABLE " + Doctor.TableDoctor.TABLE_NAME + "("

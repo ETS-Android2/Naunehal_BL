@@ -26,6 +26,7 @@ import edu.aku.hassannaqvi.naunehal_mhs.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.naunehal_mhs.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal_mhs.contracts.IMContract.IMTable;
 import edu.aku.hassannaqvi.naunehal_mhs.contracts.MHContract;
+import edu.aku.hassannaqvi.naunehal_mhs.contracts.MHContract.MHTable;
 import edu.aku.hassannaqvi.naunehal_mhs.core.MainApp;
 import edu.aku.hassannaqvi.naunehal_mhs.models.BLRandom;
 import edu.aku.hassannaqvi.naunehal_mhs.models.BLRandom.TableRandom;
@@ -564,14 +565,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public Camps getSpecificCamp(String campNo) {
+    public Camps getSpecificCamp(String campNo, String distCode) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
 
-        String whereClause = Camps.TableCamp.COLUMN_CAMP_NO + "=?";
-        String[] whereArgs = {campNo};
+        String whereClause = Camps.TableCamp.COLUMN_CAMP_NO + "=? AND" + Camps.TableCamp.COLUMN_DIST_ID + "=?";
+        String[] whereArgs = {campNo, distCode};
         String groupBy = null;
         String having = null;
 
@@ -1114,6 +1115,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(Camps.TableCamp.COLUMN_UC_CODE, camps.getUcCode());
                 values.put(Camps.TableCamp.COLUMN_UC_NAME, camps.getUcName());
                 values.put(Camps.TableCamp.COLUMN_AREA_NAME, camps.getArea_name());
+                values.put(Camps.TableCamp.COLUMN_PLAN_DATE, camps.getPlan_date());
 
                 long rowID = db.insert(Camps.TableCamp.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
@@ -1631,34 +1633,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Collection<Form> getFormsByCluster(String cluster) {
+    public Collection<MobileHealth> getFormsByCluster(String cluster) {
 
         // String sysdate =  spDateT.substring(0, 8).trim()
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                FormsTable._ID,
-                FormsTable.COLUMN_UID,
-                FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_CLUSTER,
-                FormsTable.COLUMN_HHNO,
-                FormsTable.COLUMN_ISTATUS,
-                FormsTable.COLUMN_SYNCED,
+                MHTable.COLUMN_ID,
+                MHTable.COLUMN_UID,
+                MHTable.COLUMN_SYSDATE,
+                MHTable.COLUMN_MH02,
+                MHTable.COLUMN_MH06,
+                MHTable.COLUMN_MH07,
+                MHTable.COLUMN_SA,
+                MHTable.COLUMN_SYNCED,
 
         };
-        String whereClause = FormsTable.COLUMN_CLUSTER + " = ? ";
+        String whereClause = MHTable.COLUMN_MH02 + " = ? ";
         String[] whereArgs = new String[]{cluster};
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                FormsTable.COLUMN_ID + " ASC";
+                MHTable.COLUMN_ID + " ASC";
 
-        Collection<Form> allFC = new ArrayList<>();
+        Collection<MobileHealth> allFC = new ArrayList<>();
         try {
             c = db.query(
-                    FormsTable.TABLE_NAME,  // The table to query
+                    MHTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1667,14 +1670,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                Form fc = new Form();
-                fc.setId(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
-                fc.setUid(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
-                fc.setSysDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
-                fc.setCluster(c.getString(c.getColumnIndex(FormsTable.COLUMN_CLUSTER)));
-                fc.setHhno(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHNO)));
-                fc.setIStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
-                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
+                MobileHealth fc = new MobileHealth();
+                fc.setId(c.getString(c.getColumnIndex(MHTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndex(MHTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndex(MHTable.COLUMN_SYSDATE)));
+                fc.setMh02(c.getString(c.getColumnIndex(MHTable.COLUMN_MH02)));
+                fc.setMh06(c.getString(c.getColumnIndex(MHTable.COLUMN_MH06)));
+                fc.setMh07(c.getString(c.getColumnIndex(MHTable.COLUMN_MH07)));
+                fc.setSynced(c.getString(c.getColumnIndex(MHTable.COLUMN_SYNCED)));
+                fc.sAHydrate(c.getString(c.getColumnIndex(MHTable.COLUMN_SA)));
+                Log.d(TAG, "getFormsByCluster: " + c.getString(c.getColumnIndex(MHTable.COLUMN_SA)));
                 allFC.add(fc);
             }
         } finally {
@@ -1773,33 +1778,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public Collection<Form> getTodayForms(String sysdate) {
+    public Collection<MobileHealth> getTodayForms(String sysdate) {
 
         // String sysdate =  spDateT.substring(0, 8).trim()
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                FormsTable._ID,
-                FormsTable.COLUMN_UID,
-                FormsTable.COLUMN_SYSDATE,
-                FormsTable.COLUMN_CLUSTER,
-                FormsTable.COLUMN_HHNO,
-                FormsTable.COLUMN_ISTATUS,
-                FormsTable.COLUMN_SYNCED,
+                MHTable.COLUMN_ID,
+                MHTable.COLUMN_UID,
+                MHTable.COLUMN_SYSDATE,
+                MHTable.COLUMN_MH02,
+                MHTable.COLUMN_MH06,
+                MHTable.COLUMN_MH07,
+                MHTable.COLUMN_SA,
+                MHTable.COLUMN_SYNCED,
+
 
         };
-        String whereClause = FormsTable.COLUMN_SYSDATE + " Like ? ";
+        String whereClause = MHTable.COLUMN_SYSDATE + " Like ? ";
         String[] whereArgs = new String[]{"%" + sysdate + " %"};
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;
 
-        String orderBy = FormsTable.COLUMN_ID + " DESC";
+        String orderBy = MHTable.COLUMN_ID + " DESC";
 
-        Collection<Form> allFC = new ArrayList<>();
+        Collection<MobileHealth> allFC = new ArrayList<>();
         try {
             c = db.query(
-                    FormsTable.TABLE_NAME,  // The table to query
+                    MHTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -1808,14 +1815,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                Form fc = new Form();
-                fc.setId(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
-                fc.setUid(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
-                fc.setSysDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
-                fc.setCluster(c.getString(c.getColumnIndex(FormsTable.COLUMN_CLUSTER)));
-                fc.setHhno(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHNO)));
-                fc.setIStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
-                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
+                MobileHealth fc = new MobileHealth();
+                fc.setId(c.getString(c.getColumnIndex(MHTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndex(MHTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndex(MHTable.COLUMN_SYSDATE)));
+                fc.setMh02(c.getString(c.getColumnIndex(MHTable.COLUMN_MH02)));
+                fc.setMh06(c.getString(c.getColumnIndex(MHTable.COLUMN_MH06)));
+                fc.setMh07(c.getString(c.getColumnIndex(MHTable.COLUMN_MH07)));
+                fc.sAHydrate(c.getString(c.getColumnIndex(MHTable.COLUMN_SA)));
+                fc.setSynced(c.getString(c.getColumnIndex(MHTable.COLUMN_SYNCED)));
                 allFC.add(fc);
             }
         } finally {

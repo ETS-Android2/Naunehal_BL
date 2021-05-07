@@ -78,12 +78,12 @@ class MainViewModel(val repository: GeneralRepository) : ViewModel() {
         }
     }
 
-    fun getCampFromDB(campNo: String) {
+    fun getCampFromDB(campNo: String, distCode: String) {
         _campsResponse.value = ResponseStatusCallbacks.loading(null)
         viewModelScope.launch {
             try {
                 delay(1000)
-                val camp = repository.getCampsFromDB(campNo)
+                val camp = repository.getCampsFromDB(campNo, distCode)
                 _campsResponse.value = ResponseStatusCallbacks.success(data = camp)
             } catch (e: Exception) {
                 _campsResponse.value =

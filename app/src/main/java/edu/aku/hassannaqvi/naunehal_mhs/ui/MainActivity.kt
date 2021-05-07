@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -183,6 +184,13 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        bi.camps.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                populateCampDetails()
+            }
+            true
+        }
+
     }
 
     /*
@@ -259,12 +267,15 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.databaseBtn -> startActivity(Intent(this, AndroidDatabaseManager::class.java))
             R.id.btn_check_camp -> {
-                if (!Validator.emptyTextBox(this, bi.camps)) return
-                viewModel.getCampFromDB(bi.camps.text.toString())
+                populateCampDetails()
             }
         }
     }
 
+    fun populateCampDetails() {
+        if (!Validator.emptyTextBox(this, bi.camps)) return
+        viewModel.getCampFromDB(bi.camps.text.toString(), MainApp.user.dist_id)
+    }
 
     /*
     * Stop animation on statistic Layout

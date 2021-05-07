@@ -1,11 +1,11 @@
 package edu.aku.hassannaqvi.naunehal_mhs.adapters;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +15,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.naunehal_mhs.R;
 import edu.aku.hassannaqvi.naunehal_mhs.database.DatabaseHelper;
-import edu.aku.hassannaqvi.naunehal_mhs.models.Form;
+import edu.aku.hassannaqvi.naunehal_mhs.models.MobileHealth;
 
 
 /**
@@ -24,10 +24,10 @@ import edu.aku.hassannaqvi.naunehal_mhs.models.Form;
 public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> {
     Context c;
     DatabaseHelper db;
-    private List<Form> fc = Collections.emptyList();
+    private List<MobileHealth> fc = Collections.emptyList();
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public FormsAdapter(List<Form> fc, Context c) {
+    public FormsAdapter(List<MobileHealth> fc, Context c) {
         this.fc = fc;
         this.c = c;
         Log.d("TAG:count", String.valueOf(getItemCount()));
@@ -52,17 +52,27 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        int childCount = 0;
+/*        int childCount = 0;
         childCount = db.getChildrenByUUID(fc.get(position).getUid());
         int photoChild = 0;
         photoChild = db.getChildrenPhotoCheck(fc.get(position).getUid());
         int cardChild = 0;
-        cardChild = db.getChildrenCardCheck(fc.get(position).getUid());
+        cardChild = db.getChildrenCardCheck(fc.get(position).getUid());*/
 
 
-        String iStatus = "Status  Unknown";
+        String Status = "Status  Unknown";
         int iColor = 0;
-        switch (fc.get(position).getIStatus()) {
+        switch (fc.get(position).getMh010()) {
+            case "1":
+                holder.status.setBackgroundColor(c.getResources().getColor(R.color.colorAccent));
+                holder.status.setImageResource(R.drawable.male);
+                break;
+            case "2":
+                holder.status.setBackgroundColor(c.getResources().getColor(R.color.colorPrimary));
+                holder.status.setImageResource(R.drawable.female);
+                break;
+        }
+      /*  switch (fc.get(position).getIStatus()) {
             case "1":
                 iStatus = "Complete";
                 iColor = Color.GREEN;
@@ -96,13 +106,15 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
                 iColor = Color.RED;
                 break;
 
-        }
+        }*/
 
-        holder.hhno.setText(fc.get(position).getHhno() + " \t\t(" + fc.get(position).getSysDate() + ")");
-        holder.cluster.setText(fc.get(position).getCluster());
-        holder.istatus.setText(iStatus);
-        holder.sysdate.setText("  Child Count: " + childCount + " \t\t\t Card Seen: " + cardChild + " \t\t\t Photo Child: " + photoChild);
-        holder.istatus.setTextColor(iColor);
+        holder.hhno.setText(fc.get(position).getMh02() + "\t\t\t | \t\t\t" + fc.get(position).getSysDate());
+        holder.father.setText(" ( " + fc.get(position).getMh08() + " )");
+        holder.cluster.setText(fc.get(position).getMh07());
+        holder.istatus.setText(fc.get(position).getMh06());
+        Log.d("TAG", "onBindViewHolder: gender " + fc.get(position).getMh010());
+        holder.sysdate.setText(fc.get(position).getMh09y() + "y \t\t\t " + (fc.get(position).getMh010().equals("1") ? "Male" : "Female"));
+        holder.status.setBackgroundColor(iColor);
 
 
     }
@@ -123,6 +135,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         public TextView cluster;
         public TextView hhno;
         public TextView istatus;
+        public ImageView status;
+        public TextView father;
         // each data item is just a string in this case
 
         public ViewHolder(View v) {
@@ -132,6 +146,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
             cluster = v.findViewById(R.id.cluster);
             hhno = v.findViewById(R.id.hhno);
             istatus = v.findViewById(R.id.istatus);
+            status = v.findViewById(R.id.status);
+            father = v.findViewById(R.id.fathername);
 
         }
 
