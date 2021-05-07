@@ -227,7 +227,7 @@ fun String.shortStringLength(): String {
      */
     var calStr = this
     if (this.length > 15)
-        calStr = this.substring(15).plus("...")
+        calStr = this.substring(0, 15).plus("...")
     return calStr
 }
 
