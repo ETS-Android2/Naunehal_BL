@@ -24,11 +24,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <LinearLayout
                 android:id="@+id/fldGrpHH01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- hh05  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -38,31 +40,25 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_hh05" />
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_hh05" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/hh05" />
-
-                        </LinearLayout>
+                        <TextView
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/hh05" />
 
                         <Spinner
                             android:id="@+id/hh05"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
 
                     </LinearLayout>
 
@@ -144,7 +140,7 @@
                             android:gravity="center"
                             android:hint="######"
                             android:inputType="number"
-                            android:text="@{form.hh08}"
+                            android:text="@={form.hh08}"
                             app:mask="######" />
 
                     </LinearLayout>
@@ -189,7 +185,7 @@
                             android:hint="#-####-###"
                             android:inputType="textCapCharacters"
                             android:maxLength="10"
-                            android:text="@{form.hh09}"
+                            android:text="@={form.hh09}"
                             android:textDirection="ltr" />
 
                     </LinearLayout>
