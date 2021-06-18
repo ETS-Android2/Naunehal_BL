@@ -1,21 +1,13 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
-import android.text.TextUtils
 import android.text.TextWatcher
-import android.text.format.DateFormat
-import android.util.Log
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.validatorcrawler.aliazaz.Clear
@@ -24,27 +16,21 @@ import edu.aku.hassannaqvi.naunehal.R
 import edu.aku.hassannaqvi.naunehal.base.repository.GeneralRepository
 import edu.aku.hassannaqvi.naunehal.base.repository.ResponseStatus
 import edu.aku.hassannaqvi.naunehal.base.viewmodel.H1ViewModel
-import edu.aku.hassannaqvi.naunehal.contracts.FormsContract
 import edu.aku.hassannaqvi.naunehal.core.MainApp
 import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper
 import edu.aku.hassannaqvi.naunehal.databinding.ActivityIdentificationSectionBinding
-import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection01hhBinding
-import edu.aku.hassannaqvi.naunehal.models.BLRandom
 import edu.aku.hassannaqvi.naunehal.models.Form
-import edu.aku.hassannaqvi.naunehal.ui.EndingActivity
 import edu.aku.hassannaqvi.naunehal.utils.convertStringToUpperCase
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
 import edu.aku.hassannaqvi.naunehal.utils.shortStringLength
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.json.JSONObject
-import org.threeten.bp.Instant
-import org.threeten.bp.LocalDateTime
-import org.threeten.bp.ZoneId
-import java.text.ParseException
-import java.text.SimpleDateFormat
 import java.util.*
+
+
+
+
 
 class IdentificationSectionActivity : AppCompatActivity() {
     lateinit var bi: ActivityIdentificationSectionBinding
@@ -161,7 +147,6 @@ class IdentificationSectionActivity : AppCompatActivity() {
                 }
             }
         })
-
         setupSkips()
     }
 

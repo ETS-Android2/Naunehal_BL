@@ -14,7 +14,6 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.validatorcrawler.aliazaz.Clear
@@ -60,6 +59,7 @@ class Section01HHActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_01hh)
+        bi.form = form
 
         /*
         * Obtaining ViewModel
@@ -167,7 +167,6 @@ class Section01HHActivity : AppCompatActivity() {
             initForm() //<== If form does not exist in database (New Form)
         }
         form = Form()
-        bi.setVariable(BR.form, form)
         setupSkips()
     }
 
