@@ -968,6 +968,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.hh18.equals(`1`)}"
+                                    android:onClick="@{()->form.setHh18(`1`)}"
                                     android:text="@string/hh1801" />
 
                                 <RadioButton
@@ -976,6 +977,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.hh18.equals(`2`)}"
+                                    android:onClick="@{()->form.setHh18(`2`)}"
                                     android:text="@string/hh1802" />
 
                             </RadioGroup>
