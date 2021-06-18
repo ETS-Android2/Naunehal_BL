@@ -1379,7 +1379,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{form.hh24}"
+                                android:text="@={form.hh24}"
                                 app:maxValue="20"
                                 app:minValue="0"
                                 app:type="range" />
