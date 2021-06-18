@@ -1029,7 +1029,7 @@
                                     android:layout_height="wrap_content"
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                                     android:hint="@string/hh19"
-                                    android:text="@{form.hh19}" />
+                                    android:text="@={form.hh19}" />
 
                             </LinearLayout>
 
