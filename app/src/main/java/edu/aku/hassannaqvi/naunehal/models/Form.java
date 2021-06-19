@@ -737,6 +737,20 @@ public class Form extends BaseObservable {
 
     public void setHh11(String hh11) {
         this.hh11 = hh11;
+        setHh12(hh11.equals("2") ? "" : hh12);
+        setHh13(hh11.equals("2") ? "" : hh13);
+        setHh14(hh11.equals("2") ? "" : hh14);
+        setHh15(hh11.equals("2") ? "" : hh15);
+        setHh16(hh11.equals("2") ? "" : hh16);
+        setHh17(hh11.equals("2") ? "" : hh17);
+        setHh18(hh11.equals("2") ? "" : hh18);
+        setHh19(hh11.equals("2") ? "" : hh19);
+        setHh20(hh11.equals("2") ? "" : hh20);
+        setHh21(hh11.equals("2") ? "" : hh21);
+        setHh22(hh11.equals("2") ? "" : hh22);
+        setHh23(hh11.equals("2") ? "" : hh23);
+        setHh24(hh11.equals("2") ? "" : hh24);
+        setHh25(hh11.equals("2") ? "" : hh25);
         notifyPropertyChanged(BR.hh11);
     }
 

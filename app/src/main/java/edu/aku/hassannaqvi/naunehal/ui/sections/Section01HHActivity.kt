@@ -171,8 +171,6 @@ class Section01HHActivity : AppCompatActivity() {
     }
 
     private fun setupSkips() {
-        rgListener(bi.hh11, bi.hh1102, bi.llhh11)
-        rgListener(bi.hh18, bi.hh1801, bi.llhh18)
 
         bi.hh05.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
@@ -258,13 +256,6 @@ class Section01HHActivity : AppCompatActivity() {
         })
     }
 
-    private fun rgListener(rg: RadioGroup, rb: RadioButton, vg: ViewGroup) {
-        rg.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
-            Clear.clearAllFields(vg)
-            vg.visibility = View.VISIBLE
-            if (i == rb.id) vg.visibility = View.GONE
-        }
-    }
 
     fun BtnContinue(view: View) {
         if (!formValidation()) return

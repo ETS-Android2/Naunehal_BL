@@ -470,7 +470,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.hh11.equals(`2`)}"
-                                android:onClick="@{()->form.setHh11(`2`)}"
+                                android:onClick="@{()->form.setHh11(`2`) + hh14.clearCheck() + hh15.clearCheck() + hh17.clearCheck() + hh18.clearCheck() + hh20.clearCheck()}"
                                 android:text="@string/hh1102" />
 
                         </RadioGroup>
@@ -482,10 +482,10 @@
 
 
                 <LinearLayout
-                    android:id="@+id/llhh11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="@{form.hh11.equals(`2`) ? View.GONE : View.VISIBLE}">
 
 
                     <!-- hh12  Input   -->
@@ -1438,8 +1438,9 @@
                     </androidx.cardview.widget.CardView>
 
 
-
                 </LinearLayout>
+
+
 
 
                 <!--EndButton LinearLayout-->
