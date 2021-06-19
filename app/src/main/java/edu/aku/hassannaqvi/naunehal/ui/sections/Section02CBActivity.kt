@@ -251,7 +251,7 @@ class Section02CBActivity : AppCompatActivity() {
 
     }
 
-    fun cb04yyOnTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+    public fun cb04yyOnTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
         bi.cb0502.isEnabled = false
         bi.cb0502.text = null
         bi.cb0501.isEnabled = false

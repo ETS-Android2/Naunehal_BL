@@ -250,6 +250,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:onTextChanged="cb04yyOnTextChanged"
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
