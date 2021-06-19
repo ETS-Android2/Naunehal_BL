@@ -179,101 +179,85 @@
 
                     </LinearLayout>
 
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layoutDirection="ltr"
                         android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="1dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
                             <TextView
                                 style="@style/sub_labels"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/cb04dd" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb04dd"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{cinfo.cb04dd}"
+                                android:text="@={cinfo.cb04dd}"
                                 app:defaultValue="98"
                                 app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
 
-                        </LinearLayout>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="1dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"/>
 
                             <TextView
                                 style="@style/sub_labels"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/cb04mm" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb04mm"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="@string/month"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{cinfo.cb04mm}"
+                                android:text="@={cinfo.cb04mm}"
                                 app:defaultValue="98"
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
 
-                        </LinearLayout>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="1dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"/>
 
                             <TextView
                                 style="@style/sub_labels"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/cb04yy" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb04yy"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="@string/year"
+                                android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
-                                android:text="@{cinfo.cb04yy}"
+                                android:text="@={cinfo.cb04yy}"
                                 app:defaultValue="9998"
                                 app:maxValue="2021"
                                 app:minValue="2016"
                                 app:type="range" />
-
-                        </LinearLayout>
 
                     </LinearLayout>
 
