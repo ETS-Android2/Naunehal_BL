@@ -48,18 +48,17 @@
 
                         <TextView
                             style="@style/sub_labels"
-                            android:layout_width="0dp"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/cb01" />
 
                         <TextView
                             android:id="@+id/cb01"
-                            style="@style/sub_labels"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@{childInformation.cb01}" />
+                            android:gravity="center"
+                            android:text="@={childInformation.cb01}" />
 
                     </LinearLayout>
 
@@ -70,11 +69,6 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVcb02"
                 style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -89,21 +83,19 @@
                             android:text="@string/Q_cb02" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:text="@string/cb02" />
 
+                        <EditText
+                            android:id="@+id/cb02"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:hint="@string/cb02"
+                            android:text="@={childInformation.cb02}" />
+
                     </LinearLayout>
-
-                    <EditText
-                        android:id="@+id/cb02"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                        android:hint="@string/cb02"
-                        android:text="@{childInformation.cb02}" />
-
-                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -112,11 +104,6 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVcb03"
                 style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -131,37 +118,35 @@
                             android:text="@string/Q_cb03" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:text="@string/cb03" />
 
+                        <RadioGroup
+                            android:id="@+id/cb03"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/cb0301"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{childInformation.cb03.equals(`1`)}"
+                                android:text="@string/cb0301" />
+
+                            <RadioButton
+                                android:id="@+id/cb0302"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{childInformation.cb03.equals(`2`)}"
+                                android:text="@string/cb0302" />
+
+                        </RadioGroup>
+
                     </LinearLayout>
-
-                    <RadioGroup
-                        android:id="@+id/cb03"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/cb0301"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:checked="@{childInformation.cb03.equals(`1`)}"
-                            android:text="@string/cb0301" />
-
-                        <RadioButton
-                            android:id="@+id/cb0302"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:checked="@{childInformation.cb03.equals(`2`)}"
-                            android:text="@string/cb0302" />
-
-                    </RadioGroup>
-
-                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
