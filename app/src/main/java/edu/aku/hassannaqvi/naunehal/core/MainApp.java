@@ -27,7 +27,7 @@ public class MainApp extends Application {
     public static Form form;
     public static Child child;
     public static Immunization immunization;
-    public static ChildInformation childInformation;
+    public static ChildInformation childInfo;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static Users user;

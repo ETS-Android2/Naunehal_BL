@@ -752,7 +752,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = ChildInfoTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.childInformation.getId())};
+        String[] selectionArgs = {String.valueOf(MainApp.childInfo.getId())};
 
         return db.update(ChildInfoTable.TABLE_NAME,
                 values,

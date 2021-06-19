@@ -21,7 +21,6 @@ import edu.aku.hassannaqvi.naunehal.utils.WarningActivityInterface
 import edu.aku.hassannaqvi.naunehal.utils.extension.gotoActivity
 import edu.aku.hassannaqvi.naunehal.utils.extension.obtainViewModel
 import edu.aku.hassannaqvi.naunehal.utils.openSectionEndingActivity
-import edu.aku.hassannaqvi.naunehal.utils.openWarningActivity
 import java.util.*
 
 class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
@@ -56,7 +55,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
         bi.speedDial.setOnActionSelectedListener { actionItem ->
             when (actionItem.id) {
                 R.id.fab_add -> {
-                    MainApp.childInformation = ChildInformation((adapter.childItems.size + 1).toString())
+                    MainApp.childInfo = ChildInformation((adapter.childItems.size + 1).toString())
                     gotoActivity(Section02CBActivity::class.java)
                 }
                 R.id.fab_finish -> {
@@ -124,7 +123,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
     * Callback call after pressing Child item in recyclerview
     * */
     override fun callWarningActivity(id: Int, item: Any?) {
-        MainApp.childInformation = item as ChildInformation
+        MainApp.childInfo = item as ChildInformation
         gotoActivity(Section02CBActivity::class.java)
     }
 
@@ -142,7 +141,7 @@ class ChildrenListActivity : AppCompatActivity(), WarningActivityInterface {
             }
 
             override fun onButtonItemClick(item: ChildInformation, flag: Boolean) {
-                MainApp.childInformation = ChildInformation((adapter.childItems.size + 1).toString(), flag, item)
+                MainApp.childInfo = ChildInformation((adapter.childItems.size + 1).toString(), flag, item)
                 gotoActivity(Section02CBActivity::class.java)
             }
         })
