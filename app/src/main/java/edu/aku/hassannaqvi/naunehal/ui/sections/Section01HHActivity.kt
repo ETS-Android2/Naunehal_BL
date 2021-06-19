@@ -239,7 +239,7 @@ class Section01HHActivity : AppCompatActivity() {
             }
         })
 
-        bi.hh14.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
+        bi.hh14.setOnCheckedChangeListener { _: RadioGroup?, i: Int ->
             bi.hh1713.isEnabled = i == bi.hh1402.id
         }
 
