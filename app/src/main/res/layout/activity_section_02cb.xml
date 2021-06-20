@@ -531,34 +531,43 @@
                         <RadioGroup
                             android:id="@+id/cb06"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/cb0601"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb06.equals(`1`)}"
+                                android:onClick="@{()->cinfo.setCb06(`1`)}"
                                 android:text="@string/cb0601" />
 
                             <RadioButton
                                 android:id="@+id/cb0602"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb06.equals(`2`)}"
+                                android:onClick="@{()->cinfo.setCb06(`2`)}"
                                 android:text="@string/cb0602" />
 
                             <RadioButton
                                 android:id="@+id/cb0603"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb06.equals(`3`)}"
+                                android:onClick="@{()->cinfo.setCb06(`3`)}"
                                 android:text="@string/cb0603" />
 
                             <RadioButton
                                 android:id="@+id/cb0696"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb06.equals(`4`)}"
+                                android:onClick="@{()->cinfo.setCb06(`4`)}"
                                 android:text="@string/cb0696" />
 
                         </RadioGroup>
