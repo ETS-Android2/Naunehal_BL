@@ -617,11 +617,6 @@
                     android:id="@+id/fldGrpCVcb08"
                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -635,26 +630,24 @@
                                 android:text="@string/Q_cb08" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:text="@string/cb08" />
 
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cb08"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={cinfo.cb08}"
+                                app:maxValue="99"
+                                app:minValue="12"
+                                app:type="range" />
+
                         </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cb08"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="##"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@{cinfo.cb08}"
-                            app:maxValue="99"
-                            app:minValue="12"
-                            app:type="range" />
-
-                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
