@@ -582,11 +582,6 @@
                     android:id="@+id/fldGrpCVcb07"
                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -600,21 +595,19 @@
                                 android:text="@string/Q_cb07" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:text="@string/cb07" />
 
+                            <EditText
+                                android:id="@+id/cb07"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                                android:hint="@string/cb07"
+                                android:text="@={cinfo.cb07}" />
+
                         </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/cb07"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:hint="@string/cb07"
-                            android:text="@{cinfo.cb07}" />
-
-                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
