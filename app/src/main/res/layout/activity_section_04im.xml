@@ -2417,6 +2417,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im09.equals(`1`)}"
+                                    android:onClick="@{()->form.setIm09(`1`)}"
                                     android:text="@string/im0901" />
 
                                 <RadioButton
@@ -2425,6 +2426,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im09.equals(`2`)}"
+                                    android:onClick="@{()->form.setIm09(`2`)}"
                                     android:text="@string/im0902" />
 
                                 <RadioButton
@@ -2433,6 +2435,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im09.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm09(`98`)}"
                                     android:text="@string/im0903" />
 
                             </RadioGroup>
