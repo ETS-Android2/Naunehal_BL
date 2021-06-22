@@ -2294,6 +2294,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im08a.equals(`2`)}"
+                                    android:onClick="@{()->form.setIm08a(`2`)}"
                                     android:text="@string/im08a2" />
 
                                 <RadioButton
@@ -2302,6 +2303,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im08a.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm08a(`98`)}"
                                     android:text="@string/im08a3" />
 
                             </RadioGroup>
