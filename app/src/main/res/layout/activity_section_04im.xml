@@ -2517,7 +2517,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility='@{im1001.checked? View.VISIBLE : View.GONE}'>
+                        android:visibility="@{form.im10.equals(`1`)? View.VISIBLE : View.GONE}">
 
                         <!-- im11  Radio   -->
                         <androidx.cardview.widget.CardView style="@style/cardView">
@@ -2769,6 +2769,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:checked="@{form.im13.equals(`1`)}"
+                                        android:onClick="@{()->form.setIm13(`1`)}"
                                         android:text="@string/im1301" />
 
                                     <RadioButton
@@ -2777,6 +2778,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:checked="@{form.im13.equals(`2`)}"
+                                        android:onClick="@{()->form.setIm13(`2`)}"
                                         android:text="@string/im1302" />
 
                                     <RadioButton
@@ -2785,6 +2787,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:checked="@{form.im13.equals(`98`)}"
+                                        android:onClick="@{()->form.setIm13(`98`)}"
                                         android:text="@string/im1303" />
 
                                 </RadioGroup>
