@@ -2871,7 +2871,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpim15"
                         style="@style/cardView"
-                        android:visibility='@{im1401.checked? View.VISIBLE : View.GONE}'>
+                        android:visibility="@{form.im14.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2909,6 +2909,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im15.equals(`1`)}"
+                                    android:onClick="@{()->form.setIm15(`1`)}"
                                     android:text="@string/im1501" />
 
                                 <RadioButton
@@ -2917,6 +2918,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im15.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm15(`98`)}"
                                     android:text="@string/im1598" />
 
                             </RadioGroup>
@@ -2929,8 +2931,8 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:tag="im15a"
-                                android:text="@{form.im1501}"
-                                android:visibility='@{form.im15.equals(`1`) ? View.VISIBLE : View.GONE}'
+                                android:text="@={form.im1501}"
+                                android:visibility="@{form.im15.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="9"
                                 app:minValue="1"
                                 app:type="range" />
