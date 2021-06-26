@@ -3013,7 +3013,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpim17"
                         style="@style/cardView"
-                        android:visibility="@{form.im16.equals(`1`)? View.VISIBLE : View.GONE}">
+                        android:visibility="@{form.im16.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -3040,6 +3040,7 @@
                             </LinearLayout>
 
                             <RadioGroup
+                                android:id="@+id/im17"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
