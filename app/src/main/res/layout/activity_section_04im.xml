@@ -3050,6 +3050,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im17.equals(`1`)}"
+                                    android:onClick="@{()->form.setIm17(`1`)}"
                                     android:text="@string/im1701" />
 
                                 <RadioButton
@@ -3058,6 +3059,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im17.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm17(`98`)}"
                                     android:text="@string/im1798" />
 
                             </RadioGroup>
@@ -3070,7 +3072,7 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:tag="im17a"
-                                android:text="@{form.im1701}"
+                                android:text="@={form.im1701}"
                                 android:visibility="@{form.im17.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="9"
                                 app:minValue="1"
