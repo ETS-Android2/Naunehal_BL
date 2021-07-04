@@ -3956,6 +3956,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.im25.equals(`1`)}"
+                                android:onClick="@{()->form.setIm25(`1`)}"
                                 android:text="@string/im2501" />
 
                             <RadioButton
@@ -3963,6 +3964,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.im25.equals(`2`)}"
+                                android:onClick="@{()->form.setIm25(`2`)}"
                                 android:text="@string/im2502" />
 
                             <RadioButton
@@ -3970,6 +3972,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.im25.equals(`3`)}"
+                                android:onClick="@{()->form.setIm25(`3`)}"
                                 android:text="@string/im2503" />
 
                             <RadioButton
@@ -3977,6 +3980,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.im25.equals(`4`)}"
+                                android:onClick="@{()->form.setIm25(`4`)}"
                                 android:text="@string/im2504" />
 
                         </RadioGroup>
