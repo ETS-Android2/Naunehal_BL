@@ -96,7 +96,7 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@{form.pd01}"
+                            android:text="@={form.pd01}"
                             app:maxValue="99"
                             app:minValue="1"
                             app:type="range" />
