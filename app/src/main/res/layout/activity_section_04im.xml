@@ -3517,7 +3517,7 @@
                                     android:hint="@string/im2306"
                                     android:tag="im2306"
                                     android:text="@={form.im2306x}"
-                                    android:visibility='@{form.im23.equals(`96`) ? View.VISIBLE : View.GONE}' />
+                                    android:visibility="@{form.im23.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             </RadioGroup>
 
