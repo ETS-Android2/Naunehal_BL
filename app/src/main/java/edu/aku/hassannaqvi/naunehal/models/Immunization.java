@@ -14,7 +14,7 @@ import edu.aku.hassannaqvi.naunehal.BR;
 import edu.aku.hassannaqvi.naunehal.contracts.IMContract;
 import edu.aku.hassannaqvi.naunehal.core.MainApp;
 
-public class Immunization extends BaseObservable {
+public class Immunization extends BaseObservable implements obeservable {
 
     //Section IM
     public String im02;
@@ -1261,6 +1261,7 @@ public class Immunization extends BaseObservable {
 
     public void setIm24(String im24) {
         this.im24 = im24;
+        setIm2496x(im24.equals("96") ? this.im2496x : "");
         notifyPropertyChanged(BR.im24);
     }
 
