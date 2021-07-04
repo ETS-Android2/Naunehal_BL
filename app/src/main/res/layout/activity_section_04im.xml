@@ -3689,7 +3689,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im23b1}"
+                                    android:text="@={form.im23b1}"
                                     app:maxValue="10"
                                     app:minValue="0"
                                     app:type="range" />
@@ -3703,7 +3703,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    android:text="@{form.im23b2}"
+                                    android:text="@={form.im23b2}"
                                     app:maxValue="59"
                                     app:minValue="0"
                                     app:type="range" />
