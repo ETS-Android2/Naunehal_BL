@@ -644,18 +644,20 @@
                                     android:id="@+id/pd0701"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked="@{form.pd07.equals(`0`)}"
+                                    android:checked="@{form.pd07.equals(`1`)}"
+                                    android:onClick="@{()->form.setPd07(`1`)}"
                                     android:text="@string/pd0701" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/pd0701x"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="@string/pd0701"
+                                    android:gravity="center"
+                                    android:hint="##"
                                     android:inputType="number"
                                     android:tag="pd0701"
-                                    android:text="@{form.pd0701x}"
-                                    android:visibility='@{form.pd07.equals(`0`) ? View.VISIBLE : View.GONE}'
+                                    android:text="@={form.pd0701x}"
+                                    android:visibility="@{form.pd07.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     app:maxValue="20"
                                     app:minValue="1"
                                     app:type="range" />
@@ -665,6 +667,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.pd07.equals(`98`)}"
+                                    android:onClick="@{()->form.setPd07(`98`)}"
                                     android:text="@string/pd0798" />
 
                             </RadioGroup>
