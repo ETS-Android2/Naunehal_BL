@@ -986,6 +986,7 @@ public class Form extends BaseObservable {
 
     public void setPd05(String pd05) {
         this.pd05 = pd05;
+        setPd0596x(pd05.equals("96") ? this.pd0596x : "");
         notifyPropertyChanged(BR.pd05);
     }
 
