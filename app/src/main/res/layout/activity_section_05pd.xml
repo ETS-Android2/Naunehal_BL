@@ -266,6 +266,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd04.equals(`1`)}"
+                                android:onClick="@{()->form.setPd04(`1`)}"
                                 android:text="@string/pd0401" />
 
                             <RadioButton
@@ -273,6 +274,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd04.equals(`2`)}"
+                                android:onClick="@{()->form.setPd04(`2`)}"
                                 android:text="@string/pd0402" />
 
                             <RadioButton
@@ -280,6 +282,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd04.equals(`98`)}"
+                                android:onClick="@{()->form.setPd04(`98`)}"
                                 android:text="@string/pd0498" />
 
                         </RadioGroup>
