@@ -642,20 +642,23 @@
                             <RadioGroup
                                 android:id="@+id/pd07"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/pd0701"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{form.pd07.equals(`1`)}"
                                     android:onClick="@{()->form.setPd07(`1`)}"
                                     android:text="@string/pd0701" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/pd0701x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="##"
                                     android:inputType="number"
@@ -668,8 +671,9 @@
 
                                 <RadioButton
                                     android:id="@+id/pd0798"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{form.pd07.equals(`98`)}"
                                     android:onClick="@{()->form.setPd07(`98`)}"
                                     android:text="@string/pd0798" />
