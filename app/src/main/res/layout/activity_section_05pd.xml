@@ -960,14 +960,14 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/pd1101"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{form.pd1101}"
+                                android:text="@={form.pd1101}"
                                 app:maxValue="10"
                                 app:minValue="0"
                                 app:type="range" />
@@ -981,14 +981,14 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/pd1102"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{form.pd1102}"
+                                android:text="@={form.pd1102}"
                                 app:maxValue="30"
                                 app:minValue="0"
                                 app:type="range" />
