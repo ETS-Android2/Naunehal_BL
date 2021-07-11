@@ -808,20 +808,25 @@
                         <RadioGroup
                             android:id="@+id/pd09"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/pd0901"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.pd09.equals(`1`)}"
+                                android:onClick="@{()->form.setPd09(`1`)}"
                                 android:text="@string/pd0901" />
 
                             <RadioButton
                                 android:id="@+id/pd0902"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.pd09.equals(`2`)}"
+                                android:onClick="@{()->form.setPd09(`2`)}"
                                 android:text="@string/pd0902" />
 
                         </RadioGroup>
