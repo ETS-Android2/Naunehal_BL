@@ -726,6 +726,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`1`)}"
+                                android:onClick="@{()->form.setPd08(`1`)}"
                                 android:text="@string/pd0801" />
 
                             <RadioButton
@@ -733,6 +734,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`2`)}"
+                                android:onClick="@{()->form.setPd08(`2`)}"
                                 android:text="@string/pd0802" />
 
                             <RadioButton
@@ -740,6 +742,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`3`)}"
+                                android:onClick="@{()->form.setPd08(`3`)}"
                                 android:text="@string/pd0803" />
 
                             <RadioButton
@@ -747,6 +750,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`4`)}"
+                                android:onClick="@{()->form.setPd08(`4`)}"
                                 android:text="@string/pd0804" />
 
                             <RadioButton
@@ -754,6 +758,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`5`)}"
+                                android:onClick="@{()->form.setPd08(`5`)}"
                                 android:text="@string/pd0805" />
 
                             <RadioButton
@@ -761,6 +766,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd08.equals(`6`)}"
+                                android:onClick="@{()->form.setPd08(`6`)}"
                                 android:text="@string/pd0806" />
 
                         </RadioGroup>
