@@ -1462,6 +1462,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1601.equals(`1`)}"
+                                android:onClick="@{()->form.setPd1601(form.pd1601.equals(`1`)?``:`1`)}"
                                 android:text="@string/pd1601" />
 
                             <CheckBox
@@ -1469,6 +1470,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1602.equals(`2`)}"
+                                android:onClick="@{()->form.setPd1602(form.pd1602.equals(`2`)?``:`2`)}"
                                 android:text="@string/pd1602" />
 
                             <CheckBox
@@ -1476,6 +1478,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1603.equals(`3`)}"
+                                android:onClick="@{()->form.setPd1603(form.pd1603.equals(`3`)?``:`3`)}"
                                 android:text="@string/pd1603" />
 
                             <CheckBox
@@ -1483,6 +1486,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1604.equals(`4`)}"
+                                android:onClick="@{()->form.setPd1604(form.pd1604.equals(`4`)?``:`4`)}"
                                 android:text="@string/pd1604" />
 
                             <CheckBox
@@ -1490,6 +1494,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1605.equals(`5`)}"
+                                android:onClick="@{()->form.setPd1605(form.pd1605.equals(`5`)?``:`5`)}"
                                 android:text="@string/pd1605" />
 
                             <CheckBox
@@ -1497,6 +1502,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1606.equals(`6`)}"
+                                android:onClick="@{()->form.setPd1606(form.pd1606.equals(`6`)?``:`6`)}"
                                 android:text="@string/pd1606" />
 
                             <CheckBox
@@ -1504,6 +1510,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1607.equals(`7`)}"
+                                android:onClick="@{()->form.setPd1607(form.pd1607.equals(`7`)?``:`7`)}"
                                 android:text="@string/pd1607" />
 
                             <CheckBox
@@ -1511,6 +1518,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.pd1696.equals(`96`)}"
+                                android:onClick="@{()->form.setPd1696(form.pd1696.equals(`96`)?``:`96`)}"
                                 android:text="@string/pd1696" />
 
                             <EditText
@@ -1520,8 +1528,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/pd1696"
                                 android:tag="pd1696"
-                                android:text="@{form.pd1696x}"
-                                android:visibility='@{form.pd1696.equals(`96`) ? View.VISIBLE : View.GONE}' />
+                                android:text="@={form.pd1696x}"
+                                android:visibility="@{form.pd1696.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
 

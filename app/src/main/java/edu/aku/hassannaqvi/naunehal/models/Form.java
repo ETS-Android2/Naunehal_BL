@@ -1203,6 +1203,7 @@ public class Form extends BaseObservable {
     }
 
     public void setPd1601(String pd1601) {
+        if (this.pd1601.equals(pd1601)) return;
         this.pd1601 = pd1601;
         notifyPropertyChanged(BR.pd1601);
     }
@@ -1213,6 +1214,7 @@ public class Form extends BaseObservable {
     }
 
     public void setPd1602(String pd1602) {
+        if (this.pd1602.equals(pd1602)) return;
         this.pd1602 = pd1602;
         notifyPropertyChanged(BR.pd1602);
     }
@@ -1223,6 +1225,7 @@ public class Form extends BaseObservable {
     }
 
     public void setPd1603(String pd1603) {
+        if (this.pd1603.equals(pd1603)) return;
         this.pd1603 = pd1603;
         notifyPropertyChanged(BR.pd1603);
     }
@@ -1233,6 +1236,7 @@ public class Form extends BaseObservable {
     }
 
     public void setPd1604(String pd1604) {
+        if (this.pd1604.equals(pd1604)) return;
         this.pd1604 = pd1604;
         notifyPropertyChanged(BR.pd1604);
     }
@@ -1243,6 +1247,7 @@ public class Form extends BaseObservable {
     }
 
     public void setPd1605(String pd1605) {
+        if (this.pd1605.equals(pd1605)) return;
         this.pd1605 = pd1605;
         notifyPropertyChanged(BR.pd1605);
     }
@@ -1253,6 +1258,7 @@ public class Form extends BaseObservable {
     }
 
     public void setPd1606(String pd1606) {
+        if (this.pd1606.equals(pd1606)) return;
         this.pd1606 = pd1606;
         notifyPropertyChanged(BR.pd1606);
     }
@@ -1263,6 +1269,7 @@ public class Form extends BaseObservable {
     }
 
     public void setPd1607(String pd1607) {
+        if (this.pd1607.equals(pd1607)) return;
         this.pd1607 = pd1607;
         notifyPropertyChanged(BR.pd1607);
     }
@@ -1273,7 +1280,9 @@ public class Form extends BaseObservable {
     }
 
     public void setPd1696(String pd1696) {
+        if (this.pd1696.equals(pd1696)) return;
         this.pd1696 = pd1696;
+        setPd1696x(pd1696.equals("96") ? this.pd1696x : "");
         notifyPropertyChanged(BR.pd1696);
     }
 
