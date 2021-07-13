@@ -1402,6 +1402,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.pd15.equals(`1`)}"
+                                android:onClick="@{()->form.setPd15(`1`)}"
                                 android:text="@string/pd1501" />
 
                             <RadioButton
@@ -1410,6 +1411,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.pd15.equals(`2`)}"
+                                android:onClick="@{()->form.setPd15(`2`)}"
                                 android:text="@string/pd1502" />
 
                         </RadioGroup>
