@@ -1163,6 +1163,7 @@ public class Form extends BaseObservable {
 
     public void setPd14(String pd14) {
         this.pd14 = pd14;
+        setPd1496x(pd14.equals("96") ? this.pd1496x : "");
         notifyPropertyChanged(BR.pd14);
     }
 

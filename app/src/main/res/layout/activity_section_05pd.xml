@@ -1393,19 +1393,22 @@
                         <RadioGroup
                             android:id="@+id/pd15"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/pd1501"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.pd15.equals(`1`)}"
                                 android:text="@string/pd1501" />
 
                             <RadioButton
                                 android:id="@+id/pd1502"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.pd15.equals(`2`)}"
                                 android:text="@string/pd1502" />
 
