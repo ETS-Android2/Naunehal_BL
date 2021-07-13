@@ -1570,76 +1570,88 @@
                         <RadioGroup
                             android:id="@+id/pd17"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/pd1701"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.pd17.equals(`1`)}"
+                                android:onClick="@{()->form.setPd17(`1`)}"
                                 android:text="@string/pd1701" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/pd1701x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pd1701"
-                                android:inputType="number"
-                                android:tag="pd1701"
-                                android:text="@{form.pd1701x}"
-                                android:visibility='@{form.pd17.equals(`1`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="23"
-                                app:minValue="1"
-                                app:type="range" />
 
                             <RadioButton
                                 android:id="@+id/pd1702"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.pd17.equals(`2`)}"
+                                android:onClick="@{()->form.setPd17(`2`)}"
                                 android:text="@string/pd1702" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/pd1702x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pd1702"
-                                android:inputType="number"
-                                android:tag="pd1702"
-                                android:text="@{form.pd1702x}"
-                                android:visibility='@{form.pd17.equals(`2`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="30"
-                                app:minValue="1"
-                                app:type="range" />
 
                             <RadioButton
                                 android:id="@+id/pd1703"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.pd17.equals(`3`)}"
+                                android:onClick="@{()->form.setPd17(`3`)}"
                                 android:text="@string/pd1703" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/pd1703x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/pd1703"
-                                android:inputType="number"
-                                android:tag="pd1703"
-                                android:text="@{form.pd1703x}"
-                                android:visibility='@{form.pd17.equals(`3`) ? View.VISIBLE : View.GONE}'
-                                app:maxValue="8"
-                                app:minValue="1"
-                                app:type="range" />
 
                             <RadioButton
                                 android:id="@+id/pd1798"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.pd17.equals(`98`)}"
+                                android:onClick="@{()->form.setPd17(`98`)}"
                                 android:text="@string/pd1798" />
 
                         </RadioGroup>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd1701x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLength="2"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:text="@={form.pd1701x}"
+                            android:visibility='@{form.pd17.equals(`1`) ? View.VISIBLE : View.GONE}'
+                            app:maxValue="23"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd1702x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLength="2"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:text="@={form.pd1702x}"
+                            android:visibility='@{form.pd17.equals(`2`) ? View.VISIBLE : View.GONE}'
+                            app:maxValue="30"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/pd1703x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLength="1"
+                            android:hint="#"
+                            android:inputType="number"
+                            android:text="@{form.pd1703x}"
+                            android:visibility='@{form.pd17.equals(`3`) ? View.VISIBLE : View.GONE}'
+                            app:maxValue="8"
+                            app:minValue="1"
+                            app:type="range" />
 
                     </LinearLayout>
 
