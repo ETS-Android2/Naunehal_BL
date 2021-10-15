@@ -1142,6 +1142,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+
                     <!-- cv13  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVcv13"
@@ -1152,27 +1153,23 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <RelativeLayout
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    android:id="@+id/qtxt_cv13"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_toEndOf="@id/q_cv13"
-                                    android:text="@string/cv13" />
-
-                                <TextView
-                                    android:id="@+id/q_cv13"
                                     style="@style/quesNum"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignTop="@id/qtxt_cv13"
-                                    android:layout_alignBottom="@id/qtxt_cv13"
+                                    android:layout_height="match_parent"
                                     android:text="@string/Q_cv13" />
-                            </RelativeLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/cv13" />
+
+                            </LinearLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv13"
@@ -1182,20 +1179,24 @@
 
                                 <RadioButton
                                     android:id="@+id/cv1301"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/cv1301" />
 
                                 <RadioButton
                                     android:id="@+id/cv1302"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/cv1302" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- cv14  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1207,27 +1208,23 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <RelativeLayout
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    android:id="@+id/qtxt_cv14"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_toEndOf="@id/q_cv14"
-                                    android:text="@string/cv14" />
-
-                                <TextView
-                                    android:id="@+id/q_cv14"
                                     style="@style/quesNum"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignTop="@id/qtxt_cv14"
-                                    android:layout_alignBottom="@id/qtxt_cv14"
+                                    android:layout_height="match_parent"
                                     android:text="@string/Q_cv14" />
-                            </RelativeLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/cv14" />
+
+                            </LinearLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv14"
@@ -1237,20 +1234,24 @@
 
                                 <RadioButton
                                     android:id="@+id/cv1401"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/cv1401" />
 
                                 <RadioButton
                                     android:id="@+id/cv1402"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/cv1402" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- cv15  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -1262,27 +1263,23 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <RelativeLayout
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bottom">
 
                                 <TextView
-                                    android:id="@+id/qtxt_cv15"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_toEndOf="@id/q_cv15"
-                                    android:text="@string/cv15" />
-
-                                <TextView
-                                    android:id="@+id/q_cv15"
                                     style="@style/quesNum"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignTop="@id/qtxt_cv15"
-                                    android:layout_alignBottom="@id/qtxt_cv15"
+                                    android:layout_height="match_parent"
                                     android:text="@string/Q_cv15" />
-                            </RelativeLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/cv15" />
+
+                            </LinearLayout>
 
                             <RadioGroup
                                 android:id="@+id/cv15"
@@ -1292,20 +1289,24 @@
 
                                 <RadioButton
                                     android:id="@+id/cv1501"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/cv1501" />
 
                                 <RadioButton
                                     android:id="@+id/cv1502"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/cv1502" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- cv16  Radio   -->
                     <androidx.cardview.widget.CardView
