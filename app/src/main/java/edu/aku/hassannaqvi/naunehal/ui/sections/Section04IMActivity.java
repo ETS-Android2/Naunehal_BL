@@ -1,5 +1,9 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.contextEndActivity;
+import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -41,10 +45,6 @@ import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.AgeModel;
 import edu.aku.hassannaqvi.naunehal.utils.datecollection.DateRepository;
 import kotlin.Pair;
-
-import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
-import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.contextEndActivity;
-import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivity;
 
 public class Section04IMActivity extends AppCompatActivity implements EndSectionActivity {
 
@@ -205,6 +205,23 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                 : bi.im1002.isChecked() ? "2"
                 : bi.im1003.isChecked() ? "98"
                 : "-1");
+
+        MainApp.immunization.setIm10a01(bi.im10a01.isChecked() ? "1" : "-1");
+        MainApp.immunization.setIm10a02(bi.im10a02.isChecked() ? "2" : "-1");
+        MainApp.immunization.setIm10a03(bi.im10a03.isChecked() ? "3" : "-1");
+        MainApp.immunization.setIm10a04(bi.im10a04.isChecked() ? "4" : "-1");
+        MainApp.immunization.setIm10a05(bi.im10a05.isChecked() ? "5" : "-1");
+        MainApp.immunization.setIm10a06(bi.im10a06.isChecked() ? "6" : "-1");
+        MainApp.immunization.setIm10a07(bi.im10a07.isChecked() ? "7" : "-1");
+        MainApp.immunization.setIm10a08(bi.im10a08.isChecked() ? "8" : "-1");
+        MainApp.immunization.setIm10a09(bi.im10a09.isChecked() ? "9" : "-1");
+        MainApp.immunization.setIm10a10(bi.im10a10.isChecked() ? "10" : "-1");
+        MainApp.immunization.setIm10a11(bi.im10a11.isChecked() ? "11" : "-1");
+        MainApp.immunization.setIm10a12(bi.im10a12.isChecked() ? "12" : "-1");
+        MainApp.immunization.setIm10a13(bi.im10a13.isChecked() ? "13" : "-1");
+        MainApp.immunization.setIm10a98(bi.im10a98.isChecked() ? "98" : "-1");
+        MainApp.immunization.setIm10a96(bi.im10a96.isChecked() ? "96" : "-1");
+        MainApp.immunization.setIm10a96x(bi.im10a96x.getText().toString().isEmpty() ? "-1" : bi.im10a96x.getText().toString());
 
         MainApp.immunization.setIm11(bi.im1101.isChecked() ? "1"
                 : bi.im1102.isChecked() ? "2"
@@ -474,7 +491,10 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
             }
         });
 
-        bi.im10.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim10));
+        bi.im10.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVim10a);
+            Clear.clearAllFields(bi.fldGrpim10);
+        });
 
         bi.im14.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpim15));
 
