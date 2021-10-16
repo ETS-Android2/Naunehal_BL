@@ -20,25 +20,27 @@
 
 
         <!-- CUSTOM TOOLBAR -->
-        <!--      <androidx.appcompat.widget.Toolbar
-                  android:id="@+id/toolbar"
-                  android:layout_width="match_parent"
-                  android:layout_height="?attr/actionBarSize"
-                  android:layoutDirection="ltr"
-                  android:textAlignment="center"
-                  app:layout_scrollFlags="scroll|enterAlways"
-                  app:popupTheme="@style/AppTheme.PopupOverlay"
-                  app:titleTextColor="@color/black" />-->
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ToolbarTheme"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/se_title1"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+        <!--<androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@null"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:elevation="4dp"
-            app:titleTextAppearance="@style/topBarStyle"
+            app:titleTextAppearance="@style/topBarStyle" />-->
 
-            />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -51,21 +53,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
-                <!-- se_title1  Title   -->
-                <androidx.cardview.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/se_title1" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
 
                 <!-- se01  Radio   -->

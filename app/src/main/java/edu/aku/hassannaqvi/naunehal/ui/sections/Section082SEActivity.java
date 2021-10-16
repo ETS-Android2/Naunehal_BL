@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -17,8 +19,6 @@ import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
 import edu.aku.hassannaqvi.naunehal.databinding.ActivitySection082seBinding;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
-
-import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
 
 public class Section082SEActivity extends AppCompatActivity implements EndSectionActivity {
 
@@ -52,6 +52,9 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
                 bi.llse36.setVisibility(View.GONE);
             }
         }));
+
+        bi.se4298.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.se42check, !b));
+        bi.se4998.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.se49check, !b));
     }
 
 
@@ -185,8 +188,91 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
 
         form.setSe3302(bi.se3302.getText().toString());
         form.setSe3301(bi.se3301.getText().toString());
+
+        form.setSe41(bi.se4101.isChecked() ? "1"
+                : bi.se4102.isChecked() ? "2"
+                : bi.se4198.isChecked() ? "98"
+                : "-1");
+
+        form.setSe4201(bi.se4201.isChecked() ? "1" : "-1");
+        form.setSe4202(bi.se4202.isChecked() ? "2" : "-1");
+        form.setSe4203(bi.se4203.isChecked() ? "3" : "-1");
+        form.setSe4204(bi.se4204.isChecked() ? "4" : "-1");
+        form.setSe4205(bi.se4205.isChecked() ? "5" : "-1");
+        form.setSe4296(bi.se4296.isChecked() ? "96" : "-1");
+        form.setSe4298(bi.se4298.isChecked() ? "98" : "-1");
+        form.setSe4296x(bi.se4296x.getText().toString().trim().isEmpty() ? "-1" : bi.se4296x.getText().toString());
+
+        form.setSe4301(bi.se4301.isChecked() ? "1" : "-1");
+        form.setSe4302(bi.se4302.isChecked() ? "2" : "-1");
+        form.setSe4303(bi.se4303.isChecked() ? "3" : "-1");
+        form.setSe4304(bi.se4304.isChecked() ? "4" : "-1");
+        form.setSe4305(bi.se4305.isChecked() ? "5" : "-1");
+        form.setSe4306(bi.se4306.isChecked() ? "6" : "-1");
+        form.setSe4307(bi.se4307.isChecked() ? "7" : "-1");
+        form.setSe4308(bi.se4308.isChecked() ? "8" : "-1");
+        form.setSe4309(bi.se4309.isChecked() ? "9" : "-1");
+        form.setSe4310(bi.se4310.isChecked() ? "10" : "-1");
+        form.setSe4311(bi.se4311.isChecked() ? "11" : "-1");
+        form.setSe4396(bi.se4396.isChecked() ? "96" : "-1");
+        form.setSe4396x(bi.se4396x.getText().toString().trim().isEmpty() ? "-1" : bi.se4396x.getText().toString());
+
+        form.setSe4401(bi.se4401.isChecked() ? "1" : "-1");
+        form.setSe4402(bi.se4402.isChecked() ? "2" : "-1");
+        form.setSe4403(bi.se4403.isChecked() ? "3" : "-1");
+        form.setSe4404(bi.se4404.isChecked() ? "4" : "-1");
+        form.setSe4496(bi.se4496.isChecked() ? "96" : "-1");
+        form.setSe4496x(bi.se4496x.getText().toString().trim().isEmpty() ? "-1" : bi.se4496x.getText().toString());
+
+        form.setSe45(bi.se4501.isChecked() ? "1"
+                : bi.se4502.isChecked() ? "2"
+                : bi.se4598.isChecked() ? "98"
+                : "-1");
+
+        form.setSe4601(bi.se4601.isChecked() ? "1" : "-1");
+        form.setSe4602(bi.se4602.isChecked() ? "2" : "-1");
+        form.setSe4603(bi.se4603.isChecked() ? "3" : "-1");
+        form.setSe4604(bi.se4604.isChecked() ? "4" : "-1");
+        form.setSe4605(bi.se4605.isChecked() ? "5" : "-1");
+        form.setSe4606(bi.se4606.isChecked() ? "6" : "-1");
+        form.setSe4696(bi.se4696.isChecked() ? "96" : "-1");
+        form.setSe4696x(bi.se4696x.getText().toString().trim().isEmpty() ? "-1" : bi.se4696x.getText().toString());
+
+        form.setSe4701(bi.se4701.isChecked() ? "1" : "-1");
+        form.setSe4702(bi.se4702.isChecked() ? "2" : "-1");
+        form.setSe4703(bi.se4703.isChecked() ? "3" : "-1");
+        form.setSe4704(bi.se4704.isChecked() ? "4" : "-1");
+        form.setSe4705(bi.se4705.isChecked() ? "5" : "-1");
+        form.setSe4706(bi.se4706.isChecked() ? "6" : "-1");
+        form.setSe4707(bi.se4707.isChecked() ? "7" : "-1");
+        form.setSe4796(bi.se4796.isChecked() ? "96" : "-1");
+        form.setSe4796x(bi.se4796x.getText().toString().trim().isEmpty() ? "-1" : bi.se4796x.getText().toString());
+
+        form.setSe48(bi.se4801.isChecked() ? "1"
+                : bi.se4802.isChecked() ? "2"
+                : bi.se4898.isChecked() ? "98"
+                : "-1");
+
+        form.setSe4901(bi.se4901.isChecked() ? "1" : "-1");
+        form.setSe4902(bi.se4902.isChecked() ? "2" : "-1");
+        form.setSe4903(bi.se4903.isChecked() ? "3" : "-1");
+        form.setSe4904(bi.se4904.isChecked() ? "4" : "-1");
+        form.setSe4998(bi.se4998.isChecked() ? "98" : "-1");
+        form.setSe4996(bi.se4996.isChecked() ? "96" : "-1");
+        form.setSe4996x(bi.se4996x.getText().toString().trim().isEmpty() ? "-1" : bi.se4996x.getText().toString());
+
+        form.setSe50(bi.se5001.isChecked() ? "1"
+                : bi.se5002.isChecked() ? "2"
+                : bi.se5003.isChecked() ? "3"
+                : bi.se5096.isChecked() ? "96"
+                : bi.se5098.isChecked() ? "98"
+                : "-1");
+        form.setSe5096x(bi.se5096x.getText().toString().trim().isEmpty() ? "-1" : bi.se5096x.getText().toString());
+
         form.setSe3401(bi.se3401.getText().toString());
         form.setSe3402(bi.se3402.getText().toString());
+
+
         form.setSe35(bi.se3501.isChecked() ? "1"
                 : bi.se3502.isChecked() ? "2"
                 : bi.se3598.isChecked() ? "98"

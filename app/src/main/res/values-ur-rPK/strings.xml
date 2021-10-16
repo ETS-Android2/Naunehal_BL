@@ -1365,6 +1365,102 @@
     <string name="se33">پیدل چل کر آپ کے گھر کے قریب کسی بھی سرکاری یا نجی صحت کی دیکھ بھال کی سہولت تک پہنچنے میں کتنا وقت لگتا ہے؟</string>
     <string name="se3302">گھنٹے </string>
     <string name="se3301">منٹس</string>
+
+
+    <string name="Q_se41"> se41 </string>
+    <string name="se41"> کیا آپ یا آپ کے گھر کے کسی فرد نے نونہال ہیلتھ کیمپ کا دورہ کیا ہے ؟ </string>
+    <string name="se4101"> ہاں </string>
+    <string name="se4102"> نہیں </string>
+    <string name="se4198"> معلوم نہیں </string>
+
+    <string name="Q_se42"> se42 </string>
+    <string name="se42"> آپ یا گھر کے کسی فرد نے نوہال ہیلتھ کیمپوں کا دورہ کیوں نہیں کیا ؟ </string>
+    <string name="se42info"> ان سب کا انتخاب کریں جو لاگو ہوتے ہیں۔ جوابات نہ پڑھیں، جواب دینے والے کو بے ساختہ جواب دینے دیں </string>
+    <string name="se4201"> کیمپ کے بارے میں معلوم نہیں تھا </string>
+    <string name="se4202"> جانے کی ضرورت نہیں تھی </string>
+    <string name="se4203"> ٹیکوں پر یقین نہیں </string>
+    <string name="se4204"> بہت دور ہے </string>
+    <string name="se4205"> طویل انتظار </string>
+    <string name="se4296"> دیگر </string>
+    <string name="se4298"> معلوم نہیں </string>
+
+    <string name="Q_se43"> se43 </string>
+    <string name="se43"> آپ کو نونہال ہیلتھ کیمپ کے بارے میں کہاں سے معلوم ہوا ؟ </string>
+    <string name="se43info"> ایک سے زیادہ جوابات آسکتے ہیں </string>
+    <string name="se4301"> کمیونٹی موبلائزر TVI Prime </string>
+    <string name="se4302"> کمیونٹی موبلائزر UNICEF </string>
+    <string name="se4303"> ف / سی / وی </string>
+    <string name="se4304"> ولیو ورکر سے  </string>
+    <string name="se4305"> لیڈی ہیلتھ ورکرز (LHW) </string>
+    <string name="se4308"> نرس </string>
+    <string name="se4309"> مسجد / علاقے میں اعلان سے </string>
+    <string name="se4310"> پڑوس سے </string>
+    <string name="se4311"> دوست اور رشتے داروں سے </string>
+    <string name="se4396"> دیگر </string>
+
+    <string name="Q_se44"> se44 </string>
+    <string name="se44"> آپ نونہال ہیلتھ کیمپ کس مقصد کے لیے گئے تھے ؟  </string>
+    <string name="se44info"> ایک سے زیادہ جوابات آسکتے ہیں </string>
+    <string name="se4401"> بچے کے معائنہ کے لیے  </string>
+    <string name="se4402"> ماں کے معائنہ کے لئے </string>
+    <string name="se4403"> بچے کے حفاظتی ٹیکوں کے لیے </string>
+    <string name="se4404"> علاقے میں مرکز صحت نہ ہونے کی وجہ سے </string>
+    <string name="se4306"> لیڈی ہیلتھ وزیٹرز (LHV) </string>
+    <string name="se4307"> ڈاکٹر </string>
+    <string name="se4496"> دیگر </string>
+
+    <string name="Q_se45"> se45 </string>
+    <string name="se45"> کیا آپ یا آپ کے بچے نے نونہال ہیلتھ کیمپ میں کوئی سہولت لی تھی ؟ </string>
+    <string name="se4501"> ہاں </string>
+    <string name="se4502"> نہیں </string>
+    <string name="se4598"> معلوم نہیں </string>
+
+    <string name="Q_se46"> se46 </string>
+    <string name="se46"> آپ یا آپ کے بچے نے نونہال ہیلتھ کیمپ میں کون سی صہولت لی تھی ؟ </string>
+    <string name="se4601"> حفاظتی ٹیکے </string>
+    <string name="se4602"> تشنج کے ٹیکاجات کے لئے </string>
+    <string name="se4603"> بچے کی بیماری کے لیے مشاورت </string>
+    <string name="se4604"> بٹروں کئ بیماری کے لیے مشاورت کرنے </string>
+    <string name="se4605"> حمل کے دوران کی دیکھ بھال </string>
+    <string name="se4606"> عام چیک اپ کے لیے </string>
+    <string name="se4696"> دیگر </string>
+
+    <string name="Q_se47"> se47 </string>
+    <string name="se47"> آپ کے بچے کو نونہال ہیلتھ کیمپ میں حفاظتی ٹیکے نہ لگنے کی کیا وجوہات تھی ؟ </string>
+    <string name="se4701"> حفاظتی ٹیکے دستیاب نہیں تھے </string>
+    <string name="se4702"> کیمپ سٹاف / ڈاکٹر نے مشورہ نہیں دیا تھا </string>
+    <string name="se4703"> بچا بیمار تھا </string>
+    <string name="se4704"> بچے کو ہیلتھ کیمپ نہیں لے کر گئے تھے </string>
+    <string name="se4705"> ٹیکہ لگانے سے انکار کردیا </string>
+    <string name="se4706"> بہت زیادہ انتظار کرنا پڑا تھا </string>
+    <string name="se4707"> حفاظتی ٹیکوں کا کورس مکمل تھا </string>
+    <string name="se4796"> دیگر </string>
+
+    <string name="Q_se48"> se48 </string>
+    <string name="se48"> کیا آپ یا آپ کے گھر میں سے اپنے علاقے میں لگنے والے نونہال ہیلتھ پرموشن کے اجلاس میں شرکت کی ہے ؟ </string>
+    <string name="se4801"> ہاں </string>
+    <string name="se4802"> نہیں </string>
+    <string name="se4898"> معلوم نہیں </string>
+
+    <string name="Q_se49"> se49 </string>
+    <string name="se49"> نونہال ہیلتھ پرموشن میں کون سے موضوع پر گفتگو کی گئ تھی ؟ </string>
+    <string name="se49info"> ان سب کا انتخاب کریں جو لاگو ہوتے ہیں۔ جوابات نہ پڑھیں، جواب دینے والے کو بے ساختہ جواب دینے دیں </string>
+    <string name="se4901"> حفاظتی ٹیکاجات </string>
+    <string name="se4902"> صفائی ستھرائی </string>
+    <string name="se4903"> بچوں کی غذائیت </string>
+    <string name="se4904"> حمل اور زچگی کے دوران صحت کی نگہداشت </string>
+    <string name="se4998"> معلوم نہیں </string>
+    <string name="se4996"> دیگر </string>
+
+    <string name="Q_se50"> se50 </string>
+    <string name="se50"> آپ نے نونہال ہیلتھ پرموشن کے اجلاس  میں شرکت کی کیوں نہیں کی تھی ؟ وجہ بیان کریں </string>
+    <string name="se5001">اس کے بارے میں معلوم نہیں تھا </string>
+    <string name="se5002"> ضرورت محسوس نہیں ہوئی </string>
+    <string name="se5003"> کیمپ بہت دور تھا </string>
+    <string name="se5098"> معلوم نہیں </string>
+    <string name="se5096"> دیگر </string>
+
+
     <string name="se34">آپ کتنے عرصے سے اس گھر میں رہائش پزیر ہیں؟</string>
     <string name="se3401">مہینے</string>
     <string name="se3402">سال</string>
