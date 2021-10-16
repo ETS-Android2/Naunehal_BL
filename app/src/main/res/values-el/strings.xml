@@ -971,6 +971,7 @@
     <string name="cv1006">Wearing a mask in public places</string>
     <string name="cv1007">Keep oneself isolated</string>
     <string name="cv1008">Praying to God</string>
+    <string name="cv1009"> COVID vaccination </string>
     <string name="cv1098">Don’t know</string>
     <string name="cv1096">Others Please Specify</string>
     <string name="cv11">Has COVID-19, the subsequent lockdown &amp; restrictions and fear affected the nutrition and feeding of your child? </string>
@@ -1019,6 +1020,25 @@
     <string name="cv1905">My health, prefer not to specify</string>
     <string name="cv1906">Other, prefer not to say</string>
     <string name="cv1996">Others Please Specify</string>
+
+    <string name="Q_cv20"> cv20 </string>
+    <string name="cv20">Have  you received COVID vaccination? </string>
+    <string name="cv2001">Yes</string>
+    <string name="cv2002">No</string>
+    <string name="Q_cv21"> cv21 </string>
+    <string name="cv21">Why did you not get the COVID vaccine?  (Choose all that apply. Do not read the answers, let the respondent answer spontaneously)</string>
+    <string name="cv2101">Place of immunization too far</string>
+    <string name="cv2102">Time of immunization not convenient</string>
+    <string name="cv2103">Vaccine was not available at facility</string>
+    <string name="cv2104">Time or place of immunization not known </string>
+    <string name="cv2105">Family problem</string>
+    <string name="cv2106">Long wait</string>
+    <string name="cv2107">No faith or trust in COVID vaccine</string>
+    <string name="cv2108">Fear of side effects </string>
+    <string name="cv2109">COVID-19-related (fear of going out, sickness in family)</string>
+    <string name="cv2198">Don’t know</string>
+    <string name="cv2196">Others</string>
+
     <string name="se_title1">Section SE: Household Characteristics </string>
     <string name="se01">What is the mother tongue of the head of the household?</string>
     <string name="se0101">Urdu</string>

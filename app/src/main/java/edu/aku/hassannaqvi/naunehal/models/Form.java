@@ -266,6 +266,7 @@ public class Form extends BaseObservable {
     private String cv1006 = StringUtils.EMPTY;
     private String cv1007 = StringUtils.EMPTY;
     private String cv1008 = StringUtils.EMPTY;
+    private String cv1009 = StringUtils.EMPTY;
     private String cv1096 = StringUtils.EMPTY;
     private String cv1098 = StringUtils.EMPTY;
     private String cv1096x = StringUtils.EMPTY;
@@ -282,6 +283,19 @@ public class Form extends BaseObservable {
     private String cv1896x = StringUtils.EMPTY;
     private String cv19 = StringUtils.EMPTY;
     private String cv1996x = StringUtils.EMPTY;
+    private String cv20 = StringUtils.EMPTY;
+    private String cv2101 = StringUtils.EMPTY;
+    private String cv2102 = StringUtils.EMPTY;
+    private String cv2103 = StringUtils.EMPTY;
+    private String cv2104 = StringUtils.EMPTY;
+    private String cv2105 = StringUtils.EMPTY;
+    private String cv2106 = StringUtils.EMPTY;
+    private String cv2107 = StringUtils.EMPTY;
+    private String cv2108 = StringUtils.EMPTY;
+    private String cv2109 = StringUtils.EMPTY;
+    private String cv2196 = StringUtils.EMPTY;
+    private String cv2198 = StringUtils.EMPTY;
+    private String cv2196x = StringUtils.EMPTY;
     private String cvdate = StringUtils.EMPTY;
     //Section SE
     private String se01 = StringUtils.EMPTY;
@@ -3154,6 +3168,17 @@ public class Form extends BaseObservable {
 
 
     @Bindable
+    public String getCv1009() {
+        return cv1009;
+    }
+
+    public void setCv1009(String cv1009) {
+        this.cv1009 = cv1009;
+        notifyPropertyChanged(BR.cv1009);
+    }
+
+
+    @Bindable
     public String getCv1096() {
         return cv1096;
     }
@@ -3314,6 +3339,148 @@ public class Form extends BaseObservable {
     public void setCv1996x(String cv1996x) {
         this.cv1996x = cv1996x;
         notifyPropertyChanged(BR.cv1996x);
+    }
+
+    @Bindable
+    public String getCv20() {
+        return cv20;
+    }
+
+    public void setCv20(String cv20) {
+        this.cv20 = cv20;
+        notifyPropertyChanged(BR.cv20);
+    }
+
+
+    @Bindable
+    public String getCv2101() {
+        return cv2101;
+    }
+
+    public void setCv2101(String cv2101) {
+        this.cv2101 = cv2101;
+        notifyPropertyChanged(BR.cv2101);
+    }
+
+
+    @Bindable
+    public String getCv2102() {
+        return cv2102;
+    }
+
+    public void setCv2102(String cv2102) {
+        this.cv2102 = cv2102;
+        notifyPropertyChanged(BR.cv2102);
+    }
+
+
+    @Bindable
+    public String getCv2103() {
+        return cv2103;
+    }
+
+    public void setCv2103(String cv2103) {
+        this.cv2103 = cv2103;
+        notifyPropertyChanged(BR.cv2103);
+    }
+
+
+    @Bindable
+    public String getCv2104() {
+        return cv2104;
+    }
+
+    public void setCv2104(String cv2104) {
+        this.cv2104 = cv2104;
+        notifyPropertyChanged(BR.cv2104);
+    }
+
+
+    @Bindable
+    public String getCv2105() {
+        return cv2105;
+    }
+
+    public void setCv2105(String cv2105) {
+        this.cv2105 = cv2105;
+        notifyPropertyChanged(BR.cv2105);
+    }
+
+
+    @Bindable
+    public String getCv2106() {
+        return cv2106;
+    }
+
+    public void setCv2106(String cv2106) {
+        this.cv2106 = cv2106;
+        notifyPropertyChanged(BR.cv2106);
+    }
+
+
+    @Bindable
+    public String getCv2107() {
+        return cv2107;
+    }
+
+    public void setCv2107(String cv2107) {
+        this.cv2107 = cv2107;
+        notifyPropertyChanged(BR.cv2107);
+    }
+
+
+    @Bindable
+    public String getCv2108() {
+        return cv2108;
+    }
+
+    public void setCv2108(String cv2108) {
+        this.cv2108 = cv2108;
+        notifyPropertyChanged(BR.cv2108);
+    }
+
+
+    @Bindable
+    public String getCv2109() {
+        return cv2109;
+    }
+
+    public void setCv2109(String cv2109) {
+        this.cv2109 = cv2109;
+        notifyPropertyChanged(BR.cv2109);
+    }
+
+
+    @Bindable
+    public String getCv2196() {
+        return cv2196;
+    }
+
+    public void setCv2196(String cv2196) {
+        this.cv2196 = cv2196;
+        notifyPropertyChanged(BR.cv2196);
+    }
+
+
+    @Bindable
+    public String getCv2198() {
+        return cv2198;
+    }
+
+    public void setCv2198(String cv2198) {
+        this.cv2198 = cv2198;
+        notifyPropertyChanged(BR.cv2198);
+    }
+
+
+    @Bindable
+    public String getCv2196x() {
+        return cv2196x;
+    }
+
+    public void setCv2196x(String cv2196x) {
+        this.cv2196x = cv2196x;
+        notifyPropertyChanged(BR.cv2196x);
     }
 
 
@@ -4952,6 +5119,7 @@ public class Form extends BaseObservable {
                     .put("cv1006", cv1006)
                     .put("cv1007", cv1007)
                     .put("cv1008", cv1008)
+                    .put("cv1009", cv1009)
                     .put("cv1098", cv1098)
                     .put("cv1096", cv1096)
                     .put("cv1096x", cv1096x)
@@ -4968,6 +5136,19 @@ public class Form extends BaseObservable {
                     .put("cv1896x", cv1896x)
                     .put("cv19", cv19)
                     .put("cv1996x", cv1996x)
+                    .put("cv20", cv20)
+                    .put("cv2101", cv2101)
+                    .put("cv2102", cv2102)
+                    .put("cv2103", cv2103)
+                    .put("cv2104", cv2104)
+                    .put("cv2105", cv2105)
+                    .put("cv2106", cv2106)
+                    .put("cv2107", cv2107)
+                    .put("cv2108", cv2108)
+                    .put("cv2109", cv2109)
+                    .put("cv2198", cv2198)
+                    .put("cv2196", cv2196)
+                    .put("cv2196x", cv2196x)
                     .put("cvdate", cvdate);
 
         } catch (JSONException e) {
@@ -5464,6 +5645,7 @@ public class Form extends BaseObservable {
                 this.cv1006 = json.getString("cv1006");
                 this.cv1007 = json.getString("cv1007");
                 this.cv1008 = json.getString("cv1008");
+                this.cv1009 = json.getString("cv1009");
                 this.cv1098 = json.getString("cv1098");
                 this.cv1096 = json.getString("cv1096");
                 this.cv1096x = json.getString("cv1096x");
@@ -5480,6 +5662,19 @@ public class Form extends BaseObservable {
                 this.cv1896x = json.getString("cv1896x");
                 this.cv19 = json.getString("cv19");
                 this.cv1996x = json.getString("cv1996x");
+                this.cv20 = json.getString("cv20");
+                this.cv2101 = json.getString("cv2101");
+                this.cv2102 = json.getString("cv2102");
+                this.cv2103 = json.getString("cv2103");
+                this.cv2104 = json.getString("cv2104");
+                this.cv2105 = json.getString("cv2105");
+                this.cv2106 = json.getString("cv2106");
+                this.cv2107 = json.getString("cv2107");
+                this.cv2108 = json.getString("cv2108");
+                this.cv2109 = json.getString("cv2109");
+                this.cv2198 = json.getString("cv2198");
+                this.cv2196 = json.getString("cv2196");
+                this.cv2196x = json.getString("cv2196x");
                 this.cvdate = json.getString("cvdate");
 
             } catch (JSONException e) {

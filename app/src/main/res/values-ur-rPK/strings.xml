@@ -986,17 +986,18 @@
     <string name="cv0908"> کوویڈ ویکسینیشن </string>
     <string name="cv0998">معلوم نہیں</string>
     <string name="cv0996">دیگر برائے مہربانی وضاحت کریں</string>
-    <string name="cv10">آپ کےخیال میں COVID-19 کےانفیکشن کی روک تھام کےموثرطریقےکیاہیں؟ </string>
-    <string name="cv10info"> (جو بھی لاگوہوتاہےاسکاانتخاب کریں۔ جوابات پڑھ کر نہ سنائیں،جواب دہندہ کوخودجواب دینے دیں) </string>
-    <string name="cv1001">صابن اور پانی سے بیس سیکنڈ تک بار بار ہاتھ دھونے سے</string>
-    <string name="cv1002">ہینڈ سینیٹائزر سے ہاتھوں کو صاف کرنے سے</string>
-    <string name="cv1003">کھانسی یاچھینکنے کےدوران ٹشویا کہنی کا استعمال کرتے ہوئے منہ اور ناک کو ڈھانپنے سے</string>
-    <string name="cv1004">سماجی فاصلہ برقرار رکھنے سے</string>
-    <string name="cv1005">ایسے بیمار افراد سے رابطے میں گریز کرنے سے جن میں COVID-19 کی علامات ظاہرہوں</string>
-    <string name="cv1006">عوامی مقامات پر ماسک پہننے سے</string>
-    <string name="cv1007">اپنے آپ کودوسروں سے الگ تھلگ رکھنے سے</string>
-    <string name="cv1008">خدا سے دعا مانگنے سے</string>
-    <string name="cv1098">معلوم نہیں</string>
+    <string name="cv10"> آپ کے خیال میں COVID-19 کے انفیکشن کی روک تھام کے موثر طریقے کیا ہیں ؟ </string>
+    <string name="cv10info"> (جو بھی لاگو ہوتا ہے اسکا انتخاب کریں۔ جوابات پڑھ کر نہ سنائیں، جواب دہندہ کو خود جواب دینے دیں )  </string>
+    <string name="cv1001"> صابن اور پانی سے بیس سیکنڈ تک بار بار ہاتھ دھونے سے </string>
+    <string name="cv1002"> ہینڈ سینیٹائزر سے ہاتھوں کو صاف کرنے سے </string>
+    <string name="cv1003"> کھانسی یا چھینکنے کے دوران ٹشو یا کہنی کا استعمال کرتے ہوئے منہ اور ناک کو ڈھانپنے سے </string>
+    <string name="cv1004"> سماجی فاصلہ برقرار رکھنے سے </string>
+    <string name="cv1005"> ایسے بیمار افراد سے رابطے میں گریز کرنے سے جن میں COVID-19 کی علامات ظاہر ہوں </string>
+    <string name="cv1006"> عوامی مقامات پر ماسک پہننے سے </string>
+    <string name="cv1007"> اپنے آپ کو دوسروں سے الگ تھلگ رکھنے سے </string>
+    <string name="cv1008"> خدا سے دعا مانگنے سے </string>
+    <string name="cv1009"> کوویڈ ویکسینیشن </string>
+    <string name="cv1098"> معلوم نہیں</string>
     <string name="cv1096">دیگر برائے مہربانی وضاحت کریں</string>
     <string name="cv11">کیاCOVID-19، اس کے نتیجے میں لاک ڈاؤن اور پابندیوں اور خوف نےآپکے بچے کی غذائیت اور خوراک کومتاثرکیاہے؟ </string>
     <string name="cv1101">ہاں </string>
@@ -1045,6 +1046,26 @@
     <string name="cv1905">میری صحت، وضاحت کرنے کی ضرورت نہیں</string>
     <string name="cv1906">دیگر،بتانا ضروری نہیں</string>
     <string name="cv1996">دیگر برائے مہربانی وضاحت کریں</string>
+
+    <string name="Q_cv20"> cv20 </string>
+    <string name="cv20"> کیا آپ کو کورونا وائرس کی ویکسین  لگی  ہے ؟ </string>
+    <string name="cv2001"> ہاں </string>
+    <string name="cv2002"> نہیں </string>
+    <string name="Q_cv21"> cv21 </string>
+    <string name="cv21"> آپ کو  کوویڈ-19  کی ویکسین کیوں نہیں ملی ؟ ( ان سب کا انتخاب کریں جو لاگو ہوتے ہیں۔ جوابات نہ پڑھیں ، جواب دینے والے کو بے ساختہ جواب دینے دیں ) </string>
+    <string name="cv2101"> ٹیکوں کا مرکز بہت دور ہے </string>
+    <string name="cv2102"> ٹیکے لگانے کا وقت مناسب نہیں تھا </string>
+    <string name="cv2103"> سہولت پر ویکسین دستیاب نہیں تھی </string>
+    <string name="cv2104"> ٹیکے لگانے کا وقت یا جگہ معلوم نہیں تھی </string>
+    <string name="cv2105"> خاندانی مسائل </string>
+    <string name="cv2106"> طویل انتظار </string>
+    <string name="cv2107"> کوویڈ 19 ویکسین پر اعتماد یا یقین نہیں </string>
+    <string name="cv2108"> ضمنی اثرات کا خوف </string>
+    <string name="cv2109"> کوویڈ 19 سے متعلقہ ( باہر جانے کا خوف ، خاندان میں بیماری ) </string>
+    <string name="cv2198"> معلوم نہیں </string>
+    <string name="cv2196"> دیگر </string>
+
+
     <string name="se_title1">سیکشن ایس ای: گھرانے کی خصوصیات </string>
     <string name="se01">گھرانےکے سربراہ کی مادری زبان کیا ہے ؟</string>
     <string name="se0101">اردو</string>

@@ -47,19 +47,21 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
 
 
     private void setupSkips() {
-        rgListener(bi.cv01, bi.cv0102, bi.llcv01);
-        rgListener(bi.cv11, bi.cv1102, bi.fldGrpCVcv12);
-        rgListener(bi.cv15, bi.cv1501, bi.fldGrpCVcv16);
-        rgListener(bi.cv17, bi.cv1702, bi.fldGrpCVcv18);
+        rgLsnr(bi.cv01, bi.cv0102, bi.llcv01);
+        rgLsnr(bi.cv11, bi.cv1102, bi.fldGrpCVcv12);
+        rgLsnr(bi.cv15, bi.cv1501, bi.fldGrpCVcv16);
+        rgLsnr(bi.cv17, bi.cv1702, bi.fldGrpCVcv18);
+        rgLsnr(bi.cv20, bi.cv1701, bi.fldGrpCVcv21);
 
         bi.cv0898.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.cv08check, !b));
         bi.cv0998.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.cv09check, !b));
         bi.cv1098.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.cv10check, !b));
+        bi.cv2198.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.cv21check, !b));
 
     }
 
 
-    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
+    private void rgLsnr(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
             vg.setVisibility(View.VISIBLE);
@@ -175,6 +177,7 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
         form.setCv1006(bi.cv1006.isChecked() ? "6" : "-1");
         form.setCv1007(bi.cv1007.isChecked() ? "7" : "-1");
         form.setCv1008(bi.cv1008.isChecked() ? "8" : "-1");
+        form.setCv1009(bi.cv1009.isChecked() ? "9" : "-1");
         form.setCv1098(bi.cv1098.isChecked() ? "98" : "-1");
         form.setCv1096(bi.cv1096.isChecked() ? "96" : "-1");
         form.setCv1096x(bi.cv1096x.getText().toString());
@@ -212,8 +215,8 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
                 : bi.cv1606.isChecked() ? "6"
                 : bi.cv1696.isChecked() ? "96"
                 : "-1");
-
         form.setCv1696x(bi.cv1696x.getText().toString());
+
         form.setCv17(bi.cv1701.isChecked() ? "1"
                 : bi.cv1702.isChecked() ? "2"
                 : "-1");
@@ -238,6 +241,23 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
                 : "-1");
 
         form.setCv1996x(bi.cv1996x.getText().toString());
+
+        form.setCv20(bi.cv2001.isChecked() ? "1"
+                : bi.cv2002.isChecked() ? "2"
+                : "-1");
+
+        form.setCv2101(bi.cv2101.isChecked() ? "1" : "-1");
+        form.setCv2102(bi.cv2102.isChecked() ? "2" : "-1");
+        form.setCv2103(bi.cv2103.isChecked() ? "3" : "-1");
+        form.setCv2104(bi.cv2104.isChecked() ? "4" : "-1");
+        form.setCv2105(bi.cv2105.isChecked() ? "5" : "-1");
+        form.setCv2106(bi.cv2106.isChecked() ? "6" : "-1");
+        form.setCv2107(bi.cv2107.isChecked() ? "7" : "-1");
+        form.setCv2108(bi.cv2108.isChecked() ? "8" : "-1");
+        form.setCv2109(bi.cv2109.isChecked() ? "9" : "-1");
+        form.setCv2198(bi.cv2198.isChecked() ? "98" : "-1");
+        form.setCv2196(bi.cv2196.isChecked() ? "96" : "-1");
+        form.setCv2196x(bi.cv2196x.getText().toString().trim().isEmpty() ? "-1" : bi.cv2196x.getText().toString());
 
         form.setG5Flag("1");
 
