@@ -563,9 +563,10 @@
     <string name="pd0605">Mother &amp; child health centre</string>
     <string name="pd06961">Other public Please Specify</string>
     <string name="pd06_title3">Private medical sector</string>
-    <string name="pd0607">Private hospital</string>
-    <string name="pd0608">Private clinic</string>
-    <string name="pd0609">Private maternity home</string>
+    <string name="pd0607"> Private Hospital </string>
+    <string name="pd0608"> Private Clinic </string>
+    <string name="pd0609"> Private Maternity Home </string>
+    <string name="pd0610"> Naunehal Health Camp </string>
     <string name="pd06962">Other private Please Specify</string>
     <string name="pd07">How many times did you receive antenatal care during last pregnancy? Probe to identify the number of times antenatal care was received. If a range is given, record the minimum number of times antenatal care received.</string>
     <string name="pd0701">Number of times</string>

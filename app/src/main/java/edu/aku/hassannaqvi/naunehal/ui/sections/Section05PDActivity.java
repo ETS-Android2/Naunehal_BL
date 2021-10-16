@@ -1,5 +1,10 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
+import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -19,11 +24,6 @@ import edu.aku.hassannaqvi.naunehal.models.ChildCard;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
-
-import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
-import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
-import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
-import static edu.aku.hassannaqvi.naunehal.utils.extension.ActivityExtKt.gotoActivity;
 
 public class Section05PDActivity extends AppCompatActivity implements EndSectionActivity {
 
@@ -228,6 +228,7 @@ public class Section05PDActivity extends AppCompatActivity implements EndSection
                 : bi.pd0607.isChecked() ? "7"
                 : bi.pd0608.isChecked() ? "8"
                 : bi.pd0609.isChecked() ? "9"
+                : bi.pd0610.isChecked() ? "10"
                 : bi.pd06962.isChecked() ? "962"
                 : "-1");
 
