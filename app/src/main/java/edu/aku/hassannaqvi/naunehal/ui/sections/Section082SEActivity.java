@@ -54,6 +54,43 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
         }));
 
         bi.se4298.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.se42check, !b));
+
+        bi.se41.setOnCheckedChangeListener(((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVse42);
+            Clear.clearAllFields(bi.fldGrpCVse43);
+            Clear.clearAllFields(bi.fldGrpCVse44);
+            Clear.clearAllFields(bi.fldGrpCVse45);
+            Clear.clearAllFields(bi.fldGrpCVse46);
+            Clear.clearAllFields(bi.fldGrpCVse47);
+            bi.fldGrpCVse42.setVisibility(View.GONE);
+            bi.fldGrpCVse43.setVisibility(View.GONE);
+            bi.fldGrpCVse44.setVisibility(View.GONE);
+            bi.fldGrpCVse45.setVisibility(View.GONE);
+            bi.fldGrpCVse46.setVisibility(View.GONE);
+            bi.fldGrpCVse47.setVisibility(View.GONE);
+            if (i == bi.se4101.getId()) {
+                bi.fldGrpCVse43.setVisibility(View.VISIBLE);
+                bi.fldGrpCVse44.setVisibility(View.VISIBLE);
+                bi.fldGrpCVse45.setVisibility(View.VISIBLE);
+                bi.fldGrpCVse46.setVisibility(View.VISIBLE);
+                bi.fldGrpCVse47.setVisibility(View.VISIBLE);
+            } else {
+                bi.fldGrpCVse42.setVisibility(View.VISIBLE);
+            }
+        }));
+
+        bi.se45.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVse46);
+            bi.fldGrpCVse46.setVisibility(View.GONE);
+            if (i == bi.se4501.getId()) bi.fldGrpCVse46.setVisibility(View.VISIBLE);
+        });
+
+        bi.se48.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVse49);
+            bi.fldGrpCVse49.setVisibility(View.GONE);
+            if (i == bi.se4801.getId()) bi.fldGrpCVse49.setVisibility(View.VISIBLE);
+        });
+
         bi.se4998.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.se49check, !b));
     }
 
