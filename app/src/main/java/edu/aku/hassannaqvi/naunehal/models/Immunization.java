@@ -80,6 +80,22 @@ public class Immunization extends BaseObservable {
     private String im08 = StringUtils.EMPTY;
     private String im08a = StringUtils.EMPTY;
     private String im08b = StringUtils.EMPTY;
+    private String im08c01 = StringUtils.EMPTY;
+    private String im08c02 = StringUtils.EMPTY;
+    private String im08c03 = StringUtils.EMPTY;
+    private String im08c04 = StringUtils.EMPTY;
+    private String im08c05 = StringUtils.EMPTY;
+    private String im08c06 = StringUtils.EMPTY;
+    private String im08c07 = StringUtils.EMPTY;
+    private String im08c08 = StringUtils.EMPTY;
+    private String im08c09 = StringUtils.EMPTY;
+    private String im08c10 = StringUtils.EMPTY;
+    private String im08c11 = StringUtils.EMPTY;
+    private String im08c12 = StringUtils.EMPTY;
+    private String im08c13 = StringUtils.EMPTY;
+    private String im08c98 = StringUtils.EMPTY;
+    private String im08c96 = StringUtils.EMPTY;
+    private String im08c96x = StringUtils.EMPTY;
     private String im09 = StringUtils.EMPTY;
     private String im10 = StringUtils.EMPTY;
     private String im10a01 = StringUtils.EMPTY;
@@ -972,6 +988,166 @@ public class Immunization extends BaseObservable {
     }
 
     @Bindable
+    public String getIm08c01() {
+        return im08c01;
+    }
+
+    public void setIm08c01(String im08c01) {
+        this.im08c01 = im08c01;
+        notifyPropertyChanged(BR.im08c01);
+    }
+
+    @Bindable
+    public String getIm08c02() {
+        return im08c02;
+    }
+
+    public void setIm08c02(String im08c02) {
+        this.im08c02 = im08c02;
+        notifyPropertyChanged(BR.im08c02);
+    }
+
+    @Bindable
+    public String getIm08c03() {
+        return im08c03;
+    }
+
+    public void setIm08c03(String im08c03) {
+        this.im08c03 = im08c03;
+        notifyPropertyChanged(BR.im08c03);
+    }
+
+    @Bindable
+    public String getIm08c04() {
+        return im08c04;
+    }
+
+    public void setIm08c04(String im08c04) {
+        this.im08c04 = im08c04;
+        notifyPropertyChanged(BR.im08c04);
+    }
+
+    @Bindable
+    public String getIm08c05() {
+        return im08c05;
+    }
+
+    public void setIm08c05(String im08c05) {
+        this.im08c05 = im08c05;
+        notifyPropertyChanged(BR.im08c05);
+    }
+
+    @Bindable
+    public String getIm08c06() {
+        return im08c06;
+    }
+
+    public void setIm08c06(String im08c06) {
+        this.im08c06 = im08c06;
+        notifyPropertyChanged(BR.im08c06);
+    }
+
+    @Bindable
+    public String getIm08c07() {
+        return im08c07;
+    }
+
+    public void setIm08c07(String im08c07) {
+        this.im08c07 = im08c07;
+        notifyPropertyChanged(BR.im08c07);
+    }
+
+    @Bindable
+    public String getIm08c08() {
+        return im08c08;
+    }
+
+    public void setIm08c08(String im08c08) {
+        this.im08c08 = im08c08;
+        notifyPropertyChanged(BR.im08c08);
+    }
+
+    @Bindable
+    public String getIm08c09() {
+        return im08c09;
+    }
+
+    public void setIm08c09(String im08c09) {
+        this.im08c09 = im08c09;
+        notifyPropertyChanged(BR.im08c09);
+    }
+
+    @Bindable
+    public String getIm08c10() {
+        return im08c10;
+    }
+
+    public void setIm08c10(String im08c10) {
+        this.im08c10 = im08c10;
+        notifyPropertyChanged(BR.im08c10);
+    }
+
+    @Bindable
+    public String getIm08c11() {
+        return im08c11;
+    }
+
+    public void setIm08c11(String im08c11) {
+        this.im08c11 = im08c11;
+        notifyPropertyChanged(BR.im08c11);
+    }
+
+    @Bindable
+    public String getIm08c12() {
+        return im08c12;
+    }
+
+    public void setIm08c12(String im08c12) {
+        this.im08c12 = im08c12;
+        notifyPropertyChanged(BR.im08c12);
+    }
+
+    @Bindable
+    public String getIm08c13() {
+        return im08c13;
+    }
+
+    public void setIm08c13(String im08c13) {
+        this.im08c13 = im08c13;
+        notifyPropertyChanged(BR.im08c13);
+    }
+
+    @Bindable
+    public String getIm08c98() {
+        return im08c98;
+    }
+
+    public void setIm08c98(String im08c98) {
+        this.im08c98 = im08c98;
+        notifyPropertyChanged(BR.im08c98);
+    }
+
+    @Bindable
+    public String getIm08c96() {
+        return im08c96;
+    }
+
+    public void setIm08c96(String im08c96) {
+        this.im08c96 = im08c96;
+        notifyPropertyChanged(BR.im08c96);
+    }
+
+    @Bindable
+    public String getIm08c96x() {
+        return im08c96x;
+    }
+
+    public void setIm08c96x(String im08c96x) {
+        this.im08c96x = im08c96x;
+        notifyPropertyChanged(BR.im08c96x);
+    }
+
+    @Bindable
     public String getIm09() {
         return im09;
     }
@@ -1608,6 +1784,22 @@ public class Immunization extends BaseObservable {
                     .put("im08", im08)
                     .put("im08a", im08a)
                     .put("im08b", im08b)
+                    .put("im08c01", im08c01)
+                    .put("im08c02", im08c02)
+                    .put("im08c03", im08c03)
+                    .put("im08c04", im08c04)
+                    .put("im08c05", im08c05)
+                    .put("im08c06", im08c06)
+                    .put("im08c07", im08c07)
+                    .put("im08c08", im08c08)
+                    .put("im08c09", im08c09)
+                    .put("im08c10", im08c10)
+                    .put("im08c11", im08c11)
+                    .put("im08c12", im08c12)
+                    .put("im08c13", im08c13)
+                    .put("im08c98", im08c98)
+                    .put("im08c96", im08c96)
+                    .put("im08c96x", im08c96x)
                     .put("im09", im09)
                     .put("im10", im10)
                     .put("im10a01", im10a01)
@@ -1777,6 +1969,22 @@ public class Immunization extends BaseObservable {
                 this.im08 = json.getString("im08");
                 this.im08a = json.getString("im08a");
                 this.im08b = json.getString("im08b");
+                this.im08c01 = json.getString("im08c01");
+                this.im08c02 = json.getString("im08c02");
+                this.im08c03 = json.getString("im08c03");
+                this.im08c04 = json.getString("im08c04");
+                this.im08c05 = json.getString("im08c05");
+                this.im08c06 = json.getString("im08c06");
+                this.im08c07 = json.getString("im08c07");
+                this.im08c08 = json.getString("im08c08");
+                this.im08c09 = json.getString("im08c09");
+                this.im08c10 = json.getString("im08c10");
+                this.im08c11 = json.getString("im08c11");
+                this.im08c12 = json.getString("im08c12");
+                this.im08c13 = json.getString("im08c13");
+                this.im08c98 = json.getString("im08c98");
+                this.im08c96 = json.getString("im08c96");
+                this.im08c96x = json.getString("im08c96x");
                 this.im09 = json.getString("im09");
                 this.im10 = json.getString("im10");
                 this.im10a01 = json.getString("im10a01");

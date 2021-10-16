@@ -196,6 +196,23 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                 : bi.im08b98.isChecked() ? "98"
                 : "-1");
 
+        MainApp.immunization.setIm08c01(bi.im08c01.isChecked() ? "1" : "-1");
+        MainApp.immunization.setIm08c02(bi.im08c02.isChecked() ? "2" : "-1");
+        MainApp.immunization.setIm08c03(bi.im08c03.isChecked() ? "3" : "-1");
+        MainApp.immunization.setIm08c04(bi.im08c04.isChecked() ? "4" : "-1");
+        MainApp.immunization.setIm08c05(bi.im08c05.isChecked() ? "5" : "-1");
+        MainApp.immunization.setIm08c06(bi.im08c06.isChecked() ? "6" : "-1");
+        MainApp.immunization.setIm08c07(bi.im08c07.isChecked() ? "7" : "-1");
+        MainApp.immunization.setIm08c08(bi.im08c08.isChecked() ? "8" : "-1");
+        MainApp.immunization.setIm08c09(bi.im08c09.isChecked() ? "9" : "-1");
+        MainApp.immunization.setIm08c10(bi.im08c10.isChecked() ? "10" : "-1");
+        MainApp.immunization.setIm08c11(bi.im08c11.isChecked() ? "11" : "-1");
+        MainApp.immunization.setIm08c12(bi.im08c12.isChecked() ? "12" : "-1");
+        MainApp.immunization.setIm08c13(bi.im08c13.isChecked() ? "13" : "-1");
+        MainApp.immunization.setIm08c98(bi.im08c98.isChecked() ? "98" : "-1");
+        MainApp.immunization.setIm08c96(bi.im08c96.isChecked() ? "96" : "-1");
+        MainApp.immunization.setIm08c96x(bi.im08c96x.getText().toString().isEmpty() ? "-1" : bi.im08c96x.getText().toString());
+
         MainApp.immunization.setIm09(bi.im0901.isChecked() ? "1"
                 : bi.im0902.isChecked() ? "2"
                 : bi.im0903.isChecked() ? "98"
