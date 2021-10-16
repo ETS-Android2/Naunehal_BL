@@ -3716,6 +3716,12 @@
                                         android:text="@string/im2303" />
 
                                     <RadioButton
+                                        android:id="@+id/im2304"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/im2304" />
+
+                                    <RadioButton
                                         android:id="@+id/im2306"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"

@@ -315,6 +315,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         MainApp.immunization.setIm23(bi.im2301.isChecked() ? "1"
                 : bi.im2302.isChecked() ? "2"
                 : bi.im2303.isChecked() ? "3"
+                : bi.im2304.isChecked() ? "4"
                 : bi.im2306.isChecked() ? "96"
                 : "-1");
         MainApp.immunization.setIm2306x(bi.im2306x.getText().toString().isEmpty() ? "-1" : bi.im2306x.getText().toString());

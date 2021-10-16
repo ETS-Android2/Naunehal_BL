@@ -506,6 +506,11 @@
     <string name="im2201">تعداد</string>
     <string name="im2298">معلوم نہیں</string>
     <string name="im23"> بچے کو عام طور پر حفاظتی ٹیکے کہاں سے لگواتے ہیں؟ اگر بچے کو حفاظتی ٹیکے مختلف ذرائع سے لگوائے گئے ہیں،تومعمول کے مطابق سب سے زیادہ ویکسین جس جگہ سے لگوائی گئیں ہیں اس کو بیان کریں۔ </string>
+    <string name="im2301"> سرکاری مرکز صحت </string>
+    <string name="im2302"> پرائیوٹ مرکز صحت </string>
+    <string name="im2303"> سرکاری آؤٹ ریچ سروس </string>
+    <string name="im2304"> نونہال ہیلتھ کیمپ </string>
+    <string name="im2306">دیگر(وضاحت کریں)</string>
     <string name="im23a"> برائے مہربانی وضاحت کریں کہ آپ (نام) کو حفاظتی ٹیکوں کے مرکز لے جانے کے لئے ٹرانسپورٹ کے کونسے ذرائع استعمال کرتے ہیں ؟ </string>
     <string name="im23a1"> پیدل </string>
     <string name="im23a2"> سائیکل </string>
@@ -513,15 +518,11 @@
     <string name="im23a4"> کار / ٹیکسی </string>
     <string name="im23a5"> پبلک ٹرانسپورٹ </string>
     <string name="im23a96"> دیگر (وضاحت کریں) </string>
-    <string name="im2301"> سرکاری مرکز صحت </string>
     <string name="im23b"> جہاں آپ نے ٹیکے لگوائے تھے اس سہولت تک پہنچنے میں آپ کو کتنا وقت لگتا ہے ؟ </string>
     <string name="im23b1"> گھنٹے </string>
     <string name="im23b2"> منٹس </string>
-    <string name="im2302"> پرائیوٹ مرکز صحت </string>
-    <string name="im2303"> سرکاری آؤٹ ریچ سروس </string>
 
     <!--ERROR in variable im2396/im2306-->
-    <string name="im2306">دیگر(وضاحت کریں)</string>
     <string name="im24"> بچے کو حفاظتی ٹیکے کیوں نہیں لگوائے؟ </string>
     <string name="im24info"> اگر بچے کوتمام حفاظتی ٹیکے نہیں لگوائے گئے، تو ماں/دیکھ بھال کرنے والے سے پوچھیں۔ بتائی گئیں تمام وجوہات کو ریکارڈ کریں لیکن فوری طور پر کسی مخصوص وجہ پر مت جائیں۔ ماں کو تمام وجوہات فراہم کرنے کی ترغیب دیں۔</string>
     <string name="im2401">حفاظتی ٹیکوں کا مرکزبہت دور تھا</string>
