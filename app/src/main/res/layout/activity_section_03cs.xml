@@ -663,6 +663,12 @@
                                         android:text="@string/cs0713" />
 
                                     <RadioButton
+                                        android:id="@+id/cs0714"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/cs0714" />
+
+                                    <RadioButton
                                         android:id="@+id/cs07962"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
