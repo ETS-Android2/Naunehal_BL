@@ -233,6 +233,7 @@ public class Form extends BaseObservable {
     private String cv0609 = StringUtils.EMPTY;
     private String cv0610 = StringUtils.EMPTY;
     private String cv0611 = StringUtils.EMPTY;
+    private String cv0612 = StringUtils.EMPTY;
     private String cv0696 = StringUtils.EMPTY;
     private String cv0696x = StringUtils.EMPTY;
     private String cv07 = StringUtils.EMPTY;
@@ -253,6 +254,7 @@ public class Form extends BaseObservable {
     private String cv0905 = StringUtils.EMPTY;
     private String cv0906 = StringUtils.EMPTY;
     private String cv0907 = StringUtils.EMPTY;
+    private String cv0908 = StringUtils.EMPTY;
     private String cv0996 = StringUtils.EMPTY;
     private String cv0998 = StringUtils.EMPTY;
     private String cv0996x = StringUtils.EMPTY;
@@ -2789,6 +2791,17 @@ public class Form extends BaseObservable {
 
 
     @Bindable
+    public String getCv0612() {
+        return cv0612;
+    }
+
+    public void setCv0612(String cv0612) {
+        this.cv0612 = cv0612;
+        notifyPropertyChanged(BR.cv0612);
+    }
+
+
+    @Bindable
     public String getCv0696() {
         return cv0696;
     }
@@ -3005,6 +3018,17 @@ public class Form extends BaseObservable {
     public void setCv0907(String cv0907) {
         this.cv0907 = cv0907;
         notifyPropertyChanged(BR.cv0907);
+    }
+
+
+    @Bindable
+    public String getCv0908() {
+        return cv0908;
+    }
+
+    public void setCv0908(String cv0908) {
+        this.cv0908 = cv0908;
+        notifyPropertyChanged(BR.cv0908);
     }
 
 
@@ -4895,6 +4919,7 @@ public class Form extends BaseObservable {
                     .put("cv0609", cv0609)
                     .put("cv0610", cv0610)
                     .put("cv0611", cv0611)
+                    .put("cv0612", cv0612)
                     .put("cv0696", cv0696)
                     .put("cv0696x", cv0696x)
                     .put("cv07", cv07)
@@ -4915,6 +4940,7 @@ public class Form extends BaseObservable {
                     .put("cv0905", cv0905)
                     .put("cv0906", cv0906)
                     .put("cv0907", cv0907)
+                    .put("cv0908", cv0908)
                     .put("cv0998", cv0998)
                     .put("cv0996", cv0996)
                     .put("cv0996x", cv0996x)
@@ -5405,6 +5431,7 @@ public class Form extends BaseObservable {
                 this.cv0609 = json.getString("cv0609");
                 this.cv0610 = json.getString("cv0610");
                 this.cv0611 = json.getString("cv0611");
+                this.cv0612 = json.getString("cv0612");
                 this.cv0696 = json.getString("cv0696");
                 this.cv0696x = json.getString("cv0696x");
                 this.cv07 = json.getString("cv07");
@@ -5425,6 +5452,7 @@ public class Form extends BaseObservable {
                 this.cv0905 = json.getString("cv0905");
                 this.cv0906 = json.getString("cv0906");
                 this.cv0907 = json.getString("cv0907");
+                this.cv0908 = json.getString("cv0908");
                 this.cv0998 = json.getString("cv0998");
                 this.cv0996 = json.getString("cv0996");
                 this.cv0996x = json.getString("cv0996x");

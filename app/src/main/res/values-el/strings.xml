@@ -935,6 +935,7 @@
     <string name="cv0609">Radio</string>
     <string name="cv0610">Television</string>
     <string name="cv0611">Social Media</string>
+    <string name="cv0612"> Naunehal Health Camp </string>
     <string name="cv0696">Others Please Specify</string>
     <string name="cv07">Will all people with COVID-19 show symptoms? </string>
     <string name="cv0701">Yes</string>
@@ -958,6 +959,7 @@
     <string name="cv0905">Unhygienic food preparation</string>
     <string name="cv0906">Radio waves such as mobile networks</string>
     <string name="cv0907">Mosquito bite</string>
+    <string name="cv0908"> COVID vaccination </string>
     <string name="cv0998">Don’t know</string>
     <string name="cv0996">Others Please Specify</string>
     <string name="cv10">What according to you are effective methods of preventing infection from COVID-19?  (Choose all that apply. Do not read the answers, let the respondent answer spontaneously)</string>

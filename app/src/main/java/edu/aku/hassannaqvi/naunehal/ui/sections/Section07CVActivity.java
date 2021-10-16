@@ -1,5 +1,9 @@
 package edu.aku.hassannaqvi.naunehal.ui.sections;
 
+import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
+import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +28,6 @@ import edu.aku.hassannaqvi.naunehal.models.ChildCard;
 import edu.aku.hassannaqvi.naunehal.models.ChildInformation;
 import edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt;
 import edu.aku.hassannaqvi.naunehal.utils.EndSectionActivity;
-
-import static edu.aku.hassannaqvi.naunehal.core.MainApp.form;
-import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.convertStringToUpperCase;
-import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.shortStringLength;
 
 public class Section07CVActivity extends AppCompatActivity implements EndSectionActivity {
 
@@ -134,6 +134,7 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
         form.setCv0609(bi.cv0609.isChecked() ? "9" : "-1");
         form.setCv0610(bi.cv0610.isChecked() ? "10" : "-1");
         form.setCv0611(bi.cv0611.isChecked() ? "11" : "-1");
+        form.setCv0612(bi.cv0612.isChecked() ? "12" : "-1");
         form.setCv0696(bi.cv0696.isChecked() ? "96" : "-1");
         form.setCv0696x(bi.cv0696x.getText().toString());
 
@@ -161,6 +162,7 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
         form.setCv0905(bi.cv0905.isChecked() ? "5" : "-1");
         form.setCv0906(bi.cv0906.isChecked() ? "6" : "-1");
         form.setCv0907(bi.cv0907.isChecked() ? "7" : "-1");
+        form.setCv0908(bi.cv0908.isChecked() ? "8" : "-1");
         form.setCv0998(bi.cv0998.isChecked() ? "98" : "-1");
         form.setCv0996(bi.cv0996.isChecked() ? "96" : "-1");
         form.setCv0996x(bi.cv0996x.getText().toString());

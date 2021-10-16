@@ -957,7 +957,8 @@
     <string name="cv0609">ریڈیو</string>
     <string name="cv0610">ٹیلیویژن</string>
     <string name="cv0611">سوشل میڈیا</string>
-    <string name="cv0696">دیگر برائے مہربانی وضاحت کریں</string>
+    <string name="cv0612"> نونہال ہیلتھ کیمپ </string>
+    <string name="cv0696"> دیگر برائے مہربانی وضاحت کریں </string>
     <string name="cv07">کیاCOVID-19 کا شکار ہونے والے تمام افراد میں بیماری کی علامات ظاہر ہوتی ہیں؟ </string>
     <string name="cv0701">ہاں </string>
     <string name="cv0702">نہیں </string>
@@ -982,6 +983,7 @@
     <string name="cv0905">صفائی ستھرائی سے کھانا نہ پکانے سے</string>
     <string name="cv0906">موبائل نیٹورک سے نکلنے والی لہروں سے</string>
     <string name="cv0907">مچھر کے کاٹنے سے</string>
+    <string name="cv0908"> کوویڈ ویکسینیشن </string>
     <string name="cv0998">معلوم نہیں</string>
     <string name="cv0996">دیگر برائے مہربانی وضاحت کریں</string>
     <string name="cv10">آپ کےخیال میں COVID-19 کےانفیکشن کی روک تھام کےموثرطریقےکیاہیں؟ </string>
