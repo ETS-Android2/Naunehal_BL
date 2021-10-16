@@ -418,6 +418,7 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             bi.cs1711.isChecked -> "11"
             bi.cs1712.isChecked -> "12"
             bi.cs1713.isChecked -> "13"
+            bi.cs1714.isChecked -> "14"
             bi.cs17962.isChecked -> "962"
             else -> "-1"
         }

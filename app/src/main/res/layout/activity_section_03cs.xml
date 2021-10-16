@@ -1578,6 +1578,12 @@
                                     android:text="@string/cs1713" />
 
                                 <RadioButton
+                                    android:id="@+id/cs1714"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cs1714" />
+
+                                <RadioButton
                                     android:id="@+id/cs17962"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
