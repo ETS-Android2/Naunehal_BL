@@ -805,6 +805,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.cs08a.equals(`1`)}"
+                                    android:onClick="@{()->form.setCs08a(`1`)}"
                                     android:text="@string/cs08aa" />
 
                                 <RadioButton
@@ -813,6 +814,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.cs08a.equals(`2`)}"
+                                    android:onClick="@{()->form.setCs08a(`2`)}"
                                     android:text="@string/cs08ab" />
 
                             </RadioGroup>
