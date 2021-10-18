@@ -77,20 +77,25 @@
                     <RadioGroup
                         android:id="@+id/im01"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/im0101"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:checked="@{form.im01.equals(`1`)}"
+                            android:onClick="@{()->form.setIm01(`1`)}"
                             android:text="@string/im0101" />
 
                         <RadioButton
                             android:id="@+id/im0102"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:checked="@{form.im01.equals(`2`)}"
+                            android:onClick="@{()->form.setIm01(`2`)}"
                             android:text="@string/im0102" />
 
                     </RadioGroup>
