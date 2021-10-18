@@ -414,6 +414,8 @@ public class Child extends BaseObservable {
 
     public void setCs07(String cs07) {
         this.cs07 = cs07;
+        setCs07961x(cs07.equals("961") ? this.cs07961x : "");
+        setCs07962x(cs07.equals("962") ? this.cs07962x : "");
         notifyPropertyChanged(BR.cs07);
     }
 
