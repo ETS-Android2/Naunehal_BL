@@ -178,17 +178,11 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
         form.setSe26(bi.se26.getText().toString());
 
         form.setSe2701(bi.se2701.isChecked() ? "1" : "-1");
-
         form.setSe2702(bi.se2702.isChecked() ? "2" : "-1");
-
         form.setSe2703(bi.se2703.isChecked() ? "3" : "-1");
-
         form.setSe2704(bi.se2704.isChecked() ? "4" : "-1");
-
         form.setSe2801(bi.se2801.isChecked() ? "1" : "-1");
-
         form.setSe2802(bi.se2802.isChecked() ? "2" : "-1");
-
         form.setSe2803(bi.se2803.isChecked() ? "3" : "-1");
 
         form.setSe29(bi.se2901.isChecked() ? "1"
@@ -196,20 +190,17 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
                 : "-1");
 
         form.setSe3001(bi.se3001.isChecked() ? "1" : "-1");
-
         form.setSe3002(bi.se3002.isChecked() ? "2" : "-1");
-
         form.setSe3003(bi.se3003.isChecked() ? "3" : "-1");
-
         form.setSe3096(bi.se3096.isChecked() ? "96" : "-1");
-
         form.setSe3096x(bi.se3096x.getText().toString());
+
         form.setSe31(bi.se3101.isChecked() ? "1"
                 : bi.se3102.isChecked() ? "2"
                 : bi.se3196.isChecked() ? "96"
                 : "-1");
-
         form.setSe3196x(bi.se3196x.getText().toString());
+
         form.setSe32(bi.se3201.isChecked() ? "1"
                 : bi.se3202.isChecked() ? "2"
                 : bi.se3203.isChecked() ? "3"
