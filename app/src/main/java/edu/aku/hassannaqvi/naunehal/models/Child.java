@@ -860,6 +860,7 @@ public class Child extends BaseObservable {
 
     public void setCs19(String cs19) {
         this.cs19 = cs19;
+        setCs1996x(cs19.equals("96") ? this.cs1996x : "");
         notifyPropertyChanged(BR.cs19);
     }
 
