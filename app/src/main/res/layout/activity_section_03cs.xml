@@ -166,19 +166,22 @@
                         <RadioGroup
                             android:id="@+id/cs03"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/cs0301"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.cs03.equals(`1`)}"
                                 android:text="@string/cs0301" />
 
                             <RadioButton
                                 android:id="@+id/cs0302"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.cs03.equals(`2`)}"
                                 android:text="@string/cs0302" />
 
@@ -393,19 +396,22 @@
                             <RadioGroup
                                 android:id="@+id/cs06"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/cs0601"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:checked="@{form.cs06.equals(`1`)}"
                                     android:text="@string/cs0601" />
 
                                 <RadioButton
                                     android:id="@+id/cs0602"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:checked="@{form.cs06.equals(`2`)}"
                                     android:text="@string/cs0602" />
 
@@ -727,45 +733,44 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <RelativeLayout
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/bottom">
+                                android:background="@drawable/bottom"
+                                android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/qtxt_cs08a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_toEndOf="@id/q_cs08a"
-                                    android:text="@string/cs08a" />
-
-                                <TextView
-                                    android:id="@+id/q_cs08a"
                                     style="@style/quesNum"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignTop="@id/qtxt_cs08a"
-                                    android:layout_alignBottom="@id/qtxt_cs08a"
+                                    android:layout_height="match_parent"
                                     android:text="@string/Q_cs08a" />
 
-                            </RelativeLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/cs08a" />
+
+                            </LinearLayout>
 
                             <RadioGroup
                                 android:id="@+id/cs08a"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/cs08aa"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:checked="@{form.cs08a.equals(`1`)}"
                                     android:text="@string/cs08aa" />
 
                                 <RadioButton
                                     android:id="@+id/cs08ab"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:checked="@{form.cs08a.equals(`2`)}"
                                     android:text="@string/cs08ab" />
 
@@ -812,9 +817,8 @@
 
                                 <TextView
                                     style="@style/sub_labels"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:text="@string/cs08ba" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
