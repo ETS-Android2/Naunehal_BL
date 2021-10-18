@@ -204,6 +204,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{form.im03.equals(`1`)}"
+                            android:onClick="@{()->form.setIm03(`1`)}"
                             android:text="@string/im0301" />
 
                         <RadioButton
@@ -211,6 +212,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{form.im03.equals(`2`)}"
+                            android:onClick="@{()->form.setIm03(`2`)}"
                             android:text="@string/im0302" />
 
                         <RadioButton
@@ -218,6 +220,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{form.im03.equals(`3`)}"
+                            android:onClick="@{()->form.setIm03(`3`)}"
                             android:text="@string/im0303" />
 
                         <RadioButton
@@ -225,6 +228,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{form.im03.equals(`4`)}"
+                            android:onClick="@{()->form.setIm03(`4`)}"
                             android:text="@string/im0304" />
 
                         <RadioButton
@@ -232,6 +236,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{form.im03.equals(`5`)}"
+                            android:onClick="@{()->form.setIm03(`5`)}"
                             android:text="@string/im0305" />
 
                         <RadioButton
@@ -239,6 +244,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{form.im03.equals(`6`)}"
+                            android:onClick="@{()->form.setIm03(`6`)}"
                             android:text="@string/im0306" />
 
                         <RadioButton
@@ -246,6 +252,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{form.im03.equals(`96`)}"
+                            android:onClick="@{()->form.setIm03(`96`)}"
                             android:text="@string/im0396" />
 
                         <EditText
@@ -255,8 +262,8 @@
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/im0396"
                             android:tag="im03096"
-                            android:text="@{form.im0396x}"
-                            android:visibility='@{form.im03.equals(`96`)? View.VISIBLE : View.GONE}' />
+                            android:text="@={form.im0396x}"
+                            android:visibility="@{form.im03.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                     </RadioGroup>
 
@@ -311,7 +318,6 @@
                                 android:layout_weight="1"
                                 android:text="@string/im04dd" />
 
-
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
@@ -319,14 +325,12 @@
                                 android:layout_weight="1"
                                 android:text="@string/im04mm" />
 
-
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/im04yy" />
-
 
                         </LinearLayout>
 
