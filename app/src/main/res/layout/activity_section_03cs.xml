@@ -974,19 +974,22 @@
                             <RadioGroup
                                 android:id="@+id/cs10"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/cs1001"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:checked="@{form.cs10.equals(`1`)}"
                                     android:text="@string/cs1001" />
 
                                 <RadioButton
                                     android:id="@+id/cs1002"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:checked="@{form.cs10.equals(`2`)}"
                                     android:text="@string/cs1002" />
 
