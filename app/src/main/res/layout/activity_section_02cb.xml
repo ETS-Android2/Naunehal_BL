@@ -34,11 +34,6 @@
                 android:id="@+id/fldGrpCVcb01"
                 style="@style/cardView">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -52,27 +47,21 @@
                             android:text="@string/Q_cb01" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            style="@style/sub_labels"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:text="@string/cb01" />
 
+                        <TextView
+                            android:id="@+id/cb01"
+                            style="@style/sub_labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@{childInformation.cb01}" />
+
                     </LinearLayout>
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cb01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="false"
-                        android:hint="@string/cb01"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:text="@{childInformation.cb01}"
-                        android:textAlignment="center"
-                        app:maxValue="99"
-                        app:minValue="1"
-                        app:type="range" />
-
-                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
