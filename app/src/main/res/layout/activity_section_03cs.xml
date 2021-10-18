@@ -1674,7 +1674,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{form.cs17b}"
+                                android:text="@={form.cs17b}"
                                 app:maxValue="15"
                                 app:minValue="1"
                                 app:type="range" />
@@ -1727,6 +1727,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs1802.equals(`2`)}"
+                                android:onClick="@{()->form.setCs1802(`2`)}"
                                 android:text="@string/cs1802" />
 
                             <CheckBox
@@ -1734,6 +1735,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs1803.equals(`3`)}"
+                                android:onClick="@{()->form.setCs1803(`3`)}"
                                 android:text="@string/cs1803" />
 
                             <CheckBox
@@ -1741,6 +1743,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs1804.equals(`4`)}"
+                                android:onClick="@{()->form.setCs1804(`4`)}"
                                 android:text="@string/cs1804" />
 
                             <CheckBox
@@ -1748,6 +1751,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs1805.equals(`5`)}"
+                                android:onClick="@{()->form.setCs1805(`5`)}"
                                 android:text="@string/cs1805" />
 
                             <CheckBox
@@ -1755,6 +1759,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs1806.equals(`6`)}"
+                                android:onClick="@{()->form.setCs1806(`6`)}"
                                 android:text="@string/cs1806" />
 
                             <CheckBox
@@ -1762,6 +1767,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs1807.equals(`7`)}"
+                                android:onClick="@{()->form.setCs1807(`7`)}"
                                 android:text="@string/cs1807" />
 
                             <CheckBox
@@ -1769,6 +1775,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs1808.equals(`8`)}"
+                                android:onClick="@{()->form.setCs1808(`8`)}"
                                 android:text="@string/cs1808" />
 
                             <CheckBox
@@ -1776,6 +1783,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs1896.equals(`96`)}"
+                                android:onClick="@{()->form.setCs1896(`96`)}"
                                 android:text="@string/cs1896" />
 
                             <EditText
@@ -1785,7 +1793,7 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs1896"
                                 android:tag="cs1896"
-                                android:text="@{form.cs1896x}"
+                                android:text="@={form.cs1896x}"
                                 android:visibility="@{form.cs1896.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
