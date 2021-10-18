@@ -1358,20 +1358,25 @@
                         <RadioGroup
                             android:id="@+id/cs16"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/cs1601"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.cs16.equals(`1`)}"
+                                android:onClick="@{()->form.setCs16(`1`)}"
                                 android:text="@string/cs1601" />
 
                             <RadioButton
                                 android:id="@+id/cs1602"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.cs16.equals(`2`)}"
+                                android:onClick="@{()->form.setCs16(`2`)}"
                                 android:text="@string/cs1602" />
 
                         </RadioGroup>
