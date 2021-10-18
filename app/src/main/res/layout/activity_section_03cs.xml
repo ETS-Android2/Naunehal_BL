@@ -82,7 +82,7 @@
                             android:hint="@string/cs01"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@{form.cs01}"
+                            android:text="@={form.cs01}"
                             app:maxValue="99"
                             app:minValue="1"
                             app:type="range" />
@@ -127,7 +127,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/cs02"
-                            android:text="@{form.cs02}" />
+                            android:text="@={form.cs02}" />
 
                     </LinearLayout>
 
@@ -175,6 +175,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.cs03.equals(`1`)}"
+                                android:onClick="@{()->form.setCs03(`1`)}"
                                 android:text="@string/cs0301" />
 
                             <RadioButton
@@ -183,6 +184,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.cs03.equals(`2`)}"
+                                android:onClick="@{()->form.setCs03(`2`)}"
                                 android:text="@string/cs0302" />
 
                         </RadioGroup>
