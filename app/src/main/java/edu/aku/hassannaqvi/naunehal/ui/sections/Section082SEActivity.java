@@ -53,8 +53,6 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
             }
         }));
 
-        bi.se4298.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.se42check, !b));
-
         bi.se41.setOnCheckedChangeListener(((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVse42);
             Clear.clearAllFields(bi.fldGrpCVse43);
@@ -231,14 +229,24 @@ public class Section082SEActivity extends AppCompatActivity implements EndSectio
                 : bi.se4198.isChecked() ? "98"
                 : "-1");
 
-        form.setSe4201(bi.se4201.isChecked() ? "1" : "-1");
+        form.setSe42(bi.se4201.isChecked() ? "1"
+                : bi.se4202.isChecked() ? "2"
+                : bi.se4203.isChecked() ? "3"
+                : bi.se4204.isChecked() ? "4"
+                : bi.se4205.isChecked() ? "5"
+                : bi.se4296.isChecked() ? "96"
+                : bi.se4298.isChecked() ? "98"
+                : "-1");
+        form.setSe4296x(bi.se4296x.getText().toString().trim().isEmpty() ? "-1" : bi.se4296x.getText().toString());
+
+        /*form.setSe42(bi.se4201.isChecked() ? "1" : "-1");
         form.setSe4202(bi.se4202.isChecked() ? "2" : "-1");
         form.setSe4203(bi.se4203.isChecked() ? "3" : "-1");
         form.setSe4204(bi.se4204.isChecked() ? "4" : "-1");
         form.setSe4205(bi.se4205.isChecked() ? "5" : "-1");
         form.setSe4296(bi.se4296.isChecked() ? "96" : "-1");
         form.setSe4298(bi.se4298.isChecked() ? "98" : "-1");
-        form.setSe4296x(bi.se4296x.getText().toString().trim().isEmpty() ? "-1" : bi.se4296x.getText().toString());
+        form.setSe4296x(bi.se4296x.getText().toString().trim().isEmpty() ? "-1" : bi.se4296x.getText().toString());*/
 
         form.setSe4301(bi.se4301.isChecked() ? "1" : "-1");
         form.setSe4302(bi.se4302.isChecked() ? "2" : "-1");

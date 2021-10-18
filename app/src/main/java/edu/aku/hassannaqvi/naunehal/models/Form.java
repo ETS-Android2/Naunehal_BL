@@ -400,13 +400,13 @@ public class Form extends BaseObservable {
     private String se3301 = StringUtils.EMPTY;
 
     private String se41 = StringUtils.EMPTY;
-    private String se4201 = StringUtils.EMPTY;
-    private String se4202 = StringUtils.EMPTY;
+    private String se42 = StringUtils.EMPTY;
+    /*private String se4202 = StringUtils.EMPTY;
     private String se4203 = StringUtils.EMPTY;
     private String se4204 = StringUtils.EMPTY;
     private String se4205 = StringUtils.EMPTY;
     private String se4298 = StringUtils.EMPTY;
-    private String se4296 = StringUtils.EMPTY;
+    private String se4296 = StringUtils.EMPTY;*/
     private String se4296x = StringUtils.EMPTY;
     private String se4301 = StringUtils.EMPTY;
     private String se4302 = StringUtils.EMPTY;
@@ -4557,16 +4557,16 @@ public class Form extends BaseObservable {
     }
 
     @Bindable
-    public String getSe4201() {
-        return se4201;
+    public String getSe42() {
+        return se42;
     }
 
-    public void setSe4201(String se4201) {
-        this.se4201 = se4201;
-        notifyPropertyChanged(BR.se4201);
+    public void setSe42(String se42) {
+        this.se42 = se42;
+        notifyPropertyChanged(BR.se42);
     }
 
-    @Bindable
+    /*@Bindable
     public String getSe4202() {
         return se4202;
     }
@@ -4624,7 +4624,7 @@ public class Form extends BaseObservable {
     public void setSe4296(String se4296) {
         this.se4296 = se4296;
         notifyPropertyChanged(BR.se4296);
-    }
+    }*/
 
     @Bindable
     public String getSe4296x() {
@@ -5883,13 +5883,13 @@ public class Form extends BaseObservable {
                     .put("se3302", se3302)
                     .put("se3301", se3301)
                     .put("se41", se41)
-                    .put("se4201", se4201)
-                    .put("se4202", se4202)
+                    .put("se42", se42)
+                    /*.put("se4202", se4202)
                     .put("se4203", se4203)
                     .put("se4204", se4204)
                     .put("se4205", se4205)
                     .put("se4298", se4298)
-                    .put("se4296", se4296)
+                    .put("se4296", se4296)*/
                     .put("se4296x", se4296x)
                     .put("se4301", se4301)
                     .put("se4302", se4302)
@@ -6469,13 +6469,13 @@ public class Form extends BaseObservable {
                 this.se3302 = json.getString("se3302");
                 this.se3301 = json.getString("se3301");
                 this.se41 = json.getString("se41");
-                this.se4201 = json.getString("se4201");
-                this.se4202 = json.getString("se4202");
+                this.se42 = json.getString("se42");
+                /*this.se4202 = json.getString("se4202");
                 this.se4203 = json.getString("se4203");
                 this.se4204 = json.getString("se4204");
                 this.se4205 = json.getString("se4205");
                 this.se4298 = json.getString("se4298");
-                this.se4296 = json.getString("se4296");
+                this.se4296 = json.getString("se4296");*/
                 this.se4296x = json.getString("se4296x");
                 this.se4301 = json.getString("se4301");
                 this.se4302 = json.getString("se4302");
