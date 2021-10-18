@@ -419,6 +419,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.cs06.equals(`1`)}"
+                                    android:onClick="@{()->form.setCs06(`1`)}"
                                     android:text="@string/cs0601" />
 
                                 <RadioButton
@@ -427,6 +428,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.cs06.equals(`2`)}"
+                                    android:onClick="@{()->form.setCs06(`2`)}"
                                     android:text="@string/cs0602" />
 
                             </RadioGroup>
