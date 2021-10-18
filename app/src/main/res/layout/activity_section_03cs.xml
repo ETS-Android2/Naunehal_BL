@@ -1282,6 +1282,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs15.equals(`1`)}"
+                                android:onClick="@{()->form.setCs15(`1`)}"
                                 android:text="@string/cs1501" />
 
                             <RadioButton
@@ -1289,6 +1290,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs15.equals(`2`)}"
+                                android:onClick="@{()->form.setCs15(`2`)}"
                                 android:text="@string/cs1502" />
 
                             <RadioButton
@@ -1296,6 +1298,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs15.equals(`3`)}"
+                                android:onClick="@{()->form.setCs15(`3`)}"
                                 android:text="@string/cs1503" />
 
                             <RadioButton
@@ -1303,6 +1306,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.cs15.equals(`96`)}"
+                                android:onClick="@{()->form.setCs15(`96`)}"
                                 android:text="@string/cs1596" />
 
                             <EditText
@@ -1312,8 +1316,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/cs1596"
                                 android:tag="cs1596"
-                                android:text="@{form.cs1596x}"
-                                android:visibility='@{cs1596.checked? View.VISIBLE : View.GONE}' />
+                                android:text="@={form.cs1596x}"
+                                android:visibility="@{form.cs15.equals(`96`)? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 
