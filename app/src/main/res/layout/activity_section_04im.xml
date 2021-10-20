@@ -2905,7 +2905,7 @@
                                     android:visibility='@{im17a.checked ? View.VISIBLE : View.GONE}'
                                     app:maxValue="9"
                                     app:minValue="1"
-                                    app:type="equal" />
+                                    app:type="range" />
 
                             </LinearLayout>
 
