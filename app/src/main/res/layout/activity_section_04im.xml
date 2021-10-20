@@ -3320,8 +3320,7 @@
                             <!-- im13  Radio   -->
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/fldGrpCVim13"
-                                style="@style/cardView"
-                                android:visibility="@{!im08b1.checked ? View.GONE : View.VISIBLE}">
+                                style="@style/cardView">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -3386,8 +3385,7 @@
                         <!-- im22e  CheckBox   -->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpCVim22e"
-                            style="@style/cardView"
-                            android:visibility="@{!im08a1.checked &amp;&amp; !im08b1.checked ? View.VISIBLE : View.GONE}">
+                            style="@style/cardView">
 
                             <LinearLayout
                                 android:layout_width="match_parent"

@@ -516,18 +516,27 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
         });
 
         bi.im08a.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpIm8a);
             Clear.clearAllFields(bi.fldGrpCVim22e);
+            bi.fldGrpIm8a.setVisibility(View.GONE);
+            bi.fldGrpCVim22e.setVisibility(View.GONE);
             if (i == bi.im08a1.getId()) {
                 bi.fldGrpIm8a.setVisibility(View.VISIBLE);
             } else {
-                Clear.clearAllFields(bi.fldGrpIm8a);
-                bi.fldGrpIm8a.setVisibility(View.GONE);
+                bi.fldGrpCVim22e.setVisibility(View.VISIBLE);
             }
         });
 
         bi.im08b.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.fldGrpCVim13);
             Clear.clearAllFields(bi.fldGrpCVim22e);
+            bi.fldGrpCVim13.setVisibility(View.GONE);
+            bi.fldGrpCVim22e.setVisibility(View.GONE);
+            if (i == bi.im08b1.getId()) {
+                bi.fldGrpCVim13.setVisibility(View.VISIBLE);
+            } else {
+                bi.fldGrpCVim22e.setVisibility(View.VISIBLE);
+            }
         });
 
         bi.im22e98.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.im22echeck, !b));
