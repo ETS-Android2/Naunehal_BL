@@ -82,22 +82,6 @@ public class Immunization extends BaseObservable {
     private String im08b = StringUtils.EMPTY;
     private String im09 = StringUtils.EMPTY;
     private String im10 = StringUtils.EMPTY;
-    private String im10a01 = StringUtils.EMPTY;
-    private String im10a02 = StringUtils.EMPTY;
-    private String im10a03 = StringUtils.EMPTY;
-    private String im10a04 = StringUtils.EMPTY;
-    private String im10a05 = StringUtils.EMPTY;
-    private String im10a06 = StringUtils.EMPTY;
-    private String im10a07 = StringUtils.EMPTY;
-    private String im10a08 = StringUtils.EMPTY;
-    private String im10a09 = StringUtils.EMPTY;
-    private String im10a10 = StringUtils.EMPTY;
-    private String im10a11 = StringUtils.EMPTY;
-    private String im10a12 = StringUtils.EMPTY;
-    private String im10a13 = StringUtils.EMPTY;
-    private String im10a98 = StringUtils.EMPTY;
-    private String im10a96 = StringUtils.EMPTY;
-    private String im10a96x = StringUtils.EMPTY;
     private String im11 = StringUtils.EMPTY;
     private String im12 = StringUtils.EMPTY;
     private String im1201x = StringUtils.EMPTY;
@@ -1167,166 +1151,6 @@ public class Immunization extends BaseObservable {
         notifyPropertyChanged(BR.im10);
     }
 
-    @Bindable
-    public String getIm10a01() {
-        return im10a01;
-    }
-
-    public void setIm10a01(String im10a01) {
-        this.im10a01 = im10a01;
-        notifyPropertyChanged(BR.im10a01);
-    }
-
-    @Bindable
-    public String getIm10a02() {
-        return im10a02;
-    }
-
-    public void setIm10a02(String im10a02) {
-        this.im10a02 = im10a02;
-        notifyPropertyChanged(BR.im10a02);
-    }
-
-    @Bindable
-    public String getIm10a03() {
-        return im10a03;
-    }
-
-    public void setIm10a03(String im10a03) {
-        this.im10a03 = im10a03;
-        notifyPropertyChanged(BR.im10a03);
-    }
-
-    @Bindable
-    public String getIm10a04() {
-        return im10a04;
-    }
-
-    public void setIm10a04(String im10a04) {
-        this.im10a04 = im10a04;
-        notifyPropertyChanged(BR.im10a04);
-    }
-
-    @Bindable
-    public String getIm10a05() {
-        return im10a05;
-    }
-
-    public void setIm10a05(String im10a05) {
-        this.im10a05 = im10a05;
-        notifyPropertyChanged(BR.im10a05);
-    }
-
-    @Bindable
-    public String getIm10a06() {
-        return im10a06;
-    }
-
-    public void setIm10a06(String im10a06) {
-        this.im10a06 = im10a06;
-        notifyPropertyChanged(BR.im10a06);
-    }
-
-    @Bindable
-    public String getIm10a07() {
-        return im10a07;
-    }
-
-    public void setIm10a07(String im10a07) {
-        this.im10a07 = im10a07;
-        notifyPropertyChanged(BR.im10a07);
-    }
-
-    @Bindable
-    public String getIm10a08() {
-        return im10a08;
-    }
-
-    public void setIm10a08(String im10a08) {
-        this.im10a08 = im10a08;
-        notifyPropertyChanged(BR.im10a08);
-    }
-
-    @Bindable
-    public String getIm10a09() {
-        return im10a09;
-    }
-
-    public void setIm10a09(String im10a09) {
-        this.im10a09 = im10a09;
-        notifyPropertyChanged(BR.im10a09);
-    }
-
-    @Bindable
-    public String getIm10a10() {
-        return im10a10;
-    }
-
-    public void setIm10a10(String im10a10) {
-        this.im10a10 = im10a10;
-        notifyPropertyChanged(BR.im10a10);
-    }
-
-    @Bindable
-    public String getIm10a11() {
-        return im10a11;
-    }
-
-    public void setIm10a11(String im10a11) {
-        this.im10a11 = im10a11;
-        notifyPropertyChanged(BR.im10a11);
-    }
-
-    @Bindable
-    public String getIm10a12() {
-        return im10a12;
-    }
-
-    public void setIm10a12(String im10a12) {
-        this.im10a12 = im10a12;
-        notifyPropertyChanged(BR.im10a12);
-    }
-
-    @Bindable
-    public String getIm10a13() {
-        return im10a13;
-    }
-
-    public void setIm10a13(String im10a13) {
-        this.im10a13 = im10a13;
-        notifyPropertyChanged(BR.im10a13);
-    }
-
-    @Bindable
-    public String getIm10a98() {
-        return im10a98;
-    }
-
-    public void setIm10a98(String im10a98) {
-        this.im10a98 = im10a98;
-        notifyPropertyChanged(BR.im10a98);
-    }
-
-    @Bindable
-    public String getIm10a96() {
-        return im10a96;
-    }
-
-    public void setIm10a96(String im10a96) {
-        this.im10a96 = im10a96;
-        notifyPropertyChanged(BR.im10a96);
-    }
-
-    @Bindable
-    public String getIm10a96x() {
-        return im10a96x;
-    }
-
-    public void setIm10a96x(String im10a96x) {
-        this.im10a96x = im10a96x;
-        notifyPropertyChanged(BR.im10a96x);
-    }
-
 
     @Bindable
     public String getIm11() {
@@ -1786,22 +1610,6 @@ public class Immunization extends BaseObservable {
                     .put("im08b", im08b)
                     .put("im09", im09)
                     .put("im10", im10)
-                    .put("im10a01", im10a01)
-                    .put("im10a02", im10a02)
-                    .put("im10a03", im10a03)
-                    .put("im10a04", im10a04)
-                    .put("im10a05", im10a05)
-                    .put("im10a06", im10a06)
-                    .put("im10a07", im10a07)
-                    .put("im10a08", im10a08)
-                    .put("im10a09", im10a09)
-                    .put("im10a10", im10a10)
-                    .put("im10a11", im10a11)
-                    .put("im10a12", im10a12)
-                    .put("im10a13", im10a13)
-                    .put("im10a98", im10a98)
-                    .put("im10a96", im10a96)
-                    .put("im10a96x", im10a96x)
                     .put("im11", im11)
                     .put("im12", im12)
                     .put("im1201x", im1201x)
@@ -1971,22 +1779,6 @@ public class Immunization extends BaseObservable {
                 this.im08b = json.getString("im08b");
                 this.im09 = json.getString("im09");
                 this.im10 = json.getString("im10");
-                this.im10a01 = json.getString("im10a01");
-                this.im10a02 = json.getString("im10a02");
-                this.im10a03 = json.getString("im10a03");
-                this.im10a04 = json.getString("im10a04");
-                this.im10a05 = json.getString("im10a05");
-                this.im10a06 = json.getString("im10a06");
-                this.im10a07 = json.getString("im10a07");
-                this.im10a08 = json.getString("im10a08");
-                this.im10a09 = json.getString("im10a09");
-                this.im10a10 = json.getString("im10a10");
-                this.im10a11 = json.getString("im10a11");
-                this.im10a12 = json.getString("im10a12");
-                this.im10a13 = json.getString("im10a13");
-                this.im10a98 = json.getString("im10a98");
-                this.im10a96 = json.getString("im10a96");
-                this.im10a96x = json.getString("im10a96x");
                 this.im11 = json.getString("im11");
                 this.im12 = json.getString("im12");
                 this.im1201x = json.getString("im1201x");
