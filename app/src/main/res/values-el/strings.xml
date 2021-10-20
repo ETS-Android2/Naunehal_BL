@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Naunehal</string>
+    <string name="app_name"> Naunehal Midline </string>
     <string name="action_database">Database Manager</string>
     <string name="action_data_sync">Sync Data</string>
     <string name="btnDownload">Download Data</string>

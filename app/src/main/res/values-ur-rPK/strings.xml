@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> نونِہال: بیس لاین سروے </string>
+    <string name="app_name"> نونِہال: مڈ لائن سروے </string>
     <string name="action_database">Database Manager</string>
     <string name="action_data_sync">Sync Data</string>
     <string name="btnDownload">Download Data</string>
