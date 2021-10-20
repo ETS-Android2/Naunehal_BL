@@ -3039,7 +3039,7 @@
                                 android:inputType="number"
                                 android:tag="im17a"
                                 android:text="@{form.im1701}"
-                                android:visibility='@{form.im17.equals(`1`) ? View.VISIBLE : View.GONE}'
+                                android:visibility="@{form.im17.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="9"
                                 app:minValue="1"
                                 app:type="range" />
