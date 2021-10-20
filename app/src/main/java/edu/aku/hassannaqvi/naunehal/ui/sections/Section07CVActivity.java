@@ -51,7 +51,7 @@ public class Section07CVActivity extends AppCompatActivity implements EndSection
         rgLsnr(bi.cv11, bi.cv1102, bi.fldGrpCVcv12);
         rgLsnr(bi.cv15, bi.cv1501, bi.fldGrpCVcv16);
         rgLsnr(bi.cv17, bi.cv1702, bi.fldGrpCVcv18);
-        rgLsnr(bi.cv20, bi.cv1701, bi.fldGrpCVcv21);
+        rgLsnr(bi.cv20, bi.cv2001, bi.fldGrpCVcv21);
 
         bi.cv0898.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.cv08check, !b));
         bi.cv0998.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.cv09check, !b));
