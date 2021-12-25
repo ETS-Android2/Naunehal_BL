@@ -951,7 +951,7 @@
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/cb12"
-                            android:text="@{cinfo.cb12}" />
+                            android:text="@={cinfo.cb12}" />
 
                     </LinearLayout>
 
