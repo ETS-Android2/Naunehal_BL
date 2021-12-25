@@ -349,7 +349,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{form.im04dd}"
+                                android:text="@={form.im04dd}"
                                 app:maxValue="30"
                                 app:minValue="1"
                                 app:type="range" />
@@ -364,7 +364,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@{form.im04mm}"
+                                android:text="@={form.im04mm}"
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
@@ -378,7 +378,7 @@
                                 android:gravity="center"
                                 android:hint="####"
                                 android:inputType="number"
-                                android:text="@{form.im04yy}"
+                                android:text="@={form.im04yy}"
                                 app:maxValue="0"
                                 app:minValue="0"
                                 app:type="range" />
@@ -3697,6 +3697,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.im24.equals(`1`)}"
+                                android:onClick="@{()->form.setIm24(`1`)}"
                                 android:text="@string/im2401" />
 
                             <RadioButton
@@ -3704,6 +3705,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.im24.equals(`2`)}"
+                                android:onClick="@{()->form.setIm24(`2`)}"
                                 android:text="@string/im2402" />
 
                             <RadioButton
