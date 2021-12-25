@@ -523,6 +523,7 @@ public class ChildInformation extends BaseObservable implements Serializable {
 
     public void setCb14(String cb14) {
         this.cb14 = cb14;
+        setCb1496x(cb14.equals("96") ? this.cb1496x : "");
         notifyPropertyChanged(BR.cb14);
     }
 
