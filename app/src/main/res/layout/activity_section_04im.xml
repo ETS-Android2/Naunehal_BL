@@ -2848,7 +2848,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im14.equals(`2`)}"
-                                    android:onClick="@{()->form.setIm14(`2`)}"
+                                    android:onClick="@{()->form.setIm14(`2`) + im15.clearCheck()}"
                                     android:text="@string/im1402" />
 
                                 <RadioButton
@@ -2857,7 +2857,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im14.equals(`98`)}"
-                                    android:onClick="@{()->form.setIm14(`98`)}"
+                                    android:onClick="@{()->form.setIm14(`98`) + im15.clearCheck()}"
                                     android:text="@string/im1403" />
 
                             </RadioGroup>
@@ -2990,7 +2990,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im16.equals(`2`)}"
-                                    android:onClick="@{()->form.setIm16(`2`)}"
+                                    android:onClick="@{()->form.setIm16(`2`) + im17.clearCheck()}"
                                     android:text="@string/im1602" />
 
                                 <RadioButton
@@ -2999,7 +2999,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im16.equals(`98`)}"
-                                    android:onClick="@{()->form.setIm16(`98`)}"
+                                    android:onClick="@{()->form.setIm16(`98`) + im17.clearCheck()}"
                                     android:text="@string/im1603" />
 
                             </RadioGroup>
